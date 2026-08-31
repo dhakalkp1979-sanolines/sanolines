@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ne">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Sanolines — World News</title>
-  <meta name="description" content="Sanolines — World headlines, short briefs and clear sources.">
+  <title>Sanolines — छोटो नेपाली समाचार</title>
+
+  <meta name="description" content="Sanolines — छोटो, स्पष्ट र स्रोतसहित नेपाली समाचार।">
 
   <link rel="stylesheet" href="style.css">
 </head>
@@ -16,232 +17,90 @@
   <div class="header-inner">
     <div>
       <div class="logo">SANOLINES</div>
-      <div class="tagline">World headlines. Short briefs. Clear sources.</div>
+      <div class="tagline">छोटो नेपाली समाचार · स्पष्ट र स्रोतसहित</div>
     </div>
   </div>
-
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="#world">World</a>
-    <a href="#nepal">Nepal</a>
-    <a href="#europe">Europe</a>
-    <a href="#business">Business</a>
-    <a href="#technology">Technology</a>
-    <a href="#sports">Sports</a>
-  </nav>
 </header>
+
 
 <main class="container">
 
-  <h1 class="section-title">Latest World News</h1>
+  <h1 class="section-title">ताजा समाचार</h1>
 
-  <div class="search-box">
-    <input
-      type="text"
-      id="searchInput"
-      placeholder="Search Sanolines news..."
-      onkeyup="searchNews()"
-    >
-  </div>
 
-  <section class="news-grid" id="newsGrid">
+  <!-- नयाँ समाचार यहाँबाट थप्नुहोस् -->
 
-    <!-- WORLD -->
-    <article class="news-card" id="world">
-      <img
-        src="https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?auto=format&fit=crop&w=1400&q=80"
-        alt="World news"
-      >
 
-      <div class="news-content">
-        <div class="category">World</div>
-        <div class="date">31 August 2026</div>
+  <article class="news-card">
 
-        <h2>U.S.–Iran tensions rise around the Strait of Hormuz</h2>
+    <div class="news-content">
 
-        <p>
-          Renewed tensions involving the United States and Iran have increased
-          concerns about regional security and global energy markets.
-        </p>
+      <div class="category">विश्व</div>
 
-        <a class="read-more" href="world-iran-hormuz.html">
-          Read full story →
-        </a>
+      <div class="date">
+        ३१ अगस्ट २०२६
       </div>
-    </article>
 
+      <h2>
+        अमेरिका र इरानबीच तनाव बढ्दा क्षेत्रीय सुरक्षामा चिन्ता
+      </h2>
 
-    <!-- NEPAL -->
-    <article class="news-card" id="nepal">
+      <p>
+        अमेरिका र इरानबीच पुनः तनाव बढेपछि क्षेत्रीय सुरक्षा र
+        विश्व ऊर्जा बजारमा सम्भावित प्रभावबारे चिन्ता बढेको छ।
+      </p>
 
-      <img
-        src="https://images.unsplash.com/photo-1533130061792-64b345e4a833?auto=format&fit=crop&w=1400&q=80"
-        alt="Nepal news"
-      >
-
-      <div class="news-content">
-        <div class="category">Nepal</div>
-        <div class="date">31 August 2026</div>
-
-        <h2>Latest developments from Nepal</h2>
-
-        <p>
-          Follow important political, social, economic and national
-          developments from Nepal.
-        </p>
-
-        <a class="read-more" href="#">
-          Read more →
-        </a>
+      <div class="source">
+        स्रोत: Reuters
       </div>
-    </article>
+
+    </div>
+
+  </article>
 
 
-    <!-- EUROPE -->
-    <article class="news-card" id="europe">
+  <article class="news-card">
 
-      <img
-        src="https://images.unsplash.com/photo-1467269204594-9661b134dd2b?auto=format&fit=crop&w=1400&q=80"
-        alt="Europe news"
-      >
+    <div class="news-content">
 
-      <div class="news-content">
-        <div class="category">Europe</div>
-        <div class="date">31 August 2026</div>
+      <div class="category">नेपाल</div>
 
-        <h2>European leaders discuss new developments</h2>
-
-        <p>
-          Important political and economic developments across Europe,
-          explained clearly and briefly.
-        </p>
-
-        <a class="read-more" href="#">
-          Read more →
-        </a>
+      <div class="date">
+        ३१ अगस्ट २०२६
       </div>
-    </article>
 
+      <h2>
+        नेपालमा महत्वपूर्ण नयाँ घटनाक्रम सार्वजनिक
+      </h2>
 
-    <!-- BUSINESS -->
-    <article class="news-card" id="business">
+      <p>
+        देशमा भएको पछिल्लो महत्वपूर्ण घटनाक्रमबारे सम्बन्धित
+        निकायहरूले जानकारी सार्वजनिक गरेका छन्।
+      </p>
 
-      <img
-        src="https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?auto=format&fit=crop&w=1400&q=80"
-        alt="Business news"
-      >
-
-      <div class="news-content">
-        <div class="category">Business</div>
-        <div class="date">31 August 2026</div>
-
-        <h2>Global markets and business updates</h2>
-
-        <p>
-          Short explanations of major business, financial and economic
-          developments around the world.
-        </p>
-
-        <a class="read-more" href="#">
-          Read more →
-        </a>
+      <div class="source">
+        स्रोत: सम्बन्धित समाचार स्रोत
       </div>
-    </article>
 
+    </div>
 
-    <!-- TECHNOLOGY -->
-    <article class="news-card" id="technology">
+  </article>
 
-      <img
-        src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1400&q=80"
-        alt="Technology news"
-      >
-
-      <div class="news-content">
-        <div class="category">Technology</div>
-        <div class="date">31 August 2026</div>
-
-        <h2>New technology developments attract attention</h2>
-
-        <p>
-          Technology news covering artificial intelligence, digital services,
-          computers and major technology companies.
-        </p>
-
-        <a class="read-more" href="#">
-          Read more →
-        </a>
-      </div>
-    </article>
-
-
-    <!-- SPORTS -->
-    <article class="news-card" id="sports">
-
-      <img
-        src="https://images.unsplash.com/photo-1461896836934-ffe607ba8211?auto=format&fit=crop&w=1400&q=80"
-        alt="Sports news"
-      >
-
-      <div class="news-content">
-        <div class="category">Sports</div>
-        <div class="date">31 August 2026</div>
-
-        <h2>Latest international sports news</h2>
-
-        <p>
-          Major sports stories, results and developments from around the
-          world.
-        </p>
-
-        <a class="read-more" href="#">
-          Read more →
-        </a>
-      </div>
-    </article>
-
-  </section>
 
 </main>
 
 
 <footer>
 
-  <div class="social-links">
-    <a href="#" target="_blank">Facebook</a>
-    <a href="#" target="_blank">Instagram</a>
-    <a href="#" target="_blank">TikTok</a>
-    <a href="#" target="_blank">WhatsApp</a>
-  </div>
+  <p>
+    © 2026 Sanolines
+  </p>
 
-  <div>
-    © 2026 Sanolines. All rights reserved.
-  </div>
+  <p>
+    छोटो नेपाली समाचार
+  </p>
 
 </footer>
-
-
-<script>
-function searchNews() {
-
-  const input = document.getElementById("searchInput");
-  const filter = input.value.toLowerCase();
-
-  const cards = document.querySelectorAll(".news-card");
-
-  cards.forEach(function(card) {
-
-    const text = card.innerText.toLowerCase();
-
-    if (text.includes(filter)) {
-      card.style.display = "";
-    } else {
-      card.style.display = "none";
-    }
-
-  });
-}
-</script>
 
 </body>
 </html>
