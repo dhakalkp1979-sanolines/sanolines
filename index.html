@@ -3,198 +3,245 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sanolines - World News</title>
 
-  <style>
-    * {
-      box-sizing: border-box;
-    }
+  <title>Sanolines — World News</title>
+  <meta name="description" content="Sanolines — World headlines, short briefs and clear sources.">
 
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: white;
-      color: #111;
-    }
-
-    .container {
-      max-width: 850px;
-      margin: auto;
-      padding: 0 20px;
-    }
-
-    header {
-      border-bottom: 1px solid #ddd;
-      padding: 25px 0;
-    }
-
-    .logo {
-      font-size: 28px;
-      font-weight: bold;
-      letter-spacing: 2px;
-    }
-
-    .tagline {
-      color: #777;
-      margin-top: 5px;
-      font-size: 14px;
-    }
-
-    .intro {
-      padding: 45px 0 25px;
-    }
-
-    .intro h1 {
-      margin: 0 0 8px;
-      font-size: 34px;
-    }
-
-    .intro p {
-      color: #666;
-    }
-
-    .story {
-      border-top: 1px solid #ddd;
-      padding: 25px 0;
-    }
-
-    .category {
-      font-size: 12px;
-      color: #777;
-      letter-spacing: 1px;
-      margin-bottom: 8px;
-    }
-
-    .story h2 {
-      font-size: 23px;
-      line-height: 1.3;
-      margin: 0 0 8px;
-    }
-
-    .story p {
-      color: #444;
-      font-size: 16px;
-      margin: 0 0 10px;
-    }
-
-    .source {
-      font-size: 13px;
-      color: #777;
-    }
-
-    footer {
-      border-top: 1px solid #ddd;
-      margin-top: 40px;
-      padding: 30px 0;
-      color: #777;
-      font-size: 13px;
-    }
-
-    .social {
-      margin-bottom: 15px;
-    }
-
-    .social a {
-      margin-right: 18px;
-      color: #333;
-      text-decoration: none;
-    }
-
-    @media (max-width: 600px) {
-      .intro h1 {
-        font-size: 28px;
-      }
-
-      .story h2 {
-        font-size: 21px;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
 <header>
-  <div class="container">
-    <div class="logo">SANOLINES</div>
-    <div class="tagline">
-      World headlines. Short briefs. Clear sources.
+  <div class="header-inner">
+    <div>
+      <div class="logo">SANOLINES</div>
+      <div class="tagline">World headlines. Short briefs. Clear sources.</div>
     </div>
   </div>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="#world">World</a>
+    <a href="#nepal">Nepal</a>
+    <a href="#europe">Europe</a>
+    <a href="#business">Business</a>
+    <a href="#technology">Technology</a>
+    <a href="#sports">Sports</a>
+  </nav>
 </header>
 
 <main class="container">
 
-  <section class="intro">
-    <h1>Latest World News</h1>
-    <p>Important headlines, explained briefly and clearly.</p>
+  <h1 class="section-title">Latest World News</h1>
+
+  <div class="search-box">
+    <input
+      type="text"
+      id="searchInput"
+      placeholder="Search Sanolines news..."
+      onkeyup="searchNews()"
+    >
+  </div>
+
+  <section class="news-grid" id="newsGrid">
+
+    <!-- WORLD -->
+    <article class="news-card" id="world">
+      <img
+        src="https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?auto=format&fit=crop&w=1400&q=80"
+        alt="World news"
+      >
+
+      <div class="news-content">
+        <div class="category">World</div>
+        <div class="date">31 August 2026</div>
+
+        <h2>U.S.–Iran tensions rise around the Strait of Hormuz</h2>
+
+        <p>
+          Renewed tensions involving the United States and Iran have increased
+          concerns about regional security and global energy markets.
+        </p>
+
+        <a class="read-more" href="world-iran-hormuz.html">
+          Read full story →
+        </a>
+      </div>
+    </article>
+
+
+    <!-- NEPAL -->
+    <article class="news-card" id="nepal">
+
+      <img
+        src="https://images.unsplash.com/photo-1533130061792-64b345e4a833?auto=format&fit=crop&w=1400&q=80"
+        alt="Nepal news"
+      >
+
+      <div class="news-content">
+        <div class="category">Nepal</div>
+        <div class="date">31 August 2026</div>
+
+        <h2>Latest developments from Nepal</h2>
+
+        <p>
+          Follow important political, social, economic and national
+          developments from Nepal.
+        </p>
+
+        <a class="read-more" href="#">
+          Read more →
+        </a>
+      </div>
+    </article>
+
+
+    <!-- EUROPE -->
+    <article class="news-card" id="europe">
+
+      <img
+        src="https://images.unsplash.com/photo-1467269204594-9661b134dd2b?auto=format&fit=crop&w=1400&q=80"
+        alt="Europe news"
+      >
+
+      <div class="news-content">
+        <div class="category">Europe</div>
+        <div class="date">31 August 2026</div>
+
+        <h2>European leaders discuss new developments</h2>
+
+        <p>
+          Important political and economic developments across Europe,
+          explained clearly and briefly.
+        </p>
+
+        <a class="read-more" href="#">
+          Read more →
+        </a>
+      </div>
+    </article>
+
+
+    <!-- BUSINESS -->
+    <article class="news-card" id="business">
+
+      <img
+        src="https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?auto=format&fit=crop&w=1400&q=80"
+        alt="Business news"
+      >
+
+      <div class="news-content">
+        <div class="category">Business</div>
+        <div class="date">31 August 2026</div>
+
+        <h2>Global markets and business updates</h2>
+
+        <p>
+          Short explanations of major business, financial and economic
+          developments around the world.
+        </p>
+
+        <a class="read-more" href="#">
+          Read more →
+        </a>
+      </div>
+    </article>
+
+
+    <!-- TECHNOLOGY -->
+    <article class="news-card" id="technology">
+
+      <img
+        src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1400&q=80"
+        alt="Technology news"
+      >
+
+      <div class="news-content">
+        <div class="category">Technology</div>
+        <div class="date">31 August 2026</div>
+
+        <h2>New technology developments attract attention</h2>
+
+        <p>
+          Technology news covering artificial intelligence, digital services,
+          computers and major technology companies.
+        </p>
+
+        <a class="read-more" href="#">
+          Read more →
+        </a>
+      </div>
+    </article>
+
+
+    <!-- SPORTS -->
+    <article class="news-card" id="sports">
+
+      <img
+        src="https://images.unsplash.com/photo-1461896836934-ffe607ba8211?auto=format&fit=crop&w=1400&q=80"
+        alt="Sports news"
+      >
+
+      <div class="news-content">
+        <div class="category">Sports</div>
+        <div class="date">31 August 2026</div>
+
+        <h2>Latest international sports news</h2>
+
+        <p>
+          Major sports stories, results and developments from around the
+          world.
+        </p>
+
+        <a class="read-more" href="#">
+          Read more →
+        </a>
+      </div>
+    </article>
+
   </section>
-
-  <article class="story">
-
-    <div class="category">WORLD · 31 AUGUST 2026</div>
-
-    <h2>Major international development reported today</h2>
-
-    <p>
-      A short and clear summary of the important confirmed information.
-      Your latest Sanolines news brief will appear here.
-    </p>
-
-    <div class="source">
-      Source: <strong>News Source</strong>
-    </div>
-
-  </article>
-
-  <article class="story">
-
-    <div class="category">WORLD · 31 AUGUST 2026</div>
-
-    <h2>European leaders discuss a new agreement</h2>
-
-    <p>
-      A brief explanation of what happened and why the development matters.
-    </p>
-
-    <div class="source">
-      Source: <strong>News Source</strong>
-    </div>
-
-  </article>
-
-  <article class="story">
-
-    <div class="category">TECHNOLOGY · 31 AUGUST 2026</div>
-
-    <h2>New technology announcement attracts global attention</h2>
-
-    <p>
-      A concise summary based on information from identified sources.
-    </p>
-
-    <div class="source">
-      Source: <strong>News Source</strong>
-    </div>
-
-  </article>
 
 </main>
 
+
 <footer>
-  <div class="container">
 
-    <div class="social">
-      <a href="#">Facebook</a>
-      <a href="#">Instagram</a>
-      <a href="#">TikTok</a>
-      <a href="#">WhatsApp</a>
-    </div>
-
-    © 2026 Sanolines
-
+  <div class="social-links">
+    <a href="#" target="_blank">Facebook</a>
+    <a href="#" target="_blank">Instagram</a>
+    <a href="#" target="_blank">TikTok</a>
+    <a href="#" target="_blank">WhatsApp</a>
   </div>
+
+  <div>
+    © 2026 Sanolines. All rights reserved.
+  </div>
+
 </footer>
+
+
+<script>
+function searchNews() {
+
+  const input = document.getElementById("searchInput");
+  const filter = input.value.toLowerCase();
+
+  const cards = document.querySelectorAll(".news-card");
+
+  cards.forEach(function(card) {
+
+    const text = card.innerText.toLowerCase();
+
+    if (text.includes(filter)) {
+      card.style.display = "";
+    } else {
+      card.style.display = "none";
+    }
+
+  });
+}
+</script>
 
 </body>
 </html>
