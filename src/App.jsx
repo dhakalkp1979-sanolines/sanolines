@@ -1,107 +1,40 @@
-import PortugalServices from "./pages/PortugalServices"; 
-import { useState } from "react";
-import PortugalServices from "./pages/PortugalServices"; 
-function App() { 
-function App() {
-  const [search, setSearch] = useState("");
+<PortugalServices /> 
+<section id="popular">
+  <h2>Popular Services</h2>
 
-  const searchSite = (e) => {
-    e.preventDefault();
+  <p>
+    Quick access to some of the services people commonly need in Portugal.
+  </p>
 
-    const query = search.trim().toLowerCase();
+  <div className="service-grid">
+    <a href="#portugal" className="service-card">
+      <h3>AIMA / Residence Permit</h3>
+      <p>Residence and immigration information.</p>
+    </a>
 
-    if (!query) return;
+    <a href="#portugal" className="service-card">
+      <h3>NIF</h3>
+      <p>Tax identification information.</p>
+    </a>
 
-    const sections = [
-      "portugal",
-      "visa",
-      "calculators",
-      "directory",
-      "additional"
-    ];
+    <a href="#portugal" className="service-card">
+      <h3>NISS</h3>
+      <p>Social Security identification information.</p>
+    </a>
 
-    const matchingSection = sections.find((section) => {
-      const element = document.getElementById(section);
+    <a href="#portugal" className="service-card">
+      <h3>SNS</h3>
+      <p>National Health Service information.</p>
+    </a>
 
-      return element?.innerText.toLowerCase().includes(query);
-    });
+    <a href="#portugal" className="service-card">
+      <h3>IEFP / Jobs</h3>
+      <p>Employment and training information.</p>
+    </a>
 
-    if (matchingSection) {
-      document
-        .getElementById(matchingSection)
-        .scrollIntoView({ behavior: "smooth" });
-    }
-  };
-  import { useState } from "react";
-import PortugalServices from "./pages/PortugalServices";
-import VisaImmigration from "./pages/VisaImmigration";
-import Calculators from "./pages/Calculators";
-import DirectoryHub from "./pages/DirectoryHub";
-import AdditionalServices from "./pages/AdditionalServices";
-
-function App() {
-  const [search, setSearch] = useState("");
-
-  const searchSite = (e) => {
-    e.preventDefault();
-
-    const query = search.trim().toLowerCase();
-
-    if (!query) return;
-
-    const sections = [
-      "portugal",
-      "visa",
-      "calculators",
-      "directory",
-      "additional"
-    ];
-
-    const matchingSection = sections.find((section) => {
-      const element = document.getElementById(section);
-
-      return element?.innerText.toLowerCase().includes(query);
-    });
-
-    if (matchingSection) {
-      document
-        .getElementById(matchingSection)
-        .scrollIntoView({ behavior: "smooth" });
-    }
-  };
-
-  return (
-
-
-    <h2>What do you need?</h2>
-    <form onSubmit={searchSite}>
-  <input
-    type="text"
-    placeholder="Search Sanolines..."
-    value={search}
-    onChange={(e) => setSearch(e.target.value)}
-    style={{
-      width: "100%",
-      maxWidth: "600px",
-      padding: "14px",
-      border: "1px solid #ccc",
-      borderRadius: "6px",
-      fontSize: "16px",
-      margin: "25px auto"
-    }}
-  />
-
-  <button
-    type="submit"
-    style={{
-      padding: "12px 24px",
-      border: "none",
-      borderRadius: "6px",
-      background: "#075985",
-      color: "white",
-      cursor: "pointer"
-    }}
-  >
-    Search
-  </button>
-</form>
+    <a href="#visa" className="service-card">
+      <h3>Visa</h3>
+      <p>Portugal visa and immigration information.</p>
+    </a>
+  </div>
+</section>
