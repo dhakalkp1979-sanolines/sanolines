@@ -1,64 +1,73 @@
-import PortugalServices from "./pages/PortugalServices";
-import VisaImmigration from "./pages/VisaImmigration";
-import Calculators from "./pages/Calculators";
-import DirectoryHub from "./pages/DirectoryHub";
-import AdditionalServices from "./pages/AdditionalServices";
+<section id="home">
+  <h1>Sanolines</h1>
 
-function App() {
-  return (
-    <>
-      <header>
-        <nav>
-          <a href="#home">Sanolines</a>
+  <p>
+    Simple information and official links for living, working,
+    studying and moving in Portugal.
+  </p>
 
-          <div>
-            <a href="#portugal">Portugal Services</a>
-            <a href="#visa">Visa & Immigration</a>
-            <a href="#calculators">Calculators</a>
-            <a href="#directory">Official Websites</a>
-            <a href="#additional">More Information</a>
-          </div>
-        </nav>
-      </header>
+  <h2>What do you need?</h2>
 
-      <main>
-        <section id="home">
-          <h1>Sanolines</h1>
+  <div className="service-grid">
+    <a href="#portugal" className="service-card">
+      <h3>Portugal Services</h3>
+      <p>AIMA, NIF, NISS, SNS, IEFP, Social Security and more.</p>
+    </a>
 
-          <p>
-            Simple information and official links for living, working,
-            studying and moving in Portugal.
-          </p>
-        </section>
+    <a href="#visa" className="service-card">
+      <h3>Visa & Immigration</h3>
+      <p>Visa information, documents, appointments and official sources.</p>
+    </a>
 
-        <PortugalServices />
+    <a href="#calculators" className="service-card">
+      <h3>Calculators</h3>
+      <p>Salary, VAT, rent, percentage, discount, budget and more.</p>
+    </a>
 
-        <VisaImmigration />
+    <a href="#directory" className="service-card">
+      <h3>Official Websites</h3>
+      <p>Find the correct Portuguese government website quickly.</p>
+    </a>
 
-        <Calculators />
+    <a href="#additional" className="service-card">
+      <h3>More Information</h3>
+      <p>Healthcare, education, housing, work, family and transport.</p>
+    </a>
+  </div>
+</section><section id="home">
+  <h1>Sanolines</h1>
 
-        <DirectoryHub />
+  <p>
+    Simple information and official links for living, working,
+    studying and moving in Portugal.
+  </p>
 
-        <AdditionalServices />
-      </main>
+  <h2>What do you need?</h2>
 
-      <footer>
-        <h3>Sanolines</h3>
+  <div className="service-grid">
+    <a href="#portugal" className="service-card">
+      <h3>Portugal Services</h3>
+      <p>AIMA, NIF, NISS, SNS, IEFP, Social Security and more.</p>
+    </a>
 
-        <p>
-          Information made simple. Always check the official government
-          website for the latest requirements, fees and procedures.
-        </p>
+    <a href="#visa" className="service-card">
+      <h3>Visa & Immigration</h3>
+      <p>Visa information, documents, appointments and official sources.</p>
+    </a>
 
-        <p>
-          Sanolines is an information website and is not a government
-          service.
-        </p>
+    <a href="#calculators" className="service-card">
+      <h3>Calculators</h3>
+      <p>Salary, VAT, rent, percentage, discount, budget and more.</p>
+    </a>
 
-        <p>© 2026 Sanolines</p>
-      </footer>
-    </>
-  );
-}
+    <a href="#directory" className="service-card">
+      <h3>Official Websites</h3>
+      <p>Find the correct Portuguese government website quickly.</p>
+    </a>
 
-export default App;
+    <a href="#additional" className="service-card">
+      <h3>More Information</h3>
+      <p>Healthcare, education, housing, work, family and transport.</p>
+    </a>
+  </div>
+</section>
