@@ -117,3 +117,78 @@
   <AdditionalServices />
 
 </main>
+<AdditionalServices />
+          <PortugalServices />
+
+<VisaImmigration />
+
+<Calculators />
+
+<DirectoryHub />
+
+<AdditionalServices />
+
+<section id="emergency">
+  <h2>Emergency Contacts in Portugal</h2>
+
+  <p>
+    Important emergency numbers. For immediate danger or a serious
+    emergency, use the appropriate official emergency service.
+  </p>
+
+  <div className="service-grid">
+    <article className="service-card">
+      <h3>112 — Emergency</h3>
+      <p>
+        European emergency number for police, ambulance and fire services.
+      </p>
+
+      <a
+        href="https://www2.gov.pt/en/servicos/ligar-para-o-numero-de-emergencia-112"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Official Information →
+      </a>
+    </article>
+
+    <article className="service-card">
+      <h3>Health</h3>
+      <p>
+        For health-related services and information, use the Portuguese
+        National Health Service.
+      </p>
+
+      <a
+        href="https://www.sns.gov.pt/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        SNS Official Website →
+      </a>
+    </article>
+
+    <article className="service-card">
+      <h3>Government Services</h3>
+      <p>
+        Find Portuguese public services and official government information.
+      </p>
+
+      <a
+        href="https://eportugal.gov.pt/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        ePortugal →
+      </a>
+    </article>
+  </div>
+</section>
+</main>
+AdditionalServices
+      ↓
+Emergency Contacts
+      ↓
+</main>
+      ↓
+<footer>
