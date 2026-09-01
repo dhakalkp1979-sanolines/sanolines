@@ -1,4 +1,4 @@
-```jsx
+
 function VisaImmigration() {
   return (
     <section id="visa">
