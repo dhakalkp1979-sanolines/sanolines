@@ -1,40 +1,56 @@
 <PortugalServices /> 
-<section id="popular">
-  <h2>Popular Services</h2>
+<section id="before-apply">
+  <h2>Before You Apply</h2>
 
   <p>
-    Quick access to some of the services people commonly need in Portugal.
+    Check these points before starting an application.
   </p>
 
   <div className="service-grid">
-    <a href="#portugal" className="service-card">
-      <h3>AIMA / Residence Permit</h3>
-      <p>Residence and immigration information.</p>
-    </a>
+    <article className="service-card">
+      <h3>Check Documents</h3>
+      <p>
+        Make sure you have the documents required for your specific service.
+      </p>
+    </article>
 
-    <a href="#portugal" className="service-card">
-      <h3>NIF</h3>
-      <p>Tax identification information.</p>
-    </a>
+    <article className="service-card">
+      <h3>Check Fees</h3>
+      <p>
+        Fees can change. Always confirm the current fee on the official
+        website.
+      </p>
+    </article>
 
-    <a href="#portugal" className="service-card">
-      <h3>NISS</h3>
-      <p>Social Security identification information.</p>
-    </a>
+    <article className="service-card">
+      <h3>Check Appointment</h3>
+      <p>
+        Some services require an appointment before you can apply.
+      </p>
+    </article>
 
-    <a href="#portugal" className="service-card">
-      <h3>SNS</h3>
-      <p>National Health Service information.</p>
-    </a>
+    <article className="service-card">
+      <h3>Use Official Websites</h3>
+      <p>
+        Use the official government or authorised application website whenever
+        possible.
+      </p>
+    </article>
 
-    <a href="#portugal" className="service-card">
-      <h3>IEFP / Jobs</h3>
-      <p>Employment and training information.</p>
-    </a>
+    <article className="service-card">
+      <h3>Check Your Location</h3>
+      <p>
+        Some applications must be made through a specific office, embassy,
+        consulate or service centre.
+      </p>
+    </article>
 
-    <a href="#visa" className="service-card">
-      <h3>Visa</h3>
-      <p>Portugal visa and immigration information.</p>
-    </a>
+    <article className="service-card">
+      <h3>Check Latest Information</h3>
+      <p>
+        Requirements and procedures can change, so verify the information
+        before submitting an application.
+      </p>
+    </article>
   </div>
 </section>
