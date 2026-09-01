@@ -202,3 +202,52 @@ Emergency Contacts
   <a href="#additional">More Information</a>
   <a href="#emergency">Emergency</a>
 </div>
+<footer>
+  <h3>Sanolines</h3>
+
+  <p>
+    Information made simple. Sanolines helps people find and understand
+    useful information and reach the correct official sources.
+  </p>
+
+  <h4>Disclaimer</h4>
+
+  <p>
+    Sanolines is an independent information website. It is not a government
+    website, law firm, immigration adviser, medical service, tax adviser,
+    employment agency or financial adviser.
+  </p>
+
+  <p>
+    The information provided is for general information and guidance only.
+    Government rules, requirements, fees, procedures, appointments and
+    website information can change. We cannot guarantee that information
+    is complete, current or applicable to every person's situation.
+  </p>
+
+  <p>
+    Always check the latest information with the relevant official government
+    department, embassy, consulate, authorised service provider or qualified
+    professional before taking action or submitting an application.
+  </p>
+
+  <p>
+    Sanolines does not submit applications, provide legal representation,
+    provide medical advice, guarantee employment or guarantee the approval
+    of any application or service.
+  </p>
+
+  <p>
+    External websites linked from Sanolines are operated by third parties.
+    Sanolines does not control those websites and is not responsible for
+    their content, availability, decisions, services, fees or policies.
+  </p>
+
+  <p>
+    <strong>
+      Sanolines — Information made simple. Always verify with the official source.
+    </strong>
+  </p>
+
+  <p>© 2026 Sanolines</p>
+</footer>
