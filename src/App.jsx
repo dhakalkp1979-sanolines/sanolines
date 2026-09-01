@@ -87,4 +87,33 @@
       </p>
     </article>
   </div>
-</section>
+</section> 
+<main>
+
+  <section id="how-it-works">
+    ...
+  </section>
+
+  <section id="home">
+    ...
+  </section>
+
+  <section id="popular">
+    ...
+  </section>
+
+  <section id="before-apply">
+    ...
+  </section>
+
+  <PortugalServices />
+
+  <VisaImmigration />
+
+  <Calculators />
+
+  <DirectoryHub />
+
+  <AdditionalServices />
+
+</main>
