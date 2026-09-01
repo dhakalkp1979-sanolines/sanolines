@@ -15,8 +15,8 @@ function OfficialRouterFinder() {
       <h2>Find Official Website</h2>
 
       <p>
-        Search for the government service you need and go directly
-        to the official website.
+        Search for the government service you need and go directly to the
+        official website.
       </p>
 
       <input
@@ -39,7 +39,6 @@ function OfficialRouterFinder() {
         {filteredLinks.map((item) => (
           <article key={item.name} className="official-card">
             <h3>{item.name}</h3>
-
             <p>{item.description}</p>
 
             <a
@@ -53,9 +52,7 @@ function OfficialRouterFinder() {
         ))}
       </div>
 
-      {filteredLinks.length === 0 && (
-        <p>No matching service found.</p>
-      )}
+      {filteredLinks.length === 0 && <p>No matching service found.</p>}
     </section>
   );
 }
