@@ -192,3 +192,13 @@ Emergency Contacts
 </main>
       ↓
 <footer>
+        <a href="#additional">More Information</a> 
+<a href="#emergency">Emergency</a>
+<div>
+  <a href="#portugal">Portugal Services</a>
+  <a href="#visa">Visa & Immigration</a>
+  <a href="#calculators">Calculators</a>
+  <a href="#directory">Official Websites</a>
+  <a href="#additional">More Information</a>
+  <a href="#emergency">Emergency</a>
+</div>
