@@ -1,60 +1,45 @@
-const officialLinks = [
-  {
-    name: "AIMA",
-    description: "Residence permits and immigration services",
-    url: "https://aima.gov.pt/"
-  },
-  {
-    name: "NIF / Finanças",
-    description: "Tax number and Portuguese tax services",
-    url: "https://www.portaldasfinancas.gov.pt/"
-  },
-  {
-    name: "NISS / Social Security",
-    description: "Social Security number and services",
-    url: "https://www.seg-social.pt/"
-  },
-  {
-    name: "SNS",
-    description: "Portuguese National Health Service",
-    url: "https://www.sns.gov.pt/"
-  },
-  {
-    name: "IMT",
-    description: "Driving licences and transport services",
-    url: "https://www.imt-ip.pt/"
-  },
-  {
-    name: "IEFP",
-    description: "Jobs, employment and training",
-    url: "https://www.iefp.pt/"
-  },
-  {
-    name: "VFS Global",
-    description: "Visa application services",
-    url: "https://www.vfsglobal.com/"
-  },
-  {
-    name: "ePortugal",
-    description: "Portuguese government services",
-    url: "https://eportugal.gov.pt/"
-  }
-];
+import { useState } from "react";
+import { officialLinks } from "../data/officialLinks";
 
 function OfficialRouterFinder() {
+  const [search, setSearch] = useState("");
+
+  const filteredLinks = officialLinks.filter((item) =>
+    `${item.name} ${item.description}`
+      .toLowerCase()
+      .includes(search.toLowerCase())
+  );
+
   return (
     <section id="directory">
       <h2>Find Official Website</h2>
 
       <p>
-        Choose the service you need and go directly to the relevant
-        official website.
+        Search for the government service you need and go directly
+        to the official website.
       </p>
 
-      <div>
-        {officialLinks.map((item) => (
-          <div key={item.name}>
+      <input
+        type="text"
+        placeholder="Search AIMA, NIF, NISS, SNS, IEFP..."
+        value={search}
+        onChange={(e) => setSearch(e.target.value)}
+        style={{
+          width: "100%",
+          maxWidth: "600px",
+          padding: "14px",
+          border: "1px solid #ccc",
+          borderRadius: "6px",
+          fontSize: "16px",
+          marginTop: "15px"
+        }}
+      />
+
+      <div className="official-links">
+        {filteredLinks.map((item) => (
+          <article key={item.name} className="official-card">
             <h3>{item.name}</h3>
+
             <p>{item.description}</p>
 
             <a
@@ -64,9 +49,13 @@ function OfficialRouterFinder() {
             >
               Go to Official Website →
             </a>
-          </div>
+          </article>
         ))}
       </div>
+
+      {filteredLinks.length === 0 && (
+        <p>No matching service found.</p>
+      )}
     </section>
   );
 }
