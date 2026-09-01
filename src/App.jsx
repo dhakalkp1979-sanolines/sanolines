@@ -1,73 +1,107 @@
-<section id="home">
-  <h1>Sanolines</h1>
+import PortugalServices from "./pages/PortugalServices"; 
+import { useState } from "react";
+import PortugalServices from "./pages/PortugalServices"; 
+function App() { 
+function App() {
+  const [search, setSearch] = useState("");
 
-  <p>
-    Simple information and official links for living, working,
-    studying and moving in Portugal.
-  </p>
+  const searchSite = (e) => {
+    e.preventDefault();
 
-  <h2>What do you need?</h2>
+    const query = search.trim().toLowerCase();
 
-  <div className="service-grid">
-    <a href="#portugal" className="service-card">
-      <h3>Portugal Services</h3>
-      <p>AIMA, NIF, NISS, SNS, IEFP, Social Security and more.</p>
-    </a>
+    if (!query) return;
 
-    <a href="#visa" className="service-card">
-      <h3>Visa & Immigration</h3>
-      <p>Visa information, documents, appointments and official sources.</p>
-    </a>
+    const sections = [
+      "portugal",
+      "visa",
+      "calculators",
+      "directory",
+      "additional"
+    ];
 
-    <a href="#calculators" className="service-card">
-      <h3>Calculators</h3>
-      <p>Salary, VAT, rent, percentage, discount, budget and more.</p>
-    </a>
+    const matchingSection = sections.find((section) => {
+      const element = document.getElementById(section);
 
-    <a href="#directory" className="service-card">
-      <h3>Official Websites</h3>
-      <p>Find the correct Portuguese government website quickly.</p>
-    </a>
+      return element?.innerText.toLowerCase().includes(query);
+    });
 
-    <a href="#additional" className="service-card">
-      <h3>More Information</h3>
-      <p>Healthcare, education, housing, work, family and transport.</p>
-    </a>
-  </div>
-</section><section id="home">
-  <h1>Sanolines</h1>
+    if (matchingSection) {
+      document
+        .getElementById(matchingSection)
+        .scrollIntoView({ behavior: "smooth" });
+    }
+  };
+  import { useState } from "react";
+import PortugalServices from "./pages/PortugalServices";
+import VisaImmigration from "./pages/VisaImmigration";
+import Calculators from "./pages/Calculators";
+import DirectoryHub from "./pages/DirectoryHub";
+import AdditionalServices from "./pages/AdditionalServices";
 
-  <p>
-    Simple information and official links for living, working,
-    studying and moving in Portugal.
-  </p>
+function App() {
+  const [search, setSearch] = useState("");
 
-  <h2>What do you need?</h2>
+  const searchSite = (e) => {
+    e.preventDefault();
 
-  <div className="service-grid">
-    <a href="#portugal" className="service-card">
-      <h3>Portugal Services</h3>
-      <p>AIMA, NIF, NISS, SNS, IEFP, Social Security and more.</p>
-    </a>
+    const query = search.trim().toLowerCase();
 
-    <a href="#visa" className="service-card">
-      <h3>Visa & Immigration</h3>
-      <p>Visa information, documents, appointments and official sources.</p>
-    </a>
+    if (!query) return;
 
-    <a href="#calculators" className="service-card">
-      <h3>Calculators</h3>
-      <p>Salary, VAT, rent, percentage, discount, budget and more.</p>
-    </a>
+    const sections = [
+      "portugal",
+      "visa",
+      "calculators",
+      "directory",
+      "additional"
+    ];
 
-    <a href="#directory" className="service-card">
-      <h3>Official Websites</h3>
-      <p>Find the correct Portuguese government website quickly.</p>
-    </a>
+    const matchingSection = sections.find((section) => {
+      const element = document.getElementById(section);
 
-    <a href="#additional" className="service-card">
-      <h3>More Information</h3>
-      <p>Healthcare, education, housing, work, family and transport.</p>
-    </a>
-  </div>
-</section>
+      return element?.innerText.toLowerCase().includes(query);
+    });
+
+    if (matchingSection) {
+      document
+        .getElementById(matchingSection)
+        .scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
+  return (
+
+
+    <h2>What do you need?</h2>
+    <form onSubmit={searchSite}>
+  <input
+    type="text"
+    placeholder="Search Sanolines..."
+    value={search}
+    onChange={(e) => setSearch(e.target.value)}
+    style={{
+      width: "100%",
+      maxWidth: "600px",
+      padding: "14px",
+      border: "1px solid #ccc",
+      borderRadius: "6px",
+      fontSize: "16px",
+      margin: "25px auto"
+    }}
+  />
+
+  <button
+    type="submit"
+    style={{
+      padding: "12px 24px",
+      border: "none",
+      borderRadius: "6px",
+      background: "#075985",
+      color: "white",
+      cursor: "pointer"
+    }}
+  >
+    Search
+  </button>
+</form>
