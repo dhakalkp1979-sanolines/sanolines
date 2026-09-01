@@ -1,24 +1,34 @@
-import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
 import PortugalServices from "./pages/PortugalServices";
 import VisaImmigration from "./pages/VisaImmigration";
 import Calculators from "./pages/Calculators";
 import DirectoryHub from "./pages/DirectoryHub";
+import AdditionalServices from "./pages/AdditionalServices";
 
 function App() {
   return (
-    <div>
-      <Navbar />
+    <>
+      <header>
+        <nav>
+          <a href="#home">Sanolines</a>
+
+          <div>
+            <a href="#portugal">Portugal Services</a>
+            <a href="#visa">Visa & Immigration</a>
+            <a href="#calculators">Calculators</a>
+            <a href="#directory">Official Websites</a>
+            <a href="#additional">More Information</a>
+          </div>
+        </nav>
+      </header>
 
       <main>
         <section id="home">
-          <div>
-            <h1>Sanolines</h1>
-            <p>
-              Simple information, official links and useful tools for people
-              living in or coming to Portugal.
-            </p>
-          </div>
+          <h1>Sanolines</h1>
+
+          <p>
+            Simple information and official links for living, working,
+            studying and moving in Portugal.
+          </p>
         </section>
 
         <PortugalServices />
@@ -28,10 +38,26 @@ function App() {
         <Calculators />
 
         <DirectoryHub />
+
+        <AdditionalServices />
       </main>
 
-      <Footer />
-    </div>
+      <footer>
+        <h3>Sanolines</h3>
+
+        <p>
+          Information made simple. Always check the official government
+          website for the latest requirements, fees and procedures.
+        </p>
+
+        <p>
+          Sanolines is an information website and is not a government
+          service.
+        </p>
+
+        <p>© 2026 Sanolines</p>
+      </footer>
+    </>
   );
 }
 
