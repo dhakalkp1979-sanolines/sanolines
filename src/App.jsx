@@ -54,3 +54,37 @@
     </article>
   </div>
 </section>
+<section id="popular">
+          <section id="how-it-works">
+  <h2>How Sanolines Works</h2>
+
+  <p>
+    Sanolines helps you find information and the correct official
+    destination. We do not replace government services.
+  </p>
+
+  <div className="service-grid">
+    <article className="service-card">
+      <h3>1. Find</h3>
+      <p>
+        Search for the service or information you need.
+      </p>
+    </article>
+
+    <article className="service-card">
+      <h3>2. Understand</h3>
+      <p>
+        Read simple information about documents, fees, appointments
+        and procedures.
+      </p>
+    </article>
+
+    <article className="service-card">
+      <h3>3. Go Official</h3>
+      <p>
+        Use the official government, embassy or authorised website
+        to complete your application.
+      </p>
+    </article>
+  </div>
+</section>
