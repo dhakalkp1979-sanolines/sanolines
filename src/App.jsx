@@ -1,4 +1,3 @@
-
 import PortugalServices from "./pages/PortugalServices";
 import VisaImmigration from "./pages/VisaImmigration";
 import Calculators from "./pages/Calculators";
@@ -20,7 +19,8 @@ function App() {
             <a href="#additional">More Information</a>
             <a href="#emergency">Emergency</a>
           </div>
-        <Header />
+        </nav>
+      </header>
 
       <main>
         <section id="home">
