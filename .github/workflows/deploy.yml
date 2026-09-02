@@ -28,6 +28,12 @@ jobs:
         with:
           node-version: 20
 
+      - name: Check files
+        run: |
+          pwd
+          ls -la
+          test -f package.json
+
       - name: Install dependencies
         run: npm install
 
