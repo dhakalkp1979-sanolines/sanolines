@@ -1,6 +1,12 @@
 import React from "react";
+import "./CountryPage.css";
 
-function CountryPage({ country, continent, famousFor, topics = [] }) {
+function CountryPage({
+  country,
+  continent,
+  famousFor,
+  topics = [],
+}) {
   const defaultTopics = [
     "Government & Official Services",
     "Immigration & Visa",
@@ -24,75 +30,79 @@ function CountryPage({ country, continent, famousFor, topics = [] }) {
     <div className="country-page">
 
       {/* HEADER */}
-      <header className="country-page-header">
+      <header className="country-header">
 
-        <div className="country-page-logo">
-          <div className="country-page-logo-icon">
+        <div className="country-logo">
+          <div className="country-logo-icon">
             S
           </div>
 
           <div>
-            <div className="country-page-logo-name">
-              SANO LINES
+            <div className="country-logo-name">
+              SANOLINES
             </div>
 
-            <div className="country-page-logo-tagline">
-              Global Information & Services
+            <div className="country-logo-tagline">
+              Global Information
             </div>
           </div>
         </div>
 
-        <a href="./" className="country-page-home">
-          ← Back to Home
+        <a href="./" className="country-back">
+          ← Home
         </a>
 
       </header>
 
 
-      {/* COUNTRY HERO */}
+      {/* HERO */}
       <section className="country-hero">
 
-        <div className="country-label">
-          {continent || "GLOBAL"}
+        <div className="country-hero-overlay">
+
+          <div className="country-continent">
+            {continent || "GLOBAL"}
+          </div>
+
+          <h1>
+            {country || "Country"}
+          </h1>
+
+          {famousFor && (
+            <p>{famousFor}</p>
+          )}
+
         </div>
-
-        <h1>
-          {country || "Country"}
-        </h1>
-
-        {famousFor && (
-          <p>
-            {famousFor}
-          </p>
-        )}
 
       </section>
 
 
-      {/* TOPICS */}
-      <main className="country-content">
+      {/* CONTENT */}
+      <main className="country-main">
 
-        <div className="country-section-heading">
+        <div className="country-intro">
 
-          <div className="country-small-label">
+          <div className="country-label">
             EXPLORE
           </div>
 
           <h2>
-            Information & Services
+            {country} Information
           </h2>
 
           <p>
-            Find useful information and official services
-            for {country || "this country"}.
+            Find useful information about living,
+            working, travelling and accessing services
+            in {country}.
           </p>
 
         </div>
 
 
+        {/* TOPICS */}
         <div className="country-topic-grid">
 
-          {countryTopics.map((topic) => (
+          {countryTopics.map((topic, index) => (
 
             <a
               href="#"
@@ -100,10 +110,16 @@ function CountryPage({ country, continent, famousFor, topics = [] }) {
               key={topic}
             >
 
-              <div className="country-topic-number">
-                {String(
-                  countryTopics.indexOf(topic) + 1
-                ).padStart(2, "0")}
+              <div className="topic-top">
+
+                <span className="topic-number">
+                  {String(index + 1).padStart(2, "0")}
+                </span>
+
+                <span className="topic-arrow">
+                  →
+                </span>
+
               </div>
 
               <h3>
@@ -111,13 +127,9 @@ function CountryPage({ country, continent, famousFor, topics = [] }) {
               </h3>
 
               <p>
-                Information, guidance and useful
-                resources.
+                Information, useful guidance and
+                links to relevant services.
               </p>
-
-              <span className="country-topic-arrow">
-                →
-              </span>
 
             </a>
 
@@ -126,19 +138,28 @@ function CountryPage({ country, continent, famousFor, topics = [] }) {
         </div>
 
 
-        {/* INFORMATION NOTICE */}
-        <section className="country-notice">
+        {/* OFFICIAL INFORMATION */}
+        <section className="official-box">
+
+          <div className="official-badge">
+            OFFICIAL SOURCES
+          </div>
 
           <h2>
-            Official Information
+            Information from trusted sources
           </h2>
 
           <p>
-            Sanolines provides general information and
-            helps users find relevant official services.
-            Always verify important requirements,
-            fees, deadlines and procedures with the
-            appropriate official authority.
+            Sanolines helps you find information and
+            connect directly to relevant official
+            government websites, public services and
+            trusted organisations.
+          </p>
+
+          <p>
+            Always check the original official source
+            for current requirements, fees, deadlines
+            and procedures.
           </p>
 
         </section>
@@ -149,7 +170,11 @@ function CountryPage({ country, continent, famousFor, topics = [] }) {
       {/* FOOTER */}
       <footer className="country-footer">
 
-        <div className="country-footer-links">
+        <div className="footer-logo">
+          SANOLINES
+        </div>
+
+        <div className="footer-links">
 
           <a href="./">
             Home
@@ -165,8 +190,8 @@ function CountryPage({ country, continent, famousFor, topics = [] }) {
 
         </div>
 
-        <div className="country-footer-bottom">
-          © 2026 Sanolines. Global Information & Services.
+        <div className="footer-copy">
+          © 2026 Sanolines — Global Information
         </div>
 
       </footer>
