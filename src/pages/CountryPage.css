@@ -348,3 +348,39 @@
     gap: 12px;
   }
 }
+/* SERVICE LINKS */
+
+.service-links {
+  margin-top: 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.service-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 14px;
+  border-radius: 10px;
+  background: #f5f7fb;
+  border: 1px solid #e2e7ef;
+  color: #172033;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.service-link:hover {
+  background: #e9eef5;
+  border-color: #c7d0dc;
+  transform: translateX(3px);
+}
+
+.service-link span:last-child {
+  font-size: 18px;
+  color: #64748b;
+  flex-shrink: 0;
+}
