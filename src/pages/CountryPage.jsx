@@ -1,5 +1,6 @@
 import React from "react";
 import "./CountryPage.css";
+import countryServices from "../data/countryServices";
 
 function CountryPage({
   country,
@@ -25,6 +26,9 @@ function CountryPage({
 
   const countryTopics =
     topics.length > 0 ? topics : defaultTopics;
+
+  const services =
+    countryServices[country] || {};
 
   return (
     <div className="country-page">
@@ -77,7 +81,7 @@ function CountryPage({
       </section>
 
 
-      {/* CONTENT */}
+      {/* MAIN */}
       <main className="country-main">
 
         <div className="country-intro">
@@ -91,9 +95,9 @@ function CountryPage({
           </h2>
 
           <p>
-            Find useful information about living,
-            working, travelling and accessing services
-            in {country}.
+            Find useful information and connect
+            directly to relevant official websites
+            and trusted services.
           </p>
 
         </div>
@@ -102,38 +106,72 @@ function CountryPage({
         {/* TOPICS */}
         <div className="country-topic-grid">
 
-          {countryTopics.map((topic, index) => (
+          {countryTopics.map((topic, index) => {
 
-            <a
-              href="#"
-              className="country-topic-card"
-              key={topic}
-            >
+            const service = services[topic];
 
-              <div className="topic-top">
+            return (
+              <div
+                className="country-topic-card"
+                key={topic}
+              >
 
-                <span className="topic-number">
-                  {String(index + 1).padStart(2, "0")}
-                </span>
+                <div className="topic-top">
 
-                <span className="topic-arrow">
-                  →
-                </span>
+                  <span className="topic-number">
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
+
+                  <span className="topic-arrow">
+                    →
+                  </span>
+
+                </div>
+
+                <h3>
+                  {topic}
+                </h3>
+
+                <p>
+                  {service?.description ||
+                    "Information, useful guidance and relevant resources."}
+                </p>
+
+
+                {service?.links?.length > 0 && (
+
+                  <div className="service-links">
+
+                    {service.links.map((link) => (
+
+                      <a
+                        key={link.name}
+                        href={link.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="service-link"
+                      >
+
+                        <span>
+                          {link.name}
+                        </span>
+
+                        <span>
+                          →
+                        </span>
+
+                      </a>
+
+                    ))}
+
+                  </div>
+
+                )}
 
               </div>
+            );
 
-              <h3>
-                {topic}
-              </h3>
-
-              <p>
-                Information, useful guidance and
-                links to relevant services.
-              </p>
-
-            </a>
-
-          ))}
+          })}
 
         </div>
 
