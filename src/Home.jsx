@@ -9,13 +9,41 @@ function Home() {
   const [selectedCountry, setSelectedCountry] = useState(null);
 
   const continents = [
-    "Asia",
-    "Africa",
-    "Europe",
-    "North America",
-    "South America",
-    "Australia & Oceania",
-    "Antarctica",
+    {
+      name: "Asia",
+      image:
+        "https://images.unsplash.com/photo-1535139262971-c51845709a48?auto=format&fit=crop&w=900&q=80",
+    },
+    {
+      name: "Africa",
+      image:
+        "https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?auto=format&fit=crop&w=900&q=80",
+    },
+    {
+      name: "Europe",
+      image:
+        "https://images.unsplash.com/photo-1467269204594-9661b134dd2b?auto=format&fit=crop&w=900&q=80",
+    },
+    {
+      name: "North America",
+      image:
+        "https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=900&q=80",
+    },
+    {
+      name: "South America",
+      image:
+        "https://images.unsplash.com/photo-1483729558449-99ef09a8c325?auto=format&fit=crop&w=900&q=80",
+    },
+    {
+      name: "Australia & Oceania",
+      image:
+        "https://images.unsplash.com/photo-1523482580672-f109ba8cb9be?auto=format&fit=crop&w=900&q=80",
+    },
+    {
+      name: "Antarctica",
+      image:
+        "https://images.unsplash.com/photo-1517783999520-f068d7431a60?auto=format&fit=crop&w=900&q=80",
+    },
   ];
 
   const services = [
@@ -63,9 +91,6 @@ function Home() {
     }
   }
 
-  /*
-   * OPEN COUNTRY PAGE
-   */
   if (selectedCountry) {
     return (
       <CountryPage
@@ -81,35 +106,63 @@ function Home() {
     <div className="app">
 
       {/* HEADER */}
+
       <header className="header">
-        <div className="logo">
-          <div className="logo-icon">S</div>
+
+        <a href="#home" className="logo">
+
+          <div className="logo-icon">
+            S
+          </div>
 
           <div className="logo-text">
+
             <div className="logo-name">
-              SANO LINES
+              SANOLINES
             </div>
 
             <div className="logo-tagline">
               Global Information & Services
             </div>
+
           </div>
-        </div>
+
+        </a>
+
 
         <nav className="navigation">
-          <a href="#home">Home</a>
-          <a href="#continents">Countries</a>
-          <a href="#services">Services</a>
-          <a href="#tools">Tools</a>
+
+          <a href="#home">
+            Home
+          </a>
+
+          <a href="#continents">
+            Countries
+          </a>
+
+          <a href="#services">
+            Services
+          </a>
+
+          <a href="#tools">
+            Tools
+          </a>
+
         </nav>
+
       </header>
 
 
-      {/* MAIN */}
+      {/* HERO */}
+
       <main>
 
-        {/* HERO */}
         <section className="hero" id="home">
+
+          <div className="hero-background" />
+
+          <div className="hero-overlay" />
+
           <div className="hero-content">
 
             <div className="hero-label">
@@ -117,41 +170,59 @@ function Home() {
             </div>
 
             <h1>
-              Information & Services,
+              Information for
               <br />
-              Made Simple
+              the World
             </h1>
 
             <p>
-              Find useful information, official services and
-              practical tools from countries around the world.
+              Find countries, official services, useful
+              information and practical tools in one place.
             </p>
+
 
             <form
               className="search-box"
               onSubmit={handleSearch}
             >
+
+              <div className="search-icon">
+                ⌕
+              </div>
+
               <input
                 type="text"
-                placeholder="Search countries, services, jobs, visas..."
+                placeholder="Search a country, service, job, visa..."
                 value={search}
-                onChange={(e) => setSearch(e.target.value)}
+                onChange={(e) =>
+                  setSearch(e.target.value)
+                }
               />
 
               <button type="submit">
                 Search
               </button>
+
             </form>
 
+
+            <div className="hero-note">
+              Explore information from countries around
+              the world
+            </div>
+
           </div>
+
         </section>
 
 
         {/* CONTINENTS */}
+
         <section
-          className="section"
+          className="section continents-section"
           id="continents"
         >
+
           <div className="section-heading">
 
             <div className="section-label">
@@ -159,12 +230,12 @@ function Home() {
             </div>
 
             <h2>
-              Explore by Continent
+              Discover by Continent
             </h2>
 
             <p>
-              Select a continent to discover countries,
-              famous places and useful services.
+              Choose a region and explore countries,
+              services and useful information.
             </p>
 
           </div>
@@ -176,51 +247,74 @@ function Home() {
 
               const count = countries.filter(
                 (item) =>
-                  item.continent === continent
+                  item.continent === continent.name
               ).length;
 
               return (
+
                 <button
                   className={`continent-card ${
-                    selectedContinent === continent
+                    selectedContinent === continent.name
                       ? "active"
                       : ""
                   }`}
-                  key={continent}
+                  key={continent.name}
                   onClick={() =>
-                    setSelectedContinent(continent)
+                    setSelectedContinent(
+                      continent.name
+                    )
                   }
                 >
 
-                  <div className="continent-number">
-                    {String(index + 1).padStart(2, "0")}
+                  <div
+                    className="continent-image"
+                    style={{
+                      backgroundImage:
+                        `url("${continent.image}")`,
+                    }}
+                  >
+
+                    <div className="continent-image-overlay" />
+
+                    <span className="continent-number">
+                      {String(index + 1).padStart(2, "0")}
+                    </span>
+
+                    <span className="continent-arrow">
+                      →
+                    </span>
+
                   </div>
 
-                  <h3>
-                    {continent}
-                  </h3>
 
-                  <p>
-                    {count} countries and regions
-                  </p>
+                  <div className="continent-info">
 
-                  <span className="card-arrow">
-                    →
-                  </span>
+                    <h3>
+                      {continent.name}
+                    </h3>
+
+                    <p>
+                      {count} countries and regions
+                    </p>
+
+                  </div>
 
                 </button>
+
               );
+
             })}
 
           </div>
+
         </section>
 
 
         {/* COUNTRIES */}
+
         {selectedContinent && (
-          <section
-            className="section country-section"
-          >
+
+          <section className="section country-section">
 
             <div className="section-heading">
 
@@ -233,8 +327,8 @@ function Home() {
               </h2>
 
               <p>
-                Explore countries, what they are famous
-                for, and useful services.
+                Select a country to explore its
+                information and services.
               </p>
 
             </div>
@@ -244,20 +338,24 @@ function Home() {
 
               {continentCountries.map((item) => (
 
-                <div
+                <article
                   className="country-card"
                   key={item.country}
                 >
 
                   <div className="country-card-top">
+
                     <span className="country-continent">
                       {item.continent}
                     </span>
+
                   </div>
+
 
                   <h3>
                     {item.country}
                   </h3>
+
 
                   <div className="famous-label">
                     FAMOUS FOR
@@ -267,10 +365,11 @@ function Home() {
                     {item.famousFor}
                   </p>
 
+
                   <div className="country-topics">
 
                     {item.topics
-                      .slice(0, 6)
+                      .slice(0, 5)
                       .map((topic) => (
 
                         <span
@@ -284,27 +383,32 @@ function Home() {
 
                   </div>
 
+
                   <button
                     className="country-button"
-                    onClick={() => {
-                      setSelectedCountry(item);
-                    }}
+                    onClick={() =>
+                      setSelectedCountry(item)
+                    }
                   >
-                    Explore {item.country} →
+                    Explore {item.country}
+                    <span>→</span>
                   </button>
 
-                </div>
+                </article>
 
               ))}
 
             </div>
 
           </section>
+
         )}
 
 
-        {/* SEARCH RESULTS */}
+        {/* SEARCH */}
+
         {search.trim() && (
+
           <section
             className="section search-results-section"
             id="search-results"
@@ -321,7 +425,7 @@ function Home() {
               </h2>
 
               <p>
-                Countries matching "{search}"
+                Results matching "{search}"
               </p>
 
             </div>
@@ -333,15 +437,17 @@ function Home() {
 
                 filteredCountries.map((item) => (
 
-                  <div
+                  <article
                     className="country-card"
                     key={item.country}
                   >
 
                     <div className="country-card-top">
+
                       <span className="country-continent">
                         {item.continent}
                       </span>
+
                     </div>
 
                     <h3>
@@ -363,10 +469,11 @@ function Home() {
                         setSearch("");
                       }}
                     >
-                      Explore {item.country} →
+                      Explore {item.country}
+                      <span>→</span>
                     </button>
 
-                  </div>
+                  </article>
 
                 ))
 
@@ -374,12 +481,16 @@ function Home() {
 
                 <div className="no-results">
 
+                  <div className="no-results-icon">
+                    ?
+                  </div>
+
                   <h3>
                     No country found
                   </h3>
 
                   <p>
-                    Try searching for another country.
+                    Try another country or search term.
                   </p>
 
                 </div>
@@ -389,10 +500,12 @@ function Home() {
             </div>
 
           </section>
+
         )}
 
 
         {/* SERVICES */}
+
         <section
           className="section services-section"
           id="services"
@@ -409,8 +522,8 @@ function Home() {
             </h2>
 
             <p>
-              Practical information organized in one
-              simple global platform.
+              Important everyday information organized
+              in one simple platform.
             </p>
 
           </div>
@@ -418,15 +531,15 @@ function Home() {
 
           <div className="service-grid">
 
-            {services.map((service) => (
+            {services.map((service, index) => (
 
               <div
                 className="service-card"
                 key={service}
               >
 
-                <div className="service-icon">
-                  •
+                <div className="service-number">
+                  {String(index + 1).padStart(2, "0")}
                 </div>
 
                 <div className="service-content">
@@ -436,7 +549,8 @@ function Home() {
                   </h3>
 
                   <p>
-                    Information and useful resources
+                    Find useful information and
+                    relevant resources.
                   </p>
 
                 </div>
@@ -455,29 +569,59 @@ function Home() {
 
 
         {/* TOOLS */}
+
         <section
           className="tools-section"
           id="tools"
         >
 
-          <div className="tools-content">
+          <div className="tools-inner">
 
-            <div className="section-label">
-              PRACTICAL TOOLS
+            <div className="tools-copy">
+
+              <div className="section-label">
+                PRACTICAL TOOLS
+              </div>
+
+              <h2>
+                Useful Calculators
+                <br />
+                & Everyday Tools
+              </h2>
+
+              <p>
+                Simple tools to help you calculate,
+                compare and understand everyday
+                information.
+              </p>
+
+              <button className="tools-button">
+                Explore Tools
+                <span>→</span>
+              </button>
+
             </div>
 
-            <h2>
-              Useful Calculators & Tools
-            </h2>
 
-            <p>
-              Simple tools designed to help you calculate,
-              compare and understand everyday information.
-            </p>
+            <div className="tools-visual">
 
-            <button className="tools-button">
-              Explore Tools →
-            </button>
+              <div className="tool-circle">
+                %
+              </div>
+
+              <div className="tool-card-small tool-one">
+                Salary
+              </div>
+
+              <div className="tool-card-small tool-two">
+                Tax
+              </div>
+
+              <div className="tool-card-small tool-three">
+                Currency
+              </div>
+
+            </div>
 
           </div>
 
@@ -487,6 +631,7 @@ function Home() {
 
 
       {/* FOOTER */}
+
       <footer className="footer">
 
         <div className="footer-inner">
@@ -500,7 +645,7 @@ function Home() {
             <div>
 
               <strong>
-                SANO LINES
+                SANOLINES
               </strong>
 
               <p>
@@ -550,7 +695,7 @@ function Home() {
           </span>
 
           <span>
-            Information made simple.
+            Global information made simple.
           </span>
 
         </div>
