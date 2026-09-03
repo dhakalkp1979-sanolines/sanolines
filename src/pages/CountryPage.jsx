@@ -27,21 +27,32 @@ function CountryPage({
   const countryTopics =
     topics.length > 0 ? topics : defaultTopics;
 
-  const services =
-    countryServices[country] || {};
+  const services = countryServices[country] || {};
+
+  const countryImages = {
+    Portugal:
+      "https://images.unsplash.com/photo-1555881400-74d7acaacd8b?auto=format&fit=crop&w=2200&q=85",
+  };
+
+  const heroImage =
+    countryImages[country] ||
+    "https://images.unsplash.com/photo-1521292270410-a8c4d716d518?auto=format&fit=crop&w=2200&q=85";
 
   return (
     <div className="country-page">
 
       {/* HEADER */}
+
       <header className="country-header">
 
         <div className="country-logo">
+
           <div className="country-logo-icon">
             S
           </div>
 
           <div>
+
             <div className="country-logo-name">
               SANOLINES
             </div>
@@ -49,7 +60,9 @@ function CountryPage({
             <div className="country-logo-tagline">
               Global Information
             </div>
+
           </div>
+
         </div>
 
         <a href="./" className="country-back">
@@ -59,8 +72,22 @@ function CountryPage({
       </header>
 
 
-      {/* HERO */}
-      <section className="country-hero">
+      {/* COUNTRY HERO */}
+
+      <section
+        className="country-hero"
+        style={{
+          backgroundImage: `
+            linear-gradient(
+              90deg,
+              rgba(10, 22, 38, 0.88),
+              rgba(10, 22, 38, 0.58),
+              rgba(10, 22, 38, 0.35)
+            ),
+            url("${heroImage}")
+          `,
+        }}
+      >
 
         <div className="country-hero-overlay">
 
@@ -73,7 +100,9 @@ function CountryPage({
           </h1>
 
           {famousFor && (
-            <p>{famousFor}</p>
+            <p>
+              {famousFor}
+            </p>
           )}
 
         </div>
@@ -82,6 +111,7 @@ function CountryPage({
 
 
       {/* MAIN */}
+
       <main className="country-main">
 
         <div className="country-intro">
@@ -104,6 +134,7 @@ function CountryPage({
 
 
         {/* TOPICS */}
+
         <div className="country-topic-grid">
 
           {countryTopics.map((topic, index) => {
@@ -136,7 +167,6 @@ function CountryPage({
                   {service?.description ||
                     "Information, useful guidance and relevant resources."}
                 </p>
-
 
                 {service?.links?.length > 0 && (
 
@@ -177,6 +207,7 @@ function CountryPage({
 
 
         {/* OFFICIAL INFORMATION */}
+
         <section className="official-box">
 
           <div className="official-badge">
@@ -206,6 +237,7 @@ function CountryPage({
 
 
       {/* FOOTER */}
+
       <footer className="country-footer">
 
         <div className="footer-logo">
