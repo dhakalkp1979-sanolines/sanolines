@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import "./Home.css";
 import countries from "./data/countries";
+import CountryPage from "./pages/CountryPage";
 
 function Home() {
   const [search, setSearch] = useState("");
   const [selectedContinent, setSelectedContinent] = useState(null);
+  const [selectedCountry, setSelectedCountry] = useState(null);
 
   const continents = [
     "Asia",
@@ -59,6 +61,20 @@ function Home() {
         behavior: "smooth",
       });
     }
+  }
+
+  /*
+   * OPEN COUNTRY PAGE
+   */
+  if (selectedCountry) {
+    return (
+      <CountryPage
+        country={selectedCountry.country}
+        continent={selectedCountry.continent}
+        famousFor={selectedCountry.famousFor}
+        topics={selectedCountry.topics}
+      />
+    );
   }
 
   return (
@@ -271,9 +287,7 @@ function Home() {
                   <button
                     className="country-button"
                     onClick={() => {
-                      setSelectedContinent(
-                        item.continent
-                      );
+                      setSelectedCountry(item);
                     }}
                   >
                     Explore {item.country} →
@@ -345,19 +359,8 @@ function Home() {
                     <button
                       className="country-button"
                       onClick={() => {
-                        setSelectedContinent(
-                          item.continent
-                        );
-
+                        setSelectedCountry(item);
                         setSearch("");
-
-                        setTimeout(() => {
-                          document
-                            .getElementById("continents")
-                            ?.scrollIntoView({
-                              behavior: "smooth",
-                            });
-                        }, 100);
                       }}
                     >
                       Explore {item.country} →
