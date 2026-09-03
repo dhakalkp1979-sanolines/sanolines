@@ -527,6 +527,10 @@ function Home() {
               Tools
             </a>
 
+            <a href="./disclaimer.html">
+              Disclaimer
+            </a>
+
           </div>
 
         </div>
