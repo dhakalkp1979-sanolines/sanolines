@@ -64,13 +64,10 @@ function Home() {
   return (
     <div className="app">
 
-      {/* Header */}
+      {/* HEADER */}
       <header className="header">
         <div className="logo">
-
-          <div className="logo-icon">
-            S
-          </div>
+          <div className="logo-icon">S</div>
 
           <div className="logo-text">
             <div className="logo-name">
@@ -81,7 +78,6 @@ function Home() {
               Global Information & Services
             </div>
           </div>
-
         </div>
 
         <nav className="navigation">
@@ -93,11 +89,11 @@ function Home() {
       </header>
 
 
-      {/* Hero */}
+      {/* MAIN */}
       <main>
 
+        {/* HERO */}
         <section className="hero" id="home">
-
           <div className="hero-content">
 
             <div className="hero-label">
@@ -119,7 +115,6 @@ function Home() {
               className="search-box"
               onSubmit={handleSearch}
             >
-
               <input
                 type="text"
                 placeholder="Search countries, services, jobs, visas..."
@@ -130,20 +125,17 @@ function Home() {
               <button type="submit">
                 Search
               </button>
-
             </form>
 
           </div>
-
         </section>
 
 
-        {/* Continents */}
+        {/* CONTINENTS */}
         <section
           className="section"
           id="continents"
         >
-
           <div className="section-heading">
 
             <div className="section-label">
@@ -167,11 +159,11 @@ function Home() {
             {continents.map((continent, index) => {
 
               const count = countries.filter(
-                (item) => item.continent === continent
+                (item) =>
+                  item.continent === continent
               ).length;
 
               return (
-
                 <button
                   className={`continent-card ${
                     selectedContinent === continent
@@ -201,20 +193,18 @@ function Home() {
                   </span>
 
                 </button>
-
               );
-
             })}
 
           </div>
-
         </section>
 
 
-        {/* Countries */}
+        {/* COUNTRIES */}
         {selectedContinent && (
-
-          <section className="section country-section">
+          <section
+            className="section country-section"
+          >
 
             <div className="section-heading">
 
@@ -227,8 +217,8 @@ function Home() {
               </h2>
 
               <p>
-                Explore countries, what they are famous for,
-                and the services available.
+                Explore countries, what they are famous
+                for, and useful services.
               </p>
 
             </div>
@@ -244,11 +234,9 @@ function Home() {
                 >
 
                   <div className="country-card-top">
-
                     <span className="country-continent">
                       {item.continent}
                     </span>
-
                   </div>
 
                   <h3>
@@ -265,8 +253,9 @@ function Home() {
 
                   <div className="country-topics">
 
-                    {item.topics.slice(0, 6).map(
-                      (topic) => (
+                    {item.topics
+                      .slice(0, 6)
+                      .map((topic) => (
 
                         <span
                           className="topic-tag"
@@ -275,12 +264,18 @@ function Home() {
                           {topic}
                         </span>
 
-                      )
-                    )}
+                      ))}
 
                   </div>
 
-                  <button className="country-button">
+                  <button
+                    className="country-button"
+                    onClick={() => {
+                      setSelectedContinent(
+                        item.continent
+                      );
+                    }}
+                  >
                     Explore {item.country} →
                   </button>
 
@@ -291,13 +286,11 @@ function Home() {
             </div>
 
           </section>
-
         )}
 
 
-        {/* Search Results */}
+        {/* SEARCH RESULTS */}
         {search.trim() && (
-
           <section
             className="section search-results-section"
             id="search-results"
@@ -332,11 +325,9 @@ function Home() {
                   >
 
                     <div className="country-card-top">
-
                       <span className="country-continent">
                         {item.continent}
                       </span>
-
                     </div>
 
                     <h3>
@@ -359,6 +350,14 @@ function Home() {
                         );
 
                         setSearch("");
+
+                        setTimeout(() => {
+                          document
+                            .getElementById("continents")
+                            ?.scrollIntoView({
+                              behavior: "smooth",
+                            });
+                        }, 100);
                       }}
                     >
                       Explore {item.country} →
@@ -371,6 +370,7 @@ function Home() {
               ) : (
 
                 <div className="no-results">
+
                   <h3>
                     No country found
                   </h3>
@@ -378,6 +378,7 @@ function Home() {
                   <p>
                     Try searching for another country.
                   </p>
+
                 </div>
 
               )}
@@ -385,11 +386,10 @@ function Home() {
             </div>
 
           </section>
-
         )}
 
 
-        {/* Services */}
+        {/* SERVICES */}
         <section
           className="section services-section"
           id="services"
@@ -406,8 +406,8 @@ function Home() {
             </h2>
 
             <p>
-              Practical information organized in one simple
-              global platform.
+              Practical information organized in one
+              simple global platform.
             </p>
 
           </div>
@@ -451,7 +451,7 @@ function Home() {
         </section>
 
 
-        {/* Tools */}
+        {/* TOOLS */}
         <section
           className="tools-section"
           id="tools"
@@ -483,7 +483,7 @@ function Home() {
       </main>
 
 
-      {/* Footer */}
+      {/* FOOTER */}
       <footer className="footer">
 
         <div className="footer-inner">
