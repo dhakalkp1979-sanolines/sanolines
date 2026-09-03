@@ -531,6 +531,10 @@ function Home() {
               Disclaimer
             </a>
 
+            <a href="./privacy.html">
+              Privacy Policy
+            </a>
+
           </div>
 
         </div>
