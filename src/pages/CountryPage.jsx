@@ -34,9 +34,15 @@ function CountryPage({
       "https://images.unsplash.com/photo-1555881400-74d7acaacd8b?auto=format&fit=crop&w=2200&q=85",
   };
 
+  const countryFlags = {
+    Portugal: "🇵🇹",
+  };
+
   const heroImage =
     countryImages[country] ||
     "https://images.unsplash.com/photo-1521292270410-a8c4d716d518?auto=format&fit=crop&w=2200&q=85";
+
+  const flag = countryFlags[country] || "🌍";
 
   return (
     <div className="country-page">
@@ -52,7 +58,6 @@ function CountryPage({
           </div>
 
           <div>
-
             <div className="country-logo-name">
               SANOLINES
             </div>
@@ -60,7 +65,6 @@ function CountryPage({
             <div className="country-logo-tagline">
               Global Information
             </div>
-
           </div>
 
         </div>
@@ -95,15 +99,92 @@ function CountryPage({
             {continent || "GLOBAL"}
           </div>
 
-          <h1>
-            {country || "Country"}
-          </h1>
+          <div className="country-identity">
+
+            <div className="country-flag">
+              {flag}
+            </div>
+
+            <div>
+              <h1>
+                {country || "Country"}
+              </h1>
+
+              <div className="country-region">
+                {continent || "Global"}
+              </div>
+            </div>
+
+          </div>
 
           {famousFor && (
             <p>
               {famousFor}
             </p>
           )}
+
+        </div>
+
+      </section>
+
+
+      {/* COUNTRY QUICK BAR */}
+
+      <section className="country-quick-bar">
+
+        <div className="quick-item">
+
+          <span className="quick-icon">
+            🌍
+          </span>
+
+          <div>
+            <strong>
+              Continent
+            </strong>
+
+            <span>
+              {continent || "Global"}
+            </span>
+          </div>
+
+        </div>
+
+
+        <div className="quick-item">
+
+          <span className="quick-icon">
+            🏛️
+          </span>
+
+          <div>
+            <strong>
+              Country
+            </strong>
+
+            <span>
+              {country || "Country"}
+            </span>
+          </div>
+
+        </div>
+
+
+        <div className="quick-item">
+
+          <span className="quick-icon">
+            🔗
+          </span>
+
+          <div>
+            <strong>
+              Official Sources
+            </strong>
+
+            <span>
+              Direct links
+            </span>
+          </div>
 
         </div>
 
@@ -117,7 +198,7 @@ function CountryPage({
         <div className="country-intro">
 
           <div className="country-label">
-            EXPLORE
+            EXPLORE {country?.toUpperCase()}
           </div>
 
           <h2>
@@ -126,8 +207,8 @@ function CountryPage({
 
           <p>
             Find useful information and connect
-            directly to relevant official websites
-            and trusted services.
+            directly to relevant official websites,
+            public services and trusted organisations.
           </p>
 
         </div>
