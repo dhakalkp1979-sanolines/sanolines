@@ -79,7 +79,7 @@ const europeCountryServices = {
     calculators: { name: "Sanolines Calculators & Tools", url: "/", description: "Useful calculators and tools." },
   },
 
-  BosniaAndHerzegovina: {
+ "Bosnia and Herzegovina": {
     government: { name: "Government of Bosnia and Herzegovina", url: "https://www.gov.ba/", description: "Official government information." },
     immigration: { name: "Foreigners Affairs Service", url: "https://sps.gov.ba/", description: "Immigration and residence information." },
     jobs: { name: "Employment Services", url: "https://www.arz.gov.ba/", description: "Employment information." },
