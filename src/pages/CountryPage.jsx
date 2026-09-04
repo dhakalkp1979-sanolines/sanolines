@@ -1,4 +1,3 @@
-```jsx
 import React, { useState } from "react";
 import countryServices from "../data/countryServices";
 import serviceKeyMap from "../data/serviceContent";
@@ -36,8 +35,6 @@ function CountryPage({
 
   const services = countryServices[country] || {};
 
-  /* IMMIGRATION PAGE */
-
   if (showImmigration) {
     return (
       <ImmigrationPage
@@ -47,8 +44,6 @@ function CountryPage({
       />
     );
   }
-
-  /* SERVICE PAGE */
 
   if (selectedService) {
     const serviceKey = serviceKeyMap[selectedService];
@@ -73,15 +68,9 @@ function CountryPage({
     );
   }
 
-  /* COUNTRY PAGE */
-
   return (
     <div className="country-page">
-
-      {/* HEADER */}
-
       <header className="country-header">
-
         <a href="./" className="country-home">
           ← Home
         </a>
@@ -89,15 +78,10 @@ function CountryPage({
         <div className="country-header-title">
           SANOLINES
         </div>
-
       </header>
 
-      {/* HERO */}
-
       <section className="country-hero">
-
         <div className="country-hero-content">
-
           <div className="country-continent">
             {continent || "GLOBAL"}
           </div>
@@ -106,45 +90,30 @@ function CountryPage({
             🌍
           </div>
 
-          <h1>
-            {country}
-          </h1>
+          <h1>{country}</h1>
 
           {famousFor && (
-            <p>
-              {famousFor}
-            </p>
+            <p>{famousFor}</p>
           )}
-
         </div>
-
       </section>
 
-      {/* SERVICES */}
-
       <main className="country-main">
-
         <div className="country-section-heading">
-
           <div className="country-section-label">
             INFORMATION & SERVICES
           </div>
 
-          <h2>
-            Explore {country}
-          </h2>
+          <h2>Explore {country}</h2>
 
           <p>
             Select a service to find useful information
             and trusted resources for {country}.
           </p>
-
         </div>
 
         <div className="country-services-grid">
-
           {serviceTopics.map((topic, index) => {
-
             const serviceKey = serviceKeyMap[topic];
             const service = services[serviceKey];
 
@@ -154,36 +123,25 @@ function CountryPage({
                 type="button"
                 className="country-service-card"
                 onClick={() => {
-
-                  /* IMMIGRATION */
-
                   if (topic === "Immigration & Visa") {
                     setShowImmigration(true);
                     return;
                   }
-
-                  /* CALCULATORS & TOOLS */
 
                   if (topic === "Calculators & Tools") {
                     window.location.href = "./#tools";
                     return;
                   }
 
-                  /* NORMAL SERVICE */
-
                   setSelectedService(topic);
                 }}
               >
-
                 <div className="country-service-number">
                   {String(index + 1).padStart(2, "0")}
                 </div>
 
                 <div className="country-service-content">
-
-                  <h3>
-                    {topic}
-                  </h3>
+                  <h3>{topic}</h3>
 
                   <p>
                     {service?.description ||
@@ -193,29 +151,19 @@ function CountryPage({
                         country +
                         "."}
                   </p>
-
                 </div>
 
                 <div className="country-service-arrow">
                   →
                 </div>
-
               </button>
             );
-
           })}
-
         </div>
-
       </main>
 
-      {/* FOOTER */}
-
       <footer className="country-footer">
-
-        <strong>
-          SANOLINES
-        </strong>
+        <strong>SANOLINES</strong>
 
         <span>
           Global Information & Services
@@ -224,12 +172,9 @@ function CountryPage({
         <span>
           © 2026 Sanolines
         </span>
-
       </footer>
-
     </div>
   );
 }
 
 export default CountryPage;
-```
