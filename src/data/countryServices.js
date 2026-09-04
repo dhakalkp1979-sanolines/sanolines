@@ -527,6 +527,177 @@ const countryServices = {
       ],
     },
   },
-};
+  Germany: {
+    "Government & Official Services": {
+      description:
+        "Find German public services, government information and official administrative procedures.",
+      links: [
+        {
+          name: "Federal Government",
+          url: "https://www.bundesregierung.de/",
+          official: true,
+        },
+        {
+          name: "Federal Portal",
+          url: "https://verwaltung.bund.de/",
+          official: true,
+        },
+      ],
+    },
+
+    "Immigration & Visa": {
+      description:
+        "Find official information about visas, residence permits and immigration in Germany.",
+      links: [
+        {
+          name: "Make it in Germany",
+          url: "https://www.make-it-in-germany.com/",
+          official: true,
+        },
+        {
+          name: "Federal Foreign Office",
+          url: "https://www.auswaertiges-amt.de/",
+          official: true,
+        },
+      ],
+    },
+
+    "Jobs & Employment": {
+      description:
+        "Find jobs, employment services, training and career support in Germany.",
+      links: [
+        {
+          name: "Federal Employment Agency",
+          url: "https://www.arbeitsagentur.de/",
+          official: true,
+        },
+      ],
+    },
+
+    "Money & Banking": {
+      description:
+        "Find official information about banking, financial services and money in Germany.",
+      links: [
+        {
+          name: "Deutsche Bundesbank",
+          url: "https://www.bundesbank.de/",
+          official: true,
+        },
+      ],
+    },
+
+    "Taxes": {
+      description:
+        "Find official information about German taxes and tax procedures.",
+      links: [
+        {
+          name: "German Tax Portal",
+          url: "https://www.elster.de/",
+          official: true,
+        },
+      ],
+    },
+
+    "Healthcare": {
+      description:
+        "Find information about healthcare and public health services in Germany.",
+      links: [
+        {
+          name: "Federal Ministry of Health",
+          url: "https://www.bundesgesundheitsministerium.de/",
+          official: true,
+        },
+      ],
+    },
+
+    "Education": {
+      description:
+        "Find official information about education, schools and higher education in Germany.",
+      links: [
+        {
+          name: "Federal Ministry of Education",
+          url: "https://www.bmbf.de/",
+          official: true,
+        },
+      ],
+    },
+
+    "Transport & Driving": {
+      description:
+        "Find information about driving licences, vehicles and transport services in Germany.",
+      links: [
+        {
+          name: "Federal Ministry for Digital and Transport",
+          url: "https://bmdv.bund.de/",
+          official: true,
+        },
+      ],
+    },
+
+    "Emergency Services": {
+      description:
+        "Important emergency numbers and official emergency information in Germany.",
+      links: [
+        {
+          name: "112 — Emergency Number",
+          url: "https://www.bundesregierung.de/breg-en/service/fragen-und-anworten/what-is-the-emergency-number-in-germany-1502010",
+          official: true,
+        },
+      ],
+    },
+
+    "Travel": {
+      description:
+        "Useful official information for travelling to and within Germany.",
+      links: [
+        {
+          name: "Germany Travel",
+          url: "https://www.germany.travel/",
+          official: true,
+        },
+        {
+          name: "Federal Foreign Office",
+          url: "https://www.auswaertiges-amt.de/",
+          official: true,
+        },
+      ],
+    },
+
+    "Housing": {
+      description:
+        "Find official information about housing, renting and housing support in Germany.",
+      links: [
+        {
+          name: "Federal Ministry for Housing",
+          url: "https://www.bmwsb.bund.de/",
+          official: true,
+        },
+      ],
+    },
+
+    "Useful Contacts": {
+      description:
+        "Find official contacts and public-service assistance in Germany.",
+      links: [
+        {
+          name: "Federal Portal",
+          url: "https://verwaltung.bund.de/",
+          official: true,
+        },
+      ],
+    },
+
+    "Calculators & Tools": {
+      description:
+        "Useful Sanolines calculators and tools for everyday information.",
+      links: [
+        {
+          name: "Sanolines Calculators",
+          url: "./",
+          official: false,
+        },
+      ],
+    },
+  },
 
 export default countryServices;
