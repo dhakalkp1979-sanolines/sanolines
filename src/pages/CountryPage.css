@@ -1,240 +1,468 @@
-import React from "react";
-import "./CountryPage.css";
-import countryServices from "../data/countryServices";
-
-function CountryPage({
-  country,
-  continent,
-  famousFor,
-  topics = [],
-}) {
-  const defaultTopics = [
-    "Government & Official Services",
-    "Immigration & Visa",
-    "Jobs & Employment",
-    "Money & Banking",
-    "Taxes",
-    "Healthcare",
-    "Education",
-    "Transport & Driving",
-    "Emergency Services",
-    "Travel",
-    "Housing",
-    "Useful Contacts",
-    "Calculators & Tools",
-  ];
-
-  const countryTopics =
-    topics.length > 0 ? topics : defaultTopics;
-
-  const services = countryServices[country] || {};
-
-  return (
-    <div className="country-page">
-
-      {/* HEADER */}
-      <header className="country-header">
-
-        <div className="country-logo">
-          <div className="country-logo-icon">
-            S
-          </div>
-
-          <div>
-            <div className="country-logo-name">
-              SANOLINES
-            </div>
-
-            <div className="country-logo-tagline">
-              Global Information
-            </div>
-          </div>
-        </div>
-
-        <a href="./" className="country-back">
-          ← Home
-        </a>
-
-      </header>
-
-
-      {/* HERO */}
-      <section className="country-hero">
-
-        <div className="country-hero-overlay">
-
-          <div className="country-continent">
-            {continent || "GLOBAL"}
-          </div>
-
-          <h1>
-            {country || "Country"}
-          </h1>
-
-          {famousFor && (
-            <p>{famousFor}</p>
-          )}
-
-        </div>
-
-      </section>
-
-
-      {/* MAIN */}
-      <main className="country-main">
-
-        <div className="country-intro">
-
-          <div className="country-label">
-            EXPLORE
-          </div>
-
-          <h2>
-            {country} Information
-          </h2>
-
-          <p>
-            Find useful information and connect
-            directly to relevant official websites
-            and trusted services.
-          </p>
-
-        </div>
-
-
-        {/* TOPICS */}
-        <div className="country-topic-grid">
-
-          {countryTopics.map((topic, index) => {
-
-            const service = services[topic];
-
-            return (
-              <div
-                className="country-topic-card"
-                key={topic}
-              >
-
-                <div className="topic-top">
-
-                  <span className="topic-number">
-                    {String(index + 1).padStart(2, "0")}
-                  </span>
-
-                  <span className="topic-arrow">
-                    →
-                  </span>
-
-                </div>
-
-                <h3>
-                  {topic}
-                </h3>
-
-                <p>
-                  {service?.description ||
-                    "Information, useful guidance and relevant resources."}
-                </p>
-
-
-                {service?.links?.length > 0 && (
-
-                  <div className="service-links">
-
-                    {service.links.map((link) => (
-
-                      <a
-                        key={link.name}
-                        href={link.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="service-link"
-                      >
-
-                        <span>
-                          {link.name}
-                        </span>
-
-                        <span>
-                          →
-                        </span>
-
-                      </a>
-
-                    ))}
-
-                  </div>
-
-                )}
-
-              </div>
-            );
-
-          })}
-
-        </div>
-
-
-        {/* OFFICIAL INFORMATION */}
-        <section className="official-box">
-
-          <div className="official-badge">
-            OFFICIAL SOURCES
-          </div>
-
-          <h2>
-            Information from trusted sources
-          </h2>
-
-          <p>
-            Sanolines helps you find information and
-            connect directly to relevant official
-            government websites, public services and
-            trusted organisations.
-          </p>
-
-          <p>
-            Always check the original official source
-            for current requirements, fees, deadlines
-            and procedures.
-          </p>
-
-        </section>
-
-      </main>
-
-
-      {/* FOOTER */}
-      <footer className="country-footer">
-
-        <div className="footer-logo">
-          SANOLINES
-        </div>
-
-        <div className="footer-links">
-
-          <a href="./">
-            Home
-          </a>
-
-          <a href="./disclaimer.html">
-            Disclaimer
-          </a>
-
-          <a href="./privacy.html">
-            Privacy Policy
-          </a>
-
-        </div>
-
-        <div className="footer-copy">
-          © 2026 Sanolines — Global Information
-        </div>
-
-      </footer>
-
-    </div>
-  );
+.country-page {
+  min-height: 100vh;
+  background: #f5f7fa;
+  color: #172033;
 }
 
-export default CountryPage;
+/* HEADER */
+
+.country-header {
+  height: 76px;
+  padding: 0 6%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #ffffff;
+  border-bottom: 1px solid #e5e9ef;
+  position: sticky;
+  top: 0;
+  z-index: 20;
+}
+
+.country-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.country-logo-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  background: #10243e;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 21px;
+  font-weight: 800;
+}
+
+.country-logo-name {
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+}
+
+.country-logo-tagline {
+  font-size: 11px;
+  color: #718096;
+  margin-top: 2px;
+}
+
+.country-back {
+  color: #172033;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.country-back:hover {
+  text-decoration: underline;
+}
+
+
+/* HERO */
+
+.country-hero {
+  min-height: 470px;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.country-hero-overlay {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 70px 6%;
+  color: #ffffff;
+}
+
+.country-continent {
+  display: inline-block;
+  padding: 7px 14px;
+  border: 1px solid rgba(255,255,255,0.35);
+  border-radius: 30px;
+  background: rgba(255,255,255,0.12);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  margin-bottom: 22px;
+}
+
+.country-identity {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+}
+
+.country-flag {
+  font-size: 72px;
+  line-height: 1;
+  filter: drop-shadow(0 8px 18px rgba(0,0,0,0.25));
+}
+
+.country-hero h1 {
+  margin: 0;
+  font-size: clamp(48px, 7vw, 86px);
+  line-height: 0.95;
+  font-weight: 800;
+  letter-spacing: -3px;
+}
+
+.country-region {
+  margin-top: 12px;
+  font-size: 15px;
+  opacity: 0.85;
+}
+
+.country-hero p {
+  max-width: 650px;
+  margin: 28px 0 0;
+  font-size: 19px;
+  line-height: 1.7;
+  color: rgba(255,255,255,0.9);
+}
+
+
+/* QUICK BAR */
+
+.country-quick-bar {
+  max-width: 1100px;
+  margin: -42px auto 0;
+  position: relative;
+  z-index: 5;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 15px 40px rgba(15, 30, 50, 0.12);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  overflow: hidden;
+}
+
+.quick-item {
+  padding: 24px 28px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  border-right: 1px solid #e8ecf1;
+}
+
+.quick-item:last-child {
+  border-right: none;
+}
+
+.quick-icon {
+  font-size: 27px;
+}
+
+.quick-item strong {
+  display: block;
+  font-size: 13px;
+  margin-bottom: 5px;
+}
+
+.quick-item span:not(.quick-icon) {
+  display: block;
+  color: #718096;
+  font-size: 13px;
+}
+
+
+/* MAIN */
+
+.country-main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 90px 6%;
+}
+
+.country-intro {
+  max-width: 720px;
+  margin-bottom: 45px;
+}
+
+.country-label {
+  color: #55708f;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  margin-bottom: 12px;
+}
+
+.country-intro h2 {
+  margin: 0 0 15px;
+  font-size: 42px;
+  letter-spacing: -1px;
+}
+
+.country-intro p {
+  margin: 0;
+  color: #687589;
+  font-size: 17px;
+  line-height: 1.7;
+}
+
+
+/* TOPIC CARDS */
+
+.country-topic-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.country-topic-card {
+  background: #ffffff;
+  border: 1px solid #e5e9ef;
+  border-radius: 16px;
+  padding: 27px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.country-topic-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 15px 35px rgba(20, 40, 65, 0.1);
+}
+
+.topic-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.topic-number {
+  font-size: 12px;
+  font-weight: 800;
+  color: #8391a5;
+}
+
+.topic-arrow {
+  font-size: 22px;
+  color: #52708f;
+}
+
+.country-topic-card h3 {
+  margin: 25px 0 12px;
+  font-size: 19px;
+}
+
+.country-topic-card > p {
+  margin: 0;
+  color: #718096;
+  font-size: 14px;
+  line-height: 1.65;
+}
+
+
+/* SERVICE LINKS */
+
+.service-links {
+  margin-top: 22px;
+  border-top: 1px solid #edf0f4;
+  padding-top: 10px;
+}
+
+.service-link {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 11px 0;
+  color: #315b80;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 600;
+  border-bottom: 1px solid #f0f2f5;
+}
+
+.service-link:last-child {
+  border-bottom: none;
+}
+
+.service-link:hover {
+  color: #10243e;
+}
+
+
+/* OFFICIAL BOX */
+
+.official-box {
+  margin-top: 70px;
+  padding: 50px;
+  border-radius: 20px;
+  background: #10243e;
+  color: #ffffff;
+}
+
+.official-badge {
+  display: inline-block;
+  padding: 7px 13px;
+  border: 1px solid rgba(255,255,255,0.3);
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+}
+
+.official-box h2 {
+  margin: 20px 0 15px;
+  font-size: 32px;
+}
+
+.official-box p {
+  max-width: 800px;
+  margin: 10px 0;
+  color: rgba(255,255,255,0.78);
+  line-height: 1.7;
+}
+
+
+/* FOOTER */
+
+.country-footer {
+  background: #0b1727;
+  color: #ffffff;
+  padding: 45px 6%;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 30px;
+}
+
+.footer-logo {
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.footer-links {
+  display: flex;
+  gap: 24px;
+}
+
+.footer-links a {
+  color: #c7d1dd;
+  text-decoration: none;
+  font-size: 13px;
+}
+
+.footer-links a:hover {
+  color: #ffffff;
+}
+
+.footer-copy {
+  text-align: right;
+  color: #8290a1;
+  font-size: 12px;
+}
+
+
+/* TABLET */
+
+@media (max-width: 900px) {
+
+  .country-topic-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .country-quick-bar {
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+
+  .country-footer {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-copy {
+    text-align: left;
+  }
+
+}
+
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+  .country-header {
+    height: 68px;
+    padding: 0 5%;
+  }
+
+  .country-logo-name {
+    font-size: 16px;
+  }
+
+  .country-back {
+    font-size: 13px;
+  }
+
+  .country-hero {
+    min-height: 420px;
+  }
+
+  .country-hero-overlay {
+    padding: 55px 7%;
+  }
+
+  .country-identity {
+    gap: 14px;
+  }
+
+  .country-flag {
+    font-size: 48px;
+  }
+
+  .country-hero h1 {
+    font-size: 48px;
+    letter-spacing: -2px;
+  }
+
+  .country-hero p {
+    font-size: 16px;
+  }
+
+  .country-quick-bar {
+    grid-template-columns: 1fr;
+    margin-top: -25px;
+  }
+
+  .quick-item {
+    border-right: none;
+    border-bottom: 1px solid #e8ecf1;
+  }
+
+  .quick-item:last-child {
+    border-bottom: none;
+  }
+
+  .country-main {
+    padding: 65px 5%;
+  }
+
+  .country-intro h2 {
+    font-size: 32px;
+  }
+
+  .country-topic-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .official-box {
+    padding: 32px 25px;
+  }
+
+  .official-box h2 {
+    font-size: 26px;
+  }
+
+  .footer-links {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+}
