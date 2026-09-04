@@ -1,17 +1,18 @@
-const countryServices = {
-  Portugal: {
+  },
+
+  Spain: {
     "Government & Official Services": {
       description:
-        "Find Portuguese public services, documents, applications and official information.",
+        "Find Spanish public services, government information and official procedures.",
       links: [
         {
-          name: "gov.pt — Public Services",
-          url: "https://www.gov.pt/servicos",
+          name: "Administración del Estado",
+          url: "https://administracion.gob.es/",
           official: true,
         },
         {
-          name: "gov.pt — Citizen Services",
-          url: "https://www.gov.pt/loja-cidadao-virtual",
+          name: "La Moncloa — Government of Spain",
+          url: "https://www.lamoncloa.gob.es/",
           official: true,
         },
       ],
@@ -19,21 +20,16 @@ const countryServices = {
 
     "Immigration & Visa": {
       description:
-        "Information about immigration, residence permits, visas and services for foreign citizens.",
+        "Information about visas, residence permits and immigration procedures in Spain.",
       links: [
         {
-          name: "AIMA — Immigration and Asylum",
-          url: "https://aima.gov.pt/",
+          name: "Ministry of Inclusion, Social Security and Migration",
+          url: "https://www.inclusion.gob.es/",
           official: true,
         },
         {
-          name: "AIMA — Residence Permit",
-          url: "https://aima.gov.pt/pt/viver/autorizacao-de-residencia-regime-e-requisitos-gerais-art-o-77-o-n-o-1",
-          official: true,
-        },
-        {
-          name: "gov.pt — Foreigners in Portugal",
-          url: "https://www.gov.pt/estrangeiros-em-portugal",
+          name: "Ministry of Foreign Affairs",
+          url: "https://www.exteriores.gob.es/",
           official: true,
         },
       ],
@@ -41,21 +37,16 @@ const countryServices = {
 
     "Jobs & Employment": {
       description:
-        "Find employment information, job offers, registration and employment support.",
+        "Find employment information, job offers and employment support in Spain.",
       links: [
         {
-          name: "IEFP — Employment and Training",
-          url: "https://www.iefp.pt/",
+          name: "SEPE — Public Employment Service",
+          url: "https://www.sepe.es/",
           official: true,
         },
         {
-          name: "IEFPonline — Job Offers",
-          url: "https://iefponline.iefp.pt/",
-          official: true,
-        },
-        {
-          name: "gov.pt — Work",
-          url: "https://www.gov.pt/trabalho",
+          name: "Empléate — Government Job Portal",
+          url: "https://empleate.gob.es/",
           official: true,
         },
       ],
@@ -63,16 +54,11 @@ const countryServices = {
 
     "Money & Banking": {
       description:
-        "Information about banking, financial services and money-related public information.",
+        "Information about banking and financial services in Spain.",
       links: [
         {
-          name: "Banco de Portugal",
-          url: "https://www.bportugal.pt/",
-          official: true,
-        },
-        {
-          name: "gov.pt — Money and Taxes",
-          url: "https://www.gov.pt/dinheiro-e-impostos",
+          name: "Banco de España",
+          url: "https://www.bde.es/",
           official: true,
         },
       ],
@@ -80,21 +66,11 @@ const countryServices = {
 
     "Taxes": {
       description:
-        "Find information about Portuguese taxes, tax services and official tax procedures.",
+        "Find information about Spanish taxes and official tax procedures.",
       links: [
         {
-          name: "Portal das Finanças",
-          url: "https://www.portaldasfinancas.gov.pt/",
-          official: true,
-        },
-        {
-          name: "Tax Information",
-          url: "https://info.portaldasfinancas.gov.pt/en/tax-information/Pages/default.aspx",
-          official: true,
-        },
-        {
-          name: "gov.pt — Money and Taxes",
-          url: "https://www.gov.pt/dinheiro-e-impostos",
+          name: "Agencia Tributaria",
+          url: "https://sede.agenciatributaria.gob.es/",
           official: true,
         },
       ],
@@ -102,16 +78,11 @@ const countryServices = {
 
     "Healthcare": {
       description:
-        "Find information about healthcare, health services and public health support.",
+        "Find information about healthcare and public health services in Spain.",
       links: [
         {
-          name: "SNS — National Health Service",
-          url: "https://www.sns.gov.pt/",
-          official: true,
-        },
-        {
-          name: "gov.pt — Health",
-          url: "https://www.gov.pt/saude",
+          name: "Ministry of Health",
+          url: "https://www.sanidad.gob.es/",
           official: true,
         },
       ],
@@ -119,16 +90,11 @@ const countryServices = {
 
     "Education": {
       description:
-        "Find information about schools, higher education, training and education services.",
+        "Find information about education and official education services in Spain.",
       links: [
         {
-          name: "gov.pt — Education",
-          url: "https://www.gov.pt/educacao",
-          official: true,
-        },
-        {
-          name: "DGES — Higher Education",
-          url: "https://www.dges.gov.pt/",
+          name: "Ministry of Education",
+          url: "https://www.educacionfpydeportes.gob.es/",
           official: true,
         },
       ],
@@ -136,16 +102,16 @@ const countryServices = {
 
     "Transport & Driving": {
       description:
-        "Information about driving licences, vehicles and transport services in Portugal.",
+        "Information about driving licences, vehicles and transport services in Spain.",
       links: [
         {
-          name: "IMT — Mobility and Transport",
-          url: "https://www.imt-ip.pt/",
+          name: "DGT — Directorate-General for Traffic",
+          url: "https://www.dgt.es/",
           official: true,
         },
         {
-          name: "gov.pt — Transport and Vehicles",
-          url: "https://www.gov.pt/transportes",
+          name: "Ministry of Transport",
+          url: "https://www.transportes.gob.es/",
           official: true,
         },
       ],
@@ -153,16 +119,11 @@ const countryServices = {
 
     "Emergency Services": {
       description:
-        "Important emergency information and official emergency contacts in Portugal.",
+        "Important emergency information and official emergency contacts in Spain.",
       links: [
         {
           name: "112 — Emergency Number",
-          url: "https://www.gov.pt/linhas-uteis",
-          official: true,
-        },
-        {
-          name: "ANEPC — Civil Protection",
-          url: "https://prociv.gov.pt/",
+          url: "https://administracion.gob.es/",
           official: true,
         },
       ],
@@ -170,16 +131,16 @@ const countryServices = {
 
     "Travel": {
       description:
-        "Useful official information for travelling to, from and within Portugal.",
+        "Useful official information for travelling to and within Spain.",
       links: [
         {
-          name: "Visit Portugal",
-          url: "https://www.visitportugal.com/",
+          name: "Spain Tourism — Turespaña",
+          url: "https://www.spain.info/",
           official: true,
         },
         {
-          name: "gov.pt — Travel and Living Abroad",
-          url: "https://www.gov.pt/viajar-e-viver-no-estrangeiro",
+          name: "Ministry of Foreign Affairs",
+          url: "https://www.exteriores.gob.es/",
           official: true,
         },
       ],
@@ -187,16 +148,11 @@ const countryServices = {
 
     "Housing": {
       description:
-        "Information about housing, renting, buying and public housing services.",
+        "Information about housing and official housing resources in Spain.",
       links: [
         {
-          name: "Portal da Habitação — IHRU",
-          url: "https://www.portaldahabitacao.pt/",
-          official: true,
-        },
-        {
-          name: "gov.pt — Housing",
-          url: "https://www.gov.pt/casa",
+          name: "Ministry of Housing",
+          url: "https://www.transportes.gob.es/",
           official: true,
         },
       ],
@@ -204,16 +160,11 @@ const countryServices = {
 
     "Useful Contacts": {
       description:
-        "Find official contact information, public-service assistance and useful emergency numbers.",
+        "Find official contact information and public-service assistance in Spain.",
       links: [
         {
-          name: "gov.pt — Contacts and Help",
-          url: "https://www.gov.pt/contactos",
-          official: true,
-        },
-        {
-          name: "gov.pt — Useful Telephone Lines",
-          url: "https://www.gov.pt/linhas-uteis",
+          name: "Spanish Government",
+          url: "https://administracion.gob.es/",
           official: true,
         },
       ],
