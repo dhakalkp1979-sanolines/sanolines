@@ -719,7 +719,7 @@ const europeCountryServices = {
     calculators: { name: "Sanolines Calculators & Tools", url: "/", description: "Useful calculators and tools." },
   },
 
-  UnitedKingdom: {
+ "United Kingdom": {
     government: { name: "GOV.UK", url: "https://www.gov.uk/", description: "Official UK government services and information." },
     immigration: { name: "UK Visas and Immigration", url: "https://www.gov.uk/browse/visas-immigration", description: "Visa, immigration and residence information." },
     jobs: { name: "GOV.UK Jobs", url: "https://www.gov.uk/browse/working", description: "Employment and work information." },
@@ -735,7 +735,7 @@ const europeCountryServices = {
     calculators: { name: "Sanolines Calculators & Tools", url: "/", description: "Useful calculators and tools." },
   },
 
-  VaticanCity: {
+ "Vatican City": {
     government: { name: "Vatican City State", url: "https://www.vaticanstate.va/", description: "Official Vatican City State information." },
     immigration: { name: "Vatican City State", url: "https://www.vaticanstate.va/", description: "Entry and residence information." },
     jobs: { name: "Vatican City State", url: "https://www.vaticanstate.va/", description: "Employment information." },
