@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import countryServices from "../data/countryServices";
+import serviceKeyMap from "../data/serviceContent";
 import ImmigrationPage from "./ImmigrationPage";
 import ServicePage from "./ServicePage";
 import "./CountryPage.css";
@@ -49,7 +50,8 @@ function CountryPage({
   /* SERVICE PAGE */
 
   if (selectedService) {
-    const serviceData = services[selectedService] || {};
+    const serviceKey = serviceKeyMap[selectedService];
+    const serviceData = services[serviceKey] || {};
 
     return (
       <ServicePage
@@ -141,7 +143,8 @@ function CountryPage({
 
           {serviceTopics.map((topic, index) => {
 
-            const service = services[topic];
+            const serviceKey = serviceKeyMap[topic];
+            const service = services[serviceKey];
 
             return (
               <button
