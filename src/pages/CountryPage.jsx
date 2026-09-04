@@ -158,6 +158,11 @@ function CountryPage({
                     return;
                   }
 
+                  if (topic === "Calculators & Tools") {
+                    window.location.href = "/#calculators";
+                    return;
+                  }
+
                   setSelectedService(topic);
 
                 }}
@@ -185,6 +190,7 @@ function CountryPage({
                 </div>
 
               </button>
+
             );
 
           })}
