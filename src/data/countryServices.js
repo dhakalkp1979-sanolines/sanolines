@@ -1,8 +1,8 @@
-import europeServices from "./europeServices";
-import asiaServices from "./asiaServices";
-import africaServices from "./africaServices";
-import northAmericaServices from "./northAmericaServices";
-import southAmericaServices from "./southAmericaServices";
+import europeServices from "./europeServices.js";
+import asiaServices from "./asiaServices.js";
+import africaServices from "./africaServices.js";
+import northAmericaServices from "./northAmericaServices.js";
+import southAmericaServices from "./southAmericaServices.js";
 
 const countryServices = {
   ...europeServices,
