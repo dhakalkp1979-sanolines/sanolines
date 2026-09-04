@@ -575,7 +575,7 @@ const europeCountryServices = {
     calculators: { name: "Sanolines Calculators & Tools", url: "/", description: "Useful calculators and tools." },
   },
 
-  SanMarino: {
+"San Marino": {
     government: { name: "Government of San Marino", url: "https://www.gov.sm/", description: "Official government information." },
     immigration: { name: "Government of San Marino", url: "https://www.gov.sm/", description: "Residence and immigration information." },
     jobs: { name: "Employment Services", url: "https://www.gov.sm/", description: "Employment information." },
