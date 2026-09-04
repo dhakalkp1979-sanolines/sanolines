@@ -212,42 +212,61 @@
 .country-topic-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+  gap: 22px;
 }
 
 .country-topic-card {
   background: #ffffff;
-  border: 1px solid #e5e9ef;
-  border-radius: 16px;
-  padding: 27px;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  border: 1px solid #e4e9ef;
+  border-radius: 18px;
+  padding: 28px;
+  min-height: 270px;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    border-color 0.2s ease;
 }
 
 .country-topic-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 15px 35px rgba(20, 40, 65, 0.1);
+  transform: translateY(-5px);
+  box-shadow: 0 18px 40px rgba(20, 40, 65, 0.11);
+  border-color: #ccd6e1;
 }
 
-.topic-top {
+
+/* CARD HEADER */
+
+.topic-card-header {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
+}
+
+.topic-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 13px;
+  background: #eef3f7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 25px;
 }
 
 .topic-number {
+  color: #9aa7b7;
   font-size: 12px;
   font-weight: 800;
-  color: #8391a5;
+  letter-spacing: 1px;
 }
 
-.topic-arrow {
-  font-size: 22px;
-  color: #52708f;
-}
+
+/* CARD CONTENT */
 
 .country-topic-card h3 {
   margin: 25px 0 12px;
   font-size: 19px;
+  line-height: 1.35;
 }
 
 .country-topic-card > p {
@@ -262,19 +281,17 @@
 
 .service-links {
   margin-top: 22px;
+  padding-top: 12px;
   border-top: 1px solid #edf0f4;
-  padding-top: 10px;
 }
 
 .service-link {
   display: flex;
+  align-items: center;
   justify-content: space-between;
-  gap: 12px;
-  padding: 11px 0;
-  color: #315b80;
+  gap: 15px;
+  padding: 12px 0;
   text-decoration: none;
-  font-size: 13px;
-  font-weight: 600;
   border-bottom: 1px solid #f0f2f5;
 }
 
@@ -282,8 +299,40 @@
   border-bottom: none;
 }
 
-.service-link:hover {
+.service-link-text {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+
+.official-label {
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  color: #66819c;
+}
+
+.service-name {
+  color: #315b80;
+  font-size: 13px;
+  font-weight: 650;
+  line-height: 1.4;
+}
+
+.service-arrow {
+  flex-shrink: 0;
+  color: #52708f;
+  font-size: 20px;
+  transition: transform 0.2s ease;
+}
+
+.service-link:hover .service-name {
   color: #10243e;
+}
+
+.service-link:hover .service-arrow {
+  transform: translateX(4px);
 }
 
 
@@ -450,6 +499,10 @@
 
   .country-topic-grid {
     grid-template-columns: 1fr;
+  }
+
+  .country-topic-card {
+    min-height: auto;
   }
 
   .official-box {
