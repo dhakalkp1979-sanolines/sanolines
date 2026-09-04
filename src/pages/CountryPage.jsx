@@ -1,7 +1,8 @@
 import React, { useState } from "react";
-import "./CountryPage.css";
 import countryServices from "../data/countryServices";
 import ImmigrationPage from "./ImmigrationPage";
+import ServicePage from "./ServicePage";
+import "./CountryPage.css";
 
 function CountryPage({
   country,
@@ -10,6 +11,7 @@ function CountryPage({
   topics = [],
 }) {
   const [showImmigration, setShowImmigration] = useState(false);
+  const [selectedService, setSelectedService] = useState(null);
 
   const defaultTopics = [
     "Government & Official Services",
@@ -27,76 +29,38 @@ function CountryPage({
     "Calculators & Tools",
   ];
 
-  const countryTopics =
+  const serviceTopics =
     topics.length > 0 ? topics : defaultTopics;
 
   const services = countryServices[country] || {};
 
-  const countryImages = {
-    Portugal:
-      "https://images.unsplash.com/photo-1555881400-74d7acaacd8b?auto=format&fit=crop&w=2200&q=85",
-  };
-
-  const countryFlags = {
-    Portugal: "🇵🇹",
-  };
-
-  const topicIcons = {
-    "Government & Official Services": "🏛️",
-    "Immigration & Visa": "🛂",
-    "Jobs & Employment": "💼",
-    "Money & Banking": "💳",
-    Taxes: "🧾",
-    Healthcare: "🏥",
-    Education: "🎓",
-    "Transport & Driving": "🚗",
-    "Emergency Services": "🚨",
-    Travel: "✈️",
-    Housing: "🏠",
-    "Useful Contacts": "📞",
-    "Calculators & Tools": "🧮",
-  };
-
-  const heroImage =
-    countryImages[country] ||
-    "https://images.unsplash.com/photo-1521292270410-a8c4d716d518?auto=format&fit=crop&w=2200&q=85";
-
-  const flag = countryFlags[country] || "🌍";
-
-
-  /* IMMIGRATION PAGE */
-
   if (showImmigration) {
     return (
-      <div>
-
-        <ImmigrationPage
-          country={country}
-        />
-
-        <button
-          onClick={() => setShowImmigration(false)}
-          style={{
-            position: "fixed",
-            bottom: "25px",
-            left: "25px",
-            zIndex: 100,
-            padding: "12px 18px",
-            borderRadius: "8px",
-            border: "none",
-            background: "#10243e",
-            color: "#ffffff",
-            cursor: "pointer",
-            fontWeight: "700",
-          }}
-        >
-          ← Back to {country}
-        </button>
-
-      </div>
+      <ImmigrationPage
+        country={country}
+        continent={continent}
+        onBack={() => setShowImmigration(false)}
+      />
     );
   }
 
+  if (selectedService) {
+    const serviceData = services[selectedService] || {};
+
+    return (
+      <ServicePage
+        country={country}
+        continent={continent}
+        service={selectedService}
+        description={
+          serviceData.description ||
+          `Find useful information, guidance and resources for ${selectedService} in ${country}.`
+        }
+        links={serviceData.links || []}
+        onBack={() => setSelectedService(null)}
+      />
+    );
+  }
 
   return (
     <div className="country-page">
@@ -105,73 +69,34 @@ function CountryPage({
 
       <header className="country-header">
 
-        <div className="country-logo">
-
-          <div className="country-logo-icon">
-            S
-          </div>
-
-          <div>
-            <div className="country-logo-name">
-              SANOLINES
-            </div>
-
-            <div className="country-logo-tagline">
-              Global Information
-            </div>
-          </div>
-
-        </div>
-
-        <a href="./" className="country-back">
+        <a href="./" className="country-home">
           ← Home
         </a>
+
+        <div className="country-header-title">
+          SANOLINES
+        </div>
 
       </header>
 
 
       {/* HERO */}
 
-      <section
-        className="country-hero"
-        style={{
-          backgroundImage: `
-            linear-gradient(
-              90deg,
-              rgba(10, 22, 38, 0.88),
-              rgba(10, 22, 38, 0.58),
-              rgba(10, 22, 38, 0.35)
-            ),
-            url("${heroImage}")
-          `,
-        }}
-      >
+      <section className="country-hero">
 
-        <div className="country-hero-overlay">
+        <div className="country-hero-content">
 
           <div className="country-continent">
             {continent || "GLOBAL"}
           </div>
 
-          <div className="country-identity">
-
-            <div className="country-flag">
-              {flag}
-            </div>
-
-            <div>
-
-              <h1>
-                {country || "Country"}
-              </h1>
-
-              <div className="country-region">
-                {continent || "Global"}
-              </div>
-
-            </div>
-
+          <div className="country-flag">
+            🌍
           </div>
+
+          <h1>
+            {country}
+          </h1>
 
           {famousFor && (
             <p>
@@ -184,254 +109,80 @@ function CountryPage({
       </section>
 
 
-      {/* QUICK BAR */}
-
-      <section className="country-quick-bar">
-
-        <div className="quick-item">
-
-          <span className="quick-icon">
-            🌍
-          </span>
-
-          <div>
-            <strong>Continent</strong>
-
-            <span>
-              {continent || "Global"}
-            </span>
-          </div>
-
-        </div>
-
-
-        <div className="quick-item">
-
-          <span className="quick-icon">
-            🏛️
-          </span>
-
-          <div>
-            <strong>Country</strong>
-
-            <span>
-              {country || "Country"}
-            </span>
-          </div>
-
-        </div>
-
-
-        <div className="quick-item">
-
-          <span className="quick-icon">
-            🔗
-          </span>
-
-          <div>
-            <strong>Official Sources</strong>
-
-            <span>
-              Direct links
-            </span>
-          </div>
-
-        </div>
-
-      </section>
-
-
-      {/* MAIN */}
+      {/* SERVICES */}
 
       <main className="country-main">
 
-        <div className="country-intro">
+        <div className="country-section-heading">
 
-          <div className="country-label">
-            EXPLORE {country?.toUpperCase()}
+          <div className="country-section-label">
+            INFORMATION & SERVICES
           </div>
 
           <h2>
-            {country} Information
+            Explore {country}
           </h2>
 
           <p>
-            Find useful information and connect
-            directly to relevant official websites,
-            public services and trusted organisations.
+            Select a service to find useful information
+            and trusted resources for {country}.
           </p>
 
         </div>
 
 
-        {/* TOPICS */}
+        <div className="country-services-grid">
 
-        <div className="country-topic-grid">
-
-          {countryTopics.map((topic, index) => {
+          {serviceTopics.map((topic) => {
 
             const service = services[topic];
 
-            const icon =
-              topicIcons[topic] || "📌";
-
-            const isImmigration =
-              topic === "Immigration & Visa";
-
             return (
-              <article
-                className="country-topic-card"
+              <button
                 key={topic}
+                type="button"
+                className="country-service-card"
                 onClick={() => {
-                  if (isImmigration) {
+
+                  if (topic === "Immigration & Visa") {
                     setShowImmigration(true);
+                    return;
                   }
-                }}
-                style={{
-                  cursor: isImmigration
-                    ? "pointer"
-                    : "default",
+
+                  setSelectedService(topic);
+
                 }}
               >
 
-                <div className="topic-card-header">
+                <div className="country-service-number">
+                  {String(
+                    serviceTopics.indexOf(topic) + 1
+                  ).padStart(2, "0")}
+                </div>
 
-                  <div className="topic-icon">
-                    {icon}
-                  </div>
+                <div className="country-service-content">
 
-                  <div className="topic-number">
-                    {String(index + 1).padStart(2, "0")}
-                  </div>
+                  <h3>
+                    {topic}
+                  </h3>
+
+                  <p>
+                    {service?.description ||
+                      `Information and useful resources for ${topic} in ${country}.`}
+                  </p>
 
                 </div>
 
+                <div className="country-service-arrow">
+                  →
+                </div>
 
-                <h3>
-                  {topic}
-                </h3>
-
-
-                <p>
-                  {service?.description ||
-                    "Information, useful guidance and relevant resources."}
-                </p>
-
-
-                {isImmigration && (
-
-                  <div
-                    className="service-links"
-                    onClick={(event) => {
-                      event.stopPropagation();
-                    }}
-                  >
-
-                    <div
-                      className="service-link"
-                      style={{
-                        cursor: "pointer",
-                      }}
-                    >
-
-                      <div className="service-link-text">
-
-                        <span className="official-label">
-                          SANOLINES INFORMATION PAGE
-                        </span>
-
-                        <span className="service-name">
-                          Explore Immigration & Visa
-                        </span>
-
-                      </div>
-
-                      <span className="service-arrow">
-                        →
-                      </span>
-
-                    </div>
-
-                  </div>
-
-                )}
-
-
-                {!isImmigration &&
-                  service?.links?.length > 0 && (
-
-                    <div className="service-links">
-
-                      {service.links.map((link) => (
-
-                        <a
-                          key={link.name}
-                          href={link.url}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="service-link"
-                        >
-
-                          <div className="service-link-text">
-
-                            <span className="official-label">
-                              {link.official
-                                ? "OFFICIAL SOURCE"
-                                : "SANOLINES"}
-                            </span>
-
-                            <span className="service-name">
-                              {link.name}
-                            </span>
-
-                          </div>
-
-                          <span className="service-arrow">
-                            →
-                          </span>
-
-                        </a>
-
-                      ))}
-
-                    </div>
-
-                  )}
-
-              </article>
+              </button>
             );
 
           })}
 
         </div>
-
-
-        {/* OFFICIAL INFORMATION */}
-
-        <section className="official-box">
-
-          <div className="official-badge">
-            OFFICIAL SOURCES
-          </div>
-
-          <h2>
-            Information from trusted sources
-          </h2>
-
-          <p>
-            Sanolines helps you find information and
-            connect directly to relevant official
-            government websites, public services and
-            trusted organisations.
-          </p>
-
-          <p>
-            Always check the original official source
-            for current requirements, fees, deadlines
-            and procedures.
-          </p>
-
-        </section>
 
       </main>
 
@@ -440,29 +191,17 @@ function CountryPage({
 
       <footer className="country-footer">
 
-        <div className="footer-logo">
+        <strong>
           SANOLINES
-        </div>
+        </strong>
 
-        <div className="footer-links">
+        <span>
+          Global Information & Services
+        </span>
 
-          <a href="./">
-            Home
-          </a>
-
-          <a href="./disclaimer.html">
-            Disclaimer
-          </a>
-
-          <a href="./privacy.html">
-            Privacy Policy
-          </a>
-
-        </div>
-
-        <div className="footer-copy">
-          © 2026 Sanolines — Global Information
-        </div>
+        <span>
+          © 2026 Sanolines
+        </span>
 
       </footer>
 
