@@ -34,6 +34,8 @@ function CountryPage({
 
   const services = countryServices[country] || {};
 
+  /* IMMIGRATION PAGE */
+
   if (showImmigration) {
     return (
       <ImmigrationPage
@@ -43,6 +45,8 @@ function CountryPage({
       />
     );
   }
+
+  /* SERVICE PAGE */
 
   if (selectedService) {
     const serviceData = services[selectedService] || {};
@@ -61,6 +65,8 @@ function CountryPage({
       />
     );
   }
+
+  /* COUNTRY PAGE */
 
   return (
     <div className="country-page">
@@ -133,7 +139,7 @@ function CountryPage({
 
         <div className="country-services-grid">
 
-          {serviceTopics.map((topic) => {
+          {serviceTopics.map((topic, index) => {
 
             const service = services[topic];
 
@@ -155,9 +161,7 @@ function CountryPage({
               >
 
                 <div className="country-service-number">
-                  {String(
-                    serviceTopics.indexOf(topic) + 1
-                  ).padStart(2, "0")}
+                  {String(index + 1).padStart(2, "0")}
                 </div>
 
                 <div className="country-service-content">
