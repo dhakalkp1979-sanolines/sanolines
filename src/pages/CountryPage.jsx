@@ -61,7 +61,11 @@ function CountryPage({
         service={selectedService}
         description={
           serviceData.description ||
-          `Find useful information, guidance and resources for ${selectedService} in ${country}.`
+          "Find useful information, guidance and resources for " +
+            selectedService +
+            " in " +
+            country +
+            "."
         }
         links={serviceData.links || []}
         onBack={() => setSelectedService(null)}
@@ -87,7 +91,6 @@ function CountryPage({
         </div>
 
       </header>
-
 
       {/* HERO */}
 
@@ -117,7 +120,6 @@ function CountryPage({
 
       </section>
 
-
       {/* SERVICES */}
 
       <main className="country-main">
@@ -138,7 +140,6 @@ function CountryPage({
           </p>
 
         </div>
-
 
         <div className="country-services-grid">
 
@@ -171,7 +172,6 @@ function CountryPage({
                   /* NORMAL SERVICE */
 
                   setSelectedService(topic);
-
                 }}
               >
 
@@ -187,7 +187,11 @@ function CountryPage({
 
                   <p>
                     {service?.description ||
-                      `Information and useful resources for ${topic} in ${country}.`}
+                      "Information and useful resources for " +
+                        topic +
+                        " in " +
+                        country +
+                        "."}
                   </p>
 
                 </div>
@@ -204,7 +208,6 @@ function CountryPage({
         </div>
 
       </main>
-
 
       {/* FOOTER */}
 
