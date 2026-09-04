@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import "./CountryPage.css";
 import countryServices from "../data/countryServices";
+import ImmigrationPage from "./ImmigrationPage";
 
 function CountryPage({
   country,
@@ -8,6 +9,8 @@ function CountryPage({
   famousFor,
   topics = [],
 }) {
+  const [showImmigration, setShowImmigration] = useState(false);
+
   const defaultTopics = [
     "Government & Official Services",
     "Immigration & Visa",
@@ -59,6 +62,41 @@ function CountryPage({
     "https://images.unsplash.com/photo-1521292270410-a8c4d716d518?auto=format&fit=crop&w=2200&q=85";
 
   const flag = countryFlags[country] || "🌍";
+
+
+  /* IMMIGRATION PAGE */
+
+  if (showImmigration) {
+    return (
+      <div>
+
+        <ImmigrationPage
+          country={country}
+        />
+
+        <button
+          onClick={() => setShowImmigration(false)}
+          style={{
+            position: "fixed",
+            bottom: "25px",
+            left: "25px",
+            zIndex: 100,
+            padding: "12px 18px",
+            borderRadius: "8px",
+            border: "none",
+            background: "#10243e",
+            color: "#ffffff",
+            cursor: "pointer",
+            fontWeight: "700",
+          }}
+        >
+          ← Back to {country}
+        </button>
+
+      </div>
+    );
+  }
+
 
   return (
     <div className="country-page">
@@ -158,6 +196,7 @@ function CountryPage({
 
           <div>
             <strong>Continent</strong>
+
             <span>
               {continent || "Global"}
             </span>
@@ -174,6 +213,7 @@ function CountryPage({
 
           <div>
             <strong>Country</strong>
+
             <span>
               {country || "Country"}
             </span>
@@ -190,6 +230,7 @@ function CountryPage({
 
           <div>
             <strong>Official Sources</strong>
+
             <span>
               Direct links
             </span>
@@ -234,10 +275,23 @@ function CountryPage({
             const icon =
               topicIcons[topic] || "📌";
 
+            const isImmigration =
+              topic === "Immigration & Visa";
+
             return (
               <article
                 className="country-topic-card"
                 key={topic}
+                onClick={() => {
+                  if (isImmigration) {
+                    setShowImmigration(true);
+                  }
+                }}
+                style={{
+                  cursor: isImmigration
+                    ? "pointer"
+                    : "default",
+                }}
               >
 
                 <div className="topic-card-header">
@@ -264,45 +318,85 @@ function CountryPage({
                 </p>
 
 
-                {service?.links?.length > 0 && (
+                {isImmigration && (
 
-                  <div className="service-links">
+                  <div
+                    className="service-links"
+                    onClick={(event) => {
+                      event.stopPropagation();
+                    }}
+                  >
 
-                    {service.links.map((link) => (
+                    <div
+                      className="service-link"
+                      style={{
+                        cursor: "pointer",
+                      }}
+                    >
 
-                      <a
-                        key={link.name}
-                        href={link.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="service-link"
-                      >
+                      <div className="service-link-text">
 
-                        <div className="service-link-text">
-
-                          <span className="official-label">
-                            {link.official
-                              ? "OFFICIAL SOURCE"
-                              : "SANOLINES"}
-                          </span>
-
-                          <span className="service-name">
-                            {link.name}
-                          </span>
-
-                        </div>
-
-                        <span className="service-arrow">
-                          →
+                        <span className="official-label">
+                          SANOLINES INFORMATION PAGE
                         </span>
 
-                      </a>
+                        <span className="service-name">
+                          Explore Immigration & Visa
+                        </span>
 
-                    ))}
+                      </div>
+
+                      <span className="service-arrow">
+                        →
+                      </span>
+
+                    </div>
 
                   </div>
 
                 )}
+
+
+                {!isImmigration &&
+                  service?.links?.length > 0 && (
+
+                    <div className="service-links">
+
+                      {service.links.map((link) => (
+
+                        <a
+                          key={link.name}
+                          href={link.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="service-link"
+                        >
+
+                          <div className="service-link-text">
+
+                            <span className="official-label">
+                              {link.official
+                                ? "OFFICIAL SOURCE"
+                                : "SANOLINES"}
+                            </span>
+
+                            <span className="service-name">
+                              {link.name}
+                            </span>
+
+                          </div>
+
+                          <span className="service-arrow">
+                            →
+                          </span>
+
+                        </a>
+
+                      ))}
+
+                    </div>
+
+                  )}
 
               </article>
             );
