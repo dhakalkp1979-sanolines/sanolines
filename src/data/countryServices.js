@@ -5,8 +5,13 @@ const countryServices = {
         "Find Portuguese public services, documents, applications and official information.",
       links: [
         {
-          name: "gov.pt — Official Public Services",
-          url: "https://www.gov.pt/",
+          name: "gov.pt — Public Services",
+          url: "https://www.gov.pt/servicos",
+          official: true,
+        },
+        {
+          name: "gov.pt — Citizen Services",
+          url: "https://www.gov.pt/loja-cidadao-virtual",
           official: true,
         },
       ],
@@ -14,7 +19,7 @@ const countryServices = {
 
     "Immigration & Visa": {
       description:
-        "Information about immigration, residence, visas and services for foreign citizens.",
+        "Information about immigration, residence permits, visas and services for foreign citizens.",
       links: [
         {
           name: "AIMA — Immigration and Asylum",
@@ -22,8 +27,13 @@ const countryServices = {
           official: true,
         },
         {
+          name: "AIMA — Residence Permit",
+          url: "https://aima.gov.pt/pt/viver/autorizacao-de-residencia-regime-e-requisitos-gerais-art-o-77-o-n-o-1",
+          official: true,
+        },
+        {
           name: "gov.pt — Foreigners in Portugal",
-          url: "https://www.gov.pt/",
+          url: "https://www.gov.pt/estrangeiros-em-portugal",
           official: true,
         },
       ],
@@ -43,6 +53,11 @@ const countryServices = {
           url: "https://iefponline.iefp.pt/",
           official: true,
         },
+        {
+          name: "gov.pt — Work",
+          url: "https://www.gov.pt/trabalho",
+          official: true,
+        },
       ],
     },
 
@@ -57,7 +72,7 @@ const countryServices = {
         },
         {
           name: "gov.pt — Money and Taxes",
-          url: "https://www.gov.pt/",
+          url: "https://www.gov.pt/dinheiro-e-impostos",
           official: true,
         },
       ],
@@ -73,8 +88,13 @@ const countryServices = {
           official: true,
         },
         {
+          name: "Tax Information",
+          url: "https://info.portaldasfinancas.gov.pt/en/tax-information/Pages/default.aspx",
+          official: true,
+        },
+        {
           name: "gov.pt — Money and Taxes",
-          url: "https://www.gov.pt/",
+          url: "https://www.gov.pt/dinheiro-e-impostos",
           official: true,
         },
       ],
@@ -85,13 +105,13 @@ const countryServices = {
         "Find information about healthcare, health services and public health support.",
       links: [
         {
-          name: "SNS — Serviço Nacional de Saúde",
+          name: "SNS — National Health Service",
           url: "https://www.sns.gov.pt/",
           official: true,
         },
         {
           name: "gov.pt — Health",
-          url: "https://www.gov.pt/",
+          url: "https://www.gov.pt/saude",
           official: true,
         },
       ],
@@ -103,7 +123,7 @@ const countryServices = {
       links: [
         {
           name: "gov.pt — Education",
-          url: "https://www.gov.pt/",
+          url: "https://www.gov.pt/educacao",
           official: true,
         },
         {
@@ -125,7 +145,7 @@ const countryServices = {
         },
         {
           name: "gov.pt — Transport and Vehicles",
-          url: "https://www.gov.pt/",
+          url: "https://www.gov.pt/transportes",
           official: true,
         },
       ],
@@ -136,8 +156,8 @@ const countryServices = {
         "Important emergency information and official emergency contacts in Portugal.",
       links: [
         {
-          name: "112 — European Emergency Number",
-          url: "https://www.gov.pt/",
+          name: "112 — Emergency Number",
+          url: "https://www.gov.pt/linhas-uteis",
           official: true,
         },
         {
@@ -158,8 +178,8 @@ const countryServices = {
           official: true,
         },
         {
-          name: "gov.pt — Travel",
-          url: "https://www.gov.pt/",
+          name: "gov.pt — Travel and Living Abroad",
+          url: "https://www.gov.pt/viajar-e-viver-no-estrangeiro",
           official: true,
         },
       ],
@@ -170,13 +190,13 @@ const countryServices = {
         "Information about housing, renting, buying and public housing services.",
       links: [
         {
-          name: "gov.pt — Housing",
-          url: "https://www.gov.pt/",
+          name: "Portal da Habitação — IHRU",
+          url: "https://www.portaldahabitacao.pt/",
           official: true,
         },
         {
-          name: "IHRU — Housing and Urban Rehabilitation",
-          url: "https://www.portaldahabitacao.pt/",
+          name: "gov.pt — Housing",
+          url: "https://www.gov.pt/casa",
           official: true,
         },
       ],
@@ -184,11 +204,16 @@ const countryServices = {
 
     "Useful Contacts": {
       description:
-        "Find official contact information and public-service assistance.",
+        "Find official contact information, public-service assistance and useful emergency numbers.",
       links: [
         {
           name: "gov.pt — Contacts and Help",
           url: "https://www.gov.pt/contactos",
+          official: true,
+        },
+        {
+          name: "gov.pt — Useful Telephone Lines",
+          url: "https://www.gov.pt/linhas-uteis",
           official: true,
         },
       ],
