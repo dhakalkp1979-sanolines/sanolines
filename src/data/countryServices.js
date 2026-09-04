@@ -334,6 +334,199 @@ const countryServices = {
       ],
     },
   },
+
+  France: {
+    "Government & Official Services": {
+      description:
+        "Find French public services, government information and official administrative procedures.",
+      links: [
+        {
+          name: "Service-Public.fr",
+          url: "https://www.service-public.fr/",
+          official: true,
+        },
+        {
+          name: "French Government",
+          url: "https://www.gouvernement.fr/",
+          official: true,
+        },
+      ],
+    },
+
+    "Immigration & Visa": {
+      description:
+        "Find official information about visas, residence permits, immigration and foreign nationals in France.",
+      links: [
+        {
+          name: "France-Visas",
+          url: "https://www.france-visas.gouv.fr/",
+          official: true,
+        },
+        {
+          name: "French Immigration — DGEF",
+          url: "https://www.immigration.interieur.gouv.fr/",
+          official: true,
+        },
+      ],
+    },
+
+    "Jobs & Employment": {
+      description:
+        "Find jobs, employment services and professional support in France.",
+      links: [
+        {
+          name: "France Travail",
+          url: "https://www.francetravail.fr/",
+          official: true,
+        },
+      ],
+    },
+
+    "Money & Banking": {
+      description:
+        "Find official information about banking, money and financial services in France.",
+      links: [
+        {
+          name: "Banque de France",
+          url: "https://www.banque-france.fr/",
+          official: true,
+        },
+      ],
+    },
+
+    "Taxes": {
+      description:
+        "Find official information about French taxes and tax procedures.",
+      links: [
+        {
+          name: "Impots.gouv.fr",
+          url: "https://www.impots.gouv.fr/",
+          official: true,
+        },
+      ],
+    },
+
+    "Healthcare": {
+      description:
+        "Find information about healthcare, health insurance and public health services in France.",
+      links: [
+        {
+          name: "Assurance Maladie",
+          url: "https://www.ameli.fr/",
+          official: true,
+        },
+        {
+          name: "Ministry of Health",
+          url: "https://sante.gouv.fr/",
+          official: true,
+        },
+      ],
+    },
+
+    "Education": {
+      description:
+        "Find official information about schools, education and higher education in France.",
+      links: [
+        {
+          name: "Ministry of Education",
+          url: "https://www.education.gouv.fr/",
+          official: true,
+        },
+      ],
+    },
+
+    "Transport & Driving": {
+      description:
+        "Find information about driving licences, road transport and transport services in France.",
+      links: [
+        {
+          name: "Service-Public — Driving",
+          url: "https://www.service-public.fr/particuliers/vosdroits/N530",
+          official: true,
+        },
+        {
+          name: "French Transport Ministry",
+          url: "https://www.ecologie.gouv.fr/",
+          official: true,
+        },
+      ],
+    },
+
+    "Emergency Services": {
+      description:
+        "Important emergency numbers and official emergency information in France.",
+      links: [
+        {
+          name: "Emergency Numbers — Service-Public",
+          url: "https://www.service-public.fr/particuliers/vosdroits/F33954",
+          official: true,
+        },
+      ],
+    },
+
+    "Travel": {
+      description:
+        "Useful official information for travelling to and within France.",
+      links: [
+        {
+          name: "France Tourism",
+          url: "https://www.france.fr/",
+          official: true,
+        },
+        {
+          name: "France Diplomatie",
+          url: "https://www.diplomatie.gouv.fr/",
+          official: true,
+        },
+      ],
+    },
+
+    "Housing": {
+      description:
+        "Find official information about housing, renting and housing assistance in France.",
+      links: [
+        {
+          name: "Service-Public — Housing",
+          url: "https://www.service-public.fr/particuliers/vosdroits/N19808",
+          official: true,
+        },
+        {
+          name: "ANIL — Housing Information",
+          url: "https://www.anil.org/",
+          official: true,
+        },
+      ],
+    },
+
+    "Useful Contacts": {
+      description:
+        "Find official contacts and administrative assistance in France.",
+      links: [
+        {
+          name: "Service-Public",
+          url: "https://www.service-public.fr/",
+          official: true,
+        },
+        {
+          name: "France Services",
+          url: "https://www.france-services.gouv.fr/",
+          official: true,
+        },
+      ],
+    },
+
+    "Calculators & Tools": {
+      description:
+        "Useful Sanolines calculators and tools for everyday information.",
+      links: [
+        {
+          name: "Sanolines Calculators",
+          url: "./",
+          official: false,
+        },
+      ],
+    },
+  },
 };
 
 export default countryServices;
