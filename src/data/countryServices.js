@@ -10,7 +10,7 @@ Spain: {
         official: true,
       },
       {
-        name: "Spain Government",
+        name: "Spain Government — La Moncloa",
         url: "https://www.lamoncloa.gob.es/",
         official: true,
       },
@@ -23,12 +23,12 @@ Spain: {
 
     links: [
       {
-        name: "Spanish Ministry of Inclusion, Social Security and Migration",
+        name: "Ministry of Inclusion, Social Security and Migration",
         url: "https://www.inclusion.gob.es/",
         official: true,
       },
       {
-        name: "Spanish Ministry of Foreign Affairs",
+        name: "Ministry of Foreign Affairs",
         url: "https://www.exteriores.gob.es/",
         official: true,
       },
@@ -130,7 +130,7 @@ Spain: {
     links: [
       {
         name: "112 — European Emergency Number",
-        url: "https://administracion.gob.es/",
+        url: "https://administracion.gob.es/pag_Home/en/Tu-espacio-europeo/derechos-obligaciones/ciudadanos/asistencia-sanitaria/numeros-urgencia",
         official: true,
       },
     ],
@@ -160,8 +160,8 @@ Spain: {
 
     links: [
       {
-        name: "Ministry of Housing",
-        url: "https://www.transportes.gob.es/",
+        name: "Ministry of Housing and Urban Agenda",
+        url: "https://www.mivau.gob.es/",
         official: true,
       },
     ],
