@@ -38,6 +38,22 @@ function CountryPage({
     Portugal: "🇵🇹",
   };
 
+  const topicIcons = {
+    "Government & Official Services": "🏛️",
+    "Immigration & Visa": "🛂",
+    "Jobs & Employment": "💼",
+    "Money & Banking": "💳",
+    Taxes: "🧾",
+    Healthcare: "🏥",
+    Education: "🎓",
+    "Transport & Driving": "🚗",
+    "Emergency Services": "🚨",
+    Travel: "✈️",
+    Housing: "🏠",
+    "Useful Contacts": "📞",
+    "Calculators & Tools": "🧮",
+  };
+
   const heroImage =
     countryImages[country] ||
     "https://images.unsplash.com/photo-1521292270410-a8c4d716d518?auto=format&fit=crop&w=2200&q=85";
@@ -76,7 +92,7 @@ function CountryPage({
       </header>
 
 
-      {/* COUNTRY HERO */}
+      {/* HERO */}
 
       <section
         className="country-hero"
@@ -106,6 +122,7 @@ function CountryPage({
             </div>
 
             <div>
+
               <h1>
                 {country || "Country"}
               </h1>
@@ -113,6 +130,7 @@ function CountryPage({
               <div className="country-region">
                 {continent || "Global"}
               </div>
+
             </div>
 
           </div>
@@ -128,7 +146,7 @@ function CountryPage({
       </section>
 
 
-      {/* COUNTRY QUICK BAR */}
+      {/* QUICK BAR */}
 
       <section className="country-quick-bar">
 
@@ -139,10 +157,7 @@ function CountryPage({
           </span>
 
           <div>
-            <strong>
-              Continent
-            </strong>
-
+            <strong>Continent</strong>
             <span>
               {continent || "Global"}
             </span>
@@ -158,10 +173,7 @@ function CountryPage({
           </span>
 
           <div>
-            <strong>
-              Country
-            </strong>
-
+            <strong>Country</strong>
             <span>
               {country || "Country"}
             </span>
@@ -177,10 +189,7 @@ function CountryPage({
           </span>
 
           <div>
-            <strong>
-              Official Sources
-            </strong>
-
+            <strong>Official Sources</strong>
             <span>
               Direct links
             </span>
@@ -222,32 +231,38 @@ function CountryPage({
 
             const service = services[topic];
 
+            const icon =
+              topicIcons[topic] || "📌";
+
             return (
-              <div
+              <article
                 className="country-topic-card"
                 key={topic}
               >
 
-                <div className="topic-top">
+                <div className="topic-card-header">
 
-                  <span className="topic-number">
+                  <div className="topic-icon">
+                    {icon}
+                  </div>
+
+                  <div className="topic-number">
                     {String(index + 1).padStart(2, "0")}
-                  </span>
-
-                  <span className="topic-arrow">
-                    →
-                  </span>
+                  </div>
 
                 </div>
+
 
                 <h3>
                   {topic}
                 </h3>
 
+
                 <p>
                   {service?.description ||
                     "Information, useful guidance and relevant resources."}
                 </p>
+
 
                 {service?.links?.length > 0 && (
 
@@ -263,11 +278,21 @@ function CountryPage({
                         className="service-link"
                       >
 
-                        <span>
-                          {link.name}
-                        </span>
+                        <div className="service-link-text">
 
-                        <span>
+                          <span className="official-label">
+                            {link.official
+                              ? "OFFICIAL SOURCE"
+                              : "SANOLINES"}
+                          </span>
+
+                          <span className="service-name">
+                            {link.name}
+                          </span>
+
+                        </div>
+
+                        <span className="service-arrow">
                           →
                         </span>
 
@@ -279,7 +304,7 @@ function CountryPage({
 
                 )}
 
-              </div>
+              </article>
             );
 
           })}
