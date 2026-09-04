@@ -91,6 +91,19 @@ function Home() {
     }
   }
 
+  function handleServiceClick(service) {
+    if (service === "Calculators & Tools") {
+      document.getElementById("tools")?.scrollIntoView({
+        behavior: "smooth",
+      });
+      return;
+    }
+
+    document.getElementById("continents")?.scrollIntoView({
+      behavior: "smooth",
+    });
+  }
+
   if (selectedCountry) {
     return (
       <CountryPage
@@ -128,7 +141,6 @@ function Home() {
           </div>
 
         </a>
-
 
         <nav className="navigation">
 
@@ -180,7 +192,6 @@ function Home() {
               information and practical tools in one place.
             </p>
 
-
             <form
               className="search-box"
               onSubmit={handleSearch}
@@ -204,7 +215,6 @@ function Home() {
               </button>
 
             </form>
-
 
             <div className="hero-note">
               Explore information from countries around
@@ -239,7 +249,6 @@ function Home() {
             </p>
 
           </div>
-
 
           <div className="continent-grid">
 
@@ -285,7 +294,6 @@ function Home() {
                     </span>
 
                   </div>
-
 
                   <div className="continent-info">
 
@@ -333,7 +341,6 @@ function Home() {
 
             </div>
 
-
             <div className="country-grid">
 
               {continentCountries.map((item) => (
@@ -351,11 +358,9 @@ function Home() {
 
                   </div>
 
-
                   <h3>
                     {item.country}
                   </h3>
-
 
                   <div className="famous-label">
                     FAMOUS FOR
@@ -364,7 +369,6 @@ function Home() {
                   <p className="famous-text">
                     {item.famousFor}
                   </p>
-
 
                   <div className="country-topics">
 
@@ -382,7 +386,6 @@ function Home() {
                       ))}
 
                   </div>
-
 
                   <button
                     className="country-button"
@@ -429,7 +432,6 @@ function Home() {
               </p>
 
             </div>
-
 
             <div className="country-grid">
 
@@ -528,14 +530,17 @@ function Home() {
 
           </div>
 
-
           <div className="service-grid">
 
             {services.map((service, index) => (
 
-              <div
+              <button
                 className="service-card"
                 key={service}
+                type="button"
+                onClick={() =>
+                  handleServiceClick(service)
+                }
               >
 
                 <div className="service-number">
@@ -559,7 +564,7 @@ function Home() {
                   →
                 </span>
 
-              </div>
+              </button>
 
             ))}
 
@@ -595,13 +600,22 @@ function Home() {
                 information.
               </p>
 
-              <button className="tools-button">
+              <button
+                className="tools-button"
+                type="button"
+                onClick={() =>
+                  document
+                    .getElementById("tools")
+                    ?.scrollIntoView({
+                      behavior: "smooth",
+                    })
+                }
+              >
                 Explore Tools
                 <span>→</span>
               </button>
 
             </div>
-
 
             <div className="tools-visual">
 
@@ -656,7 +670,6 @@ function Home() {
 
           </div>
 
-
           <div className="footer-links">
 
             <a href="#home">
@@ -686,7 +699,6 @@ function Home() {
           </div>
 
         </div>
-
 
         <div className="footer-bottom">
 
