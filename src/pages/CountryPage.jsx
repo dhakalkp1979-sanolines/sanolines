@@ -1,3 +1,4 @@
+```jsx
 import React, { useState } from "react";
 import countryServices from "../data/countryServices";
 import serviceKeyMap from "../data/serviceContent";
@@ -153,15 +154,21 @@ function CountryPage({
                 className="country-service-card"
                 onClick={() => {
 
+                  /* IMMIGRATION */
+
                   if (topic === "Immigration & Visa") {
                     setShowImmigration(true);
                     return;
                   }
 
+                  /* CALCULATORS & TOOLS */
+
                   if (topic === "Calculators & Tools") {
-                    window.location.href = "/#calculators";
+                    window.location.href = "./#tools";
                     return;
                   }
+
+                  /* NORMAL SERVICE */
 
                   setSelectedService(topic);
 
@@ -190,7 +197,6 @@ function CountryPage({
                 </div>
 
               </button>
-
             );
 
           })}
@@ -223,3 +229,4 @@ function CountryPage({
 }
 
 export default CountryPage;
+```
