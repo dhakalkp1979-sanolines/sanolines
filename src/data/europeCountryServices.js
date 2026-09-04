@@ -479,7 +479,7 @@ const europeCountryServices = {
     calculators: { name: "Sanolines Calculators & Tools", url: "/", description: "Useful calculators and tools." },
   },
 
-  NorthMacedonia: {
+"North Macedonia":: {
     government: { name: "Government of North Macedonia", url: "https://vlada.mk/", description: "Official government information." },
     immigration: { name: "Ministry of Interior", url: "https://mvr.gov.mk/", description: "Immigration and residence information." },
     jobs: { name: "Employment Agency", url: "https://av.gov.mk/", description: "Jobs and employment services." },
