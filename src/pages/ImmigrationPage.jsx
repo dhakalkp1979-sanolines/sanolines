@@ -4,6 +4,73 @@ import "./ImmigrationPage.css";
 function ImmigrationPage({
   country = "Portugal",
 }) {
+  const sections = [
+    {
+      icon: "🛂",
+      title: "Visa Types",
+      text: "Explore official information about different visa options for entering Portugal.",
+      label: "GOV.PT",
+      url: "https://www.gov.pt/servicos/pedir-um-visto-de-residencia-para-trabalho-dependente",
+      link: "View visa information",
+    },
+    {
+      icon: "🏠",
+      title: "Residence Permit",
+      text: "Find official information about residence permits and requirements.",
+      label: "AIMA",
+      url: "https://aima.gov.pt/pt/viver/autorizacao-de-residencia-regime-e-requisitos-gerais-art-o-77-o-n-o-1",
+      link: "View residence information",
+    },
+    {
+      icon: "💼",
+      title: "Work in Portugal",
+      text: "Information for people who want to work and live in Portugal.",
+      label: "GOV.PT",
+      url: "https://www.gov.pt/servicos/pedir-um-visto-de-residencia-para-trabalho-dependente",
+      link: "View work visa information",
+    },
+    {
+      icon: "👨‍👩‍👧",
+      title: "Family Reunification",
+      text: "Information for eligible family members joining relatives living in Portugal.",
+      label: "AIMA",
+      url: "https://aima.gov.pt/",
+      link: "Visit AIMA",
+    },
+    {
+      icon: "🔄",
+      title: "Residence Renewal",
+      text: "Find official information about renewing an existing residence permit.",
+      label: "GOV.PT",
+      url: "https://www.gov.pt/servicos/renovar-a-autorizacao-de-residencia",
+      link: "View renewal information",
+    },
+    {
+      icon: "🇪🇺",
+      title: "EU Citizens",
+      text: "Information for EU citizens and their family members living in Portugal.",
+      label: "AIMA",
+      url: "https://aima.gov.pt/",
+      link: "Visit AIMA",
+    },
+    {
+      icon: "🎓",
+      title: "Study in Portugal",
+      text: "Information for international students and education-related immigration.",
+      label: "GOV.PT",
+      url: "https://www.gov.pt/educacao",
+      link: "View education information",
+    },
+    {
+      icon: "📞",
+      title: "Immigration Help",
+      text: "Find official immigration information and contact services.",
+      label: "AIMA",
+      url: "https://aima.gov.pt/",
+      link: "Visit AIMA",
+    },
+  ];
+
   return (
     <div className="immigration-page">
 
@@ -59,8 +126,9 @@ function ImmigrationPage({
 
           <p>
             Find official information about visas,
-            residence permits, immigration procedures
-            and services for people coming to {country}.
+            residence permits, work, family
+            reunification and immigration services
+            in {country}.
           </p>
 
         </div>
@@ -79,200 +147,129 @@ function ImmigrationPage({
           </div>
 
           <h2>
-            Immigration information
+            Find what you need
           </h2>
 
           <p>
-            Sanolines brings together important
-            immigration information and connects you
-            directly with official government sources.
+            Select an immigration topic below.
+            Sanolines helps you find the right
+            information and then connects you directly
+            to the official source.
           </p>
 
         </section>
 
 
-        {/* MAIN OPTIONS */}
+        {/* IMMIGRATION SECTIONS */}
 
         <section className="immigration-options">
 
-          <article className="immigration-card">
+          {sections.map((section) => (
 
-            <div className="immigration-card-icon">
-              🛂
-            </div>
-
-            <h3>
-              Visas
-            </h3>
-
-            <p>
-              Information about residence visas and
-              other visa options for entering Portugal.
-            </p>
-
-            <div className="immigration-status">
-              OFFICIAL INFORMATION
-            </div>
-
-            <a
-              href="https://www.gov.pt/servicos/pedir-um-visto-de-residencia-para-trabalho-dependente"
-              target="_blank"
-              rel="noopener noreferrer"
+            <article
+              className="immigration-card"
+              key={section.title}
             >
-              View official visa information →
-            </a>
 
-          </article>
+              <div className="immigration-card-icon">
+                {section.icon}
+              </div>
+
+              <h3>
+                {section.title}
+              </h3>
+
+              <p>
+                {section.text}
+              </p>
+
+              <div className="immigration-status">
+                {section.label}
+              </div>
+
+              <a
+                href={section.url}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {section.link} →
+              </a>
+
+            </article>
+
+          ))}
+
+        </section>
 
 
-          <article className="immigration-card">
+        {/* HOW SANOLINES WORKS */}
 
-            <div className="immigration-card-icon">
-              🏠
+        <section className="immigration-process">
+
+          <div className="process-label">
+            HOW SANOLINES WORKS
+          </div>
+
+          <h2>
+            Find information in 3 simple steps
+          </h2>
+
+          <div className="process-grid">
+
+            <div className="process-step">
+
+              <div className="process-number">
+                01
+              </div>
+
+              <h3>
+                Choose a topic
+              </h3>
+
+              <p>
+                Select the immigration information
+                you are looking for.
+              </p>
+
             </div>
 
-            <h3>
-              Residence Permit
-            </h3>
 
-            <p>
-              Information about applying for an
-              authorization of residence in Portugal.
-            </p>
+            <div className="process-step">
 
-            <div className="immigration-status">
-              AIMA
+              <div className="process-number">
+                02
+              </div>
+
+              <h3>
+                Understand
+              </h3>
+
+              <p>
+                Sanolines helps you understand where
+                to find the relevant information.
+              </p>
+
             </div>
 
-            <a
-              href="https://aima.gov.pt/pt/viver/autorizacao-de-residencia-regime-e-requisitos-gerais-art-o-77-o-n-o-1"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              View AIMA residence information →
-            </a>
 
-          </article>
+            <div className="process-step">
 
+              <div className="process-number">
+                03
+              </div>
 
-          <article className="immigration-card">
+              <h3>
+                Go to the official source
+              </h3>
 
-            <div className="immigration-card-icon">
-              🔄
+              <p>
+                Use the direct link to check the latest
+                official requirements and procedures.
+              </p>
+
             </div>
 
-            <h3>
-              Residence Renewal
-            </h3>
-
-            <p>
-              Find information about renewing an
-              existing residence permit.
-            </p>
-
-            <div className="immigration-status">
-              OFFICIAL INFORMATION
-            </div>
-
-            <a
-              href="https://www.gov.pt/servicos/renovar-a-autorizacao-de-residencia"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              View renewal information →
-            </a>
-
-          </article>
-
-
-          <article className="immigration-card">
-
-            <div className="immigration-card-icon">
-              👨‍👩‍👧
-            </div>
-
-            <h3>
-              Family Reunification
-            </h3>
-
-            <p>
-              Information for eligible family members
-              joining relatives living in Portugal.
-            </p>
-
-            <div className="immigration-status">
-              AIMA
-            </div>
-
-            <a
-              href="https://aima.gov.pt/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Visit AIMA →
-            </a>
-
-          </article>
-
-
-          <article className="immigration-card">
-
-            <div className="immigration-card-icon">
-              💼
-            </div>
-
-            <h3>
-              Work Immigration
-            </h3>
-
-            <p>
-              Information about immigration routes
-              connected with employment in Portugal.
-            </p>
-
-            <div className="immigration-status">
-              OFFICIAL INFORMATION
-            </div>
-
-            <a
-              href="https://www.gov.pt/servicos/pedir-um-visto-de-residencia-para-trabalho-dependente"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              View work visa information →
-            </a>
-
-          </article>
-
-
-          <article className="immigration-card">
-
-            <div className="immigration-card-icon">
-              🇪🇺
-            </div>
-
-            <h3>
-              EU Citizens
-            </h3>
-
-            <p>
-              Information for EU citizens and their
-              family members living in Portugal.
-            </p>
-
-            <div className="immigration-status">
-              AIMA
-            </div>
-
-            <a
-              href="https://aima.gov.pt/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Visit AIMA →
-            </a>
-
-          </article>
+          </div>
 
         </section>
 
@@ -295,8 +292,8 @@ function ImmigrationPage({
               Immigration rules, requirements, fees,
               appointments and procedures can change.
               Sanolines provides navigation and
-              information, but the official authority
-              is responsible for the current procedure.
+              information. The official authority
+              determines the current requirements.
             </p>
 
           </div>
