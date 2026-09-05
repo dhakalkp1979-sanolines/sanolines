@@ -1,11 +1,7 @@
 import React, { useMemo, useState } from "react";
 import "./Home.css";
-import countries from "../data/countries";
-import CountryPage from "./CountryPage";
-
-/* =========================================
-   CONTINENTS
-========================================= */
+import countries from "./data/countries";
+import CountryPage from "./pages/CountryPage";
 
 const continents = [
   {
@@ -45,68 +41,21 @@ const continents = [
   },
 ];
 
-/* =========================================
-   SERVICES
-========================================= */
-
 const services = [
-  {
-    name: "Government & Official Services",
-    type: "government",
-  },
-  {
-    name: "Immigration & Visa",
-    type: "immigration",
-  },
-  {
-    name: "Jobs & Employment",
-    type: "jobs",
-  },
-  {
-    name: "Money & Banking",
-    type: "money",
-  },
-  {
-    name: "Taxes",
-    type: "taxes",
-  },
-  {
-    name: "Healthcare",
-    type: "health",
-  },
-  {
-    name: "Education",
-    type: "education",
-  },
-  {
-    name: "Transport & Driving",
-    type: "transport",
-  },
-  {
-    name: "Emergency Services",
-    type: "emergency",
-  },
-  {
-    name: "Travel",
-    type: "travel",
-  },
-  {
-    name: "Housing",
-    type: "housing",
-  },
-  {
-    name: "Useful Contacts",
-    type: "contacts",
-  },
-  {
-    name: "Calculators & Tools",
-    type: "tools",
-  },
+  { name: "Government & Official Services", type: "government" },
+  { name: "Immigration & Visa", type: "immigration" },
+  { name: "Jobs & Employment", type: "jobs" },
+  { name: "Money & Banking", type: "money" },
+  { name: "Taxes", type: "taxes" },
+  { name: "Healthcare", type: "health" },
+  { name: "Education", type: "education" },
+  { name: "Transport & Driving", type: "transport" },
+  { name: "Emergency Services", type: "emergency" },
+  { name: "Travel", type: "travel" },
+  { name: "Housing", type: "housing" },
+  { name: "Useful Contacts", type: "contacts" },
+  { name: "Calculators & Tools", type: "tools" },
 ];
-
-/* =========================================
-   SERVICE ICONS
-========================================= */
 
 function ServiceIcon({ type }) {
   const commonProps = {
@@ -260,20 +209,12 @@ function ServiceIcon({ type }) {
   }
 }
 
-/* =========================================
-   HOME
-========================================= */
-
 export default function Home() {
   const [search, setSearch] = useState("");
   const [continentSearch, setContinentSearch] = useState("");
   const [selectedContinent, setSelectedContinent] = useState(null);
   const [selectedCountry, setSelectedCountry] = useState(null);
   const [selectedService, setSelectedService] = useState(null);
-
-  /* =========================================
-     GLOBAL SEARCH
-  ========================================= */
 
   const filteredCountries = useMemo(() => {
     const query = search.trim().toLowerCase();
@@ -295,34 +236,24 @@ export default function Home() {
     });
   }, [search]);
 
-  /* =========================================
-     CONTINENT COUNTRIES
-  ========================================= */
-
   const getContinentCountries = (continentName) => {
     return countries.filter(
       (item) => item.continent === continentName
     );
   };
 
-  /* =========================================
-     COUNTRY CLICK
-  ========================================= */
-
   const handleCountryClick = (country) => {
     setSelectedCountry(country);
     setSelectedContinent(null);
     setSelectedService(null);
+    setSearch("");
+    setContinentSearch("");
 
     window.scrollTo({
       top: 0,
       behavior: "smooth",
     });
   };
-
-  /* =========================================
-     BACK HOME
-  ========================================= */
 
   const handleBackHome = () => {
     setSelectedCountry(null);
@@ -337,9 +268,56 @@ export default function Home() {
     });
   };
 
-  /* =========================================
-     COUNTRY PAGE
-  ========================================= */
+  const handleContinentClick = (continentName) => {
+    const isSameContinent =
+      selectedContinent === continentName;
+
+    setSelectedContinent(
+      isSameContinent ? null : continentName
+    );
+
+    setContinentSearch("");
+    setSelectedService(null);
+
+    if (!isSameContinent) {
+      setTimeout(() => {
+        const section = document.getElementById("countries");
+
+        if (section) {
+          section.scrollIntoView({
+            behavior: "smooth",
+            block: "start",
+          });
+        }
+      }, 100);
+    }
+  };
+
+  const handleServiceClick = (service) => {
+    setSelectedService(service);
+
+    if (service.name === "Calculators & Tools") {
+      window.location.href = "/tools";
+      return;
+    }
+
+    const section = document.getElementById("continents");
+
+    if (section) {
+      section.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
+  };
+
+  const visibleContinentCountries = selectedContinent
+    ? getContinentCountries(selectedContinent).filter((item) =>
+        item.country
+          ?.toLowerCase()
+          .includes(continentSearch.trim().toLowerCase())
+      )
+    : [];
 
   if (selectedCountry) {
     return (
@@ -350,77 +328,9 @@ export default function Home() {
     );
   }
 
-  /* =========================================
-     SELECT CONTINENT
-  ========================================= */
-
-  const handleContinentClick = (continentName) => {
-    setSelectedContinent(
-      selectedContinent === continentName
-        ? null
-        : continentName
-    );
-
-    setContinentSearch("");
-    setSelectedService(null);
-
-    setTimeout(() => {
-      const section = document.getElementById("countries");
-
-      if (section) {
-        section.scrollIntoView({
-          behavior: "smooth",
-          block: "start",
-        });
-      }
-    }, 50);
-  };
-
-  /* =========================================
-     SERVICE CLICK
-  ========================================= */
-
-  const handleServiceClick = (service) => {
-    setSelectedService(service);
-
-    if (service.name === "Calculators & Tools") {
-      window.location.href = "/tools";
-      return;
-    }
-
-    const section = document.getElementById("countries");
-
-    if (section) {
-      section.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-      });
-    }
-  };
-
-  /* =========================================
-     CURRENT CONTINENT FILTER
-  ========================================= */
-
-  const visibleContinentCountries = selectedContinent
-    ? getContinentCountries(selectedContinent).filter(
-        (item) =>
-          item.country
-            ?.toLowerCase()
-            .includes(continentSearch.toLowerCase())
-      )
-    : [];
-
-  /* =========================================
-     RENDER
-  ========================================= */
-
   return (
     <main className="home-page">
-      {/* =====================================
-          HERO
-      ===================================== */}
-
+      {/* HERO */}
       <section className="home-hero">
         <div className="home-hero-inner">
           <span className="hero-label">
@@ -480,16 +390,11 @@ export default function Home() {
         </div>
       </section>
 
-      {/* =====================================
-          SEARCH RESULTS
-      ===================================== */}
-
+      {/* SEARCH RESULTS */}
       {search.trim() && (
         <section className="home-section search-results-section">
           <div className="section-heading">
-            <span className="section-label">
-              SEARCH
-            </span>
+            <span className="section-label">SEARCH</span>
 
             <h2>
               {filteredCountries.length}{" "}
@@ -512,9 +417,7 @@ export default function Home() {
                   type="button"
                   className="country-card"
                   key={`${item.continent}-${item.country}`}
-                  onClick={() =>
-                    handleCountryClick(item)
-                  }
+                  onClick={() => handleCountryClick(item)}
                 >
                   <div className="country-card-main">
                     <div className="country-card-top">
@@ -542,9 +445,7 @@ export default function Home() {
 
                   <div className="country-card-footer">
                     <span>Explore country</span>
-                    <span className="country-arrow">
-                      →
-                    </span>
+                    <span className="country-arrow">→</span>
                   </div>
                 </button>
               ))}
@@ -552,7 +453,6 @@ export default function Home() {
           ) : (
             <div className="empty-search">
               <h3>No country found</h3>
-
               <p>
                 Try searching with another country name.
               </p>
@@ -561,16 +461,10 @@ export default function Home() {
         </section>
       )}
 
-      {/* =====================================
-          MAIN CONTENT
-      ===================================== */}
-
+      {/* MAIN HOME CONTENT */}
       {!search.trim() && (
         <>
-          {/* ===================================
-              CONTINENTS
-          =================================== */}
-
+          {/* CONTINENTS */}
           <section
             className="home-section continents-section"
             id="continents"
@@ -583,8 +477,8 @@ export default function Home() {
               <h2>Countries by continent</h2>
 
               <p>
-                Explore countries and discover useful
-                information and services for each region.
+                Explore countries and discover useful information
+                and services for each region.
               </p>
             </div>
 
@@ -596,18 +490,21 @@ export default function Home() {
                 return (
                   <button
                     type="button"
-                    className="continent-card"
+                    className={`continent-card ${
+                      selectedContinent === continent.name
+                        ? "active"
+                        : ""
+                    }`}
                     key={continent.name}
                     onClick={() =>
-                      handleContinentClick(
-                        continent.name
-                      )
+                      handleContinentClick(continent.name)
                     }
                   >
                     <img
                       src={continent.image}
                       alt={continent.name}
                       className="continent-image"
+                      loading="lazy"
                     />
 
                     <div className="continent-overlay" />
@@ -633,10 +530,7 @@ export default function Home() {
             </div>
           </section>
 
-          {/* ===================================
-              COUNTRY LIST
-          =================================== */}
-
+          {/* COUNTRIES */}
           {selectedContinent && (
             <section
               className="home-section selected-continent-section"
@@ -648,13 +542,11 @@ export default function Home() {
                     {selectedContinent}
                   </span>
 
-                  <h2>
-                    Countries & Information
-                  </h2>
+                  <h2>Countries & Information</h2>
 
                   <p>
-                    Select a country to explore its
-                    information and services.
+                    Select a country to explore its information
+                    and services.
                   </p>
                 </div>
 
@@ -664,9 +556,7 @@ export default function Home() {
                     placeholder="Search country..."
                     value={continentSearch}
                     onChange={(event) =>
-                      setContinentSearch(
-                        event.target.value
-                      )
+                      setContinentSearch(event.target.value)
                     }
                     aria-label="Search country"
                   />
@@ -675,57 +565,52 @@ export default function Home() {
 
               {visibleContinentCountries.length > 0 ? (
                 <div className="country-grid">
-                  {visibleContinentCountries.map(
-                    (item) => (
-                      <button
-                        type="button"
-                        className="country-card"
-                        key={`${item.continent}-${item.country}`}
-                        onClick={() =>
-                          handleCountryClick(item)
-                        }
-                      >
-                        <div className="country-card-main">
-                          <div className="country-card-top">
-                            <span className="country-continent">
-                              {item.continent}
+                  {visibleContinentCountries.map((item) => (
+                    <button
+                      type="button"
+                      className="country-card"
+                      key={`${item.continent}-${item.country}`}
+                      onClick={() =>
+                        handleCountryClick(item)
+                      }
+                    >
+                      <div className="country-card-main">
+                        <div className="country-card-top">
+                          <span className="country-continent">
+                            {item.continent}
+                          </span>
+
+                          {item.flag ? (
+                            <img
+                              src={item.flag}
+                              alt={`${item.country} flag`}
+                              className="country-flag"
+                              loading="lazy"
+                            />
+                          ) : (
+                            <span className="country-flag-placeholder">
+                              🌐
                             </span>
-
-                            {item.flag ? (
-                              <img
-                                src={item.flag}
-                                alt={`${item.country} flag`}
-                                className="country-flag"
-                              />
-                            ) : (
-                              <span className="country-flag-placeholder">
-                                🌐
-                              </span>
-                            )}
-                          </div>
-
-                          <h3>{item.country}</h3>
-
-                          <p>{item.famousFor}</p>
+                          )}
                         </div>
 
-                        <div className="country-card-footer">
-                          <span>
-                            Explore country
-                          </span>
+                        <h3>{item.country}</h3>
 
-                          <span className="country-arrow">
-                            →
-                          </span>
-                        </div>
-                      </button>
-                    )
-                  )}
+                        <p>{item.famousFor}</p>
+                      </div>
+
+                      <div className="country-card-footer">
+                        <span>Explore country</span>
+                        <span className="country-arrow">
+                          →
+                        </span>
+                      </div>
+                    </button>
+                  ))}
                 </div>
               ) : (
                 <div className="empty-search">
                   <h3>No country found</h3>
-
                   <p>
                     Try another country name.
                   </p>
@@ -734,24 +619,19 @@ export default function Home() {
             </section>
           )}
 
-          {/* ===================================
-              SERVICES
-          =================================== */}
-
+          {/* SERVICES */}
           <section
             className="home-section services-section"
             id="services"
           >
             <div className="section-heading">
-              <span className="section-label">
-                SERVICES
-              </span>
+              <span className="section-label">SERVICES</span>
 
               <h2>Core Professional Topics</h2>
 
               <p>
-                Quickly find the type of information and
-                services you need.
+                Quickly find the type of information and services
+                you need.
               </p>
             </div>
 
@@ -760,8 +640,7 @@ export default function Home() {
                 <button
                   type="button"
                   className={`service-card ${
-                    selectedService?.name ===
-                    service.name
+                    selectedService?.name === service.name
                       ? "active"
                       : ""
                   }`}
@@ -772,43 +651,34 @@ export default function Home() {
                 >
                   <div className="service-card-left">
                     <div className="service-icon">
-                      <ServiceIcon
-                        type={service.type}
-                      />
+                      <ServiceIcon type={service.type} />
                     </div>
 
                     <span>{service.name}</span>
                   </div>
 
-                  <span className="service-arrow">
-                    →
-                  </span>
+                  <span className="service-arrow">→</span>
                 </button>
               ))}
             </div>
           </section>
 
-          {/* ===================================
-              TOOLS
-          =================================== */}
-
+          {/* TOOLS */}
           <section
             className="home-section tools-section"
             id="tools"
           >
             <div className="tools-box">
               <div className="tools-content">
-                <span className="section-label">
-                  TOOLS
-                </span>
+                <span className="section-label">TOOLS</span>
 
                 <h2>
                   Useful tools for everyday life
                 </h2>
 
                 <p>
-                  Calculators and practical tools will
-                  be available here as Sanolines grows.
+                  Calculators and practical tools will be
+                  available here as Sanolines grows.
                 </p>
               </div>
 
@@ -820,10 +690,7 @@ export default function Home() {
                   }}
                 >
                   <span>Explore tools</span>
-
-                  <span className="tools-arrow">
-                    →
-                  </span>
+                  <span className="tools-arrow">→</span>
                 </button>
               </div>
             </div>
@@ -831,18 +698,14 @@ export default function Home() {
         </>
       )}
 
-      {/* =====================================
-          FOOTER
-      ===================================== */}
-
+      {/* FOOTER */}
       <footer className="home-footer">
         <div className="home-footer-inner">
           <div>
             <strong>Sanolines</strong>
 
             <p>
-              Global information and services for
-              everyday life.
+              Global information and services for everyday life.
             </p>
           </div>
 
@@ -897,8 +760,8 @@ export default function Home() {
         </div>
 
         <div className="home-footer-bottom">
-          © {new Date().getFullYear()} Sanolines. All
-          rights reserved.
+          © {new Date().getFullYear()} Sanolines. All rights
+          reserved.
         </div>
       </footer>
     </main>
