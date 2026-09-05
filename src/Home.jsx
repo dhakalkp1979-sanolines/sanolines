@@ -544,14 +544,6 @@ function Home() {
     return text.includes(search.toLowerCase());
   });
 
-  function getContinentImage(continent) {
-    const found = continents.find(function (item) {
-      return item.name === continent;
-    });
-
-    return found ? found.image : continents[2].image;
-  }
-
   function handleSearch(e) {
     e.preventDefault();
 
@@ -586,7 +578,7 @@ function Home() {
     }, 50);
   }
 
-  function handleTopicClick(topic) {
+  function handleTopicClick() {
     const section = document.getElementById("service-information");
 
     if (section) {
@@ -616,6 +608,7 @@ function Home() {
 
             <div>
               <div className="logo-text">SANOLINES</div>
+
               <div className="logo-tagline">
                 GLOBAL INFORMATION & SERVICES
               </div>
@@ -632,6 +625,7 @@ function Home() {
       </header>
 
       <main>
+        {/* HERO */}
         <section className="hero" id="home">
           <div className="hero-overlay"></div>
 
@@ -665,6 +659,7 @@ function Home() {
           </div>
         </section>
 
+        {/* CONTINENTS */}
         <section className="section" id="continents">
           <div className="section-heading">
             <div>
@@ -699,14 +694,14 @@ function Home() {
                     }, 50);
                   }}
                   style={{
-                    backgroundImage:
-                      "url(" + continent.image + ")",
+                    backgroundImage: "url(" + continent.image + ")",
                   }}
                 >
                   <span className="continent-card-overlay"></span>
 
                   <span className="continent-card-content">
                     <strong>{continent.name}</strong>
+
                     <span>Explore countries →</span>
                   </span>
                 </button>
@@ -715,13 +710,12 @@ function Home() {
           </div>
         </section>
 
+        {/* SELECTED CONTINENT COUNTRIES */}
         {selectedContinent && (
           <section className="section" id="country-results">
             <div className="section-heading">
               <div>
-                <div className="section-label">
-                  SELECTED CONTINENT
-                </div>
+                <div className="section-label">SELECTED CONTINENT</div>
 
                 <h2>{selectedContinent}</h2>
               </div>
@@ -747,14 +741,18 @@ function Home() {
                     }}
                     style={{
                       backgroundImage:
-                        "url(" +
-                        getContinentImage(item.continent) +
-                        ")",
+                        "linear-gradient(180deg, rgba(255,255,255,0.96), rgba(248,250,252,0.98))",
                     }}
                   >
                     <span className="country-card-overlay"></span>
 
                     <span className="country-card-content">
+                      <img
+                        className="country-flag"
+                        src={item.flag}
+                        alt={item.country + " flag"}
+                      />
+
                       <span className="country-continent">
                         {item.continent}
                       </span>
@@ -776,10 +774,12 @@ function Home() {
           </section>
         )}
 
+        {/* SEARCH RESULTS */}
         <section className="section" id="search-results">
           <div className="section-heading">
             <div>
               <div className="section-label">COUNTRIES</div>
+
               <h2>Explore countries</h2>
             </div>
 
@@ -799,19 +799,18 @@ function Home() {
                   }}
                   style={{
                     backgroundImage:
-                      "url(" +
-                      getContinentImage(item.continent) +
-                      ")",
+                      "linear-gradient(180deg, rgba(255,255,255,0.96), rgba(248,250,252,0.98))",
                   }}
                 >
                   <span className="country-card-overlay"></span>
-                  <img
-  className="country-flag"
-  src={item.flag}
-  alt={item.country + " flag"}
-/>
 
                   <span className="country-card-content">
+                    <img
+                      className="country-flag"
+                      src={item.flag}
+                      alt={item.country + " flag"}
+                    />
+
                     <span className="country-continent">
                       {item.continent}
                     </span>
@@ -832,6 +831,7 @@ function Home() {
           </div>
         </section>
 
+        {/* SERVICES */}
         <section className="section services-section" id="services">
           <div className="section-heading">
             <div>
@@ -855,8 +855,7 @@ function Home() {
                     handleServiceClick(service.name);
                   }}
                   style={{
-                    backgroundImage:
-                      "url(" + service.image + ")",
+                    backgroundImage: "url(" + service.image + ")",
                   }}
                 >
                   <span className="service-card-overlay"></span>
@@ -886,6 +885,7 @@ function Home() {
           </div>
         </section>
 
+        {/* SERVICE INFORMATION */}
         {selectedService && (
           <section
             className="service-information"
@@ -980,10 +980,13 @@ function Home() {
           </section>
         )}
 
+        {/* TOOLS */}
         <section className="tools-section" id="tools">
           <div className="tools-inner">
             <div>
-              <div className="section-label">PRACTICAL TOOLS</div>
+              <div className="section-label">
+                PRACTICAL TOOLS
+              </div>
 
               <h2>Calculators & Tools</h2>
 
@@ -1005,6 +1008,7 @@ function Home() {
         </section>
       </main>
 
+      {/* FOOTER */}
       <footer className="site-footer">
         <div className="footer-inner">
           <div>
