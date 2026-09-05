@@ -1,3 +1,4 @@
+```jsx
 import React, { useState } from "react";
 import "./Home.css";
 import countries from "./data/countries";
@@ -47,19 +48,58 @@ function Home() {
   ];
 
   const services = [
-    "Government & Official Services",
-    "Immigration & Visa",
-    "Jobs & Employment",
-    "Money & Banking",
-    "Taxes",
-    "Healthcare",
-    "Education",
-    "Transport & Driving",
-    "Emergency Services",
-    "Travel",
-    "Housing",
-    "Useful Contacts",
-    "Calculators & Tools",
+    {
+      name: "Government & Official Services",
+      icon: "🏛",
+    },
+    {
+      name: "Immigration & Visa",
+      icon: "🛂",
+    },
+    {
+      name: "Jobs & Employment",
+      icon: "💼",
+    },
+    {
+      name: "Money & Banking",
+      icon: "🏦",
+    },
+    {
+      name: "Taxes",
+      icon: "📑",
+    },
+    {
+      name: "Healthcare",
+      icon: "⚕",
+    },
+    {
+      name: "Education",
+      icon: "🎓",
+    },
+    {
+      name: "Transport & Driving",
+      icon: "🚗",
+    },
+    {
+      name: "Emergency Services",
+      icon: "🚨",
+    },
+    {
+      name: "Travel",
+      icon: "✈",
+    },
+    {
+      name: "Housing",
+      icon: "⌂",
+    },
+    {
+      name: "Useful Contacts",
+      icon: "☎",
+    },
+    {
+      name: "Calculators & Tools",
+      icon: "▦",
+    },
   ];
 
   const continentCountries = selectedContinent
@@ -536,12 +576,16 @@ function Home() {
 
               <button
                 className="service-card"
-                key={service}
+                key={service.name}
                 type="button"
                 onClick={() =>
-                  handleServiceClick(service)
+                  handleServiceClick(service.name)
                 }
               >
+
+                <div className="service-icon">
+                  {service.icon}
+                </div>
 
                 <div className="service-number">
                   {String(index + 1).padStart(2, "0")}
@@ -550,7 +594,7 @@ function Home() {
                 <div className="service-content">
 
                   <h3>
-                    {service}
+                    {service.name}
                   </h3>
 
                   <p>
@@ -719,3 +763,4 @@ function Home() {
 }
 
 export default Home;
+```
