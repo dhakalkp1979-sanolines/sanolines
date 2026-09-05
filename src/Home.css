@@ -921,6 +921,182 @@ button {
   .country-section-header h2 {
     font-size: 27px;
   }
+   /* =========================================================
+   PROFESSIONAL SERVICES SECTION
+========================================================= */
+
+.services-section {
+  max-width: 1180px;
+  margin: 48px auto;
+  padding: 64px 24px;
+  border: 1px solid #f1f5f9;
+  border-radius: 24px;
+  background: rgba(248, 250, 252, 0.7);
+}
+
+.services-inner {
+  width: 100%;
+}
+
+.services-heading {
+  max-width: 650px;
+  margin: 0 auto 45px;
+  text-align: center;
+}
+
+.services-heading .section-label {
+  display: inline-block;
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: #eff6ff;
+  color: #2563eb;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.13em;
+}
+
+.services-heading h2 {
+  margin-top: 16px;
+  color: #0f172a;
+  font-size: clamp(30px, 4vw, 40px);
+  line-height: 1.15;
+  font-weight: 800;
+  letter-spacing: -0.025em;
+}
+
+.services-heading p {
+  margin-top: 9px;
+  color: #64748b;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.service-card {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  min-height: 92px;
+  padding: 20px;
+  border: 1px solid rgba(226, 232, 240, 0.9);
+  border-radius: 17px;
+  background: #ffffff;
+  color: #172033;
+  text-align: left;
+  cursor: pointer;
+  box-shadow: 0 3px 10px rgba(15, 23, 42, 0.035);
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-3px);
+  border-color: #3b82f6;
+  box-shadow: 0 15px 30px rgba(15, 23, 42, 0.11);
+}
+
+.service-card-content {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  min-width: 0;
+}
+
+.service-number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+  border-radius: 12px;
+  background: #eff6ff;
+  color: #2563eb;
+  font-size: 13px;
+  font-weight: 800;
+  transition:
+    background 0.25s ease,
+    color 0.25s ease;
+}
+
+.service-card:hover .service-number {
+  background: #2563eb;
+  color: #ffffff;
+}
+
+.service-card h3 {
+  color: #1e293b;
+  font-size: 15px;
+  line-height: 1.35;
+  font-weight: 700;
+  transition: color 0.25s ease;
+}
+
+.service-card:hover h3 {
+  color: #2563eb;
+}
+
+.service-arrow {
+  flex-shrink: 0;
+  padding-right: 4px;
+  color: #94a3b8;
+  font-size: 20px;
+  font-weight: 600;
+  transition:
+    color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.service-card:hover .service-arrow {
+  color: #2563eb;
+  transform: translateX(5px);
+}
+
+@media (max-width: 900px) {
+  .services-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .services-section {
+    margin: 35px 16px;
+    padding: 48px 16px;
+    border-radius: 20px;
+  }
+
+  .services-heading {
+    margin-bottom: 32px;
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .service-card {
+    min-height: 82px;
+    padding: 16px;
+  }
+
+  .service-number {
+    width: 44px;
+    height: 44px;
+  }
+
+  .service-card h3 {
+    font-size: 14px;
+  }
+}
 
   .country-card h3 {
     font-size: 19px;
