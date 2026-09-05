@@ -70,18 +70,38 @@ function CountryPage({
 
   return (
     <div className="country-page">
+
       <header className="country-header">
-        <a href="./" className="country-home">
+        <button
+          type="button"
+          className="country-home"
+          onClick={() => {
+            window.location.href = "./";
+          }}
+        >
           ← Home
-        </a>
+        </button>
 
         <div className="country-header-title">
           SANOLINES
         </div>
+
+        <div className="country-header-right">
+          GLOBAL INFORMATION
+        </div>
       </header>
 
       <section className="country-hero">
+        <div className="country-hero-overlay"></div>
+
         <div className="country-hero-content">
+
+          <div className="country-breadcrumb">
+            SANOLINES
+            <span> / </span>
+            {continent || "GLOBAL"}
+          </div>
+
           <div className="country-continent">
             {continent || "GLOBAL"}
           </div>
@@ -95,27 +115,45 @@ function CountryPage({
           {famousFor && (
             <p>{famousFor}</p>
           )}
+
+          <div className="country-hero-note">
+            Information & services for {country}
+          </div>
+
         </div>
       </section>
 
       <main className="country-main">
+
         <div className="country-section-heading">
+
           <div className="country-section-label">
-            INFORMATION & SERVICES
+            SANOLINES COUNTRY GUIDE
           </div>
 
-          <h2>Explore {country}</h2>
+          <h2>
+            Explore {country}
+          </h2>
 
           <p>
-            Select a service to find useful information
-            and trusted resources for {country}.
+            Find practical information, services and useful
+            resources for people living in, moving to or
+            visiting {country}.
           </p>
+
         </div>
 
         <div className="country-services-grid">
+
           {serviceTopics.map((topic, index) => {
             const serviceKey = serviceKeyMap[topic];
             const service = services[serviceKey];
+
+            const isImmigration =
+              topic === "Immigration & Visa";
+
+            const isTools =
+              topic === "Calculators & Tools";
 
             return (
               <button
@@ -123,12 +161,13 @@ function CountryPage({
                 type="button"
                 className="country-service-card"
                 onClick={() => {
-                  if (topic === "Immigration & Visa") {
+
+                  if (isImmigration) {
                     setShowImmigration(true);
                     return;
                   }
 
-                  if (topic === "Calculators & Tools") {
+                  if (isTools) {
                     window.location.href = "./#tools";
                     return;
                   }
@@ -136,11 +175,21 @@ function CountryPage({
                   setSelectedService(topic);
                 }}
               >
-                <div className="country-service-number">
-                  {String(index + 1).padStart(2, "0")}
+
+                <div className="country-service-top">
+
+                  <div className="country-service-number">
+                    {String(index + 1).padStart(2, "0")}
+                  </div>
+
+                  <div className="country-service-icon">
+                    {getServiceIcon(topic)}
+                  </div>
+
                 </div>
 
                 <div className="country-service-content">
+
                   <h3>{topic}</h3>
 
                   <p>
@@ -151,30 +200,100 @@ function CountryPage({
                         country +
                         "."}
                   </p>
+
                 </div>
 
-                <div className="country-service-arrow">
-                  →
+                <div className="country-service-footer">
+
+                  <span>
+                    Explore information
+                  </span>
+
+                  <span className="country-service-arrow">
+                    →
+                  </span>
+
                 </div>
+
               </button>
             );
           })}
+
         </div>
+
+        <section className="country-info-strip">
+
+          <div>
+            <span className="country-info-label">
+              COUNTRY
+            </span>
+
+            <strong>{country}</strong>
+          </div>
+
+          <div>
+            <span className="country-info-label">
+              CONTINENT
+            </span>
+
+            <strong>{continent || "Global"}</strong>
+          </div>
+
+          <div>
+            <span className="country-info-label">
+              SERVICES
+            </span>
+
+            <strong>{serviceTopics.length} areas</strong>
+          </div>
+
+        </section>
+
       </main>
 
       <footer className="country-footer">
-        <strong>SANOLINES</strong>
 
-        <span>
-          Global Information & Services
-        </span>
+        <div className="country-footer-brand">
+          <strong>SANOLINES</strong>
 
-        <span>
+          <span>
+            Global Information & Services
+          </span>
+        </div>
+
+        <div className="country-footer-copy">
+          Information platform for countries,
+          services and everyday life.
+        </div>
+
+        <div className="country-footer-year">
           © 2026 Sanolines
-        </span>
+        </div>
+
       </footer>
+
     </div>
   );
+}
+
+function getServiceIcon(topic) {
+  const icons = {
+    "Government & Official Services": "🏛",
+    "Immigration & Visa": "🛂",
+    "Jobs & Employment": "💼",
+    "Money & Banking": "🏦",
+    Taxes: "📑",
+    Healthcare: "⚕",
+    Education: "🎓",
+    "Transport & Driving": "🚗",
+    "Emergency Services": "🚨",
+    Travel: "✈",
+    Housing: "⌂",
+    "Useful Contacts": "☎",
+    "Calculators & Tools": "▦",
+  };
+
+  return icons[topic] || "•";
 }
 
 export default CountryPage;
