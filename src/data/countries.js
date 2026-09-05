@@ -1441,9 +1441,16 @@ const countryFlagCodes = {
   Antarctica: "aq",
 };
 
-const countriesWithFlags = countries.map((item) => ({
-  ...item,
-  flagCode: countryFlagCodes[item.country] || "",
-}));
+const countriesWithFlags = countries.map((item) => {
+  const flagCode = countryFlagCodes[item.country] || "";
+
+  return {
+    ...item,
+    flagCode,
+    flag: flagCode
+      ? `https://flagcdn.io/4x3/${flagCode}.svg`
+      : "",
+  };
+});
 
 export default countriesWithFlags;
