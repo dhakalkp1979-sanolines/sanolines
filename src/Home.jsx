@@ -57,7 +57,34 @@ function Home() {
         "Find government departments, public services, documents and official information.",
       details:
         "Access information about government services, identification documents, registrations, public administration and official procedures.",
+      topics: [
+        {
+          title: "Government Portals",
+          text: "Find official government websites, online services and public administration portals.",
+        },
+        {
+          title: "Identity & Documents",
+          text: "Information about identity cards, passports, registrations and official documents.",
+        },
+        {
+          title: "Civil Registration",
+          text: "Find information about births, marriages, certificates and civil records.",
+        },
+        {
+          title: "Public Administration",
+          text: "Understand common government procedures, applications and administrative services.",
+        },
+        {
+          title: "Official Forms",
+          text: "Locate government forms, applications and documents needed for public services.",
+        },
+        {
+          title: "Government Contacts",
+          text: "Find ministries, departments, municipalities and other official authorities.",
+        },
+      ],
     },
+
     {
       name: "Immigration & Visa",
       icon: "🛂",
@@ -67,7 +94,34 @@ function Home() {
         "Understand visas, residence, immigration procedures and travel documentation.",
       details:
         "Find practical information about visas, residence permits, immigration procedures, entry requirements and official immigration resources.",
+      topics: [
+        {
+          title: "Visa Information",
+          text: "Explore common visa categories, application requirements and official visa resources.",
+        },
+        {
+          title: "Residence Permits",
+          text: "Find information about residence permits, renewals and related procedures.",
+        },
+        {
+          title: "Work Permits",
+          text: "Understand work authorization and employment-related immigration requirements.",
+        },
+        {
+          title: "Family Immigration",
+          text: "Find information about family reunification and dependent residence procedures.",
+        },
+        {
+          title: "Citizenship",
+          text: "Learn about nationality and citizenship procedures through official authorities.",
+        },
+        {
+          title: "Embassies & Consulates",
+          text: "Locate embassies and consulates for passports, visas and consular services.",
+        },
+      ],
     },
+
     {
       name: "Jobs & Employment",
       icon: "💼",
@@ -77,7 +131,34 @@ function Home() {
         "Explore employment information, career resources and workplace services.",
       details:
         "Find job-search resources, employment services, workplace information, CV guidance and useful career tools.",
+      topics: [
+        {
+          title: "Find a Job",
+          text: "Explore employment services, job portals and practical job-search resources.",
+        },
+        {
+          title: "CV & Applications",
+          text: "Learn how to prepare a professional CV and job application.",
+        },
+        {
+          title: "Employment Contracts",
+          text: "Understand common employment contract information and workplace documents.",
+        },
+        {
+          title: "Worker Rights",
+          text: "Find information about employment rights, working conditions and protections.",
+        },
+        {
+          title: "Training & Skills",
+          text: "Discover vocational training, professional courses and skills development.",
+        },
+        {
+          title: "Employment Services",
+          text: "Find public employment offices and organisations supporting job seekers.",
+        },
+      ],
     },
+
     {
       name: "Money & Banking",
       icon: "🏦",
@@ -87,7 +168,34 @@ function Home() {
         "Understand banking, payments, accounts, transfers and everyday money matters.",
       details:
         "Find information about bank accounts, payments, international transfers, financial services and everyday money management.",
+      topics: [
+        {
+          title: "Bank Accounts",
+          text: "Learn about current accounts, savings accounts and basic banking requirements.",
+        },
+        {
+          title: "Payments",
+          text: "Understand cards, transfers, direct debits and everyday payment methods.",
+        },
+        {
+          title: "International Transfers",
+          text: "Find practical information about sending and receiving money internationally.",
+        },
+        {
+          title: "Currency",
+          text: "Compare currencies and understand exchange rates and conversions.",
+        },
+        {
+          title: "Banking Safety",
+          text: "Learn basic ways to protect accounts, cards and online banking.",
+        },
+        {
+          title: "Consumer Protection",
+          text: "Find information about financial complaints and consumer rights.",
+        },
+      ],
     },
+
     {
       name: "Taxes",
       icon: "📑",
@@ -97,7 +205,34 @@ function Home() {
         "Find tax information, documents, deadlines and official tax services.",
       details:
         "Understand basic tax responsibilities, tax documents, filing procedures, deadlines and links to official tax authorities.",
+      topics: [
+        {
+          title: "Tax Registration",
+          text: "Understand how people and businesses register for tax purposes.",
+        },
+        {
+          title: "Tax Numbers",
+          text: "Find information about tax identification numbers and official records.",
+        },
+        {
+          title: "Tax Returns",
+          text: "Learn about tax return procedures, forms and filing requirements.",
+        },
+        {
+          title: "Tax Deadlines",
+          text: "Keep track of common filing, payment and reporting deadlines.",
+        },
+        {
+          title: "Income Tax",
+          text: "Understand general income-tax concepts and official information sources.",
+        },
+        {
+          title: "Tax Authority",
+          text: "Find the official tax authority and its online services.",
+        },
+      ],
     },
+
     {
       name: "Healthcare",
       icon: "⚕",
@@ -107,7 +242,34 @@ function Home() {
         "Find healthcare systems, services, appointments and health information.",
       details:
         "Explore healthcare services, public health systems, emergency care, appointments and useful health resources.",
+      topics: [
+        {
+          title: "Healthcare System",
+          text: "Understand how public and private healthcare services are organised.",
+        },
+        {
+          title: "Doctors & Clinics",
+          text: "Find information about primary care, clinics and medical appointments.",
+        },
+        {
+          title: "Hospitals",
+          text: "Locate hospitals and understand common hospital services.",
+        },
+        {
+          title: "Emergency Healthcare",
+          text: "Find emergency medical services and urgent-care information.",
+        },
+        {
+          title: "Pharmacies",
+          text: "Find information about pharmacies, prescriptions and medication services.",
+        },
+        {
+          title: "Health Insurance",
+          text: "Understand basic public and private health coverage options.",
+        },
+      ],
     },
+
     {
       name: "Education",
       icon: "🎓",
@@ -117,7 +279,34 @@ function Home() {
         "Explore schools, universities, training, courses and education services.",
       details:
         "Find information about education systems, universities, vocational training, language learning and student services.",
+      topics: [
+        {
+          title: "Schools",
+          text: "Find information about primary and secondary education.",
+        },
+        {
+          title: "Universities",
+          text: "Explore universities, higher education and application information.",
+        },
+        {
+          title: "Vocational Training",
+          text: "Find professional training and practical skills-development opportunities.",
+        },
+        {
+          title: "Language Courses",
+          text: "Explore language learning and language-support resources.",
+        },
+        {
+          title: "Student Services",
+          text: "Find information about student support, accommodation and useful services.",
+        },
+        {
+          title: "Education Authorities",
+          text: "Locate official education ministries and public education services.",
+        },
+      ],
     },
+
     {
       name: "Transport & Driving",
       icon: "🚗",
@@ -127,7 +316,34 @@ function Home() {
         "Find driving licences, public transport, roads and vehicle information.",
       details:
         "Explore driving licence information, public transport, vehicle registration, road rules and transport services.",
+      topics: [
+        {
+          title: "Driving Licence",
+          text: "Find information about licences, categories, applications and renewals.",
+        },
+        {
+          title: "Vehicle Registration",
+          text: "Learn about vehicle registration, ownership and required documents.",
+        },
+        {
+          title: "Road Rules",
+          text: "Understand general road rules, signs and driving requirements.",
+        },
+        {
+          title: "Public Transport",
+          text: "Explore buses, trains, metros and other public transport services.",
+        },
+        {
+          title: "Vehicle Insurance",
+          text: "Find information about compulsory and optional vehicle insurance.",
+        },
+        {
+          title: "Parking",
+          text: "Understand parking rules, permits and local parking services.",
+        },
+      ],
     },
+
     {
       name: "Emergency Services",
       icon: "🚨",
@@ -137,7 +353,34 @@ function Home() {
         "Find emergency numbers and essential emergency information.",
       details:
         "Find emergency contacts, police, fire, ambulance and other urgent services. Always use the official emergency number for your country.",
+      topics: [
+        {
+          title: "Emergency Numbers",
+          text: "Find the official emergency telephone numbers for the selected country.",
+        },
+        {
+          title: "Police",
+          text: "Find police emergency and non-emergency contact information.",
+        },
+        {
+          title: "Ambulance",
+          text: "Find emergency medical assistance and ambulance services.",
+        },
+        {
+          title: "Fire Service",
+          text: "Find fire and rescue emergency services.",
+        },
+        {
+          title: "Disaster Information",
+          text: "Find official information during natural disasters and major emergencies.",
+        },
+        {
+          title: "Consular Assistance",
+          text: "Find embassy and consular assistance for citizens abroad.",
+        },
+      ],
     },
+
     {
       name: "Travel",
       icon: "✈",
@@ -147,7 +390,34 @@ function Home() {
         "Plan travel with practical information about countries and destinations.",
       details:
         "Explore travel information including entry requirements, transport, destinations, useful contacts and practical travel preparation.",
+      topics: [
+        {
+          title: "Entry Requirements",
+          text: "Check official entry, visa and travel-document requirements.",
+        },
+        {
+          title: "Passport Information",
+          text: "Find information about passports and travel documents.",
+        },
+        {
+          title: "Air Travel",
+          text: "Explore practical airport and air-travel information.",
+        },
+        {
+          title: "Public Transport",
+          text: "Find transport options for getting around your destination.",
+        },
+        {
+          title: "Travel Safety",
+          text: "Review official travel advice and safety information.",
+        },
+        {
+          title: "Tourism Information",
+          text: "Discover destinations, attractions and official tourism resources.",
+        },
+      ],
     },
+
     {
       name: "Housing",
       icon: "⌂",
@@ -157,7 +427,34 @@ function Home() {
         "Find housing information, renting guidance and accommodation resources.",
       details:
         "Learn about renting, accommodation, housing documents, deposits, utilities and practical housing resources.",
+      topics: [
+        {
+          title: "Renting",
+          text: "Understand basic rental processes, documents and common requirements.",
+        },
+        {
+          title: "Rental Contracts",
+          text: "Learn about tenancy agreements and important rental documents.",
+        },
+        {
+          title: "Deposits",
+          text: "Understand common rental deposit arrangements and protections.",
+        },
+        {
+          title: "Utilities",
+          text: "Find information about electricity, water, gas and internet services.",
+        },
+        {
+          title: "Housing Support",
+          text: "Explore public housing support and accommodation assistance.",
+        },
+        {
+          title: "Homelessness Support",
+          text: "Find official organisations and services supporting people without housing.",
+        },
+      ],
     },
+
     {
       name: "Useful Contacts",
       icon: "☎",
@@ -167,7 +464,34 @@ function Home() {
         "Find important organisations, public offices and useful contacts.",
       details:
         "Find practical contact information for public authorities, services, organisations and other useful resources.",
+      topics: [
+        {
+          title: "Government Offices",
+          text: "Find important government departments and public offices.",
+        },
+        {
+          title: "Embassies",
+          text: "Find embassies and consulates for international and citizen services.",
+        },
+        {
+          title: "Hospitals",
+          text: "Find hospitals and healthcare organisations.",
+        },
+        {
+          title: "Employment Offices",
+          text: "Find public employment services and job-support organisations.",
+        },
+        {
+          title: "Transport Authorities",
+          text: "Find official transport and driving authorities.",
+        },
+        {
+          title: "Community Services",
+          text: "Find useful local organisations and support services.",
+        },
+      ],
     },
+
     {
       name: "Calculators & Tools",
       icon: "▦",
@@ -177,35 +501,55 @@ function Home() {
         "Use simple tools for everyday calculations and comparisons.",
       details:
         "Explore practical calculators and tools for salary, percentages, taxes, currency, dates, conversions and other everyday needs.",
+      topics: [
+        {
+          title: "Salary Calculator",
+          text: "Calculate and compare salary figures and basic income amounts.",
+        },
+        {
+          title: "Percentage Calculator",
+          text: "Calculate percentages, increases, decreases and differences.",
+        },
+        {
+          title: "Currency Converter",
+          text: "Convert amounts between different currencies.",
+        },
+        {
+          title: "Date Calculator",
+          text: "Calculate dates, days between dates and useful time periods.",
+        },
+        {
+          title: "Unit Converter",
+          text: "Convert common measurements such as distance, weight and temperature.",
+        },
+        {
+          title: "Everyday Tools",
+          text: "Explore additional practical tools designed for everyday needs.",
+        },
+      ],
     },
   ];
 
   const continentCountries = selectedContinent
-    ? countries.filter(
-        (item) => item.continent === selectedContinent
-      )
+    ? countries.filter(function (item) {
+        return item.continent === selectedContinent;
+      })
     : [];
 
-  const filteredCountries = countries.filter((item) => {
+  const filteredCountries = countries.filter(function (item) {
     const text = String(
-      item.country +
-        " " +
-        item.continent +
-        " " +
-        item.famousFor
+      item.country + " " + item.continent + " " + item.famousFor
     ).toLowerCase();
 
     return text.includes(search.toLowerCase());
   });
 
   function getContinentImage(continent) {
-    const found = continents.find(
-      (item) => item.name === continent
-    );
+    const found = continents.find(function (item) {
+      return item.name === continent;
+    });
 
-    return found
-      ? found.image
-      : continents[2].image;
+    return found ? found.image : continents[2].image;
   }
 
   function handleSearch(e) {
@@ -225,19 +569,31 @@ function Home() {
   }
 
   function handleServiceClick(service) {
-    const found = services.find(
-      (item) => item.name === service
-    );
+    const found = services.find(function (item) {
+      return item.name === service;
+    });
 
     setSelectedService(found || null);
 
-    setTimeout(() => {
-      document
-        .getElementById("service-information")
-        ?.scrollIntoView({
+    setTimeout(function () {
+      const section = document.getElementById("service-information");
+
+      if (section) {
+        section.scrollIntoView({
           behavior: "smooth",
         });
+      }
     }, 50);
+  }
+
+  function handleTopicClick(topic) {
+    const section = document.getElementById("service-information");
+
+    if (section) {
+      section.scrollIntoView({
+        behavior: "smooth",
+      });
+    }
   }
 
   if (selectedCountry) {
@@ -253,501 +609,284 @@ function Home() {
 
   return (
     <div className="app">
+      <header className="site-header">
+        <div className="header-inner">
+          <div className="logo-area">
+            <div className="logo-mark">S</div>
 
-      <header className="header">
-
-        <a href="#home" className="logo">
-
-          <div className="logo-icon">
-            S
+            <div>
+              <div className="logo-text">SANOLINES</div>
+              <div className="logo-tagline">
+                GLOBAL INFORMATION & SERVICES
+              </div>
+            </div>
           </div>
 
-          <div className="logo-text">
-
-            <div className="logo-name">
-              SANOLINES
-            </div>
-
-            <div className="logo-tagline">
-              Global Information & Services
-            </div>
-
-          </div>
-
-        </a>
-
-        <nav className="navigation">
-
-          <a href="#home">
-            Home
-          </a>
-
-          <a href="#continents">
-            Countries
-          </a>
-
-          <a href="#services">
-            Services
-          </a>
-
-          <a href="#tools">
-            Tools
-          </a>
-
-        </nav>
-
+          <nav className="main-nav">
+            <a href="#home">Home</a>
+            <a href="#continents">Countries</a>
+            <a href="#services">Services</a>
+            <a href="#tools">Tools</a>
+          </nav>
+        </div>
       </header>
 
       <main>
-
         <section className="hero" id="home">
-
-          <div className="hero-background" />
-          <div className="hero-overlay" />
+          <div className="hero-overlay"></div>
 
           <div className="hero-content">
-
-            <div className="hero-label">
-              GLOBAL INFORMATION PLATFORM
-            </div>
+            <div className="section-label">SANOLINES GLOBAL</div>
 
             <h1>
-              Information for
+              Information and services
               <br />
-              the World
+              for the world
             </h1>
 
             <p>
-              Find countries, official services, useful
-              information and practical tools in one place.
+              Explore countries, government services, immigration,
+              employment, healthcare, education, travel and everyday tools.
             </p>
 
-            <form
-              className="search-box"
-              onSubmit={handleSearch}
-            >
-
-              <div className="search-icon">
-                ⌕
-              </div>
-
+            <form className="hero-search" onSubmit={handleSearch}>
               <input
                 type="text"
-                placeholder="Search a country, service, job, visa..."
                 value={search}
-                onChange={(e) =>
-                  setSearch(e.target.value)
-                }
+                onChange={function (e) {
+                  setSearch(e.target.value);
+                }}
+                placeholder="Search a country or service..."
+                aria-label="Search a country or service"
               />
 
-              <button type="submit">
-                Search
-              </button>
-
+              <button type="submit">Search</button>
             </form>
-
-            <div className="hero-note">
-              Explore countries, services and useful
-              information around the world
-            </div>
-
           </div>
-
         </section>
 
-        <section
-          className="section continents-section"
-          id="continents"
-        >
-
+        <section className="section" id="continents">
           <div className="section-heading">
+            <div>
+              <div className="section-label">EXPLORE THE WORLD</div>
 
-            <div className="section-label">
-              EXPLORE THE WORLD
+              <h2>Continents</h2>
             </div>
 
-            <h2>
-              Discover by Continent
-            </h2>
-
             <p>
-              Choose a region and explore countries,
-              services and practical information.
+              Choose a continent to explore countries and useful information.
             </p>
-
           </div>
 
           <div className="continent-grid">
-
-            {continents.map((continent, index) => {
-
-              const count = countries.filter(
-                (item) =>
-                  item.continent === continent.name
-              ).length;
-
+            {continents.map(function (continent) {
               return (
-
                 <button
-                  className={
-                    "continent-card " +
-                    (selectedContinent === continent.name
-                      ? "active"
-                      : "")
-                  }
+                  className="continent-card"
                   key={continent.name}
-                  onClick={() =>
-                    setSelectedContinent(
-                      continent.name
-                    )
-                  }
+                  onClick={function () {
+                    setSelectedContinent(continent.name);
+
+                    setTimeout(function () {
+                      const section =
+                        document.getElementById("country-results");
+
+                      if (section) {
+                        section.scrollIntoView({
+                          behavior: "smooth",
+                        });
+                      }
+                    }, 50);
+                  }}
+                  style={{
+                    backgroundImage:
+                      "url(" + continent.image + ")",
+                  }}
                 >
+                  <span className="continent-card-overlay"></span>
 
-                  <div
-                    className="continent-image"
-                    style={{
-                      backgroundImage:
-                        'url("' +
-                        continent.image +
-                        '")',
-                    }}
-                  >
-
-                    <div className="continent-image-overlay" />
-
-                    <span className="continent-number">
-                      {String(index + 1).padStart(2, "0")}
-                    </span>
-
-                    <span className="continent-arrow">
-                      →
-                    </span>
-
-                  </div>
-
-                  <div className="continent-info">
-
-                    <h3>
-                      {continent.name}
-                    </h3>
-
-                    <p>
-                      {count} countries and regions
-                    </p>
-
-                  </div>
-
+                  <span className="continent-card-content">
+                    <strong>{continent.name}</strong>
+                    <span>Explore countries →</span>
+                  </span>
                 </button>
-
               );
-
             })}
-
           </div>
-
         </section>
 
         {selectedContinent && (
-
-          <section className="section country-section">
-
+          <section className="section" id="country-results">
             <div className="section-heading">
+              <div>
+                <div className="section-label">
+                  SELECTED CONTINENT
+                </div>
 
-              <div className="section-label">
-                {selectedContinent.toUpperCase()}
+                <h2>{selectedContinent}</h2>
               </div>
 
-              <h2>
-                Countries & Information
-              </h2>
-
-              <p>
-                Select a country to explore its
-                information and services.
-              </p>
-
+              <button
+                className="service-back-button"
+                onClick={function () {
+                  setSelectedContinent(null);
+                }}
+              >
+                Clear selection
+              </button>
             </div>
 
             <div className="country-grid">
+              {continentCountries.map(function (item) {
+                return (
+                  <button
+                    className="country-card"
+                    key={item.country}
+                    onClick={function () {
+                      setSelectedCountry(item);
+                    }}
+                    style={{
+                      backgroundImage:
+                        "url(" +
+                        getContinentImage(item.continent) +
+                        ")",
+                    }}
+                  >
+                    <span className="country-card-overlay"></span>
 
-              {continentCountries.map((item) => (
-
-                <article
-                  className="country-card"
-                  key={item.country}
-                  style={{
-                    backgroundImage:
-                      'url("' +
-                      getContinentImage(item.continent) +
-                      '")',
-                  }}
-                >
-
-                  <div className="country-card-overlay" />
-
-                  <div className="country-card-content">
-
-                    <div className="country-card-top">
-
+                    <span className="country-card-content">
                       <span className="country-continent">
                         {item.continent}
                       </span>
 
-                    </div>
+                      <strong>{item.country}</strong>
 
-                    <div className="country-spacer" />
-
-                    <h3>
-                      {item.country}
-                    </h3>
-
-                    <div className="famous-label">
-                      FAMOUS FOR
-                    </div>
-
-                    <p className="famous-text">
-                      {item.famousFor}
-                    </p>
-
-                    <div className="country-topics">
-
-                      {item.topics
-                        .slice(0, 5)
-                        .map((topic) => (
-
-                          <span
-                            className="topic-tag"
-                            key={topic}
-                          >
-                            {topic}
-                          </span>
-
-                        ))}
-
-                    </div>
-
-                    <button
-                      className="country-button"
-                      onClick={() =>
-                        setSelectedCountry(item)
-                      }
-                    >
-                      Explore {item.country}
-                      <span>→</span>
-                    </button>
-
-                  </div>
-
-                </article>
-
-              ))}
-
-            </div>
-
-          </section>
-
-        )}
-
-        {search.trim() && (
-
-          <section
-            className="section search-results-section"
-            id="search-results"
-          >
-
-            <div className="section-heading">
-
-              <div className="section-label">
-                SEARCH
-              </div>
-
-              <h2>
-                Search Results
-              </h2>
-
-              <p>
-                Results matching "{search}"
-              </p>
-
-            </div>
-
-            <div className="country-grid">
-
-              {filteredCountries.length > 0 ? (
-
-                filteredCountries.map((item) => (
-
-                  <article
-                    className="country-card"
-                    key={item.country}
-                    style={{
-                      backgroundImage:
-                        'url("' +
-                        getContinentImage(item.continent) +
-                        '")',
-                    }}
-                  >
-
-                    <div className="country-card-overlay" />
-
-                    <div className="country-card-content">
-
-                      <div className="country-card-top">
-
-                        <span className="country-continent">
-                          {item.continent}
-                        </span>
-
-                      </div>
-
-                      <div className="country-spacer" />
-
-                      <h3>
-                        {item.country}
-                      </h3>
-
-                      <div className="famous-label">
-                        FAMOUS FOR
-                      </div>
-
-                      <p className="famous-text">
+                      <span className="country-famous">
                         {item.famousFor}
-                      </p>
+                      </span>
 
-                      <button
-                        className="country-button"
-                        onClick={() => {
-                          setSelectedCountry(item);
-                          setSearch("");
-                        }}
-                      >
-                        Explore {item.country}
-                        <span>→</span>
-                      </button>
-
-                    </div>
-
-                  </article>
-
-                ))
-
-              ) : (
-
-                <div className="no-results">
-
-                  <div className="no-results-icon">
-                    ?
-                  </div>
-
-                  <h3>
-                    No country found
-                  </h3>
-
-                  <p>
-                    Try another country or search term.
-                  </p>
-
-                </div>
-
-              )}
-
+                      <span className="country-action">
+                        Explore country →
+                      </span>
+                    </span>
+                  </button>
+                );
+              })}
             </div>
-
           </section>
-
         )}
 
-        <section
-          className="section services-section"
-          id="services"
-        >
-
+        <section className="section" id="search-results">
           <div className="section-heading">
-
-            <div className="section-label">
-              INFORMATION & SERVICES
+            <div>
+              <div className="section-label">COUNTRIES</div>
+              <h2>Explore countries</h2>
             </div>
-
-            <h2>
-              Everything You Need
-            </h2>
 
             <p>
-              Practical information and essential services
-              organised clearly in one global platform.
+              Search for a country or browse the available information.
             </p>
+          </div>
 
+          <div className="country-grid">
+            {filteredCountries.slice(0, 12).map(function (item) {
+              return (
+                <button
+                  className="country-card"
+                  key={item.country}
+                  onClick={function () {
+                    setSelectedCountry(item);
+                  }}
+                  style={{
+                    backgroundImage:
+                      "url(" +
+                      getContinentImage(item.continent) +
+                      ")",
+                  }}
+                >
+                  <span className="country-card-overlay"></span>
+
+                  <span className="country-card-content">
+                    <span className="country-continent">
+                      {item.continent}
+                    </span>
+
+                    <strong>{item.country}</strong>
+
+                    <span className="country-famous">
+                      {item.famousFor}
+                    </span>
+
+                    <span className="country-action">
+                      Explore country →
+                    </span>
+                  </span>
+                </button>
+              );
+            })}
+          </div>
+        </section>
+
+        <section className="section services-section" id="services">
+          <div className="section-heading">
+            <div>
+              <div className="section-label">GLOBAL SERVICES</div>
+
+              <h2>Information & Services</h2>
+            </div>
+
+            <p>
+              Choose a service to explore useful information and resources.
+            </p>
           </div>
 
           <div className="service-grid">
+            {services.map(function (service, index) {
+              return (
+                <button
+                  className="service-card"
+                  key={service.name}
+                  onClick={function () {
+                    handleServiceClick(service.name);
+                  }}
+                  style={{
+                    backgroundImage:
+                      "url(" + service.image + ")",
+                  }}
+                >
+                  <span className="service-card-overlay"></span>
 
-            {services.map((service, index) => (
-
-              <button
-                className="service-card"
-                key={service.name}
-                type="button"
-                onClick={() =>
-                  handleServiceClick(service.name)
-                }
-                style={{
-                  backgroundImage:
-                    'url("' +
-                    service.image +
-                    '")',
-                }}
-              >
-
-                <div className="service-card-overlay" />
-
-                <div className="service-card-content">
-
-                  <div className="service-top">
-
-                    <div className="service-icon">
-                      {service.icon}
-                    </div>
-
-                    <div className="service-number">
+                  <span className="service-card-content">
+                    <span className="service-number">
                       {String(index + 1).padStart(2, "0")}
-                    </div>
+                    </span>
 
-                  </div>
+                    <span className="service-icon">
+                      {service.icon}
+                    </span>
 
-                  <div className="service-spacer" />
+                    <strong>{service.name}</strong>
 
-                  <h3>
-                    {service.name}
-                  </h3>
+                    <span className="service-description">
+                      {service.description}
+                    </span>
 
-                  <p>
-                    {service.description}
-                  </p>
-
-                  <div className="service-action">
-                    Explore Service
-                    <span>→</span>
-                  </div>
-
-                </div>
-
-              </button>
-
-            ))}
-
+                    <span className="service-action">
+                      Explore service →
+                    </span>
+                  </span>
+                </button>
+              );
+            })}
           </div>
-
         </section>
 
         {selectedService && (
-
           <section
             className="service-information"
             id="service-information"
           >
-
             <div className="service-information-inner">
-
               <div className="service-information-image">
                 <img
                   src={selectedService.image}
@@ -756,35 +895,46 @@ function Home() {
               </div>
 
               <div className="service-information-copy">
-
                 <div className="section-label">
                   SANOLINES SERVICE
                 </div>
 
-                <h2>
-                  {selectedService.name}
-                </h2>
+                <h2>{selectedService.name}</h2>
 
                 <p className="service-lead">
                   {selectedService.description}
                 </p>
 
-                <p>
-                  {selectedService.details}
-                </p>
+                <p>{selectedService.details}</p>
+
+                <div className="service-topic-grid">
+                  {selectedService.topics.map(function (topic) {
+                    return (
+                      <button
+                        className="service-topic-card"
+                        key={topic.title}
+                        onClick={function () {
+                          handleTopicClick(topic);
+                        }}
+                      >
+                        <span className="service-topic-icon">
+                          +
+                        </span>
+
+                        <span>
+                          <strong>{topic.title}</strong>
+
+                          <span>{topic.text}</span>
+                        </span>
+                      </button>
+                    );
+                  })}
+                </div>
 
                 <div className="service-information-list">
-
-                  <div>
-                    <strong>What you can find</strong>
-                    <span>
-                      Official information, practical guidance
-                      and useful resources.
-                    </span>
-                  </div>
-
                   <div>
                     <strong>Country specific</strong>
+
                     <span>
                       Select a country above to find information
                       relevant to that location.
@@ -793,168 +943,85 @@ function Home() {
 
                   <div>
                     <strong>Official sources</strong>
+
                     <span>
                       Sanolines is designed to help you locate
                       the correct official services and resources.
                     </span>
                   </div>
-
                 </div>
 
                 <button
                   className="service-back-button"
-                  type="button"
-                  onClick={() =>
-                    document
-                      .getElementById("services")
-                      ?.scrollIntoView({
-                        behavior: "smooth",
-                      })
-                  }
+                  onClick={function () {
+                    setSelectedService(null);
+
+                    setTimeout(function () {
+                      const section =
+                        document.getElementById("services");
+
+                      if (section) {
+                        section.scrollIntoView({
+                          behavior: "smooth",
+                        });
+                      }
+                    }, 50);
+                  }}
                 >
                   ← Back to Services
                 </button>
-
               </div>
-
             </div>
-
           </section>
-
         )}
 
-        <section
-          className="tools-section"
-          id="tools"
-        >
-
+        <section className="tools-section" id="tools">
           <div className="tools-inner">
+            <div>
+              <div className="section-label">PRACTICAL TOOLS</div>
 
-            <div className="tools-copy">
-
-              <div className="section-label">
-                PRACTICAL TOOLS
-              </div>
-
-              <h2>
-                Useful Calculators
-                <br />
-                & Everyday Tools
-              </h2>
+              <h2>Calculators & Tools</h2>
 
               <p>
-                Simple tools to help you calculate,
-                compare and understand everyday
-                information.
+                Useful everyday calculators and conversion tools
+                will be available here.
               </p>
-
-              <button
-                className="tools-button"
-                type="button"
-                onClick={() =>
-                  handleServiceClick("Calculators & Tools")
-                }
-              >
-                Explore Tools
-                <span>→</span>
-              </button>
-
             </div>
 
-            <div className="tools-visual">
-
-              <div className="tool-circle">
-                %
-              </div>
-
-              <div className="tool-card-small tool-one">
-                Salary
-              </div>
-
-              <div className="tool-card-small tool-two">
-                Tax
-              </div>
-
-              <div className="tool-card-small tool-three">
-                Currency
-              </div>
-
-            </div>
-
+            <button
+              className="tools-button"
+              onClick={function () {
+                handleServiceClick("Calculators & Tools");
+              }}
+            >
+              Open Tools →
+            </button>
           </div>
-
         </section>
-
       </main>
 
-      <footer className="footer">
-
+      <footer className="site-footer">
         <div className="footer-inner">
+          <div>
+            <strong>SANOLINES</strong>
 
-          <div className="footer-brand">
-
-            <div className="footer-logo">
-              S
-            </div>
-
-            <div>
-
-              <strong>
-                SANOLINES
-              </strong>
-
-              <p>
-                Global Information & Services
-              </p>
-
-            </div>
-
+            <p>
+              Global information and services for everyday life.
+            </p>
           </div>
 
           <div className="footer-links">
-
-            <a href="#home">
-              Home
-            </a>
-
-            <a href="#continents">
-              Countries
-            </a>
-
-            <a href="#services">
-              Services
-            </a>
-
-            <a href="#tools">
-              Tools
-            </a>
-
-            <a href="./disclaimer.html">
-              Disclaimer
-            </a>
-
-            <a href="./privacy.html">
-              Privacy Policy
-            </a>
-
+            <a href="#home">Home</a>
+            <a href="#continents">Countries</a>
+            <a href="#services">Services</a>
+            <a href="#tools">Tools</a>
           </div>
-
         </div>
 
         <div className="footer-bottom">
-
-          <span>
-            © 2026 Sanolines. All rights reserved.
-          </span>
-
-          <span>
-            Global information made simple.
-          </span>
-
+          © 2026 Sanolines. Information platform.
         </div>
-
       </footer>
-
     </div>
   );
 }
