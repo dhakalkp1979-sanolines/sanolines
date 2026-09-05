@@ -31,7 +31,7 @@ const continents = [
   {
     name: "South America",
     image:
-      "https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1483729558449-99ef09a8c325?auto=format&fit=crop&w=1200&q=80",
   },
   {
     name: "Australia & Oceania",
@@ -105,7 +105,7 @@ const services = [
 ];
 
 /* =========================================
-   SERVICE ICON
+   SERVICE ICONS
 ========================================= */
 
 function ServiceIcon({ type }) {
@@ -261,17 +261,18 @@ function ServiceIcon({ type }) {
 }
 
 /* =========================================
-   HOME COMPONENT
+   HOME
 ========================================= */
 
 export default function Home() {
   const [search, setSearch] = useState("");
+  const [continentSearch, setContinentSearch] = useState("");
   const [selectedContinent, setSelectedContinent] = useState(null);
   const [selectedCountry, setSelectedCountry] = useState(null);
   const [selectedService, setSelectedService] = useState(null);
 
   /* =========================================
-     SEARCH
+     GLOBAL SEARCH
   ========================================= */
 
   const filteredCountries = useMemo(() => {
@@ -295,7 +296,7 @@ export default function Home() {
   }, [search]);
 
   /* =========================================
-     CONTINENT COUNTS
+     CONTINENT COUNTRIES
   ========================================= */
 
   const getContinentCountries = (continentName) => {
@@ -328,6 +329,7 @@ export default function Home() {
     setSelectedContinent(null);
     setSelectedService(null);
     setSearch("");
+    setContinentSearch("");
 
     window.scrollTo({
       top: 0,
@@ -349,7 +351,33 @@ export default function Home() {
   }
 
   /* =========================================
-     SERVICE SELECTION
+     SELECT CONTINENT
+  ========================================= */
+
+  const handleContinentClick = (continentName) => {
+    setSelectedContinent(
+      selectedContinent === continentName
+        ? null
+        : continentName
+    );
+
+    setContinentSearch("");
+    setSelectedService(null);
+
+    setTimeout(() => {
+      const section = document.getElementById("countries");
+
+      if (section) {
+        section.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+      }
+    }, 50);
+  };
+
+  /* =========================================
+     SERVICE CLICK
   ========================================= */
 
   const handleServiceClick = (service) => {
@@ -360,14 +388,28 @@ export default function Home() {
       return;
     }
 
-    const servicesSection = document.getElementById("countries");
+    const section = document.getElementById("countries");
 
-    if (servicesSection) {
-      servicesSection.scrollIntoView({
+    if (section) {
+      section.scrollIntoView({
         behavior: "smooth",
+        block: "start",
       });
     }
   };
+
+  /* =========================================
+     CURRENT CONTINENT FILTER
+  ========================================= */
+
+  const visibleContinentCountries = selectedContinent
+    ? getContinentCountries(selectedContinent).filter(
+        (item) =>
+          item.country
+            ?.toLowerCase()
+            .includes(continentSearch.toLowerCase())
+      )
+    : [];
 
   /* =========================================
      RENDER
@@ -397,8 +439,6 @@ export default function Home() {
             housing and more.
           </p>
 
-          {/* SEARCH */}
-
           <div className="home-search">
             <svg
               width="21"
@@ -418,7 +458,10 @@ export default function Home() {
             <input
               type="text"
               value={search}
-              onChange={(event) => setSearch(event.target.value)}
+              onChange={(event) => {
+                setSearch(event.target.value);
+                setSelectedContinent(null);
+              }}
               placeholder="Search for a country..."
               aria-label="Search for a country"
             />
@@ -444,7 +487,9 @@ export default function Home() {
       {search.trim() && (
         <section className="home-section search-results-section">
           <div className="section-heading">
-            <span className="section-label">SEARCH</span>
+            <span className="section-label">
+              SEARCH
+            </span>
 
             <h2>
               {filteredCountries.length}{" "}
@@ -467,44 +512,49 @@ export default function Home() {
                   type="button"
                   className="country-card"
                   key={`${item.continent}-${item.country}`}
-                  onClick={() => handleCountryClick(item)}
+                  onClick={() =>
+                    handleCountryClick(item)
+                  }
                 >
-                  <div className="country-card-top">
-                    {item.flag ? (
-                      <img
-                        src={item.flag}
-                        alt={`${item.country} flag`}
-                        className="country-flag"
-                      />
-                    ) : (
-                      <div className="country-flag-placeholder">
-                        {item.country?.charAt(0)}
-                      </div>
-                    )}
-
-                    <div>
+                  <div className="country-card-main">
+                    <div className="country-card-top">
                       <span className="country-continent">
                         {item.continent}
                       </span>
 
-                      <h3>{item.country}</h3>
+                      {item.flag ? (
+                        <img
+                          src={item.flag}
+                          alt={`${item.country} flag`}
+                          className="country-flag"
+                        />
+                      ) : (
+                        <span className="country-flag-placeholder">
+                          🌐
+                        </span>
+                      )}
                     </div>
+
+                    <h3>{item.country}</h3>
+
+                    <p>{item.famousFor}</p>
                   </div>
 
-                  <p>{item.famousFor}</p>
-
-                  <span className="country-link">
-                    Explore country →
-                  </span>
+                  <div className="country-card-footer">
+                    <span>Explore country</span>
+                    <span className="country-arrow">
+                      →
+                    </span>
+                  </div>
                 </button>
               ))}
             </div>
           ) : (
             <div className="empty-search">
               <h3>No country found</h3>
+
               <p>
-                Try searching with another country or continent
-                name.
+                Try searching with another country name.
               </p>
             </div>
           )}
@@ -512,11 +562,15 @@ export default function Home() {
       )}
 
       {/* =====================================
-          CONTINENTS
+          MAIN CONTENT
       ===================================== */}
 
       {!search.trim() && (
         <>
+          {/* ===================================
+              CONTINENTS
+          =================================== */}
+
           <section
             className="home-section continents-section"
             id="continents"
@@ -529,8 +583,8 @@ export default function Home() {
               <h2>Countries by continent</h2>
 
               <p>
-                Explore countries and discover useful information
-                and services for each region.
+                Explore countries and discover useful
+                information and services for each region.
               </p>
             </div>
 
@@ -545,10 +599,8 @@ export default function Home() {
                     className="continent-card"
                     key={continent.name}
                     onClick={() =>
-                      setSelectedContinent(
-                        selectedContinent === continent.name
-                          ? null
-                          : continent.name
+                      handleContinentClick(
+                        continent.name
                       )
                     }
                   >
@@ -581,78 +633,110 @@ export default function Home() {
             </div>
           </section>
 
-          {/* =====================================
-              SELECTED CONTINENT
-          ===================================== */}
+          {/* ===================================
+              COUNTRY LIST
+          =================================== */}
 
           {selectedContinent && (
             <section
               className="home-section selected-continent-section"
               id="countries"
             >
-              <div className="section-heading">
-                <span className="section-label">
-                  {selectedContinent.toUpperCase()}
-                </span>
+              <div className="country-section-header">
+                <div>
+                  <span className="section-label">
+                    {selectedContinent}
+                  </span>
 
-                <h2>
-                  Countries in {selectedContinent}
-                </h2>
+                  <h2>
+                    Countries & Information
+                  </h2>
 
-                <p>
-                  Select a country to explore its information and
-                  services.
-                </p>
+                  <p>
+                    Select a country to explore its
+                    information and services.
+                  </p>
+                </div>
+
+                <div className="country-filter">
+                  <input
+                    type="text"
+                    placeholder="Search country..."
+                    value={continentSearch}
+                    onChange={(event) =>
+                      setContinentSearch(
+                        event.target.value
+                      )
+                    }
+                    aria-label="Search country"
+                  />
+                </div>
               </div>
 
-              <div className="country-grid">
-                {getContinentCountries(selectedContinent).map(
-                  (item) => (
-                    <button
-                      type="button"
-                      className="country-card"
-                      key={`${item.continent}-${item.country}`}
-                      onClick={() =>
-                        handleCountryClick(item)
-                      }
-                    >
-                      <div className="country-card-top">
-                        {item.flag ? (
-                          <img
-                            src={item.flag}
-                            alt={`${item.country} flag`}
-                            className="country-flag"
-                          />
-                        ) : (
-                          <div className="country-flag-placeholder">
-                            {item.country?.charAt(0)}
-                          </div>
-                        )}
+              {visibleContinentCountries.length > 0 ? (
+                <div className="country-grid">
+                  {visibleContinentCountries.map(
+                    (item) => (
+                      <button
+                        type="button"
+                        className="country-card"
+                        key={`${item.continent}-${item.country}`}
+                        onClick={() =>
+                          handleCountryClick(item)
+                        }
+                      >
+                        <div className="country-card-main">
+                          <div className="country-card-top">
+                            <span className="country-continent">
+                              {item.continent}
+                            </span>
 
-                        <div>
-                          <span className="country-continent">
-                            {item.continent}
-                          </span>
+                            {item.flag ? (
+                              <img
+                                src={item.flag}
+                                alt={`${item.country} flag`}
+                                className="country-flag"
+                              />
+                            ) : (
+                              <span className="country-flag-placeholder">
+                                🌐
+                              </span>
+                            )}
+                          </div>
 
                           <h3>{item.country}</h3>
+
+                          <p>{item.famousFor}</p>
                         </div>
-                      </div>
 
-                      <p>{item.famousFor}</p>
+                        <div className="country-card-footer">
+                          <span>
+                            Explore country
+                          </span>
 
-                      <span className="country-link">
-                        Explore country →
-                      </span>
-                    </button>
-                  )
-                )}
-              </div>
+                          <span className="country-arrow">
+                            →
+                          </span>
+                        </div>
+                      </button>
+                    )
+                  )}
+                </div>
+              ) : (
+                <div className="empty-search">
+                  <h3>No country found</h3>
+
+                  <p>
+                    Try another country name.
+                  </p>
+                </div>
+              )}
             </section>
           )}
 
-          {/* =====================================
+          {/* ===================================
               SERVICES
-          ===================================== */}
+          =================================== */}
 
           <section
             className="home-section services-section"
@@ -666,8 +750,8 @@ export default function Home() {
               <h2>Core Professional Topics</h2>
 
               <p>
-                Quickly find the type of information and services
-                you need.
+                Quickly find the type of information and
+                services you need.
               </p>
             </div>
 
@@ -676,16 +760,21 @@ export default function Home() {
                 <button
                   type="button"
                   className={`service-card ${
-                    selectedService?.name === service.name
+                    selectedService?.name ===
+                    service.name
                       ? "active"
                       : ""
                   }`}
                   key={service.name}
-                  onClick={() => handleServiceClick(service)}
+                  onClick={() =>
+                    handleServiceClick(service)
+                  }
                 >
                   <div className="service-card-left">
                     <div className="service-icon">
-                      <ServiceIcon type={service.type} />
+                      <ServiceIcon
+                        type={service.type}
+                      />
                     </div>
 
                     <span>{service.name}</span>
@@ -699,9 +788,9 @@ export default function Home() {
             </div>
           </section>
 
-          {/* =====================================
+          {/* ===================================
               TOOLS
-          ===================================== */}
+          =================================== */}
 
           <section
             className="home-section tools-section"
@@ -718,8 +807,8 @@ export default function Home() {
                 </h2>
 
                 <p>
-                  Calculators and practical tools will be
-                  available here as Sanolines grows.
+                  Calculators and practical tools will
+                  be available here as Sanolines grows.
                 </p>
               </div>
 
@@ -731,6 +820,7 @@ export default function Home() {
                   }}
                 >
                   <span>Explore tools</span>
+
                   <span className="tools-arrow">
                     →
                   </span>
@@ -751,7 +841,8 @@ export default function Home() {
             <strong>Sanolines</strong>
 
             <p>
-              Global information and services for everyday life.
+              Global information and services for
+              everyday life.
             </p>
           </div>
 
@@ -806,8 +897,8 @@ export default function Home() {
         </div>
 
         <div className="home-footer-bottom">
-          © {new Date().getFullYear()} Sanolines. All rights
-          reserved.
+          © {new Date().getFullYear()} Sanolines. All
+          rights reserved.
         </div>
       </footer>
     </main>
