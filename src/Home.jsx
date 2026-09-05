@@ -42,20 +42,202 @@ const continents = [
 ];
 
 const services = [
-  "Government & Official Services",
-  "Immigration & Visa",
-  "Jobs & Employment",
-  "Money & Banking",
-  "Taxes",
-  "Healthcare",
-  "Education",
-  "Transport & Driving",
-  "Emergency Services",
-  "Travel",
-  "Housing",
-  "Useful Contacts",
-  "Calculators & Tools",
+  {
+    name: "Government & Official Services",
+    icon: "government",
+  },
+  {
+    name: "Immigration & Visa",
+    icon: "immigration",
+  },
+  {
+    name: "Jobs & Employment",
+    icon: "jobs",
+  },
+  {
+    name: "Money & Banking",
+    icon: "money",
+  },
+  {
+    name: "Taxes",
+    icon: "taxes",
+  },
+  {
+    name: "Healthcare",
+    icon: "healthcare",
+  },
+  {
+    name: "Education",
+    icon: "education",
+  },
+  {
+    name: "Transport & Driving",
+    icon: "transport",
+  },
+  {
+    name: "Emergency Services",
+    icon: "emergency",
+  },
+  {
+    name: "Travel",
+    icon: "travel",
+  },
+  {
+    name: "Housing",
+    icon: "housing",
+  },
+  {
+    name: "Useful Contacts",
+    icon: "contacts",
+  },
+  {
+    name: "Calculators & Tools",
+    icon: "tools",
+  },
 ];
+
+function ServiceIcon({ type }) {
+  if (type === "government") {
+    return (
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M3 21h18" />
+        <path d="M5 21V10h14v11" />
+        <path d="M3 10h18L12 4 3 10Z" />
+        <path d="M8 14v4" />
+        <path d="M12 14v4" />
+        <path d="M16 14v4" />
+      </svg>
+    );
+  }
+
+  if (type === "immigration") {
+    return (
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <circle cx="12" cy="8" r="4" />
+        <path d="M5 21c0-4 3-7 7-7s7 3 7 7" />
+        <path d="M18 5h3v3" />
+        <path d="M21 5l-4 4" />
+      </svg>
+    );
+  }
+
+  if (type === "jobs") {
+    return (
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <rect x="3" y="7" width="18" height="13" rx="2" />
+        <path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" />
+        <path d="M3 12h18" />
+        <path d="M10 12v2h4v-2" />
+      </svg>
+    );
+  }
+
+  if (type === "money") {
+    return (
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <rect x="3" y="5" width="18" height="14" rx="2" />
+        <circle cx="12" cy="12" r="3" />
+        <path d="M7 9h.01" />
+        <path d="M17 15h.01" />
+      </svg>
+    );
+  }
+
+  if (type === "taxes") {
+    return (
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M6 3h9l4 4v14H6a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2Z" />
+        <path d="M14 3v5h5" />
+        <path d="M8 13h8" />
+        <path d="M8 17h5" />
+        <path d="M8 9h2" />
+      </svg>
+    );
+  }
+
+  if (type === "healthcare") {
+    return (
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M12 21s-8-4.6-8-11a4.5 4.5 0 0 1 8-2.7A4.5 4.5 0 0 1 20 10c0 6.4-8 11-8 11Z" />
+        <path d="M12 8v6" />
+        <path d="M9 11h6" />
+      </svg>
+    );
+  }
+
+  if (type === "education") {
+    return (
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="m3 9 9-5 9 5-9 5-9-5Z" />
+        <path d="M7 11v5c2 2 8 2 10 0v-5" />
+        <path d="M21 9v6" />
+      </svg>
+    );
+  }
+
+  if (type === "transport") {
+    return (
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M5 17h14l-1-7H6l-1 7Z" />
+        <path d="M7 10 8 6h8l1 4" />
+        <circle cx="8" cy="18" r="1.5" />
+        <circle cx="16" cy="18" r="1.5" />
+      </svg>
+    );
+  }
+
+  if (type === "emergency") {
+    return (
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M12 3 3 20h18L12 3Z" />
+        <path d="M12 9v5" />
+        <circle cx="12" cy="17" r=".7" />
+      </svg>
+    );
+  }
+
+  if (type === "travel") {
+    return (
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <circle cx="12" cy="12" r="9" />
+        <path d="M3 12h18" />
+        <path d="M12 3c3 3 3 15 0 18" />
+        <path d="M12 3c-3 3-3 15 0 18" />
+      </svg>
+    );
+  }
+
+  if (type === "housing") {
+    return (
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="m3 11 9-8 9 8" />
+        <path d="M5 10v10h14V10" />
+        <path d="M9 20v-6h6v6" />
+      </svg>
+    );
+  }
+
+  if (type === "contacts") {
+    return (
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <circle cx="9" cy="8" r="3" />
+        <path d="M3 20c0-3.5 2.5-6 6-6s6 2.5 6 6" />
+        <path d="M16 5a3 3 0 0 1 0 6" />
+        <path d="M18 14c2 .8 3 2.4 3 5" />
+      </svg>
+    );
+  }
+
+  return (
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M6 3h12v18H6z" />
+      <path d="M9 7h6" />
+      <path d="M9 11h6" />
+      <path d="M9 15h3" />
+      <path d="M15 15h.01" />
+    </svg>
+  );
+}
 
 function Home() {
   const [search, setSearch] = useState("");
@@ -107,6 +289,19 @@ function Home() {
     });
   }
 
+  function handleServiceClick(service) {
+    setSelectedService(service);
+
+    const countrySection = document.getElementById("continents");
+
+    if (countrySection) {
+      countrySection.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
+  }
+
   if (selectedCountry) {
     return (
       <CountryPage
@@ -120,10 +315,6 @@ function Home() {
 
   return (
     <div className="sanolines-home">
-      {/* =========================================
-          HEADER
-      ========================================= */}
-
       <header className="home-header">
         <button
           className="home-brand"
@@ -173,10 +364,6 @@ function Home() {
         </nav>
       </header>
 
-      {/* =========================================
-          HERO
-      ========================================= */}
-
       <section className="home-hero">
         <div className="home-hero-overlay"></div>
 
@@ -215,15 +402,7 @@ function Home() {
         </div>
       </section>
 
-      {/* =========================================
-          MAIN
-      ========================================= */}
-
       <main className="home-main">
-        {/* =========================================
-            SEARCH RESULTS
-        ========================================= */}
-
         {search.trim() && (
           <section className="home-section search-results-section">
             <div className="section-heading">
@@ -233,8 +412,10 @@ function Home() {
                 <h2>Countries matching your search</h2>
 
                 <p>
-                  {filteredCountries.length} country
-                  {filteredCountries.length !== 1 ? "ies" : ""}
+                  {filteredCountries.length}{" "}
+                  {filteredCountries.length === 1
+                    ? "country"
+                    : "countries"}{" "}
                   found
                 </p>
               </div>
@@ -291,6 +472,7 @@ function Home() {
             ) : (
               <div className="empty-state">
                 <h3>No country found</h3>
+
                 <p>
                   Try searching for another country or continent.
                 </p>
@@ -299,21 +481,19 @@ function Home() {
           </section>
         )}
 
-        {/* =========================================
-            CONTINENTS
-        ========================================= */}
-
         {!search.trim() && (
           <section className="home-section" id="continents">
             <div className="section-heading">
               <div>
-                <span className="section-label">EXPLORE THE WORLD</span>
+                <span className="section-label">
+                  EXPLORE THE WORLD
+                </span>
 
                 <h2>Explore by continent</h2>
 
                 <p>
-                  Select a continent to discover countries and
-                  useful services.
+                  Select a continent to discover countries and useful
+                  services.
                 </p>
               </div>
             </div>
@@ -355,10 +535,19 @@ function Home() {
                     <span className="continent-overlay"></span>
 
                     <span className="continent-content">
+                      <span className="continent-label">
+                        EXPLORE REGION
+                      </span>
+
                       <strong>{continent.name}</strong>
 
-                      <span>
-                        {count} {count === 1 ? "country" : "countries"}
+                      <span className="continent-count">
+                        {count}{" "}
+                        {count === 1 ? "country" : "countries"}
+                      </span>
+
+                      <span className="continent-action">
+                        Explore countries →
                       </span>
                     </span>
                   </button>
@@ -367,10 +556,6 @@ function Home() {
             </div>
           </section>
         )}
-
-        {/* =========================================
-            COUNTRY LIST
-        ========================================= */}
 
         {!search.trim() && selectedContinent && (
           <section
@@ -383,7 +568,7 @@ function Home() {
                   {selectedContinent}
                 </span>
 
-                <h2>Countries & information</h2>
+                <h2>Countries & Information</h2>
 
                 <p>
                   Select a country to explore its information and
@@ -442,20 +627,17 @@ function Home() {
           </section>
         )}
 
-        {/* =========================================
-            SERVICES
-        ========================================= */}
-
         {!search.trim() && !selectedContinent && (
-          <section className="home-section" id="services">
+          <section className="home-section services-section" id="services">
             <div className="section-heading">
               <div>
                 <span className="section-label">SERVICES</span>
 
-                <h2>Core professional topics</h2>
+                <h2>Core Professional Topics</h2>
 
                 <p>
-                  Quickly find the type of information you need.
+                  Quickly find the type of information and services
+                  you need.
                 </p>
               </div>
             </div>
@@ -464,27 +646,34 @@ function Home() {
               {services.map(function (service) {
                 return (
                   <button
-                    className="service-card"
-                    key={service}
+                    className={
+                      "service-card " +
+                      (selectedService === service.name
+                        ? "active"
+                        : "")
+                    }
+                    key={service.name}
                     onClick={function () {
-                      setSelectedService(service);
+                      handleServiceClick(service.name);
                     }}
                   >
-                    <span className="service-icon">
-                      →
+                    <span className="service-card-left">
+                      <span className="service-icon">
+                        <ServiceIcon type={service.icon} />
+                      </span>
+
+                      <span className="service-name">
+                        {service.name}
+                      </span>
                     </span>
 
-                    <span>{service}</span>
+                    <span className="service-arrow">→</span>
                   </button>
                 );
               })}
             </div>
           </section>
         )}
-
-        {/* =========================================
-            TOOLS
-        ========================================= */}
 
         {!search.trim() && !selectedContinent && (
           <section className="home-section tools-section" id="tools">
@@ -503,6 +692,13 @@ function Home() {
               <button
                 onClick={function () {
                   setSelectedService("Calculators & Tools");
+
+                  document
+                    .getElementById("services")
+                    ?.scrollIntoView({
+                      behavior: "smooth",
+                      block: "start",
+                    });
                 }}
               >
                 Explore tools →
@@ -511,10 +707,6 @@ function Home() {
           </section>
         )}
       </main>
-
-      {/* =========================================
-          FOOTER
-      ========================================= */}
 
       <footer className="home-footer">
         <div className="footer-brand">
