@@ -35,7 +35,9 @@ a {
   background: #f5f7fb;
 }
 
-/* HEADER */
+/* =========================================
+   HEADER
+========================================= */
 
 .header {
   position: sticky;
@@ -111,7 +113,9 @@ a {
   color: #172033;
 }
 
-/* HERO */
+/* =========================================
+   HERO
+========================================= */
 
 .hero {
   position: relative;
@@ -243,7 +247,9 @@ a {
   font-size: 13px;
 }
 
-/* GENERAL */
+/* =========================================
+   GENERAL
+========================================= */
 
 .section {
   width: min(1180px, calc(100% - 48px));
@@ -279,7 +285,9 @@ a {
   line-height: 1.7;
 }
 
-/* CONTINENTS */
+/* =========================================
+   CONTINENTS
+========================================= */
 
 .continent-grid {
   display: grid;
@@ -289,105 +297,68 @@ a {
 
 .continent-card {
   position: relative;
-  display: block;
+  min-height: 250px;
   width: 100%;
   overflow: hidden;
-  border: 1px solid #dce3ec;
+  border: 0;
   border-radius: 18px;
-  background: #ffffff;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
   text-align: left;
   cursor: pointer;
-  box-shadow: 0 8px 24px rgba(23, 32, 51, 0.07);
-  transition: 0.25s ease;
+  box-shadow: 0 10px 28px rgba(23, 32, 51, 0.12);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
 }
 
 .continent-card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 18px 38px rgba(23, 32, 51, 0.14);
+  box-shadow: 0 20px 42px rgba(23, 32, 51, 0.19);
 }
 
-.continent-card.active {
-  border-color: #172033;
-}
-
-.continent-image {
-  position: relative;
-  height: 230px;
-  overflow: hidden;
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-
-.continent-image::after {
-  content: "";
+.continent-card-overlay {
   position: absolute;
   inset: 0;
   background:
     linear-gradient(
       180deg,
-      rgba(8, 20, 38, 0.05),
-      rgba(8, 20, 38, 0.75)
+      rgba(8, 20, 38, 0.08) 0%,
+      rgba(8, 20, 38, 0.28) 40%,
+      rgba(8, 20, 38, 0.9) 100%
     );
 }
 
-.continent-image-overlay {
+.continent-card-content {
   position: absolute;
   inset: 0;
-  z-index: 1;
-}
-
-.continent-number {
-  position: absolute;
-  top: 16px;
-  left: 16px;
-  z-index: 3;
-  width: 36px;
-  height: 36px;
+  z-index: 2;
+  padding: 23px;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 10px;
-  background: rgba(8, 20, 38, 0.55);
+  flex-direction: column;
+  justify-content: flex-end;
   color: #ffffff;
-  font-size: 11px;
-  font-weight: 800;
 }
 
-.continent-arrow {
-  position: absolute;
-  right: 16px;
-  bottom: 16px;
-  z-index: 3;
-  width: 42px;
-  height: 42px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  background: rgba(8, 20, 38, 0.6);
+.continent-card-content strong {
+  display: block;
+  margin-bottom: 7px;
   color: #ffffff;
-  font-size: 20px;
+  font-size: 24px;
+  line-height: 1.15;
+  letter-spacing: -0.3px;
 }
 
-.continent-info {
-  min-height: 100px;
-  padding: 20px;
-  background: #ffffff;
+.continent-card-content span {
+  color: rgba(255, 255, 255, 0.86);
+  font-size: 12px;
+  font-weight: 700;
 }
 
-.continent-info h3 {
-  margin-bottom: 6px;
-  color: #172033;
-  font-size: 20px;
-}
-
-.continent-info p {
-  color: #718096;
-  font-size: 13px;
-}
-
-/* COUNTRY PICTURE CARDS */
+/* =========================================
+   COUNTRY PICTURE CARDS
+========================================= */
 
 .country-grid {
   display: grid;
@@ -404,7 +375,9 @@ a {
   background-size: cover;
   background-repeat: no-repeat;
   box-shadow: 0 12px 30px rgba(23, 32, 51, 0.12);
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
 }
 
 .country-card:hover {
@@ -431,14 +404,13 @@ a {
   padding: 22px;
   display: flex;
   flex-direction: column;
-}
-
-.country-card-top {
-  display: flex;
-  justify-content: flex-start;
+  justify-content: flex-end;
+  text-align: left;
 }
 
 .country-continent {
+  align-self: flex-start;
+  margin-bottom: auto;
   padding: 7px 11px;
   border: 1px solid rgba(255, 255, 255, 0.3);
   border-radius: 999px;
@@ -449,50 +421,22 @@ a {
   text-transform: uppercase;
 }
 
-.country-spacer {
-  flex: 1;
-}
-
-.country-card h3 {
+.country-card-content strong {
   margin-bottom: 10px;
   color: #ffffff;
   font-size: 30px;
   line-height: 1.1;
 }
 
-.famous-label {
-  margin-bottom: 5px;
-  color: rgba(255, 255, 255, 0.62);
-  font-size: 9px;
-  font-weight: 800;
-  letter-spacing: 1.5px;
-}
-
-.famous-text {
+.country-famous {
   min-height: 48px;
-  margin-bottom: 15px;
-  color: rgba(255, 255, 255, 0.86);
-  font-size: 13px;
-}
-
-.country-topics {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
   margin-bottom: 18px;
+  color: rgba(255, 255, 255, 0.84);
+  font-size: 13px;
+  line-height: 1.6;
 }
 
-.topic-tag {
-  padding: 5px 8px;
-  border: 1px solid rgba(255, 255, 255, 0.22);
-  border-radius: 6px;
-  background: rgba(255, 255, 255, 0.1);
-  color: #ffffff;
-  font-size: 9px;
-  font-weight: 700;
-}
-
-.country-button {
+.country-action {
   width: 100%;
   min-height: 47px;
   display: flex;
@@ -504,18 +448,16 @@ a {
   color: #172033;
   font-size: 12px;
   font-weight: 800;
-  cursor: pointer;
 }
 
-.country-button:hover {
-  background: #eef3f8;
-}
-
-.country-button span {
+.country-action::after {
+  content: "→";
   font-size: 18px;
 }
 
-/* SEARCH */
+/* =========================================
+   SEARCH
+========================================= */
 
 .search-results-section {
   padding-top: 20px;
@@ -556,7 +498,9 @@ a {
   font-size: 13px;
 }
 
-/* SERVICE PICTURE CARDS */
+/* =========================================
+   SERVICE PICTURE CARDS
+========================================= */
 
 .services-section {
   padding-top: 90px;
@@ -608,12 +552,16 @@ a {
   padding: 20px;
   display: flex;
   flex-direction: column;
+  text-align: left;
 }
 
-.service-top {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+.service-number {
+  align-self: flex-end;
+  margin-bottom: 12px;
+  color: rgba(255, 255, 255, 0.65);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1px;
 }
 
 .service-icon {
@@ -622,6 +570,7 @@ a {
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-bottom: auto;
   border: 1px solid rgba(255, 255, 255, 0.25);
   border-radius: 12px;
   background: rgba(8, 20, 38, 0.55);
@@ -629,25 +578,15 @@ a {
   font-size: 23px;
 }
 
-.service-number {
-  color: rgba(255, 255, 255, 0.65);
-  font-size: 10px;
-  font-weight: 800;
-  letter-spacing: 1px;
-}
-
-.service-spacer {
-  flex: 1;
-}
-
-.service-card h3 {
+.service-card-content strong {
+  display: block;
   margin-bottom: 9px;
   color: #ffffff;
   font-size: 20px;
   line-height: 1.2;
 }
 
-.service-card p {
+.service-description {
   min-height: 60px;
   margin-bottom: 18px;
   color: rgba(255, 255, 255, 0.78);
@@ -666,11 +605,14 @@ a {
   letter-spacing: 0.5px;
 }
 
-.service-action span {
+.service-action::after {
+  content: "→";
   font-size: 18px;
 }
 
-/* SERVICE INFORMATION */
+/* =========================================
+   SERVICE INFORMATION
+========================================= */
 
 .service-information {
   padding: 90px 0;
@@ -699,8 +641,8 @@ a {
   width: 100%;
   height: 100%;
   min-height: 420px;
-  object-fit: cover;
   display: block;
+  object-fit: cover;
 }
 
 .service-information-copy h2 {
@@ -721,6 +663,72 @@ a {
   color: #172033;
   font-size: 18px;
 }
+
+/* =========================================
+   SERVICE TOPIC CARDS
+========================================= */
+
+.service-topic-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  margin: 28px 0;
+}
+
+.service-topic-card {
+  width: 100%;
+  border: 1px solid #e3e8f0;
+  background: #f8fafc;
+  border-radius: 14px;
+  padding: 18px;
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  text-align: left;
+  cursor: pointer;
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.service-topic-card:hover {
+  transform: translateY(-3px);
+  border-color: #1f5eff;
+  box-shadow: 0 10px 25px rgba(20, 40, 80, 0.08);
+}
+
+.service-topic-icon {
+  width: 34px;
+  height: 34px;
+  min-width: 34px;
+  border-radius: 50%;
+  background: #172033;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.service-topic-card strong {
+  display: block;
+  color: #172033;
+  font-size: 15px;
+  margin-bottom: 5px;
+}
+
+.service-topic-card span:last-child {
+  display: block;
+  color: #657086;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+/* =========================================
+   SERVICE INFORMATION LIST
+========================================= */
 
 .service-information-list {
   margin: 28px 0;
@@ -758,7 +766,13 @@ a {
   cursor: pointer;
 }
 
-/* TOOLS */
+.service-back-button:hover {
+  background: #263a57;
+}
+
+/* =========================================
+   TOOLS
+========================================= */
 
 .tools-section {
   background: #172033;
@@ -803,6 +817,10 @@ a {
   background: rgba(255, 255, 255, 0.1);
   color: #ffffff;
   cursor: pointer;
+}
+
+.tools-button:hover {
+  background: rgba(255, 255, 255, 0.16);
 }
 
 .tools-visual {
@@ -854,7 +872,9 @@ a {
   left: 20%;
 }
 
-/* FOOTER */
+/* =========================================
+   FOOTER
+========================================= */
 
 .footer {
   background: #0d1727;
@@ -913,6 +933,10 @@ a {
   font-size: 12px;
 }
 
+.footer-links a:hover {
+  color: #ffffff;
+}
+
 .footer-bottom {
   width: min(1180px, calc(100% - 48px));
   margin: 0 auto;
@@ -924,7 +948,9 @@ a {
   font-size: 10px;
 }
 
-/* TABLET */
+/* =========================================
+   TABLET
+========================================= */
 
 @media (max-width: 1000px) {
 
@@ -953,7 +979,9 @@ a {
   }
 }
 
-/* MOBILE */
+/* =========================================
+   MOBILE
+========================================= */
 
 @media (max-width: 700px) {
 
@@ -1035,6 +1063,10 @@ a {
     grid-template-columns: 1fr;
   }
 
+  .continent-card {
+    min-height: 220px;
+  }
+
   .country-card,
   .country-card-content {
     min-height: 410px;
@@ -1043,6 +1075,10 @@ a {
   .service-card,
   .service-card-content {
     min-height: 350px;
+  }
+
+  .service-topic-grid {
+    grid-template-columns: 1fr;
   }
 
   .service-information {
@@ -1086,69 +1122,5 @@ a {
     width: calc(100% - 30px);
     flex-direction: column;
     gap: 7px;
-  }
-}
-/* =========================================
-   SERVICE TOPIC CARDS
-========================================= */
-
-.service-topic-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 14px;
-  margin: 28px 0;
-}
-
-.service-topic-card {
-  width: 100%;
-  border: 1px solid #e3e8f0;
-  background: #f8fafc;
-  border-radius: 14px;
-  padding: 18px;
-  display: flex;
-  align-items: flex-start;
-  gap: 14px;
-  text-align: left;
-  cursor: pointer;
-  transition: 0.2s ease;
-}
-
-.service-topic-card:hover {
-  transform: translateY(-3px);
-  border-color: #1f5eff;
-  box-shadow: 0 10px 25px rgba(20, 40, 80, 0.08);
-}
-
-.service-topic-icon {
-  width: 34px;
-  height: 34px;
-  min-width: 34px;
-  border-radius: 50%;
-  background: #172033;
-  color: #ffffff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 20px;
-  font-weight: 700;
-}
-
-.service-topic-card strong {
-  display: block;
-  color: #172033;
-  font-size: 15px;
-  margin-bottom: 5px;
-}
-
-.service-topic-card span:last-child {
-  display: block;
-  color: #657086;
-  font-size: 13px;
-  line-height: 1.5;
-}
-
-@media (max-width: 700px) {
-  .service-topic-grid {
-    grid-template-columns: 1fr;
   }
 }
