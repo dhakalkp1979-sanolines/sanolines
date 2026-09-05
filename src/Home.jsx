@@ -1,4 +1,3 @@
-```jsx
 import React, { useState } from "react";
 import "./Home.css";
 import countries from "./data/countries";
@@ -109,8 +108,13 @@ function Home() {
     : [];
 
   const filteredCountries = countries.filter((item) => {
-    const text =
-      `${item.country} ${item.continent} ${item.famousFor}`.toLowerCase();
+    const text = String(
+      item.country +
+        " " +
+        item.continent +
+        " " +
+        item.famousFor
+    ).toLowerCase();
 
     return text.includes(search.toLowerCase());
   });
@@ -204,7 +208,6 @@ function Home() {
 
       </header>
 
-
       {/* HERO */}
 
       <main>
@@ -265,7 +268,6 @@ function Home() {
 
         </section>
 
-
         {/* CONTINENTS */}
 
         <section
@@ -302,11 +304,12 @@ function Home() {
               return (
 
                 <button
-                  className={`continent-card ${
-                    selectedContinent === continent.name
+                  className={
+                    "continent-card " +
+                    (selectedContinent === continent.name
                       ? "active"
-                      : ""
-                  }`}
+                      : "")
+                  }
                   key={continent.name}
                   onClick={() =>
                     setSelectedContinent(
@@ -319,7 +322,9 @@ function Home() {
                     className="continent-image"
                     style={{
                       backgroundImage:
-                        `url("${continent.image}")`,
+                        'url("' +
+                        continent.image +
+                        '")',
                     }}
                   >
 
@@ -356,7 +361,6 @@ function Home() {
           </div>
 
         </section>
-
 
         {/* COUNTRIES */}
 
@@ -446,7 +450,6 @@ function Home() {
           </section>
 
         )}
-
 
         {/* SEARCH */}
 
@@ -545,7 +548,6 @@ function Home() {
 
         )}
 
-
         {/* SERVICES */}
 
         <section
@@ -616,7 +618,6 @@ function Home() {
 
         </section>
 
-
         {/* TOOLS */}
 
         <section
@@ -686,7 +687,6 @@ function Home() {
         </section>
 
       </main>
-
 
       {/* FOOTER */}
 
@@ -763,4 +763,3 @@ function Home() {
 }
 
 export default Home;
-```
