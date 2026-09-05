@@ -1237,6 +1237,10 @@ const countries = [
 ];
 
 const countryFlagCodes = {
+  // =====================================================
+  // ASIA
+  // =====================================================
+
   Afghanistan: "af",
   Armenia: "am",
   Azerbaijan: "az",
@@ -1285,6 +1289,10 @@ const countryFlagCodes = {
   Uzbekistan: "uz",
   Vietnam: "vn",
   Yemen: "ye",
+
+  // =====================================================
+  // AFRICA
+  // =====================================================
 
   Algeria: "dz",
   Angola: "ao",
@@ -1341,6 +1349,10 @@ const countryFlagCodes = {
   Zambia: "zm",
   Zimbabwe: "zw",
 
+  // =====================================================
+  // EUROPE
+  // =====================================================
+
   Albania: "al",
   Andorra: "ad",
   Austria: "at",
@@ -1386,6 +1398,10 @@ const countryFlagCodes = {
   "United Kingdom": "gb",
   "Vatican City": "va",
 
+  // =====================================================
+  // NORTH AMERICA
+  // =====================================================
+
   "Antigua and Barbuda": "ag",
   Bahamas: "bs",
   Barbados: "bb",
@@ -1410,6 +1426,10 @@ const countryFlagCodes = {
   "Trinidad and Tobago": "tt",
   "United States": "us",
 
+  // =====================================================
+  // SOUTH AMERICA
+  // =====================================================
+
   Argentina: "ar",
   Bolivia: "bo",
   Brazil: "br",
@@ -1422,6 +1442,10 @@ const countryFlagCodes = {
   Suriname: "sr",
   Uruguay: "uy",
   Venezuela: "ve",
+
+  // =====================================================
+  // AUSTRALIA & OCEANIA
+  // =====================================================
 
   Australia: "au",
   Fiji: "fj",
@@ -1438,8 +1462,16 @@ const countryFlagCodes = {
   Tuvalu: "tv",
   Vanuatu: "vu",
 
+  // =====================================================
+  // ANTARCTICA
+  // =====================================================
+
   Antarctica: "aq",
 };
+
+// =====================================================
+// ADD FLAGS TO EVERY COUNTRY
+// =====================================================
 
 const countriesWithFlags = countries.map((item) => {
   const flagCode = countryFlagCodes[item.country] || "";
@@ -1448,7 +1480,7 @@ const countriesWithFlags = countries.map((item) => {
     ...item,
     flagCode,
     flag: flagCode
-      ? `https://flagcdn.io/4x3/${flagCode}.svg`
+      ? `https://flagcdn.io/w320/${flagCode}.png`
       : "",
   };
 });
