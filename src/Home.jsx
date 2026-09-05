@@ -1,152 +1,481 @@
-import React, { useState } from "react";
+import React, { useMemo, useState } from "react";
 import "./Home.css";
 import countries from "./data/countries";
 import CountryPage from "./pages/CountryPage";
 
-function Home() {
+/* =========================================
+   CONTINENTS
+========================================= */
+
+const continents = [
+  {
+    name: "Asia",
+    image:
+      "https://images.unsplash.com/photo-1535139262971-c51845709a48?auto=format&fit=crop&w=1200&q=80",
+  },
+  {
+    name: "Africa",
+    image:
+      "https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?auto=format&fit=crop&w=1200&q=80",
+  },
+  {
+    name: "Europe",
+    image:
+      "https://images.unsplash.com/photo-1467269204594-9661b134dd2b?auto=format&fit=crop&w=1200&q=80",
+  },
+  {
+    name: "North America",
+    image:
+      "https://images.unsplash.com/photo-1485738422979-f5c462d49f74?auto=format&fit=crop&w=1200&q=80",
+  },
+  {
+    name: "South America",
+    image:
+      "https://images.unsplash.com/photo-1483729558449-99ef09a8c325?auto=format&fit=crop&w=1200&q=80",
+  },
+  {
+    name: "Australia & Oceania",
+    image:
+      "https://images.unsplash.com/photo-1523482580672-f109ba8cb9be?auto=format&fit=crop&w=1200&q=80",
+  },
+  {
+    name: "Antarctica",
+    image:
+      "https://images.unsplash.com/photo-1517783999520-f068d7431a60?auto=format&fit=crop&w=1200&q=80",
+  },
+];
+
+/* =========================================
+   SERVICES
+========================================= */
+
+const services = [
+  {
+    name: "Government & Official Services",
+    type: "government",
+  },
+  {
+    name: "Immigration & Visa",
+    type: "immigration",
+  },
+  {
+    name: "Jobs & Employment",
+    type: "jobs",
+  },
+  {
+    name: "Money & Banking",
+    type: "money",
+  },
+  {
+    name: "Taxes",
+    type: "taxes",
+  },
+  {
+    name: "Healthcare",
+    type: "health",
+  },
+  {
+    name: "Education",
+    type: "education",
+  },
+  {
+    name: "Transport & Driving",
+    type: "transport",
+  },
+  {
+    name: "Emergency Services",
+    type: "emergency",
+  },
+  {
+    name: "Travel",
+    type: "travel",
+  },
+  {
+    name: "Housing",
+    type: "housing",
+  },
+  {
+    name: "Useful Contacts",
+    type: "contacts",
+  },
+  {
+    name: "Calculators & Tools",
+    type: "tools",
+  },
+];
+
+/* =========================================
+   SERVICE ICONS
+========================================= */
+
+function ServiceIcon({ type }) {
+  const commonProps = {
+    width: 23,
+    height: 23,
+    viewBox: "0 0 24 24",
+    fill: "none",
+    stroke: "currentColor",
+    strokeWidth: 1.8,
+    strokeLinecap: "round",
+    strokeLinejoin: "round",
+    "aria-hidden": "true",
+  };
+
+  switch (type) {
+    case "government":
+      return (
+        <svg {...commonProps}>
+          <path d="M3 10h18" />
+          <path d="M5 10v8" />
+          <path d="M9 10v8" />
+          <path d="M15 10v8" />
+          <path d="M19 10v8" />
+          <path d="M3 18h18" />
+          <path d="M12 3l9 5H3l9-5z" />
+        </svg>
+      );
+
+    case "immigration":
+      return (
+        <svg {...commonProps}>
+          <circle cx="12" cy="12" r="9" />
+          <path d="M3 12h18" />
+          <path d="M12 3c3 3 3 15 0 18" />
+          <path d="M12 3c-3 3-3 15 0 18" />
+        </svg>
+      );
+
+    case "jobs":
+      return (
+        <svg {...commonProps}>
+          <rect x="3" y="7" width="18" height="13" rx="2" />
+          <path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" />
+          <path d="M3 12h18" />
+          <path d="M10 12v2h4v-2" />
+        </svg>
+      );
+
+    case "money":
+      return (
+        <svg {...commonProps}>
+          <rect x="3" y="5" width="18" height="14" rx="2" />
+          <circle cx="12" cy="12" r="3" />
+          <path d="M7 9h.01" />
+          <path d="M17 15h.01" />
+        </svg>
+      );
+
+    case "taxes":
+      return (
+        <svg {...commonProps}>
+          <rect x="4" y="3" width="16" height="18" rx="2" />
+          <path d="M8 7h8" />
+          <path d="M8 11h2" />
+          <path d="M14 11h2" />
+          <path d="M8 15h2" />
+          <path d="M14 15h2" />
+          <path d="M8 18h8" />
+        </svg>
+      );
+
+    case "health":
+      return (
+        <svg {...commonProps}>
+          <path d="M12 21s-7-4.5-9-9.5C1.5 7.5 4 4 7.5 4c2 0 3.5 1.2 4.5 3 1-1.8 2.5-3 4.5-3C20 4 22.5 7.5 21 11.5 19 16.5 12 21 12 21z" />
+          <path d="M9 11h6" />
+          <path d="M12 8v6" />
+        </svg>
+      );
+
+    case "education":
+      return (
+        <svg {...commonProps}>
+          <path d="M3 9l9-5 9 5-9 5-9-5z" />
+          <path d="M7 11v5c2.5 2 7.5 2 10 0v-5" />
+          <path d="M21 9v6" />
+        </svg>
+      );
+
+    case "transport":
+      return (
+        <svg {...commonProps}>
+          <path d="M5 17h14l-1-7H6l-1 7z" />
+          <path d="M7 10l1-4h8l1 4" />
+          <circle cx="8" cy="18" r="1.5" />
+          <circle cx="16" cy="18" r="1.5" />
+        </svg>
+      );
+
+    case "emergency":
+      return (
+        <svg {...commonProps}>
+          <path d="M12 3l9 17H3L12 3z" />
+          <path d="M12 9v5" />
+          <path d="M12 17h.01" />
+        </svg>
+      );
+
+    case "travel":
+      return (
+        <svg {...commonProps}>
+          <circle cx="12" cy="12" r="9" />
+          <path d="M3 12h18" />
+          <path d="M12 3c2.5 2.5 3.5 5.5 3.5 9s-1 6.5-3.5 9" />
+          <path d="M12 3c-2.5 2.5-3.5 5.5-3.5 9s1 6.5 3.5 9" />
+        </svg>
+      );
+
+    case "housing":
+      return (
+        <svg {...commonProps}>
+          <path d="M3 11l9-8 9 8" />
+          <path d="M5 10v10h14V10" />
+          <path d="M9 20v-6h6v6" />
+        </svg>
+      );
+
+    case "contacts":
+      return (
+        <svg {...commonProps}>
+          <circle cx="12" cy="8" r="3" />
+          <path d="M5 20c0-3.5 3-6 7-6s7 2.5 7 6" />
+          <path d="M4 6h.01" />
+          <path d="M20 6h.01" />
+        </svg>
+      );
+
+    case "tools":
+      return (
+        <svg {...commonProps}>
+          <path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L4 17l3 3 5.3-5.3a4 4 0 0 0 5.4-5.4l-2.2 2.2-2.8-2.8 2-2.4z" />
+        </svg>
+      );
+
+    default:
+      return (
+        <svg {...commonProps}>
+          <circle cx="12" cy="12" r="9" />
+        </svg>
+      );
+  }
+}
+
+/* =========================================
+   SEARCH ICON
+========================================= */
+
+function SearchIcon() {
+  return (
+    <svg
+      width="21"
+      height="21"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+    >
+      <circle cx="11" cy="11" r="7" />
+      <path d="m20 20-4-4" />
+    </svg>
+  );
+}
+
+/* =========================================
+   ARROW ICON
+========================================= */
+
+function ArrowIcon() {
+  return (
+    <svg
+      width="19"
+      height="19"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+    >
+      <path d="M5 12h14" />
+      <path d="m13 6 6 6-6 6" />
+    </svg>
+  );
+}
+
+/* =========================================
+   HOME
+========================================= */
+
+export default function Home() {
   const [search, setSearch] = useState("");
+  const [continentSearch, setContinentSearch] = useState("");
   const [selectedContinent, setSelectedContinent] = useState(null);
   const [selectedCountry, setSelectedCountry] = useState(null);
+  const [selectedService, setSelectedService] = useState(null);
 
-  const continents = [
-    {
-      name: "Asia",
-      image:
-        "https://images.unsplash.com/photo-1535139262971-c51845709a48?auto=format&fit=crop&w=1200&q=85",
-    },
-    {
-      name: "Africa",
-      image:
-        "https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?auto=format&fit=crop&w=1200&q=85",
-    },
-    {
-      name: "Europe",
-      image:
-        "https://images.unsplash.com/photo-1467269204594-9661b134dd2b?auto=format&fit=crop&w=1200&q=85",
-    },
-    {
-      name: "North America",
-      image:
-        "https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=1200&q=85",
-    },
-    {
-      name: "South America",
-      image:
-        "https://images.unsplash.com/photo-1483729558449-99ef09a8c325?auto=format&fit=crop&w=1200&q=85",
-    },
-    {
-      name: "Australia & Oceania",
-      image:
-        "https://images.unsplash.com/photo-1523482580672-f109ba8cb9be?auto=format&fit=crop&w=1200&q=85",
-    },
-    {
-      name: "Antarctica",
-      image:
-        "https://images.unsplash.com/photo-1517783999520-f068d7431a60?auto=format&fit=crop&w=1200&q=85",
-    },
-  ];
+  /* =========================================
+     GLOBAL SEARCH
+  ========================================= */
 
-  const services = [
-    "Government & Official Services",
-    "Immigration & Visa",
-    "Jobs & Employment",
-    "Money & Banking",
-    "Taxes",
-    "Healthcare",
-    "Education",
-    "Transport & Driving",
-    "Emergency Services",
-    "Travel",
-    "Housing",
-    "Useful Contacts",
-    "Calculators & Tools",
-  ];
+  const filteredCountries = useMemo(() => {
+    const query = search.trim().toLowerCase();
 
-  const filteredCountries = countries.filter((item) => {
-    const searchText = search.toLowerCase().trim();
-
-    if (!searchText) {
-      return false;
+    if (!query) {
+      return [];
     }
 
-    return (
-      item.country?.toLowerCase().includes(searchText) ||
-      item.continent?.toLowerCase().includes(searchText) ||
-      item.famousFor?.toLowerCase().includes(searchText) ||
-      item.topics?.some((topic) =>
-        topic.toLowerCase().includes(searchText)
-      )
-    );
-  });
+    return countries.filter((item) => {
+      const countryName = item.country?.toLowerCase() || "";
+      const continentName = item.continent?.toLowerCase() || "";
+      const famousFor = item.famousFor?.toLowerCase() || "";
 
-  const selectedCountries = selectedContinent
-    ? countries.filter(
-        (item) => item.continent === selectedContinent
+      return (
+        countryName.includes(query) ||
+        continentName.includes(query) ||
+        famousFor.includes(query)
+      );
+    });
+  }, [search]);
+
+  /* =========================================
+     COUNTRY HELPERS
+  ========================================= */
+
+  const getContinentCountries = (continentName) => {
+    return countries.filter(
+      (item) => item.continent === continentName
+    );
+  };
+
+  const visibleContinentCountries = selectedContinent
+    ? getContinentCountries(selectedContinent).filter((item) =>
+        item.country
+          ?.toLowerCase()
+          .includes(continentSearch.trim().toLowerCase())
       )
     : [];
 
-  const continentSearchPlaceholder = {
-    Asia: "Search Asian country...",
-    Africa: "Search African country...",
-    Europe: "Search European country...",
-    "North America": "Search North American country...",
-    "South America": "Search South American country...",
-    "Australia & Oceania":
-      "Search Australian or Oceanian country...",
-    Antarctica: "Search Antarctic country...",
-  };
+  /* =========================================
+     COUNTRY CLICK
+  ========================================= */
 
-  const getCountryFlag = (item) => {
-    if (item.flag) {
-      return item.flag;
-    }
-
-    if (item.flagCode) {
-      return `https://flagcdn.io/w320/${item.flagCode}.png`;
-    }
-
-    return "";
-  };
-
-  const openCountry = (country) => {
+  const handleCountryClick = (country) => {
     setSelectedCountry(country);
+    setSelectedContinent(null);
+    setSelectedService(null);
     setSearch("");
+    setContinentSearch("");
+
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
   };
 
-  const selectContinent = (continentName) => {
-    setSelectedContinent(continentName);
-    setSearch("");
+  /* =========================================
+     BACK HOME
+  ========================================= */
 
-    setTimeout(() => {
-      document
-        .getElementById("country-results")
-        ?.scrollIntoView({
-          behavior: "smooth",
-          block: "start",
-        });
-    }, 50);
+  const handleBackHome = () => {
+    setSelectedCountry(null);
+    setSelectedContinent(null);
+    setSelectedService(null);
+    setSearch("");
+    setContinentSearch("");
+
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
   };
 
-  const handleSearch = (event) => {
-    event.preventDefault();
+  /* =========================================
+     CONTINENT CLICK
+  ========================================= */
 
-    if (!search.trim()) {
+  const handleContinentClick = (continentName) => {
+    const isSameContinent =
+      selectedContinent === continentName;
+
+    setSelectedContinent(
+      isSameContinent ? null : continentName
+    );
+
+    setContinentSearch("");
+    setSelectedService(null);
+
+    if (!isSameContinent) {
+      setTimeout(() => {
+        const section = document.getElementById("countries");
+
+        if (section) {
+          section.scrollIntoView({
+            behavior: "smooth",
+            block: "start",
+          });
+        }
+      }, 100);
+    }
+  };
+
+  /* =========================================
+     SERVICE CLICK
+  ========================================= */
+
+  const handleServiceClick = (service) => {
+    setSelectedService(service);
+
+    if (service.name === "Calculators & Tools") {
+      window.location.href = "/tools";
       return;
     }
 
+    const section = document.getElementById("continents");
+
+    if (section) {
+      section.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
+  };
+
+  /* =========================================
+     NAVIGATION
+  ========================================= */
+
+  const goHome = () => {
+    setSelectedCountry(null);
+    setSelectedContinent(null);
+    setSelectedService(null);
+    setSearch("");
+    setContinentSearch("");
+
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+
+  const goCountries = () => {
+    setSelectedCountry(null);
+    setSearch("");
+
     document
-      .getElementById("search-results")
+      .getElementById("continents")
       ?.scrollIntoView({
         behavior: "smooth",
         block: "start",
       });
   };
 
-  const handleServiceClick = (service) => {
-    if (service === "Calculators & Tools") {
-      window.location.href = "/tools";
-      return;
-    }
+  const goServices = () => {
+    setSelectedCountry(null);
+    setSearch("");
 
     document
       .getElementById("services")
@@ -156,63 +485,60 @@ function Home() {
       });
   };
 
+  const goTools = () => {
+    window.location.href = "/tools";
+  };
+
+  /* =========================================
+     COUNTRY PAGE
+  ========================================= */
+
   if (selectedCountry) {
     return (
       <CountryPage
-        country={selectedCountry.country}
+        country={selectedCountry}
         continent={selectedCountry.continent}
         famousFor={selectedCountry.famousFor}
-        topics={selectedCountry.topics}
+        topics={selectedCountry.topics || []}
+        onBack={handleBackHome}
       />
     );
   }
 
-  return (
-    <div className="home-page">
+  /* =========================================
+     MAIN HOME
+  ========================================= */
 
-      {/* =====================================================
-          PROFESSIONAL NAVIGATION
-      ===================================================== */}
+  return (
+    <main className="home-page">
+
+      {/* =====================================
+          TOP NAVIGATION
+      ===================================== */}
 
       <header className="top-navigation">
-        <div className="navigation-inner">
+        <div className="top-navigation-inner">
 
           <button
             type="button"
             className="brand"
-            onClick={() => {
-              setSelectedContinent(null);
-              setSearch("");
-              window.scrollTo({
-                top: 0,
-                behavior: "smooth",
-              });
-            }}
+            onClick={goHome}
+            aria-label="Sanolines home"
           >
             <span className="brand-name">
               SANOLINES
             </span>
 
-            <span className="brand-tagline">
+            <span className="brand-subtitle">
               Global Information & Services
             </span>
           </button>
 
-
           <nav className="main-navigation">
-
             <button
               type="button"
               className="nav-link active"
-              onClick={() => {
-                setSelectedContinent(null);
-                setSearch("");
-
-                window.scrollTo({
-                  top: 0,
-                  behavior: "smooth",
-                });
-              }}
+              onClick={goHome}
             >
               Home
             </button>
@@ -220,13 +546,7 @@ function Home() {
             <button
               type="button"
               className="nav-link"
-              onClick={() => {
-                document
-                  .getElementById("continents")
-                  ?.scrollIntoView({
-                    behavior: "smooth",
-                  });
-              }}
+              onClick={goCountries}
             >
               Countries
             </button>
@@ -234,13 +554,7 @@ function Home() {
             <button
               type="button"
               className="nav-link"
-              onClick={() => {
-                document
-                  .getElementById("services")
-                  ?.scrollIntoView({
-                    behavior: "smooth",
-                  });
-              }}
+              onClick={goServices}
             >
               Services
             </button>
@@ -248,79 +562,46 @@ function Home() {
             <button
               type="button"
               className="nav-link"
-              onClick={() => {
-                document
-                  .getElementById("tools")
-                  ?.scrollIntoView({
-                    behavior: "smooth",
-                  });
-              }}
+              onClick={goTools}
             >
               Tools
             </button>
-
           </nav>
 
         </div>
       </header>
 
-
-      {/* =====================================================
-          PROFESSIONAL HERO
-      ===================================================== */}
+      {/* =====================================
+          HERO
+      ===================================== */}
 
       <section className="professional-hero">
-
         <div className="professional-hero-inner">
 
           <div className="hero-badge">
-            <span className="hero-badge-dot"></span>
-
+            <span className="hero-badge-dot" />
             <span>
               Sanolines Global Directory
             </span>
           </div>
 
-
           <h1>
             Information and services
             <br className="desktop-break" />
-            {" "}for the world
+            for the world
           </h1>
 
-
           <p>
-            Find useful information about government
-            services, immigration, jobs, healthcare,
-            education, travel, housing and more.
+            Find useful information about government services,
+            immigration, jobs, healthcare, education, travel,
+            housing and more.
           </p>
 
-
-          <form
-            className="professional-search"
-            onSubmit={handleSearch}
-          >
+          <div className="professional-search">
 
             <div className="professional-search-icon">
-
-              <svg
-                width="21"
-                height="21"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                aria-hidden="true"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-                />
-              </svg>
-
+              <SearchIcon />
             </div>
-
 
             <input
               type="text"
@@ -333,7 +614,6 @@ function Home() {
               aria-label="Search for a country, city, or service"
             />
 
-
             {search && (
               <button
                 type="button"
@@ -345,636 +625,588 @@ function Home() {
               </button>
             )}
 
-
             <button
-              type="submit"
+              type="button"
               className="professional-search-button"
+              onClick={() => {
+                document
+                  .getElementById("search-results")
+                  ?.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start",
+                  });
+              }}
             >
               Search
             </button>
 
-          </form>
+          </div>
 
         </div>
-
       </section>
 
+      {/* =====================================
+          SEARCH RESULTS
+      ===================================== */}
 
-      {/* =====================================================
-          CONTINENTS
-      ===================================================== */}
-
-      <section
-        className="home-section continents-section"
-        id="continents"
-      >
-
-        <div className="section-heading">
-
-          <span className="section-label">
-            EXPLORE THE WORLD
-          </span>
-
-          <h2>
-            Discover by Continent
-          </h2>
-
-          <p>
-            Choose a region and explore countries,
-            services and useful information.
-          </p>
-
-        </div>
-
-
-        <div className="continent-grid">
-
-          {continents.map((continent, index) => {
-
-            const countryCount = countries.filter(
-              (item) =>
-                item.continent === continent.name
-            ).length;
-
-            return (
-              <button
-                key={continent.name}
-                type="button"
-                className={`continent-card ${
-                  selectedContinent === continent.name
-                    ? "active"
-                    : ""
-                }`}
-                onClick={() =>
-                  selectContinent(continent.name)
-                }
-              >
-
-                <img
-                  src={continent.image}
-                  alt={continent.name}
-                  className="continent-image"
-                  loading="lazy"
-                />
-
-                <div className="continent-overlay"></div>
-
-
-                <div className="continent-content">
-
-                  <span className="continent-label">
-                    {String(index + 1).padStart(2, "0")}
-                  </span>
-
-                  <h3>
-                    {continent.name}
-                  </h3>
-
-                  <p>
-                    {countryCount} countries
-                    <span>→</span>
-                  </p>
-
-                </div>
-
-              </button>
-            );
-          })}
-
-        </div>
-
-      </section>
-
-
-      {/* =====================================================
-          SELECTED CONTINENT COUNTRIES
-      ===================================================== */}
-
-      {selectedContinent && (
-
+      {search.trim() && (
         <section
-          className="home-section selected-continent-section"
-          id="country-results"
+          className="home-section search-results-section"
+          id="search-results"
         >
+          <div className="section-heading">
 
-          <div className="country-section-header">
+            <span className="section-label">
+              Search Results
+            </span>
 
-            <div>
+            <h2>
+              {filteredCountries.length}{" "}
+              {filteredCountries.length === 1
+                ? "country"
+                : "countries"}{" "}
+              found
+            </h2>
 
-              <span className="section-label">
-                {selectedContinent}
-              </span>
-
-              <h2>
-                Countries & Information
-              </h2>
-
-              <p>
-                Select a country to explore its
-                information and services.
-              </p>
-
-            </div>
-
-
-            <div className="country-filter">
-
-              <input
-                type="text"
-                placeholder={
-                  continentSearchPlaceholder[
-                    selectedContinent
-                  ] || "Search country..."
-                }
-                onChange={(event) =>
-                  setSearch(event.target.value)
-                }
-                value={search}
-              />
-
-            </div>
+            <p>
+              Select a country to explore its information
+              and services.
+            </p>
 
           </div>
 
-
-          {selectedCountries.filter((item) => {
-
-            if (!search.trim()) {
-              return true;
-            }
-
-            const text =
-              `${item.country} ${item.famousFor} ${
-                item.topics?.join(" ") || ""
-              }`.toLowerCase();
-
-            return text.includes(
-              search.toLowerCase()
-            );
-
-          }).length > 0 ? (
-
+          {filteredCountries.length > 0 ? (
             <div className="country-grid">
 
-              {selectedCountries
-                .filter((item) => {
-
-                  if (!search.trim()) {
-                    return true;
+              {filteredCountries.map((item) => (
+                <button
+                  type="button"
+                  className="country-card"
+                  key={`${item.continent}-${item.country}`}
+                  onClick={() =>
+                    handleCountryClick(item)
                   }
+                >
+                  <div className="country-card-main">
 
-                  const text =
-                    `${item.country} ${
-                      item.famousFor
-                    } ${
-                      item.topics?.join(" ") || ""
-                    }`.toLowerCase();
+                    <div className="country-card-top">
 
-                  return text.includes(
-                    search.toLowerCase()
-                  );
+                      <span className="country-continent">
+                        {item.continent}
+                      </span>
 
-                })
-                .map((item) => {
-
-                  const flag = getCountryFlag(item);
-
-                  return (
-                    <article
-                      className="country-card"
-                      key={item.country}
-                    >
-
-                      <div className="country-card-main">
-
-                        <div className="country-card-top">
-
-                          <span className="country-continent">
-                            {item.continent}
-                          </span>
-
-                          {flag ? (
-                            <img
-                              className="country-flag"
-                              src={flag}
-                              alt={`${item.country} flag`}
-                              loading="lazy"
-                            />
-                          ) : (
-                            <span className="country-flag-placeholder">
-                              🌐
-                            </span>
-                          )}
-
-                        </div>
-
-
-                        <h3>
-                          {item.country}
-                        </h3>
-
-
-                        <p>
-                          {item.famousFor}
-                        </p>
-
-                      </div>
-
-
-                      <div className="country-card-footer">
-
-                        <span>
-                          Explore country
+                      {item.flag ? (
+                        <img
+                          src={item.flag}
+                          alt={`${item.country} flag`}
+                          className="country-flag"
+                        />
+                      ) : (
+                        <span className="country-flag-placeholder">
+                          🌐
                         </span>
+                      )}
 
-                        <span className="country-arrow">
-                          →
-                        </span>
+                    </div>
 
-                      </div>
+                    <h3>
+                      {item.country}
+                    </h3>
 
+                    <p>
+                      {item.famousFor}
+                    </p>
 
-                      <button
-                        type="button"
-                        className="country-card-overlay-button"
-                        aria-label={`Explore ${item.country}`}
-                        onClick={() =>
-                          openCountry(item)
-                        }
-                      />
+                  </div>
 
-                    </article>
-                  );
-                })}
+                  <div className="country-card-footer">
+                    <span>
+                      Explore country
+                    </span>
+
+                    <span className="country-arrow">
+                      <ArrowIcon />
+                    </span>
+                  </div>
+                </button>
+              ))}
 
             </div>
-
           ) : (
-
             <div className="empty-search">
+
+              <div className="empty-search-icon">
+                <SearchIcon />
+              </div>
 
               <h3>
                 No country found
               </h3>
 
               <p>
-                Try another country name.
+                Try searching with another country name.
+              </p>
+
+            </div>
+          )}
+        </section>
+      )}
+
+      {/* =====================================
+          MAIN CONTENT
+      ===================================== */}
+
+      {!search.trim() && (
+        <>
+
+          {/* =================================
+              CONTINENTS
+          ================================= */}
+
+          <section
+            className="home-section continents-section"
+            id="continents"
+          >
+
+            <div className="section-heading">
+
+              <span className="section-label">
+                Explore The World
+              </span>
+
+              <h2>
+                Countries by continent
+              </h2>
+
+              <p>
+                Choose a continent to explore countries
+                and useful information.
               </p>
 
             </div>
 
-          )}
+            <div className="continent-grid">
 
-        </section>
-
-      )}
-
-
-      {/* =====================================================
-          GLOBAL SEARCH RESULTS
-      ===================================================== */}
-
-      {search.trim() && !selectedContinent && (
-
-        <section
-          className="home-section search-results-section"
-          id="search-results"
-        >
-
-          <div className="section-heading">
-
-            <span className="section-label">
-              SEARCH RESULTS
-            </span>
-
-            <h2>
-              Results for "{search}"
-            </h2>
-
-            <p>
-              Countries and information matching
-              your search.
-            </p>
-
-          </div>
-
-
-          {filteredCountries.length > 0 ? (
-
-            <div className="country-grid">
-
-              {filteredCountries.map((item) => {
-
-                const flag = getCountryFlag(item);
+              {continents.map((continent) => {
+                const continentCountries =
+                  getContinentCountries(continent.name);
 
                 return (
-                  <article
-                    className="country-card"
-                    key={`${item.continent}-${item.country}`}
+                  <button
+                    type="button"
+                    className={`continent-card ${
+                      selectedContinent === continent.name
+                        ? "active"
+                        : ""
+                    }`}
+                    key={continent.name}
+                    onClick={() =>
+                      handleContinentClick(
+                        continent.name
+                      )
+                    }
                   >
 
-                    <div className="country-card-main">
+                    <img
+                      src={continent.image}
+                      alt={continent.name}
+                      className="continent-image"
+                      loading="lazy"
+                    />
 
-                      <div className="country-card-top">
+                    <div className="continent-overlay" />
 
-                        <span className="country-continent">
-                          {item.continent}
-                        </span>
+                    <div className="continent-content">
 
-                        {flag ? (
-                          <img
-                            className="country-flag"
-                            src={flag}
-                            alt={`${item.country} flag`}
-                            loading="lazy"
-                          />
-                        ) : (
-                          <span className="country-flag-placeholder">
-                            🌐
-                          </span>
-                        )}
-
-                      </div>
-
+                      <span className="continent-label">
+                        EXPLORE REGION
+                      </span>
 
                       <h3>
-                        {item.country}
+                        {continent.name}
                       </h3>
 
-
                       <p>
-                        {item.famousFor}
+                        {continentCountries.length}{" "}
+                        {continentCountries.length === 1
+                          ? "country"
+                          : "countries"}
+
+                        <span>
+                          <ArrowIcon />
+                        </span>
                       </p>
 
                     </div>
 
-
-                    <div className="country-card-footer">
-
-                      <span>
-                        Explore country
-                      </span>
-
-                      <span className="country-arrow">
-                        →
-                      </span>
-
-                    </div>
-
-
-                    <button
-                      type="button"
-                      className="country-card-overlay-button"
-                      aria-label={`Explore ${item.country}`}
-                      onClick={() =>
-                        openCountry(item)
-                      }
-                    />
-
-                  </article>
+                  </button>
                 );
               })}
 
             </div>
 
-          ) : (
+          </section>
 
-            <div className="empty-search">
+          {/* =================================
+              SELECTED CONTINENT COUNTRIES
+          ================================= */}
 
-              <h3>
-                No results found
-              </h3>
-
-              <p>
-                Try searching for a country,
-                service or topic.
-              </p>
-
-            </div>
-
-          )}
-
-        </section>
-
-      )}
-
-
-      {/* =====================================================
-          SERVICES
-      ===================================================== */}
-
-      <section
-        className="home-section services-section"
-        id="services"
-      >
-
-        <div className="section-heading">
-
-          <span className="section-label">
-            INFORMATION & SERVICES
-          </span>
-
-          <h2>
-            What Can You Find?
-          </h2>
-
-          <p>
-            Important everyday information organized
-            in one simple global platform.
-          </p>
-
-        </div>
-
-
-        <div className="services-grid">
-
-          {services.map((service, index) => (
-
-            <button
-              key={service}
-              type="button"
-              className="service-card"
-              onClick={() =>
-                handleServiceClick(service)
-              }
+          {selectedContinent && (
+            <section
+              className="home-section selected-continent-section"
+              id="countries"
             >
 
-              <div className="service-card-left">
+              <div className="country-section-header">
 
-                <span className="service-icon">
-                  {String(index + 1).padStart(2, "0")}
-                </span>
+                <div className="country-section-heading">
 
-                <span>
-                  {service}
-                </span>
+                  <span className="section-label">
+                    {selectedContinent}
+                  </span>
+
+                  <h2>
+                    Countries & Information
+                  </h2>
+
+                  <p>
+                    Select a country to explore its
+                    information and services.
+                  </p>
+
+                </div>
+
+                <div className="country-filter">
+
+                  <SearchIcon />
+
+                  <input
+                    type="text"
+                    placeholder={`Search ${selectedContinent} country...`}
+                    value={continentSearch}
+                    onChange={(event) =>
+                      setContinentSearch(
+                        event.target.value
+                      )
+                    }
+                    aria-label="Search country"
+                  />
+
+                  {continentSearch && (
+                    <button
+                      type="button"
+                      className="country-filter-clear"
+                      onClick={() =>
+                        setContinentSearch("")
+                      }
+                      aria-label="Clear country search"
+                    >
+                      ×
+                    </button>
+                  )}
+
+                </div>
 
               </div>
 
+              {visibleContinentCountries.length > 0 ? (
+                <div className="country-grid">
 
-              <span className="service-arrow">
-                →
-              </span>
+                  {visibleContinentCountries.map(
+                    (item) => (
+                      <button
+                        type="button"
+                        className="country-card"
+                        key={`${item.continent}-${item.country}`}
+                        onClick={() =>
+                          handleCountryClick(item)
+                        }
+                      >
 
-            </button>
+                        <div className="country-card-main">
 
-          ))}
+                          <div className="country-card-top">
 
-        </div>
+                            <span className="country-continent">
+                              {item.continent}
+                            </span>
 
-      </section>
+                            {item.flag ? (
+                              <img
+                                src={item.flag}
+                                alt={`${item.country} flag`}
+                                className="country-flag"
+                                loading="lazy"
+                              />
+                            ) : (
+                              <span className="country-flag-placeholder">
+                                🌐
+                              </span>
+                            )}
 
+                          </div>
 
-      {/* =====================================================
-          TOOLS
-      ===================================================== */}
+                          <h3>
+                            {item.country}
+                          </h3>
 
-      <section
-        className="home-section tools-section"
-        id="tools"
-      >
+                          <p>
+                            {item.famousFor}
+                          </p>
 
-        <div className="tools-box">
+                        </div>
 
-          <div className="tools-content">
+                        <div className="country-card-footer">
 
-            <span className="section-label">
-              PRACTICAL TOOLS
-            </span>
+                          <span>
+                            Explore country
+                          </span>
 
-            <h2>
-              Calculators & Everyday Tools
-            </h2>
+                          <span className="country-arrow">
+                            <ArrowIcon />
+                          </span>
 
-            <p>
-              Simple tools to help you calculate,
-              compare and understand everyday
-              information.
-            </p>
+                        </div>
 
-          </div>
+                      </button>
+                    )
+                  )}
 
+                </div>
+              ) : (
+                <div className="empty-search">
 
-          <div className="tools-action">
+                  <div className="empty-search-icon">
+                    <SearchIcon />
+                  </div>
 
-            <button
-              type="button"
-              onClick={() =>
-                (window.location.href = "/tools")
-              }
-            >
-              Explore Tools
+                  <h3>
+                    No country found
+                  </h3>
 
-              <span className="tools-arrow">
-                →
-              </span>
+                  <p>
+                    Try another country name.
+                  </p>
 
-            </button>
+                </div>
+              )}
 
-          </div>
+            </section>
+          )}
 
-        </div>
+          {/* =================================
+              SERVICES
+          ================================= */}
 
-      </section>
+          <section
+            className="home-section services-section"
+            id="services"
+          >
 
+            <div className="services-container">
 
-      {/* =====================================================
+              <div className="section-heading services-heading">
+
+                <span className="section-label">
+                  Information & Services
+                </span>
+
+                <h2>
+                  What Can You Find?
+                </h2>
+
+                <p>
+                  Important everyday information
+                  organized in one simple global platform.
+                </p>
+
+              </div>
+
+              <div className="services-grid">
+
+                {services.map((service, index) => (
+                  <button
+                    type="button"
+                    className={`service-card ${
+                      selectedService?.name === service.name
+                        ? "active"
+                        : ""
+                    }`}
+                    key={service.name}
+                    onClick={() =>
+                      handleServiceClick(service)
+                    }
+                  >
+
+                    <div className="service-card-left">
+
+                      <div className="service-number">
+                        {String(index + 1).padStart(2, "0")}
+                      </div>
+
+                      <div className="service-icon">
+                        <ServiceIcon
+                          type={service.type}
+                        />
+                      </div>
+
+                      <span>
+                        {service.name}
+                      </span>
+
+                    </div>
+
+                    <span className="service-arrow">
+                      <ArrowIcon />
+                    </span>
+
+                  </button>
+                ))}
+
+              </div>
+
+            </div>
+
+          </section>
+
+          {/* =================================
+              TOOLS
+          ================================= */}
+
+          <section
+            className="home-section tools-section"
+            id="tools"
+          >
+
+            <div className="tools-box">
+
+              <div className="tools-content">
+
+                <span className="section-label">
+                  Tools
+                </span>
+
+                <h2>
+                  Useful tools for everyday life
+                </h2>
+
+                <p>
+                  Calculators and practical tools
+                  designed to make everyday tasks easier.
+                </p>
+
+              </div>
+
+              <div className="tools-action">
+
+                <button
+                  type="button"
+                  onClick={goTools}
+                >
+                  <span>
+                    Explore tools
+                  </span>
+
+                  <span className="tools-arrow">
+                    <ArrowIcon />
+                  </span>
+                </button>
+
+              </div>
+
+            </div>
+
+          </section>
+
+        </>
+      )}
+
+      {/* =====================================
           FOOTER
-      ===================================================== */}
+      ===================================== */}
 
       <footer className="home-footer">
 
         <div className="home-footer-inner">
 
-          <div>
+          <div className="footer-brand">
 
             <strong>
               SANOLINES
             </strong>
 
-            <p>
+            <span>
               Global Information & Services
+            </span>
+
+            <p>
+              Useful information and services
+              for everyday life around the world.
             </p>
 
           </div>
 
+          <div className="footer-navigation">
 
-          <div className="footer-links">
+            <div>
+              <span className="footer-title">
+                Explore
+              </span>
 
-            <button
-              type="button"
-              onClick={() =>
-                window.scrollTo({
-                  top: 0,
-                  behavior: "smooth",
-                })
-              }
-            >
-              Home
-            </button>
+              <button
+                type="button"
+                onClick={goHome}
+              >
+                Home
+              </button>
 
-            <button
-              type="button"
-              onClick={() =>
-                document
-                  .getElementById("continents")
-                  ?.scrollIntoView({
-                    behavior: "smooth",
-                  })
-              }
-            >
-              Countries
-            </button>
+              <button
+                type="button"
+                onClick={goCountries}
+              >
+                Countries
+              </button>
+            </div>
 
-            <button
-              type="button"
-              onClick={() =>
-                document
-                  .getElementById("services")
-                  ?.scrollIntoView({
-                    behavior: "smooth",
-                  })
-              }
-            >
-              Services
-            </button>
+            <div>
+              <span className="footer-title">
+                Services
+              </span>
 
-            <button
-              type="button"
-              onClick={() =>
-                document
-                  .getElementById("tools")
-                  ?.scrollIntoView({
-                    behavior: "smooth",
-                  })
-              }
-            >
-              Tools
-            </button>
+              <button
+                type="button"
+                onClick={goServices}
+              >
+                Services
+              </button>
 
-            <a href="/privacy.html">
-              Privacy Policy
-            </a>
-
-            <a href="/disclaimer.html">
-              Disclaimer
-            </a>
+              <button
+                type="button"
+                onClick={goTools}
+              >
+                Tools
+              </button>
+            </div>
 
           </div>
 
         </div>
 
-
         <div className="home-footer-bottom">
 
-          © 2026 Sanolines. All rights reserved.
+          <span>
+            © {new Date().getFullYear()} Sanolines.
+            All rights reserved.
+          </span>
+
+          <span>
+            Global Information & Services
+          </span>
 
         </div>
 
       </footer>
 
-    </div>
+    </main>
   );
 }
-
-export default Home;
