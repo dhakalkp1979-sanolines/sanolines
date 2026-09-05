@@ -805,6 +805,11 @@ function Home() {
                   }}
                 >
                   <span className="country-card-overlay"></span>
+                  <img
+  className="country-flag"
+  src={item.flag}
+  alt={item.country + " flag"}
+/>
 
                   <span className="country-card-content">
                     <span className="country-continent">
