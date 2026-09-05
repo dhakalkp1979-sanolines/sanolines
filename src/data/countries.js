@@ -1236,7 +1236,6 @@ const countries = [
   },
 ];
 
-export default countries;
 const countryFlagCodes = {
   Afghanistan: "af",
   Armenia: "am",
