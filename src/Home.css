@@ -1182,6 +1182,85 @@ button {
   .service-card-content {
     gap: 18px;
   }
+   /* =========================================
+   STEP 6 — TOOLS
+========================================= */
+
+.tools-section {
+  background: #ffffff;
+}
+
+.tools-box {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 80px;
+  padding: 100px 0;
+  border-top: 1px solid #000000;
+  border-bottom: 1px solid #000000;
+}
+
+.tools-content h2 {
+  max-width: 800px;
+  margin-bottom: 25px;
+  font-size: 64px;
+  line-height: 1;
+  font-weight: 700;
+  letter-spacing: -3px;
+  color: #000000;
+}
+
+.tools-content p {
+  max-width: 600px;
+  font-size: 17px;
+  color: #555555;
+}
+
+.tools-action {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+
+.tools-action button {
+  min-width: 200px;
+  padding: 18px 22px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid #000000;
+  background: #000000;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.tools-action button:hover {
+  background: #ffffff;
+  color: #000000;
+}
+
+.tools-action button span {
+  font-size: 20px;
+}
+
+@media (max-width: 700px) {
+
+  .tools-box {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    padding: 70px 0;
+  }
+
+  .tools-content h2 {
+    font-size: 44px;
+    letter-spacing: -2px;
+  }
+
+  .tools-action {
+    justify-content: flex-start;
+  }
+
+}
 
   .service-card h3 {
     font-size: 16px;
