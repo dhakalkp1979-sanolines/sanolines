@@ -1472,7 +1472,6 @@ const countryFlagCodes = {
 // =====================================================
 // ADD FLAGS TO EVERY COUNTRY
 // =====================================================
-
 const countriesWithFlags = countries.map((item) => {
   const flagCode = countryFlagCodes[item.country] || "";
 
@@ -1480,7 +1479,7 @@ const countriesWithFlags = countries.map((item) => {
     ...item,
     flagCode,
     flag: flagCode
-      ? `https://flagcdn.io/w320/${flagCode}.png`
+      ? `https://flagcdn.io/4x3/${flagCode}.svg`
       : "",
   };
 });
