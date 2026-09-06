@@ -762,3 +762,50 @@ button {
     padding: 20px;
   }
 }
+/* =========================================
+   STEP 2 — HERO IMAGE
+========================================= */
+
+.home-hero {
+  position: relative;
+  min-height: 680px;
+  background-image:
+    linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0.72),
+      rgba(0, 0, 0, 0.35),
+      rgba(0, 0, 0, 0.05)
+    ),
+    url("https://images.unsplash.com/photo-1521295121783-8a321d551ad2?auto=format&fit=crop&w=2000&q=85");
+  background-size: cover;
+  background-position: center;
+  color: #ffffff;
+}
+
+.home-hero-inner {
+  position: relative;
+  z-index: 2;
+  min-height: 680px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.home-hero .hero-label {
+  color: #ffffff;
+}
+
+.home-hero h1 {
+  color: #ffffff;
+  max-width: 900px;
+}
+
+.home-hero p {
+  color: #ffffff;
+  max-width: 650px;
+}
+
+.home-search input {
+  background: #ffffff;
+  color: #000000;
+}
