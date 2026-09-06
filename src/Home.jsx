@@ -23,43 +23,43 @@ const continents = [
     name: "Asia",
     code: "ASIA",
     image:
-      "https://images.unsplash.com/photo-1535139262971-c51845709a48?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1535139262971-c51845709a48?auto=format&fit=crop&w=1400&q=85",
   },
   {
     name: "Africa",
     code: "AFRICA",
     image:
-      "https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?auto=format&fit=crop&w=1400&q=85",
   },
   {
     name: "Europe",
     code: "EUROPE",
     image:
-      "https://images.unsplash.com/photo-1467269204594-9661b134dd2b?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1467269204594-9661b134dd2b?auto=format&fit=crop&w=1400&q=85",
   },
   {
     name: "North America",
     code: "NORTH AMERICA",
     image:
-      "https://images.unsplash.com/photo-1485738422979-f5c462d49f74?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1485738422979-f5c462d49f74?auto=format&fit=crop&w=1400&q=85",
   },
   {
     name: "South America",
     code: "SOUTH AMERICA",
     image:
-      "https://images.unsplash.com/photo-1483729558449-99ef09a8c325?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1483729558449-99ef09a8c325?auto=format&fit=crop&w=1400&q=85",
   },
   {
     name: "Oceania",
     code: "OCEANIA",
     image:
-      "https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9?auto=format&fit=crop&w=1400&q=85",
   },
   {
     name: "Antarctica",
     code: "ANTARCTICA",
     image:
-      "https://images.unsplash.com/photo-1517783999520-f068d7431a60?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1517783999520-f068d7431a60?auto=format&fit=crop&w=1400&q=85",
   },
 ];
 
@@ -132,12 +132,15 @@ function Home() {
     setTimeout(() => {
       document
         .getElementById("countries")
-        ?.scrollIntoView({ behavior: "smooth" });
+        ?.scrollIntoView({
+          behavior: "smooth",
+        });
     }, 50);
   };
 
   const handleCountryClick = (country) => {
     setSelectedCountry(country);
+
     window.scrollTo({
       top: 0,
       behavior: "smooth",
@@ -182,22 +185,25 @@ function Home() {
     <div className="home-page">
 
       {/* =========================================
-          HEADER / NAVIGATION
+          HEADER
       ========================================= */}
 
       <header className="site-header">
         <div className="site-header-inner">
 
           <div className="site-brand">
-            <div className="site-brand-name">
-              Sanolines Global
-            </div>
+            Sanolines Global
           </div>
 
           <nav className="site-navigation">
             <button
               type="button"
-              onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+              onClick={() =>
+                window.scrollTo({
+                  top: 0,
+                  behavior: "smooth",
+                })
+              }
             >
               Home
             </button>
@@ -232,7 +238,8 @@ function Home() {
           HERO
       ========================================= */}
 
-      <header className="home-hero">
+      <section className="home-hero">
+
         <div className="home-hero-inner">
 
           <span className="hero-label">
@@ -240,12 +247,16 @@ function Home() {
           </span>
 
           <h1>
-            Information and services for the world
+            Information and services
+            <br />
+            for the world
           </h1>
 
           <p>
-            Find useful information about government services, immigration,
-            jobs, healthcare, education, travel, housing and more.
+            Find useful information about countries,
+            government services, immigration, jobs,
+            healthcare, education, travel, housing
+            and everyday life.
           </p>
 
           <div className="home-search">
@@ -253,7 +264,9 @@ function Home() {
             <input
               type="text"
               value={searchTerm}
-              onChange={(event) => setSearchTerm(event.target.value)}
+              onChange={(event) =>
+                setSearchTerm(event.target.value)
+              }
               placeholder="Search for a country or service..."
               aria-label="Search for a country or service"
             />
@@ -263,16 +276,16 @@ function Home() {
                 type="button"
                 className="search-clear"
                 onClick={() => setSearchTerm("")}
-                aria-label="Clear search"
               >
-                &times;
+                ×
               </button>
             )}
 
           </div>
 
         </div>
-      </header>
+
+      </section>
 
 
       {/* =========================================
@@ -295,9 +308,11 @@ function Home() {
           </div>
 
           {searchResults.length > 0 ? (
+
             <div className="country-grid">
 
               {searchResults.map((item, index) => (
+
                 <article
                   className="country-card"
                   key={`${getCountryName(item)}-${index}`}
@@ -336,17 +351,22 @@ function Home() {
                   </p>
 
                   <div className="country-card-footer">
-                    Explore country <span>&rarr;</span>
+                    Explore country
+                    <span>→</span>
                   </div>
 
                 </article>
+
               ))}
 
             </div>
+
           ) : (
+
             <div className="empty-search">
               No country found for "{searchTerm}".
             </div>
+
           )}
 
         </section>
@@ -371,7 +391,8 @@ function Home() {
             </h2>
 
             <p>
-              Choose a continent to explore countries and useful information.
+              Explore countries and useful information
+              from around the world.
             </p>
 
           </div>
@@ -379,6 +400,7 @@ function Home() {
           <div className="continent-grid">
 
             {continents.map((continent) => (
+
               <button
                 type="button"
                 className={`continent-card ${
@@ -387,9 +409,12 @@ function Home() {
                     : ""
                 }`}
                 key={continent.name}
-                onClick={() => handleContinentSelect(continent.name)}
+                onClick={() =>
+                  handleContinentSelect(continent.name)
+                }
                 style={{
-                  backgroundImage: `url("${continent.image}")`,
+                  backgroundImage:
+                    `url("${continent.image}")`,
                 }}
               >
 
@@ -406,12 +431,13 @@ function Home() {
                   </h3>
 
                   <p>
-                    Explore countries <span>&rarr;</span>
+                    Explore countries →
                   </p>
 
                 </div>
 
               </button>
+
             ))}
 
           </div>
@@ -433,6 +459,7 @@ function Home() {
           <div className="country-section-header">
 
             <div>
+
               <span className="section-label">
                 Countries
               </span>
@@ -440,6 +467,7 @@ function Home() {
               <h2 className="country-section-title">
                 {selectedContinent}
               </h2>
+
             </div>
 
             <div className="country-filter">
@@ -451,7 +479,6 @@ function Home() {
                   setCountryFilter(event.target.value)
                 }
                 placeholder={`Search ${selectedContinent}...`}
-                aria-label={`Search ${selectedContinent} countries`}
               />
 
             </div>
@@ -459,9 +486,11 @@ function Home() {
           </div>
 
           {filteredCountries.length > 0 ? (
+
             <div className="country-grid">
 
               {filteredCountries.map((item, index) => (
+
                 <article
                   className="country-card"
                   key={`${getCountryName(item)}-${index}`}
@@ -501,17 +530,21 @@ function Home() {
 
                   <div className="country-card-footer">
                     Explore {getCountryName(item)}
-                    <span>&rarr;</span>
+                    <span>→</span>
                   </div>
 
                 </article>
+
               ))}
 
             </div>
+
           ) : (
+
             <div className="empty-search">
               No countries found.
             </div>
+
           )}
 
         </section>
@@ -541,8 +574,8 @@ function Home() {
               </h2>
 
               <p>
-                Important everyday information organized in one simple
-                global platform.
+                Important everyday information organized
+                in one simple global platform.
               </p>
 
             </div>
@@ -550,16 +583,17 @@ function Home() {
             <div className="services-grid">
 
               {services.map((service, index) => (
+
                 <button
                   type="button"
                   className="service-card"
                   key={service}
-                  onClick={() => {
+                  onClick={() =>
                     window.scrollTo({
                       top: 0,
                       behavior: "smooth",
-                    });
-                  }}
+                    })
+                  }
                 >
 
                   <div className="service-card-content">
@@ -575,10 +609,11 @@ function Home() {
                   </div>
 
                   <span className="service-arrow">
-                    &rarr;
+                    →
                   </span>
 
                 </button>
+
               ))}
 
             </div>
@@ -612,8 +647,8 @@ function Home() {
               </h2>
 
               <p>
-                Calculators and practical tools will be available here
-                as Sanolines grows.
+                Calculators and practical tools will be
+                available here as Sanolines grows.
               </p>
 
             </div>
@@ -622,21 +657,15 @@ function Home() {
 
               <button
                 type="button"
-                onClick={() => {
+                onClick={() =>
                   window.scrollTo({
                     top: 0,
                     behavior: "smooth",
-                  });
-                }}
+                  })
+                }
               >
-                <span>
-                  Explore tools
-                </span>
-
-                <span className="tools-arrow">
-                  &rarr;
-                </span>
-
+                Explore tools
+                <span>→</span>
               </button>
 
             </div>
@@ -662,8 +691,8 @@ function Home() {
             </strong>
 
             <p>
-              Global information & services for everyday people around
-              the world.
+              Global information & services for
+              everyday people around the world.
             </p>
 
           </div>
@@ -673,7 +702,10 @@ function Home() {
             <button
               type="button"
               onClick={() =>
-                window.scrollTo({ top: 0, behavior: "smooth" })
+                window.scrollTo({
+                  top: 0,
+                  behavior: "smooth",
+                })
               }
             >
               Home
@@ -681,21 +713,27 @@ function Home() {
 
             <button
               type="button"
-              onClick={() => handleNavigation("countries")}
+              onClick={() =>
+                handleNavigation("countries")
+              }
             >
               Countries
             </button>
 
             <button
               type="button"
-              onClick={() => handleNavigation("services")}
+              onClick={() =>
+                handleNavigation("services")
+              }
             >
               Services
             </button>
 
             <button
               type="button"
-              onClick={() => handleNavigation("tools")}
+              onClick={() =>
+                handleNavigation("tools")
+              }
             >
               Tools
             </button>
@@ -705,7 +743,7 @@ function Home() {
         </div>
 
         <div className="home-footer-bottom">
-          &copy; 2026 Sanolines Global. All rights reserved.
+          © 2026 Sanolines Global. All rights reserved.
         </div>
 
       </footer>
