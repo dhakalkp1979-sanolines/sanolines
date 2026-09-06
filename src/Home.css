@@ -1052,3 +1052,138 @@ button {
     font-size: 36px;
   }
 }
+/* =========================================
+   STEP 5 — SERVICES
+========================================= */
+
+.services-section {
+  width: 100%;
+  background: #000000;
+  color: #ffffff;
+}
+
+.services-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 110px 50px;
+}
+
+.services-heading {
+  max-width: 800px;
+  margin-bottom: 70px;
+}
+
+.services-heading .section-label {
+  color: #999999;
+}
+
+.services-heading h2 {
+  margin-bottom: 20px;
+  font-size: 64px;
+  line-height: 1;
+  font-weight: 700;
+  letter-spacing: -3px;
+  color: #ffffff;
+}
+
+.services-heading p {
+  max-width: 600px;
+  font-size: 17px;
+  color: #aaaaaa;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-top: 1px solid #333333;
+}
+
+.service-card {
+  min-height: 125px;
+  padding: 25px 5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  border: 0;
+  border-bottom: 1px solid #333333;
+  background: transparent;
+  color: #ffffff;
+  text-align: left;
+}
+
+.service-card:nth-child(odd) {
+  padding-right: 35px;
+  border-right: 1px solid #333333;
+}
+
+.service-card:nth-child(even) {
+  padding-left: 35px;
+}
+
+.service-card:hover {
+  background: #111111;
+}
+
+.service-card-content {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.service-number {
+  min-width: 28px;
+  font-size: 12px;
+  color: #777777;
+}
+
+.service-card h3 {
+  font-size: 19px;
+  font-weight: 500;
+}
+
+.service-arrow {
+  font-size: 22px;
+  color: #777777;
+}
+
+.service-card:hover .service-arrow {
+  color: #ffffff;
+}
+
+@media (max-width: 700px) {
+
+  .services-inner {
+    padding: 75px 20px;
+  }
+
+  .services-heading {
+    margin-bottom: 45px;
+  }
+
+  .services-heading h2 {
+    font-size: 44px;
+    letter-spacing: -2px;
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .service-card:nth-child(odd) {
+    padding-right: 5px;
+    border-right: 0;
+  }
+
+  .service-card:nth-child(even) {
+    padding-left: 5px;
+  }
+
+  .service-card-content {
+    gap: 18px;
+  }
+
+  .service-card h3 {
+    font-size: 16px;
+  }
+}
