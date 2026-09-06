@@ -1125,91 +1125,90 @@ const countries = [
     famousFor: "Angel Falls, Caribbean coast, mountains",
     topics,
   },
-
   // =====================================================
-  // AUSTRALIA & OCEANIA
+  // OCEANIA
   // =====================================================
 
   {
-    continent: "Australia & Oceania",
+    continent: "Oceania",
     country: "Australia",
     famousFor: "Sydney Opera House, Great Barrier Reef, wildlife",
     topics,
   },
   {
-    continent: "Australia & Oceania",
+    continent: "Oceania",
     country: "Fiji",
     famousFor: "Tropical islands, coral reefs, beaches",
     topics,
   },
   {
-    continent: "Australia & Oceania",
+    continent: "Oceania",
     country: "Kiribati",
     famousFor: "Pacific islands, lagoons, marine life",
     topics,
   },
   {
-    continent: "Australia & Oceania",
+    continent: "Oceania",
     country: "Marshall Islands",
     famousFor: "Pacific atolls, lagoons, marine life",
     topics,
   },
   {
-    continent: "Australia & Oceania",
+    continent: "Oceania",
     country: "Micronesia",
     famousFor: "Pacific islands, diving, coral reefs",
     topics,
   },
   {
-    continent: "Australia & Oceania",
+    continent: "Oceania",
     country: "Nauru",
     famousFor: "Pacific island nation, phosphate history",
     topics,
   },
   {
-    continent: "Australia & Oceania",
+    continent: "Oceania",
     country: "New Zealand",
     famousFor: "Mountains, Māori culture, Lord of the Rings landscapes",
     topics,
   },
   {
-    continent: "Australia & Oceania",
+    continent: "Oceania",
     country: "Palau",
     famousFor: "Rock Islands, diving, marine biodiversity",
     topics,
   },
   {
-    continent: "Australia & Oceania",
+    continent: "Oceania",
     country: "Papua New Guinea",
     famousFor: "Cultural diversity, rainforests, mountains",
     topics,
   },
   {
-    continent: "Australia & Oceania",
+    continent: "Oceania",
     country: "Samoa",
     famousFor: "Pacific culture, beaches, volcanic islands",
     topics,
   },
   {
-    continent: "Australia & Oceania",
+    continent: "Oceania",
     country: "Solomon Islands",
     famousFor: "Tropical islands, coral reefs, World War II history",
     topics,
   },
   {
-    continent: "Australia & Oceania",
+    continent: "Oceania",
     country: "Tonga",
     famousFor: "Pacific islands, whale watching, Polynesian culture",
     topics,
   },
   {
-    continent: "Australia & Oceania",
+    continent: "Oceania",
     country: "Tuvalu",
     famousFor: "Pacific atolls, ocean culture, island life",
     topics,
   },
   {
-    continent: "Australia & Oceania",
+    continent: "Oceania",
     country: "Vanuatu",
     famousFor: "Volcanoes, coral reefs, Melanesian culture",
     topics,
