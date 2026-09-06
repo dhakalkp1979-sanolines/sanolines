@@ -378,53 +378,73 @@ function Home() {
 
             <div className="country-grid">
 
-              {searchResults.map((item, index) => (
+              {searchResults.map((item, index) => {
 
-                <article
-                  className="country-card"
-                  key={`${getCountryName(item)}-${index}`}
-                  onClick={() => handleCountryClick(item)}
-                  role="button"
-                  tabIndex={0}
-                  onKeyDown={(event) => {
-                    if (event.key === "Enter") {
-                      handleCountryClick(item);
-                    }
-                  }}
-                >
+                const countryName = getCountryName(item);
+                const continentName = getCountryContinent(item);
+                const description = getCountryDescription(item);
 
-                  <div className="country-card-top">
+                return (
+                  <article
+                    className="country-card"
+                    key={`${countryName}-${index}`}
+                    onClick={() => handleCountryClick(item)}
+                    role="button"
+                    tabIndex={0}
+                    onKeyDown={(event) => {
+                      if (event.key === "Enter") {
+                        handleCountryClick(item);
+                      }
+                    }}
+                  >
 
-                    <div className="country-continent-label">
-                      {getCountryContinent(item)}
+                    {/* Country top */}
+                    <div className="country-card-top">
+
+                      <div className="country-continent-label">
+                        {continentName}
+                      </div>
+
+                      {item.flag && (
+                        <img
+                          className="country-flag"
+                          src={item.flag}
+                          alt={`${countryName} flag`}
+                          loading="lazy"
+                        />
+                      )}
+
                     </div>
 
-                    {item.flag && (
-                      <img
-                        className="country-flag"
-                        src={item.flag}
-                        alt={`${getCountryName(item)} flag`}
-                      />
-                    )}
+                    {/* Country information */}
+                    <div className="country-card-content">
 
-                  </div>
+                      <h3>
+                        {countryName}
+                      </h3>
 
-                  <h3>
-                    {getCountryName(item)}
-                  </h3>
+                      <p className="country-card-description">
+                        {description}
+                      </p>
 
-                  <p className="country-card-description">
-                    {getCountryDescription(item)}
-                  </p>
+                    </div>
 
-                  <div className="country-card-footer">
-                    Explore country
-                    <span>→</span>
-                  </div>
+                    {/* Explore */}
+                    <div className="country-card-footer">
 
-                </article>
+                      <span>
+                        Explore country
+                      </span>
 
-              ))}
+                      <span aria-hidden="true">
+                        →
+                      </span>
+
+                    </div>
+
+                  </article>
+                );
+              })}
 
             </div>
 
@@ -554,53 +574,82 @@ function Home() {
 
             <div className="country-grid">
 
-              {filteredCountries.map((item, index) => (
+              {filteredCountries.map((item, index) => {
 
-                <article
-                  className="country-card"
-                  key={`${getCountryName(item)}-${index}`}
-                  onClick={() => handleCountryClick(item)}
-                  role="button"
-                  tabIndex={0}
-                  onKeyDown={(event) => {
-                    if (event.key === "Enter") {
-                      handleCountryClick(item);
-                    }
-                  }}
-                >
+                const countryName = getCountryName(item);
+                const continentName = getCountryContinent(item);
+                const description = getCountryDescription(item);
 
-                  <div className="country-card-top">
+                return (
+                  <article
+                    className="country-card"
+                    key={`${countryName}-${index}`}
+                    onClick={() => handleCountryClick(item)}
+                    role="button"
+                    tabIndex={0}
+                    onKeyDown={(event) => {
+                      if (event.key === "Enter") {
+                        handleCountryClick(item);
+                      }
+                    }}
+                  >
 
-                    <div className="country-continent-label">
-                      {getCountryContinent(item)}
+                    {/* =====================================
+                        COUNTRY TOP — CONTINENT + FLAG
+                    ===================================== */}
+
+                    <div className="country-card-top">
+
+                      <div className="country-continent-label">
+                        {continentName}
+                      </div>
+
+                      {item.flag && (
+                        <img
+                          className="country-flag"
+                          src={item.flag}
+                          alt={`${countryName} flag`}
+                          loading="lazy"
+                        />
+                      )}
+
                     </div>
 
-                    {item.flag && (
-                      <img
-                        className="country-flag"
-                        src={item.flag}
-                        alt={`${getCountryName(item)} flag`}
-                      />
-                    )}
+                    {/* =====================================
+                        COUNTRY NAME + FAMOUS FOR
+                    ===================================== */}
 
-                  </div>
+                    <div className="country-card-content">
 
-                  <h3>
-                    {getCountryName(item)}
-                  </h3>
+                      <h3>
+                        {countryName}
+                      </h3>
 
-                  <p className="country-card-description">
-                    {getCountryDescription(item)}
-                  </p>
+                      <p className="country-card-description">
+                        {description}
+                      </p>
 
-                  <div className="country-card-footer">
-                    Explore {getCountryName(item)}
-                    <span>→</span>
-                  </div>
+                    </div>
 
-                </article>
+                    {/* =====================================
+                        EXPLORE ARROW
+                    ===================================== */}
 
-              ))}
+                    <div className="country-card-footer">
+
+                      <span>
+                        Explore {countryName}
+                      </span>
+
+                      <span aria-hidden="true">
+                        →
+                      </span>
+
+                    </div>
+
+                  </article>
+                );
+              })}
 
             </div>
 
@@ -1377,6 +1426,7 @@ function Home() {
                     setUnitType(e.target.value)
                   }
                 >
+
                   <option value="km-miles">
                     Kilometres → Miles
                   </option>
