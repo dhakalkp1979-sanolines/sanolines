@@ -809,3 +809,90 @@ button {
   background: #ffffff;
   color: #000000;
 }
+/* =========================================
+   STEP 3 — CONTINENTS
+========================================= */
+
+.continents-section {
+  background: #ffffff;
+}
+
+.continent-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 4px;
+}
+
+.continent-card {
+  position: relative;
+  min-height: 420px;
+  border: none;
+  overflow: hidden;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  text-align: left;
+}
+
+.continent-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.25);
+}
+
+.continent-card:hover .continent-overlay {
+  background: rgba(0, 0, 0, 0.45);
+}
+
+.continent-content {
+  position: absolute;
+  left: 40px;
+  bottom: 40px;
+  z-index: 2;
+  color: #ffffff;
+}
+
+.continent-label {
+  display: block;
+  margin-bottom: 12px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.continent-content h3 {
+  margin-bottom: 15px;
+  font-size: 48px;
+  line-height: 1;
+  font-weight: 700;
+  letter-spacing: -1.5px;
+}
+
+.continent-content p {
+  font-size: 15px;
+  color: #ffffff;
+}
+
+.continent-card-active {
+  outline: 4px solid #000000;
+  outline-offset: -4px;
+}
+
+@media (max-width: 700px) {
+  .continent-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .continent-card {
+    min-height: 300px;
+  }
+
+  .continent-content {
+    left: 25px;
+    bottom: 25px;
+  }
+
+  .continent-content h3 {
+    font-size: 36px;
+  }
+}
