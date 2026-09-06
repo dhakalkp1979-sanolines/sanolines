@@ -1261,6 +1261,83 @@ button {
   }
 
 }
+   /* =========================================
+   STEP 7 — FOOTER
+========================================= */
+
+.home-footer {
+  width: 100%;
+  background: #000000;
+  color: #ffffff;
+}
+
+.home-footer-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 70px 50px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 60px;
+}
+
+.home-footer strong {
+  display: block;
+  margin-bottom: 15px;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.home-footer p {
+  max-width: 450px;
+  font-size: 14px;
+  line-height: 1.7;
+  color: #999999;
+}
+
+.footer-links {
+  display: flex;
+  gap: 30px;
+}
+
+.footer-links button {
+  border: 0;
+  background: transparent;
+  color: #ffffff;
+  font-size: 14px;
+  padding: 0;
+}
+
+.footer-links button:hover {
+  text-decoration: underline;
+}
+
+.home-footer-bottom {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 20px 50px;
+  border-top: 1px solid #333333;
+  color: #777777;
+  font-size: 12px;
+}
+
+@media (max-width: 700px) {
+
+  .home-footer-inner {
+    display: block;
+    padding: 60px 20px;
+  }
+
+  .footer-links {
+    margin-top: 35px;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  .home-footer-bottom {
+    padding: 20px;
+  }
+}
 
   .service-card h3 {
     font-size: 16px;
