@@ -130,11 +130,9 @@ function Home() {
     setCountryFilter("");
 
     setTimeout(() => {
-      document
-        .getElementById("countries")
-        ?.scrollIntoView({
-          behavior: "smooth",
-        });
+      document.getElementById("countries")?.scrollIntoView({
+        behavior: "smooth",
+      });
     }, 50);
   };
 
@@ -169,6 +167,10 @@ function Home() {
     }
   };
 
+  const handleExploreTools = () => {
+    handleNavigation("tools");
+  };
+
   if (selectedCountry) {
     return (
       <CountryPage
@@ -196,6 +198,7 @@ function Home() {
           </div>
 
           <nav className="site-navigation">
+
             <button
               type="button"
               onClick={() =>
@@ -228,6 +231,7 @@ function Home() {
             >
               Tools
             </button>
+
           </nav>
 
         </div>
@@ -657,12 +661,7 @@ function Home() {
 
               <button
                 type="button"
-                onClick={() =>
-                  window.scrollTo({
-                    top: 0,
-                    behavior: "smooth",
-                  })
-                }
+                onClick={handleExploreTools}
               >
                 Explore tools
                 <span>→</span>
