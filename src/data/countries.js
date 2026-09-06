@@ -1,3 +1,7 @@
+/* =========================================
+   SANOLINES GLOBAL COUNTRIES
+========================================= */
+
 const topics = [
   "Government & Official Services",
   "Immigration & Visa",
@@ -11,306 +15,324 @@ const topics = [
   "Travel",
   "Housing",
   "Useful Contacts",
-  "Calculators & Tools",
+  "Legal Aid & Free Lawyers",
+  "Migrant & Refugee Support",
+  "Associations & Community Help",
+  "Social Security & Benefits",
+  "Family & Children Support",
+  "Consumer Protection",
+  "Disability & Accessibility Support",
+  "Food, Shelter & Basic Assistance",
 ];
 
+/* =========================================
+   COUNTRIES
+========================================= */
+
 const countries = [
-  // =====================================================
-  // ASIA
-  // =====================================================
+
+  /* =========================================
+     ASIA
+  ========================================= */
 
   {
     continent: "Asia",
     country: "Afghanistan",
-    famousFor: "Hindu Kush Mountains, carpets, historic Silk Road",
+    famousFor: "Hindu Kush mountains, rich history, traditional crafts",
     topics,
   },
   {
     continent: "Asia",
     country: "Armenia",
-    famousFor: "Mount Ararat views, monasteries, ancient history",
+    famousFor: "Ancient monasteries, Caucasus mountains, rich cultural heritage",
     topics,
   },
   {
     continent: "Asia",
     country: "Azerbaijan",
-    famousFor: "Baku, Caspian Sea, mud volcanoes",
+    famousFor: "Caspian Sea, Baku, Caucasus mountains, oil industry",
     topics,
   },
   {
     continent: "Asia",
     country: "Bahrain",
-    famousFor: "Pearling history, Formula 1, Gulf culture",
+    famousFor: "Pearling history, Gulf islands, modern financial centre",
     topics,
   },
   {
     continent: "Asia",
     country: "Bangladesh",
-    famousFor: "Sundarbans, rivers, textiles",
+    famousFor: "Sundarbans, rivers, textiles, Bengali culture",
     topics,
   },
   {
     continent: "Asia",
     country: "Bhutan",
-    famousFor: "Himalayas, monasteries, Gross National Happiness",
+    famousFor: "Himalayas, Buddhist monasteries, Gross National Happiness",
     topics,
   },
   {
     continent: "Asia",
     country: "Brunei",
-    famousFor: "Sultan's Palace, rainforests, oil wealth",
+    famousFor: "Oil and gas, rainforests, Islamic architecture",
     topics,
   },
   {
     continent: "Asia",
     country: "Cambodia",
-    famousFor: "Angkor Wat, Khmer history, temples",
+    famousFor: "Angkor Wat, Khmer culture, Mekong River",
     topics,
   },
   {
     continent: "Asia",
     country: "China",
-    famousFor: "Great Wall, technology, ancient civilization",
+    famousFor: "Great Wall, ancient civilization, technology, diverse landscapes",
     topics,
   },
   {
     continent: "Asia",
     country: "Cyprus",
-    famousFor: "Mediterranean beaches, ancient ruins, culture",
+    famousFor: "Mediterranean beaches, ancient history, Cypriot culture",
     topics,
   },
   {
     continent: "Asia",
     country: "Georgia",
-    famousFor: "Caucasus Mountains, wine, Tbilisi",
+    famousFor: "Caucasus mountains, wine culture, ancient churches",
     topics,
   },
   {
     continent: "Asia",
     country: "India",
-    famousFor: "Taj Mahal, diverse cultures, Bollywood",
+    famousFor: "Taj Mahal, diverse cultures, cuisine, history",
     topics,
   },
   {
     continent: "Asia",
     country: "Indonesia",
-    famousFor: "Bali, volcanoes, tropical islands",
+    famousFor: "Thousands of islands, Bali, rainforests, volcanoes",
     topics,
   },
   {
     continent: "Asia",
     country: "Iran",
-    famousFor: "Persian history, architecture, poetry",
+    famousFor: "Persian history, architecture, poetry, ancient civilization",
     topics,
   },
   {
     continent: "Asia",
     country: "Iraq",
-    famousFor: "Mesopotamia, Tigris and Euphrates, ancient cities",
+    famousFor: "Mesopotamian civilization, Tigris and Euphrates rivers, ancient history",
     topics,
   },
   {
     continent: "Asia",
     country: "Israel",
-    famousFor: "Jerusalem, Dead Sea, historic sites",
+    famousFor: "Historic cities, Mediterranean coast, diverse cultural heritage",
     topics,
   },
   {
     continent: "Asia",
     country: "Japan",
-    famousFor: "Technology, Mount Fuji, traditional culture",
+    famousFor: "Technology, traditional culture, Mount Fuji, cherry blossoms",
     topics,
   },
   {
     continent: "Asia",
     country: "Jordan",
-    famousFor: "Petra, Wadi Rum, Dead Sea",
+    famousFor: "Petra, Dead Sea, Wadi Rum, ancient history",
     topics,
   },
   {
     continent: "Asia",
     country: "Kazakhstan",
-    famousFor: "Steppe landscapes, Baikonur, vast territory",
+    famousFor: "Steppe landscapes, mountains, vast territory, nomadic heritage",
     topics,
   },
   {
     continent: "Asia",
     country: "Kuwait",
-    famousFor: "Gulf coastline, oil industry, Kuwait City",
+    famousFor: "Persian Gulf, oil industry, modern architecture",
     topics,
   },
   {
     continent: "Asia",
     country: "Kyrgyzstan",
-    famousFor: "Tien Shan Mountains, Issyk-Kul Lake, nomadic culture",
+    famousFor: "Tien Shan mountains, Issyk-Kul Lake, nomadic traditions",
     topics,
   },
   {
     continent: "Asia",
     country: "Laos",
-    famousFor: "Mekong River, Luang Prabang, Buddhist culture",
+    famousFor: "Mekong River, Buddhist temples, mountains",
     topics,
   },
   {
     continent: "Asia",
     country: "Lebanon",
-    famousFor: "Beirut, Mediterranean coast, ancient history",
+    famousFor: "Mediterranean coast, Beirut, ancient history, cuisine",
     topics,
   },
   {
     continent: "Asia",
     country: "Malaysia",
-    famousFor: "Petronas Towers, rainforests, multicultural cities",
+    famousFor: "Tropical forests, Kuala Lumpur, islands, multicultural society",
     topics,
   },
   {
     continent: "Asia",
     country: "Maldives",
-    famousFor: "Tropical islands, coral reefs, luxury tourism",
+    famousFor: "Tropical islands, coral reefs, beaches, marine life",
     topics,
   },
   {
     continent: "Asia",
     country: "Mongolia",
-    famousFor: "Gobi Desert, nomadic culture, vast grasslands",
+    famousFor: "Gobi Desert, vast steppe, nomadic culture",
     topics,
   },
   {
     continent: "Asia",
     country: "Myanmar",
-    famousFor: "Bagan temples, Buddhist heritage, landscapes",
+    famousFor: "Bagan temples, Buddhist heritage, diverse ethnic cultures",
     topics,
   },
   {
     continent: "Asia",
     country: "Nepal",
-    famousFor: "Mount Everest, Himalayas, trekking",
+    famousFor: "Mount Everest, Himalayas, trekking, Buddhist and Hindu heritage",
     topics,
   },
   {
     continent: "Asia",
     country: "North Korea",
-    famousFor: "Pyongyang, Korean history, mountainous landscapes",
+    famousFor: "Korean Peninsula, traditional culture, mountainous landscapes",
     topics,
   },
   {
     continent: "Asia",
     country: "Oman",
-    famousFor: "Deserts, mountains, forts, Arabian coastline",
+    famousFor: "Arabian deserts, mountains, forts, Gulf coastline",
     topics,
   },
   {
     continent: "Asia",
     country: "Pakistan",
-    famousFor: "Karakoram Mountains, K2, ancient civilizations",
+    famousFor: "Karakoram mountains, Indus Valley civilization, diverse cultures",
     topics,
   },
   {
     continent: "Asia",
     country: "Palestine",
-    famousFor: "Historic cities, cultural heritage, olive trees",
+    famousFor: "Historic cities, cultural heritage, Mediterranean and Middle Eastern landscapes",
     topics,
   },
   {
     continent: "Asia",
     country: "Philippines",
-    famousFor: "Tropical islands, beaches, diverse culture",
+    famousFor: "Tropical islands, beaches, coral reefs, diverse culture",
     topics,
   },
   {
     continent: "Asia",
     country: "Qatar",
-    famousFor: "Doha, modern architecture, Gulf culture",
+    famousFor: "Doha, Gulf coastline, modern architecture, natural gas",
     topics,
   },
   {
     continent: "Asia",
     country: "Saudi Arabia",
-    famousFor: "Mecca, Medina, Arabian Desert",
+    famousFor: "Mecca and Medina, Arabian Desert, oil industry",
     topics,
   },
   {
     continent: "Asia",
     country: "Singapore",
-    famousFor: "Modern city, Marina Bay, finance and technology",
+    famousFor: "Modern city-state, finance, technology, multicultural society",
     topics,
   },
   {
     continent: "Asia",
     country: "South Korea",
-    famousFor: "Technology, K-pop, Seoul",
+    famousFor: "Technology, K-pop, Korean cuisine, modern cities",
     topics,
   },
   {
     continent: "Asia",
     country: "Sri Lanka",
-    famousFor: "Tea, beaches, ancient cities",
+    famousFor: "Tea plantations, beaches, ancient cities, wildlife",
     topics,
   },
   {
     continent: "Asia",
     country: "Syria",
-    famousFor: "Ancient cities, historic architecture, cultural heritage",
+    famousFor: "Ancient cities, archaeological heritage, Mediterranean and Middle Eastern culture",
+    topics,
+  },
+  {
+    continent: "Asia",
+    country: "Taiwan",
+    famousFor: "Technology, mountain landscapes, night markets, vibrant cities",
     topics,
   },
   {
     continent: "Asia",
     country: "Tajikistan",
-    famousFor: "Pamir Mountains, mountain landscapes, ancient culture",
+    famousFor: "Pamir Mountains, high-altitude landscapes, Central Asian culture",
     topics,
   },
   {
     continent: "Asia",
     country: "Thailand",
-    famousFor: "Bangkok, temples, tropical beaches",
+    famousFor: "Temples, tropical beaches, cuisine, Bangkok",
     topics,
   },
   {
     continent: "Asia",
     country: "Timor-Leste",
-    famousFor: "Tropical coastline, diving, mountain landscapes",
+    famousFor: "Tropical coastline, mountains, coral reefs, cultural heritage",
     topics,
   },
   {
     continent: "Asia",
     country: "Turkey",
-    famousFor: "Istanbul, Cappadocia, ancient civilizations",
+    famousFor: "Istanbul, Cappadocia, ancient sites, Mediterranean coastline",
     topics,
   },
   {
     continent: "Asia",
     country: "Turkmenistan",
-    famousFor: "Karakum Desert, Ashgabat, ancient Silk Road",
+    famousFor: "Karakum Desert, ancient Silk Road heritage, natural gas",
     topics,
   },
   {
     continent: "Asia",
     country: "United Arab Emirates",
-    famousFor: "Dubai, Abu Dhabi, modern architecture",
+    famousFor: "Dubai, Abu Dhabi, modern architecture, desert landscapes",
     topics,
   },
   {
     continent: "Asia",
     country: "Uzbekistan",
-    famousFor: "Samarkand, Silk Road, Islamic architecture",
+    famousFor: "Samarkand, Silk Road history, Islamic architecture",
     topics,
   },
   {
     continent: "Asia",
     country: "Vietnam",
-    famousFor: "Ha Long Bay, food, historic cities",
+    famousFor: "Ha Long Bay, cuisine, rice terraces, long coastline",
     topics,
   },
   {
     continent: "Asia",
     country: "Yemen",
-    famousFor: "Ancient architecture, Socotra, Arabian heritage",
+    famousFor: "Ancient architecture, Arabian Peninsula, historic cities",
     topics,
   },
 
-  // =====================================================
-  // AFRICA
-  // =====================================================
+  /* =========================================
+     AFRICA
+  ========================================= */
 
   {
     continent: "Africa",
@@ -327,19 +349,19 @@ const countries = [
   {
     continent: "Africa",
     country: "Benin",
-    famousFor: "Voodoo heritage, history, coastal culture",
+    famousFor: "Voodoo heritage, historic kingdoms, Gulf of Guinea",
     topics,
   },
   {
     continent: "Africa",
     country: "Botswana",
-    famousFor: "Okavango Delta, wildlife, safari",
+    famousFor: "Okavango Delta, wildlife, Kalahari Desert",
     topics,
   },
   {
     continent: "Africa",
     country: "Burkina Faso",
-    famousFor: "Traditional culture, crafts, music",
+    famousFor: "West African culture, traditional crafts, music",
     topics,
   },
   {
@@ -351,37 +373,37 @@ const countries = [
   {
     continent: "Africa",
     country: "Cabo Verde",
-    famousFor: "Volcanic islands, beaches, music",
+    famousFor: "Volcanic islands, beaches, Atlantic culture",
     topics,
   },
   {
     continent: "Africa",
     country: "Cameroon",
-    famousFor: "Mount Cameroon, rainforests, diverse wildlife",
+    famousFor: "Mount Cameroon, rainforests, wildlife, cultural diversity",
     topics,
   },
   {
     continent: "Africa",
     country: "Central African Republic",
-    famousFor: "Rainforests, wildlife, natural landscapes",
+    famousFor: "Rainforests, wildlife, savannah landscapes",
     topics,
   },
   {
     continent: "Africa",
     country: "Chad",
-    famousFor: "Sahara landscapes, Lake Chad, desert culture",
+    famousFor: "Sahara Desert, Lake Chad, Sahel landscapes",
     topics,
   },
   {
     continent: "Africa",
     country: "Comoros",
-    famousFor: "Volcanic islands, Indian Ocean, tropical scenery",
+    famousFor: "Indian Ocean islands, volcanic landscapes, marine life",
     topics,
   },
   {
     continent: "Africa",
     country: "Democratic Republic of the Congo",
-    famousFor: "Congo rainforest, mountain gorillas, Congo River",
+    famousFor: "Congo rainforest, rivers, wildlife, natural resources",
     topics,
   },
   {
@@ -393,79 +415,79 @@ const countries = [
   {
     continent: "Africa",
     country: "Djibouti",
-    famousFor: "Lake Assal, volcanic landscapes, Red Sea",
+    famousFor: "Red Sea coastline, Lake Assal, volcanic landscapes",
     topics,
   },
   {
     continent: "Africa",
     country: "Egypt",
-    famousFor: "Pyramids, Nile River, ancient civilization",
+    famousFor: "Pyramids, Nile River, ancient civilization, Red Sea",
     topics,
   },
   {
     continent: "Africa",
     country: "Equatorial Guinea",
-    famousFor: "Tropical forests, islands, biodiversity",
+    famousFor: "Tropical forests, islands, Gulf of Guinea",
     topics,
   },
   {
     continent: "Africa",
     country: "Eritrea",
-    famousFor: "Red Sea coast, Asmara architecture, history",
+    famousFor: "Red Sea coastline, Asmara architecture, diverse cultures",
     topics,
   },
   {
     continent: "Africa",
     country: "Eswatini",
-    famousFor: "Traditional culture, mountains, wildlife",
+    famousFor: "Mountains, traditional ceremonies, wildlife",
     topics,
   },
   {
     continent: "Africa",
     country: "Ethiopia",
-    famousFor: "Lalibela, coffee, ancient civilization",
+    famousFor: "Ancient civilization, highlands, coffee, rock-hewn churches",
     topics,
   },
   {
     continent: "Africa",
     country: "Gabon",
-    famousFor: "Rainforests, national parks, wildlife",
+    famousFor: "Rainforests, wildlife, Atlantic coastline",
     topics,
   },
   {
     continent: "Africa",
     country: "Gambia",
-    famousFor: "Gambia River, beaches, birdlife",
+    famousFor: "Gambia River, beaches, wildlife, West African culture",
     topics,
   },
   {
     continent: "Africa",
     country: "Ghana",
-    famousFor: "Gold Coast history, cocoa, culture",
+    famousFor: "Gold Coast history, cocoa, music, Atlantic coastline",
     topics,
   },
   {
     continent: "Africa",
     country: "Guinea",
-    famousFor: "Mountains, rivers, natural resources",
+    famousFor: "Mountains, waterfalls, natural resources, West African culture",
     topics,
   },
   {
     continent: "Africa",
     country: "Guinea-Bissau",
-    famousFor: "Bijagós Islands, mangroves, wildlife",
+    famousFor: "Bijagós Islands, wildlife, Portuguese heritage",
     topics,
   },
   {
     continent: "Africa",
     country: "Ivory Coast",
-    famousFor: "Cocoa, Abidjan, beaches",
+    famousFor: "Cocoa production, Abidjan, beaches, West African culture",
     topics,
   },
   {
     continent: "Africa",
     country: "Kenya",
-    famousFor: "Maasai Mara, safari, Mount Kenya",
+    famousFor: "Safari, Maasai culture, Mount Kenya, Indian Ocean coast",
     topics,
   },
   {
@@ -477,19 +499,19 @@ const countries = [
   {
     continent: "Africa",
     country: "Liberia",
-    famousFor: "Atlantic coastline, rainforests, history",
+    famousFor: "Atlantic coastline, rainforests, diverse cultural heritage",
     topics,
   },
   {
     continent: "Africa",
     country: "Libya",
-    famousFor: "Sahara Desert, ancient Roman ruins, Mediterranean coast",
+    famousFor: "Sahara Desert, Mediterranean coast, ancient Roman sites",
     topics,
   },
   {
     continent: "Africa",
     country: "Madagascar",
-    famousFor: "Lemurs, unique wildlife, baobabs",
+    famousFor: "Unique wildlife, lemurs, rainforests, Indian Ocean",
     topics,
   },
   {
@@ -501,103 +523,103 @@ const countries = [
   {
     continent: "Africa",
     country: "Mali",
-    famousFor: "Timbuktu, Niger River, ancient empires",
+    famousFor: "Timbuktu, ancient empires, Sahel culture",
     topics,
   },
   {
     continent: "Africa",
     country: "Mauritania",
-    famousFor: "Sahara Desert, ancient caravan routes, Atlantic coast",
+    famousFor: "Sahara Desert, Atlantic coast, ancient trade routes",
     topics,
   },
   {
     continent: "Africa",
     country: "Mauritius",
-    famousFor: "Beaches, coral reefs, multicultural society",
+    famousFor: "Tropical beaches, coral reefs, multicultural society",
     topics,
   },
   {
     continent: "Africa",
     country: "Morocco",
-    famousFor: "Marrakesh, Atlas Mountains, Sahara Desert",
+    famousFor: "Marrakech, Atlas Mountains, Sahara Desert, traditional markets",
     topics,
   },
   {
     continent: "Africa",
     country: "Mozambique",
-    famousFor: "Indian Ocean beaches, islands, marine life",
+    famousFor: "Indian Ocean coastline, islands, marine life",
     topics,
   },
   {
     continent: "Africa",
     country: "Namibia",
-    famousFor: "Namib Desert, dunes, wildlife",
+    famousFor: "Namib Desert, Etosha, dramatic landscapes",
     topics,
   },
   {
     continent: "Africa",
     country: "Niger",
-    famousFor: "Sahara Desert, Tuareg culture, Niger River",
+    famousFor: "Sahara Desert, Sahel landscapes, traditional cultures",
     topics,
   },
   {
     continent: "Africa",
     country: "Nigeria",
-    famousFor: "Afrobeats, Nollywood, diverse cultures",
+    famousFor: "Large cultural diversity, Nollywood, music, natural resources",
     topics,
   },
   {
     continent: "Africa",
     country: "Rwanda",
-    famousFor: "Mountain gorillas, hills, national parks",
+    famousFor: "Mountain gorillas, green hills, national parks",
     topics,
   },
   {
     continent: "Africa",
     country: "São Tomé and Príncipe",
-    famousFor: "Tropical islands, cocoa, rainforests",
+    famousFor: "Tropical islands, cocoa plantations, beaches",
     topics,
   },
   {
     continent: "Africa",
     country: "Senegal",
-    famousFor: "Dakar, music, Atlantic coast",
+    famousFor: "Dakar, music, Atlantic coastline, cultural heritage",
     topics,
   },
   {
     continent: "Africa",
     country: "Seychelles",
-    famousFor: "Praslin, beaches, coral reefs",
+    famousFor: "Tropical islands, beaches, coral reefs",
     topics,
   },
   {
     continent: "Africa",
     country: "Sierra Leone",
-    famousFor: "Atlantic beaches, rainforests, Freetown",
+    famousFor: "Atlantic beaches, rainforests, cultural heritage",
     topics,
   },
   {
     continent: "Africa",
     country: "Somalia",
-    famousFor: "Indian Ocean coastline, culture, history",
+    famousFor: "Indian Ocean coastline, traditional culture, historic trade routes",
     topics,
   },
   {
     continent: "Africa",
     country: "South Africa",
-    famousFor: "Table Mountain, wildlife, Cape Town",
+    famousFor: "Table Mountain, wildlife, diverse cultures, vineyards",
     topics,
   },
   {
     continent: "Africa",
     country: "South Sudan",
-    famousFor: "Nile landscapes, wetlands, wildlife",
+    famousFor: "Nile River, wetlands, wildlife, diverse cultures",
     topics,
   },
   {
     continent: "Africa",
     country: "Sudan",
-    famousFor: "Nubian pyramids, Nile River, ancient history",
+    famousFor: "Nile River, Nubian heritage, ancient pyramids",
     topics,
   },
   {
@@ -609,19 +631,19 @@ const countries = [
   {
     continent: "Africa",
     country: "Togo",
-    famousFor: "Coastal landscapes, markets, traditional culture",
+    famousFor: "Gulf of Guinea, traditional markets, cultural heritage",
     topics,
   },
   {
     continent: "Africa",
     country: "Tunisia",
-    famousFor: "Carthage, Mediterranean beaches, Sahara",
+    famousFor: "Mediterranean beaches, Carthage, Sahara Desert",
     topics,
   },
   {
     continent: "Africa",
     country: "Uganda",
-    famousFor: "Mountain gorillas, Lake Victoria, wildlife",
+    famousFor: "Lake Victoria, mountain gorillas, wildlife",
     topics,
   },
   {
@@ -637,609 +659,609 @@ const countries = [
     topics,
   },
 
-  // =====================================================
-  // EUROPE
-  // =====================================================
+  /* =========================================
+     EUROPE
+  ========================================= */
 
   {
     continent: "Europe",
     country: "Albania",
-    famousFor: "Adriatic beaches, mountains, historic towns",
+    famousFor: "Adriatic and Ionian coasts, mountains, ancient history",
     topics,
   },
   {
     continent: "Europe",
     country: "Andorra",
-    famousFor: "Pyrenees Mountains, skiing, shopping",
+    famousFor: "Pyrenees mountains, skiing, hiking",
     topics,
   },
   {
     continent: "Europe",
     country: "Austria",
-    famousFor: "Vienna, Alps, classical music",
+    famousFor: "Alps, Vienna, classical music, historic architecture",
     topics,
   },
   {
     continent: "Europe",
     country: "Belarus",
-    famousFor: "Forests, Minsk, historic architecture",
+    famousFor: "Forests, lakes, historic cities, Eastern European heritage",
     topics,
   },
   {
     continent: "Europe",
     country: "Belgium",
-    famousFor: "Brussels, chocolate, medieval cities",
+    famousFor: "Brussels, medieval cities, chocolate, waffles",
     topics,
   },
   {
     continent: "Europe",
     country: "Bosnia and Herzegovina",
-    famousFor: "Mostar Bridge, mountains, Ottoman heritage",
+    famousFor: "Sarajevo, Mostar Bridge, mountains, cultural heritage",
     topics,
   },
   {
     continent: "Europe",
     country: "Bulgaria",
-    famousFor: "Black Sea coast, mountains, ancient history",
+    famousFor: "Black Sea coast, mountains, monasteries, ancient history",
     topics,
   },
   {
     continent: "Europe",
     country: "Croatia",
-    famousFor: "Adriatic coast, Dubrovnik, islands",
+    famousFor: "Adriatic coast, Dubrovnik, islands, historic cities",
     topics,
   },
   {
     continent: "Europe",
     country: "Czechia",
-    famousFor: "Prague, castles, historic architecture",
+    famousFor: "Prague, castles, historic architecture, beer culture",
     topics,
   },
   {
     continent: "Europe",
     country: "Denmark",
-    famousFor: "Copenhagen, design, Viking history",
+    famousFor: "Copenhagen, Viking heritage, design, islands",
     topics,
   },
   {
     continent: "Europe",
     country: "Estonia",
-    famousFor: "Digital government, Tallinn, Baltic culture",
+    famousFor: "Tallinn, forests, Baltic Sea, digital society",
     topics,
   },
   {
     continent: "Europe",
     country: "Finland",
-    famousFor: "Lakes, forests, northern lights",
+    famousFor: "Lakes, forests, northern lights, saunas",
     topics,
   },
   {
     continent: "Europe",
     country: "France",
-    famousFor: "Paris, Eiffel Tower, cuisine",
+    famousFor: "Paris, cuisine, art, fashion, Mediterranean and Atlantic coasts",
     topics,
   },
   {
     continent: "Europe",
     country: "Germany",
-    famousFor: "Engineering, Berlin, castles",
+    famousFor: "Berlin, castles, engineering, history",
     topics,
   },
   {
     continent: "Europe",
     country: "Greece",
-    famousFor: "Athens, ancient ruins, islands",
+    famousFor: "Ancient history, islands, Mediterranean coast, mythology",
     topics,
   },
   {
     continent: "Europe",
     country: "Hungary",
-    famousFor: "Budapest, thermal baths, Danube",
+    famousFor: "Budapest, thermal baths, Danube River, architecture",
     topics,
   },
   {
     continent: "Europe",
     country: "Iceland",
-    famousFor: "Volcanoes, glaciers, northern lights",
+    famousFor: "Volcanoes, glaciers, waterfalls, northern lights",
     topics,
   },
   {
     continent: "Europe",
     country: "Ireland",
-    famousFor: "Green landscapes, cliffs, Celtic heritage",
+    famousFor: "Green landscapes, cliffs, Celtic heritage, music",
     topics,
   },
   {
     continent: "Europe",
     country: "Italy",
-    famousFor: "Rome, Colosseum, art and cuisine",
+    famousFor: "Rome, Venice, art, cuisine, ancient history",
+    topics,
+  },
+  {
+    continent: "Europe",
+    country: "Kosovo",
+    famousFor: "Balkan mountains, historic towns, cultural heritage",
     topics,
   },
   {
     continent: "Europe",
     country: "Latvia",
-    famousFor: "Riga, Baltic coast, forests",
+    famousFor: "Riga, Baltic Sea, forests, Art Nouveau architecture",
     topics,
   },
   {
     continent: "Europe",
     country: "Liechtenstein",
-    famousFor: "Alps, castles, mountain scenery",
+    famousFor: "Alps, castles, mountain landscapes",
     topics,
   },
   {
     continent: "Europe",
     country: "Lithuania",
-    famousFor: "Vilnius, Baltic history, forests",
+    famousFor: "Vilnius, Baltic Sea, forests, medieval heritage",
     topics,
   },
   {
     continent: "Europe",
     country: "Luxembourg",
-    famousFor: "Castles, European institutions, finance",
+    famousFor: "Castles, forests, historic Luxembourg City, European institutions",
     topics,
   },
   {
     continent: "Europe",
     country: "Malta",
-    famousFor: "Mediterranean islands, Valletta, historic forts",
+    famousFor: "Mediterranean islands, historic cities, beaches",
     topics,
   },
   {
     continent: "Europe",
     country: "Moldova",
-    famousFor: "Wine, countryside, monasteries",
+    famousFor: "Wine production, countryside, cultural heritage",
     topics,
   },
   {
     continent: "Europe",
     country: "Monaco",
-    famousFor: "Monte Carlo, Formula 1, Mediterranean coast",
+    famousFor: "Mediterranean coast, Monte Carlo, luxury tourism",
     topics,
   },
   {
     continent: "Europe",
     country: "Montenegro",
-    famousFor: "Bay of Kotor, mountains, Adriatic coast",
+    famousFor: "Adriatic coast, mountains, Bay of Kotor",
     topics,
   },
   {
     continent: "Europe",
     country: "Netherlands",
-    famousFor: "Amsterdam, canals, tulips",
+    famousFor: "Amsterdam, canals, tulips, cycling",
     topics,
   },
   {
     continent: "Europe",
     country: "North Macedonia",
-    famousFor: "Lake Ohrid, mountains, Balkan heritage",
+    famousFor: "Lake Ohrid, mountains, Balkan history",
     topics,
   },
   {
     continent: "Europe",
     country: "Norway",
-    famousFor: "Fjords, northern lights, mountains",
+    famousFor: "Fjords, northern lights, mountains, Viking heritage",
     topics,
   },
   {
     continent: "Europe",
     country: "Poland",
-    famousFor: "Kraków, historic cities, Baltic coast",
+    famousFor: "Kraków, Warsaw, historic cities, Baltic coast",
     topics,
   },
   {
     continent: "Europe",
     country: "Portugal",
-    famousFor: "Lisbon, Porto, beaches, maritime history",
+    famousFor: "Lisbon, Porto, beaches, historic towns, cuisine",
     topics,
   },
   {
     continent: "Europe",
     country: "Romania",
-    famousFor: "Carpathian Mountains, castles, Transylvania",
+    famousFor: "Carpathian Mountains, Transylvania, castles",
     topics,
   },
   {
     continent: "Europe",
     country: "Russia",
-    famousFor: "Moscow, St Petersburg, vast landscapes",
+    famousFor: "Vast territory, Moscow, St Petersburg, rich cultural history",
     topics,
   },
   {
     continent: "Europe",
     country: "San Marino",
-    famousFor: "Historic old town, Mount Titano, microstate",
+    famousFor: "Historic old town, Apennine mountains, ancient republic",
     topics,
   },
   {
     continent: "Europe",
     country: "Serbia",
-    famousFor: "Belgrade, Danube, Balkan culture",
+    famousFor: "Belgrade, Danube River, Balkan culture, historic sites",
     topics,
   },
   {
     continent: "Europe",
     country: "Slovakia",
-    famousFor: "Tatra Mountains, castles, Bratislava",
+    famousFor: "Carpathian mountains, castles, historic towns",
     topics,
   },
   {
     continent: "Europe",
     country: "Slovenia",
-    famousFor: "Lake Bled, Alps, caves",
+    famousFor: "Lake Bled, Alps, caves, Adriatic coast",
     topics,
   },
   {
     continent: "Europe",
     country: "Spain",
-    famousFor: "Barcelona, Madrid, beaches, flamenco",
+    famousFor: "Barcelona, Madrid, beaches, cuisine, diverse regional cultures",
     topics,
   },
   {
     continent: "Europe",
     country: "Sweden",
-    famousFor: "Stockholm, design, forests",
+    famousFor: "Stockholm, forests, lakes, northern lights",
     topics,
   },
   {
     continent: "Europe",
     country: "Switzerland",
-    famousFor: "Alps, watches, banking",
+    famousFor: "Alps, lakes, watches, chocolate",
     topics,
   },
   {
     continent: "Europe",
     country: "Ukraine",
-    famousFor: "Kyiv, Carpathian Mountains, cultural heritage",
+    famousFor: "Black Sea coast, historic cities, fertile plains, cultural heritage",
     topics,
   },
   {
     continent: "Europe",
     country: "United Kingdom",
-    famousFor: "London, royal heritage, historic landmarks",
+    famousFor: "London, historic landmarks, literature, diverse cultures",
     topics,
   },
   {
     continent: "Europe",
     country: "Vatican City",
-    famousFor: "St Peter's Basilica, Vatican Museums, art",
+    famousFor: "St Peter's Basilica, Vatican Museums, Renaissance art",
     topics,
   },
 
-  // =====================================================
-  // NORTH AMERICA
-  // =====================================================
+  /* =========================================
+     NORTH AMERICA
+  ========================================= */
 
   {
     continent: "North America",
     country: "Antigua and Barbuda",
-    famousFor: "Caribbean beaches, sailing, coral reefs",
+    famousFor: "Caribbean beaches, sailing, tropical islands",
     topics,
   },
   {
     continent: "North America",
     country: "Bahamas",
-    famousFor: "Turquoise waters, beaches, islands",
+    famousFor: "Tropical islands, beaches, coral reefs",
     topics,
   },
   {
     continent: "North America",
     country: "Barbados",
-    famousFor: "Beaches, cricket, Caribbean culture",
+    famousFor: "Caribbean beaches, culture, cricket, tropical landscapes",
     topics,
   },
   {
     continent: "North America",
     country: "Belize",
-    famousFor: "Barrier Reef, Mayan ruins, jungles",
+    famousFor: "Barrier Reef, Mayan ruins, tropical forests",
     topics,
   },
   {
     continent: "North America",
     country: "Canada",
-    famousFor: "Rocky Mountains, Niagara Falls, vast nature",
+    famousFor: "Rocky Mountains, vast forests, lakes, multicultural cities",
     topics,
   },
   {
     continent: "North America",
     country: "Costa Rica",
-    famousFor: "Rainforests, volcanoes, wildlife",
+    famousFor: "Rainforests, volcanoes, beaches, wildlife",
     topics,
   },
   {
     continent: "North America",
     country: "Cuba",
-    famousFor: "Havana, classic cars, Caribbean culture",
+    famousFor: "Havana, Caribbean beaches, classic cars, music",
     topics,
   },
   {
     continent: "North America",
     country: "Dominica",
-    famousFor: "Rainforests, volcanic mountains, natural beauty",
+    famousFor: "Rainforests, volcanic mountains, hot springs",
     topics,
   },
   {
     continent: "North America",
     country: "Dominican Republic",
-    famousFor: "Caribbean beaches, resorts, baseball",
+    famousFor: "Caribbean beaches, tropical resorts, baseball",
     topics,
   },
   {
     continent: "North America",
     country: "El Salvador",
-    famousFor: "Surfing, volcanoes, Pacific coast",
+    famousFor: "Volcanoes, Pacific beaches, surfing",
     topics,
   },
   {
     continent: "North America",
     country: "Grenada",
-    famousFor: "Spice plantations, beaches, Caribbean islands",
+    famousFor: "Spice production, Caribbean beaches, tropical landscapes",
     topics,
   },
   {
     continent: "North America",
     country: "Guatemala",
-    famousFor: "Mayan ruins, Lake Atitlán, volcanoes",
+    famousFor: "Mayan ruins, volcanoes, Lake Atitlán, cultural heritage",
     topics,
   },
   {
     continent: "North America",
     country: "Haiti",
-    famousFor: "Caribbean culture, art, historic heritage",
+    famousFor: "Caribbean culture, historic sites, mountains",
     topics,
   },
   {
     continent: "North America",
     country: "Honduras",
-    famousFor: "Mayan ruins, Caribbean coast, diving",
+    famousFor: "Caribbean coast, Mayan ruins, coral reefs",
     topics,
   },
   {
     continent: "North America",
     country: "Jamaica",
-    famousFor: "Reggae, beaches, Bob Marley heritage",
+    famousFor: "Reggae music, beaches, mountains, Caribbean culture",
     topics,
   },
   {
     continent: "North America",
     country: "Mexico",
-    famousFor: "Mayan and Aztec heritage, food, beaches",
+    famousFor: "Ancient civilizations, beaches, cuisine, diverse landscapes",
     topics,
   },
   {
     continent: "North America",
     country: "Nicaragua",
-    famousFor: "Volcanoes, lakes, colonial cities",
+    famousFor: "Volcanoes, lakes, Pacific and Caribbean coasts",
     topics,
   },
   {
     continent: "North America",
     country: "Panama",
-    famousFor: "Panama Canal, tropical islands, trade",
+    famousFor: "Panama Canal, tropical forests, Caribbean and Pacific coasts",
     topics,
   },
   {
     continent: "North America",
     country: "Saint Kitts and Nevis",
-    famousFor: "Caribbean beaches, mountains, historic sites",
+    famousFor: "Caribbean beaches, volcanic landscapes, historic plantations",
     topics,
   },
   {
     continent: "North America",
     country: "Saint Lucia",
-    famousFor: "Pitons, beaches, tropical landscapes",
+    famousFor: "Pitons, tropical beaches, rainforests",
     topics,
   },
   {
     continent: "North America",
     country: "Saint Vincent and the Grenadines",
-    famousFor: "Islands, sailing, Caribbean beaches",
+    famousFor: "Caribbean islands, beaches, sailing, volcanic landscapes",
     topics,
   },
   {
     continent: "North America",
     country: "Trinidad and Tobago",
-    famousFor: "Carnival, music, beaches",
+    famousFor: "Carnival, Caribbean culture, beaches, biodiversity",
     topics,
   },
   {
     continent: "North America",
     country: "United States",
-    famousFor: "New York, Grand Canyon, technology",
+    famousFor: "National parks, major cities, technology, diverse cultures",
     topics,
   },
 
-  // =====================================================
-  // SOUTH AMERICA
-  // =====================================================
+  /* =========================================
+     SOUTH AMERICA
+  ========================================= */
 
   {
     continent: "South America",
     country: "Argentina",
-    famousFor: "Tango, Patagonia, Buenos Aires",
+    famousFor: "Patagonia, Buenos Aires, tango, Andes mountains",
     topics,
   },
   {
     continent: "South America",
     country: "Bolivia",
-    famousFor: "Salar de Uyuni, Andes, Lake Titicaca",
+    famousFor: "Salar de Uyuni, Andes mountains, Indigenous cultures",
     topics,
   },
   {
     continent: "South America",
     country: "Brazil",
-    famousFor: "Amazon Rainforest, Carnival, football",
+    famousFor: "Amazon rainforest, Rio de Janeiro, Carnival, football",
     topics,
   },
   {
     continent: "South America",
     country: "Chile",
-    famousFor: "Atacama Desert, Andes, Patagonia",
+    famousFor: "Atacama Desert, Andes, Patagonia, Pacific coast",
     topics,
   },
   {
     continent: "South America",
     country: "Colombia",
-    famousFor: "Coffee, Cartagena, diverse landscapes",
+    famousFor: "Coffee, Caribbean coast, Andes mountains, diverse culture",
     topics,
   },
   {
     continent: "South America",
     country: "Ecuador",
-    famousFor: "Galápagos Islands, Andes, Quito",
+    famousFor: "Galápagos Islands, Andes, Amazon rainforest",
     topics,
   },
   {
     continent: "South America",
     country: "Guyana",
-    famousFor: "Kaieteur Falls, rainforests, wildlife",
+    famousFor: "Rainforests, Kaieteur Falls, diverse wildlife",
     topics,
   },
   {
     continent: "South America",
     country: "Paraguay",
-    famousFor: "Guaraní culture, rivers, natural landscapes",
+    famousFor: "Rivers, Guaraní culture, subtropical landscapes",
     topics,
   },
   {
     continent: "South America",
     country: "Peru",
-    famousFor: "Machu Picchu, Andes, Inca civilization",
+    famousFor: "Machu Picchu, Andes, Amazon rainforest, ancient civilizations",
     topics,
   },
   {
     continent: "South America",
     country: "Suriname",
-    famousFor: "Rainforests, multicultural society, Paramaribo",
+    famousFor: "Amazon rainforest, multicultural society, tropical wildlife",
     topics,
   },
   {
     continent: "South America",
     country: "Uruguay",
-    famousFor: "Beaches, Montevideo, football",
+    famousFor: "Montevideo, beaches, football, countryside",
     topics,
   },
   {
     continent: "South America",
     country: "Venezuela",
-    famousFor: "Angel Falls, Caribbean coast, mountains",
+    famousFor: "Angel Falls, Caribbean coast, mountains, natural landscapes",
     topics,
   },
-  // =====================================================
-  // OCEANIA
-  // =====================================================
+
+  /* =========================================
+     OCEANIA
+  ========================================= */
 
   {
     continent: "Oceania",
     country: "Australia",
-    famousFor: "Sydney Opera House, Great Barrier Reef, wildlife",
+    famousFor: "Great Barrier Reef, Sydney, unique wildlife, vast landscapes",
     topics,
   },
   {
     continent: "Oceania",
     country: "Fiji",
-    famousFor: "Tropical islands, coral reefs, beaches",
+    famousFor: "Tropical islands, coral reefs, beaches, Pacific culture",
     topics,
   },
   {
     continent: "Oceania",
     country: "Kiribati",
-    famousFor: "Pacific islands, lagoons, marine life",
-    topics,
-  },
-  {
-    continent: "Oceania",
-    country: "Marshall Islands",
     famousFor: "Pacific atolls, lagoons, marine life",
     topics,
   },
   {
     continent: "Oceania",
+    country: "Marshall Islands",
+    famousFor: "Pacific atolls, coral reefs, marine environment",
+    topics,
+  },
+  {
+    continent: "Oceania",
     country: "Micronesia",
-    famousFor: "Pacific islands, diving, coral reefs",
+    famousFor: "Pacific islands, coral reefs, tropical marine life",
     topics,
   },
   {
     continent: "Oceania",
     country: "Nauru",
-    famousFor: "Pacific island nation, phosphate history",
+    famousFor: "Pacific island, coral reefs, unique island culture",
     topics,
   },
   {
     continent: "Oceania",
     country: "New Zealand",
-    famousFor: "Mountains, Māori culture, Lord of the Rings landscapes",
+    famousFor: "Mountains, fjords, Maori culture, outdoor landscapes",
     topics,
   },
   {
     continent: "Oceania",
     country: "Palau",
-    famousFor: "Rock Islands, diving, marine biodiversity",
+    famousFor: "Rock Islands, coral reefs, diving, marine biodiversity",
     topics,
   },
   {
     continent: "Oceania",
     country: "Papua New Guinea",
-    famousFor: "Cultural diversity, rainforests, mountains",
+    famousFor: "Rainforests, mountains, traditional cultures, biodiversity",
     topics,
   },
   {
     continent: "Oceania",
     country: "Samoa",
-    famousFor: "Pacific culture, beaches, volcanic islands",
+    famousFor: "Tropical islands, Polynesian culture, beaches",
     topics,
   },
   {
     continent: "Oceania",
     country: "Solomon Islands",
-    famousFor: "Tropical islands, coral reefs, World War II history",
+    famousFor: "Pacific islands, coral reefs, World War II history",
     topics,
   },
   {
     continent: "Oceania",
     country: "Tonga",
-    famousFor: "Pacific islands, whale watching, Polynesian culture",
+    famousFor: "Pacific islands, Polynesian culture, beaches",
     topics,
   },
   {
     continent: "Oceania",
     country: "Tuvalu",
-    famousFor: "Pacific atolls, ocean culture, island life",
+    famousFor: "Pacific atolls, traditional island culture, marine environment",
     topics,
   },
   {
     continent: "Oceania",
     country: "Vanuatu",
-    famousFor: "Volcanoes, coral reefs, Melanesian culture",
+    famousFor: "Volcanic islands, coral reefs, Melanesian culture",
     topics,
   },
 
-  // =====================================================
-  // ANTARCTICA
-  // =====================================================
+  /* =========================================
+     ANTARCTICA
+     Special continent information card
+  ========================================= */
 
   {
     continent: "Antarctica",
     country: "Antarctica",
     famousFor: "South Pole, glaciers, penguins, scientific research",
-    topics: [
-      "Government & Official Services",
-      "Immigration & Visa",
-      "Jobs & Employment",
-      "Travel",
-      "Healthcare",
-      "Emergency Services",
-      "Useful Contacts",
-      "Calculators & Tools",
-    ],
+    topics,
   },
 ];
 
-const countryFlagCodes = {
-  // =====================================================
-  // ASIA
-  // =====================================================
+/* =========================================
+   FLAG CODES
+========================================= */
 
+const countryFlagCodes = {
+  /* Asia */
   Afghanistan: "af",
   Armenia: "am",
   Azerbaijan: "az",
@@ -1279,6 +1301,7 @@ const countryFlagCodes = {
   "South Korea": "kr",
   "Sri Lanka": "lk",
   Syria: "sy",
+  Taiwan: "tw",
   Tajikistan: "tj",
   Thailand: "th",
   "Timor-Leste": "tl",
@@ -1289,10 +1312,7 @@ const countryFlagCodes = {
   Vietnam: "vn",
   Yemen: "ye",
 
-  // =====================================================
-  // AFRICA
-  // =====================================================
-
+  /* Africa */
   Algeria: "dz",
   Angola: "ao",
   Benin: "bj",
@@ -1348,10 +1368,7 @@ const countryFlagCodes = {
   Zambia: "zm",
   Zimbabwe: "zw",
 
-  // =====================================================
-  // EUROPE
-  // =====================================================
-
+  /* Europe */
   Albania: "al",
   Andorra: "ad",
   Austria: "at",
@@ -1371,6 +1388,7 @@ const countryFlagCodes = {
   Iceland: "is",
   Ireland: "ie",
   Italy: "it",
+  Kosovo: "xk",
   Latvia: "lv",
   Liechtenstein: "li",
   Lithuania: "lt",
@@ -1397,10 +1415,7 @@ const countryFlagCodes = {
   "United Kingdom": "gb",
   "Vatican City": "va",
 
-  // =====================================================
-  // NORTH AMERICA
-  // =====================================================
-
+  /* North America */
   "Antigua and Barbuda": "ag",
   Bahamas: "bs",
   Barbados: "bb",
@@ -1425,10 +1440,7 @@ const countryFlagCodes = {
   "Trinidad and Tobago": "tt",
   "United States": "us",
 
-  // =====================================================
-  // SOUTH AMERICA
-  // =====================================================
-
+  /* South America */
   Argentina: "ar",
   Bolivia: "bo",
   Brazil: "br",
@@ -1442,10 +1454,7 @@ const countryFlagCodes = {
   Uruguay: "uy",
   Venezuela: "ve",
 
-  // =====================================================
-  // AUSTRALIA & OCEANIA
-  // =====================================================
-
+  /* Oceania */
   Australia: "au",
   Fiji: "fj",
   Kiribati: "ki",
@@ -1461,16 +1470,14 @@ const countryFlagCodes = {
   Tuvalu: "tv",
   Vanuatu: "vu",
 
-  // =====================================================
-  // ANTARCTICA
-  // =====================================================
-
+  /* Antarctica */
   Antarctica: "aq",
 };
 
-// =====================================================
-// ADD FLAGS TO EVERY COUNTRY
-// =====================================================
+/* =========================================
+   ADD FLAGS AUTOMATICALLY
+========================================= */
+
 const countriesWithFlags = countries.map((item) => {
   const flagCode = countryFlagCodes[item.country] || "";
 
