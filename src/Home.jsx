@@ -2,6 +2,7 @@ import React, { useMemo, useState } from "react";
 import "./Home.css";
 import countries from "./data/countries";
 import CountryPage from "./pages/CountryPage";
+import { calculatePercentage } from "./data/calculatorsLogic";
 
 const services = [
   "Government & Official Services",
@@ -86,6 +87,10 @@ function Home() {
   const [countryFilter, setCountryFilter] = useState("");
   const [selectedCountry, setSelectedCountry] = useState(null);
 
+  const [percentageAmount, setPercentageAmount] = useState("");
+  const [percentageValue, setPercentageValue] = useState("");
+  const [percentageResult, setPercentageResult] = useState(null);
+
   const filteredCountries = useMemo(() => {
     const continentCountries = countries.filter((item) => {
       return (
@@ -169,6 +174,31 @@ function Home() {
 
   const handleExploreTools = () => {
     handleNavigation("tools");
+  };
+
+  const handlePercentageCalculate = () => {
+    if (
+      percentageAmount === "" ||
+      percentageValue === "" ||
+      Number.isNaN(Number(percentageAmount)) ||
+      Number.isNaN(Number(percentageValue))
+    ) {
+      setPercentageResult(null);
+      return;
+    }
+
+    const result = calculatePercentage(
+      percentageAmount,
+      percentageValue
+    );
+
+    setPercentageResult(result);
+  };
+
+  const handlePercentageReset = () => {
+    setPercentageAmount("");
+    setPercentageValue("");
+    setPercentageResult(null);
   };
 
   if (selectedCountry) {
@@ -651,8 +681,8 @@ function Home() {
               </h2>
 
               <p>
-                Calculators and practical tools will be
-                available here as Sanolines grows.
+                Simple calculators and practical tools
+                to help with everyday decisions.
               </p>
 
             </div>
@@ -668,6 +698,143 @@ function Home() {
               </button>
 
             </div>
+
+          </div>
+
+
+          {/* =========================================
+              PERCENTAGE CALCULATOR
+          ========================================= */}
+
+          <div className="percentage-calculator">
+
+            <div className="percentage-calculator-header">
+
+              <span className="section-label">
+                Calculator 01
+              </span>
+
+              <h3>
+                Percentage Calculator
+              </h3>
+
+              <p>
+                Calculate a percentage of any number quickly
+                and easily.
+              </p>
+
+            </div>
+
+
+            <div className="percentage-calculator-body">
+
+              <div className="percentage-input-group">
+
+                <label htmlFor="percentage-amount">
+                  Number
+                </label>
+
+                <input
+                  id="percentage-amount"
+                  type="number"
+                  inputMode="decimal"
+                  value={percentageAmount}
+                  onChange={(event) =>
+                    setPercentageAmount(event.target.value)
+                  }
+                  placeholder="Example: 500"
+                />
+
+              </div>
+
+
+              <div className="percentage-symbol">
+                ×
+              </div>
+
+
+              <div className="percentage-input-group">
+
+                <label htmlFor="percentage-value">
+                  Percentage
+                </label>
+
+                <div className="percentage-input-wrapper">
+
+                  <input
+                    id="percentage-value"
+                    type="number"
+                    inputMode="decimal"
+                    value={percentageValue}
+                    onChange={(event) =>
+                      setPercentageValue(event.target.value)
+                    }
+                    placeholder="Example: 20"
+                  />
+
+                  <span>
+                    %
+                  </span>
+
+                </div>
+
+              </div>
+
+
+              <div className="percentage-actions">
+
+                <button
+                  type="button"
+                  className="percentage-calculate-button"
+                  onClick={handlePercentageCalculate}
+                >
+                  Calculate
+                </button>
+
+                <button
+                  type="button"
+                  className="percentage-reset-button"
+                  onClick={handlePercentageReset}
+                >
+                  Reset
+                </button>
+
+              </div>
+
+            </div>
+
+
+            {percentageResult !== null && (
+              <div className="percentage-result">
+
+                <span>
+                  Result
+                </span>
+
+                <strong>
+                  {Number(percentageResult).toLocaleString(
+                    undefined,
+                    {
+                      maximumFractionDigits: 2,
+                    }
+                  )}
+                </strong>
+
+                <p>
+                  {percentageValue}% of{" "}
+                  {Number(percentageAmount).toLocaleString()}
+                  {" "}is{" "}
+                  {Number(percentageResult).toLocaleString(
+                    undefined,
+                    {
+                      maximumFractionDigits: 2,
+                    }
+                  )}
+                  .
+                </p>
+
+              </div>
+            )}
 
           </div>
 
