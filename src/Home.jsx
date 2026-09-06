@@ -81,6 +81,87 @@ function getCountryDescription(item) {
   );
 }
 
+/* =========================================
+   COUNTRY FLAG
+   ========================================= */
+
+function getCountryFlag(item) {
+  const code =
+    item?.flagCode ||
+    item?.code ||
+    "";
+
+  if (code) {
+    return `https://flagcdn.io/4x3/${String(code).toLowerCase()}.svg`;
+  }
+
+  if (item?.flag && typeof item.flag === "string") {
+    return item.flag;
+  }
+
+  return "";
+}
+
+function CountryCard({ item, index, onClick }) {
+  const countryName = getCountryName(item);
+  const continentName = getCountryContinent(item);
+  const description = getCountryDescription(item);
+  const flag = getCountryFlag(item);
+
+  return (
+    <article
+      className="country-card"
+      key={`${countryName}-${index}`}
+      onClick={() => onClick(item)}
+      role="button"
+      tabIndex={0}
+      onKeyDown={(event) => {
+        if (event.key === "Enter" || event.key === " ") {
+          event.preventDefault();
+          onClick(item);
+        }
+      }}
+    >
+      <div className="country-card-top">
+        <div className="country-continent-label">
+          {continentName}
+        </div>
+
+        {flag && (
+          <img
+            className="country-flag"
+            src={flag}
+            alt={`${countryName} flag`}
+            loading="lazy"
+            decoding="async"
+            onError={(event) => {
+              event.currentTarget.style.display = "none";
+            }}
+          />
+        )}
+      </div>
+
+      <div className="country-card-content">
+        <h3>{countryName}</h3>
+
+        <p className="country-card-description">
+          {description}
+        </p>
+      </div>
+
+      <div className="country-card-footer">
+        <span>
+          Explore {countryName}
+        </span>
+
+        <span aria-hidden="true">
+          →
+        </span>
+      </div>
+    </article>
+  );
+}
+
 function Home() {
   const [selectedContinent, setSelectedContinent] = useState("Asia");
   const [searchTerm, setSearchTerm] = useState("");
@@ -170,9 +251,14 @@ function Home() {
     const term = searchTerm.toLowerCase();
 
     return countries.filter((item) => {
-      const countryName = getCountryName(item).toLowerCase();
-      const continent = getCountryContinent(item).toLowerCase();
-      const description = getCountryDescription(item).toLowerCase();
+      const countryName =
+        getCountryName(item).toLowerCase();
+
+      const continent =
+        getCountryContinent(item).toLowerCase();
+
+      const description =
+        getCountryDescription(item).toLowerCase();
 
       return (
         countryName.includes(term) ||
@@ -278,21 +364,27 @@ function Home() {
 
             <button
               type="button"
-              onClick={() => handleNavigation("countries")}
+              onClick={() =>
+                handleNavigation("countries")
+              }
             >
               Countries
             </button>
 
             <button
               type="button"
-              onClick={() => handleNavigation("services")}
+              onClick={() =>
+                handleNavigation("services")
+              }
             >
               Services
             </button>
 
             <button
               type="button"
-              onClick={() => handleNavigation("tools")}
+              onClick={() =>
+                handleNavigation("tools")
+              }
             >
               Tools
             </button>
@@ -378,73 +470,14 @@ function Home() {
 
             <div className="country-grid">
 
-              {searchResults.map((item, index) => {
-
-                const countryName = getCountryName(item);
-                const continentName = getCountryContinent(item);
-                const description = getCountryDescription(item);
-
-                return (
-                  <article
-                    className="country-card"
-                    key={`${countryName}-${index}`}
-                    onClick={() => handleCountryClick(item)}
-                    role="button"
-                    tabIndex={0}
-                    onKeyDown={(event) => {
-                      if (event.key === "Enter") {
-                        handleCountryClick(item);
-                      }
-                    }}
-                  >
-
-                    {/* Country top */}
-                    <div className="country-card-top">
-
-                      <div className="country-continent-label">
-                        {continentName}
-                      </div>
-
-                      {item.flag && (
-                        <img
-                          className="country-flag"
-                          src={item.flag}
-                          alt={`${countryName} flag`}
-                          loading="lazy"
-                        />
-                      )}
-
-                    </div>
-
-                    {/* Country information */}
-                    <div className="country-card-content">
-
-                      <h3>
-                        {countryName}
-                      </h3>
-
-                      <p className="country-card-description">
-                        {description}
-                      </p>
-
-                    </div>
-
-                    {/* Explore */}
-                    <div className="country-card-footer">
-
-                      <span>
-                        Explore country
-                      </span>
-
-                      <span aria-hidden="true">
-                        →
-                      </span>
-
-                    </div>
-
-                  </article>
-                );
-              })}
+              {searchResults.map((item, index) => (
+                <CountryCard
+                  key={`${getCountryName(item)}-${index}`}
+                  item={item}
+                  index={index}
+                  onClick={handleCountryClick}
+                />
+              ))}
 
             </div>
 
@@ -574,82 +607,14 @@ function Home() {
 
             <div className="country-grid">
 
-              {filteredCountries.map((item, index) => {
-
-                const countryName = getCountryName(item);
-                const continentName = getCountryContinent(item);
-                const description = getCountryDescription(item);
-
-                return (
-                  <article
-                    className="country-card"
-                    key={`${countryName}-${index}`}
-                    onClick={() => handleCountryClick(item)}
-                    role="button"
-                    tabIndex={0}
-                    onKeyDown={(event) => {
-                      if (event.key === "Enter") {
-                        handleCountryClick(item);
-                      }
-                    }}
-                  >
-
-                    {/* =====================================
-                        COUNTRY TOP — CONTINENT + FLAG
-                    ===================================== */}
-
-                    <div className="country-card-top">
-
-                      <div className="country-continent-label">
-                        {continentName}
-                      </div>
-
-                      {item.flag && (
-                        <img
-                          className="country-flag"
-                          src={item.flag}
-                          alt={`${countryName} flag`}
-                          loading="lazy"
-                        />
-                      )}
-
-                    </div>
-
-                    {/* =====================================
-                        COUNTRY NAME + FAMOUS FOR
-                    ===================================== */}
-
-                    <div className="country-card-content">
-
-                      <h3>
-                        {countryName}
-                      </h3>
-
-                      <p className="country-card-description">
-                        {description}
-                      </p>
-
-                    </div>
-
-                    {/* =====================================
-                        EXPLORE ARROW
-                    ===================================== */}
-
-                    <div className="country-card-footer">
-
-                      <span>
-                        Explore {countryName}
-                      </span>
-
-                      <span aria-hidden="true">
-                        →
-                      </span>
-
-                    </div>
-
-                  </article>
-                );
-              })}
+              {filteredCountries.map((item, index) => (
+                <CountryCard
+                  key={`${getCountryName(item)}-${index}`}
+                  item={item}
+                  index={index}
+                  onClick={handleCountryClick}
+                />
+              ))}
 
             </div>
 
@@ -789,9 +754,7 @@ function Home() {
 
           <div className="tools-grid">
 
-            {/* =====================================
-                TOOL 01 - PERCENTAGE
-            ===================================== */}
+            {/* TOOL 01 */}
 
             <div className="tool-card">
 
@@ -919,9 +882,7 @@ function Home() {
 
             </div>
 
-            {/* =====================================
-                TOOL 02 - SALARY
-            ===================================== */}
+            {/* TOOL 02 */}
 
             <div className="tool-card">
 
@@ -1067,9 +1028,7 @@ function Home() {
 
             </div>
 
-            {/* =====================================
-                TOOL 03 - CURRENCY
-            ===================================== */}
+            {/* TOOL 03 */}
 
             <div className="tool-card">
 
@@ -1164,9 +1123,7 @@ function Home() {
 
             </div>
 
-            {/* =====================================
-                TOOL 04 - AGE
-            ===================================== */}
+            {/* TOOL 04 */}
 
             <div className="tool-card">
 
@@ -1272,9 +1229,7 @@ function Home() {
 
             </div>
 
-            {/* =====================================
-                TOOL 05 - DATE
-            ===================================== */}
+            {/* TOOL 05 */}
 
             <div className="tool-card">
 
@@ -1378,9 +1333,7 @@ function Home() {
 
             </div>
 
-            {/* =====================================
-                TOOL 06 - UNIT
-            ===================================== */}
+            {/* TOOL 06 */}
 
             <div className="tool-card">
 
