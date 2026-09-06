@@ -1816,3 +1816,515 @@ button {
     font-size: 16px;
   }
 }
+/* =========================================
+   PROFESSIONAL TOOLS SECTION
+========================================= */
+
+.tools-section {
+  background: #ffffff;
+  padding: 120px 0 140px;
+}
+
+/* =========================================
+   TOOLS HERO
+========================================= */
+
+.tools-hero {
+  max-width: 1400px;
+  margin: 0 auto 90px;
+  padding: 0 40px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 560px;
+  background: #000000;
+  color: #ffffff;
+  overflow: hidden;
+}
+
+.tools-hero-content {
+  padding: 80px 60px 80px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.tools-hero .section-label {
+  display: inline-block;
+  margin-bottom: 28px;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 3px;
+}
+
+.tools-hero h2 {
+  max-width: 650px;
+  margin: 0 0 30px;
+  color: #ffffff;
+  font-size: clamp(52px, 6vw, 86px);
+  line-height: 0.96;
+  letter-spacing: -4px;
+  font-weight: 700;
+}
+
+.tools-hero p {
+  max-width: 520px;
+  margin-bottom: 40px;
+  color: #bdbdbd;
+  font-size: 18px;
+  line-height: 1.7;
+}
+
+.tools-hero-button {
+  width: 230px;
+  min-height: 54px;
+  padding: 18px 22px;
+  border: 1px solid #ffffff;
+  background: #ffffff;
+  color: #000000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.tools-hero-button:hover {
+  background: #000000;
+  color: #ffffff;
+}
+
+.tools-hero-button span {
+  font-size: 20px;
+}
+
+/* =========================================
+   TOOLS IMAGE
+========================================= */
+
+.tools-hero-image {
+  min-height: 560px;
+  position: relative;
+  overflow: hidden;
+}
+
+.tools-hero-image::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0.55),
+      rgba(0, 0, 0, 0)
+    );
+  pointer-events: none;
+}
+
+.tools-hero-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: grayscale(100%);
+  transition: transform 0.5s ease;
+}
+
+.tools-hero:hover .tools-hero-image img {
+  transform: scale(1.03);
+}
+
+/* =========================================
+   TOOLS GRID
+========================================= */
+
+.tools-grid {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 40px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+/* =========================================
+   TOOL CARD
+========================================= */
+
+.tool-card {
+  position: relative;
+  padding: 42px;
+  border: 1px solid #d8d8d8;
+  background: #ffffff;
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.tool-card:hover {
+  transform: translateY(-5px);
+  border-color: #000000;
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.08);
+}
+
+.tool-card-number {
+  position: absolute;
+  top: 28px;
+  right: 30px;
+  color: #888888;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+/* =========================================
+   TOOL ICON
+========================================= */
+
+.tool-icon {
+  width: 54px;
+  height: 54px;
+  margin-bottom: 30px;
+  border: 1px solid #000000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #000000;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+/* =========================================
+   TOOL TEXT
+========================================= */
+
+.tool-card h3 {
+  margin-bottom: 14px;
+  color: #000000;
+  font-size: 30px;
+  line-height: 1.1;
+  letter-spacing: -1px;
+}
+
+.tool-card > p {
+  max-width: 500px;
+  min-height: 58px;
+  margin-bottom: 30px;
+  color: #666666;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+/* =========================================
+   TOOL FORM
+========================================= */
+
+.tool-form {
+  padding-top: 25px;
+  border-top: 1px solid #e5e5e5;
+}
+
+.tool-form label,
+.percentage-input-group label {
+  display: block;
+  margin-bottom: 8px;
+  color: #333333;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.tool-form input,
+.tool-form select,
+.percentage-input-wrapper input {
+  width: 100%;
+  min-height: 50px;
+  margin-bottom: 18px;
+  padding: 13px 15px;
+  border: 1px solid #cfcfcf;
+  border-radius: 0;
+  background: #ffffff;
+  color: #000000;
+  font-size: 15px;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.tool-form input:focus,
+.tool-form select:focus,
+.percentage-input-wrapper input:focus {
+  border-color: #000000;
+}
+
+.tool-form select {
+  cursor: pointer;
+}
+
+/* =========================================
+   PRIMARY TOOL BUTTON
+========================================= */
+
+.tool-primary-button {
+  width: 100%;
+  min-height: 52px;
+  padding: 14px 18px;
+  border: 1px solid #000000;
+  background: #000000;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.tool-primary-button:hover {
+  background: #ffffff;
+  color: #000000;
+}
+
+/* =========================================
+   TOOL RESULTS
+========================================= */
+
+.tool-result-list {
+  margin-top: 24px;
+  border-top: 1px solid #000000;
+}
+
+.tool-result-list div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 0;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.tool-result-list span,
+.single-tool-result span {
+  color: #666666;
+  font-size: 13px;
+}
+
+.tool-result-list strong {
+  color: #000000;
+  font-size: 16px;
+}
+
+.single-tool-result {
+  margin-top: 24px;
+  padding: 20px;
+  border: 1px solid #000000;
+  background: #f7f7f7;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.single-tool-result strong {
+  color: #000000;
+  font-size: 22px;
+}
+
+/* =========================================
+   AGE RESULT
+========================================= */
+
+.age-result {
+  margin-top: 24px;
+  padding: 20px;
+  border: 1px solid #000000;
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.age-result strong {
+  color: #000000;
+  font-size: 32px;
+}
+
+.age-result span {
+  margin-right: 14px;
+  color: #666666;
+  font-size: 13px;
+}
+
+/* =========================================
+   PERCENTAGE CALCULATOR
+========================================= */
+
+.percentage-calculator {
+  margin-top: 25px;
+  padding-top: 25px;
+  border-top: 1px solid #e5e5e5;
+}
+
+.percentage-calculator-header {
+  margin-bottom: 20px;
+  color: #000000;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.percentage-input-group {
+  margin-bottom: 15px;
+}
+
+.percentage-input-wrapper {
+  position: relative;
+}
+
+.percentage-input-wrapper input {
+  margin-bottom: 0;
+  padding-right: 45px;
+}
+
+.percentage-symbol {
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #000000;
+  font-weight: 700;
+}
+
+.percentage-actions {
+  display: grid;
+  grid-template-columns: 1fr 100px;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.percentage-calculate-button,
+.percentage-reset-button {
+  min-height: 50px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.percentage-calculate-button {
+  border: 1px solid #000000;
+  background: #000000;
+  color: #ffffff;
+}
+
+.percentage-calculate-button:hover {
+  background: #ffffff;
+  color: #000000;
+}
+
+.percentage-reset-button {
+  border: 1px solid #cccccc;
+  background: #ffffff;
+  color: #000000;
+}
+
+.percentage-reset-button:hover {
+  border-color: #000000;
+}
+
+/* =========================================
+   PERCENTAGE RESULT
+========================================= */
+
+.percentage-result {
+  margin-top: 20px;
+  padding: 18px;
+  border: 1px solid #000000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.percentage-result span {
+  color: #666666;
+  font-size: 13px;
+}
+
+.percentage-result strong {
+  color: #000000;
+  font-size: 24px;
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+
+  .tools-section {
+    padding: 80px 0 100px;
+  }
+
+  .tools-hero {
+    margin-bottom: 60px;
+    padding: 0 25px;
+    grid-template-columns: 1fr;
+  }
+
+  .tools-hero-content {
+    padding: 65px 0;
+  }
+
+  .tools-hero-image {
+    min-height: 350px;
+  }
+
+  .tools-grid {
+    padding: 0 25px;
+    grid-template-columns: 1fr;
+  }
+
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+  .tools-section {
+    padding: 60px 0 80px;
+  }
+
+  .tools-hero {
+    padding: 0 20px;
+  }
+
+  .tools-hero h2 {
+    font-size: 48px;
+    letter-spacing: -2px;
+  }
+
+  .tools-hero p {
+    font-size: 16px;
+  }
+
+  .tools-hero-image {
+    min-height: 280px;
+  }
+
+  .tools-grid {
+    padding: 0 20px;
+    gap: 16px;
+  }
+
+  .tool-card {
+    padding: 30px 24px;
+  }
+
+  .tool-card h3 {
+    font-size: 26px;
+  }
+
+  .percentage-actions {
+    grid-template-columns: 1fr;
+  }
+
+}
