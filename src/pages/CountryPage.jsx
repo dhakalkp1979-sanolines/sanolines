@@ -51,8 +51,7 @@ function CountryPage({
    * If the country data already contains its own topics,
    * use them. Otherwise use the complete 20-section guide.
    */
-  const serviceTopics =
-    topics.length > 0 ? topics : defaultTopics;
+  const serviceTopics = defaultTopics;
 
   const services = countryServices[country] || {};
 
