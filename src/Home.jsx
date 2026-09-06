@@ -83,16 +83,14 @@ function getCountryDescription(item) {
 
 /* =========================================
    COUNTRY FLAG
-   ========================================= */
+   Uses PNG flags like the working version
+========================================= */
 
 function getCountryFlag(item) {
-  const code =
-    item?.flagCode ||
-    item?.code ||
-    "";
+  const code = item?.flagCode || item?.code || "";
 
   if (code) {
-    return `https://flagcdn.io/4x3/${String(code).toLowerCase()}.svg`;
+    return `https://flagcdn.com/w40/${String(code).toLowerCase()}.png`;
   }
 
   if (item?.flag && typeof item.flag === "string") {
@@ -102,11 +100,27 @@ function getCountryFlag(item) {
   return "";
 }
 
+function getCountryFlagRetina(item) {
+  const code = item?.flagCode || item?.code || "";
+
+  if (code) {
+    return `https://flagcdn.com/w80/${String(code).toLowerCase()}.png`;
+  }
+
+  return "";
+}
+
+/* =========================================
+   COUNTRY CARD
+========================================= */
+
 function CountryCard({ item, index, onClick }) {
   const countryName = getCountryName(item);
   const continentName = getCountryContinent(item);
   const description = getCountryDescription(item);
+
   const flag = getCountryFlag(item);
+  const retinaFlag = getCountryFlagRetina(item);
 
   return (
     <article
@@ -131,12 +145,10 @@ function CountryCard({ item, index, onClick }) {
           <img
             className="country-flag"
             src={flag}
+            srcSet={retinaFlag ? `${retinaFlag} 2x` : ""}
             alt={`${countryName} flag`}
             loading="lazy"
             decoding="async"
-            onError={(event) => {
-              event.currentTarget.style.display = "none";
-            }}
           />
         )}
       </div>
@@ -337,10 +349,7 @@ function Home() {
   return (
     <div className="home-page">
 
-      {/* =========================================
-          HEADER
-      ========================================= */}
-
+      {/* HEADER */}
       <header className="site-header">
         <div className="site-header-inner">
 
@@ -390,14 +399,10 @@ function Home() {
             </button>
 
           </nav>
-
         </div>
       </header>
 
-      {/* =========================================
-          HERO
-      ========================================= */}
-
+      {/* HERO */}
       <section className="home-hero">
 
         <div className="home-hero-inner">
@@ -447,10 +452,7 @@ function Home() {
 
       </section>
 
-      {/* =========================================
-          SEARCH RESULTS
-      ========================================= */}
-
+      {/* SEARCH RESULTS */}
       {searchTerm.trim() && (
         <section className="home-section search-results-section">
 
@@ -492,10 +494,7 @@ function Home() {
         </section>
       )}
 
-      {/* =========================================
-          CONTINENTS
-      ========================================= */}
-
+      {/* CONTINENTS */}
       {!searchTerm.trim() && (
         <section className="home-section continents-section">
 
@@ -564,10 +563,7 @@ function Home() {
         </section>
       )}
 
-      {/* =========================================
-          COUNTRIES
-      ========================================= */}
-
+      {/* COUNTRIES */}
       {!searchTerm.trim() && (
         <section
           className="home-section selected-continent-section"
@@ -608,12 +604,14 @@ function Home() {
             <div className="country-grid">
 
               {filteredCountries.map((item, index) => (
+
                 <CountryCard
                   key={`${getCountryName(item)}-${index}`}
                   item={item}
                   index={index}
                   onClick={handleCountryClick}
                 />
+
               ))}
 
             </div>
@@ -629,10 +627,7 @@ function Home() {
         </section>
       )}
 
-      {/* =========================================
-          SERVICES
-      ========================================= */}
-
+      {/* SERVICES */}
       {!searchTerm.trim() && (
         <section
           className="services-section"
@@ -701,10 +696,7 @@ function Home() {
         </section>
       )}
 
-      {/* =========================================
-          PROFESSIONAL TOOLS
-      ========================================= */}
-
+      {/* TOOLS */}
       {!searchTerm.trim() && (
         <section
           className="home-section tools-section"
@@ -755,7 +747,6 @@ function Home() {
           <div className="tools-grid">
 
             {/* TOOL 01 */}
-
             <div className="tool-card">
 
               <div className="tool-card-number">
@@ -863,6 +854,7 @@ function Home() {
                   </div>
 
                   {percentageResult !== null && (
+
                     <div className="percentage-result">
 
                       <span>
@@ -874,6 +866,7 @@ function Home() {
                       </strong>
 
                     </div>
+
                   )}
 
                 </div>
@@ -883,7 +876,6 @@ function Home() {
             </div>
 
             {/* TOOL 02 */}
-
             <div className="tool-card">
 
               <div className="tool-card-number">
@@ -1029,7 +1021,6 @@ function Home() {
             </div>
 
             {/* TOOL 03 */}
-
             <div className="tool-card">
 
               <div className="tool-card-number">
@@ -1093,9 +1084,11 @@ function Home() {
                       amount > 0 &&
                       rate > 0
                     ) {
+
                       setCurrencyResult(
                         amount * rate
                       );
+
                     }
 
                   }}
@@ -1124,7 +1117,6 @@ function Home() {
             </div>
 
             {/* TOOL 04 */}
-
             <div className="tool-card">
 
               <div className="tool-card-number">
@@ -1230,7 +1222,6 @@ function Home() {
             </div>
 
             {/* TOOL 05 */}
-
             <div className="tool-card">
 
               <div className="tool-card-number">
@@ -1334,7 +1325,6 @@ function Home() {
             </div>
 
             {/* TOOL 06 */}
-
             <div className="tool-card">
 
               <div className="tool-card-number">
@@ -1498,10 +1488,7 @@ function Home() {
         </section>
       )}
 
-      {/* =========================================
-          FOOTER
-      ========================================= */}
-
+      {/* FOOTER */}
       <footer className="home-footer">
 
         <div className="home-footer-inner">
