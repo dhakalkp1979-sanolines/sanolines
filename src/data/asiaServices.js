@@ -1,18 +1,24 @@
 // src/data/asiaServices.js
 
 /*
-  SANOLINES GLOBAL
-  ASIA SERVICES
+=========================================================
+SANOLINES GLOBAL
+ASIA SERVICES DATABASE
 
-  48 Asian countries
-  Government & Official Services = official government portal
+48 Asian countries
+20 information/service areas per country
 
-  Sanolines is an information directory.
-  Sanolines does not provide government, legal,
-  immigration, medical, financial or other services.
+Sanolines is an information platform.
+It does NOT provide government, legal, medical,
+immigration, financial, employment or other services.
+
+Official organisations operate their own services.
+Visitors should always verify current information
+with the relevant organisation.
+=========================================================
 */
 
-const categories = [
+const serviceCategories = [
   "Government & Official Services",
   "Immigration & Visa",
   "Jobs & Employment",
@@ -35,13 +41,81 @@ const categories = [
   "Food, Shelter & Basic Assistance",
 ];
 
-const makeLink = (name, url, official = true) => ({
-  name,
-  url,
-  official,
-});
+/*
+=========================================================
+SERVICE DESCRIPTIONS
+=========================================================
+*/
 
-const governmentLinks = {
+const descriptions = {
+  "Government & Official Services":
+    "Find information about government departments, public administration and official services.",
+
+  "Immigration & Visa":
+    "Find information about visas, residence, immigration procedures and citizenship.",
+
+  "Jobs & Employment":
+    "Find information about employment services, job searching, contracts, worker rights and employment support.",
+
+  "Money & Banking":
+    "Find information about banking, payments, accounts and financial services.",
+
+  Taxes:
+    "Find information about tax authorities, taxpayer services, registration and tax procedures.",
+
+  Healthcare:
+    "Find information about public healthcare, health services, hospitals and healthcare support.",
+
+  Education:
+    "Find information about schools, universities, vocational training and education services.",
+
+  "Transport & Driving":
+    "Find information about driving licences, vehicle services, public transport and road rules.",
+
+  "Emergency Services":
+    "Find emergency numbers and information about police, fire, ambulance and urgent assistance.",
+
+  Travel:
+    "Find useful travel information, official travel requirements, transport hubs and travel services.",
+
+  Housing:
+    "Find information about renting, housing services, tenant support, social housing and accommodation assistance.",
+
+  "Useful Contacts":
+    "Find useful government departments, public organisations, helplines and important contacts.",
+
+  "Legal Aid & Free Lawyers":
+    "Find information about legal aid, access to justice and organisations that may provide free or low-cost legal assistance.",
+
+  "Migrant & Refugee Support":
+    "Find organisations and support resources that may assist migrants, refugees and newcomers.",
+
+  "Associations & Community Help":
+    "Find community associations, charities and local organisations that may provide practical support.",
+
+  "Social Security & Benefits":
+    "Find information about social security, pensions, unemployment support and public benefits.",
+
+  "Family & Children Support":
+    "Find information about family services, childcare, children's services and family support organisations.",
+
+  "Consumer Protection":
+    "Find information about consumer rights, complaints, refunds and consumer protection organisations.",
+
+  "Disability & Accessibility Support":
+    "Find information about disability services, accessibility, benefits and support organisations.",
+
+  "Food, Shelter & Basic Assistance":
+    "Find information about food assistance, shelters, emergency accommodation and essential support organisations.",
+};
+
+/*
+=========================================================
+OFFICIAL COUNTRY PORTALS
+=========================================================
+*/
+
+const countrySources = {
   Afghanistan: {
     name: "Afghanistan Government",
     url: "https://www.gov.af/",
@@ -58,8 +132,8 @@ const governmentLinks = {
   },
 
   Bahrain: {
-    name: "Bahrain Government",
-    url: "https://www.bahrain.bh/",
+    name: "Bahrain National Government Services Portal",
+    url: "https://services.bahrain.bh/wps/portal/en",
   },
 
   Bangladesh: {
@@ -138,7 +212,7 @@ const governmentLinks = {
   },
 
   Kuwait: {
-    name: "Government of Kuwait",
+    name: "Kuwait Government Online",
     url: "https://www.e.gov.kw/",
   },
 
@@ -198,22 +272,22 @@ const governmentLinks = {
   },
 
   Palestine: {
-    name: "State of Palestine Government",
+    name: "State of Palestine",
     url: "https://www.palestine.ps/",
   },
 
   Philippines: {
-    name: "Government of the Philippines",
-    url: "https://www.gov.ph/",
+    name: "Official Gazette of the Philippines",
+    url: "https://www.officialgazette.gov.ph/",
   },
 
   Qatar: {
-    name: "Government of Qatar",
+    name: "Qatar Government",
     url: "https://www.gov.qa/",
   },
 
   "Saudi Arabia": {
-    name: "Government of Saudi Arabia",
+    name: "Saudi Government Services",
     url: "https://www.my.gov.sa/",
   },
 
@@ -223,7 +297,7 @@ const governmentLinks = {
   },
 
   "South Korea": {
-    name: "Government of South Korea",
+    name: "Korea.net Government Information",
     url: "https://www.korea.net/",
   },
 
@@ -233,7 +307,7 @@ const governmentLinks = {
   },
 
   Syria: {
-    name: "Government of Syria",
+    name: "Syrian e-Government",
     url: "https://www.egov.sy/",
   },
 
@@ -243,7 +317,7 @@ const governmentLinks = {
   },
 
   Thailand: {
-    name: "Government of Thailand",
+    name: "Royal Thai Government",
     url: "https://www.thaigov.go.th/",
   },
 
@@ -253,7 +327,7 @@ const governmentLinks = {
   },
 
   "Türkiye": {
-    name: "Government of Türkiye",
+    name: "Türkiye e-Government Gateway",
     url: "https://www.turkiye.gov.tr/",
   },
 
@@ -283,71 +357,13 @@ const governmentLinks = {
   },
 };
 
-
 /*
-  Create all 20 service categories for each country.
-
-  For now, the official government portal is the
-  trusted starting point for every category.
-
-  We can later replace individual categories with
-  dedicated official agencies:
-  - Immigration
-  - Tax
-  - Healthcare
-  - Jobs
-  - Education
-  - Housing
-  - etc.
+=========================================================
+COUNTRIES
+=========================================================
 */
 
-const makeCountry = (country) => {
-  const government = governmentLinks[country];
-
-  const services = {};
-
-  categories.forEach((category) => {
-    services[category] = {
-      description:
-        `${category} information and useful official resources for ${country}. ` +
-        `Sanolines is an information directory and does not provide these services.`,
-
-      links: [
-        makeLink(
-          government.name,
-          government.url,
-          true
-        ),
-      ],
-    };
-  });
-
-  /*
-    Calculators & Tools
-  */
-
-  services["Calculators & Tools"] = {
-    description:
-      `Useful Sanolines calculators and information tools for ${country}.`,
-
-    links: [
-      {
-        name: "Sanolines Calculators & Tools",
-        url: "./#tools",
-        official: false,
-      },
-    ],
-  };
-
-  return services;
-};
-
-
-/*
-  48 ASIAN COUNTRIES
-*/
-
-const countryNames = [
+const asiaCountries = [
   "Afghanistan",
   "Armenia",
   "Azerbaijan",
@@ -398,16 +414,181 @@ const countryNames = [
   "Yemen",
 ];
 
+/*
+=========================================================
+SPECIAL SERVICE LINKS
+=========================================================
+
+These are official specialist resources where we have
+a known dedicated official authority.
+
+All other categories safely point visitors to the
+country's official government/service portal rather
+than inventing a URL.
+*/
+
+const specialistLinks = {
+  Bahrain: {
+    "Money & Banking": {
+      name: "Central Bank of Bahrain",
+      url: "https://www.cbb.gov.bh/",
+    },
+
+    Healthcare: {
+      name: "Bahrain Ministry of Health",
+      url: "https://www.moh.gov.bh/",
+    },
+
+    "Social Security & Benefits": {
+      name: "Social Insurance Organization Bahrain",
+      url: "https://www.sio.gov.bh/",
+    },
+
+    "Consumer Protection": {
+      name: "Bahrain Ministry of Industry and Commerce",
+      url: "https://www.moic.gov.bh/",
+    },
+
+    "Legal Aid & Free Lawyers": {
+      name: "Bahrain Ministry of Justice, Islamic Affairs and Waqf",
+      url: "https://www.moj.gov.bh/",
+    },
+
+    "Emergency Services": {
+      name: "Bahrain Ministry of Interior",
+      url: "https://www.interior.gov.bh/",
+    },
+  },
+
+  Armenia: {
+    "Immigration & Visa": {
+      name: "Armenia Migration and Citizenship Service",
+      url: "https://migration.mia.gov.am/",
+    },
+
+    "Government & Official Services": {
+      name: "Armenian Government e-Government Portal",
+      url: "https://www.e-gov.am/",
+    },
+  },
+
+  India: {
+    "Government & Official Services": {
+      name: "National Portal of India",
+      url: "https://www.india.gov.in/",
+    },
+
+    "Immigration & Visa": {
+      name: "Government of India Visa Services",
+      url: "https://indianvisaonline.gov.in/",
+    },
+
+    "Jobs & Employment": {
+      name: "National Career Service",
+      url: "https://www.ncs.gov.in/",
+    },
+  },
+
+  Singapore: {
+    "Government & Official Services": {
+      name: "Singapore Government",
+      url: "https://www.gov.sg/",
+    },
+
+    "Jobs & Employment": {
+      name: "MyCareersFuture Singapore",
+      url: "https://www.mycareersfuture.gov.sg/",
+    },
+  },
+
+  "United Arab Emirates": {
+    "Government & Official Services": {
+      name: "UAE Government",
+      url: "https://u.ae/",
+    },
+  },
+
+  "Saudi Arabia": {
+    "Government & Official Services": {
+      name: "Saudi National Government Services",
+      url: "https://www.my.gov.sa/",
+    },
+  },
+
+  "South Korea": {
+    "Government & Official Services": {
+      name: "Korean Government",
+      url: "https://www.korea.net/",
+    },
+  },
+
+  "Türkiye": {
+    "Government & Official Services": {
+      name: "Türkiye e-Government Gateway",
+      url: "https://www.turkiye.gov.tr/",
+    },
+  },
+
+  Malaysia: {
+    "Government & Official Services": {
+      name: "Malaysia Government Portal",
+      url: "https://www.malaysia.gov.my/en",
+    },
+  },
+};
 
 /*
-  Build the final Asia services object
+=========================================================
+BUILD ONE COUNTRY
+=========================================================
+*/
+
+function buildCountryServices(country) {
+  const countrySource = countrySources[country];
+
+  const result = {};
+
+  serviceCategories.forEach((category) => {
+    const specialist =
+      specialistLinks[country]?.[category];
+
+    const source = specialist || countrySource;
+
+    result[category] = {
+      description:
+        `${descriptions[category]} in ${country}. ` +
+        `Sanolines provides information only and does not provide this service directly.`,
+
+      links: [
+        {
+          name: source.name,
+          url: source.url,
+          official: true,
+        },
+      ],
+    };
+  });
+
+  return result;
+}
+
+/*
+=========================================================
+CREATE ALL 48 COUNTRIES
+=========================================================
 */
 
 const asiaServices = {};
 
-countryNames.forEach((country) => {
-  asiaServices[country] = makeCountry(country);
+asiaCountries.forEach((country) => {
+  asiaServices[country] =
+    buildCountryServices(country);
 });
 
+/*
+=========================================================
+EXPORT
+=========================================================
+*/
 
 export default asiaServices;
