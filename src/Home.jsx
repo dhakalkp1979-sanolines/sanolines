@@ -17,6 +17,14 @@ const services = [
   "Travel",
   "Housing",
   "Useful Contacts",
+  "Legal Aid & Free Lawyers",
+  "Migrant & Refugee Support",
+  "Associations & Community Help",
+  "Social Security & Benefits",
+  "Family & Children Support",
+  "Consumer Protection",
+  "Disability & Accessibility Support",
+  "Food, Shelter & Basic Assistance",
 ];
 
 const continents = [
@@ -341,6 +349,7 @@ function Home() {
 
   const handleOpenDisclaimer = () => {
     setShowDisclaimer(true);
+
     window.scrollTo({
       top: 0,
       behavior: "smooth",
@@ -359,14 +368,20 @@ function Home() {
   };
 
   /* =========================================
+     SERVICE NAVIGATION
+  ========================================= */
+
+  const handleServiceClick = () => {
+    handleNavigation("countries");
+  };
+
+  /* =========================================
      DISCLAIMER PAGE
   ========================================= */
 
   if (showDisclaimer) {
     return (
       <div className="home-page">
-
-        {/* HEADER */}
 
         <header className="site-header">
           <div className="site-header-inner">
@@ -388,8 +403,6 @@ function Home() {
 
           </div>
         </header>
-
-        {/* DISCLAIMER */}
 
         <main className="disclaimer-page">
 
@@ -1037,8 +1050,6 @@ function Home() {
                 official or professional services.
               </p>
 
-              {/* FINAL NOTICE */}
-
               <div className="disclaimer-final-notice">
 
                 <h2>
@@ -1110,6 +1121,7 @@ function Home() {
       {/* HEADER */}
 
       <header className="site-header">
+
         <div className="site-header-inner">
 
           <div className="site-brand">
@@ -1160,6 +1172,7 @@ function Home() {
           </nav>
 
         </div>
+
       </header>
 
       {/* HERO */}
@@ -1426,12 +1439,7 @@ function Home() {
                   type="button"
                   className="service-card"
                   key={service}
-                  onClick={() =>
-                    window.scrollTo({
-                      top: 0,
-                      behavior: "smooth",
-                    })
-                  }
+                  onClick={handleServiceClick}
                 >
 
                   <div className="service-card-content">
@@ -1446,7 +1454,10 @@ function Home() {
 
                   </div>
 
-                  <span className="service-arrow">
+                  <span
+                    className="service-arrow"
+                    aria-hidden="true"
+                  >
                     →
                   </span>
 
