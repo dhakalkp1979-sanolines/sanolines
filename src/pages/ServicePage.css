@@ -1,4 +1,425 @@
 /* =========================================
+   SANOLINES SERVICE PAGE
+   PROFESSIONAL GLOBAL INFORMATION DESIGN
+========================================= */
+
+.service-page {
+  min-height: 100vh;
+  background: #f5f7fa;
+  color: #172033;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+.service-header {
+  width: 100%;
+  min-height: 76px;
+  padding: 14px 6%;
+
+  background: #ffffff;
+  border-bottom: 1px solid #e3e8ef;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  position: relative;
+  z-index: 10;
+}
+
+.service-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.service-logo-icon {
+  width: 42px;
+  height: 42px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 10px;
+
+  background: #0b1f3a;
+  color: #ffffff;
+
+  font-size: 21px;
+  font-weight: 800;
+
+  box-shadow: 0 4px 12px rgba(11, 31, 58, 0.12);
+}
+
+.service-logo-name {
+  color: #0b1f3a;
+
+  font-size: 20px;
+  font-weight: 800;
+
+  letter-spacing: 1px;
+}
+
+.service-logo-tagline {
+  margin-top: 2px;
+
+  color: #718096;
+
+  font-size: 11px;
+  letter-spacing: 0.3px;
+}
+
+.service-back {
+  border: 1px solid #d4dce6;
+  border-radius: 9px;
+
+  padding: 10px 18px;
+
+  background: #ffffff;
+  color: #0b1f3a;
+
+  font-size: 14px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.service-back:hover {
+  background: #0b1f3a;
+  color: #ffffff;
+  border-color: #0b1f3a;
+
+  transform: translateY(-1px);
+}
+
+
+/* =========================================
+   HERO
+========================================= */
+
+.service-hero {
+  background: #0b1f3a;
+  color: #ffffff;
+
+  padding: 72px 6%;
+
+  position: relative;
+  overflow: hidden;
+}
+
+.service-hero::after {
+  content: "";
+
+  position: absolute;
+
+  width: 420px;
+  height: 420px;
+
+  right: -180px;
+  top: -220px;
+
+  border-radius: 50%;
+
+  border: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.service-hero-content {
+  max-width: 1050px;
+
+  margin: 0 auto;
+
+  position: relative;
+  z-index: 1;
+}
+
+.service-breadcrumb {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+
+  gap: 9px;
+
+  margin-bottom: 24px;
+
+  color: #9fb0c7;
+
+  font-size: 11px;
+  font-weight: 700;
+
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+}
+
+.service-breadcrumb-separator {
+  color: #627895;
+}
+
+.service-label {
+  display: inline-block;
+
+  margin-bottom: 14px;
+  padding: 6px 12px;
+
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 30px;
+
+  color: #c0ccdc;
+
+  font-size: 11px;
+  font-weight: 800;
+
+  letter-spacing: 1.5px;
+}
+
+.service-country {
+  margin-bottom: 8px;
+
+  color: #aebdd2;
+
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.service-hero h1 {
+  margin: 0 0 18px;
+
+  color: #ffffff;
+
+  font-size: clamp(32px, 5vw, 58px);
+  line-height: 1.08;
+
+  font-weight: 800;
+
+  letter-spacing: -1px;
+}
+
+.service-hero-description {
+  max-width: 760px;
+
+  margin: 0;
+
+  color: #d5deea;
+
+  font-size: 17px;
+  line-height: 1.7;
+}
+
+
+/* =========================================
+   HERO META
+========================================= */
+
+.service-hero-meta {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+
+  margin-top: 35px;
+  padding-top: 25px;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.16);
+}
+
+.service-meta-item {
+  min-width: 150px;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 5px;
+
+  padding-right: 25px;
+}
+
+.service-meta-label {
+  color: #8fa3bd;
+
+  font-size: 9px;
+  font-weight: 800;
+
+  letter-spacing: 1.4px;
+}
+
+.service-meta-item strong {
+  color: #ffffff;
+
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.service-meta-divider {
+  width: 1px;
+  height: 32px;
+
+  margin-right: 25px;
+
+  background: rgba(255, 255, 255, 0.16);
+}
+
+
+/* =========================================
+   DIRECTORY NOTE
+========================================= */
+
+.service-directory-note {
+  max-width: 850px;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 5px;
+
+  margin-top: 30px;
+  padding: 16px 20px;
+
+  border-left: 3px solid #ffffff;
+
+  background: rgba(255, 255, 255, 0.07);
+
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.service-directory-note strong {
+  color: #ffffff;
+
+  font-size: 10px;
+  font-weight: 800;
+
+  letter-spacing: 1.2px;
+}
+
+.service-directory-note span {
+  color: #c6d2e1;
+}
+
+
+/* =========================================
+   MAIN
+========================================= */
+
+.service-main {
+  width: 88%;
+  max-width: 1050px;
+
+  margin: 0 auto;
+
+  padding: 70px 0;
+}
+
+
+/* =========================================
+   SECTION INTRO
+========================================= */
+
+.service-intro {
+  margin-bottom: 40px;
+}
+
+.service-section-label {
+  margin-bottom: 10px;
+
+  color: #527092;
+
+  font-size: 11px;
+  font-weight: 800;
+
+  letter-spacing: 1.6px;
+}
+
+.service-intro h2,
+.service-links-section h2,
+.service-map-section h2,
+.service-notice h2 {
+  margin: 0 0 12px;
+
+  color: #172033;
+
+  font-size: 30px;
+  line-height: 1.2;
+}
+
+.service-intro p {
+  max-width: 700px;
+
+  margin: 0;
+
+  color: #68758a;
+
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+
+/* =========================================
+   INFORMATION CARD
+========================================= */
+
+.service-information-card {
+  display: grid;
+
+  grid-template-columns: 70px 1fr;
+
+  gap: 25px;
+
+  margin-bottom: 60px;
+  padding: 30px;
+
+  background: #ffffff;
+
+  border: 1px solid #dfe5ec;
+  border-radius: 14px;
+
+  box-shadow: 0 8px 25px rgba(17, 35, 58, 0.05);
+}
+
+.service-information-number {
+  width: 52px;
+  height: 52px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 10px;
+
+  background: #eef3f8;
+  color: #0b1f3a;
+
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.service-information-card h3 {
+  margin: 0 0 10px;
+
+  color: #172033;
+
+  font-size: 21px;
+}
+
+.service-information-card p {
+  margin: 0;
+
+  color: #68758a;
+
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+
+/* =========================================
    USEFUL INFORMATION
 ========================================= */
 
@@ -8,7 +429,9 @@
 
 .service-detail-list {
   display: grid;
+
   grid-template-columns: 1fr 1fr;
+
   gap: 16px;
 
   margin-top: 28px;
@@ -16,8 +439,11 @@
 
 .service-detail-item {
   display: grid;
+
   grid-template-columns: 48px 1fr;
+
   align-items: flex-start;
+
   gap: 16px;
 
   min-height: 120px;
@@ -45,10 +471,6 @@
   box-shadow: 0 10px 25px rgba(17, 35, 58, 0.08);
 }
 
-.service-detail-item:last-child {
-  border-bottom: 1px solid #dfe5ec;
-}
-
 .service-detail-number {
   width: 40px;
   height: 40px;
@@ -64,6 +486,7 @@
 
   font-size: 12px;
   font-weight: 800;
+
   letter-spacing: 0.5px;
 }
 
@@ -78,23 +501,690 @@
 
 
 /* =========================================
-   USEFUL INFORMATION - TABLET
+   OFFICIAL RESOURCES
 ========================================= */
 
-@media (max-width: 768px) {
+.service-links-section {
+  margin-bottom: 60px;
+}
 
-  .service-detail-list {
-    grid-template-columns: 1fr;
+.service-links-intro {
+  max-width: 750px;
+
+  margin: 0;
+
+  color: #68758a;
+
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.service-resource-list {
+  display: flex;
+  flex-direction: column;
+
+  gap: 16px;
+
+  margin-top: 28px;
+}
+
+
+/* =========================================
+   OFFICIAL SOURCE CARD
+========================================= */
+
+.service-resource-card {
+  display: grid;
+
+  grid-template-columns: 55px 1fr auto;
+
+  align-items: center;
+
+  gap: 22px;
+
+  padding: 24px;
+
+  background: #ffffff;
+
+  border: 1px solid #d9e2ec;
+  border-radius: 16px;
+
+  box-shadow: 0 8px 24px rgba(15, 35, 65, 0.05);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.service-resource-card:hover {
+  transform: translateY(-2px);
+
+  border-color: #c5d1df;
+
+  box-shadow: 0 12px 30px rgba(15, 35, 65, 0.08);
+}
+
+
+/* =========================================
+   SOURCE NUMBER
+========================================= */
+
+.resource-number {
+  width: 42px;
+  height: 42px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 10px;
+
+  background: #eef3f8;
+
+  color: #0b1f3a;
+
+  font-size: 12px;
+  font-weight: 800;
+}
+
+
+/* =========================================
+   SOURCE CONTENT
+========================================= */
+
+.resource-content {
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 5px;
+}
+
+.resource-label {
+  display: inline-flex;
+
+  align-self: flex-start;
+
+  padding: 5px 9px;
+
+  border-radius: 5px;
+
+  background: #edf4ef;
+  color: #376148;
+
+  font-size: 9px;
+  font-weight: 800;
+
+  letter-spacing: 1.1px;
+}
+
+.resource-content strong {
+  display: block;
+
+  margin: 2px 0;
+
+  color: #10243e;
+
+  font-size: 19px;
+  line-height: 1.3;
+
+  font-weight: 800;
+}
+
+.resource-content small {
+  display: block;
+
+  color: #667892;
+
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+
+/* =========================================
+   POINT 5
+   AUTHORITY / SOURCE LABEL
+========================================= */
+
+.resource-source-info {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+
+  gap: 8px;
+
+  margin-top: 5px;
+}
+
+.resource-authority {
+  color: #425873;
+
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.resource-source-type {
+  display: inline-flex;
+  align-items: center;
+
+  padding: 4px 8px;
+
+  border: 1px solid #dce4ec;
+  border-radius: 5px;
+
+  background: #f7f9fb;
+
+  color: #6a7b90;
+
+  font-size: 9px;
+  font-weight: 800;
+
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+}
+
+
+/* =========================================
+   RESOURCE ACTIONS
+========================================= */
+
+.resource-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  gap: 10px;
+
+  flex-shrink: 0;
+}
+
+
+/* =========================================
+   OFFICIAL WEBSITE BUTTON
+========================================= */
+
+.resource-website-button {
+  min-width: 150px;
+  min-height: 44px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 10px 18px;
+
+  border: 1px solid #0b2342;
+  border-radius: 9px;
+
+  background: #0b2342;
+  color: #ffffff;
+
+  text-decoration: none;
+
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.2;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.resource-website-button:hover {
+  background: #071a31;
+  border-color: #071a31;
+
+  transform: translateY(-2px);
+
+  box-shadow: 0 6px 16px rgba(15, 35, 65, 0.18);
+}
+
+
+/* =========================================
+   MAP BUTTON
+========================================= */
+
+.resource-map-button {
+  min-width: 125px;
+  min-height: 44px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 10px 18px;
+
+  border: 1px solid #cbd6e2;
+  border-radius: 9px;
+
+  background: #ffffff;
+  color: #0b2342;
+
+  text-decoration: none;
+
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.2;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.resource-map-button:hover {
+  background: #f2f5f8;
+  border-color: #9eafc2;
+
+  transform: translateY(-2px);
+
+  box-shadow: 0 6px 16px rgba(15, 35, 65, 0.12);
+}
+
+
+/* =========================================
+   POINT 6
+   CLEAN LOCATION SECTION
+========================================= */
+
+.service-map-section {
+  margin-top: 42px;
+  margin-bottom: 60px;
+
+  padding: 34px;
+
+  background: #ffffff;
+
+  border: 1px solid #dce4ee;
+  border-radius: 16px;
+
+  box-shadow: 0 8px 24px rgba(15, 35, 65, 0.05);
+}
+
+.service-map-section h2 {
+  margin: 8px 0 12px;
+
+  color: #10243e;
+}
+
+.service-map-section p {
+  max-width: 700px;
+
+  margin: 0 0 22px;
+
+  color: #5d718b;
+
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.service-map-section::before {
+  content: "LOCATION & DIRECTIONS";
+
+  display: block;
+
+  margin-bottom: 6px;
+
+  color: #527092;
+
+  font-size: 10px;
+  font-weight: 800;
+
+  letter-spacing: 1.5px;
+}
+
+.service-main-map-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 44px;
+
+  padding: 10px 20px;
+
+  border: 1px solid #0b2342;
+  border-radius: 9px;
+
+  background: #0b2342;
+  color: #ffffff;
+
+  text-decoration: none;
+
+  font-size: 13px;
+  font-weight: 700;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+.service-main-map-button:hover {
+  background: #071a31;
+
+  transform: translateY(-2px);
+
+  box-shadow: 0 6px 16px rgba(15, 35, 65, 0.16);
+}
+
+
+/* =========================================
+   IMPORTANT NOTICE
+========================================= */
+
+.service-notice {
+  padding: 35px;
+
+  background: #ffffff;
+
+  border: 1px solid #e1e6ed;
+  border-left: 4px solid #0b1f3a;
+
+  border-radius: 12px;
+}
+
+.service-notice-label {
+  margin-bottom: 10px;
+
+  color: #527092;
+
+  font-size: 11px;
+  font-weight: 800;
+
+  letter-spacing: 1.5px;
+}
+
+.service-notice h2 {
+  font-size: 24px;
+}
+
+.service-notice p {
+  max-width: 800px;
+
+  margin: 0;
+
+  color: #68758a;
+
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+
+/* =========================================
+   SANOLINES DIRECTORY NOTICE
+========================================= */
+
+.service-directory-notice {
+  margin-top: 35px;
+  padding: 28px;
+
+  background: #eef3f8;
+
+  border: 1px solid #dbe4ee;
+  border-radius: 12px;
+}
+
+.service-directory-notice strong {
+  display: block;
+
+  margin-bottom: 9px;
+
+  color: #0b1f3a;
+
+  font-size: 11px;
+  font-weight: 800;
+
+  letter-spacing: 1.4px;
+}
+
+.service-directory-notice p {
+  max-width: 850px;
+
+  margin: 0;
+
+  color: #617188;
+
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+.service-footer {
+  min-height: 90px;
+
+  padding: 25px 6%;
+
+  background: #0b1f3a;
+  color: #b8c7dc;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 25px;
+
+  font-size: 12px;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.service-footer strong {
+  color: #ffffff;
+
+  letter-spacing: 1px;
+}
+
+
+/* =========================================
+   POINT 7
+   TABLET RESPONSIVE
+========================================= */
+
+@media (max-width: 900px) {
+
+  .service-resource-card {
+    grid-template-columns: 50px 1fr;
+
+    gap: 18px;
+  }
+
+  .resource-actions {
+    grid-column: 2;
+
+    justify-content: flex-start;
+
+    margin-top: 4px;
   }
 
 }
 
 
 /* =========================================
-   USEFUL INFORMATION - MOBILE
+   TABLET
+========================================= */
+
+@media (max-width: 768px) {
+
+  .service-header {
+    padding: 14px 5%;
+  }
+
+  .service-hero {
+    padding: 55px 5%;
+  }
+
+  .service-main {
+    width: 90%;
+
+    padding: 55px 0;
+  }
+
+  .service-information-card {
+    grid-template-columns: 55px 1fr;
+
+    gap: 18px;
+
+    padding: 25px;
+  }
+
+  .service-detail-list {
+    grid-template-columns: 1fr;
+  }
+
+  .service-resource-card {
+    grid-template-columns: 48px 1fr;
+
+    gap: 16px;
+
+    padding: 20px;
+  }
+
+  .resource-actions {
+    grid-column: 2;
+
+    margin-top: 4px;
+  }
+
+  .service-footer {
+    flex-direction: column;
+
+    gap: 8px;
+
+    text-align: center;
+  }
+
+}
+
+
+/* =========================================
+   MOBILE
 ========================================= */
 
 @media (max-width: 520px) {
+
+  .service-header {
+    min-height: 70px;
+  }
+
+  .service-logo {
+    gap: 9px;
+  }
+
+  .service-logo-icon {
+    width: 36px;
+    height: 36px;
+
+    font-size: 18px;
+  }
+
+  .service-logo-name {
+    font-size: 17px;
+  }
+
+  .service-logo-tagline {
+    font-size: 9px;
+  }
+
+  .service-back {
+    padding: 8px 12px;
+
+    font-size: 12px;
+  }
+
+
+  /* HERO */
+
+  .service-hero {
+    padding: 45px 5%;
+  }
+
+  .service-breadcrumb {
+    gap: 6px;
+
+    font-size: 9px;
+  }
+
+  .service-country {
+    font-size: 16px;
+  }
+
+  .service-hero h1 {
+    font-size: 34px;
+  }
+
+  .service-hero-description {
+    font-size: 15px;
+  }
+
+  .service-hero-meta {
+    align-items: flex-start;
+
+    flex-direction: column;
+
+    gap: 16px;
+
+    margin-top: 25px;
+    padding-top: 20px;
+  }
+
+  .service-meta-item {
+    min-width: 0;
+
+    padding-right: 0;
+  }
+
+  .service-meta-divider {
+    display: none;
+  }
+
+  .service-directory-note {
+    padding: 14px 16px;
+
+    font-size: 13px;
+  }
+
+
+  /* MAIN */
+
+  .service-main {
+    width: 90%;
+
+    padding: 45px 0;
+  }
+
+  .service-intro h2,
+  .service-links-section h2,
+  .service-map-section h2 {
+    font-size: 25px;
+  }
+
+
+  /* INFORMATION */
+
+  .service-information-card {
+    grid-template-columns: 1fr;
+
+    gap: 15px;
+
+    padding: 22px;
+  }
+
+  .service-information-number {
+    width: 45px;
+    height: 45px;
+  }
+
+
+  /* USEFUL INFORMATION */
 
   .service-detail-list {
     gap: 12px;
@@ -123,4 +1213,163 @@
     font-size: 14px;
   }
 
+
+  /* RESOURCE CARDS */
+
+  .service-resource-card {
+    grid-template-columns: 1fr;
+
+    gap: 15px;
+
+    padding: 20px;
+  }
+
+  .resource-number {
+    width: 40px;
+    height: 40px;
+  }
+
+  .resource-content strong {
+    font-size: 17px;
+  }
+
+  .resource-source-info {
+    align-items: flex-start;
+
+    flex-direction: column;
+
+    gap: 6px;
+  }
+
+  .resource-actions {
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns: 1.2fr 1fr;
+
+    gap: 9px;
+
+    margin-top: 3px;
+  }
+
+  .resource-website-button,
+  .resource-map-button {
+    width: 100%;
+
+    min-width: 0;
+    min-height: 44px;
+
+    padding: 10px 8px;
+
+    text-align: center;
+  }
+
+
+  /* MAP */
+
+  .service-map-section {
+    padding: 24px;
+  }
+
+  .service-map-section::before {
+    font-size: 9px;
+  }
+
+  .service-main-map-button {
+    width: 100%;
+
+    text-align: center;
+  }
+
+
+  /* NOTICE */
+
+  .service-notice {
+    padding: 25px;
+  }
+
+  .service-notice h2 {
+    font-size: 21px;
+  }
+
+  .service-directory-notice {
+    padding: 22px;
+  }
+
+
+  /* FOOTER */
+
+  .service-footer {
+    padding: 25px 5%;
+  }
+
+}
+
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 360px) {
+
+  .service-logo {
+    gap: 8px;
+  }
+
+  .service-logo-name {
+    font-size: 15px;
+  }
+
+  .service-logo-tagline {
+    display: none;
+  }
+
+  .service-back {
+    padding: 7px 10px;
+
+    font-size: 11px;
+  }
+
+  .service-hero h1 {
+    font-size: 30px;
+  }
+
+  .resource-actions {
+    grid-template-columns: 1fr;
+  }
+
+  .resource-website-button,
+  .resource-map-button {
+    width: 100%;
+  }
+
+}
+
+
+/* =========================================
+   FINAL POLISH
+========================================= */
+
+.service-page a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+.service-page button {
+  -webkit-tap-highlight-color: transparent;
+}
+
+.service-page a:focus-visible,
+.service-page button:focus-visible {
+  outline: 3px solid rgba(82, 112, 146, 0.35);
+  outline-offset: 3px;
+}
+
+.service-resource-card,
+.service-detail-item,
+.service-information-card,
+.service-map-section,
+.service-notice,
+.service-directory-notice {
+  overflow: hidden;
 }
