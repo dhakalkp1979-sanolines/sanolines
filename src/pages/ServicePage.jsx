@@ -6,16 +6,31 @@ function ServicePage({
   continent,
   service,
   description,
+  information = [],
   links = [],
   onBack,
 }) {
+  // Create a Google Maps search for the organisation/service
+  const getMapUrl = (linkName) => {
+    const searchText = `${linkName} ${country}`;
+    return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
+      searchText
+    )}`;
+  };
+
+  // General map search for the service in the country
+  const getServiceMapUrl = () => {
+    const searchText = `${service} ${country}`;
+    return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
+      searchText
+    )}`;
+  };
+
   return (
     <div className="service-page">
 
       {/* HEADER */}
-
       <header className="service-header">
-
         <div className="service-logo">
 
           <div className="service-logo-icon">
@@ -41,12 +56,10 @@ function ServicePage({
         >
           ← Back
         </button>
-
       </header>
 
 
       {/* HERO */}
-
       <section className="service-hero">
 
         <div className="service-hero-content">
@@ -65,8 +78,17 @@ function ServicePage({
 
           <p>
             {description ||
-              `Find useful information, guidance and relevant resources for ${service || "this service"} in ${country || "this country"}.`}
+              `Find useful information, guidance and trusted resources for ${
+                service || "this service"
+              } in ${country || "this country"}.`}
           </p>
+
+          <div className="service-directory-note">
+            Sanolines shares information so you can
+            contact the relevant organisation yourself.
+            Sanolines does not provide the service
+            directly.
+          </div>
 
         </div>
 
@@ -74,10 +96,10 @@ function ServicePage({
 
 
       {/* MAIN */}
-
       <main className="service-main">
 
-        <div className="service-intro">
+        {/* INTRO */}
+        <section className="service-intro">
 
           <div className="service-section-label">
             SANOLINES INFORMATION
@@ -93,11 +115,10 @@ function ServicePage({
             {country}.
           </p>
 
-        </div>
+        </section>
 
 
-        {/* INFORMATION CARD */}
-
+        {/* SERVICE DESCRIPTION */}
         <section className="service-information-card">
 
           <div className="service-information-number">
@@ -107,13 +128,12 @@ function ServicePage({
           <div>
 
             <h3>
-              Useful Information
+              What this service covers
             </h3>
 
             <p>
-              Sanolines organizes important information
-              to help you understand services and find
-              the correct resources for your country.
+              {description ||
+                `Information about ${service?.toLowerCase()} in ${country}.`}
             </p>
 
           </div>
@@ -121,67 +141,200 @@ function ServicePage({
         </section>
 
 
-        {/* LINKS */}
-
-        {links.length > 0 && (
-
-          <section className="service-links-section">
+        {/* INFORMATION */}
+        {information.length > 0 && (
+          <section className="service-details">
 
             <div className="service-section-label">
-              USEFUL RESOURCES
+              INFORMATION
             </div>
 
             <h2>
-              Official & Trusted Sources
+              Useful Information
             </h2>
 
-            <div className="service-resource-list">
+            <div className="service-detail-list">
 
-              {links.map((link, index) => (
+              {information.map((item, index) => (
 
-                <a
-                  key={link.name || index}
-                  href={link.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="service-resource"
+                <div
+                  className="service-detail-item"
+                  key={index}
                 >
 
-                  <div className="resource-number">
+                  <div className="service-detail-number">
                     {String(index + 1).padStart(2, "0")}
                   </div>
 
-                  <div className="resource-content">
+                  <p>
+                    {item}
+                  </p>
 
-                    <span className="resource-label">
-                      {link.official
-                        ? "OFFICIAL SOURCE"
-                        : "USEFUL RESOURCE"}
-                    </span>
-
-                    <strong>
-                      {link.name}
-                    </strong>
-
-                  </div>
-
-                  <span className="resource-arrow">
-                    →
-                  </span>
-
-                </a>
+                </div>
 
               ))}
 
             </div>
 
           </section>
-
         )}
 
 
-        {/* NOTICE */}
+        {/* OFFICIAL SOURCES */}
+        {links.length > 0 && (
+          <section className="service-links-section">
 
+            <div className="service-section-label">
+              OFFICIAL & TRUSTED RESOURCES
+            </div>
+
+            <h2>
+              Where to find more information
+            </h2>
+
+            <p className="service-links-intro">
+              Use the official or trusted source below
+              to check current information, requirements,
+              applications and contact details.
+            </p>
+
+
+            {/* RESOURCE CARDS */}
+            <div className="service-resource-list">
+
+              {links.map((link, index) => (
+
+                <div
+                  className="service-resource-card"
+                  key={link.name || index}
+                >
+
+                  {/* NUMBER */}
+                  <div className="resource-number">
+                    {String(index + 1).padStart(2, "0")}
+                  </div>
+
+
+                  {/* INFORMATION */}
+                  <div className="resource-content">
+
+                    <span className="resource-label">
+                      {link.official
+                        ? "OFFICIAL SOURCE"
+                        : "TRUSTED RESOURCE"}
+                    </span>
+
+                    <strong>
+                      {link.name}
+                    </strong>
+
+                    <small>
+                      Official information and
+                      contact resources
+                    </small>
+
+                  </div>
+
+
+                  {/* BUTTONS */}
+                  <div className="resource-actions">
+
+                    <a
+                      href={link.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="resource-website-button"
+                    >
+                      Website →
+                    </a>
+
+                    <a
+                      href={getMapUrl(link.name)}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="resource-map-button"
+                    >
+                      Map →
+                    </a>
+
+                  </div>
+
+                </div>
+
+              ))}
+
+            </div>
+
+          </section>
+        )}
+
+
+        {/* SERVICE MAP */}
+        <section className="service-map-section">
+
+          <div className="service-section-label">
+            LOCATION
+          </div>
+
+          <h2>
+            Find this service on the map
+          </h2>
+
+          <p>
+            Search Google Maps for relevant offices,
+            organisations and service locations in{" "}
+            {country}.
+          </p>
+
+          <a
+            href={getServiceMapUrl()}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="service-main-map-button"
+          >
+            View {service} on Google Maps →
+          </a>
+
+        </section>
+
+
+        {/* NO LINK */}
+        {links.length === 0 && (
+          <section className="service-information-card">
+
+            <div className="service-information-number">
+              02
+            </div>
+
+            <div>
+
+              <h3>
+                Official information
+              </h3>
+
+              <p>
+                No specific source has been added to
+                this category yet. Please check the
+                country's official government portal
+                for current information.
+              </p>
+
+              <a
+                href={getServiceMapUrl()}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="service-main-map-button"
+              >
+                Search on Google Maps →
+              </a>
+
+            </div>
+
+          </section>
+        )}
+
+
+        {/* IMPORTANT */}
         <section className="service-notice">
 
           <div className="service-notice-label">
@@ -196,7 +349,26 @@ function ServicePage({
             Information, requirements, fees and
             procedures can change. Always verify
             important details with the relevant
-            official authority or trusted organization.
+            official authority or trusted organisation.
+          </p>
+
+        </section>
+
+
+        {/* SANOLINES DISCLAIMER */}
+        <section className="service-directory-notice">
+
+          <strong>
+            SANOLINES INFORMATION PLATFORM
+          </strong>
+
+          <p>
+            Sanolines provides information and points
+            visitors toward relevant organisations and
+            official resources. Sanolines does not
+            provide government, legal, medical,
+            immigration, employment or other services
+            directly.
           </p>
 
         </section>
@@ -205,7 +377,6 @@ function ServicePage({
 
 
       {/* FOOTER */}
-
       <footer className="service-footer">
 
         <strong>
