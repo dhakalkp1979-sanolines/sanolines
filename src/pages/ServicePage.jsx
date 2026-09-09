@@ -7,12 +7,19 @@ function ServicePage({
   service,
   description,
   information = [],
+  usefulInformation = [],
+  authority = "",
+  sourceType = "",
+  officialWebsite = "",
+  websiteButton = null,
+  mapButton = null,
   links = [],
   onBack,
 }) {
   // Create a Google Maps search for the organisation/service
   const getMapUrl = (linkName) => {
     const searchText = `${linkName} ${country}`;
+
     return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
       searchText
     )}`;
@@ -21,6 +28,7 @@ function ServicePage({
   // General map search for the service in the country
   const getServiceMapUrl = () => {
     const searchText = `${service} ${country}`;
+
     return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
       searchText
     )}`;
@@ -29,8 +37,12 @@ function ServicePage({
   return (
     <div className="service-page">
 
-      {/* HEADER */}
+      {/* =====================================================
+          HEADER
+      ===================================================== */}
+
       <header className="service-header">
+
         <div className="service-logo">
 
           <div className="service-logo-icon">
@@ -56,38 +68,145 @@ function ServicePage({
         >
           ← Back
         </button>
+
       </header>
 
 
-      {/* HERO */}
+      {/* =====================================================
+          STRONG SERVICE HERO
+      ===================================================== */}
+
       <section className="service-hero">
 
         <div className="service-hero-content">
 
-          <div className="service-label">
-            {continent || "GLOBAL"}
+          {/* BREADCRUMB */}
+
+          <div className="service-breadcrumb">
+
+            <span>
+              SANOLINES
+            </span>
+
+            <span className="service-breadcrumb-separator">
+              /
+            </span>
+
+            <span>
+              {continent || "GLOBAL"}
+            </span>
+
+            <span className="service-breadcrumb-separator">
+              /
+            </span>
+
+            <span>
+              {country || "Country"}
+            </span>
+
           </div>
+
+
+          {/* CATEGORY LABEL */}
+
+          <div className="service-label">
+            {continent || "GLOBAL"} INFORMATION
+          </div>
+
+
+          {/* COUNTRY */}
 
           <div className="service-country">
             {country || "Country"}
           </div>
 
+
+          {/* SERVICE TITLE */}
+
           <h1>
             {service || "Service"}
           </h1>
 
-          <p>
+
+          {/* DESCRIPTION */}
+
+          <p className="service-hero-description">
             {description ||
               `Find useful information, guidance and trusted resources for ${
                 service || "this service"
               } in ${country || "this country"}.`}
           </p>
 
+
+          {/* SERVICE META */}
+
+          <div className="service-hero-meta">
+
+            <div className="service-meta-item">
+
+              <span className="service-meta-label">
+                COUNTRY
+              </span>
+
+              <strong>
+                {country || "—"}
+              </strong>
+
+            </div>
+
+
+            <div className="service-meta-divider"></div>
+
+
+            <div className="service-meta-item">
+
+              <span className="service-meta-label">
+                INFORMATION AREA
+              </span>
+
+              <strong>
+                {service || "—"}
+              </strong>
+
+            </div>
+
+
+            {authority && (
+              <>
+                <div className="service-meta-divider"></div>
+
+                <div className="service-meta-item">
+
+                  <span className="service-meta-label">
+                    SOURCE
+                  </span>
+
+                  <strong>
+                    {authority}
+                  </strong>
+
+                </div>
+              </>
+            )}
+
+          </div>
+
+
+          {/* DIRECTORY NOTICE */}
+
           <div className="service-directory-note">
-            Sanolines shares information so you can
-            contact the relevant organisation yourself.
-            Sanolines does not provide the service
-            directly.
+
+            <strong>
+              SANOLINES INFORMATION DIRECTORY
+            </strong>
+
+            <span>
+              Sanolines shares information and points
+              visitors toward relevant organisations and
+              official resources. Sanolines does not provide
+              the service directly.
+            </span>
+
           </div>
 
         </div>
@@ -95,10 +214,17 @@ function ServicePage({
       </section>
 
 
-      {/* MAIN */}
+      {/* =====================================================
+          MAIN
+      ===================================================== */}
+
       <main className="service-main">
 
-        {/* INTRO */}
+
+        {/* ===================================================
+            INTRO
+        =================================================== */}
+
         <section className="service-intro">
 
           <div className="service-section-label">
@@ -118,7 +244,10 @@ function ServicePage({
         </section>
 
 
-        {/* SERVICE DESCRIPTION */}
+        {/* ===================================================
+            SERVICE DESCRIPTION
+        =================================================== */}
+
         <section className="service-information-card">
 
           <div className="service-information-number">
@@ -141,8 +270,13 @@ function ServicePage({
         </section>
 
 
-        {/* INFORMATION */}
-        {information.length > 0 && (
+        {/* ===================================================
+            USEFUL INFORMATION
+        =================================================== */}
+
+        {(information.length > 0 ||
+          usefulInformation.length > 0) && (
+
           <section className="service-details">
 
             <div className="service-section-label">
@@ -155,7 +289,10 @@ function ServicePage({
 
             <div className="service-detail-list">
 
-              {information.map((item, index) => (
+              {(information.length > 0
+                ? information
+                : usefulInformation
+              ).map((item, index) => (
 
                 <div
                   className="service-detail-item"
@@ -177,11 +314,16 @@ function ServicePage({
             </div>
 
           </section>
+
         )}
 
 
-        {/* OFFICIAL SOURCES */}
+        {/* ===================================================
+            OFFICIAL SOURCES
+        =================================================== */}
+
         {links.length > 0 && (
+
           <section className="service-links-section">
 
             <div className="service-section-label">
@@ -200,6 +342,7 @@ function ServicePage({
 
 
             {/* RESOURCE CARDS */}
+
             <div className="service-resource-list">
 
               {links.map((link, index) => (
@@ -210,18 +353,22 @@ function ServicePage({
                 >
 
                   {/* NUMBER */}
+
                   <div className="resource-number">
                     {String(index + 1).padStart(2, "0")}
                   </div>
 
 
                   {/* INFORMATION */}
+
                   <div className="resource-content">
 
                     <span className="resource-label">
+
                       {link.official
                         ? "OFFICIAL SOURCE"
                         : "TRUSTED RESOURCE"}
+
                     </span>
 
                     <strong>
@@ -229,14 +376,15 @@ function ServicePage({
                     </strong>
 
                     <small>
-                      Official information and
-                      contact resources
+                      {link.description ||
+                        "Official information and contact resources"}
                     </small>
 
                   </div>
 
 
                   {/* BUTTONS */}
+
                   <div className="resource-actions">
 
                     <a
@@ -266,10 +414,14 @@ function ServicePage({
             </div>
 
           </section>
+
         )}
 
 
-        {/* SERVICE MAP */}
+        {/* ===================================================
+            SERVICE MAP
+        =================================================== */}
+
         <section className="service-map-section">
 
           <div className="service-section-label">
@@ -287,19 +439,24 @@ function ServicePage({
           </p>
 
           <a
-            href={getServiceMapUrl()}
+            href={mapButton?.url || getServiceMapUrl()}
             target="_blank"
             rel="noopener noreferrer"
             className="service-main-map-button"
           >
-            View {service} on Google Maps →
+            {mapButton?.label ||
+              `View ${service} on Google Maps →`}
           </a>
 
         </section>
 
 
-        {/* NO LINK */}
+        {/* ===================================================
+            NO LINK
+        =================================================== */}
+
         {links.length === 0 && (
+
           <section className="service-information-card">
 
             <div className="service-information-number">
@@ -331,10 +488,14 @@ function ServicePage({
             </div>
 
           </section>
+
         )}
 
 
-        {/* IMPORTANT */}
+        {/* ===================================================
+            IMPORTANT NOTICE
+        =================================================== */}
+
         <section className="service-notice">
 
           <div className="service-notice-label">
@@ -355,7 +516,10 @@ function ServicePage({
         </section>
 
 
-        {/* SANOLINES DISCLAIMER */}
+        {/* ===================================================
+            SANOLINES DISCLAIMER
+        =================================================== */}
+
         <section className="service-directory-notice">
 
           <strong>
@@ -376,7 +540,10 @@ function ServicePage({
       </main>
 
 
-      {/* FOOTER */}
+      {/* =====================================================
+          FOOTER
+      ===================================================== */}
+
       <footer className="service-footer">
 
         <strong>
