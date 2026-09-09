@@ -479,7 +479,9 @@
 }
 
 
-/* SOURCE NUMBER */
+/* =========================================
+   SOURCE NUMBER
+========================================= */
 
 .resource-number {
   width: 42px;
@@ -500,7 +502,9 @@
 }
 
 
-/* SOURCE CONTENT */
+/* =========================================
+   SOURCE CONTENT
+========================================= */
 
 .resource-content {
   min-width: 0;
@@ -549,28 +553,124 @@
 }
 
 
-/* SOURCE ACTIONS */
+/* =========================================
+   RESOURCE ACTIONS
+========================================= */
 
 .resource-actions {
   display: flex;
   align-items: center;
+  justify-content: flex-end;
   gap: 10px;
 
   flex-shrink: 0;
 }
 
-.resource-website-button,
-.resource-map-button,
+
+/* =========================================
+   OFFICIAL WEBSITE BUTTON
+========================================= */
+
+.resource-website-button {
+  min-width: 150px;
+  min-height: 44px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 10px 18px;
+
+  border: 1px solid #0b2342;
+  border-radius: 9px;
+
+  background: #0b2342;
+  color: #ffffff;
+
+  text-decoration: none;
+
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.2;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.resource-website-button:hover {
+  background: #071a31;
+  border-color: #071a31;
+
+  transform: translateY(-2px);
+
+  box-shadow: 0 6px 16px rgba(15, 35, 65, 0.18);
+}
+
+
+/* =========================================
+   MAP BUTTON
+========================================= */
+
+.resource-map-button {
+  min-width: 125px;
+  min-height: 44px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 10px 18px;
+
+  border: 1px solid #cbd6e2;
+  border-radius: 9px;
+
+  background: #ffffff;
+  color: #0b2342;
+
+  text-decoration: none;
+
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.2;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.resource-map-button:hover {
+  background: #f2f5f8;
+  border-color: #9eafc2;
+
+  transform: translateY(-2px);
+
+  box-shadow: 0 6px 16px rgba(15, 35, 65, 0.12);
+}
+
+
+/* =========================================
+   MAP SECTION BUTTON
+========================================= */
+
 .service-main-map-button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
 
-  min-height: 42px;
+  min-height: 44px;
 
-  padding: 10px 17px;
+  padding: 10px 20px;
 
+  border: 1px solid #0b2342;
   border-radius: 9px;
+
+  background: #0b2342;
+  color: #ffffff;
 
   text-decoration: none;
 
@@ -583,24 +683,12 @@
     background 0.2s ease;
 }
 
-.resource-website-button {
-  background: #0b2342;
-  color: #ffffff;
-}
-
-.resource-map-button {
-  background: #f0f4f8;
-  color: #0b2342;
-
-  border: 1px solid #d5dfeb;
-}
-
-.resource-website-button:hover,
-.resource-map-button:hover,
 .service-main-map-button:hover {
+  background: #071a31;
+
   transform: translateY(-2px);
 
-  box-shadow: 0 5px 14px rgba(15, 35, 65, 0.12);
+  box-shadow: 0 6px 16px rgba(15, 35, 65, 0.16);
 }
 
 
@@ -637,11 +725,6 @@
 
   font-size: 15px;
   line-height: 1.7;
-}
-
-.service-main-map-button {
-  background: #0b2342;
-  color: #ffffff;
 }
 
 
@@ -748,6 +831,27 @@
   color: #ffffff;
 
   letter-spacing: 1px;
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+
+  .service-resource-card {
+    grid-template-columns: 50px 1fr;
+    gap: 18px;
+  }
+
+  .resource-actions {
+    grid-column: 2;
+
+    justify-content: flex-start;
+
+    margin-top: 4px;
+  }
 }
 
 
@@ -936,7 +1040,7 @@
     width: 100%;
 
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1.2fr 1fr;
 
     gap: 9px;
 
@@ -946,6 +1050,11 @@
   .resource-website-button,
   .resource-map-button {
     width: 100%;
+    min-width: 0;
+
+    min-height: 44px;
+
+    padding: 10px 8px;
 
     text-align: center;
   }
@@ -978,6 +1087,45 @@
 
   .service-footer {
     padding: 25px 5%;
+  }
+
+}
+
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 360px) {
+
+  .service-logo {
+    gap: 8px;
+  }
+
+  .service-logo-name {
+    font-size: 15px;
+  }
+
+  .service-logo-tagline {
+    display: none;
+  }
+
+  .service-back {
+    padding: 7px 10px;
+    font-size: 11px;
+  }
+
+  .service-hero h1 {
+    font-size: 30px;
+  }
+
+  .resource-actions {
+    grid-template-columns: 1fr;
+  }
+
+  .resource-website-button,
+  .resource-map-button {
+    width: 100%;
   }
 
 }
