@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import countryServices from "../data/countryServices";
+import asiaServices from "../data/asiaServices";
 import serviceKeyMap from "../data/serviceContent";
 import ImmigrationPage from "./ImmigrationPage";
 import ServicePage from "./ServicePage";
@@ -48,12 +48,19 @@ function CountryPage({
   ];
 
   /*
-   * If the country data already contains its own topics,
-   * use them. Otherwise use the complete 20-section guide.
+   * Use the complete 20-section guide.
    */
-  const serviceTopics = defaultTopics;
+  const serviceTopics =
+    topics && topics.length > 0 ? topics : defaultTopics;
 
-  const services = countryServices[country] || {};
+  /*
+   * IMPORTANT:
+   * Services now come from the new Asia database.
+   *
+   * asiaServices contains:
+   * 48 Asian countries × 20 categories = 960 services
+   */
+  const services = asiaServices[country] || {};
 
   /*
    * Immigration has its own detailed page.
@@ -73,7 +80,16 @@ function CountryPage({
    */
   if (selectedService) {
     const serviceKey = serviceKeyMap[selectedService];
-    const serviceData = services[serviceKey] || {};
+
+    /*
+     * First try the old service-key structure.
+     * If the new Asia database uses the category name directly,
+     * use that as a fallback.
+     */
+    const serviceData =
+      services[serviceKey] ||
+      services[selectedService] ||
+      {};
 
     return (
       <ServicePage
@@ -82,13 +98,40 @@ function CountryPage({
         service={selectedService}
         description={
           serviceData.description ||
-          "Find useful information, guidance and verified resources for " +
-            selectedService +
-            " in " +
-            country +
-            ". Sanolines shares information so you can contact the relevant organisation yourself."
+          `Find useful information, guidance and verified resources for ${selectedService} in ${country}. Sanolines shares information so you can contact the relevant organisation yourself.`
         }
-        links={serviceData.links || []}
+        information={
+          serviceData.information ||
+          []
+        }
+        usefulInformation={
+          serviceData.usefulInformation ||
+          []
+        }
+        authority={
+          serviceData.authority ||
+          ""
+        }
+        sourceType={
+          serviceData.sourceType ||
+          ""
+        }
+        officialWebsite={
+          serviceData.officialWebsite ||
+          ""
+        }
+        websiteButton={
+          serviceData.websiteButton ||
+          null
+        }
+        mapButton={
+          serviceData.mapButton ||
+          null
+        }
+        links={
+          serviceData.links ||
+          []
+        }
         onBack={() => setSelectedService(null)}
       />
     );
@@ -204,7 +247,14 @@ function CountryPage({
           {serviceTopics.map((topic, index) => {
 
             const serviceKey = serviceKeyMap[topic];
-            const service = services[serviceKey];
+
+            /*
+             * Support both the old key-based structure and
+             * the new category-based Asia structure.
+             */
+            const service =
+              services[serviceKey] ||
+              services[topic];
 
             const isImmigration =
               topic === "Immigration & Visa";
