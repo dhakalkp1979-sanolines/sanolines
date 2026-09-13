@@ -1,3 +1,4 @@
+```jsx
 {/* HERO */}
 
 <header className="hero-section">
@@ -16,7 +17,7 @@
     <p>
       Sanolines helps people find government information,
       employment resources, immigration guidance,
-      healthcare, legal support, housing, education
+      healthcare, legal support, housing, education,
       and other useful services.
     </p>
 
@@ -25,13 +26,15 @@
       <input
         type="text"
         value={search}
-        onChange={(e) =>
-          setSearch(e.target.value)
-        }
+        onChange={(e) => setSearch(e.target.value)}
         placeholder="Search services, immigration, jobs, healthcare..."
+        aria-label="Search Sanolines services"
       />
 
-      <button onClick={goToServices}>
+      <button
+        type="button"
+        onClick={goToServices}
+      >
         Search
       </button>
 
@@ -40,3 +43,4 @@
   </div>
 
 </header>
+```
