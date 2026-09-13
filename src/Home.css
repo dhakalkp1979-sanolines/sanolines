@@ -23,6 +23,7 @@ body {
   background: #ffffff;
   color: #111111;
   font-family: "Inter", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
 }
 
 button,
@@ -49,9 +50,7 @@ button {
 .sanolines-navbar {
   position: relative;
   z-index: 1000;
-
   width: 100%;
-
   background: #ffffff;
   border-bottom: 1px solid #eeeeee;
 }
@@ -59,7 +58,6 @@ button {
 .nav-container {
   width: min(1240px, calc(100% - 60px));
   min-height: 82px;
-
   margin: 0 auto;
 
   display: flex;
@@ -70,7 +68,9 @@ button {
 }
 
 
-/* Brand */
+/* =========================================================
+   BRAND
+   ========================================================= */
 
 .brand-box {
   display: flex;
@@ -81,24 +81,28 @@ button {
   user-select: none;
 }
 
+
+/* Professional geometric S logo */
 .brand-logo {
-  width: 42px;
-  height: 42px;
+  width: 44px;
+  height: 44px;
 
   display: flex;
   align-items: center;
   justify-content: center;
 
-  background: #111111;
-  color: #ffffff;
+  flex-shrink: 0;
 
-  border-radius: 50%;
-
-  font-size: 21px;
-  font-weight: 800;
-
-  letter-spacing: -1px;
+  background: transparent;
+  color: #111111;
 }
+
+.brand-logo svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
 
 .brand-text {
   display: flex;
@@ -112,6 +116,7 @@ button {
   font-weight: 800;
 
   letter-spacing: 2.5px;
+  line-height: 1.1;
 }
 
 .brand-subtitle {
@@ -126,7 +131,9 @@ button {
 }
 
 
-/* Navigation */
+/* =========================================================
+   NAVIGATION MENU
+   ========================================================= */
 
 .nav-menu {
   display: flex;
@@ -173,7 +180,9 @@ button {
 }
 
 
-/* Mobile menu */
+/* =========================================================
+   MOBILE MENU BUTTON
+   ========================================================= */
 
 .mobile-menu-toggle {
   display: none;
@@ -320,7 +329,6 @@ button {
 
 .primary-action-btn:hover {
   background: #eeeeee;
-
   transform: translateY(-2px);
 }
 
@@ -334,7 +342,6 @@ button {
 .secondary-action-btn:hover {
   background: #ffffff;
   color: #111111;
-
   transform: translateY(-2px);
 }
 
@@ -418,9 +425,6 @@ button {
   border-bottom: 1px solid #dddddd;
 }
 
-
-/* Program card */
-
 .program-card {
   position: relative;
 
@@ -446,9 +450,6 @@ button {
 .program-card:hover {
   background: #f7f7f7;
 }
-
-
-/* Number */
 
 .program-number {
   margin-bottom: 65px;
@@ -683,7 +684,6 @@ button {
 
 .explore-card-btn:hover {
   background: #333333;
-
   transform: translateY(-2px);
 }
 
@@ -921,7 +921,9 @@ button {
 }
 
 
-/* Footer brand */
+/* =========================================================
+   FOOTER BRAND
+   ========================================================= */
 
 .footer-info {
   max-width: 470px;
@@ -935,21 +937,26 @@ button {
   margin-bottom: 18px;
 }
 
+
+/* Professional logo on dark footer */
 .footer-logo {
-  width: 39px;
-  height: 39px;
+  width: 44px;
+  height: 44px;
 
   display: flex;
   align-items: center;
   justify-content: center;
 
-  border-radius: 50%;
+  flex-shrink: 0;
 
-  background: #ffffff;
-  color: #111111;
+  background: transparent;
+  color: #ffffff;
+}
 
-  font-size: 19px;
-  font-weight: 800;
+.footer-logo svg {
+  width: 100%;
+  height: 100%;
+  display: block;
 }
 
 .footer-brand h3 {
@@ -985,7 +992,9 @@ button {
 }
 
 
-/* Footer links */
+/* =========================================================
+   FOOTER LINKS
+   ========================================================= */
 
 .footer-links {
   display: flex;
@@ -1012,7 +1021,9 @@ button {
 }
 
 
-/* Footer bottom */
+/* =========================================================
+   FOOTER BOTTOM
+   ========================================================= */
 
 .footer-bottom {
   width: min(1240px, calc(100% - 60px));
@@ -1071,7 +1082,6 @@ button {
   .service-category-grid {
     grid-template-columns: repeat(2, 1fr);
   }
-
 }
 
 
@@ -1171,7 +1181,6 @@ button {
     align-items: flex-start;
     flex-direction: column;
   }
-
 }
 
 
@@ -1193,8 +1202,8 @@ button {
   /* Brand */
 
   .brand-logo {
-    width: 38px;
-    height: 38px;
+    width: 40px;
+    height: 40px;
   }
 
   .brand-title {
@@ -1382,7 +1391,6 @@ button {
 
     gap: 8px;
   }
-
 }
 
 
@@ -1407,5 +1415,4 @@ button {
   .card-content-side h3 {
     font-size: 33px;
   }
-
 }
