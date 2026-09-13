@@ -1,26 +1,37 @@
-const serviceData = {
-  Portugal: {
-    government: {
-      description: "...",
-      information: [...],
-      links: [
-        {
-          name: "...",
-          description: "...",
-          url: "...",
-          official: true,
-        },
-      ],
-    },
+// ============================================================
+// SANOLINES GLOBAL — SERVICE DATA
+// ============================================================
+// Portugal service data will be added here.
+// ============================================================
 
-    immigration: {
-      ...
-    },
+const serviceCategories = [
+  "Government & Official Services",
+  "Immigration & Visa",
+  "Jobs & Employment",
+  "Money & Banking",
+  "Taxes",
+  "Healthcare",
+  "Education",
+  "Transport & Driving",
+  "Emergency Services",
+  "Travel",
+  "Housing",
+  "Useful Contacts",
+  "Legal Aid & Free Lawyers",
+  "Migrant & Refugee Support",
+  "Associations & Community Help",
+  "Social Security & Benefits",
+  "Family & Children Support",
+  "Consumer Protection",
+  "Disability & Accessibility Support",
+  "Food, Shelter & Basic Assistance",
+];
 
-    jobs: {
-      ...
-    },
+const serviceData = {};
 
-    // ... all 20 services
-  },
+export default serviceData;
+
+export {
+  serviceData,
+  serviceCategories,
 };
