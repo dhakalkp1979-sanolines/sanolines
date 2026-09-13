@@ -13,7 +13,7 @@ export default function Home({ onNavigate }) {
     <div className="sanolines-home-page">
 
       {/* =========================
-          PREMIUM NAVIGATION
+          NAVIGATION
       ========================== */}
       <nav className="sanolines-navbar">
         <div className="nav-container">
@@ -37,7 +37,6 @@ export default function Home({ onNavigate }) {
             </div>
           </div>
 
-          {/* Desktop / Mobile Navigation */}
           <div className={`nav-menu ${mobileMenuOpen ? "open" : ""}`}>
             <button
               className="active-tab"
@@ -75,13 +74,13 @@ export default function Home({ onNavigate }) {
 
 
       {/* =========================
-          MAIN LISBON HERO
+          HERO
       ========================== */}
       <header
         className="home-hero-section"
         style={{
           backgroundImage:
-            "url('https://images.unsplash.com/photo-1555881400-74d7acaacd8b?auto=format&fit=crop&w=2000&q=85')",
+            "url('https://images.unsplash.com/photo-1555881400-74d7acaacd8b?auto=format&fit=crop&w=2200&q=90')",
         }}
       >
 
@@ -90,37 +89,36 @@ export default function Home({ onNavigate }) {
         <div className="hero-content-box">
 
           <span className="hero-badge">
-            🇵🇹 PORTUGAL INFORMATION PORTAL
+            PORTUGAL INFORMATION PORTAL
           </span>
 
           <h1>
-            Find useful information and official services in Portugal.
+            Find your way in Portugal.
           </h1>
 
           <p>
-            Sanolines helps people find official government portals,
-            employment resources, immigration information, healthcare,
-            housing, legal support and other useful services in Portugal.
+            Discover official information, useful resources and trusted
+            services for everyday life in Portugal — from government and
+            immigration to jobs, healthcare, housing and community support.
           </p>
 
-          <div className="hero-search-wrapper">
-            <input
-              type="text"
-              placeholder="Search Portugal services, NIF, AIMA, healthcare..."
-              aria-label="Search Portugal services"
-            />
+          <div className="hero-cta-group">
 
-            <button onClick={() => handleNavClick("Services")}>
-              Search
+            <button
+              className="primary-action-btn"
+              onClick={() => handleNavClick("Portugal")}
+            >
+              Explore Portugal
+              <span>→</span>
             </button>
-          </div>
 
-          <div className="hero-trust-line">
-            <span>Official sources</span>
-            <span>•</span>
-            <span>Useful information</span>
-            <span>•</span>
-            <span>Portugal focused</span>
+            <button
+              className="secondary-action-btn"
+              onClick={() => handleNavClick("Services")}
+            >
+              View Services
+            </button>
+
           </div>
 
         </div>
@@ -128,30 +126,117 @@ export default function Home({ onNavigate }) {
 
 
       {/* =========================
-          PORTUGAL INTRODUCTION
+          INTRODUCTION
       ========================== */}
       <main className="home-main-container">
 
-        <section className="section-title-group">
+        <section className="intro-section">
 
           <span className="home-section-label">
-            SANOLINES PORTUGAL
+            SANOLINES
           </span>
 
           <h2>
-            Information that helps you find the right place.
+            Portugal, made easier to navigate.
           </h2>
 
           <p>
-            Explore Portuguese official services and trusted resources
-            through one simple information directory.
+            Sanolines brings useful Portuguese information together in one
+            place, helping visitors find the official organisation,
+            service or resource they need.
           </p>
 
         </section>
 
 
         {/* =========================
-            PREMIUM PORTUGAL CARD
+            THREE MAIN AREAS
+        ========================== */}
+        <section className="programs-section">
+
+          <div className="programs-grid">
+
+            <article
+              className="program-card"
+              onClick={() => handleNavClick("Services")}
+            >
+              <div className="program-number">01</div>
+
+              <span className="program-label">
+                COMMUNITY
+              </span>
+
+              <h3>
+                Community & Social Support
+              </h3>
+
+              <p>
+                Find community organisations, social support resources,
+                migrant assistance and useful local services in Portugal.
+              </p>
+
+              <span className="card-link">
+                Explore support →
+              </span>
+            </article>
+
+
+            <article
+              className="program-card"
+              onClick={() => handleNavClick("Services")}
+            >
+              <div className="program-number">02</div>
+
+              <span className="program-label">
+                EDUCATION
+              </span>
+
+              <h3>
+                Education & Integration
+              </h3>
+
+              <p>
+                Find education resources, language information, training
+                opportunities and useful integration services.
+              </p>
+
+              <span className="card-link">
+                Explore education →
+              </span>
+            </article>
+
+
+            <article
+              className="program-card"
+              onClick={() => handleNavClick("Services")}
+            >
+              <div className="program-number">03</div>
+
+              <span className="program-label">
+                EMPLOYMENT
+              </span>
+
+              <h3>
+                Jobs & Employment
+              </h3>
+
+              <p>
+                Find employment services, job agencies, training resources
+                and useful information for working in Portugal.
+              </p>
+
+              <span className="card-link">
+                Explore employment →
+              </span>
+            </article>
+
+          </div>
+
+        </section>
+
+
+        {/* =========================
+            PORTUGAL FEATURE
         ========================== */}
         <section
           className="featured-country-card"
@@ -161,15 +246,15 @@ export default function Home({ onNavigate }) {
           <div className="card-image-side">
 
             <img
-              src="https://images.unsplash.com/photo-1555881400-74d7acaacd8b?auto=format&fit=crop&w=1200&q=85"
-              alt="Lisbon Portugal"
+              src="https://images.unsplash.com/photo-1541432901042-2d8bd64b4a9b?auto=format&fit=crop&w=1200&q=90"
+              alt="Lisbon Portugal street and architecture"
             />
 
             <div className="image-badge">
 
               <img
                 src="https://flagcdn.com/w40/pt.png"
-                alt="Portugal Flag"
+                alt="Portugal flag"
               />
 
               <span>Portugal</span>
@@ -186,36 +271,34 @@ export default function Home({ onNavigate }) {
             </span>
 
             <h3>
-              Portugal Information & Services
+              Everything starts here.
             </h3>
 
             <p>
-              Find useful information and trusted official resources
-              for everyday life, administration, work, immigration,
-              healthcare, housing and more in Portugal.
+              Explore Portuguese government portals, immigration information,
+              employment resources, healthcare, housing, education, legal
+              support and other essential services.
             </p>
-
 
             <div className="card-highlights">
 
               <span>
-                ✓ Government & Official Services
+                ✓ Official government resources
               </span>
 
               <span>
-                ✓ Immigration & Employment
+                ✓ Immigration & residency information
               </span>
 
               <span>
-                ✓ Healthcare & Social Support
+                ✓ Jobs & employment resources
               </span>
 
               <span>
-                ✓ Housing & Legal Information
+                ✓ Healthcare & social support
               </span>
 
             </div>
-
 
             <button
               className="explore-card-btn"
@@ -225,7 +308,7 @@ export default function Home({ onNavigate }) {
               }}
             >
               Explore Portugal
-              <span aria-hidden="true"> →</span>
+              <span>→</span>
             </button>
 
           </div>
@@ -234,107 +317,77 @@ export default function Home({ onNavigate }) {
 
 
         {/* =========================
-            WHAT YOU CAN FIND
+            SERVICES
         ========================== */}
-        <section className="home-services-preview">
+        <section className="services-introduction">
 
-          <div className="section-title-group">
+          <div className="services-introduction-text">
 
             <span className="home-section-label">
-              EXPLORE
+              PORTUGAL SERVICES
             </span>
 
             <h2>
-              What you can find in Portugal
+              One place to start your search.
             </h2>
 
             <p>
-              Browse practical information across important areas of
-              everyday life and public services.
+              Browse practical information across the areas that matter
+              most in everyday life in Portugal.
             </p>
 
           </div>
 
 
-          <div className="home-service-grid">
+          <button
+            className="home-view-services-btn"
+            onClick={() => handleNavClick("Services")}
+          >
+            View all services →
+          </button>
 
-            <div className="home-service-item">
-              <div className="home-service-icon">01</div>
-              <div>
-                <h3>Government</h3>
-                <p>
-                  Official Portuguese public services and government portals.
-                </p>
-              </div>
-            </div>
+        </section>
 
 
-            <div className="home-service-item">
-              <div className="home-service-icon">02</div>
-              <div>
-                <h3>Immigration</h3>
-                <p>
-                  AIMA, residence permits, visas and immigration resources.
-                </p>
-              </div>
-            </div>
+        {/* =========================
+            SERVICE CATEGORIES
+        ========================== */}
+        <section className="service-category-grid">
 
-
-            <div className="home-service-item">
-              <div className="home-service-icon">03</div>
-              <div>
-                <h3>Jobs</h3>
-                <p>
-                  Employment resources, IEFP and useful job information.
-                </p>
-              </div>
-            </div>
-
-
-            <div className="home-service-item">
-              <div className="home-service-icon">04</div>
-              <div>
-                <h3>Healthcare</h3>
-                <p>
-                  SNS and other healthcare information and resources.
-                </p>
-              </div>
-            </div>
-
-
-            <div className="home-service-item">
-              <div className="home-service-icon">05</div>
-              <div>
-                <h3>Housing</h3>
-                <p>
-                  Housing, rental and accommodation information.
-                </p>
-              </div>
-            </div>
-
-
-            <div className="home-service-item">
-              <div className="home-service-icon">06</div>
-              <div>
-                <h3>Legal Support</h3>
-                <p>
-                  Legal aid and trusted organisations offering support.
-                </p>
-              </div>
-            </div>
-
+          <div className="service-category">
+            <span>01</span>
+            <h3>Government</h3>
+            <p>Official public services and administration.</p>
           </div>
 
+          <div className="service-category">
+            <span>02</span>
+            <h3>Immigration</h3>
+            <p>Visa, residency and AIMA information.</p>
+          </div>
 
-          <div className="home-services-button-wrapper">
+          <div className="service-category">
+            <span>03</span>
+            <h3>Jobs</h3>
+            <p>Employment services and job resources.</p>
+          </div>
 
-            <button
-              className="home-view-services-btn"
-              onClick={() => handleNavClick("Services")}
-            >
-              View All Portugal Services →
-            </button>
+          <div className="service-category">
+            <span>04</span>
+            <h3>Healthcare</h3>
+            <p>SNS and healthcare resources.</p>
+          </div>
 
+          <div className="service-category">
+            <span>05</span>
+            <h3>Housing</h3>
+            <p>Housing and rental information.</p>
+          </div>
+
+          <div className="service-category">
+            <span>06</span>
+            <h3>Legal Support</h3>
+            <p>Legal aid and trusted support organisations.</p>
           </div>
 
         </section>
@@ -351,16 +404,19 @@ export default function Home({ onNavigate }) {
 
           <div>
 
+            <span className="notice-label">
+              IMPORTANT
+            </span>
+
             <h3>
-              Sanolines is an information directory
+              Sanolines is an information directory.
             </h3>
 
             <p>
-              Sanolines does not directly provide government,
-              immigration, medical, legal, employment or other
-              professional services. We provide useful information
-              and links to official or trusted organisations so
-              visitors can contact the relevant service themselves.
+              Sanolines does not directly provide government, immigration,
+              medical, legal or employment services. We provide useful
+              information and links to official or trusted organisations
+              so visitors can find and contact the appropriate service.
             </p>
 
           </div>
@@ -371,7 +427,7 @@ export default function Home({ onNavigate }) {
 
 
       {/* =========================
-          PROFESSIONAL FOOTER
+          FOOTER
       ========================== */}
       <footer className="sanolines-footer">
 
@@ -380,19 +436,24 @@ export default function Home({ onNavigate }) {
           <div className="footer-info">
 
             <div className="footer-brand">
-              <div className="footer-logo">S</div>
+
+              <div className="footer-logo">
+                S
+              </div>
 
               <div>
                 <h3>SANOLINES</h3>
+
                 <span>
                   Portugal Information & Services
                 </span>
               </div>
+
             </div>
 
             <p>
-              A practical information directory helping people
-              find official and trusted resources in Portugal.
+              A practical information directory helping people find
+              official and trusted resources in Portugal.
             </p>
 
           </div>
