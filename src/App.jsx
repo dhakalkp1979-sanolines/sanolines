@@ -1,4 +1,3 @@
-```jsx
 import React, { useState } from "react";
 import "./App.css";
 
@@ -54,12 +53,10 @@ export default function App() {
     <div className="home-page">
 
       {/* NAVIGATION */}
-
       <nav className="site-nav">
         <div className="nav-inner">
 
           <div className="nav-brand-container">
-
             <div className="nav-logo">
               S
             </div>
@@ -68,20 +65,15 @@ export default function App() {
               <strong>
                 SANOLINES
               </strong>
-
               <span>
                 Global Information & Services
               </span>
             </div>
-
           </div>
 
           <div className="nav-links">
-
             <button
-              className={
-                activeTab === "Home" ? "active" : ""
-              }
+              className={activeTab === "Home" ? "active" : ""}
               onClick={() => {
                 setActiveTab("Home");
                 window.scrollTo({
@@ -94,9 +86,7 @@ export default function App() {
             </button>
 
             <button
-              className={
-                activeTab === "Countries" ? "active" : ""
-              }
+              className={activeTab === "Countries" ? "active" : ""}
               onClick={() => {
                 setActiveTab("Countries");
                 document
@@ -110,18 +100,14 @@ export default function App() {
             </button>
 
             <button
-              className={
-                activeTab === "Services" ? "active" : ""
-              }
+              className={activeTab === "Services" ? "active" : ""}
               onClick={goToServices}
             >
               Services
             </button>
 
             <button
-              className={
-                activeTab === "Tools" ? "active" : ""
-              }
+              className={activeTab === "Tools" ? "active" : ""}
               onClick={() => {
                 setActiveTab("Tools");
                 document
@@ -133,17 +119,14 @@ export default function App() {
             >
               Tools
             </button>
-
           </div>
+
         </div>
       </nav>
 
       {/* HERO */}
-
       <header className="hero-section">
-
         <div className="hero-content">
-
           <span className="hero-badge">
             INFORMATION & SERVICES DIRECTORY
           </span>
@@ -161,7 +144,6 @@ export default function App() {
           </p>
 
           <div className="hero-search-bar">
-
             <input
               type="text"
               value={search}
@@ -176,28 +158,20 @@ export default function App() {
             >
               Search
             </button>
-
           </div>
-
         </div>
-
       </header>
 
       {/* MAIN */}
-
       <main className="main-container">
 
         {/* PORTUGAL */}
-
         <section
           id="portugal"
           className="portugal-section"
         >
-
           <div className="section-header-row">
-
             <div>
-
               <span className="continent-tag">
                 PORTUGAL
               </span>
@@ -211,21 +185,16 @@ export default function App() {
                 official resources for everyday life
                 in Portugal.
               </p>
-
             </div>
-
           </div>
 
           <div className="portugal-card">
-
             <div className="portugal-card-content">
-
               <div className="portugal-flag">
                 🇵🇹
               </div>
 
               <div>
-
                 <h3>
                   Explore Portugal
                 </h3>
@@ -244,68 +213,45 @@ export default function App() {
                   Explore Portugal
                   <span>&rarr;</span>
                 </button>
-
               </div>
-
             </div>
-
           </div>
-
         </section>
 
         {/* FEATURED SERVICES */}
-
         <section className="services-showcase">
-
           <div className="showcase-title">
-
             <h2>
               Essential Portugal Resources
             </h2>
-
             <p>
               Start with some of the most useful
               services and information categories.
             </p>
-
           </div>
 
           <div className="services-pill-grid">
-
-            {featuredServices.map(
-              (service, index) => (
-
-                <button
-                  className="service-pill"
-                  key={index}
-                  type="button"
-                  onClick={goToServices}
-                >
-
-                  <span className="pill-dot"></span>
-
-                  {service}
-
-                </button>
-
-              )
-            )}
-
+            {featuredServices.map((service, index) => (
+              <button
+                className="service-pill"
+                key={index}
+                type="button"
+                onClick={goToServices}
+              >
+                <span className="pill-dot"></span>
+                {service}
+              </button>
+            ))}
           </div>
-
         </section>
 
         {/* ALL SERVICES */}
-
         <section
           id="portugal-services"
           className="services-directory"
         >
-
           <div className="section-header-row">
-
             <div>
-
               <span className="continent-tag">
                 20 SERVICE CATEGORIES
               </span>
@@ -319,50 +265,38 @@ export default function App() {
                 available through the Sanolines
                 Portugal directory.
               </p>
-
             </div>
-
           </div>
 
           <div className="continents-grid">
+            {filteredServices.map((service, index) => (
+              <div
+                className="continent-card"
+                key={service}
+              >
+                <div className="continent-top">
+                  <span className="continent-tag">
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
 
-            {filteredServices.map(
-              (service, index) => (
-
-                <div
-                  className="continent-card"
-                  key={service}
-                >
-
-                  <div className="continent-top">
-
-                    <span className="continent-tag">
-                      {String(index + 1).padStart(2, "0")}
-                    </span>
-
-                    <h3>
-                      {service}
-                    </h3>
-
-                  </div>
-
-                  <p>
-                    Find useful information and
-                    trusted resources for{" "}
-                    {service.toLowerCase()} in
-                    Portugal.
-                  </p>
-
-                  <div className="continent-action">
-                    Explore service
-                    <span>&rarr;</span>
-                  </div>
-
+                  <h3>
+                    {service}
+                  </h3>
                 </div>
 
-              )
-            )}
+                <p>
+                  Find useful information and
+                  trusted resources for{" "}
+                  {service.toLowerCase()} in
+                  Portugal.
+                </p>
 
+                <div className="continent-action">
+                  Explore service
+                  <span>&rarr;</span>
+                </div>
+              </div>
+            ))}
           </div>
 
           {filteredServices.length === 0 && (
@@ -370,13 +304,10 @@ export default function App() {
               No Portugal service found.
             </div>
           )}
-
         </section>
 
         {/* DIRECTORY NOTICE */}
-
         <section className="directory-notice">
-
           <h2>
             Sanolines Global
           </h2>
@@ -391,20 +322,15 @@ export default function App() {
             visitors can contact the relevant service
             themselves.
           </p>
-
         </section>
 
         {/* TOOLS */}
-
         <section
           id="tools"
           className="tools-section"
         >
-
           <div className="section-header-row">
-
             <div>
-
               <span className="continent-tag">
                 TOOLS
               </span>
@@ -417,37 +343,27 @@ export default function App() {
                 Useful online tools and calculators
                 will be added here.
               </p>
-
             </div>
-
           </div>
-
         </section>
 
       </main>
 
       {/* FOOTER */}
-
       <footer className="home-footer">
-
         <div className="home-footer-inner">
-
           <div>
-
             <strong>
               SANOLINES
             </strong>
-
             <p>
               Global information and official
               service directories for everyday
               people.
             </p>
-
           </div>
 
           <div className="footer-links-group">
-
             <button
               type="button"
               onClick={() => {
@@ -495,18 +411,14 @@ export default function App() {
             >
               Tools
             </button>
-
           </div>
-
         </div>
 
         <div className="home-footer-bottom">
           &copy; 2026 Sanolines Global. All rights reserved.
         </div>
-
       </footer>
 
     </div>
   );
 }
-```
