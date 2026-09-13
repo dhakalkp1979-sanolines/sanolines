@@ -11,7 +11,14 @@ const serviceKeyMap = {
   "Travel": "travel",
   "Housing": "housing",
   "Useful Contacts": "contacts",
-  "Calculators & Tools": "calculators",
+  "Legal Aid & Free Lawyers": "legal",
+  "Migrant & Refugee Support": "migrant",
+  "Associations & Community Help": "community",
+  "Social Security & Benefits": "socialSecurity",
+  "Family & Children Support": "family",
+  "Consumer Protection": "consumer",
+  "Disability & Accessibility Support": "disability",
+  "Food, Shelter & Basic Assistance": "basicNeeds",
 };
 
 export default serviceKeyMap;
