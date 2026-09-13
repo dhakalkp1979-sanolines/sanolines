@@ -1,3 +1,4 @@
+```jsx
 import React, { useState } from "react";
 import "./Home.css";
 
@@ -10,99 +11,130 @@ export default function Home({ onNavigate }) {
   };
 
   return (
-    <div className="sanolines-home-page">
+    <div className="sanolines-portal-page">
 
-      {/* =========================
-          NAVIGATION
-      ========================== */}
-      <nav className="sanolines-navbar">
+      {/* TOP STATE-HEADER BAR */}
+
+      <div className="portal-top-bar">
+        <div className="top-bar-container">
+
+          <span className="portal-official-tag">
+            <span className="flag-dot"></span>
+            República Portuguesa • Official Information Directory
+          </span>
+
+          <div className="top-bar-links">
+
+            <button
+              type="button"
+              onClick={() => handleNavClick("Portugal")}
+            >
+              PT
+            </button>
+
+            <span>|</span>
+
+            <button
+              type="button"
+              onClick={() => handleNavClick("Portugal")}
+            >
+              EN
+            </button>
+
+            <span>|</span>
+
+            <button
+              type="button"
+              onClick={() => handleNavClick("Services")}
+            >
+              Support Center
+            </button>
+
+          </div>
+        </div>
+      </div>
+
+
+      {/* MAIN NAVIGATION HEADER */}
+
+      <nav className="sanolines-main-nav">
+
         <div className="nav-container">
 
           <div
             className="brand-box"
             onClick={() => handleNavClick("Home")}
-            role="button"
-            tabIndex={0}
-            onKeyDown={(e) => {
-              if (e.key === "Enter") handleNavClick("Home");
-            }}
           >
 
-            {/* PROFESSIONAL SANOLINES LOGO */}
-            <div className="brand-logo" aria-label="Sanolines logo">
-              <svg
-                viewBox="0 0 48 48"
-                role="img"
-                aria-hidden="true"
-              >
-                <path
-                  d="M35.5 10.5
-                     C31.5 7.5 25.5 7 20.5 8.5
-                     C15 10 11 13.5 11 18
-                     C11 22.5 14.5 24.5 21.5 26
-                     L28 27.5
-                     C33.5 28.8 36.5 31 36.5 35
-                     C36.5 39.5 31.5 42 25.5 42
-                     C19.5 42 14.5 40 11 36.5"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="4.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-
-                <path
-                  d="M36 11
-                     C33 14 29.5 16 24.5 17.5"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="4.5"
-                  strokeLinecap="round"
-                />
-              </svg>
+            <div className="brand-logo-symbol">
+              S
             </div>
 
             <div className="brand-text">
-              <span className="brand-title">SANOLINES</span>
+
+              <span className="brand-title">
+                SANOLINES
+              </span>
 
               <span className="brand-subtitle">
-                Portugal Information & Services
+                Information & Services Portal
               </span>
+
             </div>
 
           </div>
 
 
-          {/* NAVIGATION MENU */}
-          <div className={`nav-menu ${mobileMenuOpen ? "open" : ""}`}>
+          <div
+            className={`nav-links-group ${
+              mobileMenuOpen ? "open" : ""
+            }`}
+          >
 
             <button
-              className="active-tab"
+              type="button"
+              className="active"
               onClick={() => handleNavClick("Home")}
             >
-              Home
+              Início / Home
             </button>
 
-            <button onClick={() => handleNavClick("Portugal")}>
-              Portugal
+            <button
+              type="button"
+              onClick={() => handleNavClick("Portugal")}
+            >
+              Viver / Living
             </button>
 
-            <button onClick={() => handleNavClick("Services")}>
-              Services
+            <button
+              type="button"
+              onClick={() => handleNavClick("Portugal")}
+            >
+              Trabalhar / Work
             </button>
 
-            <button onClick={() => handleNavClick("Tools")}>
-              Tools
+            <button
+              type="button"
+              onClick={() => handleNavClick("Services")}
+            >
+              Serviços
+            </button>
+
+            <button
+              type="button"
+              onClick={() => handleNavClick("Tools")}
+            >
+              Ferramentas
             </button>
 
           </div>
 
 
-          {/* MOBILE MENU */}
           <button
-            className="mobile-menu-toggle"
+            type="button"
+            className="mobile-toggle"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            aria-label="Toggle navigation menu"
+            aria-label="Menu"
             aria-expanded={mobileMenuOpen}
           >
             <span></span>
@@ -114,50 +146,62 @@ export default function Home({ onNavigate }) {
       </nav>
 
 
-      {/* =========================
-          HERO
-      ========================== */}
-      <header
-        className="home-hero-section"
-        style={{
-          backgroundImage:
-            "url('https://images.unsplash.com/photo-1555881400-74d7acaacd8b?auto=format&fit=crop&w=2200&q=90')",
-        }}
-      >
+      {/* SYSTEM NOTICE BANNER */}
 
-        <div className="hero-overlay"></div>
+      <div className="system-notice-banner">
 
-        <div className="hero-content-box">
+        <div className="notice-container">
 
-          <span className="hero-badge">
-            PORTUGAL INFORMATION PORTAL
+          <span className="notice-badge">
+            AVISO / NOTICE
           </span>
 
+          <p>
+            Portal atualizado para diretrizes de 2026.
+            Aceda a portais oficiais de AIMA, NIF,
+            e Segurança Social sem intermediários.
+          </p>
+
+          <button
+            type="button"
+            onClick={() => handleNavClick("Portugal")}
+          >
+            Consultar Diretrizes &rarr;
+          </button>
+
+        </div>
+      </div>
+
+
+      {/* HERO / SEARCH SECTION */}
+
+      <header className="portal-hero">
+
+        <div className="hero-content">
+
           <h1>
-            Find your way in Portugal.
+            Serviços e Informações Oficiais em Portugal
           </h1>
 
           <p>
-            Discover official information, useful resources and trusted
-            services for everyday life in Portugal — from government and
-            immigration to jobs, healthcare, housing and community support.
+            Portal de orientação estruturada para
+            autorizações de residência, habitação,
+            saúde pública, registo fiscal e apoio jurídico.
           </p>
 
-          <div className="hero-cta-group">
+          <div className="portal-search-box">
+
+            <input
+              type="text"
+              placeholder="Pesquisar por NIF, AIMA, Vistos, Residência..."
+              aria-label="Pesquisar serviços"
+            />
 
             <button
-              className="primary-action-btn"
+              type="button"
               onClick={() => handleNavClick("Portugal")}
             >
-              Explore Portugal
-              <span>→</span>
-            </button>
-
-            <button
-              className="secondary-action-btn"
-              onClick={() => handleNavClick("Services")}
-            >
-              View Services
+              Pesquisar Portal
             </button>
 
           </div>
@@ -166,320 +210,185 @@ export default function Home({ onNavigate }) {
       </header>
 
 
-      {/* =========================
-          MAIN CONTENT
-      ========================== */}
-      <main className="home-main-container">
+      {/* DIRECTORY GRID */}
 
-        {/* INTRODUCTION */}
-        <section className="intro-section">
+      <main className="portal-main-container">
 
-          <span className="home-section-label">
-            SANOLINES
-          </span>
+        <div className="section-header-row">
 
           <h2>
-            Portugal, made easier to navigate.
+            Áreas de Atuação & Serviços Essenciais
           </h2>
 
           <p>
-            Sanolines brings useful Portuguese information together in one
-            place, helping visitors find the official organisation,
-            service or resource they need.
+            Selecione um setor para consultar os
+            procedimentos verificados.
           </p>
 
-        </section>
+        </div>
 
 
-        {/* =========================
-            THREE MAIN AREAS
-        ========================== */}
-        <section className="programs-section">
+        <div className="portal-cards-grid">
 
-          <div className="programs-grid">
+          {/* CARD 1 */}
 
-            <article
-              className="program-card"
-              onClick={() => handleNavClick("Services")}
-            >
-              <div className="program-number">
-                01
-              </div>
+          <div
+            className="portal-card"
+            onClick={() => handleNavClick("Portugal")}
+          >
 
-              <span className="program-label">
-                COMMUNITY
-              </span>
+            <div className="card-top-icon">
+              🏛️
+            </div>
 
-              <h3>
-                Community & Social Support
-              </h3>
+            <h3>
+              Viver & Regularização
+            </h3>
 
-              <p>
-                Find community organisations, social support resources,
-                migrant assistance and useful local services in Portugal.
-              </p>
+            <p>
+              Orientações oficiais sobre prazos,
+              títulos de residência, reagrupamento
+              familiar e procedimentos administrativos.
+            </p>
 
-              <span className="card-link">
-                Explore support →
-              </span>
-            </article>
-
-
-            <article
-              className="program-card"
-              onClick={() => handleNavClick("Services")}
-            >
-              <div className="program-number">
-                02
-              </div>
-
-              <span className="program-label">
-                EDUCATION
-              </span>
-
-              <h3>
-                Education & Integration
-              </h3>
-
-              <p>
-                Find education resources, language information, training
-                opportunities and useful integration services.
-              </p>
-
-              <span className="card-link">
-                Explore education →
-              </span>
-            </article>
-
-
-            <article
-              className="program-card"
-              onClick={() => handleNavClick("Services")}
-            >
-              <div className="program-number">
-                03
-              </div>
-
-              <span className="program-label">
-                EMPLOYMENT
-              </span>
-
-              <h3>
-                Jobs & Employment
-              </h3>
-
-              <p>
-                Find employment services, job agencies, training resources
-                and useful information for working in Portugal.
-              </p>
-
-              <span className="card-link">
-                Explore employment →
-              </span>
-            </article>
+            <span className="card-action">
+              Aceder ao Guia &rarr;
+            </span>
 
           </div>
 
-        </section>
+
+          {/* CARD 2 */}
+
+          <div
+            className="portal-card"
+            onClick={() => handleNavClick("Services")}
+          >
+
+            <div className="card-top-icon">
+              💼
+            </div>
+
+            <h3>
+              Trabalhar & Empreender
+            </h3>
+
+            <p>
+              Registo na Segurança Social, obtenção
+              de NISS, abertura de atividade e
+              contratos de trabalho em Portugal.
+            </p>
+
+            <span className="card-action">
+              Consultar Emprego &rarr;
+            </span>
+
+          </div>
 
 
-        {/* =========================
-            PORTUGAL FEATURE
-        ========================== */}
+          {/* CARD 3 */}
+
+          <div
+            className="portal-card"
+            onClick={() => handleNavClick("Tools")}
+          >
+
+            <div className="card-top-icon">
+              🎓
+            </div>
+
+            <h3>
+              Estudar & Qualificação
+            </h3>
+
+            <p>
+              Acesso ao ensino superior, equivalências
+              de diplomas, planos de aprendizagem da
+              língua portuguesa e centros de formação.
+            </p>
+
+            <span className="card-action">
+              Ver Requisitos &rarr;
+            </span>
+
+          </div>
+
+
+          {/* CARD 4 */}
+
+          <div
+            className="portal-card"
+            onClick={() => handleNavClick("Portugal")}
+          >
+
+            <div className="card-top-icon">
+              ⚖️
+            </div>
+
+            <h3>
+              Apoio Jurídico & Direitos
+            </h3>
+
+            <p>
+              Redes de suporte legal gratuito,
+              associações de defesa dos imigrantes
+              e verificação de direitos cívicos.
+            </p>
+
+            <span className="card-action">
+              Contactos Úteis &rarr;
+            </span>
+
+          </div>
+
+        </div>
+
+
+        {/* FEATURED LISBON / PORTUGAL BANNER */}
+
         <section
-          className="featured-country-card"
+          className="featured-banner-section"
           onClick={() => handleNavClick("Portugal")}
         >
 
-          <div className="card-image-side">
+          <div className="banner-image-side">
 
             <img
-              src="https://images.unsplash.com/photo-1541432901042-2d8bd64b4a9b?auto=format&fit=crop&w=1200&q=90"
-              alt="Lisbon Portugal street and architecture"
+              src="https://images.unsplash.com/photo-1541432901042-2d8bd64b4a9b?auto=format&fit=crop&w=1000&q=80"
+              alt="Lisbon Architecture"
             />
-
-            <div className="image-badge">
-
-              <img
-                src="https://flagcdn.com/w40/pt.png"
-                alt="Portugal flag"
-              />
-
-              <span>
-                Portugal
-              </span>
-
-            </div>
 
           </div>
 
 
-          <div className="card-content-side">
+          <div className="banner-text-side">
 
-            <span className="sub-tag">
-              PORTUGAL INFORMATION HUB
+            <span className="badge-mini">
+              DESTAQUE NACIONAL
             </span>
 
             <h3>
-              Everything starts here.
+              Portal Especializado Lisboa & Portugal
             </h3>
 
             <p>
-              Explore Portuguese government portals, immigration information,
-              employment resources, healthcare, housing, education, legal
-              support and other essential services.
+              Planeia a sua integração sem erros.
+              Mapas detalhados de balcões físicos,
+              portais de renovação online e links
+              diretos para serviços governamentais
+              atualizados.
             </p>
 
-            <div className="card-highlights">
-
-              <span>
-                ✓ Official government resources
-              </span>
-
-              <span>
-                ✓ Immigration & residency information
-              </span>
-
-              <span>
-                ✓ Jobs & employment resources
-              </span>
-
-              <span>
-                ✓ Healthcare & social support
-              </span>
-
-            </div>
-
             <button
-              className="explore-card-btn"
-              onClick={(e) => {
-                e.stopPropagation();
+              type="button"
+              className="banner-btn"
+              onClick={(event) => {
+                event.stopPropagation();
                 handleNavClick("Portugal");
               }}
             >
-              Explore Portugal
-              <span>→</span>
+              Aceder ao Hub de Portugal &rarr;
             </button>
-
-          </div>
-
-        </section>
-
-
-        {/* =========================
-            SERVICES
-        ========================== */}
-        <section className="services-introduction">
-
-          <div className="services-introduction-text">
-
-            <span className="home-section-label">
-              PORTUGAL SERVICES
-            </span>
-
-            <h2>
-              One place to start your search.
-            </h2>
-
-            <p>
-              Browse practical information across the areas that matter
-              most in everyday life in Portugal.
-            </p>
-
-          </div>
-
-
-          <button
-            className="home-view-services-btn"
-            onClick={() => handleNavClick("Services")}
-          >
-            View all services →
-          </button>
-
-        </section>
-
-
-        {/* =========================
-            SERVICE CATEGORIES
-        ========================== */}
-        <section className="service-category-grid">
-
-          <div className="service-category">
-            <span>01</span>
-            <h3>Government</h3>
-            <p>
-              Official public services and administration.
-            </p>
-          </div>
-
-          <div className="service-category">
-            <span>02</span>
-            <h3>Immigration</h3>
-            <p>
-              Visa, residency and AIMA information.
-            </p>
-          </div>
-
-          <div className="service-category">
-            <span>03</span>
-            <h3>Jobs</h3>
-            <p>
-              Employment services and job resources.
-            </p>
-          </div>
-
-          <div className="service-category">
-            <span>04</span>
-            <h3>Healthcare</h3>
-            <p>
-              SNS and healthcare resources.
-            </p>
-          </div>
-
-          <div className="service-category">
-            <span>05</span>
-            <h3>Housing</h3>
-            <p>
-              Housing and rental information.
-            </p>
-          </div>
-
-          <div className="service-category">
-            <span>06</span>
-            <h3>Legal Support</h3>
-            <p>
-              Legal aid and trusted support organisations.
-            </p>
-          </div>
-
-        </section>
-
-
-        {/* =========================
-            DIRECTORY NOTICE
-        ========================== */}
-        <section className="home-directory-notice">
-
-          <div className="notice-icon">
-            i
-          </div>
-
-          <div>
-
-            <span className="notice-label">
-              IMPORTANT
-            </span>
-
-            <h3>
-              Sanolines is an information directory.
-            </h3>
-
-            <p>
-              Sanolines does not directly provide government, immigration,
-              medical, legal or employment services. We provide useful
-              information and links to official or trusted organisations
-              so visitors can find and contact the appropriate service.
-            </p>
 
           </div>
 
@@ -488,110 +397,87 @@ export default function Home({ onNavigate }) {
       </main>
 
 
-      {/* =========================
-          FOOTER
-      ========================== */}
-      <footer className="sanolines-footer">
+      {/* OFFICIAL CORPORATE FOOTER */}
 
-        <div className="footer-max">
+      <footer className="portal-footer">
 
-          <div className="footer-info">
+        <div className="footer-container">
 
-            <div className="footer-brand">
+          <div className="footer-col">
 
-              {/* SAME PROFESSIONAL LOGO */}
-              <div className="footer-logo" aria-label="Sanolines logo">
-
-                <svg
-                  viewBox="0 0 48 48"
-                  role="img"
-                  aria-hidden="true"
-                >
-                  <path
-                    d="M35.5 10.5
-                       C31.5 7.5 25.5 7 20.5 8.5
-                       C15 10 11 13.5 11 18
-                       C11 22.5 14.5 24.5 21.5 26
-                       L28 27.5
-                       C33.5 28.8 36.5 31 36.5 35
-                       C36.5 39.5 31.5 42 25.5 42
-                       C19.5 42 14.5 40 11 36.5"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="4.5"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-
-                  <path
-                    d="M36 11
-                       C33 14 29.5 16 24.5 17.5"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="4.5"
-                    strokeLinecap="round"
-                  />
-
-                </svg>
-
-              </div>
-
-
-              <div>
-
-                <h3>
-                  SANOLINES
-                </h3>
-
-                <span>
-                  Portugal Information & Services
-                </span>
-
-              </div>
-
-            </div>
-
+            <h4>
+              SANOLINES PORTUGAL
+            </h4>
 
             <p>
-              A practical information directory helping people find
-              official and trusted resources in Portugal.
+              Diretório independente de informação
+              pública e suporte institucional para
+              cidadãos nacionais e estrangeiros.
             </p>
 
           </div>
 
 
-          <div className="footer-links">
+          <div className="footer-col">
 
-            <button onClick={() => handleNavClick("Home")}>
-              Home
+            <h4>
+              Links Rápidos
+            </h4>
+
+            <button
+              type="button"
+              onClick={() => handleNavClick("Home")}
+            >
+              Início
             </button>
 
-            <button onClick={() => handleNavClick("Portugal")}>
-              Portugal
+            <button
+              type="button"
+              onClick={() => handleNavClick("Portugal")}
+            >
+              Portugal Hub
             </button>
 
-            <button onClick={() => handleNavClick("Services")}>
-              Services
+            <button
+              type="button"
+              onClick={() => handleNavClick("Services")}
+            >
+              Serviços
             </button>
 
-            <button onClick={() => handleNavClick("Tools")}>
-              Tools
+            <button
+              type="button"
+              onClick={() => handleNavClick("Tools")}
+            >
+              Ferramentas
             </button>
+
+          </div>
+
+
+          <div className="footer-col">
+
+            <h4>
+              Transparência
+            </h4>
+
+            <p>
+              Informação verificada em conformidade
+              com as normas legais vigentes em
+              território nacional.
+            </p>
 
           </div>
 
         </div>
 
 
-        <div className="footer-bottom">
+        <div className="footer-bottom-bar">
 
-          <span>
-            © 2026 Sanolines Global. All rights reserved.
-          </span>
-
-          <span>
-            Portugal Information Directory
-          </span>
+          <p>
+            &copy; 2026 Sanolines Global.
+            Todos os direitos reservados.
+          </p>
 
         </div>
 
@@ -600,3 +486,4 @@ export default function Home({ onNavigate }) {
     </div>
   );
 }
+```
