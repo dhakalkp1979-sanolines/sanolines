@@ -147,24 +147,6 @@ export default function App() {
           id="global-services"
           className="services-directory"
         >
-          <div className="section-header-row">
-            <div>
-              <span className="continent-tag">
-                20 SERVICE CATEGORIES
-              </span>
-
-              <h2>
-                All Services
-              </h2>
-
-              <p>
-                Browse information categories
-                available through the Sanolines
-                global directory.
-              </p>
-            </div>
-          </div>
-
           <div className="continents-grid">
             {filteredServices.map((service, index) => (
               <div
