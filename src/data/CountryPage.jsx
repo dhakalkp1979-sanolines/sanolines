@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import asiaServices from "./asiaServices";
-import serviceKeyMap from "./serviceKeyMap";
+import serviceKeyMap from "./serviceContent";
 import ImmigrationPage from "../pages/ImmigrationPage";
 import ServicePage from "../pages/ServicePage";
 import "../pages/CountryPage.css";
