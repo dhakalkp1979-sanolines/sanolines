@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import asiaServices from "../data/asiaServices";
-import serviceKeyMap from "../data/serviceContent";
-import ImmigrationPage from "./ImmigrationPage";
-import ServicePage from "./ServicePage";
-import "./CountryPage.css";
+import asiaServices from "./asiaServices";
+import serviceKeyMap from "./serviceKeyMap";
+import ImmigrationPage from "../pages/ImmigrationPage";
+import ServicePage from "../pages/ServicePage";
+import "../pages/CountryPage.css";
 
 function CountryPage({
   country,
@@ -35,29 +35,13 @@ function CountryPage({
     "Consumer Protection",
     "Disability & Accessibility Support",
     "Food, Shelter & Basic Assistance",
-    "Calculators & Tools",
   ];
 
   const serviceTopics =
     topics.length > 0 ? topics : defaultTopics;
 
-  /*
-    ASIA SERVICES
-
-    The country name must match the name used in asiaServices.js.
-    Example:
-    "Türkiye" must remain "Türkiye".
-  */
   const services = asiaServices[country] || {};
 
-  /*
-    Get service data safely.
-
-    The new asiaServices.js uses the full service names
-    as its keys. We first check the service name directly,
-    then check serviceKeyMap for compatibility with the
-    older system.
-  */
   const getServiceData = (topic) => {
     if (services[topic]) {
       return services[topic];
@@ -94,11 +78,36 @@ function CountryPage({
         country={country}
         continent={continent}
         service={selectedService}
+
         description={
           serviceData.description ||
           `Find useful information and trusted resources for ${selectedService} in ${country}.`
         }
+
+        information={serviceData.information || []}
+
+        usefulInformation={
+          serviceData.usefulInformation || []
+        }
+
+        authority={serviceData.authority || ""}
+
+        sourceType={serviceData.sourceType || ""}
+
+        officialWebsite={
+          serviceData.officialWebsite || ""
+        }
+
+        websiteButton={
+          serviceData.websiteButton || null
+        }
+
+        mapButton={
+          serviceData.mapButton || null
+        }
+
         links={serviceData.links || []}
+
         onBack={() => setSelectedService(null)}
       />
     );
@@ -185,21 +194,10 @@ function CountryPage({
                 className="country-service-card"
                 onClick={() => {
 
-                  /* IMMIGRATION */
-
                   if (topic === "Immigration & Visa") {
                     setShowImmigration(true);
                     return;
                   }
-
-                  /* CALCULATORS & TOOLS */
-
-                  if (topic === "Calculators & Tools") {
-                    window.location.href = "./#tools";
-                    return;
-                  }
-
-                  /* NORMAL SERVICE */
 
                   setSelectedService(topic);
                 }}
