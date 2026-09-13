@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import countries from "../data/countries";
+import countries from "./data/countries";
 import CountryPage from "./CountryPage";
 import "./Home.css";
 
