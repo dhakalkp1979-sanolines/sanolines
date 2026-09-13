@@ -1,49 +1,49 @@
 import React, { useState } from "react";
 import "./App.css";
 
-const portugalServices = [
-  "Government & Official Services",
-  "Immigration & Visa",
-  "Jobs & Employment",
-  "Money & Banking",
-  "Taxes",
-  "Healthcare",
-  "Education",
-  "Transport & Driving",
-  "Emergency Services",
-  "Travel",
-  "Housing",
-  "Useful Contacts",
-  "Legal Aid & Free Lawyers",
-  "Migrant & Refugee Support",
-  "Associations & Community Help",
-  "Social Security & Benefits",
-  "Family & Children Support",
-  "Consumer Protection",
-  "Disability & Accessibility Support",
-  "Food, Shelter & Basic Assistance",
+const globalServices = [
+  "Government & Public Services",
+  "Immigration & Visas",
+  "Employment & Career Resources",
+  "Global Banking & Finance",
+  "Taxation & Compliance",
+  "Healthcare & Medical Care",
+  "Education & Student Support",
+  "Transportation & Driver Licensing",
+  "Emergency & Safety Services",
+  "Travel & Tourism",
+  "Housing & Real Estate",
+  "Directory Contacts",
+  "Legal Aid & Public Defenders",
+  "Migrant & Refugee Services",
+  "Community Organizations",
+  "Social Welfare & Benefits",
+  "Family & Child Support",
+  "Consumer Rights & Protection",
+  "Accessibility Services",
+  "Emergency Relief & Shelter",
 ];
 
 const featuredServices = [
-  "Government & Official Services",
-  "Immigration & Visa",
-  "Jobs & Employment",
-  "Money & Banking",
-  "Healthcare & SNS",
-  "Legal Aid & Free Lawyers",
+  "Government & Public Services",
+  "Immigration & Visas",
+  "Employment & Career Resources",
+  "Global Banking & Finance",
+  "Healthcare & Medical Care",
+  "Legal Aid & Public Defenders",
 ];
 
 export default function App() {
   const [activeTab, setActiveTab] = useState("Home");
   const [search, setSearch] = useState("");
 
-  const filteredServices = portugalServices.filter((service) =>
+  const filteredServices = globalServices.filter((service) =>
     service.toLowerCase().includes(search.toLowerCase())
   );
 
   const goToServices = () => {
     document
-      .getElementById("portugal-services")
+      .getElementById("global-services")
       ?.scrollIntoView({ behavior: "smooth" });
 
     setActiveTab("Services");
@@ -86,17 +86,17 @@ export default function App() {
             </button>
 
             <button
-              className={activeTab === "Countries" ? "active" : ""}
+              className={activeTab === "Hub" ? "active" : ""}
               onClick={() => {
-                setActiveTab("Countries");
+                setActiveTab("Hub");
                 document
-                  .getElementById("portugal")
+                  .getElementById("global-hub")
                   ?.scrollIntoView({
                     behavior: "smooth",
                   });
               }}
             >
-              Portugal
+              Global Hub
             </button>
 
             <button
@@ -140,7 +140,7 @@ export default function App() {
             Sanolines helps people find government information,
             employment resources, immigration guidance,
             healthcare, legal support, housing, education,
-            and other useful services.
+            and other useful services worldwide.
           </p>
 
           <div className="hero-search-bar">
@@ -165,25 +165,25 @@ export default function App() {
       {/* MAIN */}
       <main className="main-container">
 
-        {/* PORTUGAL */}
+        {/* GLOBAL HUB SECTION */}
         <section
-          id="portugal"
+          id="global-hub"
           className="portugal-section"
         >
           <div className="section-header-row">
             <div>
               <span className="continent-tag">
-                PORTUGAL
+                GLOBAL DIRECTORY
               </span>
 
               <h2>
-                Portugal Information & Services
+                International Information & Services
               </h2>
 
               <p>
                 Find useful information and trusted
-                official resources for everyday life
-                in Portugal.
+                official resources across multiple regions
+                and categories.
               </p>
             </div>
           </div>
@@ -191,12 +191,12 @@ export default function App() {
           <div className="portugal-card">
             <div className="portugal-card-content">
               <div className="portugal-flag">
-                🇵🇹
+                🌐
               </div>
 
               <div>
                 <h3>
-                  Explore Portugal
+                  Explore Global Resources
                 </h3>
 
                 <p>
@@ -210,7 +210,7 @@ export default function App() {
                   type="button"
                   onClick={goToServices}
                 >
-                  Explore Portugal
+                  Explore Directory
                   <span>&rarr;</span>
                 </button>
               </div>
@@ -222,7 +222,7 @@ export default function App() {
         <section className="services-showcase">
           <div className="showcase-title">
             <h2>
-              Essential Portugal Resources
+              Essential Resources
             </h2>
             <p>
               Start with some of the most useful
@@ -247,7 +247,7 @@ export default function App() {
 
         {/* ALL SERVICES */}
         <section
-          id="portugal-services"
+          id="global-services"
           className="services-directory"
         >
           <div className="section-header-row">
@@ -257,13 +257,13 @@ export default function App() {
               </span>
 
               <h2>
-                Portugal Services
+                All Services
               </h2>
 
               <p>
                 Browse information categories
                 available through the Sanolines
-                Portugal directory.
+                global directory.
               </p>
             </div>
           </div>
@@ -287,8 +287,7 @@ export default function App() {
                 <p>
                   Find useful information and
                   trusted resources for{" "}
-                  {service.toLowerCase()} in
-                  Portugal.
+                  {service.toLowerCase()}.
                 </p>
 
                 <div className="continent-action">
@@ -301,7 +300,7 @@ export default function App() {
 
           {filteredServices.length === 0 && (
             <div className="no-results">
-              No Portugal service found.
+              No matching service found.
             </div>
           )}
         </section>
@@ -380,15 +379,15 @@ export default function App() {
             <button
               type="button"
               onClick={() => {
-                setActiveTab("Countries");
+                setActiveTab("Hub");
                 document
-                  .getElementById("portugal")
+                  .getElementById("global-hub")
                   ?.scrollIntoView({
                     behavior: "smooth",
                   });
               }}
             >
-              Portugal
+              Global Hub
             </button>
 
             <button
