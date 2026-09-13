@@ -915,6 +915,487 @@ function buildService(country, category) {
 }
 
 // ============================================================
+// BUILD ONE SERVICE
+// ============================================================
+
+/*
+  SANOLINES SERVICE BUILDER
+
+  Each country keeps the same 20 service categories,
+  but the service information is generated from:
+
+  1. Country-specific specialist source, when available
+  2. Country government source, when a specialist source is not available
+  3. Country-specific notes
+  4. Service-specific information
+  5. Country + service map location
+
+  The structure is designed so detailed information can be
+  added country-by-country without changing ServicePage.jsx.
+*/
+
+// ============================================================
+// SERVICE-SPECIFIC INFORMATION
+// ============================================================
+
+const serviceInformation = {
+  "Government & Official Services": {
+    purpose:
+      "Government departments, public administration, official forms, applications and public information.",
+
+    access:
+      "Use the official government portal or the responsible government department for applications, forms and public services.",
+
+    check:
+      "Check the official authority for current procedures, required documents, fees, eligibility and service locations.",
+  },
+
+  "Immigration & Visa": {
+    purpose:
+      "Visa applications, residence permits, immigration procedures, citizenship, passports and entry requirements.",
+
+    access:
+      "Use the country's official immigration authority, embassy, consulate or government immigration portal.",
+
+    check:
+      "Visa categories, application procedures, fees and document requirements depend on nationality and immigration status.",
+  },
+
+  "Jobs & Employment": {
+    purpose:
+      "Employment services, job vacancies, labour information, employment offices and worker support.",
+
+    access:
+      "Use the official employment authority, public employment service or government-supported job portal.",
+
+    check:
+      "Work permits, employment rights, registration requirements and job-search procedures may differ by country and status.",
+  },
+
+  "Money & Banking": {
+    purpose:
+      "Banking, financial services, payments, accounts, financial regulation and official financial information.",
+
+    access:
+      "Use the country's central bank, financial regulator or licensed financial institution for current information.",
+
+    check:
+      "Banking requirements, identification rules, fees and financial regulations vary by country.",
+  },
+
+  Taxes: {
+    purpose:
+      "Tax registration, tax filing, payments, taxpayer information and official tax guidance.",
+
+    access:
+      "Use the official national tax authority or government tax portal.",
+
+    check:
+      "Tax rules, deadlines, rates, registration requirements and filing procedures can change.",
+  },
+
+  Healthcare: {
+    purpose:
+      "Public healthcare, hospitals, clinics, health authorities, medical services and health information.",
+
+    access:
+      "Use the national health authority, public hospital system or official health service information.",
+
+    check:
+      "Healthcare eligibility, fees, insurance requirements, appointments and emergency procedures vary by country.",
+  },
+
+  Education: {
+    purpose:
+      "Schools, universities, vocational education, training, scholarships and education authorities.",
+
+    access:
+      "Use the official education ministry, education authority, university or recognised education institution.",
+
+    check:
+      "Admission requirements, tuition fees, scholarships and recognition rules vary by institution and country.",
+  },
+
+  "Transport & Driving": {
+    purpose:
+      "Driving licences, vehicle registration, road rules, public transport and transport authorities.",
+
+    access:
+      "Use the official transport authority, driving-licence authority or government transport portal.",
+
+    check:
+      "Licence requirements, vehicle rules, fees and procedures differ between countries.",
+  },
+
+  "Emergency Services": {
+    purpose:
+      "Police, ambulance, fire and other urgent emergency services.",
+
+    access:
+      "Use the official emergency telephone numbers and emergency service organisations for the country.",
+
+    check:
+      "Emergency numbers differ by country. Confirm the correct number from an official source before travelling.",
+  },
+
+  Travel: {
+    purpose:
+      "Tourism information, airports, entry requirements, travel guidance and official travel resources.",
+
+    access:
+      "Use the country's official tourism authority, government travel information and airport authorities.",
+
+    check:
+      "Entry requirements, visa rules, travel restrictions and local requirements can change.",
+  },
+
+  Housing: {
+    purpose:
+      "Renting, housing authorities, social housing, tenant information and accommodation support.",
+
+    access:
+      "Use the relevant housing authority, local government or recognised housing support organisation.",
+
+    check:
+      "Rental rules, tenant rights, deposits, registration and social-housing eligibility depend on the country and location.",
+  },
+
+  "Useful Contacts": {
+    purpose:
+      "Important government departments, public organisations, helplines and useful official contacts.",
+
+    access:
+      "Use the official government directory or responsible public organisation for current contact information.",
+
+    check:
+      "Telephone numbers, addresses, opening hours and responsible departments should be confirmed before contacting an organisation.",
+  },
+
+  "Legal Aid & Free Lawyers": {
+    purpose:
+      "Legal aid, access to justice, legal assistance and official legal resources.",
+
+    access:
+      "Use the country's official legal-aid authority, court system or recognised legal assistance organisation.",
+
+    check:
+      "Eligibility for free or subsidised legal assistance depends on the country's rules and the applicant's circumstances.",
+  },
+
+  "Migrant & Refugee Support": {
+    purpose:
+      "Support and information for migrants, refugees, asylum seekers, newcomers and displaced people.",
+
+    access:
+      "Use official migration authorities, recognised international organisations and established local support organisations.",
+
+    check:
+      "Immigration and protection procedures vary significantly by country and individual status.",
+  },
+
+  "Associations & Community Help": {
+    purpose:
+      "Community organisations, associations, charities and local groups that may provide information or practical assistance.",
+
+    access:
+      "Look for recognised community organisations, charities, associations and local support groups.",
+
+    check:
+      "Services vary by organisation and location. Confirm eligibility, availability and contact details directly.",
+  },
+
+  "Social Security & Benefits": {
+    purpose:
+      "Pensions, unemployment support, social insurance, family benefits and other public assistance.",
+
+    access:
+      "Use the country's official social-security authority or relevant government benefits service.",
+
+    check:
+      "Eligibility, contributions, benefit amounts and application procedures depend on national rules and personal circumstances.",
+  },
+
+  "Family & Children Support": {
+    purpose:
+      "Family services, childcare, children's services, parental support and family-related public services.",
+
+    access:
+      "Use the relevant government family, children, social-services or education authority.",
+
+    check:
+      "Eligibility and available support vary according to family circumstances, age, residence and local rules.",
+  },
+
+  "Consumer Protection": {
+    purpose:
+      "Consumer rights, complaints, refunds, unfair business practices and consumer protection.",
+
+    access:
+      "Use the official consumer protection authority or recognised consumer assistance service.",
+
+    check:
+      "Complaint procedures, refund rights and consumer protections depend on national law and the type of purchase.",
+  },
+
+  "Disability & Accessibility Support": {
+    purpose:
+      "Disability services, accessibility, disability benefits, employment support and disability organisations.",
+
+    access:
+      "Use the country's responsible disability, social-security, health or employment authority.",
+
+    check:
+      "Disability assessment, benefits, accessibility rights and support services vary by country.",
+  },
+
+  "Food, Shelter & Basic Assistance": {
+    purpose:
+      "Food assistance, emergency accommodation, shelters, charities and essential community support.",
+
+    access:
+      "Use local government social services, recognised charities, shelters and community organisations.",
+
+    check:
+      "Availability and eligibility vary by location, organisation and individual circumstances.",
+  },
+};
+
+// ============================================================
+// COUNTRY-SPECIFIC SERVICE NOTES
+// ============================================================
+
+/*
+  These notes are intentionally separate from the main service
+  builder.
+
+  This means we can add detailed information for a country
+  without changing the rest of the database.
+
+  Example:
+
+  countryServiceNotes.Nepal.Healthcare
+
+  countryServiceNotes.India.Taxes
+
+  countryServiceNotes.Japan.Immigration
+*/
+
+const countryServiceNotes = {
+  Nepal: {
+    "Government & Official Services":
+      "Nepal's official government portal provides access to national government information and links to public services and government institutions.",
+
+    "Immigration & Visa":
+      "For immigration and visa matters, visitors should use Nepal's official immigration authority and the relevant embassy or consular information for their nationality.",
+
+    "Jobs & Employment":
+      "Employment information in Nepal may involve government labour authorities, public employment services and labour-related offices.",
+
+    "Money & Banking":
+      "Banking and monetary information should be checked with Nepal Rastra Bank and licensed financial institutions.",
+
+    Taxes:
+      "Tax registration, filing and tax-related procedures should be confirmed with Nepal's official tax authority.",
+
+    Healthcare:
+      "Healthcare information in Nepal may include government hospitals, health centres, specialist facilities and other recognised healthcare providers.",
+
+    Education:
+      "Education information should be checked with the relevant Nepalese education authorities, universities, schools and recognised training institutions.",
+
+    "Transport & Driving":
+      "Driving licences, vehicle registration and road-related services should be confirmed with Nepal's responsible transport authorities.",
+
+    "Emergency Services":
+      "For emergencies in Nepal, visitors should use the current emergency numbers published by official authorities.",
+
+    Travel:
+      "Travel information should be checked with Nepal's official tourism and government authorities, especially for entry and travel requirements.",
+
+    Housing:
+      "Housing and rental matters may involve local authorities, landlords, housing organisations and relevant public services.",
+
+    "Useful Contacts":
+      "Use Nepal's official government portal to identify the appropriate department or public organisation for a particular service.",
+
+    "Legal Aid & Free Lawyers":
+      "Legal assistance should be sought through recognised legal-aid organisations, courts and official justice-related services.",
+
+    "Migrant & Refugee Support":
+      "Migrants, refugees and other displaced people should use recognised government, humanitarian and support organisations.",
+
+    "Associations & Community Help":
+      "Community support may be available through recognised associations, charities, community organisations and local groups.",
+
+    "Social Security & Benefits":
+      "Social protection, pensions and public assistance should be checked with the relevant Nepalese government authority.",
+
+    "Family & Children Support":
+      "Family and child-related services may involve government social services, education authorities and recognised child-support organisations.",
+
+    "Consumer Protection":
+      "Consumer complaints and consumer-rights matters should be directed to the responsible Nepalese authority or recognised consumer organisation.",
+
+    "Disability & Accessibility Support":
+      "Disability-related benefits, accessibility and support should be checked with the responsible Nepalese social and government authorities.",
+
+    "Food, Shelter & Basic Assistance":
+      "People requiring basic assistance should check local government social services and recognised humanitarian or community organisations.",
+  },
+};
+
+// ============================================================
+// GET COUNTRY-SPECIFIC INFORMATION
+// ============================================================
+
+function getCountryServiceNote(country, category) {
+  return (
+    countryServiceNotes[country]?.[category] ||
+    `For ${category.toLowerCase()} in ${country}, use the official authority listed below and confirm the current procedures, eligibility, documents, fees and contact information directly with that organisation.`
+  );
+}
+
+// ============================================================
+// BUILD MAP URL
+// ============================================================
+
+function buildMapUrl(sourceName, country) {
+  const mapQuery = encodeURIComponent(
+    `${sourceName}, ${country}`
+  );
+
+  return `https://www.google.com/maps/search/?api=1&query=${mapQuery}`;
+}
+
+// ============================================================
+// BUILD ONE SERVICE
+// ============================================================
+
+function buildService(country, category) {
+  const countrySource = countrySources[country];
+
+  const specialist = specialistLinks[country]?.[category];
+
+  const source = specialist || countrySource;
+
+  const sourceType = specialist
+    ? "Country-specific official source"
+    : "Government / general official source";
+
+  const categoryInfo =
+    serviceInformation[category] || {
+      purpose:
+        `${category} information and services for ${country}.`,
+
+      access:
+        `Use the responsible official authority in ${country}.`,
+
+      check:
+        "Always confirm current requirements directly with the original organisation.",
+    };
+
+  const countrySpecificInformation =
+    getCountryServiceNote(country, category);
+
+  const mapUrl = buildMapUrl(source.name, country);
+
+  return {
+    title: category,
+
+    country: country,
+
+    category: category,
+
+    /*
+      Main description shown by ServicePage.jsx
+    */
+    description:
+      countrySpecificInformation,
+
+    /*
+      Four information points.
+      ServicePage.jsx can display these as a list.
+    */
+    information: [
+      countrySpecificInformation,
+
+      categoryInfo.purpose,
+
+      categoryInfo.access,
+
+      categoryInfo.check,
+    ],
+
+    /*
+      Main useful-information field.
+    */
+    usefulInformation:
+      countrySpecificInformation,
+
+    /*
+      Official organisation responsible for this service.
+    */
+    authority: source.name,
+
+    sourceType: sourceType,
+
+    /*
+      Official website.
+    */
+    officialWebsite: source.url,
+
+    /*
+      Website button.
+    */
+    websiteButton: {
+      label: "Visit Official Website",
+      url: source.url,
+    },
+
+    /*
+      Map button is generated specifically from:
+      ORGANISATION + COUNTRY
+    */
+    mapButton: {
+      label: "View on Map",
+      url: mapUrl,
+    },
+
+    /*
+      Source information.
+    */
+    links: [
+      {
+        name: source.name,
+        url: source.url,
+        official: true,
+        sourceType: sourceType,
+      },
+    ],
+
+    /*
+      Extra structured information for future ServicePage
+      improvements.
+    */
+    serviceDetails: {
+      purpose: categoryInfo.purpose,
+
+      access: categoryInfo.access,
+
+      importantNote: categoryInfo.check,
+
+      countrySpecific: countrySpecificInformation,
+    },
+
+    /*
+      Sanolines disclaimer.
+    */
+    sanolinesNotice:
+      "Sanolines is an information-sharing directory. Sanolines does not directly provide government, legal, medical, immigration, employment, housing or other listed services. Visitors should contact the relevant organisation directly using the official information provided.",
+  };
+}
+
+// ============================================================
 // BUILD ALL COUNTRIES AND SERVICES
 // ============================================================
 
@@ -930,18 +1411,56 @@ asiaCountries.forEach((country) => {
 });
 
 // ============================================================
-// VALIDATION
+// DATABASE VALIDATION
 // ============================================================
 
-const totalCountries = Object.keys(asiaServices).length;
+const totalCountries =
+  Object.keys(asiaServices).length;
 
-const totalCategories = serviceCategories.length;
+const totalCategories =
+  serviceCategories.length;
 
 const totalServices =
   totalCountries * totalCategories;
 
+// Count services that contain website information
+const servicesWithWebsite = Object.values(
+  asiaServices
+).reduce((countryTotal, countryServices) => {
+  return (
+    countryTotal +
+    Object.values(countryServices).filter(
+      (service) =>
+        service.officialWebsite &&
+        service.officialWebsite.trim() !== ""
+    ).length
+  );
+}, 0);
+
+// Count services that contain map information
+const servicesWithMap = Object.values(
+  asiaServices
+).reduce((countryTotal, countryServices) => {
+  return (
+    countryTotal +
+    Object.values(countryServices).filter(
+      (service) =>
+        service.mapButton &&
+        service.mapButton.url
+    ).length
+  );
+}, 0);
+
 console.log(
   `Sanolines Asia database: ${totalCountries} countries × ${totalCategories} categories = ${totalServices} services`
+);
+
+console.log(
+  `Services with official website: ${servicesWithWebsite}/${totalServices}`
+);
+
+console.log(
+  `Services with map: ${servicesWithMap}/${totalServices}`
 );
 
 // ============================================================
@@ -957,6 +1476,8 @@ export {
   categoryInformation,
   countrySources,
   specialistLinks,
+  serviceInformation,
+  countryServiceNotes,
 };
 
 export const serviceData = asiaServices;
