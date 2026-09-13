@@ -184,24 +184,6 @@ export default function App() {
           )}
         </section>
 
-        {/* DIRECTORY NOTICE */}
-        <section className="directory-notice">
-          <h2>
-            Sanolines Global
-          </h2>
-
-          <p>
-            Sanolines is an information-sharing
-            directory. We do not directly provide
-            government, legal, medical, immigration,
-            employment, housing or other services.
-            We provide useful information and links
-            to official or trusted organizations so
-            visitors can contact the relevant service
-            themselves.
-          </p>
-        </section>
-
         {/* TOOLS */}
         <section
           id="tools"
@@ -223,6 +205,33 @@ export default function App() {
               </p>
             </div>
           </div>
+        </section>
+
+        {/* DISCLAIMER */}
+        <section className="directory-notice">
+          <h2>
+            Disclaimer
+          </h2>
+
+          <p style={{ marginBottom: "1rem" }}>
+            Sanolines Global is an independent information-sharing directory.
+          </p>
+
+          <p style={{ marginBottom: "1rem" }}>
+            We do not directly provide government, immigration, legal, medical, employment, housing, financial, or other professional services.
+          </p>
+
+          <p style={{ marginBottom: "1rem" }}>
+            Our website helps visitors find useful information, official websites, trusted organizations, public services, and relevant resources. Where possible, we provide links to official or trusted sources so visitors can contact the appropriate organization directly.
+          </p>
+
+          <p style={{ marginBottom: "1rem" }}>
+            Information on Sanolines may change over time. Visitors should always verify important requirements, procedures, fees, deadlines, and eligibility directly with the relevant official organization before taking action.
+          </p>
+
+          <p>
+            Sanolines Global is not a government agency and is not affiliated with any government authority unless specifically stated.
+          </p>
         </section>
 
       </main>
