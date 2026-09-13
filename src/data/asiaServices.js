@@ -1,17 +1,26 @@
-// ============================================================
-// SANOLINES GLOBAL — SERVICE DATA
-// ============================================================
-// Portugal will be added here next.
-// Asia and all previous country data have been removed for now.
-// ============================================================
+const serviceData = {
+  Portugal: {
+    government: {
+      description: "...",
+      information: [...],
+      links: [
+        {
+          name: "...",
+          description: "...",
+          url: "...",
+          official: true,
+        },
+      ],
+    },
 
-const serviceCategories = [];
+    immigration: {
+      ...
+    },
 
-const serviceData = {};
+    jobs: {
+      ...
+    },
 
-export default serviceData;
-
-export {
-  serviceData,
-  serviceCategories,
+    // ... all 20 services
+  },
 };
