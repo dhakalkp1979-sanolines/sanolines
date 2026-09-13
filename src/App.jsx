@@ -24,15 +24,6 @@ const globalServices = [
   "Emergency Relief & Shelter",
 ];
 
-const featuredServices = [
-  "Government & Public Services",
-  "Immigration & Visas",
-  "Employment & Career Resources",
-  "Global Banking & Finance",
-  "Healthcare & Medical Care",
-  "Legal Aid & Public Defenders",
-];
-
 export default function App() {
   const [activeTab, setActiveTab] = useState("Home");
   const [search, setSearch] = useState("");
@@ -150,33 +141,6 @@ export default function App() {
 
       {/* MAIN */}
       <main className="main-container">
-
-        {/* FEATURED SERVICES */}
-        <section className="services-showcase">
-          <div className="showcase-title">
-            <h2>
-              Essential Resources
-            </h2>
-            <p>
-              Start with some of the most useful
-              services and information categories.
-            </p>
-          </div>
-
-          <div className="services-pill-grid">
-            {featuredServices.map((service, index) => (
-              <button
-                className="service-pill"
-                key={index}
-                type="button"
-                onClick={goToServices}
-              >
-                <span className="pill-dot"></span>
-                {service}
-              </button>
-            ))}
-          </div>
-        </section>
 
         {/* ALL SERVICES */}
         <section
