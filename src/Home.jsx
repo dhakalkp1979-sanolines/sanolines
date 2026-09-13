@@ -27,17 +27,55 @@ export default function Home({ onNavigate }) {
               if (e.key === "Enter") handleNavClick("Home");
             }}
           >
-            <div className="brand-logo">S</div>
+
+            {/* PROFESSIONAL SANOLINES LOGO */}
+            <div className="brand-logo" aria-label="Sanolines logo">
+              <svg
+                viewBox="0 0 48 48"
+                role="img"
+                aria-hidden="true"
+              >
+                <path
+                  d="M35.5 10.5
+                     C31.5 7.5 25.5 7 20.5 8.5
+                     C15 10 11 13.5 11 18
+                     C11 22.5 14.5 24.5 21.5 26
+                     L28 27.5
+                     C33.5 28.8 36.5 31 36.5 35
+                     C36.5 39.5 31.5 42 25.5 42
+                     C19.5 42 14.5 40 11 36.5"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="4.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+
+                <path
+                  d="M36 11
+                     C33 14 29.5 16 24.5 17.5"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="4.5"
+                  strokeLinecap="round"
+                />
+              </svg>
+            </div>
 
             <div className="brand-text">
               <span className="brand-title">SANOLINES</span>
+
               <span className="brand-subtitle">
                 Portugal Information & Services
               </span>
             </div>
+
           </div>
 
+
+          {/* NAVIGATION MENU */}
           <div className={`nav-menu ${mobileMenuOpen ? "open" : ""}`}>
+
             <button
               className="active-tab"
               onClick={() => handleNavClick("Home")}
@@ -56,8 +94,11 @@ export default function Home({ onNavigate }) {
             <button onClick={() => handleNavClick("Tools")}>
               Tools
             </button>
+
           </div>
 
+
+          {/* MOBILE MENU */}
           <button
             className="mobile-menu-toggle"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -126,10 +167,11 @@ export default function Home({ onNavigate }) {
 
 
       {/* =========================
-          INTRODUCTION
+          MAIN CONTENT
       ========================== */}
       <main className="home-main-container">
 
+        {/* INTRODUCTION */}
         <section className="intro-section">
 
           <span className="home-section-label">
@@ -160,7 +202,9 @@ export default function Home({ onNavigate }) {
               className="program-card"
               onClick={() => handleNavClick("Services")}
             >
-              <div className="program-number">01</div>
+              <div className="program-number">
+                01
+              </div>
 
               <span className="program-label">
                 COMMUNITY
@@ -185,7 +229,9 @@ export default function Home({ onNavigate }) {
               className="program-card"
               onClick={() => handleNavClick("Services")}
             >
-              <div className="program-number">02</div>
+              <div className="program-number">
+                02
+              </div>
 
               <span className="program-label">
                 EDUCATION
@@ -210,7 +256,9 @@ export default function Home({ onNavigate }) {
               className="program-card"
               onClick={() => handleNavClick("Services")}
             >
-              <div className="program-number">03</div>
+              <div className="program-number">
+                03
+              </div>
 
               <span className="program-label">
                 EMPLOYMENT
@@ -257,7 +305,9 @@ export default function Home({ onNavigate }) {
                 alt="Portugal flag"
               />
 
-              <span>Portugal</span>
+              <span>
+                Portugal
+              </span>
 
             </div>
 
@@ -357,37 +407,49 @@ export default function Home({ onNavigate }) {
           <div className="service-category">
             <span>01</span>
             <h3>Government</h3>
-            <p>Official public services and administration.</p>
+            <p>
+              Official public services and administration.
+            </p>
           </div>
 
           <div className="service-category">
             <span>02</span>
             <h3>Immigration</h3>
-            <p>Visa, residency and AIMA information.</p>
+            <p>
+              Visa, residency and AIMA information.
+            </p>
           </div>
 
           <div className="service-category">
             <span>03</span>
             <h3>Jobs</h3>
-            <p>Employment services and job resources.</p>
+            <p>
+              Employment services and job resources.
+            </p>
           </div>
 
           <div className="service-category">
             <span>04</span>
             <h3>Healthcare</h3>
-            <p>SNS and healthcare resources.</p>
+            <p>
+              SNS and healthcare resources.
+            </p>
           </div>
 
           <div className="service-category">
             <span>05</span>
             <h3>Housing</h3>
-            <p>Housing and rental information.</p>
+            <p>
+              Housing and rental information.
+            </p>
           </div>
 
           <div className="service-category">
             <span>06</span>
             <h3>Legal Support</h3>
-            <p>Legal aid and trusted support organisations.</p>
+            <p>
+              Legal aid and trusted support organisations.
+            </p>
           </div>
 
         </section>
@@ -437,19 +499,58 @@ export default function Home({ onNavigate }) {
 
             <div className="footer-brand">
 
-              <div className="footer-logo">
-                S
+              {/* SAME PROFESSIONAL LOGO */}
+              <div className="footer-logo" aria-label="Sanolines logo">
+
+                <svg
+                  viewBox="0 0 48 48"
+                  role="img"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M35.5 10.5
+                       C31.5 7.5 25.5 7 20.5 8.5
+                       C15 10 11 13.5 11 18
+                       C11 22.5 14.5 24.5 21.5 26
+                       L28 27.5
+                       C33.5 28.8 36.5 31 36.5 35
+                       C36.5 39.5 31.5 42 25.5 42
+                       C19.5 42 14.5 40 11 36.5"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="4.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+
+                  <path
+                    d="M36 11
+                       C33 14 29.5 16 24.5 17.5"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="4.5"
+                    strokeLinecap="round"
+                  />
+
+                </svg>
+
               </div>
 
+
               <div>
-                <h3>SANOLINES</h3>
+
+                <h3>
+                  SANOLINES
+                </h3>
 
                 <span>
                   Portugal Information & Services
                 </span>
+
               </div>
 
             </div>
+
 
             <p>
               A practical information directory helping people find
