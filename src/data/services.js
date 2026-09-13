@@ -18,7 +18,7 @@ const services = [
     number: "03",
     title: "Jobs & Employment",
     description:
-      "Find official employment services, job portals, worker information and employment rights.",
+      "Find official employment services, job portals, jobs agencies, worker information and employment rights.",
   },
   {
     id: "banking",
@@ -84,14 +84,14 @@ const services = [
       "Find important government departments, organizations, helplines and useful contact information.",
   },
   {
-    id: "legal-aid",
+    id: "legal",
     number: "13",
     title: "Legal Aid & Free Lawyers",
     description:
       "Find official legal-aid services and recognized organizations offering free or low-cost legal assistance where available.",
   },
   {
-    id: "migrant-support",
+    id: "migrant",
     number: "14",
     title: "Migrant & Refugee Support",
     description:
@@ -105,7 +105,7 @@ const services = [
       "Find community organizations, associations, charities and local support networks.",
   },
   {
-    id: "social-security",
+    id: "socialSecurity",
     number: "16",
     title: "Social Security & Benefits",
     description:
@@ -133,7 +133,7 @@ const services = [
       "Find official disability services, accessibility information, benefits and recognized support organizations.",
   },
   {
-    id: "basic-assistance",
+    id: "basicNeeds",
     number: "20",
     title: "Food, Shelter & Basic Assistance",
     description:
