@@ -24,6 +24,14 @@ const globalServices = [
   "Emergency Relief & Shelter",
 ];
 
+// Color variations matching your visual style reference
+const cardColors = [
+  "#6b4685", // Purple
+  "#8c2447", // Magenta / Crimson
+  "#4d3c78", // Deep Slate Violet
+  "#7a2d58", // Dark Pink / Berry
+];
+
 export default function App() {
   const [activeTab, setActiveTab] = useState("Home");
   const [search, setSearch] = useState("");
@@ -148,33 +156,86 @@ export default function App() {
           className="services-directory"
         >
           <div className="continents-grid">
-            {filteredServices.map((service, index) => (
-              <div
-                className="continent-card"
-                key={service}
-              >
-                <div className="continent-top">
-                  <span className="continent-tag">
-                    {String(index + 1).padStart(2, "0")}
-                  </span>
+            {filteredServices.map((service, index) => {
+              const bgColour = cardColors[index % cardColors.length];
+              return (
+                <div
+                  className="continent-card"
+                  key={service}
+                  style={{
+                    backgroundColor: bgColour,
+                    color: "#ffffff",
+                    borderRadius: "12px",
+                    padding: "24px",
+                    display: "flex",
+                    flexDirection: "column",
+                    justifyContent: "space-between",
+                    boxShadow: "0 4px 12px rgba(0,0,0,0.15)",
+                    border: "none",
+                  }}
+                >
+                  <div className="continent-top">
+                    <span
+                      style={{
+                        background: "rgba(255, 255, 255, 0.2)",
+                        color: "#ffffff",
+                        padding: "4px 8px",
+                        borderRadius: "4px",
+                        fontSize: "0.85rem",
+                        fontWeight: "600",
+                      }}
+                    >
+                      {String(index + 1).padStart(2, "0")}
+                    </span>
 
-                  <h3>
-                    {service}
-                  </h3>
+                    <h3
+                      style={{
+                        color: "#ffffff",
+                        fontSize: "1.35rem",
+                        marginTop: "16px",
+                        marginBottom: "12px",
+                        fontWeight: "700",
+                        letterSpacing: "0.5px",
+                        textTransform: "uppercase",
+                      }}
+                    >
+                      {service}
+                    </h3>
+                  </div>
+
+                  <p
+                    style={{
+                      color: "rgba(255, 255, 255, 0.85)",
+                      fontSize: "0.95rem",
+                      marginBottom: "20px",
+                      lineHeight: "1.4",
+                    }}
+                  >
+                    Information about {service.toLowerCase()} and official resources.
+                  </p>
+
+                  <div>
+                    <button
+                      type="button"
+                      style={{
+                        backgroundColor: "#ffffff",
+                        color: "#222222",
+                        border: "none",
+                        padding: "8px 18px",
+                        borderRadius: "6px",
+                        fontWeight: "bold",
+                        cursor: "pointer",
+                        fontSize: "0.85rem",
+                        letterSpacing: "0.5px",
+                        transition: "background 0.2s",
+                      }}
+                    >
+                      LEARN MORE
+                    </button>
+                  </div>
                 </div>
-
-                <p>
-                  Find useful information and
-                  trusted resources for{" "}
-                  {service.toLowerCase()}.
-                </p>
-
-                <div className="continent-action">
-                  Explore service
-                  <span>&rarr;</span>
-                </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
 
           {filteredServices.length === 0 && (
