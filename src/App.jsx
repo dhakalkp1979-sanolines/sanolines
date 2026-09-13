@@ -86,20 +86,6 @@ export default function App() {
             </button>
 
             <button
-              className={activeTab === "Hub" ? "active" : ""}
-              onClick={() => {
-                setActiveTab("Hub");
-                document
-                  .getElementById("global-hub")
-                  ?.scrollIntoView({
-                    behavior: "smooth",
-                  });
-              }}
-            >
-              Global Hub
-            </button>
-
-            <button
               className={activeTab === "Services" ? "active" : ""}
               onClick={goToServices}
             >
@@ -164,59 +150,6 @@ export default function App() {
 
       {/* MAIN */}
       <main className="main-container">
-
-        {/* GLOBAL HUB SECTION */}
-        <section
-          id="global-hub"
-          className="portugal-section"
-        >
-          <div className="section-header-row">
-            <div>
-              <span className="continent-tag">
-                GLOBAL DIRECTORY
-              </span>
-
-              <h2>
-                International Information & Services
-              </h2>
-
-              <p>
-                Find useful information and trusted
-                official resources across multiple regions
-                and categories.
-              </p>
-            </div>
-          </div>
-
-          <div className="portugal-card">
-            <div className="portugal-card-content">
-              <div className="portugal-flag">
-                🌐
-              </div>
-
-              <div>
-                <h3>
-                  Explore Global Resources
-                </h3>
-
-                <p>
-                  Government services, immigration,
-                  employment, healthcare, housing,
-                  education, legal support and more.
-                </p>
-
-                <button
-                  className="continent-action"
-                  type="button"
-                  onClick={goToServices}
-                >
-                  Explore Directory
-                  <span>&rarr;</span>
-                </button>
-              </div>
-            </div>
-          </div>
-        </section>
 
         {/* FEATURED SERVICES */}
         <section className="services-showcase">
@@ -374,20 +307,6 @@ export default function App() {
               }}
             >
               Home
-            </button>
-
-            <button
-              type="button"
-              onClick={() => {
-                setActiveTab("Hub");
-                document
-                  .getElementById("global-hub")
-                  ?.scrollIntoView({
-                    behavior: "smooth",
-                  });
-              }}
-            >
-              Global Hub
             </button>
 
             <button
