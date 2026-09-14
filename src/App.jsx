@@ -35,6 +35,7 @@ const cardColors = [
 export default function App() {
   const [activeTab, setActiveTab] = useState("Home");
   const [search, setSearch] = useState("");
+  const [showDisclaimer, setShowDisclaimer] = useState(false);
 
   const filteredServices = globalServices.filter((service) =>
     service.toLowerCase().includes(search.toLowerCase())
@@ -89,20 +90,6 @@ export default function App() {
               onClick={goToServices}
             >
               Services
-            </button>
-
-            <button
-              className={activeTab === "Tools" ? "active" : ""}
-              onClick={() => {
-                setActiveTab("Tools");
-                document
-                  .getElementById("tools")
-                  ?.scrollIntoView({
-                    behavior: "smooth",
-                  });
-              }}
-            >
-              Tools
             </button>
           </div>
 
@@ -245,56 +232,6 @@ export default function App() {
           )}
         </section>
 
-        {/* TOOLS */}
-        <section
-          id="tools"
-          className="tools-section"
-        >
-          <div className="section-header-row">
-            <div>
-              <span className="continent-tag">
-                TOOLS
-              </span>
-
-              <h2>
-                Useful Tools
-              </h2>
-
-              <p>
-                Useful online tools and calculators
-                will be added here.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        {/* DISCLAIMER */}
-        <section className="directory-notice">
-          <h2>
-            Disclaimer
-          </h2>
-
-          <p style={{ marginBottom: "1rem" }}>
-            Sanolines Global is an independent information-sharing directory.
-          </p>
-
-          <p style={{ marginBottom: "1rem" }}>
-            We do not directly provide government, immigration, legal, medical, employment, housing, financial, or other professional services.
-          </p>
-
-          <p style={{ marginBottom: "1rem" }}>
-            Our website helps visitors find useful information, official websites, trusted organizations, public services, and relevant resources. Where possible, we provide links to official or trusted sources so visitors can contact the appropriate organization directly.
-          </p>
-
-          <p style={{ marginBottom: "1rem" }}>
-            Information on Sanolines may change over time. Visitors should always verify important requirements, procedures, fees, deadlines, and eligibility directly with the relevant official organization before taking action.
-          </p>
-
-          <p>
-            Sanolines Global is not a government agency and is not affiliated with any government authority unless specifically stated.
-          </p>
-        </section>
-
       </main>
 
       {/* FOOTER */}
@@ -334,24 +271,131 @@ export default function App() {
 
             <button
               type="button"
-              onClick={() => {
-                setActiveTab("Tools");
-                document
-                  .getElementById("tools")
-                  ?.scrollIntoView({
-                    behavior: "smooth",
-                  });
+              onClick={() => setShowDisclaimer(true)}
+              style={{
+                background: "none",
+                border: "none",
+                cursor: "pointer",
+                color: "inherit",
+                font: "inherit",
+                padding: 0,
+                textDecoration: "underline",
               }}
             >
-              Tools
+              Disclaimer
             </button>
           </div>
         </div>
 
-        <div className="home-footer-bottom">
-          &copy; 2026 Sanolines Global. All rights reserved.
+        <div className="home-footer-bottom" style={{ display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: "10px" }}>
+          <span>&copy; 2026 Sanolines Global. All rights reserved.</span>
+          <button
+            type="button"
+            onClick={() => setShowDisclaimer(true)}
+            style={{
+              background: "rgba(255, 255, 255, 0.1)",
+              border: "1px solid rgba(255, 255, 255, 0.2)",
+              color: "#ffffff",
+              padding: "6px 14px",
+              borderRadius: "6px",
+              cursor: "pointer",
+              fontSize: "0.85rem",
+              fontWeight: "500",
+            }}
+          >
+            View Disclaimer
+          </button>
         </div>
       </footer>
+
+      {/* DISCLAIMER MODAL */}
+      {showDisclaimer && (
+        <div
+          style={{
+            position: "fixed",
+            top: 0,
+            left: 0,
+            width: "100%",
+            height: "100%",
+            backgroundColor: "rgba(0, 0, 0, 0.6)",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            zIndex: 1000,
+            padding: "20px",
+          }}
+          onClick={() => setShowDisclaimer(false)}
+        >
+          <div
+            style={{
+              backgroundColor: "#ffffff",
+              color: "#333333",
+              borderRadius: "12px",
+              maxWidth: "600px",
+              width: "100%",
+              padding: "30px",
+              boxShadow: "0 10px 30px rgba(0,0,0,0.3)",
+              position: "relative",
+              maxHeight: "85vh",
+              overflowY: "auto",
+            }}
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "20px", borderBottom: "1px solid #eaeaea", paddingBottom: "12px" }}>
+              <h2 style={{ margin: 0, fontSize: "1.5rem", color: "#1a1a1a" }}>Disclaimer</h2>
+              <button
+                type="button"
+                onClick={() => setShowDisclaimer(false)}
+                style={{
+                  background: "none",
+                  border: "none",
+                  fontSize: "1.5rem",
+                  cursor: "pointer",
+                  color: "#666",
+                }}
+              >
+                &times;
+              </button>
+            </div>
+
+            <div style={{ fontSize: "0.95rem", lineHeight: "1.6", color: "#444" }}>
+              <p style={{ marginBottom: "1rem" }}>
+                <strong>Sanolines Global</strong> is an independent information-sharing directory.
+              </p>
+              <p style={{ marginBottom: "1rem" }}>
+                We do not directly provide government, immigration, legal, medical, employment, housing, financial, or other professional services.
+              </p>
+              <p style={{ marginBottom: "1rem" }}>
+                Our website helps visitors find useful information, official websites, trusted organizations, public services, and relevant resources. Where possible, we provide links to official or trusted sources so visitors can contact the appropriate organization directly.
+              </p>
+              <p style={{ marginBottom: "1rem" }}>
+                Information on Sanolines may change over time. Visitors should always verify important requirements, procedures, fees, deadlines, and eligibility directly with the relevant official organization before taking action.
+              </p>
+              <p style={{ marginBottom: "0" }}>
+                Sanolines Global is not a government agency and is not affiliated with any government authority unless specifically stated.
+              </p>
+            </div>
+
+            <div style={{ marginTop: "25px", textAlign: "right" }}>
+              <button
+                type="button"
+                onClick={() => setShowDisclaimer(false)}
+                style={{
+                  backgroundColor: "#6b4685",
+                  color: "#ffffff",
+                  border: "none",
+                  padding: "10px 20px",
+                  borderRadius: "6px",
+                  fontWeight: "600",
+                  cursor: "pointer",
+                }}
+              >
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
 
     </div>
   );
