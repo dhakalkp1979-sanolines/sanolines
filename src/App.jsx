@@ -269,10 +269,14 @@ const portugalServices = [
 ];
 
 const cardColors = [
-  "#6b4685", // Purple
-  "#8c2447", // Magenta / Crimson
-  "#4d3c78", // Deep Slate Violet
-  "#7a2d58", // Dark Pink / Berry
+  "#2b4c7e", // Deep Blue
+  "#2a6f49", // Forest Green
+  "#8c4a24", // Warm Rust / Terracotta
+  "#5c3d78", // Deep Violet
+  "#1d6363", // Deep Teal
+  "#8c2447", // Crimson / Berry
+  "#4d5d53", // Slate Gray-Green
+  "#78532f", // Bronze Brown
 ];
 
 export default function App() {
@@ -352,7 +356,7 @@ export default function App() {
             style={{
               background: "none",
               border: "none",
-              color: "#6b4685",
+              color: "#2b4c7e",
               fontWeight: "600",
               cursor: "pointer",
               marginBottom: "20px",
@@ -371,10 +375,10 @@ export default function App() {
               borderRadius: "16px",
               padding: "40px",
               boxShadow: "0 6px 20px rgba(0,0,0,0.08)",
-              borderTop: "6px solid #6b4685",
+              borderTop: "6px solid #2b4c7e",
             }}
           >
-            <span style={{ background: "#f3ebf7", color: "#6b4685", padding: "6px 12px", borderRadius: "6px", fontWeight: "600", fontSize: "0.85rem" }}>
+            <span style={{ background: "#edf2f7", color: "#2b4c7e", padding: "6px 12px", borderRadius: "6px", fontWeight: "600", fontSize: "0.85rem" }}>
               Independent Directory Resource
             </span>
             <h1 style={{ fontSize: "2.2rem", color: "#1a1a1a", marginTop: "15px", marginBottom: "15px" }}>
@@ -384,7 +388,7 @@ export default function App() {
               {selectedService.description}
             </p>
 
-            <div style={{ background: "#faf8fb", padding: "25px", borderRadius: "10px", borderLeft: "4px solid #8c2447", marginBottom: "30px" }}>
+            <div style={{ background: "#f8fafc", padding: "25px", borderRadius: "10px", borderLeft: "4px solid #2b4c7e", marginBottom: "30px" }}>
               <h3 style={{ margin: "0 0 10px 0", color: "#222" }}>Overview & Information</h3>
               <p style={{ margin: 0, lineHeight: "1.7", color: "#444" }}>
                 {selectedService.details}
@@ -402,9 +406,9 @@ export default function App() {
                     target="_blank"
                     rel="noopener noreferrer"
                     style={{
-                      backgroundColor: "#f9f6fc",
-                      color: "#6b4685",
-                      border: "1px solid #e2d3ed",
+                      backgroundColor: "#f8fafc",
+                      color: "#2b4c7e",
+                      border: "1px solid #e2e8f0",
                       textDecoration: "none",
                       padding: "12px 18px",
                       borderRadius: "8px",
@@ -417,7 +421,7 @@ export default function App() {
                     }}
                   >
                     <span>🇵🇹 {link.label}</span>
-                    <span style={{ fontSize: "0.85rem", color: "#8c2447" }}>Visit Site &rarr;</span>
+                    <span style={{ fontSize: "0.85rem", color: "#8c4a24" }}>Visit Site &rarr;</span>
                   </a>
                 ))}
               </div>
@@ -431,8 +435,8 @@ export default function App() {
                 rel="noopener noreferrer"
                 style={{
                   backgroundColor: "#ffffff",
-                  color: "#8c2447",
-                  border: "2px solid #8c2447",
+                  color: "#2b4c7e",
+                  border: "2px solid #2b4c7e",
                   textDecoration: "none",
                   padding: "12px 24px",
                   borderRadius: "8px",
@@ -768,7 +772,7 @@ export default function App() {
                 type="button"
                 onClick={() => setShowDisclaimer(false)}
                 style={{
-                  backgroundColor: "#6b4685",
+                  backgroundColor: "#2b4c7e",
                   color: "#ffffff",
                   border: "none",
                   padding: "10px 20px",
