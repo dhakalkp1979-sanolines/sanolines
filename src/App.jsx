@@ -66,7 +66,7 @@ export default function App() {
                 SANOLINES
               </strong>
               <span>
-                Global Information & Services
+                Information & Services
               </span>
             </div>
           </div>
@@ -112,7 +112,7 @@ export default function App() {
             Sanolines helps people find government information,
             employment resources, immigration guidance,
             healthcare, legal support, housing, education,
-            and other useful services worldwide.
+            and other useful services.
           </p>
 
           <div className="hero-search-bar">
@@ -242,7 +242,7 @@ export default function App() {
               SANOLINES
             </strong>
             <p>
-              Global information and official
+              Information and official
               service directories for everyday
               people.
             </p>
@@ -288,7 +288,7 @@ export default function App() {
         </div>
 
         <div className="home-footer-bottom" style={{ display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: "10px" }}>
-          <span>&copy; 2026 Sanolines Global. All rights reserved.</span>
+          <span>&copy; 2026 Sanolines Information. All rights reserved.</span>
           <button
             type="button"
             onClick={() => setShowDisclaimer(true)}
@@ -360,7 +360,7 @@ export default function App() {
 
             <div style={{ fontSize: "0.95rem", lineHeight: "1.6", color: "#444" }}>
               <p style={{ marginBottom: "1rem" }}>
-                <strong>Sanolines Global</strong> is an independent information-sharing directory.
+                <strong>Sanolines Information</strong> is an independent information-sharing directory.
               </p>
               <p style={{ marginBottom: "1rem" }}>
                 We do not directly provide government, immigration, legal, medical, employment, housing, financial, or other professional services.
@@ -372,7 +372,7 @@ export default function App() {
                 Information on Sanolines may change over time. Visitors should always verify important requirements, procedures, fees, deadlines, and eligibility directly with the relevant official organization before taking action.
               </p>
               <p style={{ marginBottom: "0" }}>
-                Sanolines Global is not a government agency and is not affiliated with any government authority unless specifically stated.
+                Sanolines Information is not a government agency and is not affiliated with any government authority unless specifically stated.
               </p>
             </div>
 
