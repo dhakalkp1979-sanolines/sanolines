@@ -11,31 +11,41 @@ const categoriesData = [
         title: "Government Portals",
         description: "Official national portals for public services.",
         links: [{ label: "ePortugal Portal", url: "https://eportugal.gov.pt" }],
-        mapQuery: "Loja do Cidadão"
+        mapQuery: "Loja do Cidadão",
+        icon: "🏛️",
+        color: "#2b4c7e"
       },
       {
         title: "Municipalities",
         description: "Local town halls (Câmaras Municipais) for local services, housing, and community support.",
         links: [{ label: "Portal Autárquico", url: "https://www.portalautarquico.dgal.gov.pt" }],
-        mapQuery: "Câmara Municipal"
+        mapQuery: "Câmara Municipal",
+        icon: "🏢",
+        color: "#2a6f49"
       },
       {
         title: "Civil Registry",
         description: "Birth, marriage, and death certificates for legal documents and family registration.",
         links: [{ label: "Justiça.gov.pt", url: "https://justica.gov.pt" }],
-        mapQuery: "Civil Registry Office"
+        mapQuery: "Civil Registry Office",
+        icon: "📜",
+        color: "#8c4a24"
       },
       {
         title: "National ID & Passport",
         description: "Citizen card and passport renewal for identity documents.",
         links: [{ label: "IRN Portal", url: "https://www.irn.mj.pt" }],
-        mapQuery: "Loja do Cidadão"
+        mapQuery: "Loja do Cidadão",
+        icon: "🪪",
+        color: "#5c3d78"
       },
       {
         title: "Digital Government",
         description: "Digital signature and online login for secure access to government services.",
         links: [{ label: "Autenticação.gov", url: "https://autenticacao.gov.pt" }],
-        mapQuery: "Loja do Cidadão"
+        mapQuery: "Loja do Cidadão",
+        icon: "🔐",
+        color: "#1d6363"
       }
     ]
   },
@@ -48,31 +58,41 @@ const categoriesData = [
         title: "AIMA Residency",
         description: "Residency permits and renewals for migrant residency.",
         links: [{ label: "AIMA Portal", url: "https://aima.gov.pt" }],
-        mapQuery: "AIMA offices"
+        mapQuery: "AIMA offices",
+        icon: "🛂",
+        color: "#2b4c7e"
       },
       {
         title: "VFS Visa Centers",
         description: "Visa applications and biometrics processing.",
         links: [{ label: "VFS Global", url: "https://www.vfsglobal.com" }],
-        mapQuery: "VFS Visa Center"
+        mapQuery: "VFS Visa Center",
+        icon: "✈️",
+        color: "#2a6f49"
       },
       {
         title: "Citizenship",
         description: "Nationality applications and citizenship rules.",
         links: [{ label: "Justiça Nationality", url: "https://justica.gov.pt/Servicos/Nacionalidade" }],
-        mapQuery: "Conservatória dos Registos Centrais"
+        mapQuery: "Conservatória dos Registos Centrais",
+        icon: "🌐",
+        color: "#8c4a24"
       },
       {
         title: "Border Control",
         description: "Entry rules and airport checks for travel regulations.",
         links: [{ label: "SEF Portal", url: "https://sef.pt" }],
-        mapQuery: "Border Control Office"
+        mapQuery: "Border Control Office",
+        icon: "🛂",
+        color: "#5c3d78"
       },
       {
         title: "Travel Rules",
         description: "Schengen rules and visa types for travel guidance.",
         links: [{ label: "ePortugal Travel", url: "https://eportugal.gov.pt" }],
-        mapQuery: "ePortugal"
+        mapQuery: "ePortugal",
+        icon: "🗺️",
+        color: "#1d6363"
       }
     ]
   },
@@ -85,31 +105,41 @@ const categoriesData = [
         title: "Bar Association",
         description: "Official lawyers for legal help.",
         links: [{ label: "Ordem dos Advogados", url: "https://www.oa.pt" }],
-        mapQuery: "Ordem dos Advogados"
+        mapQuery: "Ordem dos Advogados",
+        icon: "⚖️",
+        color: "#2b4c7e"
       },
       {
         title: "Lawyers Directory",
         description: "Find verified lawyers and legal professionals.",
         links: [{ label: "Portal dos Advogados", url: "https://portal.oa.pt/advogados" }],
-        mapQuery: "Lawyer Office"
+        mapQuery: "Lawyer Office",
+        icon: "👨‍⚖️",
+        color: "#2a6f49"
       },
       {
         title: "Criminal Record",
         description: "Police clearance certificate used for jobs and residency.",
         links: [{ label: "Registo Criminal", url: "https://justica.gov.pt/Servicos/Registo-Criminal" }],
-        mapQuery: "Criminal Record Office"
+        mapQuery: "Criminal Record Office",
+        icon: "📋",
+        color: "#8c4a24"
       },
       {
         title: "Courts",
         description: "Judicial system and court information.",
         links: [{ label: "Tribunais", url: "https://tribunais.org.pt" }],
-        mapQuery: "Tribunal Judicial"
+        mapQuery: "Tribunal Judicial",
+        icon: "🏛️",
+        color: "#5c3d78"
       },
       {
         title: "Emergency Forces",
         description: "Police, fire, and civil protection emergency contacts.",
         links: [{ label: "Proteção Civil", url: "https://www.prociv.pt" }],
-        mapQuery: "Proteção Civil"
+        mapQuery: "Proteção Civil",
+        icon: "🚨",
+        color: "#1d6363"
       }
     ]
   },
@@ -122,7 +152,9 @@ const categoriesData = [
         title: "IEFP",
         description: "National employment center for jobs and training.",
         links: [{ label: "IEFP Portal", url: "https://iefp.pt" }],
-        mapQuery: "Centro de Emprego IEFP"
+        mapQuery: "Centro de Emprego IEFP",
+        icon: "💼",
+        color: "#2b4c7e"
       },
       {
         title: "Private Job Agencies",
@@ -132,13 +164,17 @@ const categoriesData = [
           { label: "Adecco", url: "https://adecco.pt" },
           { label: "Manpower", url: "https://manpower.pt" }
         ],
-        mapQuery: "Randstad Office"
+        mapQuery: "Randstad Office",
+        icon: "🏢",
+        color: "#2a6f49"
       },
       {
         title: "International Job Agencies",
         description: "Work abroad and EU jobs.",
         links: [{ label: "EURES Portal", url: "https://eures.europa.eu" }],
-        mapQuery: "EURES"
+        mapQuery: "EURES",
+        icon: "🇪🇺",
+        color: "#8c4a24"
       },
       {
         title: "Sector Job Portals",
@@ -147,13 +183,17 @@ const categoriesData = [
           { label: "Jobin", url: "https://jobin.pt" },
           { label: "NetEmprego", url: "https://netemprego.pt" }
         ],
-        mapQuery: "NetEmprego"
+        mapQuery: "NetEmprego",
+        icon: "🔍",
+        color: "#5c3d78"
       },
       {
         title: "Freelancing",
         description: "Self-employment rules and freelancer registration.",
         links: [{ label: "Portal das Finanças", url: "https://portaldasfinancas.gov.pt" }],
-        mapQuery: "Serviços de Finanças"
+        mapQuery: "Serviços de Finanças",
+        icon: "💻",
+        color: "#1d6363"
       }
     ]
   },
@@ -166,31 +206,41 @@ const categoriesData = [
         title: "Labor Rights",
         description: "Worker protection, complaints, and inspections.",
         links: [{ label: "ACT Portal", url: "https://www.act.gov.pt" }],
-        mapQuery: "Autoridade para as Condições do Trabalho"
+        mapQuery: "Autoridade para as Condições do Trabalho",
+        icon: "🛡️",
+        color: "#2b4c7e"
       },
       {
         title: "Work Contracts",
         description: "Contract types and employment rules.",
         links: [{ label: "Governo de Portugal", url: "https://www.portugal.gov.pt" }],
-        mapQuery: "Governo de Portugal"
+        mapQuery: "Governo de Portugal",
+        icon: "📄",
+        color: "#2a6f49"
       },
       {
         title: "Minimum Wage",
         description: "Salary rules and wage information.",
         links: [{ label: "Governo de Portugal", url: "https://www.portugal.gov.pt" }],
-        mapQuery: "Governo de Portugal"
+        mapQuery: "Governo de Portugal",
+        icon: "💶",
+        color: "#8c4a24"
       },
       {
         title: "Professional Training",
         description: "Courses and certifications for skill development.",
         links: [{ label: "ANET Portal", url: "https://anet.pt" }],
-        mapQuery: "Centro de Formação Profissional"
+        mapQuery: "Centro de Formação Profissional",
+        icon: "📚",
+        color: "#5c3d78"
       },
       {
         title: "Workplace Safety",
         description: "Safety inspections and workplace compliance.",
         links: [{ label: "ACT Safety", url: "https://www.act.gov.pt" }],
-        mapQuery: "Autoridade para as Condições do Trabalho"
+        mapQuery: "Autoridade para as Condições do Trabalho",
+        icon: "⚠️",
+        color: "#1d6363"
       }
     ]
   },
@@ -203,31 +253,41 @@ const categoriesData = [
         title: "Migrant Associations",
         description: "Support groups for migrants focused on cultural support.",
         links: [{ label: "ACM Portal", url: "https://www.acm.gov.pt" }],
-        mapQuery: "ACM Centro Nacional de Apoio ao Imigrante"
+        mapQuery: "ACM Centro Nacional de Apoio ao Imigrante",
+        icon: "🤝",
+        color: "#2b4c7e"
       },
       {
         title: "Cultural Associations",
         description: "Community cultural groups for events and integration.",
         links: [{ label: "Cultural Groups", url: "https://www.acm.gov.pt" }],
-        mapQuery: "Associação Cultural"
+        mapQuery: "Associação Cultural",
+        icon: "🎭",
+        color: "#2a6f49"
       },
       {
         title: "Expat Groups",
         description: "Foreign resident communities providing social support.",
         links: [{ label: "Expat Networks", url: "https://www.acm.gov.pt" }],
-        mapQuery: "Expat Association"
+        mapQuery: "Expat Association",
+        icon: "🌍",
+        color: "#8c4a24"
       },
       {
         title: "Community Networks",
         description: "Local community help for neighborhood support.",
         links: [{ label: "Community Aid", url: "https://www.acm.gov.pt" }],
-        mapQuery: "Centro Comunitário"
+        mapQuery: "Centro Comunitário",
+        icon: "🏘️",
+        color: "#5c3d78"
       },
       {
         title: "Solidarity Associations",
         description: "Charity groups for social help.",
         links: [{ label: "Solidarity Portals", url: "https://www.acm.gov.pt" }],
-        mapQuery: "IPSS Instituição Particular de Solidariedade Social"
+        mapQuery: "IPSS Instituição Particular de Solidariedade Social",
+        icon: "❤️",
+        color: "#1d6363"
       }
     ]
   },
@@ -243,31 +303,41 @@ const categoriesData = [
           { label: "Randstad", url: "https://randstad.pt" },
           { label: "Adecco", url: "https://adecco.pt" }
         ],
-        mapQuery: "Recruitment Agency"
+        mapQuery: "Recruitment Agency",
+        icon: "👔",
+        color: "#2b4c7e"
       },
       {
         title: "Temporary Work Agencies",
         description: "Short-term jobs designed for seasonal work.",
         links: [{ label: "Manpower", url: "https://manpower.pt" }],
-        mapQuery: "Temporary Work Agency"
+        mapQuery: "Temporary Work Agency",
+        icon: "⏱️",
+        color: "#2a6f49"
       },
       {
         title: "Business Agencies",
         description: "Business support networks for company help.",
         links: [{ label: "IAPMEI", url: "https://www.iapmei.pt" }],
-        mapQuery: "IAPMEI"
+        mapQuery: "IAPMEI",
+        icon: "📈",
+        color: "#8c4a24"
       },
       {
         title: "Social Support Agencies",
         description: "Government social help and welfare support.",
         links: [{ label: "Segurança Social", url: "https://seg-social.pt" }],
-        mapQuery: "Segurança Social"
+        mapQuery: "Segurança Social",
+        icon: "🤲",
+        color: "#5c3d78"
       },
       {
         title: "Integration Agencies",
         description: "CLAIM and CNAIM for migrant integration.",
         links: [{ label: "ACM Integration", url: "https://www.acm.gov.pt" }],
-        mapQuery: "CNAIM Centro Nacional de Apoio ao Imigrante"
+        mapQuery: "CNAIM Centro Nacional de Apoio ao Imigrante",
+        icon: "🌟",
+        color: "#1d6363"
       }
     ]
   },
@@ -280,31 +350,41 @@ const categoriesData = [
         title: "Banking",
         description: "National banks including CGD and Millennium.",
         links: [{ label: "Caixa Geral de Depósitos", url: "https://www.cgd.pt" }],
-        mapQuery: "Banco CGD"
+        mapQuery: "Banco CGD",
+        icon: "🏦",
+        color: "#2b4c7e"
       },
       {
         title: "Tax & Customs",
         description: "NIF, VAT, and IRS tax services.",
         links: [{ label: "Portal das Finanças", url: "https://portaldasfinancas.gov.pt" }],
-        mapQuery: "Serviços de Finanças"
+        mapQuery: "Serviços de Finanças",
+        icon: "📊",
+        color: "#2a6f49"
       },
       {
         title: "Social Security",
         description: "Benefits, pensions, and welfare.",
         links: [{ label: "Segurança Social", url: "https://seg-social.pt" }],
-        mapQuery: "Segurança Social"
+        mapQuery: "Segurança Social",
+        icon: "💳",
+        color: "#8c4a24"
       },
       {
         title: "Housing Portals",
         description: "Rent and buy homes via examples like Idealista and Imovirtual.",
         links: [{ label: "Idealista Portugal", url: "https://www.idealista.pt" }],
-        mapQuery: "Imobiliária"
+        mapQuery: "Imobiliária",
+        icon: "🏠",
+        color: "#5c3d78"
       },
       {
         title: "Tenant Rights",
         description: "Rental laws and tenant protection.",
         links: [{ label: "Portal da Habitação", url: "https://www.portugal.gov.pt" }],
-        mapQuery: "Portal da Habitação"
+        mapQuery: "Portal da Habitação",
+        icon: "📝",
+        color: "#1d6363"
       }
     ]
   },
@@ -317,31 +397,41 @@ const categoriesData = [
         title: "Utilities",
         description: "Electricity, water, and internet services from examples like EDP and EPAL.",
         links: [{ label: "EDP Comercial", url: "https://www.edp.pt" }],
-        mapQuery: "EDP Loja de Atendimento"
+        mapQuery: "EDP Loja de Atendimento",
+        icon: "⚡",
+        color: "#2b4c7e"
       },
       {
         title: "Postal Services",
         description: "Mail and parcel delivery.",
         links: [{ label: "CTT Correios", url: "https://ctt.pt" }],
-        mapQuery: "Estação CTT Correios"
+        mapQuery: "Estação CTT Correios",
+        icon: "✉️",
+        color: "#2a6f49"
       },
       {
         title: "Public Transport",
         description: "Metro, bus, and train services via examples like Metro Lisboa and CP.",
         links: [{ label: "Comboios de Portugal", url: "https://www.cp.pt" }],
-        mapQuery: "Estação de Caminhos de Ferro CP"
+        mapQuery: "Estação de Caminhos de Ferro CP",
+        icon: "🚆",
+        color: "#8c4a24"
       },
       {
         title: "Driving License",
         description: "License exchange and driving rules.",
         links: [{ label: "IMT IP", url: "https://www.imt-ip.pt" }],
-        mapQuery: "IMT Balcão de Atendimento"
+        mapQuery: "IMT Balcão de Atendimento",
+        icon: "🚗",
+        color: "#5c3d78"
       },
       {
         title: "Vehicle Registration",
         description: "Car registration and vehicle documents.",
         links: [{ label: "IMT Vehicles", url: "https://www.imt-ip.pt" }],
-        mapQuery: "Conservatória do Registo Automóvel"
+        mapQuery: "Conservatória do Registo Automóvel",
+        icon: "🚙",
+        color: "#1d6363"
       }
     ]
   },
@@ -354,31 +444,41 @@ const categoriesData = [
         title: "Public Healthcare",
         description: "Hospitals, clinics, and medical services.",
         links: [{ label: "SNS Portal", url: "https://sns.gov.pt" }],
-        mapQuery: "Centro de Saúde Hospital Público"
+        mapQuery: "Centro de Saúde Hospital Público",
+        icon: "🏥",
+        color: "#2b4c7e"
       },
       {
         title: "Private Clinics",
         description: "Health insurance options via examples like Médis and Multicare.",
         links: [{ label: "Médis Saúde", url: "https://www.medis.pt" }],
-        mapQuery: "Clínica Privada Hospital"
+        mapQuery: "Clínica Privada Hospital",
+        icon: "🩺",
+        color: "#2a6f49"
       },
       {
         title: "Pharmacies",
         description: "Medicine and emergency pharmacy locations.",
         links: [{ label: "Farmácias Portuguesas", url: "https://farmaciasportuguesas.pt" }],
-        mapQuery: "Farmácia"
+        mapQuery: "Farmácia",
+        icon: "💊",
+        color: "#8c4a24"
       },
       {
         title: "Schools & Universities",
         description: "Education system and school info.",
         links: [{ label: "DGE Portal", url: "https://www.dge.mec.pt" }],
-        mapQuery: "Escola Secundária Agrupamento"
+        mapQuery: "Escola Secundária Agrupamento",
+        icon: "🎓",
+        color: "#5c3d78"
       },
       {
         title: "Food Banks & Charities",
         description: "Food support and social help.",
         links: [{ label: "Banco Alimentar", url: "https://bancoalimentar.pt" }],
-        mapQuery: "Banco Alimentar Contra a Fome"
+        mapQuery: "Banco Alimentar Contra a Fome",
+        icon: "🍲",
+        color: "#1d6363"
       }
     ]
   }
@@ -468,7 +568,7 @@ export default function App() {
 
       {/* CONDITIONAL VIEW: INDIVIDUAL CATEGORY PAGE OR HOME/DIRECTORY */}
       {selectedCategory ? (
-        /* INDIVIDUAL CATEGORY DETAIL VIEW (SHOWING 5 BOXES/ITEMS INSIDE) */
+        /* INDIVIDUAL CATEGORY DETAIL VIEW */
         <main className="main-container" style={{ padding: "40px 20px", maxWidth: "1000px", margin: "0 auto" }}>
           <button
             type="button"
@@ -513,7 +613,7 @@ export default function App() {
             </p>
           </div>
 
-          <h2 style={{ fontSize: "1.5rem", marginBottom: "20px", color: "#222" }}>Included Services ({selectedCategory.items.length})</h2>
+          <h2 style={{ fontSize: "1.5rem", marginBottom: "20px", color: "#222" }}>Included Services</h2>
           
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "20px" }}>
             {selectedCategory.items.map((subItem, sIdx) => (
@@ -525,16 +625,20 @@ export default function App() {
                   padding: "24px",
                   boxShadow: "0 4px 12px rgba(0,0,0,0.06)",
                   border: "1px solid #e2e8f0",
+                  borderTop: `5px solid ${subItem.color || "#2b4c7e"}`,
                   display: "flex",
                   flexDirection: "column",
                   justifyContent: "space-between"
                 }}
               >
                 <div>
-                  <span style={{ background: "#edf2f7", color: "#2b4c7e", padding: "3px 8px", borderRadius: "4px", fontSize: "0.75rem", fontWeight: "bold" }}>
-                    0{sIdx + 1}
-                  </span>
-                  <h3 style={{ fontSize: "1.2rem", color: "#1a1a1a", margin: "12px 0 8px 0" }}>
+                  <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "12px" }}>
+                    <span style={{ fontSize: "1.8rem" }}>
+                      {subItem.icon || "📌"}
+                    </span>
+                  </div>
+
+                  <h3 style={{ fontSize: "1.2rem", color: "#1a1a1a", margin: "0 0 8px 0" }}>
                     {subItem.title}
                   </h3>
                   <p style={{ fontSize: "0.9rem", color: "#555", lineHeight: "1.5", marginBottom: "15px" }}>
@@ -604,7 +708,7 @@ export default function App() {
           </div>
         </main>
       ) : (
-        /* HOMEPAGE DIRECTORY VIEW (SHOWING THE 10 MAIN GROUPS/BOXES) */
+        /* HOMEPAGE DIRECTORY VIEW */
         <>
           {/* HERO */}
           <header className="hero-section">
@@ -730,7 +834,7 @@ export default function App() {
                             transition: "background 0.2s",
                           }}
                         >
-                          VIEW 5 SERVICES &rarr;
+                          VIEW SERVICES &rarr;
                         </button>
                       </div>
                     </div>
