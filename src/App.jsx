@@ -42,7 +42,7 @@ const categoriesData = [
       {
         title: "Digital Government",
         description: "Digital signature and online login for secure access to government services.",
-        links: [{ label: "Autenticação.gov", url: "https://autenticacao.gov.pt" }],
+        links: [{ label: "Autenticação.gov", url: "https://autenticação.gov.pt" }],
         mapQuery: "Loja do Cidadão",
         icon: "🔐",
         color: "#1d6363"
@@ -539,7 +539,7 @@ export default function App() {
             </div>
           </div>
 
-          <div className="nav-links">
+          <div className="nav-links" style={{ display: "flex", flexWrap: "wrap", gap: "10px", alignItems: "center" }}>
             <button
               className={activeTab === "Home" && !selectedCategory ? "active" : ""}
               onClick={() => {
@@ -560,12 +560,40 @@ export default function App() {
             >
               Services
             </button>
+
+            <button
+              className={activeTab === "About Us" ? "active" : ""}
+              onClick={() => { setSelectedCategory(null); setActiveTab("About Us"); }}
+            >
+              About Us
+            </button>
+
+            <button
+              className={activeTab === "Disclaimer" ? "active" : ""}
+              onClick={() => { setSelectedCategory(null); setActiveTab("Disclaimer"); }}
+            >
+              Disclaimer
+            </button>
+
+            <button
+              className={activeTab === "Privacy Policy" ? "active" : ""}
+              onClick={() => { setSelectedCategory(null); setActiveTab("Privacy Policy"); }}
+            >
+              Privacy Policy
+            </button>
+
+            <button
+              className={activeTab === "Terms of Use" ? "active" : ""}
+              onClick={() => { setSelectedCategory(null); setActiveTab("Terms of Use"); }}
+            >
+              Terms of Use
+            </button>
           </div>
 
         </div>
       </nav>
 
-      {/* CONDITIONAL VIEW: INDIVIDUAL CATEGORY PAGE OR HOME/DIRECTORY */}
+      {/* CONDITIONAL VIEW: INDIVIDUAL CATEGORY PAGE OR HOME/DIRECTORY OR EXTRA TABS */}
       {selectedCategory ? (
         /* INDIVIDUAL CATEGORY DETAIL VIEW */
         <main className="main-container" style={{ padding: "40px 20px", maxWidth: "1000px", margin: "0 auto" }}>
@@ -705,6 +733,46 @@ export default function App() {
               Sanolines Information is an independent information directory and guidance platform. Users are solely responsible for verifying information directly with the relevant official authority before relying on it or taking any action.
             </p>
           </div>
+        </main>
+      ) : activeTab === "About Us" ? (
+        <main className="main-container" style={{ padding: "40px 20px", maxWidth: "800px", margin: "0 auto" }}>
+          <h1 style={{ color: "#1a1a1a", marginBottom: "20px" }}>About Us</h1>
+          <p style={{ lineHeight: "1.6", color: "#444", marginBottom: "15px" }}>
+            Sanolines Information is an independent online guidance platform and information directory built to help individuals quickly locate official public services, government portals, employment resources, and trusted community agencies.
+          </p>
+          <p style={{ lineHeight: "1.6", color: "#444" }}>
+            Our mission is to streamline access to essential public information by organizing complex administrative directories into clear, accessible categories.
+          </p>
+        </main>
+      ) : activeTab === "Disclaimer" ? (
+        <main className="main-container" style={{ padding: "40px 20px", maxWidth: "800px", margin: "0 auto" }}>
+          <h1 style={{ color: "#1a1a1a", marginBottom: "20px" }}>Disclaimer</h1>
+          <p style={{ lineHeight: "1.6", color: "#444", marginBottom: "15px" }}>
+            Sanolines Information is an independent information directory and is not affiliated with, endorsed by, or officially connected to any government agency, ministry, or official public institution.
+          </p>
+          <p style={{ lineHeight: "1.6", color: "#444" }}>
+            Users are solely responsible for verifying any information directly with the relevant official authorities before taking action or relying upon it.
+          </p>
+        </main>
+      ) : activeTab === "Privacy Policy" ? (
+        <main className="main-container" style={{ padding: "40px 20px", maxWidth: "800px", margin: "0 auto" }}>
+          <h1 style={{ color: "#1a1a1a", marginBottom: "20px" }}>Privacy Policy</h1>
+          <p style={{ lineHeight: "1.6", color: "#444", marginBottom: "15px" }}>
+            At Sanolines Information, we respect your privacy. We do not collect or store personal identification information through general browsing of our directory pages.
+          </p>
+          <p style={{ lineHeight: "1.6", color: "#444" }}>
+            External links direct users to independent official websites which maintain their own respective privacy standards and terms.
+          </p>
+        </main>
+      ) : activeTab === "Terms of Use" ? (
+        <main className="main-container" style={{ padding: "40px 20px", maxWidth: "800px", margin: "0 auto" }}>
+          <h1 style={{ color: "#1a1a1a", marginBottom: "20px" }}>Terms of Use</h1>
+          <p style={{ lineHeight: "1.6", color: "#444", marginBottom: "15px" }}>
+            By accessing and using Sanolines Information, you agree to comply with and be bound by these terms. The directory is provided on an "as is" basis without warranties of any kind.
+          </p>
+          <p style={{ lineHeight: "1.6", color: "#444" }}>
+            We reserve the right to update or modify links and contents at any time without prior notice.
+          </p>
         </main>
       ) : (
         /* HOMEPAGE DIRECTORY VIEW */
@@ -849,22 +917,9 @@ export default function App() {
               Independent information directory and guidance platform for public portals and agencies.
             </p>
           </div>
-
-          <div className="footer-links-group">
-            <button
-              type="button"
-              onClick={() => {
-                setSelectedCategory(null);
-                setActiveTab("Home");
-                window.scrollTo({ top: 0, behavior: "smooth" });
-              }}
-              style={{ background: "none", border: "none", color: "#aaa", cursor: "pointer", textAlign: "left", padding: 0 }}
-            >
-              Back to Home
-            </button>
-          </div>
         </div>
       </footer>
+
     </div>
   );
 }
