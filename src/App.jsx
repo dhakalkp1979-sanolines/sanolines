@@ -718,8 +718,7 @@ export default function App() {
               </span>
 
               <h1>
-                Find official services, government portals,
-                and trusted agencies across 10 categories.
+                Find official services, government portals, and trusted agencies.
               </h1>
 
               <p>
@@ -775,24 +774,11 @@ export default function App() {
                       }}
                     >
                       <div className="continent-top">
-                        <span
-                          style={{
-                            background: "rgba(255, 255, 255, 0.2)",
-                            color: "#ffffff",
-                            padding: "4px 8px",
-                            borderRadius: "4px",
-                            fontSize: "0.85rem",
-                            fontWeight: "600",
-                          }}
-                        >
-                          {String(index + 1).padStart(2, "0")}
-                        </span>
-
                         <h3
                           style={{
                             color: "#ffffff",
                             fontSize: "1.35rem",
-                            marginTop: "16px",
+                            marginTop: "0",
                             marginBottom: "12px",
                             fontWeight: "700",
                             letterSpacing: "0.5px",
