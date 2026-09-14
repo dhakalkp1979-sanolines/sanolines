@@ -1,270 +1,386 @@
 import React, { useState } from "react";
 import "./App.css";
 
-const portugalServices = [
+const categoriesData = [
   {
-    title: "Government & Citizen Portals",
-    description: "Official administrative assistance, digital citizen services, and public registries.",
-    details: "Portugal's central public administration offers digital portals for managing official documents, civil acts, and citizen identification securely.",
-    links: [
-      { label: "Portal do Governo de Portugal", url: "https://www.gov.pt" },
-      { label: "ePortugal Digital Services", url: "https://eportugal.gov.pt" },
-      { label: "Civil Online Registry", url: "https://www.civilonline.mj.pt" }
-    ],
-    mapQuery: "Loja do Cidadão Lisboa Portugal"
+    title: "Government & Administration",
+    description: "Official national portals, municipal services, civil registry, identity documents, and digital government systems.",
+    details: "Essential public administration access for managing official documents, civil acts, identity verification, and local town hall municipal services.",
+    items: [
+      {
+        title: "Government Portals",
+        description: "Official national portals for public services.",
+        links: [{ label: "ePortugal Portal", url: "https://eportugal.gov.pt" }],
+        mapQuery: "Loja do Cidadão"
+      },
+      {
+        title: "Municipalities",
+        description: "Local town halls (Câmaras Municipais) for local services, housing, and community support.",
+        links: [{ label: "Portal Autárquico", url: "https://www.portalautarquico.dgal.gov.pt" }],
+        mapQuery: "Câmara Municipal"
+      },
+      {
+        title: "Civil Registry",
+        description: "Birth, marriage, and death certificates for legal documents and family registration.",
+        links: [{ label: "Justiça.gov.pt", url: "https://justica.gov.pt" }],
+        mapQuery: "Civil Registry Office"
+      },
+      {
+        title: "National ID & Passport",
+        description: "Citizen card and passport renewal for identity documents.",
+        links: [{ label: "IRN Portal", url: "https://www.irn.mj.pt" }],
+        mapQuery: "Loja do Cidadão"
+      },
+      {
+        title: "Digital Government",
+        description: "Digital signature and online login for secure access to government services.",
+        links: [{ label: "Autenticação.gov", url: "https://autenticacao.gov.pt" }],
+        mapQuery: "Loja do Cidadão"
+      }
+    ]
   },
   {
-    title: "Immigration & Legal Residency",
-    description: "Residence permits, visa processes, border control, and nationality applications.",
-    details: "Immigration management, legal status, and citizenship processing within Portugal are handled by specialized state bodies and diplomatic authorities.",
-    links: [
-      { label: "AIMA Immigration Portal", url: "https://aima.gov.pt" },
-      { label: "Portal Diplomático de Portugal", url: "https://www.portaldiplomatico.mne.gov.pt" },
-      { label: "Justiça.gov.pt Nationality", url: "https://justica.gov.pt" }
-    ],
-    mapQuery: "AIMA balcão atendimento Lisboa"
+    title: "Immigration & Borders",
+    description: "Residency permits, visa applications, citizenship rules, border control, and travel guidance.",
+    details: "Immigration management, legal status, visa processing, and border entry regulations handled by state bodies.",
+    items: [
+      {
+        title: "AIMA Residency",
+        description: "Residency permits and renewals for migrant residency.",
+        links: [{ label: "AIMA Portal", url: "https://aima.gov.pt" }],
+        mapQuery: "AIMA offices"
+      },
+      {
+        title: "VFS Visa Centers",
+        description: "Visa applications and biometrics processing.",
+        links: [{ label: "VFS Global", url: "https://www.vfsglobal.com" }],
+        mapQuery: "VFS Visa Center"
+      },
+      {
+        title: "Citizenship",
+        description: "Nationality applications and citizenship rules.",
+        links: [{ label: "Justiça Nationality", url: "https://justica.gov.pt/Servicos/Nacionalidade" }],
+        mapQuery: "Conservatória dos Registos Centrais"
+      },
+      {
+        title: "Border Control",
+        description: "Entry rules and airport checks for travel regulations.",
+        links: [{ label: "SEF Portal", url: "https://sef.pt" }],
+        mapQuery: "Border Control Office"
+      },
+      {
+        title: "Travel Rules",
+        description: "Schengen rules and visa types for travel guidance.",
+        links: [{ label: "ePortugal Travel", url: "https://eportugal.gov.pt" }],
+        mapQuery: "ePortugal"
+      }
+    ]
   },
   {
-    title: "Employment & Professional Training",
-    description: "National employment centers, job boards, labor rights, and career training.",
-    details: "Finding work and professional placement in Portugal involves public employment institutes, vocational training boards, and domestic job platforms.",
-    links: [
-      { label: "IEFP Instituto do Emprego", url: "https://www.iefp.pt" },
-      { label: "NetEmpregos Portugal Job Board", url: "https://www.netempregos.com" },
-      { label: "SAPO Emprego Portal", url: "https://emprego.sapo.pt" }
-    ],
-    mapQuery: "IEFP Centro de Emprego Lisboa"
+    title: "Legal & Security",
+    description: "Official lawyers, bar association, criminal record clearance, courts, and emergency forces.",
+    details: "Judicial systems, public safety enforcement, legal representation, and official clearance documentation.",
+    items: [
+      {
+        title: "Bar Association",
+        description: "Official lawyers for legal help.",
+        links: [{ label: "Ordem dos Advogados", url: "https://www.oa.pt" }],
+        mapQuery: "Ordem dos Advogados"
+      },
+      {
+        title: "Lawyers Directory",
+        description: "Find verified lawyers and legal professionals.",
+        links: [{ label: "Portal dos Advogados", url: "https://portal.oa.pt/advogados" }],
+        mapQuery: "Lawyer Office"
+      },
+      {
+        title: "Criminal Record",
+        description: "Police clearance certificate used for jobs and residency.",
+        links: [{ label: "Registo Criminal", url: "https://justica.gov.pt/Servicos/Registo-Criminal" }],
+        mapQuery: "Criminal Record Office"
+      },
+      {
+        title: "Courts",
+        description: "Judicial system and court information.",
+        links: [{ label: "Tribunais", url: "https://tribunais.org.pt" }],
+        mapQuery: "Tribunal Judicial"
+      },
+      {
+        title: "Emergency Forces",
+        description: "Police, fire, and civil protection emergency contacts.",
+        links: [{ label: "Proteção Civil", url: "https://www.prociv.pt" }],
+        mapQuery: "Proteção Civil"
+      }
+    ]
   },
   {
-    title: "Banking & Financial Services",
-    description: "National retail banks, central banking regulations, and financial accounts.",
-    details: "The Portuguese financial sector includes the national central regulatory bank, major commercial high-street banks, and digital credit institutions.",
-    links: [
-      { label: "Banco de Portugal Central Bank", url: "https://www.bportugal.pt" },
-      { label: "Caixa Geral de Depósitos (CGD)", url: "https://www.cgd.pt" },
-      { label: "Novo Banco Consumer Services", url: "https://www.novobanco.pt" }
-    ],
-    mapQuery: "Banco de Portugal Lisboa"
+    title: "Employment & Jobs",
+    description: "National employment centers, private job agencies, international recruitment, and freelancing.",
+    details: "Job search platforms, employment placement institutes, and professional career networking tools.",
+    items: [
+      {
+        title: "IEFP",
+        description: "National employment center for jobs and training.",
+        links: [{ label: "IEFP Portal", url: "https://iefp.pt" }],
+        mapQuery: "Centro de Emprego IEFP"
+      },
+      {
+        title: "Private Job Agencies",
+        description: "Job placement via agencies such as Randstad, Adecco, and Manpower.",
+        links: [
+          { label: "Randstad", url: "https://randstad.pt" },
+          { label: "Adecco", url: "https://adecco.pt" },
+          { label: "Manpower", url: "https://manpower.pt" }
+        ],
+        mapQuery: "Randstad Office"
+      },
+      {
+        title: "International Job Agencies",
+        description: "Work abroad and EU jobs.",
+        links: [{ label: "EURES Portal", url: "https://eures.europa.eu" }],
+        mapQuery: "EURES"
+      },
+      {
+        title: "Sector Job Portals",
+        description: "Industry jobs in construction, hospitality, and cleaning.",
+        links: [
+          { label: "Jobin", url: "https://jobin.pt" },
+          { label: "NetEmprego", url: "https://netemprego.pt" }
+        ],
+        mapQuery: "NetEmprego"
+      },
+      {
+        title: "Freelancing",
+        description: "Self-employment rules and freelancer registration.",
+        links: [{ label: "Portal das Finanças", url: "https://portaldasfinancas.gov.pt" }],
+        mapQuery: "Serviços de Finanças"
+      }
+    ]
   },
   {
-    title: "Taxation & Customs Authorities",
-    description: "Tax ID (NIF) setup, annual declarations, VAT, and customs compliance.",
-    details: "Tax management, electronic invoicing systems, and financial compliance are processed directly through national tax and customs authorities.",
-    links: [
-      { label: "Portal das Finanças", url: "https://www.portaldasfinancas.gov.pt" },
-      { label: "Autoridade Tributária e Aduaneira", url: "https://www.portaldasfinancas.gov.pt" },
-      { label: "e-Fatura Official Portal", url: "https://efatura.portaldasfinancas.gov.pt" }
-    ],
-    mapQuery: "Serviços de Finanças Lisboa"
+    title: "Worker Rights & Training",
+    description: "Labor rights, work contracts, minimum wage rules, professional training, and workplace safety.",
+    details: "Regulations protecting employees, workplace compliance inspections, and professional courses.",
+    items: [
+      {
+        title: "Labor Rights",
+        description: "Worker protection, complaints, and inspections.",
+        links: [{ label: "ACT Portal", url: "https://www.act.gov.pt" }],
+        mapQuery: "Autoridade para as Condições do Trabalho"
+      },
+      {
+        title: "Work Contracts",
+        description: "Contract types and employment rules.",
+        links: [{ label: "Governo de Portugal", url: "https://www.portugal.gov.pt" }],
+        mapQuery: "Governo de Portugal"
+      },
+      {
+        title: "Minimum Wage",
+        description: "Salary rules and wage information.",
+        links: [{ label: "Governo de Portugal", url: "https://www.portugal.gov.pt" }],
+        mapQuery: "Governo de Portugal"
+      },
+      {
+        title: "Professional Training",
+        description: "Courses and certifications for skill development.",
+        links: [{ label: "ANET Portal", url: "https://anet.pt" }],
+        mapQuery: "Centro de Formação Profissional"
+      },
+      {
+        title: "Workplace Safety",
+        description: "Safety inspections and workplace compliance.",
+        links: [{ label: "ACT Safety", url: "https://www.act.gov.pt" }],
+        mapQuery: "Autoridade para as Condições do Trabalho"
+      }
+    ]
   },
   {
-    title: "Public Healthcare & SNS",
-    description: "National health service, public hospitals, local health centers, and medical guidance.",
-    details: "Public medical care across Portugal is delivered through the National Health Service (SNS), health centers, and regional health directorates.",
-    links: [
-      { label: "SNS 24 Saúde Portal", url: "https://www.sns24.gov.pt" },
-      { label: "Serviço Nacional de Saúde (SNS)", url: "https://www.sns.gov.pt" },
-      { label: "Direção-Geral da Saúde (DGS)", url: "https://www.dgs.pt" }
-    ],
-    mapQuery: "Centro de Saúde Hospital Público Portugal"
+    title: "Associations",
+    description: "Migrant support groups, cultural networks, expat groups, and community solidarity charities.",
+    details: "Non-profit community organizations providing social support, neighborhood integration, and cultural resources.",
+    items: [
+      {
+        title: "Migrant Associations",
+        description: "Support groups for migrants focused on cultural support.",
+        links: [{ label: "ACM Portal", url: "https://www.acm.gov.pt" }],
+        mapQuery: "ACM Centro Nacional de Apoio ao Imigrante"
+      },
+      {
+        title: "Cultural Associations",
+        description: "Community cultural groups for events and integration.",
+        links: [{ label: "Cultural Groups", url: "https://www.acm.gov.pt" }],
+        mapQuery: "Associação Cultural"
+      },
+      {
+        title: "Expat Groups",
+        description: "Foreign resident communities providing social support.",
+        links: [{ label: "Expat Networks", url: "https://www.acm.gov.pt" }],
+        mapQuery: "Expat Association"
+      },
+      {
+        title: "Community Networks",
+        description: "Local community help for neighborhood support.",
+        links: [{ label: "Community Aid", url: "https://www.acm.gov.pt" }],
+        mapQuery: "Centro Comunitário"
+      },
+      {
+        title: "Solidarity Associations",
+        description: "Charity groups for social help.",
+        links: [{ label: "Solidarity Portals", url: "https://www.acm.gov.pt" }],
+        mapQuery: "IPSS Instituição Particular de Solidariedade Social"
+      }
+    ]
   },
   {
-    title: "Education & Academic Recognition",
-    description: "Public schools, higher education placement, and diploma recognition.",
-    details: "Educational infrastructure in Portugal covers higher education directorates, ministry administrative portals, and academic credential boards.",
-    links: [
-      { label: "DGES Higher Education Directorate", url: "https://www.dges.gov.pt" },
-      { label: "Ministério da Educação e Ciência", url: "https://www.gov.pt" },
-      { label: "Fundação para a Ciência e a Tecnologia", url: "https://www.fct.pt" }
-    ],
-    mapQuery: "Ministério da Educação Lisboa"
+    title: "Agencies",
+    description: "Recruitment companies, temporary work services, business networks, and integration support.",
+    details: "Corporate staffing entities, business incubation agencies, and migrant integration offices.",
+    items: [
+      {
+        title: "Recruitment Agencies",
+        description: "Job placement companies such as Randstad and Adecco.",
+        links: [
+          { label: "Randstad", url: "https://randstad.pt" },
+          { label: "Adecco", url: "https://adecco.pt" }
+        ],
+        mapQuery: "Recruitment Agency"
+      },
+      {
+        title: "Temporary Work Agencies",
+        description: "Short-term jobs designed for seasonal work.",
+        links: [{ label: "Manpower", url: "https://manpower.pt" }],
+        mapQuery: "Temporary Work Agency"
+      },
+      {
+        title: "Business Agencies",
+        description: "Business support networks for company help.",
+        links: [{ label: "IAPMEI", url: "https://www.iapmei.pt" }],
+        mapQuery: "IAPMEI"
+      },
+      {
+        title: "Social Support Agencies",
+        description: "Government social help and welfare support.",
+        links: [{ label: "Segurança Social", url: "https://seg-social.pt" }],
+        mapQuery: "Segurança Social"
+      },
+      {
+        title: "Integration Agencies",
+        description: "CLAIM and CNAIM for migrant integration.",
+        links: [{ label: "ACM Integration", url: "https://www.acm.gov.pt" }],
+        mapQuery: "CNAIM Centro Nacional de Apoio ao Imigrante"
+      }
+    ]
   },
   {
-    title: "Transportation & Driving License",
-    description: "Driver's license exchange, vehicle registration, and national transit networks.",
-    details: "Mobility services involve the national transport institute, road safety authorities, and public railway networks operating within Portugal.",
-    links: [
-      { label: "IMT Mobility & Transport Institute", url: "https://www.imt-ip.pt" },
-      { label: "ANSR Road Safety Authority", url: "https://www.ansr.pt" },
-      { label: "CP Comboios de Portugal Trains", url: "https://www.cp.pt" }
-    ],
-    mapQuery: "IMT balcão de atendimento Lisboa"
+    title: "Finance & Housing",
+    description: "Banking institutions, tax authorities, social security pensions, and real estate portals.",
+    details: "Financial accounting platforms, tax compliance portals, welfare payments, and property rental directories.",
+    items: [
+      {
+        title: "Banking",
+        description: "National banks including CGD and Millennium.",
+        links: [{ label: "Caixa Geral de Depósitos", url: "https://www.cgd.pt" }],
+        mapQuery: "Banco CGD"
+      },
+      {
+        title: "Tax & Customs",
+        description: "NIF, VAT, and IRS tax services.",
+        links: [{ label: "Portal das Finanças", url: "https://portaldasfinancas.gov.pt" }],
+        mapQuery: "Serviços de Finanças"
+      },
+      {
+        title: "Social Security",
+        description: "Benefits, pensions, and welfare.",
+        links: [{ label: "Segurança Social", url: "https://seg-social.pt" }],
+        mapQuery: "Segurança Social"
+      },
+      {
+        title: "Housing Portals",
+        description: "Rent and buy homes via examples like Idealista and Imovirtual.",
+        links: [{ label: "Idealista Portugal", url: "https://www.idealista.pt" }],
+        mapQuery: "Imobiliária"
+      },
+      {
+        title: "Tenant Rights",
+        description: "Rental laws and tenant protection.",
+        links: [{ label: "Portal da Habitação", url: "https://www.portugal.gov.pt" }],
+        mapQuery: "Portal da Habitação"
+      }
+    ]
   },
   {
-    title: "Emergency & Security Forces",
-    description: "Public safety, police forces, fire departments, and civil protection dispatch.",
-    details: "National security and public emergency responses are coordinated by civil protection authorities and national police departments.",
-    links: [
-      { label: "Autoridade Nacional de Emergência e Proteção Civil", url: "https://www.prociv.gov.pt" },
-      { label: "PSP Public Security Police", url: "https://www.psp.pt" },
-      { label: "GNR National Republican Guard", url: "https://www.gnr.pt" }
-    ],
-    mapQuery: "Esquadra da Polícia de Segurança Pública Lisboa"
+    title: "Daily Life & Transport",
+    description: "Utility providers, postal mail, public transit networks, driving licenses, and vehicle registry.",
+    details: "Logistics infrastructure, utility connection services, public transit lines, and driving credentials.",
+    items: [
+      {
+        title: "Utilities",
+        description: "Electricity, water, and internet services from examples like EDP and EPAL.",
+        links: [{ label: "EDP Comercial", url: "https://www.edp.pt" }],
+        mapQuery: "EDP Loja de Atendimento"
+      },
+      {
+        title: "Postal Services",
+        description: "Mail and parcel delivery.",
+        links: [{ label: "CTT Correios", url: "https://ctt.pt" }],
+        mapQuery: "Estação CTT Correios"
+      },
+      {
+        title: "Public Transport",
+        description: "Metro, bus, and train services via examples like Metro Lisboa and CP.",
+        links: [{ label: "Comboios de Portugal", url: "https://www.cp.pt" }],
+        mapQuery: "Estação de Caminhos de Ferro CP"
+      },
+      {
+        title: "Driving License",
+        description: "License exchange and driving rules.",
+        links: [{ label: "IMT IP", url: "https://www.imt-ip.pt" }],
+        mapQuery: "IMT Balcão de Atendimento"
+      },
+      {
+        title: "Vehicle Registration",
+        description: "Car registration and vehicle documents.",
+        links: [{ label: "IMT Vehicles", url: "https://www.imt-ip.pt" }],
+        mapQuery: "Conservatória do Registo Automóvel"
+      }
+    ]
   },
   {
-    title: "National Tourism & Culture",
-    description: "Official tourism boards, cultural heritage networks, and national landmarks.",
-    details: "Tourism promotion and cultural heritage preservation are administered via official national tourism boards and historical directorates.",
-    links: [
-      { label: "Turismo de Portugal Official Agency", url: "https://www.turismodeportugal.pt" },
-      { label: "Visit Portugal Official Tourism Board", url: "https://www.visitportugal.com" },
-      { label: "Património Cultural Directorate", url: "https://www.patrimoniocultural.gov.pt" }
-    ],
-    mapQuery: "Turismo de Portugal sede Lisboa"
-  },
-  {
-    title: "Housing & Real Estate Portals",
-    description: "Tenant support policies, social housing institutes, and property registries.",
-    details: "Housing support, tenancy contracts, and real estate registries are overseen by national housing bodies and property platforms.",
-    links: [
-      { label: "Portal da Habitação", url: "https://www.portaldabitacao.pt" },
-      { label: "IHRU Housing & Urban Rehabilitation Institute", url: "https://www.ihru.pt" },
-      { label: "Casa Sapo Real Estate Portal", url: "https://www.casa.sapo.pt" }
-    ],
-    mapQuery: "Conservatória do Registo Predial Lisboa"
-  },
-  {
-    title: "Municipalities & Local Associations",
-    description: "Local town halls (Câmaras Municipais) and national municipal associations.",
-    details: "Local governance across Portugal is structured through municipal chambers and regional municipal cooperation associations.",
-    links: [
-      { label: "ANMP National Association of Portuguese Municipalities", url: "https://www.anmp.pt" },
-      { label: "Câmara Municipal de Lisboa", url: "https://www.lisboa.pt" },
-      { label: "Câmara Municipal do Porto", url: "https://www.cm-porto.pt" }
-    ],
-    mapQuery: "Câmara Municipal de Lisboa"
-  },
-  {
-    title: "Legal Aid & Bar Association",
-    description: "Official bar association, public defenders, and judicial access portals.",
-    details: "Legal representation and court access are supported by the national bar association and official justice administration portals.",
-    links: [
-      { label: "Ordem dos Advogados (Portuguese Bar Association)", url: "https://portal.oa.pt" },
-      { label: "Portal da Justiça de Portugal", url: "https://www.portaldejustica.pt" },
-      { label: "Centro de Arbitragem de Conflitos de Consumo", url: "https://www.arbitragemdeconsumo.org" }
-    ],
-    mapQuery: "Ordem dos Advogados Lisboa"
-  },
-  {
-    title: "Migrant Integration & Support",
-    description: "Local migrant support centers (CLAIM), integration agencies, and cultural networks.",
-    details: "Migrant support services utilize localized integration centers, communication archives, and official assistance frameworks across Portugal.",
-    links: [
-      { label: "AIMA Migrant Support Centers", url: "https://aima.gov.pt" },
-      { label: "ACM Migration Archives & Intercultural Dialogue", url: "https://www.acm.gov.pt" },
-      { label: "Rede CLAIM Support Network", url: "https://aima.gov.pt" }
-    ],
-    mapQuery: "CLAIM Centro Local de Apoio ao Migrante Lisboa"
-  },
-  {
-    title: "Immigrant & Expat Associations",
-    description: "Cultural immigrant associations, community support groups, and solidarity networks.",
-    details: "Integration within Portuguese communities is championed by organized cultural groups, migrant solidarity leagues, and volunteer bodies.",
-    links: [
-      { label: "Casa do Brasil em Lisboa", url: "https://www.casadobrasilisboa.pt" },
-      { label: "Solidariedade Imigrante Association", url: "https://www.solimigrante.org" },
-      { label: "Plataforma de Voluntariado de Portugal", url: "https://www.voluntariado.pt" }
-    ],
-    mapQuery: "Associação Solidariedade Imigrante Lisboa"
-  },
-  {
-    title: "Social Security & Welfare",
-    description: "Social security direct portals, pensions, unemployment subsidies, and child allowances.",
-    details: "Social welfare services are managed through dedicated state portals providing pensions, social support allowances, and family benefits.",
-    links: [
-      { label: "Segurança Social Direta Portal", url: "https://www.seg-social.pt" },
-      { label: "Instituto da Segurança Social", url: "https://www.seg-social.pt" },
-      { label: "Portal Social de Proteção", url: "https://www.portalsocial.gov.pt" }
-    ],
-    mapQuery: "Segurança Social atendimento Lisboa"
-  },
-  {
-    title: "Family & Child Protection",
-    description: "Child protection commissions (CPCJ), family support centers, and maternity rights.",
-    details: "Child safety and youth protection are coordinated by national protection commissions and family social service departments.",
-    links: [
-      { label: "CPCJ National Commission for Child Protection", url: "https://www.cnpcj.gov.pt" },
-      { label: "Segurança Social - Família e Criança", url: "https://www.seg-social.pt" },
-      { label: "ePortugal Family Life Services", url: "https://eportugal.gov.pt" }
-    ],
-    mapQuery: "CPCJ Comissão de Proteção de Crianças e Jovens"
-  },
-  {
-    title: "Consumer Rights & Complaints",
-    description: "Electronic complaint books, consumer protection associations, and market regulation.",
-    details: "Consumer advocacy involves official electronic complaint platforms, national consumer directorates, and independent consumer defense groups.",
-    links: [
-      { label: "Livro de Reclamações Eletrónico", url: "https://www.livroreclamacoes.pt" },
-      { label: "Direcção-Geral do Consumidor", url: "https://www.consumidor.gov.pt" },
-      { label: "DECO Proteste Consumer Association", url: "https://www.deco.proteste.pt" }
-    ],
-    mapQuery: "Direcção-Geral do Consumidor Lisboa"
-  },
-  {
-    title: "Disability & Inclusion Services",
-    description: "National rehabilitation institutes, inclusive employment programs, and accessibility permits.",
-    details: "Accessibility initiatives and disability support are directed through national rehabilitation boards and inclusion employment portals in Portugal.",
-    links: [
-      { label: "INR National Rehabilitation Institute", url: "https://www.inr.pt" },
-      { label: "IEFP Emprego Inclusivo Portal", url: "https://www.iefp.pt" },
-      { label: "Fundação para a Reabilitação e Integração", url: "https://www.inr.pt" }
-    ],
-    mapQuery: "Instituto Nacional para a Reabilitação INR Lisboa"
-  },
-  {
-    title: "Emergency Relief & Food Banks",
-    description: "National food banks, red cross chapters, crisis shelters, and social charities.",
-    details: "Emergency relief and social aid networks rely on national food bank federations, red cross organizations, and community shelters.",
-    links: [
-      { label: "Banco Alimentar Contra a Fome Portugal", url: "https://www.bancoalimentar.pt" },
-      { label: "Cruz Vermelha Portuguesa", url: "https://www.cruzvermelha.pt" },
-      { label: "Comunidade Vida e Paz Shelter Network", url: "https://www.cvp.org.pt" }
-    ],
-    mapQuery: "Cruz Vermelha Portuguesa Sede Lisboa"
-  },
-  {
-    title: "Private Employment & Recruitment Agencies",
-    description: "Private job placement agencies, temporary work services, and corporate recruiting.",
-    details: "Private recruitment firms and temporary staffing agencies operating across Portugal to match professionals with corporate employers.",
-    links: [
-      { label: "Adecco Portugal Employment Agency", url: "https://www.adecco.pt" },
-      { label: "Hays Portugal Recruitment", url: "https://www.hays.pt" },
-      { label: "Michael Page Portugal", url: "https://www.michaelpage.pt" }
-    ],
-    mapQuery: "Adecco Lisboa Portugal"
-  },
-  {
-    title: "Business & Trade Associations",
-    description: "Industrial chambers, commercial associations, and business networks.",
-    details: "Organizations supporting enterprise development, commercial networking, and industrial advocacy within the Portuguese market.",
-    links: [
-      { label: "CCIP - Câmara de Comércio e Indústria Portuguesa", url: "https://www.ccip.pt" },
-      { label: "AIP - Associação Industrial Portuguesa", url: "https://www.aip.pt" },
-      { label: "Associação do Comércio e Serviços de Lisboa (ACSL)", url: "https://www.acsl.pt" }
-    ],
-    mapQuery: "CCIP Lisboa Portugal"
-  },
-  {
-    title: "Environmental & Energy Agencies",
-    description: "National environmental protection, renewable energy certificates, and sustainability boards.",
-    details: "Agencies managing ecological standards, environmental licensing, energy efficiency, and sustainable resources in Portugal.",
-    links: [
-      { label: "APA - Agência Portuguesa do Ambiente", url: "https://apambiente.pt" },
-      { label: "ADENE - Agência para a Energia", url: "https://adene.pt" },
-      { label: "ICNF - Nature and Forest Conservation Institute", url: "https://www.icnf.pt" }
-    ],
-    mapQuery: "Agência Portuguesa do Ambiente Lisboa"
-  },
-  {
-    title: "Startup & Innovation Agencies",
-    description: "National tech agencies, business incubators, and entrepreneurship funding.",
-    details: "State-backed institutions supporting technology startups, venture capital attraction, and digital innovation networks.",
-    links: [
-      { label: "Startup Portugal", url: "https://www.startupportugal.com" },
-      { label: "IAPMEI Agency for Competitiveness and Innovation", url: "https://www.iapmei.pt" },
-      { label: "ANI National Innovation Agency", url: "https://www.ani.pt" }
-    ],
-    mapQuery: "IAPMEI Lisboa Portugal"
+    title: "Health, Education & Social Support",
+    description: "Public healthcare hospitals, private clinics, pharmacies, education systems, and food banks.",
+    details: "Healthcare clinics, public education directorates, emergency pharmacies, and community charity food distribution.",
+    items: [
+      {
+        title: "Public Healthcare",
+        description: "Hospitals, clinics, and medical services.",
+        links: [{ label: "SNS Portal", url: "https://sns.gov.pt" }],
+        mapQuery: "Centro de Saúde Hospital Público"
+      },
+      {
+        title: "Private Clinics",
+        description: "Health insurance options via examples like Médis and Multicare.",
+        links: [{ label: "Médis Saúde", url: "https://www.medis.pt" }],
+        mapQuery: "Clínica Privada Hospital"
+      },
+      {
+        title: "Pharmacies",
+        description: "Medicine and emergency pharmacy locations.",
+        links: [{ label: "Farmácias Portuguesas", url: "https://farmaciasportuguesas.pt" }],
+        mapQuery: "Farmácia"
+      },
+      {
+        title: "Schools & Universities",
+        description: "Education system and school info.",
+        links: [{ label: "DGE Portal", url: "https://www.dge.mec.pt" }],
+        mapQuery: "Escola Secundária Agrupamento"
+      },
+      {
+        title: "Food Banks & Charities",
+        description: "Food support and social help.",
+        links: [{ label: "Banco Alimentar", url: "https://bancoalimentar.pt" }],
+        mapQuery: "Banco Alimentar Contra a Fome"
+      }
+    ]
   }
 ];
 
@@ -277,20 +393,24 @@ const cardColors = [
   "#8c2447", // Crimson / Berry
   "#4d5d53", // Slate Gray-Green
   "#78532f", // Bronze Brown
+  "#3b5998", // Indigo Blue
+  "#6b4226"  // Dark Amber
 ];
 
 export default function App() {
   const [activeTab, setActiveTab] = useState("Home");
   const [search, setSearch] = useState("");
   const [showDisclaimer, setShowDisclaimer] = useState(false);
-  const [selectedService, setSelectedService] = useState(null);
+  const [selectedCategory, setSelectedCategory] = useState(null);
 
-  const filteredServices = portugalServices.filter((service) =>
-    service.title.toLowerCase().includes(search.toLowerCase())
+  const filteredCategories = categoriesData.filter((cat) =>
+    cat.title.toLowerCase().includes(search.toLowerCase()) ||
+    cat.description.toLowerCase().includes(search.toLowerCase()) ||
+    cat.items.some(item => item.title.toLowerCase().includes(search.toLowerCase()) || item.description.toLowerCase().includes(search.toLowerCase()))
   );
 
   const goToServices = () => {
-    setSelectedService(null);
+    setSelectedCategory(null);
     document
       .getElementById("global-services")
       ?.scrollIntoView({ behavior: "smooth" });
@@ -305,7 +425,7 @@ export default function App() {
       <nav className="site-nav">
         <div className="nav-inner">
 
-          <div className="nav-brand-container" onClick={() => { setSelectedService(null); setActiveTab("Home"); window.scrollTo({ top: 0, behavior: "smooth" }); }} style={{ cursor: "pointer" }}>
+          <div className="nav-brand-container" onClick={() => { setSelectedCategory(null); setActiveTab("Home"); window.scrollTo({ top: 0, behavior: "smooth" }); }} style={{ cursor: "pointer" }}>
             <div className="nav-logo">
               S
             </div>
@@ -322,9 +442,9 @@ export default function App() {
 
           <div className="nav-links">
             <button
-              className={activeTab === "Home" && !selectedService ? "active" : ""}
+              className={activeTab === "Home" && !selectedCategory ? "active" : ""}
               onClick={() => {
-                setSelectedService(null);
+                setSelectedCategory(null);
                 setActiveTab("Home");
                 window.scrollTo({
                   top: 0,
@@ -336,7 +456,7 @@ export default function App() {
             </button>
 
             <button
-              className={activeTab === "Services" || selectedService ? "active" : ""}
+              className={activeTab === "Services" || selectedCategory ? "active" : ""}
               onClick={goToServices}
             >
               Services
@@ -346,13 +466,13 @@ export default function App() {
         </div>
       </nav>
 
-      {/* CONDITIONAL VIEW: INDIVIDUAL SERVICE PAGE OR HOME/DIRECTORY */}
-      {selectedService ? (
-        /* INDIVIDUAL SERVICE DETAIL VIEW */
-        <main className="main-container" style={{ padding: "40px 20px", maxWidth: "900px", margin: "0 auto" }}>
+      {/* CONDITIONAL VIEW: INDIVIDUAL CATEGORY PAGE OR HOME/DIRECTORY */}
+      {selectedCategory ? (
+        /* INDIVIDUAL CATEGORY DETAIL VIEW (SHOWING 5 BOXES/ITEMS INSIDE) */
+        <main className="main-container" style={{ padding: "40px 20px", maxWidth: "1000px", margin: "0 auto" }}>
           <button
             type="button"
-            onClick={() => setSelectedService(null)}
+            onClick={() => setSelectedCategory(null)}
             style={{
               background: "none",
               border: "none",
@@ -366,7 +486,7 @@ export default function App() {
               fontSize: "0.95rem",
             }}
           >
-            &larr; Back to all services
+            &larr; Back to all service groups
           </button>
 
           <div
@@ -376,91 +496,115 @@ export default function App() {
               padding: "40px",
               boxShadow: "0 6px 20px rgba(0,0,0,0.08)",
               borderTop: "6px solid #2b4c7e",
+              marginBottom: "40px"
             }}
           >
             <span style={{ background: "#edf2f7", color: "#2b4c7e", padding: "6px 12px", borderRadius: "6px", fontWeight: "600", fontSize: "0.85rem" }}>
-              Independent Directory Resource
+              Independent Directory Group
             </span>
             <h1 style={{ fontSize: "2.2rem", color: "#1a1a1a", marginTop: "15px", marginBottom: "15px" }}>
-              {selectedService.title}
+              {selectedCategory.title}
             </h1>
-            <p style={{ fontSize: "1.1rem", color: "#555", lineHeight: "1.6", marginBottom: "30px" }}>
-              {selectedService.description}
+            <p style={{ fontSize: "1.1rem", color: "#555", lineHeight: "1.6", marginBottom: "20px" }}>
+              {selectedCategory.description}
             </p>
+            <p style={{ fontSize: "0.95rem", color: "#666", lineHeight: "1.6", background: "#f8fafc", padding: "15px", borderRadius: "8px" }}>
+              {selectedCategory.details}
+            </p>
+          </div>
 
-            <div style={{ background: "#f8fafc", padding: "25px", borderRadius: "10px", borderLeft: "4px solid #2b4c7e", marginBottom: "30px" }}>
-              <h3 style={{ margin: "0 0 10px 0", color: "#222" }}>Overview & Information</h3>
-              <p style={{ margin: 0, lineHeight: "1.7", color: "#444" }}>
-                {selectedService.details}
-              </p>
-            </div>
-
-            {/* PORTUGAL WEBSITES LIST */}
-            <div style={{ marginBottom: "30px" }}>
-              <h3 style={{ fontSize: "1.1rem", color: "#222", marginBottom: "12px" }}>Official Websites & Portals</h3>
-              <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
-                {selectedService.links.map((link, i) => (
-                  <a
-                    key={i}
-                    href={link.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    style={{
-                      backgroundColor: "#f8fafc",
-                      color: "#2b4c7e",
-                      border: "1px solid #e2e8f0",
-                      textDecoration: "none",
-                      padding: "12px 18px",
-                      borderRadius: "8px",
-                      fontWeight: "600",
-                      fontSize: "0.95rem",
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "space-between",
-                      transition: "background 0.2s"
-                    }}
-                  >
-                    <span>🇵🇹 {link.label}</span>
-                    <span style={{ fontSize: "0.85rem", color: "#8c4a24" }}>Visit Site &rarr;</span>
-                  </a>
-                ))}
-              </div>
-            </div>
-
-            {/* GOOGLE MAPS LOCATION BUTTON */}
-            <div style={{ marginBottom: "30px" }}>
-              <a
-                href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(selectedService.mapQuery)}`}
-                target="_blank"
-                rel="noopener noreferrer"
+          <h2 style={{ fontSize: "1.5rem", marginBottom: "20px", color: "#222" }}>Included Services ({selectedCategory.items.length})</h2>
+          
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "20px" }}>
+            {selectedCategory.items.map((subItem, sIdx) => (
+              <div 
+                key={sIdx}
                 style={{
                   backgroundColor: "#ffffff",
-                  color: "#2b4c7e",
-                  border: "2px solid #2b4c7e",
-                  textDecoration: "none",
-                  padding: "12px 24px",
-                  borderRadius: "8px",
-                  fontWeight: "600",
-                  fontSize: "0.95rem",
-                  display: "inline-flex",
-                  alignItems: "center",
-                  gap: "8px"
+                  borderRadius: "12px",
+                  padding: "24px",
+                  boxShadow: "0 4px 12px rgba(0,0,0,0.06)",
+                  border: "1px solid #e2e8f0",
+                  display: "flex",
+                  flexDirection: "column",
+                  justifyContent: "space-between"
                 }}
               >
-                📍 Find Physical Offices on Google Maps &rarr;
-              </a>
-            </div>
+                <div>
+                  <span style={{ background: "#edf2f7", color: "#2b4c7e", padding: "3px 8px", borderRadius: "4px", fontSize: "0.75rem", fontWeight: "bold" }}>
+                    0{sIdx + 1}
+                  </span>
+                  <h3 style={{ fontSize: "1.2rem", color: "#1a1a1a", margin: "12px 0 8px 0" }}>
+                    {subItem.title}
+                  </h3>
+                  <p style={{ fontSize: "0.9rem", color: "#555", lineHeight: "1.5", marginBottom: "15px" }}>
+                    {subItem.description}
+                  </p>
+                </div>
 
-            <div style={{ background: "#fff", border: "1px solid #eaeaea", padding: "20px", borderRadius: "10px" }}>
-              <h4 style={{ margin: "0 0 8px 0", color: "#333" }}>Important Notice</h4>
-              <p style={{ margin: 0, fontSize: "0.9rem", color: "#666", lineHeight: "1.5" }}>
-                Sanolines Information is an independent information directory and guidance platform. Users are solely responsible for verifying information directly with the relevant official authority before relying on it or taking any action.
-              </p>
-            </div>
+                <div style={{ display: "flex", flexDirection: "column", gap: "8px", marginTop: "10px" }}>
+                  {subItem.links.map((lnk, lIdx) => (
+                    <a
+                      key={lIdx}
+                      href={lnk.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      style={{
+                        backgroundColor: "#f8fafc",
+                        color: "#2b4c7e",
+                        border: "1px solid #e2e8f0",
+                        textDecoration: "none",
+                        padding: "8px 12px",
+                        borderRadius: "6px",
+                        fontWeight: "600",
+                        fontSize: "0.85rem",
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "space-between"
+                      }}
+                    >
+                      <span>🌐 {lnk.label}</span>
+                      <span style={{ fontSize: "0.8rem", color: "#8c4a24" }}>&rarr;</span>
+                    </a>
+                  ))}
+
+                  {subItem.mapQuery && (
+                    <a
+                      href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(subItem.mapQuery)}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      style={{
+                        backgroundColor: "#ffffff",
+                        color: "#4a5568",
+                        border: "1px dashed #cbd5e0",
+                        textDecoration: "none",
+                        padding: "6px 12px",
+                        borderRadius: "6px",
+                        fontWeight: "500",
+                        fontSize: "0.8rem",
+                        display: "inline-flex",
+                        alignItems: "center",
+                        gap: "6px",
+                        marginTop: "4px"
+                      }}
+                    >
+                      📍 Find on Maps
+                    </a>
+                  )}
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div style={{ background: "#fff", border: "1px solid #eaeaea", padding: "20px", borderRadius: "10px", marginTop: "40px" }}>
+            <h4 style={{ margin: "0 0 8px 0", color: "#333" }}>Important Notice</h4>
+            <p style={{ margin: 0, fontSize: "0.9rem", color: "#666", lineHeight: "1.5" }}>
+              Sanolines Information is an independent information directory and guidance platform. Users are solely responsible for verifying information directly with the relevant official authority before relying on it or taking any action.
+            </p>
           </div>
         </main>
       ) : (
-        /* HOMEPAGE DIRECTORY VIEW */
+        /* HOMEPAGE DIRECTORY VIEW (SHOWING THE 10 MAIN GROUPS/BOXES) */
         <>
           {/* HERO */}
           <header className="hero-section">
@@ -471,7 +615,7 @@ export default function App() {
 
               <h1>
                 Find official services, government portals,
-                and trusted agencies.
+                and trusted agencies across 10 categories.
               </h1>
 
               <p>
@@ -485,7 +629,7 @@ export default function App() {
                   type="text"
                   value={search}
                   onChange={(e) => setSearch(e.target.value)}
-                  placeholder="Search AIMA, Finanças, IEFP, SNS, housing..."
+                  placeholder="Search government, immigration, legal, jobs, housing..."
                   aria-label="Search services"
                 />
 
@@ -502,18 +646,18 @@ export default function App() {
           {/* MAIN */}
           <main className="main-container">
 
-            {/* ALL SERVICES */}
+            {/* ALL SERVICES (10 BOXES) */}
             <section
               id="global-services"
               className="services-directory"
             >
               <div className="continents-grid">
-                {filteredServices.map((service, index) => {
+                {filteredCategories.map((category, index) => {
                   const bgColour = cardColors[index % cardColors.length];
                   return (
                     <div
                       className="continent-card"
-                      key={service.title}
+                      key={category.title}
                       style={{
                         backgroundColor: bgColour,
                         color: "#ffffff",
@@ -551,7 +695,7 @@ export default function App() {
                             textTransform: "uppercase",
                           }}
                         >
-                          {service.title}
+                          {category.title}
                         </h3>
                       </div>
 
@@ -563,14 +707,14 @@ export default function App() {
                           lineHeight: "1.4",
                         }}
                       >
-                        {service.description}
+                        {category.description}
                       </p>
 
                       <div>
                         <button
                           type="button"
                           onClick={() => {
-                            setSelectedService(service);
+                            setSelectedCategory(category);
                             window.scrollTo({ top: 0, behavior: "smooth" });
                           }}
                           style={{
@@ -586,7 +730,7 @@ export default function App() {
                             transition: "background 0.2s",
                           }}
                         >
-                          LEARN MORE
+                          VIEW 5 SERVICES &rarr;
                         </button>
                       </div>
                     </div>
@@ -594,9 +738,9 @@ export default function App() {
                 })}
               </div>
 
-              {filteredServices.length === 0 && (
+              {filteredCategories.length === 0 && (
                 <div className="no-results">
-                  No matching service found.
+                  No matching category found.
                 </div>
               )}
             </section>
@@ -621,7 +765,7 @@ export default function App() {
             <button
               type="button"
               onClick={() => {
-                setSelectedService(null);
+                setSelectedCategory(null);
                 setActiveTab("Home");
                 window.scrollTo({
                   top: 0,
