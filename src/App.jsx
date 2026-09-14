@@ -5,102 +5,102 @@ const globalServices = [
   {
     title: "Government & Public Services",
     description: "Official portals, civil registries, public documents, and administrative assistance.",
-    details: "Find links and resources for local municipal offices, civil registration, vital statistics, citizen identity cards, passport issuance, and general public administration portals."
+    details: "In Portugal, public administration is centralized through the official state portal (gov.pt) and virtual citizen counters. Citizens can manage digital identity documents, use the Chave Móvel Digital (CMD) for secure authentication, and access municipal registries and public document services online."
   },
   {
     title: "Immigration & Visas",
     description: "Visas, residence permits, citizenship pathways, and border control info.",
-    details: "Access official immigration authorities, visa application guidelines, permanent residency requirements, work permits, family reunification procedures, and citizenship rules."
+    details: "Immigration and residency procedures are handled via official state channels. This includes applying for legal residence permits, study or work visas, family reunification paths, and tracking national citizenship applications through the Agency for Integration, Migrations and Asylum (AIMA) and official justice portals."
   },
   {
     title: "Employment & Career Resources",
     description: "Job portals, labor rights, unemployment benefits, and professional training.",
-    details: "Explore national employment centers, job search engines, worker rights protection agencies, vocational training programs, and unemployment support registration."
+    details: "Public employment support in Portugal is coordinated through the Institute for Employment and Vocational Training (IEFP). Job seekers can register for unemployment benefits, search state-backed job listings, and enroll in certified professional training programs free of charge."
   },
   {
     title: "Global Banking & Finance",
     description: "Opening accounts, digital banking, international transfers, and financial regulation.",
-    details: "Learn about opening non-resident or resident bank accounts, anti-money laundering compliance, consumer banking rights, financial ombudsmen, and currency exchange controls."
+    details: "Banking services are regulated by the Banco de Portugal. Residents and non-residents can open accounts by presenting a fiscal identification number (NIF) and valid identification, with access to standard consumer rights, anti-fraud protections, and financial dispute resolution channels."
   },
   {
     title: "Taxation & Compliance",
     description: "Tax IDs, filing returns, VAT regulations, and compliance assistance.",
-    details: "Connect with national tax authorities, register for fiscal identification numbers, learn deadlines for annual income tax returns, and understand corporate or individual tax obligations."
+    details: "Tax compliance is managed by the Portuguese Tax and Customs Authority (Autoridade Tributária e Aduaneira) via the Portal das Finanças. Individuals must obtain a taxpayer number (NIF), submit annual income tax returns (IRS), and manage electronic invoicing (e-Fatura)."
   },
   {
     title: "Healthcare & Medical Care",
     description: "Public health systems, emergency medical aid, clinics, and health insurance.",
-    details: "Find public health service numbers, register for national health insurance cards, locate emergency hospitals, mental health resources, and pharmaceutical guidelines."
+    details: "The National Health Service (Serviço Nacional de Saúde - SNS) provides universal healthcare access. Residents register at their local health center (Centro de Saúde) using a Health User Number (Número de Utente) to access general practitioners, scheduled appointments, and public emergency services."
   },
   {
     title: "Education & Student Support",
     description: "Schools, universities, student visas, scholarships, and credential recognition.",
-    details: "Discover public education networks, university admission portals, student grant programs, diploma recognition services (ENIC/NARIC), and lifelong learning centers."
+    details: "Portugal features public preschools, basic schools, secondary institutions, and higher education universities. The Directorate-General for Higher Education (DGES) handles public university placements, while degree recognition is processed via national academic credential evaluation frameworks."
   },
   {
     title: "Transportation & Driver Licensing",
     description: "Driver's license exchange, vehicle registration, public transit, and transit fines.",
-    details: "Learn how to convert a foreign driver's license, register motor vehicles, pay transit tolls, access national rail/bus networks, and check traffic regulation authorities."
+    details: "Driver licensing, vehicle registration, and transit management are overseen by the Institute for Mobility and Transport (IMT) and the Road Safety Authority (ANSR). Services include license conversions, registration transfers, and paying road traffic penalties."
   },
   {
     title: "Emergency & Safety Services",
     description: "Emergency dispatch numbers, police, fire departments, and civil protection.",
-    details: "Immediate access numbers for police, medical emergencies, fire brigades, disaster management alerts, and consular emergency support lines for travelers."
+    details: "The universal emergency number across Portugal and the European Union is 112, used to reach police, medical dispatch, and fire services instantly. Public security is maintained by the Polícia de Segurança Pública (PSP) and the Guarda Nacional Republicana (GNR)."
   },
   {
     title: "Travel & Tourism",
     description: "Official tourism boards, travel advisories, cultural heritage, and local guides.",
-    details: "Plan trips safely using official government travel advice, national tourism office registries, cultural destination guides, and customs/border entry allowances."
+    details: "Tourism administration is supported by Turismo de Portugal. Visitors can check official safety advisories, cultural heritage site listings, regional tourism offices, and regulatory standards for hospitality accommodations across the country."
   },
   {
     title: "Housing & Real Estate",
     description: "Tenant rights, social housing, property registration, and real estate regulations.",
-    details: "Understand rental contract laws, tenant dispute resolution boards, public housing application criteria, property deed registries, and urban planning offices."
+    details: "Housing laws and tenant protections are regulated under national civil codes. Citizens can access public rental support programs, register property deeds through official land registries (Conservatória do Registo Predial), and consult municipal urban planning offices."
   },
   {
     title: "Directory Contacts",
     description: "Embassies, consulates, municipal directories, and public institution helplines.",
-    details: "A comprehensive phone and address directory for foreign embassies, diplomatic missions, ministries, municipal headquarters, and public customer service desks."
+    details: "Official contact directory databases list accredited foreign embassies, diplomatic missions, Portuguese ministries, municipal headquarters (Câmaras Municipais), and dedicated public administration helpline numbers."
   },
   {
     title: "Legal Aid & Public Defenders",
     description: "Free legal advice, court systems, public defenders, and consumer arbitration.",
-    details: "Find state-funded legal aid offices, pro-bono lawyer associations, court directory databases, mediation centers, and alternative dispute resolution services."
+    details: "State-funded legal protection (apoio judiciário) is coordinated through social security and the bar association (Ordem dos Advogados) to provide legal counsel and public defenders for individuals who demonstrate financial need."
   },
   {
     title: "Migrant & Refugee Services",
     description: "Integration support, asylum procedures, language courses, and community aid.",
-    details: "Connect with specialized integration centers, asylum seeker support agencies, humanitarian aid organizations, and government-sponsored language learning programs."
+    details: "Integration support for newcomers is organized via local support centers (CLAIM) and state-backed integration initiatives, offering assistance with documentation, social adjustment, and access to certified Portuguese language courses."
   },
   {
     title: "Community Organizations",
     description: "Cultural associations, expat networks, volunteer groups, and local charities.",
-    details: "Discover local non-profit organizations, immigrant support associations, cultural clubs, neighborhood volunteer groups, and community outreach hubs."
+    details: "Non-profit community groups, cultural associations, and mutual aid societies operate across municipalities to provide social integration, neighborhood support, and cultural engagement opportunities."
   },
   {
     title: "Social Welfare & Benefits",
     description: "Pensions, disability allowances, child benefits, and financial assistance.",
-    details: "Check eligibility criteria for state pensions, disability support grants, family allowances, low-income subsidies, and social security administration offices."
+    details: "Social security protection is administered through the Social Security Direct portal (Segurança Social Direta), managing contributory pensions, family allowances, minimum income supports, and disability welfare allowances."
   },
   {
     title: "Family & Child Support",
     description: "Childcare services, adoption agencies, family counseling, and maternity rights.",
-    details: "Access public nurseries, parental leave guidelines, child protection services, family mediation offices, and maternity/paternity support documentation."
+    details: "Family welfare covers public nursery networks, parental leave protections, maternity/paternity support allocations, and child protection services regulated through public social solidarity institutions."
   },
   {
     title: "Consumer Rights & Protection",
     description: "Filing complaints, product safety, scam alerts, and consumer advocacy.",
-    details: "Submit formal consumer grievances, check product recall databases, report online scams, and learn about utility provider dispute rights."
+    details: "Consumer rights are defended by the Directorate-General for Consumer Affairs (Direcção-Geral do Consumidor) and platforms like the Livro de Reclamações Eletrónico, allowing citizens to file formal commercial complaints and report safety hazards."
   },
   {
     title: "Accessibility Services",
     description: "Disability support, specialized transit, parking permits, and inclusive housing.",
-    details: "Apply for disability parking cards, find wheelchair-accessible public facilities, learn about assistive technology grants, and specialized care support."
+    details: "Accessibility initiatives provide special parking cards for individuals with disabilities, grants for home architectural adaptations, and specialized inclusive public transit provisions regulated by national inclusion authorities."
   },
   {
     title: "Emergency Relief & Shelter",
     description: "Homeless shelters, food banks, disaster relief, and crisis hotlines.",
-    details: "Locate temporary emergency accommodation, community food distribution centers, winter warming shelters, and immediate crisis support helplines."
+    details: "Emergency relief operations comprise municipal winter sheltering plans, food bank distribution networks, and immediate crisis response hotlines coordinated via civil protection authorities and local social welfare charities."
   },
 ];
 
