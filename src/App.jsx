@@ -312,7 +312,7 @@ export default function App() {
 
             <div className="nav-brand-text">
               <strong>
-                SANOLINES PORTUGAL
+                SANOLINES
               </strong>
               <span>
                 Independent Information & Services Directory
@@ -366,7 +366,7 @@ export default function App() {
               fontSize: "0.95rem",
             }}
           >
-            &larr; Back to all Portugal services
+            &larr; Back to all services
           </button>
 
           <div
@@ -397,7 +397,7 @@ export default function App() {
 
             {/* PORTUGAL WEBSITES LIST */}
             <div style={{ marginBottom: "30px" }}>
-              <h3 style={{ fontSize: "1.1rem", color: "#222", marginBottom: "12px" }}>Official Portuguese Websites & Portals</h3>
+              <h3 style={{ fontSize: "1.1rem", color: "#222", marginBottom: "12px" }}>Official Websites & Portals</h3>
               <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
                 {selectedService.links.map((link, i) => (
                   <a
@@ -447,14 +447,14 @@ export default function App() {
                   gap: "8px"
                 }}
               >
-                📍 Find Physical Offices in Portugal on Google Maps &rarr;
+                📍 Find Physical Offices on Google Maps &rarr;
               </a>
             </div>
 
             <div style={{ background: "#fff", border: "1px solid #eaeaea", padding: "20px", borderRadius: "10px" }}>
               <h4 style={{ margin: "0 0 8px 0", color: "#333" }}>Important Notice</h4>
               <p style={{ margin: 0, fontSize: "0.9rem", color: "#666", lineHeight: "1.5" }}>
-                Sanolines Portugal Information is an independent information directory and guidance platform. Users are solely responsible for verifying information directly with the relevant official authority before relying on it or taking any action.
+                Sanolines Information is an independent information directory and guidance platform. Users are solely responsible for verifying information directly with the relevant official authority before relying on it or taking any action.
               </p>
             </div>
           </div>
@@ -466,18 +466,18 @@ export default function App() {
           <header className="hero-section">
             <div className="hero-content">
               <span className="hero-badge">
-                PORTUGAL SERVICES & AGENCIES DIRECTORY
+                SERVICES & AGENCIES DIRECTORY
               </span>
 
               <h1>
-                Find official Portuguese services, government portals,
+                Find official services, government portals,
                 and trusted agencies.
               </h1>
 
               <p>
-                Sanolines Portugal Information is an independent information directory and guidance platform that helps you locate official state portals, 
+                Sanolines Information is an independent information directory and guidance platform that helps you locate official state portals, 
                 employment centers, immigration agencies, tax offices, healthcare, 
-                housing, and community associations across Portugal. Users are solely responsible for verifying information directly with the relevant official authority.
+                housing, and community associations. Users are solely responsible for verifying information directly with the relevant official authority.
               </p>
 
               <div className="hero-search-bar">
@@ -486,7 +486,7 @@ export default function App() {
                   value={search}
                   onChange={(e) => setSearch(e.target.value)}
                   placeholder="Search AIMA, Finanças, IEFP, SNS, housing..."
-                  aria-label="Search Portugal services"
+                  aria-label="Search services"
                 />
 
                 <button
@@ -596,7 +596,7 @@ export default function App() {
 
               {filteredServices.length === 0 && (
                 <div className="no-results">
-                  No matching Portugal service found.
+                  No matching service found.
                 </div>
               )}
             </section>
@@ -610,10 +610,10 @@ export default function App() {
         <div className="home-footer-inner">
           <div>
             <strong>
-              SANOLINES PORTUGAL INFORMATION
+              SANOLINES INFORMATION
             </strong>
             <p>
-              Independent information directory and guidance platform for Portuguese public portals and agencies.
+              Independent information directory and guidance platform for public portals and agencies.
             </p>
           </div>
 
@@ -658,7 +658,7 @@ export default function App() {
         </div>
 
         <div className="home-footer-bottom" style={{ display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: "10px" }}>
-          <span>&copy; 2026 Sanolines Portugal Information. All rights reserved.</span>
+          <span>&copy; 2026 Sanolines Information. All rights reserved.</span>
           <button
             type="button"
             onClick={() => setShowDisclaimer(true)}
@@ -730,10 +730,10 @@ export default function App() {
 
             <div style={{ fontSize: "0.9rem", lineHeight: "1.6", color: "#444", display: "flex", flexDirection: "column", gap: "12px" }}>
               <p style={{ margin: 0 }}>
-                Sanolines Portugal Information is an independent information directory and guidance platform.
+                Sanolines Information is an independent information directory and guidance platform.
               </p>
               <p style={{ margin: 0 }}>
-                Sanolines is not a government agency, public authority, ministry, department, immigration authority, legal practice, medical provider, employment agency, financial institution, or other professional service provider and is not officially affiliated with the Portuguese Government or any Portuguese public authority.
+                Sanolines is not a government agency, public authority, ministry, department, immigration authority, legal practice, medical provider, employment agency, financial institution, or other professional service provider and is not officially affiliated with any government or public authority.
               </p>
               <p style={{ margin: 0 }}>
                 Sanolines provides general information and organizes publicly available resources, official websites, public-service portals, organizations, agencies, and other useful links to help users locate relevant information and services.
