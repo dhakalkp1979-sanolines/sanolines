@@ -5,102 +5,162 @@ const globalServices = [
   {
     title: "Government & Public Services",
     description: "Official portals, civil registries, public documents, and administrative assistance.",
-    details: "In Portugal, public administration is centralized through the official state portal (gov.pt) and virtual citizen counters. Citizens can manage digital identity documents, use the Chave Móvel Digital (CMD) for secure authentication, and access municipal registries and public document services online."
+    details: "In Portugal, public administration is centralized through the official state portal (gov.pt) and virtual citizen counters. Citizens can manage digital identity documents, use the Chave Móvel Digital (CMD) for secure authentication, and access municipal registries and public document services online.",
+    officialUrl: "https://www.gov.pt",
+    officialLabel: "Visit gov.pt Portal",
+    mapQuery: "Loja do Cidadao Lisbon Portugal"
   },
   {
     title: "Immigration & Visas",
     description: "Visas, residence permits, citizenship pathways, and border control info.",
-    details: "Immigration and residency procedures are handled via official state channels. This includes applying for legal residence permits, study or work visas, family reunification paths, and tracking national citizenship applications through the Agency for Integration, Migrations and Asylum (AIMA) and official justice portals."
+    details: "Immigration and residency procedures are handled via official state channels. This includes applying for legal residence permits, study or work visas, family reunification paths, and tracking national citizenship applications through the Agency for Integration, Migrations and Asylum (AIMA) and official justice portals.",
+    officialUrl: "https://aima.gov.pt",
+    officialLabel: "Visit AIMA Official Portal",
+    mapQuery: "AIMA servicos de immigracao Portugal"
   },
   {
     title: "Employment & Career Resources",
     description: "Job portals, labor rights, unemployment benefits, and professional training.",
-    details: "Public employment support in Portugal is coordinated through the Institute for Employment and Vocational Training (IEFP). Job seekers can register for unemployment benefits, search state-backed job listings, and enroll in certified professional training programs free of charge."
+    details: "Public employment support in Portugal is coordinated through the Institute for Employment and Vocational Training (IEFP). Job seekers can register for unemployment benefits, search state-backed job listings, and enroll in certified professional training programs free of charge.",
+    officialUrl: "https://www.iefp.pt",
+    officialLabel: "Visit IEFP Portal",
+    mapQuery: "IEFP Centro de Emprego Portugal"
   },
   {
     title: "Global Banking & Finance",
     description: "Opening accounts, digital banking, international transfers, and financial regulation.",
-    details: "Banking services are regulated by the Banco de Portugal. Residents and non-residents can open accounts by presenting a fiscal identification number (NIF) and valid identification, with access to standard consumer rights, anti-fraud protections, and financial dispute resolution channels."
+    details: "Banking services are regulated by the Banco de Portugal. Residents and non-residents can open accounts by presenting a fiscal identification number (NIF) and valid identification, with access to standard consumer rights, anti-fraud protections, and financial dispute resolution channels.",
+    officialUrl: "https://www.bportugal.pt",
+    officialLabel: "Visit Banco de Portugal",
+    mapQuery: "Banco de Portugal Lisbon"
   },
   {
     title: "Taxation & Compliance",
     description: "Tax IDs, filing returns, VAT regulations, and compliance assistance.",
-    details: "Tax compliance is managed by the Portuguese Tax and Customs Authority (Autoridade Tributária e Aduaneira) via the Portal das Finanças. Individuals must obtain a taxpayer number (NIF), submit annual income tax returns (IRS), and manage electronic invoicing (e-Fatura)."
+    details: "Tax compliance is managed by the Portuguese Tax and Customs Authority (Autoridade Tributária e Aduaneira) via the Portal das Finanças. Individuals must obtain a taxpayer number (NIF), submit annual income tax returns (IRS), and manage electronic invoicing (e-Fatura).",
+    officialUrl: "https://www.portaldasfinancas.gov.pt",
+    officialLabel: "Visit Portal das Finanças",
+    mapQuery: "Autoridade Tributaria e Aduaneira Servicos de Financas"
   },
   {
     title: "Healthcare & Medical Care",
     description: "Public health systems, emergency medical aid, clinics, and health insurance.",
-    details: "The National Health Service (Serviço Nacional de Saúde - SNS) provides universal healthcare access. Residents register at their local health center (Centro de Saúde) using a Health User Number (Número de Utente) to access general practitioners, scheduled appointments, and public emergency services."
+    details: "The National Health Service (Serviço Nacional de Saúde - SNS) provides universal healthcare access. Residents register at their local health center (Centro de Saúde) using a Health User Number (Número de Utente) to access general practitioners, scheduled appointments, and public emergency services.",
+    officialUrl: "https://www.sns24.gov.pt",
+    officialLabel: "Visit SNS 24 Portal",
+    mapQuery: "Centro de Saude Hospital publico Portugal"
   },
   {
     title: "Education & Student Support",
     description: "Schools, universities, student visas, scholarships, and credential recognition.",
-    details: "Portugal features public preschools, basic schools, secondary institutions, and higher education universities. The Directorate-General for Higher Education (DGES) handles public university placements, while degree recognition is processed via national academic credential evaluation frameworks."
+    details: "Portugal features public preschools, basic schools, secondary institutions, and higher education universities. The Directorate-General for Higher Education (DGES) handles public university placements, while degree recognition is processed via national academic credential evaluation frameworks.",
+    officialUrl: "https://www.dges.gov.pt",
+    officialLabel: "Visit DGES Portal",
+    mapQuery: "Ministerio da Educacao Portugal"
   },
   {
     title: "Transportation & Driver Licensing",
     description: "Driver's license exchange, vehicle registration, public transit, and transit fines.",
-    details: "Driver licensing, vehicle registration, and transit management are overseen by the Institute for Mobility and Transport (IMT) and the Road Safety Authority (ANSR). Services include license conversions, registration transfers, and paying road traffic penalties."
+    details: "Driver licensing, vehicle registration, and transit management are overseen by the Institute for Mobility and Transport (IMT) and the Road Safety Authority (ANSR). Services include license conversions, registration transfers, and paying road traffic penalties.",
+    officialUrl: "https://www.imt-ip.pt",
+    officialLabel: "Visit IMT Portal",
+    mapQuery: "IMT balcão atendimentos transportes Portugal"
   },
   {
     title: "Emergency & Safety Services",
     description: "Emergency dispatch numbers, police, fire departments, and civil protection.",
-    details: "The universal emergency number across Portugal and the European Union is 112, used to reach police, medical dispatch, and fire services instantly. Public security is maintained by the Polícia de Segurança Pública (PSP) and the Guarda Nacional Republicana (GNR)."
+    details: "The universal emergency number across Portugal and the European Union is 112, used to reach police, medical dispatch, and fire services instantly. Public security is maintained by the Polícia de Segurança Pública (PSP) and the Guarda Nacional Republicana (GNR).",
+    officialUrl: "https://www.prociv.gov.pt",
+    officialLabel: "Visit Civil Protection Portal",
+    mapQuery: "Esquadra da Policia de Seguranca Publica PSP"
   },
   {
     title: "Travel & Tourism",
     description: "Official tourism boards, travel advisories, cultural heritage, and local guides.",
-    details: "Tourism administration is supported by Turismo de Portugal. Visitors can check official safety advisories, cultural heritage site listings, regional tourism offices, and regulatory standards for hospitality accommodations across the country."
+    details: "Tourism administration is supported by Turismo de Portugal. Visitors can check official safety advisories, cultural heritage site listings, regional tourism offices, and regulatory standards for hospitality accommodations across the country.",
+    officialUrl: "https://www.turismodeportugal.pt",
+    officialLabel: "Visit Turismo de Portugal",
+    mapQuery: "Turismo de Portugal official office"
   },
   {
     title: "Housing & Real Estate",
     description: "Tenant rights, social housing, property registration, and real estate regulations.",
-    details: "Housing laws and tenant protections are regulated under national civil codes. Citizens can access public rental support programs, register property deeds through official land registries (Conservatória do Registo Predial), and consult municipal urban planning offices."
+    details: "Housing laws and tenant protections are regulated under national civil codes. Citizens can access public rental support programs, register property deeds through official land registries (Conservatória do Registo Predial), and consult municipal urban planning offices.",
+    officialUrl: "https://www.portaldabitabitacao.pt",
+    officialLabel: "Visit Housing Portal",
+    mapQuery: "Conservatoria do Registo Predial Portugal"
   },
   {
     title: "Directory Contacts",
     description: "Embassies, consulates, municipal directories, and public institution helplines.",
-    details: "Official contact directory databases list accredited foreign embassies, diplomatic missions, Portuguese ministries, municipal headquarters (Câmaras Municipais), and dedicated public administration helpline numbers."
+    details: "Official contact directory databases list accredited foreign embassies, diplomatic missions, Portuguese ministries, municipal headquarters (Câmaras Municipais), and dedicated public administration helpline numbers.",
+    officialUrl: "https://www.portaldiplomatico.mne.gov.pt",
+    officialLabel: "Visit Portal Diplomático",
+    mapQuery: "Camara Municipal Camara local Portugal"
   },
   {
     title: "Legal Aid & Public Defenders",
     description: "Free legal advice, court systems, public defenders, and consumer arbitration.",
-    details: "State-funded legal protection (apoio judiciário) is coordinated through social security and the bar association (Ordem dos Advogados) to provide legal counsel and public defenders for individuals who demonstrate financial need."
+    details: "State-funded legal protection (apoio judiciário) is coordinated through social security and the bar association (Ordem dos Advogados) to provide legal counsel and public defenders for individuals who demonstrate financial need.",
+    officialUrl: "https://portal.oa.pt",
+    officialLabel: "Visit Ordem dos Advogados",
+    mapQuery: "Tribunal Juizos Locais Portugal"
   },
   {
     title: "Migrant & Refugee Services",
     description: "Integration support, asylum procedures, language courses, and community aid.",
-    details: "Integration support for newcomers is organized via local support centers (CLAIM) and state-backed integration initiatives, offering assistance with documentation, social adjustment, and access to certified Portuguese language courses."
+    details: "Integration support for newcomers is organized via local support centers (CLAIM) and state-backed integration initiatives, offering assistance with documentation, social adjustment, and access to certified Portuguese language courses.",
+    officialUrl: "https://aima.gov.pt",
+    officialLabel: "Visit Integration Services",
+    mapQuery: "CLAIM Centro Local de Apoio ao Migrante"
   },
   {
     title: "Community Organizations",
     description: "Cultural associations, expat networks, volunteer groups, and local charities.",
-    details: "Non-profit community groups, cultural associations, and mutual aid societies operate across municipalities to provide social integration, neighborhood support, and cultural engagement opportunities."
+    details: "Non-profit community groups, cultural associations, and mutual aid societies operate across municipalities to provide social integration, neighborhood support, and cultural engagement opportunities.",
+    officialUrl: "https://www.cascais.pt",
+    officialLabel: "Visit Community Networks",
+    mapQuery: "Associacao cultural comunidade Portugal"
   },
   {
     title: "Social Welfare & Benefits",
     description: "Pensions, disability allowances, child benefits, and financial assistance.",
-    details: "Social security protection is administered through the Social Security Direct portal (Segurança Social Direta), managing contributory pensions, family allowances, minimum income supports, and disability welfare allowances."
+    details: "Social security protection is administered through the Social Security Direct portal (Segurança Social Direta), managing contributory pensions, family allowances, minimum income supports, and disability welfare allowances.",
+    officialUrl: "https://www.seg-social.pt",
+    officialLabel: "Visit Segurança Social Direta",
+    mapQuery: "Seguranca Social servico atendimento Portugal"
   },
   {
     title: "Family & Child Support",
     description: "Childcare services, adoption agencies, family counseling, and maternity rights.",
-    details: "Family welfare covers public nursery networks, parental leave protections, maternity/paternity support allocations, and child protection services regulated through public social solidarity institutions."
+    details: "Family welfare covers public nursery networks, parental leave protections, maternity/paternity support allocations, and child protection services regulated through public social solidarity institutions.",
+    officialUrl: "https://www.seg-social.pt",
+    officialLabel: "Visit Family Support Portal",
+    mapQuery: "Centro de Apoio Familiar e Crianca Portugal"
   },
   {
     title: "Consumer Rights & Protection",
     description: "Filing complaints, product safety, scam alerts, and consumer advocacy.",
-    details: "Consumer rights are defended by the Directorate-General for Consumer Affairs (Direcção-Geral do Consumidor) and platforms like the Livro de Reclamações Eletrónico, allowing citizens to file formal commercial complaints and report safety hazards."
+    details: "Consumer rights are defended by the Directorate-General for Consumer Affairs (Direcção-Geral do Consumidor) and platforms like the Livro de Reclamações Eletrónico, allowing citizens to file formal commercial complaints and report safety hazards.",
+    officialUrl: "https://www.livroreclamacoes.pt",
+    officialLabel: "Visit Livro de Reclamações",
+    mapQuery: "Direccao Geral do Consumidor Portugal"
   },
   {
     title: "Accessibility Services",
     description: "Disability support, specialized transit, parking permits, and inclusive housing.",
-    details: "Accessibility initiatives provide special parking cards for individuals with disabilities, grants for home architectural adaptations, and specialized inclusive public transit provisions regulated by national inclusion authorities."
+    details: "Accessibility initiatives provide special parking cards for individuals with disabilities, grants for home architectural adaptations, and specialized inclusive public transit provisions regulated by national inclusion authorities.",
+    officialUrl: "https://www.inr.pt",
+    officialLabel: "Visit INR Inclusion Portal",
+    mapQuery: "Instituto Nacional para a Reabilitacao INR"
   },
   {
     title: "Emergency Relief & Shelter",
     description: "Homeless shelters, food banks, disaster relief, and crisis hotlines.",
-    details: "Emergency relief operations comprise municipal winter sheltering plans, food bank distribution networks, and immediate crisis response hotlines coordinated via civil protection authorities and local social welfare charities."
+    details: "Emergency relief operations comprise municipal winter sheltering plans, food bank distribution networks, and immediate crisis response hotlines coordinated via civil protection authorities and local social welfare charities.",
+    officialUrl: "https://www.BancoAlimentar.pt",
+    officialLabel: "Visit Banco Alimentar",
+    mapQuery: "Centro de Acolhimento de Emergencia Social Portugal"
   },
 ];
 
@@ -226,6 +286,51 @@ export default function App() {
               <p style={{ margin: 0, lineHeight: "1.7", color: "#444" }}>
                 {selectedService.details}
               </p>
+            </div>
+
+            {/* DIRECT ACTION BUTTONS (WEB SITE & GOOGLE MAPS) */}
+            <div style={{ display: "flex", gap: "15px", flexWrap: "wrap", marginBottom: "30px" }}>
+              <a
+                href={selectedService.officialUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  backgroundColor: "#6b4685",
+                  color: "#ffffff",
+                  textDecoration: "none",
+                  padding: "12px 24px",
+                  borderRadius: "8px",
+                  fontWeight: "600",
+                  fontSize: "0.95rem",
+                  display: "inline-flex",
+                  alignItems: "center",
+                  gap: "8px",
+                  boxShadow: "0 4px 10px rgba(107, 70, 133, 0.3)"
+                }}
+              >
+                🌐 {selectedService.officialLabel} &rarr;
+              </a>
+
+              <a
+                href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(selectedService.mapQuery)}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  backgroundColor: "#ffffff",
+                  color: "#8c2447",
+                  border: "2px solid #8c2447",
+                  textDecoration: "none",
+                  padding: "12px 24px",
+                  borderRadius: "8px",
+                  fontWeight: "600",
+                  fontSize: "0.95rem",
+                  display: "inline-flex",
+                  alignItems: "center",
+                  gap: "8px"
+                }}
+              >
+                📍 Find Offices on Google Maps &rarr;
+              </a>
             </div>
 
             <div style={{ background: "#fff", border: "1px solid #eaeaea", padding: "20px", borderRadius: "10px" }}>
