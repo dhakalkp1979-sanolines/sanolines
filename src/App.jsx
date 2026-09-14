@@ -539,7 +539,7 @@ export default function App() {
             </div>
           </div>
 
-          <div className="nav-links" style={{ display: "flex", flexWrap: "wrap", gap: "10px", alignItems: "center" }}>
+          <div className="nav-links">
             <button
               className={activeTab === "Home" && !selectedCategory ? "active" : ""}
               onClick={() => {
@@ -559,34 +559,6 @@ export default function App() {
               onClick={goToServices}
             >
               Services
-            </button>
-
-            <button
-              className={activeTab === "About Us" ? "active" : ""}
-              onClick={() => { setSelectedCategory(null); setActiveTab("About Us"); }}
-            >
-              About Us
-            </button>
-
-            <button
-              className={activeTab === "Disclaimer" ? "active" : ""}
-              onClick={() => { setSelectedCategory(null); setActiveTab("Disclaimer"); }}
-            >
-              Disclaimer
-            </button>
-
-            <button
-              className={activeTab === "Privacy Policy" ? "active" : ""}
-              onClick={() => { setSelectedCategory(null); setActiveTab("Privacy Policy"); }}
-            >
-              Privacy Policy
-            </button>
-
-            <button
-              className={activeTab === "Terms of Use" ? "active" : ""}
-              onClick={() => { setSelectedCategory(null); setActiveTab("Terms of Use"); }}
-            >
-              Terms of Use
             </button>
           </div>
 
@@ -908,14 +880,41 @@ export default function App() {
 
       {/* FOOTER */}
       <footer className="home-footer" style={{ background: "#1a1a1a", color: "#fff", padding: "40px 20px", marginTop: "60px" }}>
-        <div className="home-footer-inner" style={{ maxWidth: "1200px", margin: "0 auto", display: "flex", justifyContent: "space-between", flexWrap: "wrap", gap: "20px" }}>
+        <div className="home-footer-inner" style={{ maxWidth: "1200px", margin: "0 auto", display: "flex", justifyContent: "space-between", flexWrap: "wrap", gap: "20px", alignItems: "center" }}>
           <div>
             <strong>
               SANOLINES INFORMATION
             </strong>
-            <p style={{ color: "#aaa", fontSize: "0.9rem", marginTop: "8px" }}>
+            <p style={{ color: "#aaa", fontSize: "0.9rem", marginTop: "8px", marginBottom: 0 }}>
               Independent information directory and guidance platform for public portals and agencies.
             </p>
+          </div>
+          
+          <div style={{ display: "flex", gap: "20px", flexWrap: "wrap" }}>
+            <button
+              onClick={() => { setSelectedCategory(null); setActiveTab("About Us"); window.scrollTo({ top: 0, behavior: "smooth" }); }}
+              style={{ background: "none", border: "none", color: "#ccc", cursor: "pointer", fontSize: "0.9rem", padding: 0 }}
+            >
+              About Us
+            </button>
+            <button
+              onClick={() => { setSelectedCategory(null); setActiveTab("Disclaimer"); window.scrollTo({ top: 0, behavior: "smooth" }); }}
+              style={{ background: "none", border: "none", color: "#ccc", cursor: "pointer", fontSize: "0.9rem", padding: 0 }}
+            >
+              Disclaimer
+            </button>
+            <button
+              onClick={() => { setSelectedCategory(null); setActiveTab("Privacy Policy"); window.scrollTo({ top: 0, behavior: "smooth" }); }}
+              style={{ background: "none", border: "none", color: "#ccc", cursor: "pointer", fontSize: "0.9rem", padding: 0 }}
+            >
+              Privacy Policy
+            </button>
+            <button
+              onClick={() => { setSelectedCategory(null); setActiveTab("Terms of Use"); window.scrollTo({ top: 0, behavior: "smooth" }); }}
+              style={{ background: "none", border: "none", color: "#ccc", cursor: "pointer", fontSize: "0.9rem", padding: 0 }}
+            >
+              Terms of Use
+            </button>
           </div>
         </div>
       </footer>
