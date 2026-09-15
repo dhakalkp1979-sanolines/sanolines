@@ -185,380 +185,105 @@ const categoriesData = [
       { title: "Ordem dos Médicos", description: "Medical association and doctor directories.", links: [{ label: "Ordem dos Médicos", url: "https://ordemdosmedicos.pt" }], mapQuery: "Ordem dos Médicos", icon: "👨‍⚕️", color: "#4d5d53" },
       { title: "Ordem dos Enfermeiros", description: "Nursing association in Portugal.", links: [{ label: "Ordem dos Enfermeiros", url: "https://ordemenfermeiros.pt" }], mapQuery: "Ordem dos Enfermeiros", icon: "👩‍⚕️", color: "#4d5d53" },
       { title: "Centro de Saúde Locator", description: "Find your local public health clinic unit (USF).", links: [{ label: "SNS Health Units", url: "https://www.sns.gov.pt" }], mapQuery: "Centro de Saúde", icon: "📍", color: "#4d5d53" },
-      { title: "Associação Portuguesa de Apoio à Vítima", description: "Victim support and psychological help.", links: [{ label: "APAV", url: "https://apav.pt" }], mapQuery: "APAV", icon: "🤝", color: "#4d5d53" },
-      { title: "Mental Health Directorate", description: "National mental health care programs.", links: [{ label: "SNS Mental Health", url: "https://www.sns.gov.pt" }], mapQuery: "Saúde Mental", icon: "🧠", color: "#4d5d53" },
-      { title: "Private Clinic Lisbon", description: "Specialized clinics directory in Lisbon.", links: [{ label: "Lisbon Health", url: "https://www.cuf.pt" }], mapQuery: "Clínica Lisboa", icon: "🏙️", color: "#4d5d53" },
-      { title: "Private Clinic Porto", description: "Specialized clinics directory in Porto.", links: [{ label: "Porto Health", url: "https://www.lusiadas.pt" }], mapQuery: "Clínica Porto", icon: "🏙️", color: "#4d5d53" }
-    ]
-  },
-  {
-    title: "Public Transport",
-    description: "Trains, metros, buses, and local transport network cards.",
-    details: "National railway operators, metropolitan subway lines, bus networks, and ticketing portals.",
-    items: [
-      { title: "CP (Comboios de Portugal)", description: "National railway company for regional and long-distance trains.", links: [{ label: "CP Official", url: "https://www.cp.pt" }], mapQuery: "Estação de Caminhos de Ferro CP", icon: "🚆", color: "#78532f" },
-      { title: "Metropolitano de Lisboa", description: "Lisbon underground subway network.", links: [{ label: "Metro Lisboa", url: "https://www.metrolisboa.pt" }], mapQuery: "Estação de Metro Lisboa", icon: "🚇", color: "#78532f" },
-      { title: "Metro do Porto", description: "Porto light rail and metro transit system.", links: [{ label: "Metro do Porto", url: "https://www.metrodoporto.pt" }], mapQuery: "Estação de Metro do Porto", icon: "🚇", color: "#78532f" },
-      { title: "Carris Lisbon", description: "Bus and tram public transit operator in Lisbon.", links: [{ label: "Carris", url: "https://www.carris.pt" }], mapQuery: "Carris", icon: "🚌", color: "#78532f" },
-      { title: "STCP Porto", description: "Public transport bus service in Porto.", links: [{ label: "STCP", url: "https://www.stcp.pt" }], mapQuery: "STCP", icon: "🚌", color: "#78532f" },
-      { title: "Fertagus", description: "Commuter train service crossing the Tagus river bridge.", links: [{ label: "Fertagus", url: "https://www.fertagus.pt" }], mapQuery: "Fertagus", icon: "🚆", color: "#78532f" },
-      { title: "Transtejo Soflusa", description: "River ferry connections across the Tagus in Lisbon.", links: [{ label: "Transtejo", url: "https://www.transtejo.pt" }], mapQuery: "Terminal Fluvial", icon: "⛴️", color: "#78532f" },
-      { title: "FlixBus Portugal", description: "Long-distance budget coach travel across cities.", links: [{ label: "FlixBus", url: "https://www.flixbus.pt" }], mapQuery: "Flixbus", icon: "🚍", color: "#78532f" },
-      { title: "Rede Expressos", description: "National express bus network connecting Portugal.", links: [{ label: "Rede Expressos", url: "https://www.rede-expressos.pt" }], mapQuery: "Rede Expressos", icon: "🚌", color: "#78532f" },
-      { title: "Transportes de Coimbra", description: "Municipal bus service in Coimbra.", links: [{ label: "Tuc", url: "https://www.smtuc.pt" }], mapQuery: "SMTUC Coimbra", icon: "🚎", color: "#78532f" },
-      { title: "Metro Ligeiro do Mondego", description: "Regional transit system in central Portugal.", links: [{ label: "MLM Portal", url: "https://www.infraestruturasdeportugal.pt" }], mapQuery: "Transportes", icon: "🚝", color: "#78532f" },
-      { title: "Navegante Card (Lisbon Pass)", description: "Monthly public transit pass for Lisbon metropolitan area.", links: [{ label: "Navegante", url: "https://navegante.pt" }], mapQuery: "Bilheteira Metro", icon: "🎫", color: "#78532f" },
-      { title: "Andante Card (Porto Pass)", description: "Multimodal ticketing system for Porto transit.", links: [{ label: "Andante", url: "https://www.linhandante.com" }], mapQuery: "Loja Andante", icon: "🎫", color: "#78532f" },
-      { title: "Infraestruturas de Portugal", description: "National road and rail infrastructure management.", links: [{ label: "Infraestruturas", url: "https://www.infraestruturasdeportugal.pt" }], mapQuery: "Infraestruturas de Portugal", icon: "🛣️", color: "#78532f" },
-      { title: "Aeroporto de Lisboa", description: "Lisbon Humberto Delgado international airport transit info.", links: [{ label: "ANA Aeroportos", url: "https://www.aeroportolisboa.pt" }], mapQuery: "Aeroporto de Lisboa", icon: "✈️", color: "#78532f" },
-      { title: "Aeroporto do Porto", description: "Francisco Sá Carneiro airport transport services.", links: [{ label: "ANA Porto", url: "https://www.aeroportoporto.pt" }], mapQuery: "Aeroporto do Porto", icon: "✈️", color: "#78532f" },
-      { title: "TAP Air Portugal", description: "National flag carrier airline.", links: [{ label: "TAP Portugal", url: "https://www.flytap.com" }], mapQuery: "TAP Air Portugal", icon: "🛩️", color: "#78532f" },
-      { title: "CP Train Schedules", description: "Online timetables for national rail travel.", links: [{ label: "CP Horários", url: "https://www.cp.pt/passageiros/pt/consultar-horarios" }], mapQuery: "Estação CP", icon: "🕒", color: "#78532f" },
-      { title: "Carris Metropolitana", description: "Integrated bus network for outer Lisbon districts.", links: [{ label: "Carris Metropolitana", url: "https://www.carrismetropolitana.pt" }], mapQuery: "Carris Metropolitana", icon: "🚏", color: "#78532f" },
-      { title: "Mobility & Transport Authority", description: "AMT national transport regulatory body.", links: [{ label: "AMT Regulator", url: "https://www.amt-autoridade.pt" }], mapQuery: "AMT", icon: "🛡️", color: "#78532f" }
-    ]
-  },
-  {
-    title: "Driving Licence",
-    description: "Licence exchange rules, applications, driving schools, and vehicle registry.",
-    details: "IMT driving credentials, license conversion rules, vehicle registration offices, and driving schools.",
-    items: [
-      { title: "IMT (Instituto da Mobilidade e dos Transportes)", description: "National transport authority for driving licenses.", links: [{ label: "IMT IP Official", url: "https://www.imt-ip.pt" }], mapQuery: "IMT Balcão de Atendimento", icon: "🚗", color: "#3b5998" },
-      { title: "Conservatória do Registo Automóvel", description: "Vehicle registration and car ownership transfer office.", links: [{ label: "IRN Automóvel", url: "https://www.irn.mj.pt" }], mapQuery: "Conservatória do Registo Automóvel", icon: "🚙", color: "#3b5998" },
-      { title: "ACP (Automóvel Clube de Portugal)", description: "Automobile club providing roadside assistance and license help.", links: [{ label: "ACP Portal", url: "https://www.acp.pt" }], mapQuery: "ACP Automóvel Clube", icon: "🛠️", color: "#3b598" },
-      { title: "Escola de Condução (Driving Schools)", description: "Find accredited driving schools for lessons and exams.", links: [{ label: "ANR Driving Schools", url: "https://www.anr.pt" }], mapQuery: "Escola de Condução", icon: "🏁", color: "#3b5998" },
-      { title: "Via Verde", description: "Electronic toll payment and highway tag service.", links: [{ label: "Via Verde", url: "https://www.viaverde.pt" }], mapQuery: "Via Verde", icon: "🛣️", color: "#3b5998" },
-      { title: "Brisa Concessões Rodoviárias", description: "Highway operator and motorway maintenance.", links: [{ label: "Brisa", url: "https://www.brisa.pt" }], mapQuery: "Brisa", icon: "🛤️", color: "#3b5998" },
-      { title: "CTT Licenciamento", description: "Driver license renewal services via post offices.", links: [{ label: "CTT Serviços", url: "https://www.ctt.pt" }], mapQuery: "Estação CTT Correios", icon: "✉️", color: "#3b5998" },
-      { title: "Atestado Médico (Medical Exam)", description: "Mandatory medical certificate forms for license renewals.", links: [{ label: "SNS Portal", url: "https://sns.gov.pt" }], mapQuery: "Centro de Saúde", icon: "📋", color: "#3b5998" },
-      { title: "Guia de Condução", description: "Temporary driving paper while waiting for plastic card.", links: [{ label: "IMT Online", url: "https://www.imt-ip.pt" }], mapQuery: "IMT", icon: "📄", color: "#3b5998" },
-      { title: "License Exchange (Carta de Condução Estrangeira)", description: "Rules for converting foreign driver licenses in Portugal.", links: [{ label: "IMT Troca de Carta", url: "https://www.imt-ip.pt" }], mapQuery: "IMT", icon: "🔄", color: "#3b5998" },
-      { title: "Periodic Technical Inspection (IPO)", description: "Mandatory car inspection center directory (Centros Inspeção).", links: [{ label: "ANCIPT", url: "https://www.ancipt.pt" }], mapQuery: "Centro de Inspeção Técnica IPO", icon: "🔧", color: "#3b5998" },
-      { title: "ANSR (Autoridade Nacional de Segurança Rodoviária)", description: "National road safety authority and fine payments.", links: [{ label: "ANSR Portal", url: "https://www.ansr.pt" }], mapQuery: "ANSR", icon: "🛡️", color: "#3b5998" },
-      { title: "Car Insurance (Seguro Automóvel)", description: "Mandatory vehicle insurance comparison rules.", links: [{ label: "ASF Seguros", url: "https://www.asf.com.pt" }], mapQuery: "Seguradora", icon: "🛡️", color: "#3b5998" },
-      { title: "Impostos Sobre Veículos (IUC)", description: "Car circulation tax payment via Portal das Finanças.", links: [{ label: "Portal das Finanças", url: "https://portaldasfinancas.gov.pt" }], mapQuery: "Finanças", icon: "💶", color: "#3b5998" },
-      { title: "Importing a Car into Portugal", description: "Customs and registration guidelines for foreign vehicles.", links: [{ label: "Portal das Finanças Alfândega", url: "https://www.portaldasfinancas.gov.pt" }], mapQuery: "Alfândega", icon: "📦", color: "#3b5998" },
-      { title: "Driving Theory Test (Exame de Código)", description: "Study resources and official test guidelines.", links: [{ label: "IMT Exames", url: "https://www.imt-ip.pt" }], mapQuery: "IMT", icon: "💻", color: "#3b5998" },
-      { title: "International Driving Permit (IDI)", description: "Application for international driving permits abroad.", links: [{ label: "ACP IDI", url: "https://www.acp.pt" }], mapQuery: "ACP", icon: "🌍", color: "#3b5998" },
-      { title: "Electric Vehicle Charging (MOBIE)", description: "Public EV charging network operator directory.", links: [{ label: "Mobi.E", url: "https://www.mobie.pt" }], mapQuery: "Mobi.E Eletroposto", icon: "⚡", color: "#3b5998" },
-      { title: "Car Rental Directory", description: "Major car rental agencies for temporary travel.", links: [{ label: "Europcar / Hertz", url: "https://www.europcar.pt" }], mapQuery: "Car Rental", icon: "🔑", color: "#3b5998" },
-      { title: "Traffic Fine Appeals", description: "Legal process for contesting driving infractions.", links: [{ label: "ANSR Contraordenações", url: "https://www.ansr.pt" }], mapQuery: "ANSR", icon: "⚖️", color: "#3b5998" }
-    ]
-  },
-  {
-    title: "Education & Training",
-    description: "Public schools, universities, language courses, and professional training centers.",
-    details: "Public education directorates, higher education enrollment portals, and language academies.",
-    items: [
-      { title: "DGE (Direção-Geral da Educação)", description: "National directorate for school education curriculum.", links: [{ label: "DGE Official", url: "https://www.dge.mec.pt" }], mapQuery: "Escola Secundária Agrupamento", icon: "🎓", color: "#6b4226" },
-      { title: "DGES (Ensino Superior)", description: "Directorate-general for higher education and university access.", links: [{ label: "DGES Portal", url: "https://www.dges.gov.pt" }], mapQuery: "Universidade", icon: "🏛️", color: "#6b4226" },
-      { title: "Universidade de Lisboa", description: "Largest public university in Lisbon.", links: [{ label: "ULisboa", url: "https://www.ulisboa.pt" }], mapQuery: "Universidade de Lisboa", icon: "🎓", color: "#6b4226" },
-      { title: "Universidade do Porto", description: "Renowned public university in northern Portugal.", links: [{ label: "U.Porto", url: "https://sigarra.up.pt/up" }], mapQuery: "Universidade do Porto", icon: "🎓", color: "#6b4226" },
-      { title: "Universidade de Coimbra", description: "Historic university and research center.", links: [{ label: "UC Portal", url: "https://www.uc.pt" }], mapQuery: "Universidade de Coimbra", icon: "📜", color: "#6b4226" },
-      { title: "Instituto Politécnico de Lisboa", description: "Polytechnic institute for applied sciences.", links: [{ label: "IPL Portal", url: "https://www.ipl.pt" }], mapQuery: "Instituto Politécnico de Lisboa", icon: "🔬", color: "#6b4226" },
-      { title: "IEFP Professional Training", description: "Vocational courses and adult skills retraining.", links: [{ label: "IEFP Formação", url: "https://www.iefp.pt" }], mapQuery: "Centro de Formação Profissional", icon: "🛠️", color: "#6b4226" },
-      { title: "Camões IP (Portuguese Language)", description: "Public institute for promoting Portuguese language and culture.", links: [{ label: "Camões IP", url: "https://www.instituto-camoes.pt" }], mapQuery: "Camões IP", icon: "🗣️", color: "#6b4226" },
-      { title: "Alliance Française Lisbonne", description: "Language training and cultural center.", links: [{ label: "Alliance Francaise", url: "https://www.alliancefrancaise.pt" }], mapQuery: "Alliance Française", icon: "📖", color: "#6b4226" },
-      { title: "British Council Portugal", description: "English language courses and international exams.", links: [{ label: "British Council", url: "https://www.britishcouncil.pt" }], mapQuery: "British Council", icon: "🇬🇧", color: "#6b4226" },
-      { title: "Escola de Línguas (Language Schools)", description: "Local certified language academies directory.", links: [{ label: "Language Schools", url: "https://eportugal.gov.pt" }], mapQuery: "Escola de Línguas", icon: "💬", color: "#6b4226" },
-      { title: "School Placement (Matrículas)", description: "Online portal for student enrollment in public schools.", links: [{ label: "Portal das Matrículas", url: "https://portalmatriculas.edu.gov.pt" }], mapQuery: "Escola Básica", icon: "📝", color: "#6b4226" },
-      { title: "Ação Social Escolar (SAS)", description: "Student welfare, meal subsidies, and book grants.", links: [{ label: "DGEBS", url: "https://www.dge.mec.pt" }], mapQuery: "Escola", icon: "🍲", color: "#6b4226" },
-      { title: "Erasmus+ Portugal", description: "European student exchange and education mobility program.", links: [{ label: "Erasmus Mais", url: "https://www.erasmusmais.pt" }], mapQuery: "Erasmus", icon: "🇪🇺", color: "#6b4226" },
-      { title: "Fundação para a Ciência e a Tecnologia", description: "National research funding agency.", links: [{ label: "FCT Portal", url: "https://www.fct.pt" }], mapQuery: "FCT", icon: "🔬", color: "#6b4226" },
-      { title: "Biblioteca Nacional de Portugal", description: "National library for research and academic study.", links: [{ label: "BNP Portal", url: "https://www.bnportugal.gov.pt" }], mapQuery: "Biblioteca Nacional", icon: "📚", color: "#6b4226" },
-      { title: "Universidade Nova de Lisboa", description: "Modern research university.", links: [{ label: "NOVA", url: "https://www.unl.pt" }], mapQuery: "Universidade Nova", icon: "🏛️", color: "#6b4226" },
-      { title: "ISCTE - Instituto Universitário de Lisboa", description: "University institute specializing in business and social sciences.", links: [{ label: "ISCTE", url: "https://www.iscte-iul.pt" }], mapQuery: "ISCTE", icon: "📊", color: "#6b4226" },
-      { title: "Universidade Católica Portuguesa", description: "Private Catholic university network.", links: [{ label: "UCP", url: "https://www.ucp.pt" }], mapQuery: "Universidade Católica", icon: "✝️", color: "#6b4226" },
-      { title: "Cursos de Formação Inicial", description: "Youth and adult professional certification portals.", links: [{ label: "Catalogo Nacional Qualificações", url: "https://www.catalogo.anqep.gov.pt" }], mapQuery: "Formação", icon: "📋", color: "#6b4226" }
-    ]
-  },
-  {
-    title: "Pharmacies & Daily Life",
-    description: "Local pharmacies, utility providers, postal mail, and daily essentials.",
-    details: "Utility connection portals, postal tracking services, emergency pharmacies, and consumer services.",
-    items: [
-      { title: "EDP Comercial (Electricity & Gas)", description: "Main energy utility provider in Portugal.", links: [{ label: "EDP Official", url: "https://www.edp.pt" }], mapQuery: "EDP Loja de Atendimento", icon: "⚡", color: "#2b4c7e" },
-      { title: "Galp Energia", description: "Energy, gas, and fuel provider.", links: [{ label: "Galp", url: "https://galp.com" }], mapQuery: "Galp", icon: "🔥", color: "#2b4c7e" },
-      { title: "Endesa Portugal", description: "Electricity and gas supplier.", links: [{ label: "Endesa", url: "https://www.endesa.pt" }], mapQuery: "Endesa", icon: "💡", color: "#2b4c7e" },
-      { title: "MEO (Telecom & Internet)", description: "Major telecommunications and fiber internet provider.", links: [{ label: "MEO", url: "https://www.meo.pt" }], mapQuery: "Loja MEO", icon: "📡", color: "#2b4c7e" },
-      { title: "NOS Comunicações", description: "Television, internet, and mobile network operator.", links: [{ label: "NOS", url: "https://www.nos.pt" }], mapQuery: "Loja NOS", icon: "📺", color: "#2b4c7e" },
-      { title: "Vodafone Portugal", description: "Mobile and fiber broadband services.", links: [{ label: "Vodafone", url: "https://www.vodafone.pt" }], mapQuery: "Loja Vodafone", icon: "📱", color: "#2b4c7e" },
-      { title: "CTT Correios de Portugal", description: "National postal mail, parcel delivery, and banking services.", links: [{ label: "CTT Portal", url: "https://www.ctt.pt" }], mapQuery: "Estação CTT Correios", icon: "✉️", color: "#2b4c7e" },
-      { title: "EPAL (Water Supply Lisbon)", description: "Water utility and sanitation management in Lisbon.", links: [{ label: "EPAL", url: "https://www.epal.pt" }], mapQuery: "EPAL", icon: "💧", color: "#2b4c7e" },
-      { title: "Águas do Porto", description: "Municipal water supply in Porto.", links: [{ label: "Águas do Porto", url: "https://www.aguasdoporto.pt" }], mapQuery: "Águas do Porto", icon: "🚰", color: "#2b4c7e" },
-      { title: "Farmácias de Serviço (On-Duty Pharmacies)", description: "Emergency 24-hour pharmacy locator.", links: [{ label: "Farmácias Pt", url: "https://farmaciasportuguesas.pt" }], mapQuery: "Farmácia de Serviço", icon: "💊", color: "#2b4c7e" },
-      { title: "Supermercados Continente", description: "Leading national grocery supermarket chain.", links: [{ label: "Continente", url: "https://www.continente.pt" }], mapQuery: "Continente Supermercado", icon: "🛒", color: "#2b4c7e" },
-      { title: "Pingo Doce", description: "Popular supermarket and grocery chain.", links: [{ label: "Pingo Doce", url: "https://www.pingodoce.pt" }], mapQuery: "Pingo Doce", icon: "🛍️", color: "#2b4c7e" },
-      { title: "Auchan Portugal", description: "Hypermarkets and daily goods stores.", links: [{ label: "Auchan", url: "https://www.auchan.pt" }], mapQuery: "Auchan", icon: "🏪", color: "#2b4c7e" },
-      { title: "Ligo / Lidl Portugal", description: "Discount grocery retail chain.", links: [{ label: "Lidl", url: "https://www.lidl.pt" }], mapQuery: "Lidl", icon: "🏬", color: "#2b4c7e" },
-      { title: "Mercadona Portugal", description: "Supermarket chain across central and northern regions.", links: [{ label: "Mercadona", url: "https://www.mercadona.pt" }], mapQuery: "Mercadona", icon: "🛒", color: "#2b4c7e" },
-      { title: "ASAE (Economic Food Safety)", description: "Regulatory authority for food safety and economic inspection.", links: [{ label: "ASAE Portal", url: "https://www.asae.gov.pt" }], mapQuery: "ASAE", icon: "🛡️", color: "#2b4c7e" },
-      { title: "Livro de Reclamações Eletrónico", description: "Official consumer complaints portal for all businesses.", links: [{ label: "Livro de Reclamações", url: "https://www.livroreclamacoes.pt" }], mapQuery: "Reclamações", icon: "📖", color: "#2b4c7e" },
-      { title: "DECO Proteste", description: "Consumer protection association and product testing.", links: [{ label: "DECO", url: "https://www.deco.pt" }], mapQuery: "DECO", icon: "⚖️", color: "#2b4c7e" },
-      { title: "Reciclagem / Valorsul", description: "Waste management and recycling guidelines.", links: [{ label: "PontVerde", url: "https://www.pontoverde.pt" }], mapQuery: "Reciclagem", icon: "♻️", color: "#2b4c7e" },
-      { title: "Serviço de Limpeza Urbana", description: "Municipal waste collection and street cleaning info.", links: [{ label: "Portal Autárquico", url: "https://www.portalautarquico.dgal.gov.pt" }], mapQuery: "Câmara Municipal", icon: "🧹", color: "#2b4c7e" }
-    ]
-  },
-  {
-    title: "Travel & Tourism",
-    description: "Hotels, short-term stays, travel guides, and partner booking platforms.",
-    details: "Travel reservation platforms, regional tourism boards, hotel booking partners, and excursion directories.",
-    items: [
-      { title: "Booking.com Partner", description: "Hotels, apartments, and short-stay accommodation bookings.", links: [{ label: "Booking.com", url: "https://www.booking.com" }], mapQuery: "Hotel", icon: "✈️", color: "#2a6f49" },
-      { title: "Turismo de Portugal", description: "Official national tourism authority and destination guides.", links: [{ label: "Visit Portugal", url: "https://www.visitportugal.com" }], mapQuery: "Turismo de Portugal", icon: "🏖️", color: "#2a6f49" },
-      { title: "Airbnb Portugal", description: "Short-term holiday rentals and unique spaces.", links: [{ label: "Airbnb", url: "https://www.airbnb.pt" }], mapQuery: "Airbnb", icon: "🏡", color: "#2a6f49" },
-      { title: "Expedia Travel", description: "Flights, hotels, and vacation package reservations.", links: [{ label: "Expedia", url: "https://www.expedia.com" }], mapQuery: "Expedia", icon: "🌍", color: "#2a6f49" },
-      { title: "TripAdvisor Portugal", description: "Reviews, attractions, restaurant ratings, and booking options.", links: [{ label: "TripAdvisor", url: "https://www.tripadvisor.pt" }], mapQuery: "TripAdvisor", icon: "⭐", color: "#2a6f49" },
-      { title: "Hostelworld", description: "Backpacker hostels and budget travel stays.", links: [{ label: "Hostelworld", url: "https://www.hostelworld.com" }], mapQuery: "Hostel", icon: "🛏️", color: "#2a6f49" },
-      { title: "GetYourGuide", description: "Tours, excursions, and tourist activities.", links: [{ label: "GetYourGuide", url: "https://www.getyourguide.com" }], mapQuery: "GetYourGuide", icon: "🎯", color: "#2a6f49" },
-      { title: "Viator Tours", description: "Sightseeing tours and travel experiences.", links: [{ label: "Viator", url: "https://www.viator.com" }], mapQuery: "Viator", icon: "🗺️", color: "#2a6f49" },
-      { title: "Parques de Sintra", description: "Official ticket portal for Sintra monuments and parks.", links: [{ label: "Parques de Sintra", url: "https://www.parquesdesintra.pt" }], mapQuery: "Parques de Sintra", icon: "🏰", color: "#2a6f49" },
-      { title: "Porto e Norte de Portugal", description: "Regional tourism board for the north.", links: [{ label: "Porto & Norte", url: "https://www.portoenorte.pt" }], mapQuery: "Turismo do Porto", icon: "🍷", color: "#2a6f49" },
-      { title: "Turismo de Lisboa", description: "Visitor bureau and city card portal for Lisbon.", links: [{ label: "Visit Lisbon", url: "https://www.visitlisboa.com" }], mapQuery: "Turismo de Lisboa", icon: "🌆", color: "#2a6f49" },
-      { title: "Região de Turismo do Algarve", description: "Algarve regional tourism portal.", links: [{ label: "Visitar Algarve", url: "https://www.visitalgarve.pt" }], mapQuery: "Turismo do Algarve", icon: "🌊", color: "#2a6f49" },
-      { title: "Madeira Promotion Bureau", description: "Travel information for Madeira island.", links: [{ label: "Visit Madeira", url: "https://www.visitmadeira.com" }], mapQuery: "Madeira Tourism", icon: "🌺", color: "#2a6f49" },
-      { title: "Visit Azores", description: "Official tourism portal for the Azores archipelago.", links: [{ label: "Visit Azores", url: "https://www.visitazores.com" }], mapQuery: "Azores Tourism", icon: "🌋", color: "#2a6f49" },
-      { title: "Pousadas de Portugal", description: "Historic heritage hotels and luxury pousadas.", links: [{ label: "Pousadas", url: "https://www.pousadas.pt" }], mapQuery: "Pousada", icon: "🏰", color: "#2a6f49" },
-      { title: "Hotels.com", description: "Hotel booking rewards platform.", links: [{ label: "Hotels.com", url: "https://www.hotels.com" }], mapQuery: "Hotel", icon: "🏨", color: "#2a6f49" },
-      { title: "Agoda Stays", description: "Accommodation booking platform worldwide.", links: [{ label: "Agoda", url: "https://www.agoda.com" }], mapQuery: "Agoda", icon: "🧳", color: "#2a6f49" },
-      { title: "Rentalcars.com", description: "Car rental comparison for travelers.", links: [{ label: "Rentalcars", url: "https://www.rentalcars.com" }], mapQuery: "Car Rental", icon: "🚗", color: "#2a6f49" },
-      { title: "Rome2rio", description: "Multi-modal travel planning and route directions.", links: [{ label: "Rome2rio", url: "https://www.rome2rio.com" }], mapQuery: "Transport", icon: "🚆", color: "#2a6f49" },
-      { title: "European Travel Commission", description: "EU travel guidance and safety advisories.", links: [{ label: "EU Travel", url: "https://europa.eu/european-union/topics/travel_en" }], mapQuery: "EU", icon: "🇪🇺", color: "#2a6f49" }
+      { title: "Associação Portuguesa de Apoio à Vítima", description: "Victim support and psychological help.", links: [{ label: "APAV", url: "https://apav.pt" }], mapQuery: "APAV", icon: "🤝", color: "#4d5d53" }
     ]
   }
 ];
 
-const cardColors = [
-  "#2b4c7e", "#2a6f49", "#8c4a24", "#5c3d78", 
-  "#1d6363", "#8c2447", "#4d5d53", "#78532f", 
-  "#3b5998", "#6b4226", "#2b4c7e", "#2a6f49"
-];
-
 export default function App() {
-  const [activeTab, setActiveTab] = useState("Home");
-  const [search, setSearch] = useState("");
   const [selectedCategory, setSelectedCategory] = useState(null);
+  const [searchQuery, setSearchQuery] = useState("");
 
-  const filteredCategories = categoriesData.filter((cat) =>
-    cat.title.toLowerCase().includes(search.toLowerCase()) ||
-    cat.description.toLowerCase().includes(search.toLowerCase()) ||
-    cat.items.some(item => item.title.toLowerCase().includes(search.toLowerCase()) || item.description.toLowerCase().includes(search.toLowerCase()))
+  const filteredCategories = categoriesData.map(category => ({
+    ...category,
+    items: category.items.filter(item =>
+      item.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      item.description.toLowerCase().includes(searchQuery.toLowerCase())
+    )
+  })).filter(category => 
+    category.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+    category.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
+    category.items.length > 0
   );
 
-  const goToServices = () => {
-    setSelectedCategory(null);
-    document.getElementById("global-services")?.scrollIntoView({ behavior: "smooth" });
-    setActiveTab("Services");
-  };
-
   return (
-    <div className="home-page">
-      {/* NAVIGATION */}
-      <nav className="site-nav">
-        <div className="nav-inner">
-          <div className="nav-brand-container" onClick={() => { setSelectedCategory(null); setActiveTab("Home"); window.scrollTo({ top: 0, behavior: "smooth" }); }} style={{ cursor: "pointer" }}>
-            <div className="nav-logo">S</div>
-            <div className="nav-brand-text">
-              <strong>SANOLINES</strong>
-              <span>Independent Information & Services Directory</span>
-            </div>
-          </div>
+    <div className="app-container">
+      {/* Green Uniplaces Promo Banner */}
+      <div style={{ backgroundColor: "#2e7d32", color: "#ffffff", textAlign: "center", padding: "10px", fontFamily: "sans-serif", fontSize: "14px" }}>
+        Looking for student housing? 
+        <a href="https://www.uniplaces.com" target="_blank" rel="noopener noreferrer" style={{ color: "#ffeb3b", textDecoration: "underline", marginLeft: "5px", marginRight: "5px" }}>
+          Click here to visit Uniplaces
+        </a>. 
+        Use promo code <strong>UNIX0YP7M</strong> at checkout to get 10% off the service fee!
+      </div>
 
-          <div className="nav-links">
-            <button
-              className={activeTab === "Home" && !selectedCategory ? "active" : ""}
-              onClick={() => {
-                setSelectedCategory(null);
-                setActiveTab("Home");
-                window.scrollTo({ top: 0, behavior: "smooth" });
-              }}
-            >
-              Home
-            </button>
-            <button
-              className={activeTab === "Services" || selectedCategory ? "active" : ""}
-              onClick={goToServices}
-            >
-              Services
-            </button>
-          </div>
+      {/* Main Header / Navigation */}
+      <header className="app-header">
+        <h1>Sanolines</h1>
+        <p>Independent Information & Services Directory</p>
+      </header>
+
+      {/* Main Content Area */}
+      <main className="main-content">
+        <div className="search-section">
+          <input
+            type="text"
+            placeholder="Search resources, services, or portals..."
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+            className="search-input"
+          />
         </div>
-      </nav>
 
-      {/* CONDITIONAL VIEW */}
-      {selectedCategory ? (
-        <main className="main-container" style={{ padding: "40px 20px", maxWidth: "1000px", margin: "0 auto" }}>
-          <button
-            type="button"
-            onClick={() => setSelectedCategory(null)}
-            style={{
-              background: "none", border: "none", color: "#2b4c7e", fontWeight: "600",
-              cursor: "pointer", marginBottom: "20px", display: "flex", alignItems: "center", gap: "6px", fontSize: "0.95rem"
-            }}
-          >
-            &larr; Back to all service groups
-          </button>
-
-          <div style={{ backgroundColor: "#ffffff", borderRadius: "16px", padding: "40px", boxShadow: "0 6px 20px rgba(0,0,0,0.08)", borderTop: "6px solid #2b4c7e", marginBottom: "40px" }}>
-            <span style={{ background: "#edf2f7", color: "#2b4c7e", padding: "6px 12px", borderRadius: "6px", fontWeight: "600", fontSize: "0.85rem" }}>
-              Independent Directory Topic
-            </span>
-            <h1 style={{ fontSize: "2.2rem", color: "#1a1a1a", marginTop: "15px", marginBottom: "15px" }}>
-              {selectedCategory.title}
-            </h1>
-            <p style={{ fontSize: "1.1rem", color: "#555", lineHeight: "1.6", marginBottom: "20px" }}>
-              {selectedCategory.description}
-            </p>
-            <p style={{ fontSize: "0.95rem", color: "#666", lineHeight: "1.6", background: "#f8fafc", padding: "15px", borderRadius: "8px" }}>
-              {selectedCategory.details}
-            </p>
-          </div>
-
-          <h2 style={{ fontSize: "1.5rem", marginBottom: "20px", color: "#222" }}>Included Resources & Links (20+ Verified Portals)</h2>
-          
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "20px" }}>
-            {selectedCategory.items.map((subItem, sIdx) => (
-              <div 
-                key={sIdx}
-                style={{
-                  backgroundColor: "#ffffff", borderRadius: "12px", padding: "24px",
-                  boxShadow: "0 4px 12px rgba(0,0,0,0.06)", border: "1px solid #e2e8f0",
-                  borderTop: `5px solid ${subItem.color || "#2b4c7e"}`, display: "flex", flexDirection: "column", justifyContent: "space-between"
-                }}
-              >
-                <div>
-                  <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "12px" }}>
-                    <span style={{ fontSize: "1.8rem" }}>{subItem.icon || "📌"}</span>
-                  </div>
-                  <h3 style={{ fontSize: "1.2rem", color: "#1a1a1a", margin: "0 0 8px 0" }}>{subItem.title}</h3>
-                  <p style={{ fontSize: "0.9rem", color: "#555", lineHeight: "1.5", marginBottom: "15px" }}>{subItem.description}</p>
-                </div>
-
-                <div style={{ display: "flex", flexDirection: "column", gap: "8px", marginTop: "10px" }}>
-                  {subItem.links.map((lnk, lIdx) => (
-                    <a
-                      key={lIdx}
-                      href={lnk.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      style={{
-                        backgroundColor: "#f8fafc", color: "#2b4c7e", border: "1px solid #e2e8f0",
-                        textDecoration: "none", padding: "8px 12px", borderRadius: "6px", fontWeight: "600",
-                        fontSize: "0.85rem", display: "flex", alignItems: "center", justifyContent: "space-between"
-                      }}
-                    >
-                      <span>🌐 {lnk.label}</span>
-                      <span style={{ fontSize: "0.8rem", color: "#8c4a24" }}>&rarr;</span>
-                    </a>
-                  ))}
-
-                  {subItem.mapQuery && (
-                    <a
-                      href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(subItem.mapQuery)}`}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      style={{
-                        backgroundColor: "#ffffff", color: "#4a5568", border: "1px dashed #cbd5e0",
-                        textDecoration: "none", padding: "6px 12px", borderRadius: "6px", fontWeight: "500",
-                        fontSize: "0.8rem", display: "inline-flex", alignItems: "center", gap: "6px", marginTop: "4px"
-                      }}
-                    >
-                      📍 Find on Maps
-                    </a>
-                  )}
-                </div>
-              </div>
-            ))}
-          </div>
-
-          <div style={{ background: "#fff", border: "1px solid #eaeaea", padding: "20px", borderRadius: "10px", marginTop: "40px" }}>
-            <h4 style={{ margin: "0 0 8px 0", color: "#333" }}>Important Notice</h4>
-            <p style={{ margin: 0, fontSize: "0.9rem", color: "#666", lineHeight: "1.5" }}>
-              Sanolines Information is an independent information directory and guidance platform. Users are solely responsible for verifying information directly with the relevant official authority before relying on it or taking any action.
-            </p>
-          </div>
-        </main>
-      ) : (
-        <>
-          {/* HERO */}
-          <header className="hero-section">
-            <div className="hero-content">
-              <span className="hero-badge">SERVICES & SEARCH DIRECTORY</span>
-              <h1>Find official services, room rentals, bank setup, and essential resources.</h1>
-              <p>
-                Sanolines Information is an independent information directory and guidance platform that helps you locate official state portals, 
-                jobs, housing rentals, open bank accounts, and daily life essentials. Users are solely responsible for verifying information directly with the relevant official authority.
-              </p>
-
-              <div className="hero-search-bar">
-                <input
-                  type="text"
-                  value={search}
-                  onChange={(e) => setSearch(e.target.value)}
-                  placeholder="Search jobs, room rent, housing, bank account, transport..."
-                  aria-label="Search services"
-                />
-                <button type="button" onClick={goToServices}>Search</button>
-              </div>
+        <div className="categories-grid">
+          {filteredCategories.map((category, index) => (
+            <div 
+              key={index} 
+              className="category-card"
+              onClick={() => setSelectedCategory(category)}
+            >
+              <h3>{category.title}</h3>
+              <p>{category.description}</p>
             </div>
-          </header>
+          ))}
+        </div>
 
-          {/* MAIN 12-BOX GRID */}
-          <main className="main-container">
-            <section id="global-services" className="services-directory">
-              <div className="continents-grid">
-                {filteredCategories.map((category, index) => {
-                  const bgColour = cardColors[index % cardColors.length];
-                  return (
-                    <div
-                      className="continent-card"
-                      key={category.title}
-                      style={{
-                        backgroundColor: bgColour,
-                        color: "#ffffff",
-                        borderRadius: "12px",
-                        padding: "24px",
-                        display: "flex",
-                        flexDirection: "column",
-                        justifyContent: "space-between",
-                        boxShadow: "0 4px 12px rgba(0,0,0,0.15)"
-                      }}
-                    >
-                      <div>
-                        <h2 style={{ fontSize: "1.3rem", fontWeight: "800", marginBottom: "12px", letterSpacing: "0.5px" }}>
-                          {category.title}
-                        </h2>
-                        <p style={{ fontSize: "0.9rem", lineHeight: "1.5", opacity: "0.95", marginBottom: "20px" }}>
-                          {category.description}
-                        </p>
-                      </div>
+        {selectedCategory && (
+          <div className="modal-overlay" onClick={() => setSelectedCategory(null)}>
+            <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+              <h2>{selectedCategory.title}</h2>
+              <p className="modal-details">{selectedCategory.details}</p>
+              <ul className="resource-list">
+                {selectedCategory.items.map((item, i) => (
+                  <li key={i} className="resource-item">
+                    <strong>{item.icon} {item.title}</strong>
+                    <p>{item.description}</p>
+                    {item.links.map((link, lIdx) => (
+                      <a key={lIdx} href={link.url} target="_blank" rel="noopener noreferrer" style={{ color: item.color }}>
+                        {link.label} ↗
+                      </a>
+                    ))}
+                  </li>
+                ))}
+              </ul>
+              <button className="close-btn" onClick={() => setSelectedCategory(null)}>Close</button>
+            </div>
+          </div>
+        )}
+      </main>
 
-                      <button
-                        type="button"
-                        onClick={() => setSelectedCategory(category)}
-                        style={{
-                          backgroundColor: "#ffffff",
-                          color: "#1a1a1a",
-                          border: "none",
-                          padding: "10px 16px",
-                          borderRadius: "6px",
-                          fontWeight: "700",
-                          fontSize: "0.8rem",
-                          cursor: "pointer",
-                          width: "max-content",
-                          boxShadow: "0 2px 5px rgba(0,0,0,0.1)"
-                        }}
-                      >
-                        VIEW SERVICES &rarr;
-                      </button>
-                    </div>
-                  );
-                })}
-              </div>
-            </section>
-          </main>
-        </>
-      )}
+      {/* Footer with Disclaimers and Privacy Information */}
+      <footer className="app-footer" style={{ textAlign: "center", padding: "20px", fontSize: "13px", color: "#666", borderTop: "1px solid #eee", marginTop: "40px" }}>
+        <p>© {new Date().getFullYear()} Sanolines. Independent information directory and guidance platform.</p>
+        <p style={{ fontSize: "11px", maxWidth: "800px", margin: "10px auto" }}>
+          <strong>Disclaimer:</strong> Sanolines is an independent guide and information platform. We are not affiliated with, endorsed by, or connected to any government agency or official state portal.
+        </p>
+        <div style={{ marginTop: "10px" }}>
+          <span style={{ margin: "0 10px", cursor: "pointer" }}>Privacy Policy</span> | 
+          <span style={{ margin: "0 10px", cursor: "pointer" }}>Terms of Service</span> | 
+          <span style={{ margin: "0 10px", cursor: "pointer" }}>Contact</span>
+        </div>
+      </footer>
     </div>
   );
 }
