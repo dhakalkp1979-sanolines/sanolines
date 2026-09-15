@@ -324,3 +324,29 @@ const categoriesData = [
     ]
   }
 ];
+export default function App() {
+  return (
+    <div className="sanolines-container">
+      <h1>Sanolines Portugal Directory</h1>
+      {categoriesData.map((cat, index) => (
+        <div key={index} style={{ borderColor: cat.items[0]?.color || '#ccc' }}>
+          <h2>{cat.title}</h2>
+          <p>{cat.description}</p>
+          <p><em>{cat.details}</em></p>
+          <ul>
+            {cat.items.map((item, i) => (
+              <li key={i}>
+                <span>{item.icon}</span> <strong>{item.title}</strong>: {item.description}
+                {item.links.map((link, lIndex) => (
+                  <a key={lIndex} href={link.url} target="_blank" rel="noopener noreferrer">
+                    [{link.label}]
+                  </a>
+                ))}
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+  );
+}
