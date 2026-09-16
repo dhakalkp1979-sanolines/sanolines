@@ -171,9 +171,9 @@ const categoriesData = [
     color: "#2a6f49",
     items: [
       {
-        title: "Uniplaces Partner",
+        title: "Uniplaces",
         description:
-          "Verified student and expat room rentals with booking integration.",
+          "Student and expat accommodation platform for rooms and rentals.",
         links: [
           {
             label: "Uniplaces",
@@ -1099,7 +1099,7 @@ const categoriesData = [
       {
         title: "Worken",
         description:
-          "Recruitment and workforce outsourcing partner.",
+          "Recruitment and workforce outsourcing services.",
         links: [
           {
             label: "Worken",
@@ -2173,6 +2173,14 @@ export default function App() {
                   </p>
 
                   <p>
+                    Sanolines may use standard website technologies such as
+                    cookies, analytics, or similar tools to understand
+                    website usage and improve the service. Where applicable,
+                    information is handled according to the relevant
+                    provider's policies.
+                  </p>
+
+                  <p>
                     External websites linked from Sanolines may have their
                     own privacy policies, cookies, analytics systems, and
                     data-collection practices. Visitors should review the
@@ -2259,6 +2267,71 @@ export default function App() {
                 </>
               )}
 
+              {activeInfo === "disclaimer" && (
+                <>
+                  <h2>Disclaimer</h2>
+
+                  <p>
+                    Sanolines is an independent information and services
+                    directory. The website is designed to help visitors
+                    find useful public, commercial, and community resources.
+                  </p>
+
+                  <p>
+                    Sanolines does not provide the services listed on this
+                    website and does not represent the organisations,
+                    companies, agencies, or other providers linked from the
+                    directory.
+                  </p>
+
+                  <p>
+                    The appearance of an organisation, company, platform, or
+                    website in the Sanolines directory does not mean that
+                    Sanolines endorses, sponsors, represents, or is formally
+                    affiliated with that organisation unless this is clearly
+                    stated.
+                  </p>
+
+                  <p>
+                    External providers are responsible for their own
+                    services, prices, availability, eligibility requirements,
+                    application procedures, policies, and information.
+                    These details may change without notice.
+                  </p>
+
+                  <p>
+                    Visitors should verify important information directly
+                    with the relevant provider or official source before
+                    making decisions, submitting applications, paying money,
+                    or relying on information.
+                  </p>
+
+                  <p>
+                    Information on Sanolines is provided for general
+                    informational purposes only. It should not be considered
+                    legal, financial, medical, immigration, employment,
+                    housing, or other professional advice.
+                  </p>
+
+                  <button
+                    type="button"
+                    onClick={handleBackToHome}
+                    style={{
+                      marginTop: "15px",
+                      background: "#2b4c7e",
+                      color: "#fff",
+                      border: "none",
+                      padding: "10px 18px",
+                      borderRadius: "5px",
+                      cursor: "pointer",
+                      fontWeight: "600",
+                    }}
+                  >
+                    Close
+                  </button>
+                </>
+              )}
+
               {activeInfo === "about" && (
                 <>
                   <h2>About Sanolines</h2>
@@ -2279,6 +2352,12 @@ export default function App() {
                     Sanolines does not provide the services listed on the
                     website. Instead, it helps visitors locate the relevant
                     organisation or provider.
+                  </p>
+
+                  <p>
+                    The directory covers areas such as employment, housing,
+                    immigration, banking, health services, transport,
+                    education, recruitment, and everyday resources.
                   </p>
 
                   <p>
@@ -2432,7 +2511,6 @@ export default function App() {
           background: "#f8f9fa",
           padding: "35px 20px",
           borderTop: "1px solid #e5e7eb",
-          textAlign: "center",
           color: "#555",
           fontSize: "13px",
           marginTop: "40px",
@@ -2440,157 +2518,219 @@ export default function App() {
       >
         <div
           style={{
-            maxWidth: "850px",
+            maxWidth: "1000px",
             margin: "0 auto",
             lineHeight: "1.6",
           }}
         >
 
-          <p
-            style={{
-              marginBottom: "18px",
-              color: "#555",
-            }}
-          >
-            <strong>Sanolines</strong> is an independent information and
-            services directory. We help visitors find useful public,
-            commercial, and community resources and connect directly to
-            relevant external websites.
-          </p>
-
-          <p
-            style={{
-              marginBottom: "20px",
-              color: "#666",
-            }}
-          >
-            <strong>Disclaimer:</strong> Sanolines does not provide the
-            services listed on this website and is not an official
-            government institution or authority. External websites,
-            organisations, prices, availability, requirements, and services
-            are managed by their respective providers.
-          </p>
-
-          {/* Footer Links */}
+          {/* Footer Main Area */}
           <div
             style={{
-              margin: "20px 0",
               display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-              gap: "25px",
+              justifyContent: "space-between",
+              alignItems: "flex-start",
+              gap: "40px",
               flexWrap: "wrap",
-              fontWeight: "600",
             }}
           >
 
-            <button
-              type="button"
-              onClick={() => handleInfoClick("privacy")}
-              style={{
-                background: "none",
-                border: "none",
-                padding: 0,
-                cursor: "pointer",
-                color: "#2b4c7e",
-                fontWeight: "600",
-                fontSize: "13px",
-              }}
-            >
-              Privacy Policy
-            </button>
-
-            <button
-              type="button"
-              onClick={() => handleInfoClick("terms")}
-              style={{
-                background: "none",
-                border: "none",
-                padding: 0,
-                cursor: "pointer",
-                color: "#2b4c7e",
-                fontWeight: "600",
-                fontSize: "13px",
-              }}
-            >
-              Terms & Conditions
-            </button>
-
-            <button
-              type="button"
-              onClick={() => handleInfoClick("about")}
-              style={{
-                background: "none",
-                border: "none",
-                padding: 0,
-                cursor: "pointer",
-                color: "#2b4c7e",
-                fontWeight: "600",
-                fontSize: "13px",
-              }}
-            >
-              About
-            </button>
-
-          </div>
-
-          {/* Sanolines Footer Brand */}
-          <div
-            style={{
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-              gap: "10px",
-              marginTop: "25px",
-              marginBottom: "10px",
-            }}
-          >
+            {/* Footer Information */}
             <div
               style={{
-                background: "#2b4c7e",
-                color: "#fff",
-                width: "32px",
-                height: "32px",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                fontWeight: "bold",
-                borderRadius: "4px",
+                flex: "1 1 600px",
+                minWidth: "280px",
               }}
             >
-              S
+              <p
+                style={{
+                  marginBottom: "18px",
+                  color: "#555",
+                }}
+              >
+                <strong>Sanolines</strong> is an independent information and
+                services directory. We help visitors find useful public,
+                commercial, and community resources and connect directly to
+                relevant external websites.
+              </p>
+
+              <p
+                style={{
+                  marginBottom: "20px",
+                  color: "#666",
+                }}
+              >
+                <strong>Disclaimer:</strong> Sanolines does not provide the
+                services listed on this website and is not an official
+                government institution or authority. External websites,
+                organisations, prices, availability, requirements, and
+                services are managed by their respective providers.
+              </p>
+
+              {/* Footer Links */}
+              <div
+                style={{
+                  margin: "20px 0",
+                  display: "flex",
+                  justifyContent: "flex-start",
+                  alignItems: "center",
+                  gap: "25px",
+                  flexWrap: "wrap",
+                  fontWeight: "600",
+                }}
+              >
+
+                <button
+                  type="button"
+                  onClick={() => handleInfoClick("privacy")}
+                  style={{
+                    background: "none",
+                    border: "none",
+                    padding: 0,
+                    cursor: "pointer",
+                    color: "#2b4c7e",
+                    fontWeight: "600",
+                    fontSize: "13px",
+                  }}
+                >
+                  Privacy Policy
+                </button>
+
+                <button
+                  type="button"
+                  onClick={() => handleInfoClick("terms")}
+                  style={{
+                    background: "none",
+                    border: "none",
+                    padding: 0,
+                    cursor: "pointer",
+                    color: "#2b4c7e",
+                    fontWeight: "600",
+                    fontSize: "13px",
+                  }}
+                >
+                  Terms & Conditions
+                </button>
+
+                <button
+                  type="button"
+                  onClick={() => handleInfoClick("disclaimer")}
+                  style={{
+                    background: "none",
+                    border: "none",
+                    padding: 0,
+                    cursor: "pointer",
+                    color: "#2b4c7e",
+                    fontWeight: "600",
+                    fontSize: "13px",
+                  }}
+                >
+                  Disclaimer
+                </button>
+
+                <button
+                  type="button"
+                  onClick={() => handleInfoClick("about")}
+                  style={{
+                    background: "none",
+                    border: "none",
+                    padding: 0,
+                    cursor: "pointer",
+                    color: "#2b4c7e",
+                    fontWeight: "600",
+                    fontSize: "13px",
+                  }}
+                >
+                  About
+                </button>
+
+              </div>
             </div>
 
-            <strong
+            {/* Sanolines Footer Brand - Right Side */}
+            <div
               style={{
-                color: "#222",
-                fontSize: "15px",
-                letterSpacing: "0.5px",
+                flex: "0 0 190px",
+                display: "flex",
+                justifyContent: "flex-end",
+                alignItems: "center",
+                flexDirection: "column",
+                minHeight: "110px",
               }}
             >
-              SANOLINES
-            </strong>
+              <div
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "flex-end",
+                  gap: "10px",
+                  width: "100%",
+                }}
+              >
+                <div
+                  style={{
+                    background: "#2b4c7e",
+                    color: "#fff",
+                    width: "32px",
+                    height: "32px",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    fontWeight: "bold",
+                    borderRadius: "4px",
+                  }}
+                >
+                  S
+                </div>
+
+                <strong
+                  style={{
+                    color: "#222",
+                    fontSize: "15px",
+                    letterSpacing: "0.5px",
+                  }}
+                >
+                  SANOLINES
+                </strong>
+              </div>
+
+              <p
+                style={{
+                  fontSize: "11px",
+                  color: "#777",
+                  marginTop: "10px",
+                  marginBottom: 0,
+                  textAlign: "right",
+                  width: "100%",
+                }}
+              >
+                Independent information
+                <br />
+                & services directory
+              </p>
+            </div>
+
           </div>
 
-          <p
+          {/* Copyright */}
+          <div
             style={{
-              fontSize: "12px",
-              color: "#777",
-              marginTop: "12px",
+              borderTop: "1px solid #e5e7eb",
+              marginTop: "25px",
+              paddingTop: "15px",
+              textAlign: "center",
             }}
           >
-            Independent information & services directory
-          </p>
-
-          <p
-            style={{
-              fontSize: "12px",
-              color: "#888",
-              marginTop: "8px",
-            }}
-          >
-            &copy; {new Date().getFullYear()} Sanolines. All rights reserved.
-          </p>
+            <p
+              style={{
+                fontSize: "12px",
+                color: "#888",
+                margin: 0,
+              }}
+            >
+              &copy; {new Date().getFullYear()} Sanolines. All rights reserved.
+            </p>
+          </div>
 
         </div>
       </footer>
