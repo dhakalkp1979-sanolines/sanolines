@@ -278,15 +278,6 @@ export default function App() {
   return (
     <div className="sanolines-app">
       
-      {/* Top Single Line Promo Banner (Only 1 instance) */}
-      <div className="promo-banner">
-        Looking for student housing?&nbsp;
-        <a href="https://www.uniplaces.com" target="_blank" rel="noopener noreferrer">
-          Click here to visit Uniplaces
-        </a>
-        &nbsp;&mdash; Use promo code <strong>UNIX0YP7M</strong> at checkout to get 10% off the service fee!
-      </div>
-
       {/* Navigation Header */}
       <nav className="navbar">
         <div className="nav-brand" onClick={handleBackToHome} style={{ cursor: 'pointer' }}>
@@ -374,13 +365,35 @@ export default function App() {
         )}
       </main>
 
-      {/* Disclaimer & Affiliate Notice Section */}
-      <div className="disclaimer-section" style={{ textAlign: "center", padding: "20px", fontSize: "12px", color: "#666", background: "#fff", borderTop: "1px solid #e5e7eb", marginTop: "40px" }}>
-        <p><strong>SANOLINES</strong> is an independent information and services directory. We are not affiliated with any government agency or official institution. Links provided are for general resource guidance purposes only. Some outbound links may be affiliate partnerships through which we may earn a small commission at no additional cost to you.</p>
+      {/* Promo Banner at the bottom */}
+      <div className="promo-banner" style={{ backgroundColor: "#2a6f49", color: "#ffffff", textAlign: "center", padding: "12px 15px", fontSize: "14px", fontWeight: "500", marginTop: "40px" }}>
+        Looking for student housing?&nbsp;
+        <a href="https://www.uniplaces.com" target="_blank" rel="noopener noreferrer" style={{ color: "#ffeb3b", textDecoration: "underline", fontWeight: "bold" }}>
+          Click here to visit Uniplaces
+        </a>
+        &nbsp;&mdash; Use promo code <strong>UNIX0YP7M</strong> at checkout to get 10% off the service fee!
       </div>
 
-      <footer className="app-footer">
-        <p>&copy; {new Date().getFullYear()} Sanolines Portugal. All rights reserved.</p>
+      {/* Footer with Disclaimer, Privacy Policy, and Terms & Conditions */}
+      <footer className="app-footer" style={{ background: "#f8f9fa", padding: "30px 20px", borderTop: "1px solid #e5e7eb", textAlign: "center", color: "#555", fontSize: "13px" }}>
+        <div style={{ maxWidth: "800px", margin: "0 auto", lineHeight: "1.6" }}>
+          <p style={{ marginBottom: "15px" }}>
+            <strong>Disclaimer:</strong> Sanolines is an independent web directory designed for general guidance and resource sharing. We do not represent any official institution or government authority.
+          </p>
+          
+          <div style={{ margin: "20px 0", display: "flex", justifyContent: "center", gap: "25px", fontWeight: "600" }}>
+            <span style={{ cursor: "pointer", color: "#2b4c7e" }} onClick={() => alert("Privacy Policy: We value your privacy and do not collect personal identification data through our public directory pages.")}>
+              Privacy Policy
+            </span>
+            <span style={{ cursor: "pointer", color: "#2b4c7e" }} onClick={() => alert("Terms & Conditions: Use of this directory indicates acceptance that external websites are managed under their respective individual terms.")}>
+              Terms & Conditions
+            </span>
+          </div>
+
+          <p style={{ fontSize: "12px", color: "#777", marginTop: "15px" }}>
+            &copy; {new Date().getFullYear()} Sanolines Portugal. All rights reserved.
+          </p>
+        </div>
       </footer>
     </div>
   );
