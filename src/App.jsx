@@ -373,6 +373,11 @@ export default function App() {
         )}
       </main>
 
+      {/* Disclaimer Section */}
+      <div className="disclaimer-section" style={{ textAlign: "center", padding: "20px", fontSize: "12px", color: "#666", background: "#fff", borderTop: "1px solid #e5e7eb", marginTop: "40px" }}>
+        <p><strong>SANOLINES</strong> is an independent information and services directory. We are not affiliated with any government agency or official institution. Links provided are for general resource guidance purposes only.</p>
+      </div>
+
       <footer className="app-footer">
         <p>&copy; {new Date().getFullYear()} Sanolines Portugal. All rights reserved.</p>
       </footer>
