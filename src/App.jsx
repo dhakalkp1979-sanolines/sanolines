@@ -278,18 +278,45 @@ export default function App() {
   return (
     <div className="sanolines-app">
       
+      {/* Promo Banner at the Top */}
+      <div className="promo-banner" style={{ backgroundColor: "#2a6f49", color: "#ffffff", textAlign: "center", padding: "12px 15px", fontSize: "14px", fontWeight: "500" }}>
+        Looking for student housing?&nbsp;
+        <a href="https://www.uniplaces.com" target="_blank" rel="noopener noreferrer" style={{ color: "#ffeb3b", textDecoration: "underline", fontWeight: "bold" }}>
+          Click here to visit Uniplaces
+        </a>
+        &nbsp;&mdash; Use promo code <strong>UNIX0YP7M</strong> at checkout to get 10% off the service fee!
+      </div>
+
       {/* Navigation Header */}
-      <nav className="navbar">
-        <div className="nav-brand" onClick={handleBackToHome} style={{ cursor: 'pointer' }}>
-          <div className="nav-logo-box">S</div>
-          <div className="nav-title-group">
-            <span className="brand-name">SANOLINES</span>
-            <span className="brand-subtitle">INDEPENDENT INFORMATION & SERVICES DIRECTORY</span>
+      <nav className="navbar" style={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "15px 30px", background: "#fff", borderBottom: "1px solid #e5e7eb" }}>
+        <div className="nav-brand" onClick={handleBackToHome} style={{ cursor: 'pointer', display: "flex", alignItems: "center", gap: "12px" }}>
+          <div className="nav-logo-box" style={{ background: "#2b4c7e", color: "#fff", width: "35px", height: "35px", display: "flex", alignItems: "center", justifyContent: "center", fontWeight: "bold", borderRadius: "4px" }}>S</div>
+          <div className="nav-title-group" style={{ display: "flex", flexDirection: "column" }}>
+            <span className="brand-name" style={{ fontWeight: "bold", fontSize: "16px", color: "#111" }}>SANOLINES</span>
+            <span className="brand-subtitle" style={{ fontSize: "10px", color: "#666" }}>INDEPENDENT INFORMATION & SERVICES DIRECTORY</span>
           </div>
         </div>
-        <div className="nav-links">
-          <button onClick={handleBackToHome} className="nav-link-btn">Home</button>
-          <span className="nav-link-text" onClick={handleBackToHome} style={{ cursor: 'pointer' }}>Services</span>
+        <div className="nav-links" style={{ display: "flex", gap: "20px" }}>
+          <button 
+            type="button"
+            onClick={(e) => {
+              e.preventDefault();
+              handleBackToHome();
+            }} 
+            style={{ background: 'none', border: 'none', cursor: 'pointer', fontSize: '15px', fontWeight: '500', color: '#333', padding: '5px 10px' }}
+          >
+            Home
+          </button>
+          <button 
+            type="button"
+            onClick={(e) => {
+              e.preventDefault();
+              handleBackToHome();
+            }} 
+            style={{ background: 'none', border: 'none', cursor: 'pointer', fontSize: '15px', fontWeight: '500', color: '#333', padding: '5px 10px' }}
+          >
+            Services
+          </button>
         </div>
       </nav>
 
@@ -365,17 +392,8 @@ export default function App() {
         )}
       </main>
 
-      {/* Promo Banner at the bottom */}
-      <div className="promo-banner" style={{ backgroundColor: "#2a6f49", color: "#ffffff", textAlign: "center", padding: "12px 15px", fontSize: "14px", fontWeight: "500", marginTop: "40px" }}>
-        Looking for student housing?&nbsp;
-        <a href="https://www.uniplaces.com" target="_blank" rel="noopener noreferrer" style={{ color: "#ffeb3b", textDecoration: "underline", fontWeight: "bold" }}>
-          Click here to visit Uniplaces
-        </a>
-        &nbsp;&mdash; Use promo code <strong>UNIX0YP7M</strong> at checkout to get 10% off the service fee!
-      </div>
-
       {/* Footer with Disclaimer, Privacy Policy, and Terms & Conditions */}
-      <footer className="app-footer" style={{ background: "#f8f9fa", padding: "30px 20px", borderTop: "1px solid #e5e7eb", textAlign: "center", color: "#555", fontSize: "13px" }}>
+      <footer className="app-footer" style={{ background: "#f8f9fa", padding: "30px 20px", borderTop: "1px solid #e5e7eb", textAlign: "center", color: "#555", fontSize: "13px", marginTop: "40px" }}>
         <div style={{ maxWidth: "800px", margin: "0 auto", lineHeight: "1.6" }}>
           <p style={{ marginBottom: "15px" }}>
             <strong>Disclaimer:</strong> Sanolines is an independent web directory designed for general guidance and resource sharing. We do not represent any official institution or government authority.
