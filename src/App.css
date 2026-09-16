@@ -334,3 +334,19 @@ body {
   font-size: 13px;
   color: #6b7280;
 }
+.promo-banner {
+  background-color: #2b4c7e;
+  color: #fff;
+  text-align: center;
+  padding: 10px 16px;
+  font-size: 14px;
+  white-space: nowrap;      /* Keeps it strictly on one line */
+  overflow: hidden;         /* Hides any overflow */
+  text-overflow: ellipsis;  /* Adds dots if screen is too narrow */
+}
+
+.promo-banner a {
+  color: #ffdd57;
+  text-decoration: underline;
+  font-weight: 600;
+}
