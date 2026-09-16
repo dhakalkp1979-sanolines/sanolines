@@ -2007,7 +2007,9 @@ export default function App() {
   return (
     <div className="sanolines-app">
 
-      {/* Navigation Header */}
+      {/* =========================
+          NAVIGATION HEADER
+      ========================== */}
       <nav
         className="navbar"
         style={{
@@ -2128,10 +2130,14 @@ export default function App() {
         </div>
       </nav>
 
-      {/* Main Content */}
+      {/* =========================
+          MAIN CONTENT
+      ========================== */}
       <main className="main-content">
 
-        {/* Information Pages */}
+        {/* =========================
+            INFORMATION PAGES
+        ========================== */}
         {activeInfo ? (
           <div
             style={{
@@ -2156,6 +2162,8 @@ export default function App() {
                 padding: "30px",
               }}
             >
+
+              {/* PRIVACY POLICY */}
               {activeInfo === "privacy" && (
                 <>
                   <h2>Privacy Policy</h2>
@@ -2213,6 +2221,7 @@ export default function App() {
                 </>
               )}
 
+              {/* TERMS */}
               {activeInfo === "terms" && (
                 <>
                   <h2>Terms & Conditions</h2>
@@ -2267,6 +2276,7 @@ export default function App() {
                 </>
               )}
 
+              {/* DISCLAIMER */}
               {activeInfo === "disclaimer" && (
                 <>
                   <h2>Disclaimer</h2>
@@ -2332,6 +2342,7 @@ export default function App() {
                 </>
               )}
 
+              {/* ABOUT */}
               {activeInfo === "about" && (
                 <>
                   <h2>About Sanolines</h2>
@@ -2385,11 +2396,15 @@ export default function App() {
                   </button>
                 </>
               )}
+
             </div>
           </div>
+
         ) : !selectedCategory ? (
 
-          /* Home Page */
+          /* =========================
+             HOME PAGE
+          ========================== */
           <div className="categories-grid">
             {categoriesData.map((category) => (
               <div
@@ -2425,7 +2440,9 @@ export default function App() {
 
         ) : (
 
-          /* Category Detail Page */
+          /* =========================
+             CATEGORY DETAIL PAGE
+          ========================== */
           <div className="category-detail-view">
 
             <button
@@ -2504,12 +2521,14 @@ export default function App() {
         )}
       </main>
 
-      {/* Footer */}
+      {/* =========================
+          FOOTER
+      ========================== */}
       <footer
         className="app-footer"
         style={{
           background: "#f8f9fa",
-          padding: "35px 20px",
+          padding: "35px 20px 20px",
           borderTop: "1px solid #e5e7eb",
           color: "#555",
           fontSize: "13px",
@@ -2524,160 +2543,46 @@ export default function App() {
           }}
         >
 
-          {/* Footer Main Area */}
+          {/* Footer Top */}
           <div
             style={{
               display: "flex",
               justifyContent: "space-between",
-              alignItems: "flex-start",
-              gap: "40px",
+              alignItems: "center",
+              gap: "35px",
               flexWrap: "wrap",
             }}
           >
 
-            {/* Footer Information */}
+            {/* LEFT: Logo + Description */}
             <div
               style={{
                 flex: "1 1 600px",
                 minWidth: "280px",
               }}
             >
-              <p
-                style={{
-                  marginBottom: "18px",
-                  color: "#555",
-                }}
-              >
-                <strong>Sanolines</strong> is an independent information and
-                services directory. We help visitors find useful public,
-                commercial, and community resources and connect directly to
-                relevant external websites.
-              </p>
 
-              <p
-                style={{
-                  marginBottom: "20px",
-                  color: "#666",
-                }}
-              >
-                <strong>Disclaimer:</strong> Sanolines does not provide the
-                services listed on this website and is not an official
-                government institution or authority. External websites,
-                organisations, prices, availability, requirements, and
-                services are managed by their respective providers.
-              </p>
-
-              {/* Footer Links */}
-              <div
-                style={{
-                  margin: "20px 0",
-                  display: "flex",
-                  justifyContent: "flex-start",
-                  alignItems: "center",
-                  gap: "25px",
-                  flexWrap: "wrap",
-                  fontWeight: "600",
-                }}
-              >
-
-                <button
-                  type="button"
-                  onClick={() => handleInfoClick("privacy")}
-                  style={{
-                    background: "none",
-                    border: "none",
-                    padding: 0,
-                    cursor: "pointer",
-                    color: "#2b4c7e",
-                    fontWeight: "600",
-                    fontSize: "13px",
-                  }}
-                >
-                  Privacy Policy
-                </button>
-
-                <button
-                  type="button"
-                  onClick={() => handleInfoClick("terms")}
-                  style={{
-                    background: "none",
-                    border: "none",
-                    padding: 0,
-                    cursor: "pointer",
-                    color: "#2b4c7e",
-                    fontWeight: "600",
-                    fontSize: "13px",
-                  }}
-                >
-                  Terms & Conditions
-                </button>
-
-                <button
-                  type="button"
-                  onClick={() => handleInfoClick("disclaimer")}
-                  style={{
-                    background: "none",
-                    border: "none",
-                    padding: 0,
-                    cursor: "pointer",
-                    color: "#2b4c7e",
-                    fontWeight: "600",
-                    fontSize: "13px",
-                  }}
-                >
-                  Disclaimer
-                </button>
-
-                <button
-                  type="button"
-                  onClick={() => handleInfoClick("about")}
-                  style={{
-                    background: "none",
-                    border: "none",
-                    padding: 0,
-                    cursor: "pointer",
-                    color: "#2b4c7e",
-                    fontWeight: "600",
-                    fontSize: "13px",
-                  }}
-                >
-                  About
-                </button>
-
-              </div>
-            </div>
-
-            {/* Sanolines Footer Brand - Right Side */}
-            <div
-              style={{
-                flex: "0 0 190px",
-                display: "flex",
-                justifyContent: "flex-end",
-                alignItems: "center",
-                flexDirection: "column",
-                minHeight: "110px",
-              }}
-            >
+              {/* Brand */}
               <div
                 style={{
                   display: "flex",
                   alignItems: "center",
-                  justifyContent: "flex-end",
                   gap: "10px",
-                  width: "100%",
+                  marginBottom: "12px",
                 }}
               >
                 <div
                   style={{
                     background: "#2b4c7e",
                     color: "#fff",
-                    width: "32px",
-                    height: "32px",
+                    width: "34px",
+                    height: "34px",
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
                     fontWeight: "bold",
                     borderRadius: "4px",
+                    fontSize: "16px",
                   }}
                 >
                   S
@@ -2686,29 +2591,108 @@ export default function App() {
                 <strong
                   style={{
                     color: "#222",
-                    fontSize: "15px",
-                    letterSpacing: "0.5px",
+                    fontSize: "16px",
+                    letterSpacing: "0.6px",
                   }}
                 >
                   SANOLINES
                 </strong>
               </div>
 
+              {/* Short Description */}
               <p
                 style={{
-                  fontSize: "11px",
-                  color: "#777",
-                  marginTop: "10px",
-                  marginBottom: 0,
-                  textAlign: "right",
-                  width: "100%",
+                  margin: 0,
+                  color: "#666",
+                  maxWidth: "650px",
                 }}
               >
-                Independent information
-                <br />
-                & services directory
+                Independent information and services directory helping
+                visitors find useful public, commercial, and community
+                resources.
               </p>
+
             </div>
+
+          </div>
+
+          {/* Footer Links */}
+          <div
+            style={{
+              borderTop: "1px solid #e5e7eb",
+              marginTop: "25px",
+              paddingTop: "18px",
+              display: "flex",
+              justifyContent: "flex-start",
+              alignItems: "center",
+              gap: "25px",
+              flexWrap: "wrap",
+            }}
+          >
+
+            <button
+              type="button"
+              onClick={() => handleInfoClick("privacy")}
+              style={{
+                background: "none",
+                border: "none",
+                padding: 0,
+                cursor: "pointer",
+                color: "#2b4c7e",
+                fontWeight: "600",
+                fontSize: "13px",
+              }}
+            >
+              Privacy Policy
+            </button>
+
+            <button
+              type="button"
+              onClick={() => handleInfoClick("terms")}
+              style={{
+                background: "none",
+                border: "none",
+                padding: 0,
+                cursor: "pointer",
+                color: "#2b4c7e",
+                fontWeight: "600",
+                fontSize: "13px",
+              }}
+            >
+              Terms & Conditions
+            </button>
+
+            <button
+              type="button"
+              onClick={() => handleInfoClick("disclaimer")}
+              style={{
+                background: "none",
+                border: "none",
+                padding: 0,
+                cursor: "pointer",
+                color: "#2b4c7e",
+                fontWeight: "600",
+                fontSize: "13px",
+              }}
+            >
+              Disclaimer
+            </button>
+
+            <button
+              type="button"
+              onClick={() => handleInfoClick("about")}
+              style={{
+                background: "none",
+                border: "none",
+                padding: 0,
+                cursor: "pointer",
+                color: "#2b4c7e",
+                fontWeight: "600",
+                fontSize: "13px",
+              }}
+            >
+              About
+            </button>
 
           </div>
 
@@ -2716,7 +2700,7 @@ export default function App() {
           <div
             style={{
               borderTop: "1px solid #e5e7eb",
-              marginTop: "25px",
+              marginTop: "18px",
               paddingTop: "15px",
               textAlign: "center",
             }}
