@@ -248,146 +248,125 @@ const categoriesData = [
       { title: "CTT Correios", description: "National postal and courier delivery services.", links: [{ label: "CTT Portal", url: "https://www.ctt.pt" }], icon: "✉️" },
       { title: "ANACOM", description: "Utilities and telecommunications regulator.", links: [{ label: "ANACOM", url: "https://www.anacom.pt" }], icon: "📡" },
       { title: "EDP Distribuição", description: "Electricity power provider and grid distributor.", links: [{ label: "EDP", url: "https://www.edp.pt" }], icon: "⚡" },
-      { title: "Galp Energia", description: "Gas, electricity, and fuel provider services.", links: [{ label: "Galp", url: "https://www.galp.com" }], icon: "🔥" },
-      { title: "Águas de Lisboa (EPAL)", description: "Water supply and sanitation utilities in the capital.", links: [{ label: "EPAL", url: "https://www.epal.pt" }], icon: "💧" },
-      { title: "Meo, Vodafone & NOS", description: "Major telecommunications and fiber internet providers.", links: [{ label: "Meo Portal", url: "https://www.meo.pt" }], icon: "🌐" },
-      { title: "Continente Online", description: "Major national supermarket chain delivery service.", links: [{ label: "Continente", url: "https://www.continente.pt" }], icon: "🛒" },
-      { title: "Pingo Doce", description: "Supermarket chain and daily essentials marketplace.", links: [{ label: "Pingo Doce", url: "https://www.pingodoce.pt" }], icon: "🛍️" },
-      { title: "FNAC Portugal", description: "Books, electronics, and ticket office retail chain.", links: [{ label: "FNAC", url: "https://www.fnac.pt" }], icon: "📚" },
-      { title: "Worten Electronics", description: "Home appliances and tech gadget retailer.", links: [{ label: "Worten", url: "https://www.worten.pt" }], icon: "🔌" },
-      { title: "Auchan Portugal", description: "Hypermarkets and groceries delivery platforms.", links: [{ label: "Auchan", url: "https://www.auchan.pt" }], icon: "🧺" },
-      { title: "Mercadona Portugal", description: "Supermarket chain offering fresh produce and household items.", links: [{ label: "Mercadona", url: "https://www.mercadona.pt" }], icon: "🍏" },
-      { title: "Infarmed Pharmacy Authority", description: "National authority of medicines and health products.", links: [{ label: "Infarmed", url: "https://www.infarmed.pt" }], icon: "🩺" },
-      { title: "E-Redes Grid Status", description: "Electricity grid maintenance and outage reports.", links: [{ label: "E-Redes", url: "https://www.e-redes.pt" }], icon: "💡" }
-    ]
-  },
-  {
-    id: "travel-tourism",
-    title: "Travel & Tourism",
-    description: "Short-term stays, hotels, and Booking.com partner boxes.",
-    color: "#78453d",
-    items: [
-      { title: "Booking.com Partner", description: "Hotels, short-term stays, and travel accommodation deals.", links: [{ label: "Booking.com", url: "https://www.booking.com" }], icon: "🏨" },
-      { title: "Turismo de Portugal", description: "Official national tourism board and travel guide.", links: [{ label: "Visit Portugal", url: "https://www.visitportugal.com" }], icon: "✈️" },
-      { title: "TAP Air Portugal", description: "National flag carrier airline and flight booking portal.", links: [{ label: "TAP Air", url: "https://www.flytap.com" }], icon: "🛫" },
-      { title: "Airbnb Short Stays", description: "Vacation rentals, holiday homes, and unique local experiences.", links: [{ label: "Airbnb", url: "https://www.airbnb.com" }], icon: "🏡" },
-      { title: "Skyscanner Portugal", description: "Flight comparison search engine for cheap travel tickets.", links: [{ label: "Skyscanner", url: "https://www.skyscanner.pt" }], icon: "🎫" },
-      { title: "Agoda Partner Hub", description: "Hotel reservations and discount accommodation lodgings.", links: [{ label: "Agoda", url: "https://www.agoda.com" }], icon: "🧳" },
-      { title: "GetYourGuide Activities", description: "Tours, excursions, museum tickets, and city sightseeing.", links: [{ label: "GetYourGuide", url: "https://www.getyourguide.com" }], icon: "🎟️" },
-      { title: "Lisboa Card", description: "Free public transit and museum admission pass for tourists.", links: [{ label: "Ask Lisboa", url: "https://www.visitlisboa.com" }], icon: "🏛️" },
-      { title: "Porto Card", description: "Discount sightseeing pass for Porto city attractions.", links: [{ label: "Porto Card", url: "https://www.visitporto.travel" }], icon: "🍷" },
-      { title: "Parques de Sintra", description: "Official ticketing for historic parks, palaces, and monuments.", links: [{ label: "Sintra Parques", url: "https://www.parquesdesintra.pt" }], icon: "🏰" },
-      { title: "CP Historical Trains", description: "Scenic heritage railway tourism lines in Douro and Vouga.", links: [{ label: "CP Tourism", url: "https://www.cp.pt" }], icon: "🚂" },
-      { title: "Pousadas de Portugal", description: "Historic heritage hotels and luxury pousada stays.", links: [{ label: "Pousadas", url: "https://www.pestana.com" }], icon: "🛎️" },
-      { title: "TripAdvisor Portugal", description: "Traveler reviews, restaurant recommendations, and guides.", links: [{ label: "TripAdvisor", url: "https://www.tripadvisor.pt" }], icon: "⭐" },
-      { title: "Rentalcars Worldwide", description: "Car rental comparison service for holiday trips.", links: [{ label: "Rentalcars", url: "https://www.rentalcars.com" }], icon: "🚗" },
-      { title: "Lonely Planet Portugal", description: "Destination guidebooks and travel planning articles.", links: [{ label: "Lonely Planet", url: "https://www.lonelyplanet.com" }], icon: "🌍" }
+      { title: "Galp Energia", description: "Gas, electricity, and fuel provider services.", links: [{ label: "Galp", url: "https://www.galp.com" }], icon: "🔥" }
     ]
   }
 ];
 
 export default function App() {
   const [selectedCategory, setSelectedCategory] = useState(null);
+  const [searchQuery, setSearchQuery] = useState("");
+
+  const handleCategoryClick = (catId) => {
+    setSelectedCategory(catId);
+  };
+
+  const handleBackToHome = () => {
+    setSelectedCategory(null);
+  };
+
+  const currentCategoryData = categoriesData.find(c => c.id === selectedCategory);
+
+  const filteredItems = currentCategoryData 
+    ? currentCategoryData.items.filter(item => 
+        item.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        item.description.toLowerCase().includes(searchQuery.toLowerCase())
+      )
+    : [];
 
   return (
     <div className="sanolines-app">
-      {/* Top Promo Banner */}
+      
+      {/* SINGLE PROMO BANNER LINE FIXED */}
       <div className="promo-banner">
-        Looking for student housing? 
-        <a href="https://www.uniplaces.com" target="_blank" rel="noopener noreferrer" className="promo-link">Click here to visit Uniplaces</a>. 
-        Use promo code <strong>UNIX0YP7M</strong> at checkout to get 10% off the service fee!
+        Looking for student housing?&nbsp;
+        <a href="https://www.uniplaces.com" target="_blank" rel="noopener noreferrer" style={{ color: '#fff', textDecoration: 'underline' }}>
+          Click here to visit Uniplaces
+        </a>
+        &nbsp;. Use promo code <strong>UNIX0YP7M</strong> at checkout to get 10% off the service fee!
       </div>
 
-      {/* Top Navbar Header */}
-      <nav className="navbar">
-        <div className="nav-brand">
-          <span className="brand-badge">S</span>
-          <div className="brand-text">
-            <span className="brand-title">SANOLINES</span>
-            <span className="brand-subtitle">INDEPENDENT INFORMATION & SERVICES DIRECTORY</span>
-          </div>
+      <header className="app-header">
+        <div className="header-container" onClick={handleBackToHome} style={{ cursor: 'pointer' }}>
+          <h1>Sanolines Portugal</h1>
+          <p>Your ultimate directory for relocating, working, and living in Portugal</p>
         </div>
-        <div className="nav-links">
-          <button onClick={() => setSelectedCategory(null)} className="nav-btn active">Home</button>
-          <a href="#services" className="nav-link-item">Services</a>
-        </div>
-      </nav>
+      </header>
 
-      {/* Main Container */}
       <main className="main-content">
-        {selectedCategory === null ? (
-          /* 12 Grid Boxes View */
-          <div>
-            <div className="categories-grid-12">
-              {categoriesData.map((cat) => (
-                <div 
-                  key={cat.id} 
-                  className="dashboard-box" 
-                  style={{ backgroundColor: cat.color }}
-                >
-                  <div className="box-content">
-                    <h2>{cat.title}</h2>
-                    <p>{cat.description}</p>
-                  </div>
-                  <button 
-                    className="view-services-btn" 
-                    onClick={() => setSelectedCategory(cat.id)}
-                  >
-                    VIEW SERVICES &rarr;
-                  </button>
+        {!selectedCategory ? (
+          <div className="categories-grid">
+            {categoriesData.map((cat) => (
+              <div 
+                key={cat.id} 
+                className="category-card" 
+                style={{ borderColor: cat.color }}
+                onClick={() => handleCategoryClick(cat.id)}
+              >
+                <div className="card-header" style={{ backgroundColor: cat.color }}>
+                  <h2>{cat.title}</h2>
                 </div>
-              ))}
-            </div>
+                <div className="card-body">
+                  <p>{cat.description}</p>
+                  <span className="explore-link">Explore resources &rarr;</span>
+                </div>
+              </div>
+            ))}
           </div>
         ) : (
-          /* Detailed View for Selected Category */
-          <div>
-            {(() => {
-              const cat = categoriesData.find(c => c.id === selectedCategory);
-              return (
-                <div className="detail-view-container">
-                  <button className="back-btn" onClick={() => setSelectedCategory(null)}>
-                    &larr; Back to All Categories
-                  </button>
-                  <div className="detail-header" style={{ borderLeftColor: cat.color }}>
-                    <h1>{cat.title}</h1>
-                    <p>{cat.description}</p>
-                  </div>
-                  <div className="sub-items-grid">
-                    {cat.items.map((item, idx) => (
-                      <div key={idx} className="sub-item-box">
-                        <div className="sub-item-header">
-                          <span className="sub-icon">{item.icon}</span>
-                          <h3>{item.title}</h3>
-                        </div>
-                        <p>{item.description}</p>
-                        <div className="sub-item-links">
-                          {item.links.map((link, lIdx) => (
-                            <a key={lIdx} href={link.url} target="_blank" rel="noopener noreferrer" className="action-link">
-                              {link.label} ↗
-                            </a>
-                          ))}
-                        </div>
+          <div className="category-detail-view">
+            <button className="back-btn" onClick={handleBackToHome}>
+              &larr; Back to all categories
+            </button>
+            
+            <div className="detail-header" style={{ borderLeftColor: currentCategoryData.color }}>
+              <h2>{currentCategoryData.title}</h2>
+              <p>{currentCategoryData.description}</p>
+              
+              <div className="search-box">
+                <input 
+                  type="text" 
+                  placeholder={`Search in ${currentCategoryData.title}...`} 
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                />
+              </div>
+            </div>
+
+            <div className="items-grid">
+              {filteredItems.length > 0 ? (
+                filteredItems.map((item, index) => (
+                  <div key={index} className="resource-item-card">
+                    <div className="item-icon">{item.icon}</div>
+                    <div className="item-info">
+                      <h3>{item.title}</h3>
+                      <p>{item.description}</p>
+                      <div className="item-links">
+                        {item.links.map((lnk, lIdx) => (
+                          <a 
+                            key={lIdx} 
+                            href={lnk.url} 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            className="external-link-btn"
+                          >
+                            {lnk.label} &nearr;
+                          </a>
+                        ))}
                       </div>
-                    ))}
+                    </div>
                   </div>
-                </div>
-              );
-            })()}
+                ))
+              ) : (
+                <p className="no-results">No resources found matching your search.</p>
+              )}
+            </div>
           </div>
         )}
       </main>
 
-      {/* Footer with Privacy Policy, Terms, and Disclaimer (Contact removed) */}
-      <footer className="footer">
-        <div className="footer-content">
-          <div className="footer-links">
-            <a href="#privacy" onClick={(e) => { e.preventDefault(); alert("Privacy Policy: We protect your data and respect user privacy. This website does not store or keep any personal user data."); }}>Privacy Policy</a>
-            <a href="#terms" onClick={(e) => { e.preventDefault(); alert("Terms & Conditions: By using Sanolines.com you agree to our directory guidelines and third-party partner terms."); }}>Terms & Conditions</a>
-            <a href="#disclaimer" onClick={(e) => { e.preventDefault(); alert("Disclaimer: Sanolines is an independent information directory containing affiliate links (such as Uniplaces and Booking.com). We may receive compensation for referrals."); }}>Disclaimer</a>
-          </div>
-          <p className="footer-copy">&copy; {new Date().getFullYear()} Sanolines.com — Independent Information & Services Directory. All rights reserved.</p>
-        </div>
+      <footer className="app-footer">
+        <p>&copy; {new Date().getFullYear()} Sanolines Portugal. All rights reserved.</p>
       </footer>
     </div>
   );
