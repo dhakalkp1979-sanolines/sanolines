@@ -17,28 +17,6 @@ body {
   min-height: 100vh;
 }
 
-/* Single-Line Promo Banner */
-.promo-banner {
-  background-color: #2b4c7e;
-  color: #fff;
-  text-align: center;
-  padding: 10px 16px;
-  font-size: 14px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.promo-banner a {
-  color: #ffdd57;
-  text-decoration: underline;
-  font-weight: 600;
-}
-
-.promo-banner a:hover {
-  color: #fff;
-}
-
 /* Navigation Header */
 .navbar {
   display: flex;
@@ -109,7 +87,8 @@ body {
   transition: background-color 0.2s;
 }
 
-.nav-link-btn:hover, .nav-link-text:hover {
+.nav-link-btn:hover,
+.nav-link-text:hover {
   color: #2b4c7e;
 }
 
@@ -333,20 +312,4 @@ body {
   padding: 20px;
   font-size: 13px;
   color: #6b7280;
-}
-.promo-banner {
-  background-color: #2b4c7e;
-  color: #fff;
-  text-align: center;
-  padding: 10px 16px;
-  font-size: 14px;
-  white-space: nowrap;      /* Keeps it strictly on one line */
-  overflow: hidden;         /* Hides any overflow */
-  text-overflow: ellipsis;  /* Adds dots if screen is too narrow */
-}
-
-.promo-banner a {
-  color: #ffdd57;
-  text-decoration: underline;
-  font-weight: 600;
 }
