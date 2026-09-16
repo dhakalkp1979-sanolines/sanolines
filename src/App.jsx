@@ -1969,15 +1969,27 @@ const categoriesData = [
 export default function App() {
   const [selectedCategory, setSelectedCategory] = useState(null);
   const [searchQuery, setSearchQuery] = useState("");
+  const [activeInfo, setActiveInfo] = useState(null);
 
   const handleCategoryClick = (catId) => {
     setSelectedCategory(catId);
     setSearchQuery("");
+    setActiveInfo(null);
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   const handleBackToHome = () => {
     setSelectedCategory(null);
     setSearchQuery("");
+    setActiveInfo(null);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  const handleInfoClick = (page) => {
+    setActiveInfo(page);
+    setSelectedCategory(null);
+    setSearchQuery("");
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   const currentCategoryData = categoriesData.find(
@@ -1987,12 +1999,8 @@ export default function App() {
   const filteredItems = currentCategoryData
     ? currentCategoryData.items.filter(
         (item) =>
-          item.title
-            .toLowerCase()
-            .includes(searchQuery.toLowerCase()) ||
-          item.description
-            .toLowerCase()
-            .includes(searchQuery.toLowerCase())
+          item.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+          item.description.toLowerCase().includes(searchQuery.toLowerCase())
       )
     : [];
 
@@ -2011,9 +2019,17 @@ export default function App() {
           borderBottom: "1px solid #e5e7eb",
         }}
       >
+        {/* Logo / Brand */}
         <div
           className="nav-brand"
           onClick={handleBackToHome}
+          role="button"
+          tabIndex={0}
+          onKeyDown={(event) => {
+            if (event.key === "Enter" || event.key === " ") {
+              handleBackToHome();
+            }
+          }}
           style={{
             cursor: "pointer",
             display: "flex",
@@ -2068,6 +2084,7 @@ export default function App() {
           </div>
         </div>
 
+        {/* Navigation */}
         <div
           className="nav-links"
           style={{
@@ -2077,6 +2094,7 @@ export default function App() {
         >
           <button
             type="button"
+            className="nav-link-btn"
             onClick={handleBackToHome}
             style={{
               background: "none",
@@ -2093,6 +2111,7 @@ export default function App() {
 
           <button
             type="button"
+            className="nav-link-btn"
             onClick={handleBackToHome}
             style={{
               background: "none",
@@ -2111,7 +2130,187 @@ export default function App() {
 
       {/* Main Content */}
       <main className="main-content">
-        {!selectedCategory ? (
+
+        {/* Information Pages */}
+        {activeInfo ? (
+          <div
+            style={{
+              maxWidth: "900px",
+              margin: "0 auto",
+            }}
+          >
+            <button
+              type="button"
+              className="back-btn"
+              onClick={handleBackToHome}
+              style={{
+                marginBottom: "20px",
+              }}
+            >
+              &larr; Back to Home
+            </button>
+
+            <div
+              className="detail-header"
+              style={{
+                padding: "30px",
+              }}
+            >
+              {activeInfo === "privacy" && (
+                <>
+                  <h2>Privacy Policy</h2>
+
+                  <p>
+                    Sanolines is an independent information and services
+                    directory. We provide links to external websites so
+                    visitors can find relevant public, commercial, and
+                    community resources.
+                  </p>
+
+                  <p>
+                    Sanolines does not require visitors to provide personal
+                    information simply to browse the public directory.
+                  </p>
+
+                  <p>
+                    External websites linked from Sanolines may have their
+                    own privacy policies, cookies, analytics systems, and
+                    data-collection practices. Visitors should review the
+                    privacy policies of those websites before providing
+                    personal information.
+                  </p>
+
+                  <p>
+                    Sanolines does not control the privacy practices of
+                    external websites and is not responsible for their
+                    policies or practices.
+                  </p>
+
+                  <button
+                    type="button"
+                    onClick={handleBackToHome}
+                    style={{
+                      marginTop: "15px",
+                      background: "#2b4c7e",
+                      color: "#fff",
+                      border: "none",
+                      padding: "10px 18px",
+                      borderRadius: "5px",
+                      cursor: "pointer",
+                      fontWeight: "600",
+                    }}
+                  >
+                    Close
+                  </button>
+                </>
+              )}
+
+              {activeInfo === "terms" && (
+                <>
+                  <h2>Terms & Conditions</h2>
+
+                  <p>
+                    Sanolines is an independent information and services
+                    directory. The website provides general information and
+                    links to external websites.
+                  </p>
+
+                  <p>
+                    Sanolines does not provide, sell, operate, or guarantee
+                    the services listed on the website unless explicitly
+                    stated otherwise.
+                  </p>
+
+                  <p>
+                    External websites, organisations, prices, availability,
+                    requirements, application procedures, and services are
+                    controlled by their respective providers.
+                  </p>
+
+                  <p>
+                    Visitors should verify important information directly
+                    with the relevant organisation or official website before
+                    making decisions or submitting applications.
+                  </p>
+
+                  <p>
+                    Sanolines is not an official government institution,
+                    authority, agency, bank, hospital, employer, property
+                    provider, immigration authority, or other service
+                    provider.
+                  </p>
+
+                  <button
+                    type="button"
+                    onClick={handleBackToHome}
+                    style={{
+                      marginTop: "15px",
+                      background: "#2b4c7e",
+                      color: "#fff",
+                      border: "none",
+                      padding: "10px 18px",
+                      borderRadius: "5px",
+                      cursor: "pointer",
+                      fontWeight: "600",
+                    }}
+                  >
+                    Close
+                  </button>
+                </>
+              )}
+
+              {activeInfo === "about" && (
+                <>
+                  <h2>About Sanolines</h2>
+
+                  <p>
+                    Sanolines is an independent information and services
+                    directory created to make useful resources easier to
+                    find.
+                  </p>
+
+                  <p>
+                    The website brings together public, commercial, and
+                    community resources and connects visitors directly to
+                    relevant external websites.
+                  </p>
+
+                  <p>
+                    Sanolines does not provide the services listed on the
+                    website. Instead, it helps visitors locate the relevant
+                    organisation or provider.
+                  </p>
+
+                  <p>
+                    Information and external links may change over time.
+                    Visitors should always confirm current requirements,
+                    prices, availability, and procedures with the relevant
+                    provider.
+                  </p>
+
+                  <button
+                    type="button"
+                    onClick={handleBackToHome}
+                    style={{
+                      marginTop: "15px",
+                      background: "#2b4c7e",
+                      color: "#fff",
+                      border: "none",
+                      padding: "10px 18px",
+                      borderRadius: "5px",
+                      cursor: "pointer",
+                      fontWeight: "600",
+                    }}
+                  >
+                    Close
+                  </button>
+                </>
+              )}
+            </div>
+          </div>
+        ) : !selectedCategory ? (
+
+          /* Home Page */
           <div className="categories-grid">
             {categoriesData.map((category) => (
               <div
@@ -2122,9 +2321,17 @@ export default function App() {
                   cursor: "pointer",
                 }}
                 onClick={() => handleCategoryClick(category.id)}
+                role="button"
+                tabIndex={0}
+                onKeyDown={(event) => {
+                  if (event.key === "Enter" || event.key === " ") {
+                    handleCategoryClick(category.id);
+                  }
+                }}
               >
                 <div className="card-content-inner">
                   <h2>{category.title}</h2>
+
                   <p>{category.description}</p>
                 </div>
 
@@ -2136,10 +2343,14 @@ export default function App() {
               </div>
             ))}
           </div>
+
         ) : (
+
+          /* Category Detail Page */
           <div className="category-detail-view">
 
             <button
+              type="button"
               className="back-btn"
               onClick={handleBackToHome}
             >
@@ -2147,6 +2358,7 @@ export default function App() {
             </button>
 
             <div className="detail-header">
+
               <h2>{currentCategoryData.title}</h2>
 
               <p>{currentCategoryData.description}</p>
@@ -2159,11 +2371,14 @@ export default function App() {
                   onChange={(event) =>
                     setSearchQuery(event.target.value)
                   }
+                  aria-label={`Search in ${currentCategoryData.title}`}
                 />
               </div>
+
             </div>
 
             <div className="items-grid">
+
               {filteredItems.length > 0 ? (
                 filteredItems.map((item, index) => (
                   <div
@@ -2175,11 +2390,13 @@ export default function App() {
                     </div>
 
                     <div className="item-info">
+
                       <h3>{item.title}</h3>
 
                       <p>{item.description}</p>
 
                       <div className="item-links">
+
                         {item.links.map((link, linkIndex) => (
                           <a
                             key={`${link.label}-${linkIndex}`}
@@ -2191,7 +2408,9 @@ export default function App() {
                             {link.label} &nearr;
                           </a>
                         ))}
+
                       </div>
+
                     </div>
                   </div>
                 ))
@@ -2200,6 +2419,7 @@ export default function App() {
                   No resources found matching your search.
                 </p>
               )}
+
             </div>
           </div>
         )}
@@ -2225,6 +2445,7 @@ export default function App() {
             lineHeight: "1.6",
           }}
         >
+
           <p
             style={{
               marginBottom: "18px",
@@ -2250,6 +2471,7 @@ export default function App() {
             are managed by their respective providers.
           </p>
 
+          {/* Footer Links */}
           <div
             style={{
               margin: "20px 0",
@@ -2261,49 +2483,58 @@ export default function App() {
               fontWeight: "600",
             }}
           >
-            <span
+
+            <button
+              type="button"
+              onClick={() => handleInfoClick("privacy")}
               style={{
+                background: "none",
+                border: "none",
+                padding: 0,
                 cursor: "pointer",
                 color: "#2b4c7e",
+                fontWeight: "600",
+                fontSize: "13px",
               }}
-              onClick={() =>
-                alert(
-                  "Privacy Policy: Sanolines is an independent information directory. Please review the website privacy information before using external services."
-                )
-              }
             >
               Privacy Policy
-            </span>
+            </button>
 
-            <span
+            <button
+              type="button"
+              onClick={() => handleInfoClick("terms")}
               style={{
+                background: "none",
+                border: "none",
+                padding: 0,
                 cursor: "pointer",
                 color: "#2b4c7e",
+                fontWeight: "600",
+                fontSize: "13px",
               }}
-              onClick={() =>
-                alert(
-                  "Terms & Conditions: Sanolines provides information and links to external websites. External services are governed by the terms of their respective providers."
-                )
-              }
             >
               Terms & Conditions
-            </span>
+            </button>
 
-            <span
+            <button
+              type="button"
+              onClick={() => handleInfoClick("about")}
               style={{
+                background: "none",
+                border: "none",
+                padding: 0,
                 cursor: "pointer",
                 color: "#2b4c7e",
+                fontWeight: "600",
+                fontSize: "13px",
               }}
-              onClick={() =>
-                alert(
-                  "About Sanolines: Sanolines is an independent information and services directory created to help people find useful resources more easily."
-                )
-              }
             >
               About
-            </span>
+            </button>
+
           </div>
 
+          {/* Sanolines Footer Brand */}
           <div
             style={{
               display: "flex",
@@ -2360,6 +2591,7 @@ export default function App() {
           >
             &copy; {new Date().getFullYear()} Sanolines. All rights reserved.
           </p>
+
         </div>
       </footer>
     </div>
