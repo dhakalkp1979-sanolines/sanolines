@@ -4,7 +4,7 @@ import "./App.css";
 const categoriesData = [
   {
     id: "jobs",
-    title: "Jobs",
+    title: "JOBS",
     description: "Employment & recruitment resources across national boards and agencies.",
     color: "#2b4c7e",
     items: [
@@ -30,7 +30,7 @@ const categoriesData = [
   },
   {
     id: "room-rent",
-    title: "Room Rent",
+    title: "ROOM RENT",
     description: "Shared rooms and medium-term rentals for students and expats.",
     color: "#2a6f49",
     items: [
@@ -55,7 +55,7 @@ const categoriesData = [
   },
   {
     id: "housing",
-    title: "Housing",
+    title: "HOUSING",
     description: "Apartments and long-term rentals with affiliate partner boxes like Uniplaces.",
     color: "#8c4a24",
     items: [
@@ -79,7 +79,7 @@ const categoriesData = [
   },
   {
     id: "immigration",
-    title: "Immigration",
+    title: "IMMIGRATION",
     description: "Visas, residency permits, and citizenship pathways.",
     color: "#5c3d78",
     items: [
@@ -102,7 +102,7 @@ const categoriesData = [
   },
   {
     id: "open-bank-account",
-    title: "Open Bank Account",
+    title: "OPEN BANK ACCOUNT",
     description: "Banking institutions and financial setup assistance.",
     color: "#1d6363",
     items: [
@@ -125,7 +125,7 @@ const categoriesData = [
   },
   {
     id: "recruitment-agencies",
-    title: "Recruitment Agencies",
+    title: "RECRUITMENT AGENCIES",
     description: "Job placement and temporary work staffing companies.",
     color: "#8c2447",
     items: [
@@ -148,7 +148,7 @@ const categoriesData = [
   },
   {
     id: "health-services",
-    title: "Health Services",
+    title: "HEALTH SERVICES",
     description: "Public hospitals, clinics, and emergency care directories.",
     color: "#4d5d53",
     items: [
@@ -171,7 +171,7 @@ const categoriesData = [
   },
   {
     id: "public-transport",
-    title: "Public Transport",
+    title: "PUBLIC TRANSPORT",
     description: "Trains, metros, and local transit networks across Portugal.",
     color: "#783d5c",
     items: [
@@ -194,7 +194,7 @@ const categoriesData = [
   },
   {
     id: "driving-licence",
-    title: "Driving Licence",
+    title: "DRIVING LICENCE",
     description: "Exchange, applications, and vehicle registry services.",
     color: "#3d5c78",
     items: [
@@ -217,7 +217,7 @@ const categoriesData = [
   },
   {
     id: "education-training",
-    title: "Education & Training",
+    title: "EDUCATION & TRAINING",
     description: "Schools, universities, and professional courses.",
     color: "#78643d",
     items: [
@@ -240,7 +240,7 @@ const categoriesData = [
   },
   {
     id: "pharmacies-daily-life",
-    title: "Pharmacies & Daily Life",
+    title: "PHARMACIES & DAILY LIFE",
     description: "Local pharmacies, utilities, and daily essentials.",
     color: "#3d7852",
     items: [
@@ -277,21 +277,29 @@ export default function App() {
   return (
     <div className="sanolines-app">
       
-      {/* SINGLE PROMO BANNER LINE FIXED */}
+      {/* Top Single Line Promo Banner */}
       <div className="promo-banner">
         Looking for student housing?&nbsp;
-        <a href="https://www.uniplaces.com" target="_blank" rel="noopener noreferrer" style={{ color: '#fff', textDecoration: 'underline' }}>
+        <a href="https://www.uniplaces.com" target="_blank" rel="noopener noreferrer">
           Click here to visit Uniplaces
         </a>
         &nbsp;. Use promo code <strong>UNIX0YP7M</strong> at checkout to get 10% off the service fee!
       </div>
 
-      <header className="app-header">
-        <div className="header-container" onClick={handleBackToHome} style={{ cursor: 'pointer' }}>
-          <h1>Sanolines Portugal</h1>
-          <p>Your ultimate directory for relocating, working, and living in Portugal</p>
+      {/* Navigation Header */}
+      <nav className="navbar">
+        <div className="nav-brand" onClick={handleBackToHome} style={{ cursor: 'pointer' }}>
+          <div className="nav-logo-box">S</div>
+          <div className="nav-title-group">
+            <span className="brand-name">SANOLINES</span>
+            <span className="brand-subtitle">INDEPENDENT INFORMATION & SERVICES DIRECTORY</span>
+          </div>
         </div>
-      </header>
+        <div className="nav-links">
+          <button onClick={handleBackToHome} className="nav-link-btn active">Home</button>
+          <span className="nav-link-text" onClick={handleBackToHome} style={{ cursor: 'pointer' }}>Services</span>
+        </div>
+      </nav>
 
       <main className="main-content">
         {!selectedCategory ? (
@@ -300,15 +308,15 @@ export default function App() {
               <div 
                 key={cat.id} 
                 className="category-card" 
-                style={{ borderColor: cat.color }}
+                style={{ backgroundColor: cat.color }}
                 onClick={() => handleCategoryClick(cat.id)}
               >
-                <div className="card-header" style={{ backgroundColor: cat.color }}>
+                <div className="card-content-inner">
                   <h2>{cat.title}</h2>
-                </div>
-                <div className="card-body">
                   <p>{cat.description}</p>
-                  <span className="explore-link">Explore resources &rarr;</span>
+                </div>
+                <div className="card-action">
+                  <span className="view-services-btn">VIEW SERVICES &rarr;</span>
                 </div>
               </div>
             ))}
@@ -319,7 +327,7 @@ export default function App() {
               &larr; Back to all categories
             </button>
             
-            <div className="detail-header" style={{ borderLeftColor: currentCategoryData.color }}>
+            <div className="detail-header">
               <h2>{currentCategoryData.title}</h2>
               <p>{currentCategoryData.description}</p>
               
