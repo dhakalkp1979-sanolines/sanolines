@@ -11,6 +11,24 @@ body {
   min-height: 100vh;
 }
 
+/* Promo Banner */
+.promo-banner {
+  background-color: #27ae60;
+  color: white;
+  text-align: center;
+  padding: 10px 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.promo-link {
+  color: #fff;
+  font-weight: bold;
+  text-decoration: underline;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
 /* Navbar */
 .navbar {
   display: flex;
@@ -248,12 +266,45 @@ body {
   background-color: #bee3f8;
 }
 
-/* Footer */
+/* Footer Styling */
 .footer {
-  text-align: center;
-  padding: 20px;
   background-color: #ffffff;
   border-top: 1px solid #e0e0e0;
+  padding: 30px 40px;
+  margin-top: auto;
+}
+
+.footer-content {
+  max-width: 1300px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: center;
+  text-align: center;
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.footer-links a {
+  color: #4a5568;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.footer-links a:hover {
+  color: #6c5ce7;
+  text-decoration: underline;
+}
+
+.footer-copy {
   color: #718096;
   font-size: 0.85rem;
+  margin: 0;
 }
