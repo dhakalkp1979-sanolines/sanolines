@@ -26,15 +26,21 @@ body {
   padding: 16px 32px;
   border-bottom: 1px solid #e5e7eb;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+
+  /* Navigation click fix */
   position: sticky;
+  position: -webkit-sticky;
   top: 0;
-  z-index: 100;
+  z-index: 1000;
 }
 
 .nav-brand {
   display: flex;
   align-items: center;
   gap: 12px;
+  position: relative;
+  z-index: 1001;
+  cursor: pointer;
 }
 
 .nav-logo-box {
@@ -69,13 +75,24 @@ body {
   font-weight: 600;
 }
 
+/* Navigation Links */
 .nav-links {
   display: flex;
   align-items: center;
   gap: 20px;
+
+  /* Navigation click fix */
+  position: relative;
+  z-index: 1001;
+  pointer-events: auto;
 }
 
 .nav-link-btn {
+  /* Navigation click fix */
+  position: relative;
+  z-index: 1002;
+  pointer-events: auto;
+
   background: none;
   border: none;
   font-size: 15px;
