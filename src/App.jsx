@@ -49,7 +49,7 @@ const categoriesData = [
       { title: "Studentville Accommodations", description: "Directory of student residences across Portugal.", links: [{ label: "Studentville", url: "https://www.studentville.it" }], icon: "🏫" },
       { title: "AmberStudent", description: "Student housing booking platform near major universities.", links: [{ label: "AmberStudent", url: "https://amberstudent.com" }], icon: "🎒" },
       { title: "Roomster", description: "Global roommate finder and shared space platform.", links: [{ label: "Roomster", url: "https://www.roomster.com" }], icon: "👥" },
-      { title: " Lisbon Rooms Direct", description: "Boutique mid-term independent room providers.", links: [{ label: "Lisbon Rooms", url: "https://www.uniplaces.com" }], icon: "🏡" },
+      { title: "Lisbon Rooms Direct", description: "Boutique mid-term independent room providers.", links: [{ label: "Lisbon Rooms", url: "https://www.uniplaces.com" }], icon: "🏡" },
       { title: "Porto Student Living", description: "Northern university housing network resources.", links: [{ label: "Porto Living", url: "https://inlifehousing.com" }], icon: "🎓" }
     ]
   },
@@ -378,14 +378,13 @@ export default function App() {
         )}
       </main>
 
-      {/* Footer with Disclaimer, Privacy, Terms, and Contact */}
+      {/* Footer with Privacy Policy, Terms, and Disclaimer (Contact removed) */}
       <footer className="footer">
         <div className="footer-content">
           <div className="footer-links">
-            <a href="#privacy" onClick={(e) => { e.preventDefault(); alert("Privacy Policy: We protect your data and respect user privacy in accordance with GDPR guidelines."); }}>Privacy Policy</a>
+            <a href="#privacy" onClick={(e) => { e.preventDefault(); alert("Privacy Policy: We protect your data and respect user privacy. This website does not store or keep any personal user data."); }}>Privacy Policy</a>
             <a href="#terms" onClick={(e) => { e.preventDefault(); alert("Terms & Conditions: By using Sanolines.com you agree to our directory guidelines and third-party partner terms."); }}>Terms & Conditions</a>
             <a href="#disclaimer" onClick={(e) => { e.preventDefault(); alert("Disclaimer: Sanolines is an independent information directory containing affiliate links (such as Uniplaces and Booking.com). We may receive compensation for referrals."); }}>Disclaimer</a>
-            <a href="#contact" onClick={(e) => { e.preventDefault(); alert("Contact Us: Reach out to our support team at support@sanolines.com"); }}>Contact Us</a>
           </div>
           <p className="footer-copy">&copy; {new Date().getFullYear()} Sanolines.com — Independent Information & Services Directory. All rights reserved.</p>
         </div>
