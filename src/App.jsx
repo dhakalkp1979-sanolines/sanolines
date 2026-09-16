@@ -39,7 +39,6 @@ const categoriesData = [
       { title: "Spotahome", description: "Online verified home and room bookings.", links: [{ label: "Spotahome", url: "https://www.spotahome.com" }], icon: "🔑" },
       { title: "Erasmusu Rooms", description: "Student accommodation network for exchange participants.", links: [{ label: "Erasmusu", url: "https://erasmusu.com" }], icon: "🎓" },
       { title: "Roomlala", description: "Peer-to-peer room rentals and homestay accommodations.", links: [{ label: "Roomlala", url: "https://www.roomlala.com" }], icon: "🤝" },
-      { title: "Uniplaces Promo Integration", description: "Use promo code UNIX0YP7M for 10% off service fees.", links: [{ label: "Redeem Uniplaces", url: "https://www.uniplaces.com" }], icon: "🏷️" },
       { title: "Nestpick", description: "Aggregator for furnished apartments and mid-term rooms.", links: [{ label: "Nestpick", url: "https://www.nestpick.com" }], icon: "📊" },
       { title: "Olx Quartos Para Arrendar", description: "Classified ads platform featuring shared room postings.", links: [{ label: "OLX Quartos", url: "https://www.olx.pt" }], icon: "📱" },
       { title: "CustoJusto Quartos", description: "Local classifieds listings for room rentals.", links: [{ label: "CustoJusto", url: "https://www.custojusto.pt" }], icon: "🔍" },
@@ -259,10 +258,12 @@ export default function App() {
 
   const handleCategoryClick = (catId) => {
     setSelectedCategory(catId);
+    setSearchQuery("");
   };
 
   const handleBackToHome = () => {
     setSelectedCategory(null);
+    setSearchQuery("");
   };
 
   const currentCategoryData = categoriesData.find(c => c.id === selectedCategory);
@@ -277,13 +278,13 @@ export default function App() {
   return (
     <div className="sanolines-app">
       
-      {/* Top Single Line Promo Banner */}
+      {/* Top Single Line Promo Banner (Only 1 instance) */}
       <div className="promo-banner">
         Looking for student housing?&nbsp;
         <a href="https://www.uniplaces.com" target="_blank" rel="noopener noreferrer">
           Click here to visit Uniplaces
         </a>
-        &nbsp;. Use promo code <strong>UNIX0YP7M</strong> at checkout to get 10% off the service fee!
+        &nbsp;&mdash; Use promo code <strong>UNIX0YP7M</strong> at checkout to get 10% off the service fee!
       </div>
 
       {/* Navigation Header */}
@@ -296,7 +297,7 @@ export default function App() {
           </div>
         </div>
         <div className="nav-links">
-          <button onClick={handleBackToHome} className="nav-link-btn active">Home</button>
+          <button onClick={handleBackToHome} className="nav-link-btn">Home</button>
           <span className="nav-link-text" onClick={handleBackToHome} style={{ cursor: 'pointer' }}>Services</span>
         </div>
       </nav>
@@ -373,9 +374,9 @@ export default function App() {
         )}
       </main>
 
-      {/* Disclaimer Section */}
+      {/* Disclaimer & Affiliate Notice Section */}
       <div className="disclaimer-section" style={{ textAlign: "center", padding: "20px", fontSize: "12px", color: "#666", background: "#fff", borderTop: "1px solid #e5e7eb", marginTop: "40px" }}>
-        <p><strong>SANOLINES</strong> is an independent information and services directory. We are not affiliated with any government agency or official institution. Links provided are for general resource guidance purposes only.</p>
+        <p><strong>SANOLINES</strong> is an independent information and services directory. We are not affiliated with any government agency or official institution. Links provided are for general resource guidance purposes only. Some outbound links may be affiliate partnerships through which we may earn a small commission at no additional cost to you.</p>
       </div>
 
       <footer className="app-footer">
