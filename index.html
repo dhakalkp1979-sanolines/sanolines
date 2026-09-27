@@ -2,134 +2,15 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Sanolines — Fast, simple, and free online calculators, converters, and utilities for finance, health, developers, and everyday tasks.">
-  <meta name="theme-color" content="#0f172a">
-  
-  <title>Sanolines – Daily Tools & Utilities</title>
-
-  <!-- Favicon & Manifest -->
-  <link rel="icon" href="/favicon.ico">
-  <link rel="manifest" href="/manifest.json">
-
-  <!-- Master CSS File -->
+  <title>Sanolines – Daily Tools & Utilities Platform</title>
   <link rel="stylesheet" href="style.css">
-
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-S07B7YZR9M"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-S07B7YZR9M');
-  </script>
 </head>
 <body>
 
-  <!-- Header / Navigation -->
-  <header>
-    <div class="logo">SANOLINES</div>
-    <nav>
-      <a href="/">Home</a>
-      <a href="/tools.html">Tools</a>
-      <a href="/categories.html">Categories</a>
-      <a href="/about.html">About</a>
-      <a href="/disclaimer.html">Disclaimer</a>
-    </nav>
-  </header>
-
-  <!-- Main Homepage Content -->
-  <main>
-    <section class="hero fade">
-      <h1>Your Daily Tools — Fast, Simple, Free</h1>
-      <p>150+ calculators, converters, and utilities for finance, health, developers, writers, builders, and creators.</p>
-      <button onclick="location.href='/tools.html'">Browse All Tools</button>
-    </section>
-
-    <section class="search fade">
-      <input type="text" placeholder="Search any tool… (BMI, Loan EMI, JSON Formatter)">
-      <div id="search-results" class="grid fade" style="margin-top: 16px;"></div>
-    </section>
-
-    <section class="section fade">
-      <h2>Main Categories</h2>
-      <div class="grid">
-        <a href="/categories/finance.html" class="card">Finance Tools</a>
-        <a href="/categories/health.html" class="card">Health & Fitness</a>
-        <a href="/categories/developer.html" class="card">Developer Tools</a>
-        <a href="/categories/writing.html" class="card">Writing Tools</a>
-        <a href="/categories/construction.html" class="card">Construction Tools</a>
-        <a href="/categories/video.html" class="card">Video & Media Tools</a>
-      </div>
-    </section>
-
-    <section class="section fade">
-      <h2>Popular Tools</h2>
-      <div class="grid">
-        <a href="/tools/bmi.html" class="card">BMI Calculator</a>
-        <a href="/tools/word-counter.html" class="card">Word Counter</a>
-        <a href="/tools/json-formatter.html" class="card">JSON Formatter</a>
-        <a href="/tools/loan-emi.html" class="card">Loan EMI Calculator</a>
-        <a href="/tools/concrete-volume.html" class="card">Concrete Volume Calculator</a>
-        <a href="/tools/aspect-ratio.html" class="card">Aspect Ratio Calculator</a>
-      </div>
-    </section>
-  </main>
-
-  <!-- Footer -->
-  <footer>
-    © 2026 Sanolines — All Rights Reserved
-  </footer>
-
-  <!-- Real-Time Search Script -->
-  <script>
-    const tools = [
-      { name: "BMI Calculator", url: "/tools/bmi.html" },
-      { name: "Word Counter", url: "/tools/word-counter.html" },
-      { name: "JSON Formatter", url: "/tools/json-formatter.html" },
-      { name: "Loan EMI Calculator", url: "/tools/loan-emi.html" },
-      { name: "Concrete Volume Calculator", url: "/tools/concrete-volume.html" },
-      { name: "Aspect Ratio Calculator", url: "/tools/aspect-ratio.html" },
-      { name: "Water Intake Calculator", url: "/tools/water-intake.html" },
-      { name: "Salary Converter", url: "/tools/salary-converter.html" },
-      { name: "Crypto Profit Calculator", url: "/tools/crypto-profit.html" },
-      { name: "Pregnancy Due Date Calculator", url: "/tools/pregnancy-due-date.html" },
-      { name: "Password Generator", url: "/tools/password-generator.html" },
-      { name: "URL Encoder", url: "/tools/url-encoder.html" }
-    ];
-
-    const searchInput = document.querySelector(".search input");
-
-    searchInput.addEventListener("input", function() {
-      const value = this.value.toLowerCase().trim();
-      const resultsContainer = document.getElementById("search-results");
-      
-      if (value === "") {
-        resultsContainer.innerHTML = "";
-        return;
-      }
-
-      let results = tools.filter(t => t.name.toLowerCase().includes(value));
-
-      let html = "";
-      if (results.length > 0) {
-        results.forEach(r => {
-          html += `<a href="${r.url}" class="card fade">${r.name}</a>`;
-        });
-      } else {
-        html = `<div style="grid-column: 1 / -1; text-align: center; color: #6b7280; font-size: 0.9rem;">No tools found matching "${this.value}"</div>`;
-      }
-
-      resultsContainer.innerHTML = html;
-    });
-  </script>
-
-</body>
-</html>
 <header>
   <div class="logo">
-    <a href="/" style="display: flex; text-decoration: none;">
-      <img src="/logo.svg" alt="Sanolines Logo" style="height: 28px;">
+    <a href="/">
+      <img src="logo.svg" alt="Sanolines Logo">
     </a>
   </div>
   <nav>
@@ -138,7 +19,113 @@
     <a href="/categories.html">Categories</a>
     <a href="/about.html">About</a>
     <a href="/disclaimer.html">Disclaimer</a>
-    <!-- Theme Toggle Button -->
-    <button id="theme-toggle" style="background: none; border: none; cursor: pointer; font-size: 1.1rem; margin-left: 16px;">🌙</button>
+    <button id="theme-toggle" style="background: none; border: none; cursor: pointer; font-size: 1.1rem; color: inherit;">🌙</button>
   </nav>
 </header>
+
+<main>
+  <section class="hero fade">
+    <h1>Your Daily Tools — Fast, Simple, Free</h1>
+    <p>150+ calculators, converters, and utilities for finance, health, developers, writers, builders, and creators.</p>
+    <button onclick="location.href='/tools.html'">Browse All Tools</button>
+  </section>
+
+  <section class="search fade">
+    <input type="text" placeholder="Search any tool… (BMI, Loan EMI, JSON Formatter)">
+    <div id="search-results" class="grid fade" style="margin-top: 16px;"></div>
+  </section>
+
+  <section class="section fade">
+    <h2>Main Categories</h2>
+    <div class="grid">
+      <a class="card" href="/categories/finance.html">Finance Tools</a>
+      <a class="card" href="/categories/health.html">Health & Fitness</a>
+      <a class="card" href="/categories/developer.html">Developer Tools</a>
+      <a class="card" href="/categories/writing.html">Writing Tools</a>
+      <a class="card" href="/categories/construction.html">Construction Tools</a>
+      <a class="card" href="/categories/video.html">Video & Media Tools</a>
+    </div>
+  </section>
+
+  <section class="section fade">
+    <h2>Popular Tools</h2>
+    <div class="grid">
+      <a class="card" href="/tools/bmi.html">BMI Calculator</a>
+      <a class="card" href="/tools/word-counter.html">Word Counter</a>
+      <a class="card" href="/tools/json-formatter.html">JSON Formatter</a>
+      <a class="card" href="/tools/loan-emi.html">Loan EMI Calculator</a>
+      <a class="card" href="/tools/concrete-volume.html">Concrete Volume</a>
+      <a class="card" href="/tools/aspect-ratio.html">Aspect Ratio Calculator</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div>
+    <a href="/about.html">About</a> | 
+    <a href="/privacy.html">Privacy Policy</a> | 
+    <a href="/terms.html">Terms</a> | 
+    <a href="/disclaimer.html">Disclaimer</a>
+  </div>
+  <div style="margin-top: 8px;">© 2026 Sanolines — All Rights Reserved</div>
+</footer>
+
+<script>
+  // Instant Search Engine Logic
+  const tools = [
+    { name: "BMI Calculator", url: "/tools/bmi.html" },
+    { name: "Word Counter", url: "/tools/word-counter.html" },
+    { name: "JSON Formatter", url: "/tools/json-formatter.html" },
+    { name: "Loan EMI Calculator", url: "/tools/loan-emi.html" },
+    { name: "Concrete Volume Calculator", url: "/tools/concrete-volume.html" },
+    { name: "Aspect Ratio Calculator", url: "/tools/aspect-ratio.html" },
+    { name: "Water Intake Calculator", url: "/tools/water-intake.html" },
+    { name: "Salary Converter", url: "/tools/salary-converter.html" },
+    { name: "Crypto Profit Calculator", url: "/tools/crypto-profit.html" },
+    { name: "Password Generator", url: "/tools/password-generator.html" },
+    { name: "URL Encoder", url: "/tools/url-encoder.html" }
+  ];
+
+  const searchInput = document.querySelector(".search input");
+  searchInput.addEventListener("input", function() {
+    const value = this.value.toLowerCase().trim();
+    const resultsContainer = document.getElementById("search-results");
+    
+    if (value === "") {
+      resultsContainer.innerHTML = "";
+      return;
+    }
+
+    let matches = tools.filter(t => t.name.toLowerCase().includes(value));
+    let html = "";
+    
+    if (matches.length > 0) {
+      matches.forEach(m => {
+        html += `<a class="card fade" href="${m.url}">${m.name}</a>`;
+      });
+    } else {
+      html = `<div style="grid-column: 1 / -1; text-align: center; color: var(--text-muted); font-size: 0.9rem;">No tools found matching "${this.value}"</div>`;
+    }
+
+    resultsContainer.innerHTML = html;
+  });
+
+  // Dark Mode Persistence Logic
+  const toggleBtn = document.getElementById("theme-toggle");
+  const applyTheme = (isDark) => {
+    document.body.classList.toggle("dark", isDark);
+    toggleBtn.textContent = isDark ? "☀️" : "🌙";
+    localStorage.setItem("theme", isDark ? "dark" : "light");
+  };
+
+  toggleBtn.addEventListener("click", () => {
+    applyTheme(!document.body.classList.contains("dark"));
+  });
+
+  if (localStorage.getItem("theme") === "dark") {
+    applyTheme(true);
+  }
+</script>
+
+</body>
+</html>
