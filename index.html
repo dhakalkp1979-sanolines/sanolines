@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sanolines – Your Daily Tools: Fast, Simple, Free</title>
+  <title id="page-title">Sanolines – Your Daily Tools: Fast, Simple, Free</title>
   <link rel="stylesheet" href="./style.css">
   <!-- FontAwesome for Social Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -18,11 +18,11 @@
     </a>
   </div>
   <nav style="display: flex; align-items: center; gap: 24px;">
-    <a href="./index.html" style="text-decoration: none; font-weight: 600; color: #2563eb;">Home</a>
-    <a href="./tools.html" style="text-decoration: none; color: var(--text-muted);">Tools</a>
-    <a href="./categories.html" style="text-decoration: none; color: var(--text-muted);">Categories</a>
-    <a href="./about.html" style="text-decoration: none; color: var(--text-muted);">About</a>
-    <a href="./disclaimer.html" style="text-decoration: none; color: var(--text-muted);">Disclaimer</a>
+    <a href="./index.html" id="nav-home" style="text-decoration: none; font-weight: 600; color: #2563eb;">Home</a>
+    <a href="./tools.html" id="nav-tools" style="text-decoration: none; color: var(--text-muted);">Tools</a>
+    <a href="./categories.html" id="nav-categories" style="text-decoration: none; color: var(--text-muted);">Categories</a>
+    <a href="./about.html" id="nav-about" style="text-decoration: none; color: var(--text-muted);">About</a>
+    <a href="./disclaimer.html" id="nav-disclaimer" style="text-decoration: none; color: var(--text-muted);">Disclaimer</a>
   </nav>
   <div style="display: flex; align-items: center; gap: 16px;">
     <!-- Language Switcher -->
@@ -38,10 +38,10 @@
 <!-- Hero Section -->
 <section style="padding: 60px 5%; background: linear-gradient(135deg, rgba(37,99,235,0.05) 0%, rgba(147,51,234,0.05) 100%); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 40px;">
   <div style="flex: 1; min-width: 300px; max-width: 600px;">
-    <h1 style="font-size: 3rem; font-weight: 800; line-height: 1.2; margin-bottom: 20px; color: var(--text-primary);">
-      Your Daily Tools<br><span style="color: #2563eb;">Fast, Simple, Free</span>
+    <h1 id="hero-title" style="font-size: 3rem; font-weight: 800; line-height: 1.2; margin-bottom: 20px; color: var(--text-primary);">
+      Your Daily Tools<br><span style="color: #2563eb;" id="hero-subtitle">Fast, Simple, Free</span>
     </h1>
-    <p style="font-size: 1.1rem; color: var(--text-muted); margin-bottom: 30px; line-height: 1.6;">
+    <p id="hero-desc" style="font-size: 1.1rem; color: var(--text-muted); margin-bottom: 30px; line-height: 1.6;">
       150+ calculators, converters, and utilities for finance, health, developers, writers, builders, and creators.
     </p>
 
@@ -49,31 +49,38 @@
     <form id="search-form" onsubmit="handleSearch(event)" style="display: flex; background: var(--bg-primary); border: 1px solid var(--border-color); border-radius: 12px; padding: 8px; box-shadow: 0 4px 20px rgba(0,0,0,0.05); margin-bottom: 24px;">
       <span style="display: flex; align-items: center; padding-left: 12px; color: var(--text-muted);"><i class="fa-solid fa-magnifying-glass"></i></span>
       <input type="text" id="search-input" placeholder="Search any tool... (e.g. BMI, Loan EMI, JSON formatter)" style="border: none; background: none; outline: none; padding: 12px; width: 100%; font-size: 1rem; color: var(--text-primary);">
-      <button type="submit" style="background: #2563eb; color: white; border: none; padding: 12px 24px; border-radius: 8px; font-weight: 600; cursor: pointer;">Search</button>
+      <button type="submit" id="search-btn" style="background: #2563eb; color: white; border: none; padding: 12px 24px; border-radius: 8px; font-weight: 600; cursor: pointer;">Search</button>
     </form>
 
     <!-- Feature Tags -->
     <div style="display: flex; gap: 20px; flex-wrap: wrap; font-size: 0.9rem; color: var(--text-muted);">
-      <span><i class="fa-solid fa-circle-check" style="color: #2563eb;"></i> Free Forever</span>
-      <span><i class="fa-solid fa-circle-check" style="color: #2563eb;"></i> No Sign Up</span>
-      <span><i class="fa-solid fa-circle-check" style="color: #2563eb;"></i> Mobile Friendly</span>
-      <span><i class="fa-solid fa-circle-check" style="color: #2563eb;"></i> Global Access</span>
+      <span id="tag-1"><i class="fa-solid fa-circle-check" style="color: #2563eb;"></i> Free Forever</span>
+      <span id="tag-2"><i class="fa-solid fa-circle-check" style="color: #2563eb;"></i> No Sign Up</span>
+      <span id="tag-3"><i class="fa-solid fa-circle-check" style="color: #2563eb;"></i> Mobile Friendly</span>
+      <span id="tag-4"><i class="fa-solid fa-circle-check" style="color: #2563eb;"></i> Global Access</span>
     </div>
   </div>
 
-  <!-- Hero Graphic (Laptop Window) -->
+  <!-- Hero Graphic (Laptop Illustration Frame) -->
   <div style="flex: 1; min-width: 300px; text-align: center;">
-    <div style="background: var(--bg-primary); border: 1px solid var(--border-color); padding: 30px; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); display: inline-block; max-width: 450px; width: 100%;">
-      <div style="font-family: cursive; font-size: 1.5rem; color: #2563eb; margin-bottom: 15px;">Small Tools. Big Possibilities.</div>
-      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 20px;">
-        <div style="background: #dcfce7; padding: 15px; border-radius: 8px; font-size: 1.5rem;">📊</div>
-        <div style="background: #fee2e2; padding: 15px; border-radius: 8px; font-size: 1.5rem;">❤️</div>
-        <div style="background: #dbeafe; padding: 15px; border-radius: 8px; font-size: 1.5rem;">💻</div>
-        <div style="background: #f3e8ff; padding: 15px; border-radius: 8px; font-size: 1.5rem;">📝</div>
-        <div style="background: #ffedd5; padding: 15px; border-radius: 8px; font-size: 1.5rem;">🏗️</div>
-        <div style="background: #fce7f3; padding: 15px; border-radius: 8px; font-size: 1.5rem;">🎬</div>
+    <div style="background: var(--bg-primary); border: 1px solid var(--border-color); padding: 30px; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); display: inline-block; max-width: 480px; width: 100%;">
+      <div style="font-family: cursive; font-size: 1.4rem; color: #2563eb; margin-bottom: 20px; font-weight: 600;">Small Tools. Big Possibilities.</div>
+      
+      <!-- Laptop Mockup Graphic Frame -->
+      <div style="background: #1e293b; padding: 16px 16px 8px 16px; border-radius: 12px; box-shadow: 0 8px 20px rgba(0,0,0,0.15); margin-bottom: 20px;">
+        <div style="background: #f8fafc; border-radius: 6px; padding: 16px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px;">
+          <div style="background: #dcfce7; padding: 10px; border-radius: 6px; font-size: 1.2rem; text-align: center;">📊</div>
+          <div style="background: #fee2e2; padding: 10px; border-radius: 6px; font-size: 1.2rem; text-align: center;">❤️</div>
+          <div style="background: #dbeafe; padding: 10px; border-radius: 6px; font-size: 1.2rem; text-align: center;">💻</div>
+          <div style="background: #f3e8ff; padding: 10px; border-radius: 6px; font-size: 1.2rem; text-align: center;">📝</div>
+          <div style="background: #ffedd5; padding: 10px; border-radius: 6px; font-size: 1.2rem; text-align: center;">🏗️</div>
+          <div style="background: #fce7f3; padding: 10px; border-radius: 6px; font-size: 1.2rem; text-align: center;">🎬</div>
+        </div>
+        <div style="width: 6px; height: 6px; background: #334155; border-radius: 50%; margin: 8px auto 0 auto;"></div>
       </div>
-      <div style="font-size: 0.85rem; color: var(--text-muted); background: var(--bg-secondary); padding: 8px; border-radius: 6px;">Simple Tools for a Better Tomorrow.</div>
+      <div style="background: #cbd5e1; height: 10px; width: 60%; margin: 0 auto 15px auto; border-radius: 0 0 8px 8px;"></div>
+
+      <div style="font-size: 0.85rem; color: var(--text-muted); background: var(--bg-secondary); padding: 10px; border-radius: 6px; border: 1px solid var(--border-color);">Simple Tools for a Better Tomorrow.</div>
     </div>
   </div>
 </section>
@@ -81,8 +88,8 @@
 <!-- Explore by Category -->
 <section style="padding: 60px 5%;">
   <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px;">
-    <h2 style="font-size: 1.8rem; font-weight: 700;">Explore by Category</h2>
-    <a href="./categories.html" style="color: #2563eb; text-decoration: none; font-weight: 600;">View All Categories →</a>
+    <h2 id="cat-heading" style="font-size: 1.8rem; font-weight: 700;">Explore by Category</h2>
+    <a href="./categories.html" id="cat-viewall" style="color: #2563eb; text-decoration: none; font-weight: 600;">View All Categories →</a>
   </div>
 
   <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
@@ -133,8 +140,8 @@
 <!-- Popular Tools -->
 <section style="padding: 0 5% 60px 5%;">
   <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px;">
-    <h2 style="font-size: 1.8rem; font-weight: 700;">Popular Tools</h2>
-    <a href="./tools.html" style="color: #2563eb; text-decoration: none; font-weight: 600;">View All Tools →</a>
+    <h2 id="pop-heading" style="font-size: 1.8rem; font-weight: 700;">Popular Tools</h2>
+    <a href="./tools.html" id="pop-viewall" style="color: #2563eb; text-decoration: none; font-weight: 600;">View All Tools →</a>
   </div>
 
   <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 16px;">
@@ -242,23 +249,87 @@
     }
   }
 
-  // Language Switcher Logic
+  // Working Language Switcher Dictionaries
+  const translations = {
+    en: {
+      home: "Home", tools: "Tools", categories: "Categories", about: "About", disclaimer: "Disclaimer",
+      heroTitle: "Your Daily Tools", heroSubtitle: "Fast, Simple, Free",
+      heroDesc: "150+ calculators, converters, and utilities for finance, health, developers, writers, builders, and creators.",
+      searchPlaceholder: "Search any tool... (e.g. BMI, Loan EMI, JSON formatter)", searchBtn: "Search",
+      tag1: "Free Forever", tag2: "No Sign Up", tag3: "Mobile Friendly", tag4: "Global Access",
+      catHeading: "Explore by Category", catViewAll: "View All Categories →",
+      popHeading: "Popular Tools", popViewAll: "View All Tools →"
+    },
+    pt: {
+      home: "Início", tools: "Ferramentas", categories: "Categorias", about: "Sobre", disclaimer: "Aviso Legal",
+      heroTitle: "Suas Ferramentas Diárias", heroSubtitle: "Rápido, Simples, Gratuito",
+      heroDesc: "Mais de 150 calculadoras, conversores e utilitários para finanças, saúde, desenvolvedores, escritores e criadores.",
+      searchPlaceholder: "Pesquisar ferramenta... (ex: IMC, Empréstimo, JSON)", searchBtn: "Pesquisar",
+      tag1: "Grátis Para Sempre", tag2: "Sem Cadastro", tag3: "Compatível com Celular", tag4: "Acesso Global",
+      catHeading: "Explorar por Categoria", catViewAll: "Ver Todas as Categorias →",
+      popHeading: "Ferramentas Populares", popViewAll: "Ver Todas as Ferramentas →"
+    },
+    hi: {
+      home: "होम", tools: "टूल्स", categories: "श्रेणियाँ", about: "हमारे बारे में", disclaimer: "अस्वीकरण",
+      heroTitle: "आपके दैनिक उपकरण", heroSubtitle: "तेज़, सरल, निःशुल्क",
+      heroDesc: "वित्त, स्वास्थ्य, डेवलपर्स, लेखकों और रचनाकारों के लिए 150+ कैलकुलेटर, कन्वर्टर और उपयोगिताएँ।",
+      searchPlaceholder: "कोई भी टूल खोजें... (जैसे BMI, Loan EMI)", searchBtn: "खोजें",
+      tag1: "सदा के लिए मुफ़्त", tag2: "कोई साइन अप नहीं", tag3: "मोबाइल अनुकूल", tag4: "वैश्विक पहुंच",
+      catHeading: "श्रेणी के अनुसार देखें", catViewAll: "सभी श्रेणियाँ देखें →",
+      popHeading: "लोकप्रिय टूल्स", popViewAll: "सभी टूल्स देखें →"
+    }
+  };
+
   function setLanguage(lang) {
     ['en', 'pt', 'hi'].forEach(l => {
       const btn = document.getElementById(`lang-${l}`);
-      if (l === lang) {
-        btn.style.background = "#2563eb";
-        btn.style.color = "white";
-      } else {
-        btn.style.background = "none";
-        btn.style.color = "var(--text-muted)";
+      if (btn) {
+        if (l === lang) {
+          btn.style.background = "#2563eb";
+          btn.style.color = "white";
+        } else {
+          btn.style.background = "none";
+          btn.style.color = "var(--text-muted)";
+        }
       }
     });
-    // You can expand this language handler to translate text dynamically later!
+
+    const t = translations[lang];
+    if (!t) return;
+
+    // Update Text Content Dynamically
+    document.getElementById("nav-home").textContent = t.home;
+    document.getElementById("nav-tools").textContent = t.tools;
+    document.getElementById("nav-categories").textContent = t.categories;
+    document.getElementById("nav-about").textContent = t.about;
+    document.getElementById("nav-disclaimer").textContent = t.disclaimer;
+    
+    document.getElementById("hero-title").innerHTML = `${t.heroTitle}<br><span style="color: #2563eb;" id="hero-subtitle">${t.heroSubtitle}</span>`;
+    document.getElementById("hero-desc").textContent = t.heroDesc;
+    document.getElementById("search-input").placeholder = t.searchPlaceholder;
+    document.getElementById("search-btn").textContent = t.searchBtn;
+
+    document.getElementById("tag-1").innerHTML = `<i class="fa-solid fa-circle-check" style="color: #2563eb;"></i> ${t.tag1}`;
+    document.getElementById("tag-2").innerHTML = `<i class="fa-solid fa-circle-check" style="color: #2563eb;"></i> ${t.tag2}`;
+    document.getElementById("tag-3").innerHTML = `<i class="fa-solid fa-circle-check" style="color: #2563eb;"></i> ${t.tag3}`;
+    document.getElementById("tag-4").innerHTML = `<i class="fa-solid fa-circle-check" style="color: #2563eb;"></i> ${t.tag4}`;
+
+    document.getElementById("cat-heading").textContent = t.catHeading;
+    document.getElementById("cat-viewall").textContent = t.catViewAll;
+    document.getElementById("pop-heading").textContent = t.popHeading;
+    document.getElementById("pop-viewall").textContent = t.popViewAll;
+
+    localStorage.setItem("selectedLang", lang);
   }
 
   function changeFooterLang(lang) {
     setLanguage(lang);
+  }
+
+  // Load Saved Language Preference on Startup
+  const savedLang = localStorage.getItem("selectedLang");
+  if (savedLang) {
+    setLanguage(savedLang);
   }
 </script>
 
