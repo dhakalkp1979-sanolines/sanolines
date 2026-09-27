@@ -1,53 +1,84 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Sanolines — Fast, simple, and free online calculators, converters, and utilities for finance, health, developers, and everyday tasks.">
+  <meta name="theme-color" content="#0f172a">
+  
+  <title>Sanolines – Daily Tools & Utilities</title>
 
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0"
-    />
+  <!-- Favicon & Manifest -->
+  <link rel="icon" href="/favicon.ico">
+  <link rel="manifest" href="/manifest.json">
 
-    <meta
-      name="description"
-      content="Sanolines — Independent information directory and guidance platform for public portals, official services, immigration, jobs, and community resources."
-    />
+  <!-- Master CSS File -->
+  <link rel="stylesheet" href="style.css">
 
-    <meta
-      name="theme-color"
-      content="#ffffff"
-    />
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-S07B7YZR9M"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-S07B7YZR9M');
+  </script>
+</head>
+<body>
 
-    <title>Sanolines — Independent Information & Services Directory</title>
+  <!-- Header / Navigation -->
+  <header>
+    <div class="logo">SANOLINES</div>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/tools.html">Tools</a>
+      <a href="/categories.html">Categories</a>
+      <a href="/about.html">About</a>
+      <a href="/disclaimer.html">Disclaimer</a>
+    </nav>
+  </header>
 
-    <!-- Favicon -->
-    <link rel="icon" href="/favicon.ico" />
+  <!-- Main Homepage Content -->
+  <main>
+    <section class="hero">
+      <h1>Your Daily Tools — Fast, Simple, Free</h1>
+      <p>150+ calculators, converters, and utilities for finance, health, developers, writers, builders, and creators.</p>
+      <button onclick="location.href='/tools.html'">Browse All Tools</button>
+    </section>
 
-    <!-- PWA -->
-    <link rel="manifest" href="/manifest.json" />
+    <section class="search">
+      <input type="text" placeholder="Search any tool… (BMI, Loan EMI, JSON Formatter)">
+    </section>
 
-    <!-- Google tag (gtag.js) -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-S07B7YZR9M"
-    ></script>
+    <section class="section">
+      <h2>Main Categories</h2>
+      <div class="grid">
+        <div class="card">Finance Tools</div>
+        <div class="card">Health & Fitness</div>
+        <div class="card">Developer Tools</div>
+        <div class="card">Writing Tools</div>
+        <div class="card">Construction Tools</div>
+        <div class="card">Video & Media Tools</div>
+      </div>
+    </section>
 
-    <script>
-      window.dataLayer = window.dataLayer || [];
+    <section class="section">
+      <h2>Popular Tools</h2>
+      <div class="grid">
+        <div class="card">BMI Calculator</div>
+        <div class="card">Word Counter</div>
+        <div class="card">JSON Formatter</div>
+        <div class="card">Loan EMI Calculator</div>
+        <div class="card">Concrete Volume Calculator</div>
+        <div class="card">Aspect Ratio Calculator</div>
+      </div>
+    </section>
+  </main>
 
-      function gtag() {
-        dataLayer.push(arguments);
-      }
+  <!-- Footer -->
+  <footer>
+    © 2026 Sanolines — All Rights Reserved
+  </footer>
 
-      gtag("js", new Date());
-
-      gtag("config", "G-S07B7YZR9M");
-    </script>
-  </head>
-
-  <body>
-    <div id="root"></div>
-
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+</body>
 </html>
