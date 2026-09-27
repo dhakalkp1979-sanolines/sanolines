@@ -40,37 +40,38 @@
 
   <!-- Main Homepage Content -->
   <main>
-    <section class="hero">
+    <section class="hero fade">
       <h1>Your Daily Tools — Fast, Simple, Free</h1>
       <p>150+ calculators, converters, and utilities for finance, health, developers, writers, builders, and creators.</p>
       <button onclick="location.href='/tools.html'">Browse All Tools</button>
     </section>
 
-    <section class="search">
+    <section class="search fade">
       <input type="text" placeholder="Search any tool… (BMI, Loan EMI, JSON Formatter)">
+      <div id="search-results" class="grid fade" style="margin-top: 16px;"></div>
     </section>
 
-    <section class="section">
+    <section class="section fade">
       <h2>Main Categories</h2>
       <div class="grid">
-        <div class="card">Finance Tools</div>
-        <div class="card">Health & Fitness</div>
-        <div class="card">Developer Tools</div>
-        <div class="card">Writing Tools</div>
-        <div class="card">Construction Tools</div>
-        <div class="card">Video & Media Tools</div>
+        <a href="/categories/finance.html" class="card">Finance Tools</a>
+        <a href="/categories/health.html" class="card">Health & Fitness</a>
+        <a href="/categories/developer.html" class="card">Developer Tools</a>
+        <a href="/categories/writing.html" class="card">Writing Tools</a>
+        <a href="/categories/construction.html" class="card">Construction Tools</a>
+        <a href="/categories/video.html" class="card">Video & Media Tools</a>
       </div>
     </section>
 
-    <section class="section">
+    <section class="section fade">
       <h2>Popular Tools</h2>
       <div class="grid">
-        <div class="card">BMI Calculator</div>
-        <div class="card">Word Counter</div>
-        <div class="card">JSON Formatter</div>
-        <div class="card">Loan EMI Calculator</div>
-        <div class="card">Concrete Volume Calculator</div>
-        <div class="card">Aspect Ratio Calculator</div>
+        <a href="/tools/bmi.html" class="card">BMI Calculator</a>
+        <a href="/tools/word-counter.html" class="card">Word Counter</a>
+        <a href="/tools/json-formatter.html" class="card">JSON Formatter</a>
+        <a href="/tools/loan-emi.html" class="card">Loan EMI Calculator</a>
+        <a href="/tools/concrete-volume.html" class="card">Concrete Volume Calculator</a>
+        <a href="/tools/aspect-ratio.html" class="card">Aspect Ratio Calculator</a>
       </div>
     </section>
   </main>
@@ -79,6 +80,49 @@
   <footer>
     © 2026 Sanolines — All Rights Reserved
   </footer>
+
+  <!-- Real-Time Search Script -->
+  <script>
+    const tools = [
+      { name: "BMI Calculator", url: "/tools/bmi.html" },
+      { name: "Word Counter", url: "/tools/word-counter.html" },
+      { name: "JSON Formatter", url: "/tools/json-formatter.html" },
+      { name: "Loan EMI Calculator", url: "/tools/loan-emi.html" },
+      { name: "Concrete Volume Calculator", url: "/tools/concrete-volume.html" },
+      { name: "Aspect Ratio Calculator", url: "/tools/aspect-ratio.html" },
+      { name: "Water Intake Calculator", url: "/tools/water-intake.html" },
+      { name: "Salary Converter", url: "/tools/salary-converter.html" },
+      { name: "Crypto Profit Calculator", url: "/tools/crypto-profit.html" },
+      { name: "Pregnancy Due Date Calculator", url: "/tools/pregnancy-due-date.html" },
+      { name: "Password Generator", url: "/tools/password-generator.html" },
+      { name: "URL Encoder", url: "/tools/url-encoder.html" }
+    ];
+
+    const searchInput = document.querySelector(".search input");
+
+    searchInput.addEventListener("input", function() {
+      const value = this.value.toLowerCase().trim();
+      const resultsContainer = document.getElementById("search-results");
+      
+      if (value === "") {
+        resultsContainer.innerHTML = "";
+        return;
+      }
+
+      let results = tools.filter(t => t.name.toLowerCase().includes(value));
+
+      let html = "";
+      if (results.length > 0) {
+        results.forEach(r => {
+          html += `<a href="${r.url}" class="card fade">${r.name}</a>`;
+        });
+      } else {
+        html = `<div style="grid-column: 1 / -1; text-align: center; color: #6b7280; font-size: 0.9rem;">No tools found matching "${this.value}"</div>`;
+      }
+
+      resultsContainer.innerHTML = html;
+    });
+  </script>
 
 </body>
 </html>
