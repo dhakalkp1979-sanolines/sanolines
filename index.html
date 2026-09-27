@@ -13,10 +13,10 @@
   <div style="display: flex; align-items: center; gap: 12px;">
     <div class="logo">
       <a href="./">
-        <img src="logo.svg" alt="Sanolines Logo" style="height: 32px; width: auto; display: block;">
+        <img src="logo.svg" alt="Sanolines Logo" style="height: 28px; width: auto; display: block;">
       </a>
     </div>
-    <span style="font-size: 0.8rem; color: var(--text-muted); border-left: 1px solid var(--border-color); padding-left: 12px; display: none;" class="desktop-tag">Tools for a Smarter You</span>
+    <span style="font-size: 0.8rem; color: var(--text-muted); border-left: 1px solid var(--border-color); padding-left: 12px;" class="desktop-tag">Tools for a Smarter You</span>
   </div>
   <nav>
     <a href="./" style="font-weight: 600; color: #3b82f6;">Home</a>
@@ -24,10 +24,10 @@
     <a href="./categories.html">Categories</a>
     <a href="./about.html">About</a>
     <a href="./disclaimer.html">Disclaimer</a>
-    <div style="display: flex; align-items: center; gap: 4px; margin-left: 4px;">
-      <button style="background: #2563eb; color: white; border: none; padding: 4px 8px; border-radius: 4px; font-size: 0.8rem; cursor: pointer;">EN</button>
-      <button style="background: transparent; color: inherit; border: none; font-size: 0.8rem; cursor: pointer; padding: 4px 6px;">PT</button>
-      <button style="background: transparent; color: inherit; border: none; font-size: 0.8rem; cursor: pointer; padding: 4px 6px;">HI</button>
+    <div style="display: flex; align-items: center; gap: 4px; margin-left: 4px;" id="lang-switcher">
+      <button onclick="setLanguage('EN')" id="btn-en" style="background: #2563eb; color: white; border: none; padding: 4px 8px; border-radius: 4px; font-size: 0.8rem; cursor: pointer;">EN</button>
+      <button onclick="setLanguage('PT')" id="btn-pt" style="background: transparent; color: inherit; border: none; font-size: 0.8rem; cursor: pointer; padding: 4px 6px;">PT</button>
+      <button onclick="setLanguage('HI')" id="btn-hi" style="background: transparent; color: inherit; border: none; font-size: 0.8rem; cursor: pointer; padding: 4px 6px;">HI</button>
     </div>
     <button id="theme-toggle" style="background: none; border: none; cursor: pointer; font-size: 1.1rem; color: inherit; margin-left: 4px;" title="Toggle Dark Mode">🌙</button>
   </nav>
@@ -44,11 +44,14 @@
         150+ calculators, converters, and utilities for finance, health, developers, writers, builders, and creators.
       </p>
       
-      <!-- Search Box inside Hero -->
+      <!-- Search Box with Clickable Button -->
       <div class="search" style="margin: 0 0 20px 0;">
-        <div style="position: relative; max-width: 500px;">
-          <input type="text" placeholder="Search any tool... (e.g. BMI, Loan EMI, JSON formatter)" style="padding-left: 40px; border-radius: 8px; height: 48px; width: 100%; box-sizing: border-box;">
-          <span style="position: absolute; left: 14px; top: 15px; color: var(--text-muted);">🔍</span>
+        <div style="position: relative; max-width: 540px; display: flex; gap: 8px;">
+          <div style="position: relative; flex: 1;">
+            <input type="text" id="tool-search-input" placeholder="Search any tool... (e.g. BMI, Loan EMI, JSON)" style="padding-left: 40px; border-radius: 8px; height: 48px; width: 100%; box-sizing: border-box;">
+            <span style="position: absolute; left: 14px; top: 15px; color: var(--text-muted);">🔍</span>
+          </div>
+          <button onclick="performSearch()" style="background: #2563eb; color: white; border: none; padding: 0 20px; border-radius: 8px; font-weight: 600; cursor: pointer; height: 48px;">Search</button>
         </div>
         <div id="search-results" class="grid fade" style="margin-top: 12px;"></div>
       </div>
@@ -62,7 +65,7 @@
       </div>
     </div>
 
-    <!-- Hero Laptop / Category Card Preview -->
+    <!-- Hero Preview Graphic -->
     <div style="flex: 1; min-width: 280px; background: linear-gradient(135deg, #eff6ff, #dbeafe); padding: 24px; border-radius: 16px; border: 1px solid #bfdbfe; text-align: center;">
       <div style="font-style: italic; font-family: cursive; font-size: 1.3rem; color: #1e40af; margin-bottom: 12px;">Small Tools. Big Possibilities.</div>
       <div style="background: white; padding: 16px; border-radius: 12px; box-shadow: 0 10px 25px rgba(0,0,0,0.05); text-align: left; font-size: 0.85rem; display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px;">
@@ -84,42 +87,42 @@
     </div>
     
     <div class="grid">
-      <a class="card" href="./categories/finance.html">
+      <a class="card" href="./finance.html">
         <div style="font-size: 1.5rem; margin-bottom: 8px;">📊</div>
         <h3 style="font-size: 1rem; margin: 0 0 4px 0;">Finance Tools</h3>
         <p style="font-size: 0.8rem; color: var(--text-muted); margin: 0 0 10px 0;">Loans, interest, tax, salary and more.</p>
         <span style="font-size: 0.75rem; color: #2563eb; font-weight: 600;">20+ Tools →</span>
       </a>
 
-      <a class="card" href="./categories/health.html">
+      <a class="card" href="./health.html">
         <div style="font-size: 1.5rem; margin-bottom: 8px;">❤️</div>
         <h3 style="font-size: 1rem; margin: 0 0 4px 0;">Health & Fitness</h3>
         <p style="font-size: 0.8rem; color: var(--text-muted); margin: 0 0 10px 0;">BMI, calories, pregnancy, water intake.</p>
         <span style="font-size: 0.75rem; color: #2563eb; font-weight: 600;">20+ Tools →</span>
       </a>
 
-      <a class="card" href="./categories/developer.html">
+      <a class="card" href="./developer.html">
         <div style="font-size: 1.5rem; margin-bottom: 8px;">💻</div>
         <h3 style="font-size: 1rem; margin: 0 0 4px 0;">Developer Tools</h3>
         <p style="font-size: 0.8rem; color: var(--text-muted); margin: 0 0 10px 0;">JSON, converters, generators and more.</p>
         <span style="font-size: 0.75rem; color: #2563eb; font-weight: 600;">20+ Tools →</span>
       </a>
 
-      <a class="card" href="./categories/writing.html">
+      <a class="card" href="./tools.html">
         <div style="font-size: 1.5rem; margin-bottom: 8px;">📝</div>
         <h3 style="font-size: 1rem; margin: 0 0 4px 0;">Writing Tools</h3>
         <p style="font-size: 0.8rem; color: var(--text-muted); margin: 0 0 10px 0;">Word counter, text cleaner, readability.</p>
         <span style="font-size: 0.75rem; color: #2563eb; font-weight: 600;">20+ Tools →</span>
       </a>
 
-      <a class="card" href="./categories/construction.html">
+      <a class="card" href="./tools.html">
         <div style="font-size: 1.5rem; margin-bottom: 8px;">🏗️</div>
         <h3 style="font-size: 1rem; margin: 0 0 4px 0;">Construction Tools</h3>
         <p style="font-size: 0.8rem; color: var(--text-muted); margin: 0 0 10px 0;">Concrete, paint, tile, bricks and more.</p>
         <span style="font-size: 0.75rem; color: #2563eb; font-weight: 600;">20+ Tools →</span>
       </a>
 
-      <a class="card" href="./categories/video.html">
+      <a class="card" href="./tools.html">
         <div style="font-size: 1.5rem; margin-bottom: 8px;">🎬</div>
         <h3 style="font-size: 1rem; margin: 0 0 4px 0;">Video & Media Tools</h3>
         <p style="font-size: 0.8rem; color: var(--text-muted); margin: 0 0 10px 0;">Aspect ratio, resolution, bitrate.</p>
@@ -136,69 +139,35 @@
     </div>
 
     <div class="grid">
-      <a class="card" href="./tools/bmi.html">
-        <div style="font-size: 0.95rem; font-weight: 600; margin-bottom: 6px; display: flex; align-items: center; gap: 8px;">❤️ BMI Calculator</div>
+      <a class="card" href="./bmi.html">
+        <div style="font-size: 0.95rem; font-weight: 600; margin-bottom: 6px;">❤️ BMI Calculator</div>
         <p style="font-size: 0.8rem; color: var(--text-muted); margin: 0;">Check your body mass index.</p>
       </a>
 
-      <a class="card" href="./tools/word-counter.html">
-        <div style="font-size: 0.95rem; font-weight: 600; margin-bottom: 6px; display: flex; align-items: center; gap: 8px;">📝 Word Counter</div>
+      <a class="card" href="./word-counter.html">
+        <div style="font-size: 0.95rem; font-weight: 600; margin-bottom: 6px;">📝 Word Counter</div>
         <p style="font-size: 0.8rem; color: var(--text-muted); margin: 0;">Count words & characters.</p>
       </a>
 
-      <a class="card" href="./tools/json-formatter.html">
-        <div style="font-size: 0.95rem; font-weight: 600; margin-bottom: 6px; display: flex; align-items: center; gap: 8px;">💻 JSON Formatter</div>
+      <a class="card" href="./json-formatter.html">
+        <div style="font-size: 0.95rem; font-weight: 600; margin-bottom: 6px;">💻 JSON Formatter</div>
         <p style="font-size: 0.8rem; color: var(--text-muted); margin: 0;">Format and validate JSON data.</p>
       </a>
 
-      <a class="card" href="./tools/loan-emi.html">
-        <div style="font-size: 0.95rem; font-weight: 600; margin-bottom: 6px; display: flex; align-items: center; gap: 8px;">📊 Loan EMI Calculator</div>
+      <a class="card" href="./loan-emi.html">
+        <div style="font-size: 0.95rem; font-weight: 600; margin-bottom: 6px;">📊 Loan EMI Calculator</div>
         <p style="font-size: 0.8rem; color: var(--text-muted); margin: 0;">Calculate your loan payments.</p>
       </a>
 
-      <a class="card" href="./tools/concrete-volume.html">
-        <div style="font-size: 0.95rem; font-weight: 600; margin-bottom: 6px; display: flex; align-items: center; gap: 8px;">🏗️ Concrete Volume</div>
+      <a class="card" href="./concrete-volume.html">
+        <div style="font-size: 0.95rem; font-weight: 600; margin-bottom: 6px;">🏗️ Concrete Volume</div>
         <p style="font-size: 0.8rem; color: var(--text-muted); margin: 0;">Calculate concrete volume for construction.</p>
       </a>
 
-      <a class="card" href="./tools/aspect-ratio.html">
-        <div style="font-size: 0.95rem; font-weight: 600; margin-bottom: 6px; display: flex; align-items: center; gap: 8px;">🎬 Aspect Ratio</div>
+      <a class="card" href="./aspect-ratio.html">
+        <div style="font-size: 0.95rem; font-weight: 600; margin-bottom: 6px;">🎬 Aspect Ratio</div>
         <p style="font-size: 0.8rem; color: var(--text-muted); margin: 0;">Find the perfect video or image ratio.</p>
       </a>
-    </div>
-  </section>
-
-  <!-- Feature Highlights Banner -->
-  <section class="section fade" style="margin-top: 50px; background: var(--bg-card); padding: 24px; border-radius: 12px; border: 1px solid var(--border-color);">
-    <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; align-items: center;">
-      <div style="display: flex; gap: 12px; align-items: flex-start;">
-        <span style="font-size: 1.5rem;">🚀</span>
-        <div>
-          <div style="font-weight: 600; font-size: 0.95rem; margin-bottom: 2px;">Fast & Reliable</div>
-          <div style="font-size: 0.8rem; color: var(--text-muted);">Get instant results in seconds</div>
-        </div>
-      </div>
-      <div style="display: flex; gap: 12px; align-items: flex-start;">
-        <span style="font-size: 1.5rem;">✅</span>
-        <div>
-          <div style="font-weight: 600; font-size: 0.95rem; margin-bottom: 2px;">100% Free</div>
-          <div style="font-size: 0.8rem; color: var(--text-muted);">No hidden fees, no registration</div>
-        </div>
-      </div>
-      <div style="display: flex; gap: 12px; align-items: flex-start;">
-        <span style="font-size: 1.5rem;">📱</span>
-        <div>
-          <div style="font-weight: 600; font-size: 0.95rem; margin-bottom: 2px;">Mobile Friendly</div>
-          <div style="font-size: 0.8rem; color: var(--text-muted);">Works perfectly on all devices</div>
-        </div>
-      </div>
-      <div style="display: flex; gap: 12px; align-items: flex-start;">
-        <span style="font-size: 1.5rem;">🌐</span>
-        <div>
-          <div style="font-weight: 600; font-size: 0.95rem; margin-bottom: 2px;">Global Access</div>
-          <div style="font-size: 0.8rem; color: var(--text-muted);">Available in multiple languages</div>
-        </div>
-      </div>
     </div>
   </section>
 </main>
@@ -220,7 +189,6 @@
       <a href="#" title="Twitter">✖</a>
       <a href="#" title="Instagram">📷</a>
       <a href="#" title="LinkedIn">in</a>
-      <span style="font-size: 0.85rem; color: var(--text-muted); margin-left: 8px; border-left: 1px solid rgba(255,255,255,0.2); padding-left: 12px;">EN v</span>
     </div>
   </div>
   <div style="margin-top: 20px; text-align: center; color: var(--text-muted); font-size: 0.85rem;">
@@ -229,36 +197,61 @@
 </footer>
 
 <script>
-  // Search engine logic
+  // Tool database for search
   const tools = [
-    { name: "BMI Calculator", url: "./tools/bmi.html" },
-    { name: "Word Counter", url: "./tools/word-counter.html" },
-    { name: "JSON Formatter", url: "./tools/json-formatter.html" },
-    { name: "Loan EMI Calculator", url: "./tools/loan-emi.html" },
-    { name: "Concrete Volume Calculator", url: "./tools/concrete-volume.html" },
-    { name: "Aspect Ratio Calculator", url: "./tools/aspect-ratio.html" }
+    { name: "BMI Calculator", url: "./bmi.html" },
+    { name: "Word Counter", url: "./word-counter.html" },
+    { name: "JSON Formatter", url: "./json-formatter.html" },
+    { name: "Loan EMI Calculator", url: "./loan-emi.html" },
+    { name: "Concrete Volume Calculator", url: "./concrete-volume.html" },
+    { name: "Aspect Ratio Calculator", url: "./aspect-ratio.html" }
   ];
 
-  const searchInput = document.querySelector(".search input");
+  function performSearch() {
+    const input = document.getElementById("tool-search-input");
+    const value = input.value.toLowerCase().trim();
+    const resultsContainer = document.getElementById("search-results");
+    
+    if (value === "") {
+      resultsContainer.innerHTML = "";
+      return;
+    }
+
+    let matches = tools.filter(t => t.name.toLowerCase().includes(value));
+    let html = "";
+    if (matches.length > 0) {
+      matches.forEach(m => {
+        html += `<a class="card fade" href="${m.url}" style="padding: 10px; font-size: 0.9rem;">${m.name} →</a>`;
+      });
+    } else {
+      html = `<div style="grid-column: 1 / -1; text-align: center; color: var(--text-muted); font-size: 0.85rem;">No tools found matching "${input.value}"</div>`;
+    }
+    resultsContainer.innerHTML = html;
+  }
+
+  const searchInput = document.getElementById("tool-search-input");
   if (searchInput) {
-    searchInput.addEventListener("input", function() {
-      const value = this.value.toLowerCase().trim();
-      const resultsContainer = document.getElementById("search-results");
-      if (value === "") {
-        resultsContainer.innerHTML = "";
-        return;
-      }
-      let matches = tools.filter(t => t.name.toLowerCase().includes(value));
-      let html = "";
-      if (matches.length > 0) {
-        matches.forEach(m => {
-          html += `<a class="card fade" href="${m.url}" style="padding: 10px; font-size: 0.9rem;">${m.name}</a>`;
-        });
-      } else {
-        html = `<div style="grid-column: 1 / -1; text-align: center; color: var(--text-muted); font-size: 0.85rem;">No tools found matching "${this.value}"</div>`;
-      }
-      resultsContainer.innerHTML = html;
+    searchInput.addEventListener("input", performSearch);
+    searchInput.addEventListener("keypress", function(e) {
+      if (e.key === 'Enter') performSearch();
     });
+  }
+
+  // Language Switcher Function
+  function setLanguage(lang) {
+    ['en', 'pt', 'hi'].forEach(l => {
+      const btn = document.getElementById('btn-' + l);
+      if(btn) {
+        if(l === lang.toLowerCase()) {
+          btn.style.background = '#2563eb';
+          btn.style.color = 'white';
+        } else {
+          btn.style.background = 'transparent';
+          btn.style.color = 'inherit';
+        }
+      }
+    });
+    alert("Language switched to " + lang + ". Full translation pack will load dynamically.");
   }
 
   // Dark Mode Toggle Logic
