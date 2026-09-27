@@ -2,37 +2,69 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Categories – Sanolines</title>
+  <title>Tool Categories – Sanolines</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <header>
-  <div class="logo">SANOLINES</div>
+  <div class="logo">
+    <a href="/">
+      <img src="logo.svg" alt="Sanolines Logo">
+    </a>
+  </div>
   <nav>
     <a href="/">Home</a>
     <a href="/tools.html">Tools</a>
     <a href="/categories.html">Categories</a>
     <a href="/about.html">About</a>
     <a href="/disclaimer.html">Disclaimer</a>
+    <button id="theme-toggle" style="background: none; border: none; cursor: pointer; font-size: 1.1rem; color: inherit;">🌙</button>
   </nav>
 </header>
 
-<main>
-  <h1>Categories</h1>
-  <div class="grid">
-    <a class="card" href="/categories/finance.html">Finance Tools</a>
-    <a class="card" href="/categories/health.html">Health & Fitness</a>
-    <a class="card" href="/categories/developer.html">Developer Tools</a>
-    <a class="card" href="/categories/writing.html">Writing Tools</a>
-    <a class="card" href="/categories/construction.html">Construction Tools</a>
-    <a class="card" href="/categories/video.html">Video & Media Tools</a>
+<main class="fade">
+  <h1>Tool Categories</h1>
+  <p>Select a category below to browse specific utilities, calculators, and converters.</p>
+
+  <div class="grid" style="margin-top: 24px;">
+    <a class="card" href="/categories/finance.html">
+      <h2>Finance Tools</h2>
+      <p style="color: var(--text-muted); font-size: 0.9rem;">Loan EMI, salary, crypto, and interest calculators.</p>
+    </a>
+    <a class="card" href="/categories/health.html">
+      <h2>Health & Fitness</h2>
+      <p style="color: var(--text-muted); font-size: 0.9rem;">BMI, water intake, and fitness utilities.</p>
+    </a>
+    <a class="card" href="/categories/developer.html">
+      <h2>Developer Tools</h2>
+      <p style="color: var(--text-muted); font-size: 0.9rem;">JSON formatters, password generators, and encoders.</p>
+    </a>
   </div>
 </main>
 
 <footer>
-  © 2026 Sanolines
+  <div>
+    <a href="/about.html">About</a> | 
+    <a href="/privacy.html">Privacy Policy</a> | 
+    <a href="/terms.html">Terms</a> | 
+    <a href="/disclaimer.html">Disclaimer</a>
+  </div>
+  <div style="margin-top: 8px;">© 2026 Sanolines — All Rights Reserved</div>
 </footer>
+
+<script>
+  const toggleBtn = document.getElementById("theme-toggle");
+  const applyTheme = (isDark) => {
+    document.body.classList.toggle("dark", isDark);
+    toggleBtn.textContent = isDark ? "☀️" : "🌙";
+    localStorage.setItem("theme", isDark ? "dark" : "light");
+  };
+  if (toggleBtn) {
+    toggleBtn.addEventListener("click", () => applyTheme(!document.body.classList.contains("dark")));
+  }
+  if (localStorage.getItem("theme") === "dark") applyTheme(true);
+</script>
 
 </body>
 </html>
