@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 36" width="100%" height="100%">
+  <defs>
+    <linearGradient id="s-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3b82f6" />
+      <stop offset="100%" stop-color="#1d4ed8" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Icon Mark (Stylized Modern S) -->
+  <g transform="translate(2, 2)">
+    <rect width="32" height="32" rx="8" fill="url(#s-gradient)" />
+    <path d="M11 10H21C22.6569 10 24 11.3431 24 13C24 14.6569 22.6569 16 21 16H11C9.34315 16 8 17.3431 8 19C8 20.6569 9.34315 22 11 22H21" 
+          stroke="white" stroke-width="3.5" stroke-linecap="round" fill="none" />
+  </g>
+
+  <!-- Typography Text (SANOLINES) -->
+  <text x="42" y="24" font-family="system-ui, -apple-system, sans-serif" font-weight="800" font-size="18" fill="currentColor" letter-spacing="0.5">SANOLINES</text>
+</svg>
