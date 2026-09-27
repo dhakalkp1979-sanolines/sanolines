@@ -1,19 +1,36 @@
-/* ==========================================
-   Master Stylesheet for Sanolines
-   ========================================== */
+:root {
+  --bg-primary: #f5f7fb;
+  --bg-card: #ffffff;
+  --text-primary: #111827;
+  --text-muted: #4b5563;
+  --border-color: #e5e7eb;
+  --header-bg: #0f172a;
+  --header-text: #e5e7eb;
+  --accent-gradient: linear-gradient(135deg, #2563EB, #1D4ED8);
+}
+
+body.dark {
+  --bg-primary: #0f172a;
+  --bg-card: #1e293b;
+  --text-primary: #e5e7eb;
+  --text-muted: #cbd5e1;
+  --border-color: #334155;
+  --header-bg: #1e293b;
+  --header-text: #e2e8f0;
+}
 
 body {
   margin: 0;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  background: #f5f7fb;
-  color: #111827;
+  background: var(--bg-primary);
+  color: var(--text-primary);
   line-height: 1.5;
   transition: background 0.3s ease, color 0.3s ease;
 }
 
 header {
-  background: #0f172a;
-  color: #e5e7eb;
+  background: var(--header-bg);
+  color: var(--header-text);
   padding: 12px 24px;
   display: flex;
   justify-content: space-between;
@@ -30,34 +47,27 @@ header {
   to { opacity: 1; transform: translateY(0); }
 }
 
-.logo {
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  font-size: 1rem;
-  text-transform: uppercase;
-  display: flex;
-  align-items: center;
-}
-
 .logo img {
   height: 28px;
+  display: block;
 }
 
 nav {
   display: flex;
   align-items: center;
+  gap: 16px;
   flex-wrap: wrap;
 }
 
 nav a {
-  color: #e5e7eb;
-  margin-left: 16px;
+  color: var(--header-text);
   text-decoration: none;
   font-size: 0.95rem;
+  transition: opacity 0.2s;
 }
 
 nav a:hover {
-  color: #ffffff;
+  opacity: 0.8;
 }
 
 main {
@@ -77,13 +87,13 @@ main {
 }
 
 .hero p {
-  color: #4b5563;
+  color: var(--text-muted);
   max-width: 600px;
   margin: 0 auto 20px auto;
 }
 
 .hero button {
-  background: linear-gradient(135deg, #2563EB, #1D4ED8);
+  background: var(--accent-gradient);
   color: white;
   border: none;
   padding: 10px 22px;
@@ -110,11 +120,11 @@ main {
   display: block;
   padding: 12px 16px;
   border-radius: 999px;
-  border: 1px solid #d1d5db;
+  border: 1px solid var(--border-color);
+  background: var(--bg-card);
+  color: var(--text-primary);
   outline: none;
   font-size: 0.95rem;
-  background: #ffffff;
-  color: #111827;
 }
 
 .search input:focus {
@@ -138,12 +148,12 @@ main {
 }
 
 .card {
-  background: white;
+  background: var(--bg-card);
   padding: 16px;
   border-radius: 10px;
-  border: 1px solid #e5e7eb;
+  border: 1px solid var(--border-color);
   text-decoration: none;
-  color: inherit;
+  color: var(--text-primary);
   display: block;
   transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
 }
@@ -152,19 +162,28 @@ main {
   transform: translateY(-3px);
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
   border-color: #cbd5e1;
-  background: linear-gradient(135deg, #ffffff, #f0f4ff);
+  background: linear-gradient(135deg, var(--bg-card), #f0f4ff);
 }
 
 footer {
-  background: #0f172a;
-  color: #9ca3af;
+  background: var(--header-bg);
+  color: var(--text-muted);
   padding: 24px 16px;
   text-align: center;
   font-size: 0.85rem;
   margin-top: 60px;
 }
 
-/* Fade-in animation classes */
+footer a {
+  color: inherit;
+  text-decoration: none;
+  margin: 0 8px;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
 .fade {
   opacity: 0;
   animation: fadeIn 0.8s ease-in forwards;
@@ -175,54 +194,10 @@ footer {
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* ==========================================
-   Dark Mode Styles
-   ========================================== */
-body.dark {
-  background: #0f172a;
-  color: #e5e7eb;
-}
-
-header.dark {
-  background: #1e293b;
-}
-
-.card.dark {
-  background: #1e293b;
-  border-color: #334155;
-  color: #e2e8f0;
-}
-
-.card.dark:hover {
-  background: linear-gradient(135deg, #1e293b, #0f172a);
-}
-
-footer.dark {
-  background: #1e293b;
-  color: #cbd5e1;
-}
-
-.hero.dark button {
-  background: linear-gradient(135deg, #3b82f6, #2563eb);
-}
-
-input.dark {
-  background: #1e293b;
-  color: #e2e8f0;
-  border-color: #334155;
-}
-
-/* ==========================================
-   Responsive Design
-   ========================================== */
 @media (max-width: 640px) {
   header {
     flex-direction: column;
     align-items: flex-start;
     gap: 10px;
-  }
-  nav a {
-    margin-left: 0;
-    margin-right: 16px;
   }
 }
