@@ -25,10 +25,11 @@
     <a href="./disclaimer.html" style="text-decoration: none; color: var(--text-muted);">Disclaimer</a>
   </nav>
   <div style="display: flex; align-items: center; gap: 16px;">
+    <!-- Language Switcher -->
     <div style="display: flex; background: var(--bg-secondary); border-radius: 6px; padding: 2px; border: 1px solid var(--border-color);">
-      <button style="background: #2563eb; color: white; border: none; padding: 4px 8px; border-radius: 4px; font-size: 0.8rem; cursor: pointer;">EN</button>
-      <button style="background: none; color: var(--text-muted); border: none; padding: 4px 8px; border-radius: 4px; font-size: 0.8rem; cursor: pointer;">PT</button>
-      <button style="background: none; color: var(--text-muted); border: none; padding: 4px 8px; border-radius: 4px; font-size: 0.8rem; cursor: pointer;">HI</button>
+      <button onclick="setLanguage('en')" id="lang-en" style="background: #2563eb; color: white; border: none; padding: 4px 8px; border-radius: 4px; font-size: 0.8rem; cursor: pointer;">EN</button>
+      <button onclick="setLanguage('pt')" id="lang-pt" style="background: none; color: var(--text-muted); border: none; padding: 4px 8px; border-radius: 4px; font-size: 0.8rem; cursor: pointer;">PT</button>
+      <button onclick="setLanguage('hi')" id="lang-hi" style="background: none; color: var(--text-muted); border: none; padding: 4px 8px; border-radius: 4px; font-size: 0.8rem; cursor: pointer;">HI</button>
     </div>
     <button id="theme-toggle" style="background: none; border: none; cursor: pointer; font-size: 1.2rem; color: inherit;">🌙</button>
   </div>
@@ -44,12 +45,12 @@
       150+ calculators, converters, and utilities for finance, health, developers, writers, builders, and creators.
     </p>
 
-    <!-- Search Bar -->
-    <div style="display: flex; background: var(--bg-primary); border: 1px solid var(--border-color); border-radius: 12px; padding: 8px; box-shadow: 0 4px 20px rgba(0,0,0,0.05); margin-bottom: 24px;">
+    <!-- Search Bar Form -->
+    <form id="search-form" onsubmit="handleSearch(event)" style="display: flex; background: var(--bg-primary); border: 1px solid var(--border-color); border-radius: 12px; padding: 8px; box-shadow: 0 4px 20px rgba(0,0,0,0.05); margin-bottom: 24px;">
       <span style="display: flex; align-items: center; padding-left: 12px; color: var(--text-muted);"><i class="fa-solid fa-magnifying-glass"></i></span>
-      <input type="text" placeholder="Search any tool... (e.g. BMI, Loan EMI, JSON formatter)" style="border: none; background: none; outline: none; padding: 12px; width: 100%; font-size: 1rem; color: var(--text-primary);">
-      <button style="background: #2563eb; color: white; border: none; padding: 12px 24px; border-radius: 8px; font-weight: 600; cursor: pointer;">Search</button>
-    </div>
+      <input type="text" id="search-input" placeholder="Search any tool... (e.g. BMI, Loan EMI, JSON formatter)" style="border: none; background: none; outline: none; padding: 12px; width: 100%; font-size: 1rem; color: var(--text-primary);">
+      <button type="submit" style="background: #2563eb; color: white; border: none; padding: 12px 24px; border-radius: 8px; font-weight: 600; cursor: pointer;">Search</button>
+    </form>
 
     <!-- Feature Tags -->
     <div style="display: flex; gap: 20px; flex-wrap: wrap; font-size: 0.9rem; color: var(--text-muted);">
@@ -60,7 +61,7 @@
     </div>
   </div>
 
-  <!-- Hero Graphic -->
+  <!-- Hero Graphic (Laptop Window) -->
   <div style="flex: 1; min-width: 300px; text-align: center;">
     <div style="background: var(--bg-primary); border: 1px solid var(--border-color); padding: 30px; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); display: inline-block; max-width: 450px; width: 100%;">
       <div style="font-family: cursive; font-size: 1.5rem; color: #2563eb; margin-bottom: 15px;">Small Tools. Big Possibilities.</div>
@@ -85,7 +86,6 @@
   </div>
 
   <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
-    <!-- Category 1 -->
     <a href="./tools.html#finance" class="card" style="background: var(--bg-primary); border: 1px solid var(--border-color); padding: 24px; border-radius: 12px; text-decoration: none; color: inherit; display: block;">
       <div style="font-size: 2rem; margin-bottom: 12px;">📊</div>
       <h3 style="font-size: 1.2rem; margin-bottom: 6px;">Finance Tools</h3>
@@ -93,7 +93,6 @@
       <span style="color: #2563eb; font-weight: 600; font-size: 0.9rem;">20+ Tools →</span>
     </a>
 
-    <!-- Category 2 -->
     <a href="./tools.html#health" class="card" style="background: var(--bg-primary); border: 1px solid var(--border-color); padding: 24px; border-radius: 12px; text-decoration: none; color: inherit; display: block;">
       <div style="font-size: 2rem; margin-bottom: 12px;">❤️</div>
       <h3 style="font-size: 1.2rem; margin-bottom: 6px;">Health & Fitness</h3>
@@ -101,7 +100,6 @@
       <span style="color: #2563eb; font-weight: 600; font-size: 0.9rem;">20+ Tools →</span>
     </a>
 
-    <!-- Category 3 -->
     <a href="./tools.html#developer" class="card" style="background: var(--bg-primary); border: 1px solid var(--border-color); padding: 24px; border-radius: 12px; text-decoration: none; color: inherit; display: block;">
       <div style="font-size: 2rem; margin-bottom: 12px;">💻</div>
       <h3 style="font-size: 1.2rem; margin-bottom: 6px;">Developer Tools</h3>
@@ -109,7 +107,6 @@
       <span style="color: #2563eb; font-weight: 600; font-size: 0.9rem;">20+ Tools →</span>
     </a>
 
-    <!-- Category 4 -->
     <a href="./tools.html#writing" class="card" style="background: var(--bg-primary); border: 1px solid var(--border-color); padding: 24px; border-radius: 12px; text-decoration: none; color: inherit; display: block;">
       <div style="font-size: 2rem; margin-bottom: 12px;">📝</div>
       <h3 style="font-size: 1.2rem; margin-bottom: 6px;">Writing Tools</h3>
@@ -117,7 +114,6 @@
       <span style="color: #2563eb; font-weight: 600; font-size: 0.9rem;">20+ Tools →</span>
     </a>
 
-    <!-- Category 5 -->
     <a href="./tools.html#construction" class="card" style="background: var(--bg-primary); border: 1px solid var(--border-color); padding: 24px; border-radius: 12px; text-decoration: none; color: inherit; display: block;">
       <div style="font-size: 2rem; margin-bottom: 12px;">🏗️</div>
       <h3 style="font-size: 1.2rem; margin-bottom: 6px;">Construction Tools</h3>
@@ -125,7 +121,6 @@
       <span style="color: #2563eb; font-weight: 600; font-size: 0.9rem;">20+ Tools →</span>
     </a>
 
-    <!-- Category 6 -->
     <a href="./tools.html#video" class="card" style="background: var(--bg-primary); border: 1px solid var(--border-color); padding: 24px; border-radius: 12px; text-decoration: none; color: inherit; display: block;">
       <div style="font-size: 2rem; margin-bottom: 12px;">🎬</div>
       <h3 style="font-size: 1.2rem; margin-bottom: 6px;">Video & Media Tools</h3>
@@ -177,40 +172,6 @@
   </div>
 </section>
 
-<!-- Features Bar -->
-<section style="background: var(--bg-secondary); padding: 40px 5%; border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color);">
-  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 30px;">
-    <div style="display: flex; gap: 16px; align-items: flex-start;">
-      <i class="fa-solid fa-bolt" style="font-size: 1.5rem; color: #2563eb;"></i>
-      <div>
-        <h4 style="margin: 0 0 6px 0; font-size: 1rem;">Fast & Reliable</h4>
-        <p style="margin: 0; font-size: 0.85rem; color: var(--text-muted);">Get instant results in seconds</p>
-      </div>
-    </div>
-    <div style="display: flex; gap: 16px; align-items: flex-start;">
-      <i class="fa-solid fa-shield-halved" style="font-size: 1.5rem; color: #16a34a;"></i>
-      <div>
-        <h4 style="margin: 0 0 6px 0; font-size: 1rem;">100% Free</h4>
-        <p style="margin: 0; font-size: 0.85rem; color: var(--text-muted);">No hidden fees, no registration</p>
-      </div>
-    </div>
-    <div style="display: flex; gap: 16px; align-items: flex-start;">
-      <i class="fa-solid fa-mobile-screen-button" style="font-size: 1.5rem; color: #9333ea;"></i>
-      <div>
-        <h4 style="margin: 0 0 6px 0; font-size: 1rem;">Mobile Friendly</h4>
-        <p style="margin: 0; font-size: 0.85rem; color: var(--text-muted);">Works perfectly on all devices</p>
-      </div>
-    </div>
-    <div style="display: flex; gap: 16px; align-items: flex-start;">
-      <i class="fa-solid fa-globe" style="font-size: 1.5rem; color: #ea580c;"></i>
-      <div>
-        <h4 style="margin: 0 0 6px 0; font-size: 1rem;">Global Access</h4>
-        <p style="margin: 0; font-size: 0.85rem; color: var(--text-muted);">Available in multiple languages</p>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- Footer -->
 <footer style="background: #0f172a; color: #94a3b8; padding: 40px 5%;">
   <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; padding-bottom: 30px; border-bottom: 1px solid #1e293b;">
@@ -234,10 +195,10 @@
   <div style="display: flex; justify-content: space-between; align-items: center; padding-top: 20px; font-size: 0.85rem; flex-wrap: wrap; gap: 10px;">
     <div>© 2026 Sanolines. All rights reserved.</div>
     <div>
-      <select style="background: #1e293b; color: #94a3b8; border: 1px solid #334155; padding: 6px 12px; border-radius: 6px; outline: none;">
-        <option>English (EN)</option>
-        <option>Portuguese (PT)</option>
-        <option>Hindi (HI)</option>
+      <select onchange="changeFooterLang(this.value)" style="background: #1e293b; color: #94a3b8; border: 1px solid #334155; padding: 6px 12px; border-radius: 6px; outline: none;">
+        <option value="en">English (EN)</option>
+        <option value="pt">Portuguese (PT)</option>
+        <option value="hi">Hindi (HI)</option>
       </select>
     </div>
   </div>
@@ -260,6 +221,44 @@
 
   if (localStorage.getItem("theme") === "dark") {
     applyTheme(true);
+  }
+
+  // Search Functionality
+  function handleSearch(event) {
+    event.preventDefault();
+    const query = document.getElementById("search-input").value.toLowerCase().trim();
+    if (!query) return;
+
+    if (query.includes("bmi")) {
+      window.location.href = "./bmi.html";
+    } else if (query.includes("word") || query.includes("text")) {
+      window.location.href = "./word-counter.html";
+    } else if (query.includes("json")) {
+      window.location.href = "./json-formatter.html";
+    } else if (query.includes("loan") || query.includes("emi") || query.includes("finance")) {
+      window.location.href = "./loan-emi.html";
+    } else {
+      window.location.href = `./tools.html`;
+    }
+  }
+
+  // Language Switcher Logic
+  function setLanguage(lang) {
+    ['en', 'pt', 'hi'].forEach(l => {
+      const btn = document.getElementById(`lang-${l}`);
+      if (l === lang) {
+        btn.style.background = "#2563eb";
+        btn.style.color = "white";
+      } else {
+        btn.style.background = "none";
+        btn.style.color = "var(--text-muted)";
+      }
+    });
+    // You can expand this language handler to translate text dynamically later!
+  }
+
+  function changeFooterLang(lang) {
+    setLanguage(lang);
   }
 </script>
 
