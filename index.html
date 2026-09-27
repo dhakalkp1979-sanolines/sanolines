@@ -16,7 +16,7 @@
         <img src="logo.svg" alt="Sanolines Logo">
       </a>
     </div>
-    <span style="font-size: 0.8rem; color: var(--text-muted); border-left: 1px solid var(--border-color); padding-left: 12px;">Tools for a Smarter You</span>
+    <span style="font-size: 0.8rem; color: var(--text-muted); border-left: 1px solid var(--border-color); padding-left: 12px; display: none;" class="desktop-tag">Tools for a Smarter You</span>
   </div>
   <nav>
     <a href="./" style="font-weight: 600; color: #3b82f6;">Home</a>
@@ -24,12 +24,12 @@
     <a href="./categories.html">Categories</a>
     <a href="./about.html">About</a>
     <a href="./disclaimer.html">Disclaimer</a>
-    <div style="display: flex; align-items: center; gap: 8px; margin-left: 8px;">
+    <div style="display: flex; align-items: center; gap: 4px; margin-left: 4px;">
       <button style="background: #2563eb; color: white; border: none; padding: 4px 8px; border-radius: 4px; font-size: 0.8rem; cursor: pointer;">EN</button>
-      <button style="background: transparent; color: inherit; border: none; font-size: 0.8rem; cursor: pointer;">PT</button>
-      <button style="background: transparent; color: inherit; border: none; font-size: 0.8rem; cursor: pointer;">HI</button>
+      <button style="background: transparent; color: inherit; border: none; font-size: 0.8rem; cursor: pointer; padding: 4px 6px;">PT</button>
+      <button style="background: transparent; color: inherit; border: none; font-size: 0.8rem; cursor: pointer; padding: 4px 6px;">HI</button>
     </div>
-    <button id="theme-toggle" style="background: none; border: none; cursor: pointer; font-size: 1.1rem; color: inherit; margin-left: 8px;" title="Toggle Dark Mode">🌙</button>
+    <button id="theme-toggle" style="background: none; border: none; cursor: pointer; font-size: 1.1rem; color: inherit; margin-left: 4px;" title="Toggle Dark Mode">🌙</button>
   </nav>
 </header>
 
@@ -37,7 +37,7 @@
   <!-- Hero Section -->
   <section class="hero fade" style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 32px; text-align: left; padding: 30px 0;">
     <div style="flex: 1; min-width: 280px;">
-      <h1 style="font-size: 2.5rem; line-height: 1.1; margin-bottom: 16px; font-weight: 800;">
+      <h1 style="font-size: 2.75rem; line-height: 1.1; margin-bottom: 16px; font-weight: 800;">
         Your Daily Tools <br><span style="color: #2563eb;">Fast, Simple, Free</span>
       </h1>
       <p style="font-size: 1.05rem; color: var(--text-muted); margin-bottom: 24px; max-width: 520px;">
@@ -47,7 +47,7 @@
       <!-- Search Box inside Hero -->
       <div class="search" style="margin: 0 0 20px 0;">
         <div style="position: relative; max-width: 500px;">
-          <input type="text" placeholder="Search any tool... (e.g. BMI, Loan EMI, JSON formatter)" style="padding-left: 40px; border-radius: 8px; height: 48px;">
+          <input type="text" placeholder="Search any tool... (e.g. BMI, Loan EMI, JSON formatter)" style="padding-left: 40px; border-radius: 8px; height: 48px; width: 100%; box-sizing: border-box;">
           <span style="position: absolute; left: 14px; top: 15px; color: var(--text-muted);">🔍</span>
         </div>
         <div id="search-results" class="grid fade" style="margin-top: 12px;"></div>
@@ -114,14 +114,14 @@
 
       <a class="card" href="./categories/construction.html">
         <div style="font-size: 1.5rem; margin-bottom: 8px;">🏗️</div>
-        <h3 style="font-size: 1rem; margin: 0 0 4px 0;">Construction</h3>
+        <h3 style="font-size: 1rem; margin: 0 0 4px 0;">Construction Tools</h3>
         <p style="font-size: 0.8rem; color: var(--text-muted); margin: 0 0 10px 0;">Concrete, paint, tile, bricks and more.</p>
         <span style="font-size: 0.75rem; color: #2563eb; font-weight: 600;">20+ Tools →</span>
       </a>
 
       <a class="card" href="./categories/video.html">
         <div style="font-size: 1.5rem; margin-bottom: 8px;">🎬</div>
-        <h3 style="font-size: 1rem; margin: 0 0 4px 0;">Video & Media</h3>
+        <h3 style="font-size: 1rem; margin: 0 0 4px 0;">Video & Media Tools</h3>
         <p style="font-size: 0.8rem; color: var(--text-muted); margin: 0 0 10px 0;">Aspect ratio, resolution, bitrate.</p>
         <span style="font-size: 0.75rem; color: #2563eb; font-weight: 600;">20+ Tools →</span>
       </a>
@@ -137,34 +137,68 @@
 
     <div class="grid">
       <a class="card" href="./tools/bmi.html">
-        <div style="font-size: 1.1rem; margin-bottom: 6px;">❤️ BMI Calculator</div>
+        <div style="font-size: 0.95rem; font-weight: 600; margin-bottom: 6px; display: flex; align-items: center; gap: 8px;">❤️ BMI Calculator</div>
         <p style="font-size: 0.8rem; color: var(--text-muted); margin: 0;">Check your body mass index.</p>
       </a>
 
       <a class="card" href="./tools/word-counter.html">
-        <div style="font-size: 1.1rem; margin-bottom: 6px;">📝 Word Counter</div>
+        <div style="font-size: 0.95rem; font-weight: 600; margin-bottom: 6px; display: flex; align-items: center; gap: 8px;">📝 Word Counter</div>
         <p style="font-size: 0.8rem; color: var(--text-muted); margin: 0;">Count words & characters.</p>
       </a>
 
       <a class="card" href="./tools/json-formatter.html">
-        <div style="font-size: 1.1rem; margin-bottom: 6px;">💻 JSON Formatter</div>
-        <p style="font-size: 0.8rem; color: var(--text-muted); margin: 0;">Format and validate JSON.</p>
+        <div style="font-size: 0.95rem; font-weight: 600; margin-bottom: 6px; display: flex; align-items: center; gap: 8px;">💻 JSON Formatter</div>
+        <p style="font-size: 0.8rem; color: var(--text-muted); margin: 0;">Format and validate JSON data.</p>
       </a>
 
       <a class="card" href="./tools/loan-emi.html">
-        <div style="font-size: 1.1rem; margin-bottom: 6px;">📊 Loan EMI</div>
+        <div style="font-size: 0.95rem; font-weight: 600; margin-bottom: 6px; display: flex; align-items: center; gap: 8px;">📊 Loan EMI Calculator</div>
         <p style="font-size: 0.8rem; color: var(--text-muted); margin: 0;">Calculate your loan payments.</p>
       </a>
 
       <a class="card" href="./tools/concrete-volume.html">
-        <div style="font-size: 1.1rem; margin-bottom: 6px;">🏗️ Concrete Volume</div>
-        <p style="font-size: 0.8rem; color: var(--text-muted); margin: 0;">Calculate volume for builds.</p>
+        <div style="font-size: 0.95rem; font-weight: 600; margin-bottom: 6px; display: flex; align-items: center; gap: 8px;">🏗️ Concrete Volume</div>
+        <p style="font-size: 0.8rem; color: var(--text-muted); margin: 0;">Calculate concrete volume for construction.</p>
       </a>
 
       <a class="card" href="./tools/aspect-ratio.html">
-        <div style="font-size: 1.1rem; margin-bottom: 6px;">🎬 Aspect Ratio</div>
-        <p style="font-size: 0.8rem; color: var(--text-muted); margin: 0;">Find perfect image ratios.</p>
+        <div style="font-size: 0.95rem; font-weight: 600; margin-bottom: 6px; display: flex; align-items: center; gap: 8px;">🎬 Aspect Ratio</div>
+        <p style="font-size: 0.8rem; color: var(--text-muted); margin: 0;">Find the perfect video or image ratio.</p>
       </a>
+    </div>
+  </section>
+
+  <!-- Feature Highlights Banner -->
+  <section class="section fade" style="margin-top: 50px; background: var(--bg-card); padding: 24px; border-radius: 12px; border: 1px solid var(--border-color);">
+    <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; align-items: center;">
+      <div style="display: flex; gap: 12px; align-items: flex-start;">
+        <span style="font-size: 1.5rem;">🚀</span>
+        <div>
+          <div style="font-weight: 600; font-size: 0.95rem; margin-bottom: 2px;">Fast & Reliable</div>
+          <div style="font-size: 0.8rem; color: var(--text-muted);">Get instant results in seconds</div>
+        </div>
+      </div>
+      <div style="display: flex; gap: 12px; align-items: flex-start;">
+        <span style="font-size: 1.5rem;">✅</span>
+        <div>
+          <div style="font-weight: 600; font-size: 0.95rem; margin-bottom: 2px;">100% Free</div>
+          <div style="font-size: 0.8rem; color: var(--text-muted);">No hidden fees, no registration</div>
+        </div>
+      </div>
+      <div style="display: flex; gap: 12px; align-items: flex-start;">
+        <span style="font-size: 1.5rem;">📱</span>
+        <div>
+          <div style="font-weight: 600; font-size: 0.95rem; margin-bottom: 2px;">Mobile Friendly</div>
+          <div style="font-size: 0.8rem; color: var(--text-muted);">Works perfectly on all devices</div>
+        </div>
+      </div>
+      <div style="display: flex; gap: 12px; align-items: flex-start;">
+        <span style="font-size: 1.5rem;">🌐</span>
+        <div>
+          <div style="font-weight: 600; font-size: 0.95rem; margin-bottom: 2px;">Global Access</div>
+          <div style="font-size: 0.8rem; color: var(--text-muted);">Available in multiple languages</div>
+        </div>
+      </div>
     </div>
   </section>
 </main>
@@ -181,11 +215,12 @@
       <a href="./terms.html">Terms & Conditions</a>
       <a href="./disclaimer.html">Disclaimer</a>
     </div>
-    <div style="display: flex; gap: 12px; font-size: 1.1rem;">
+    <div style="display: flex; gap: 16px; font-size: 1.1rem; align-items: center;">
       <a href="#" title="Facebook">🌐</a>
       <a href="#" title="Twitter">✖</a>
       <a href="#" title="Instagram">📷</a>
       <a href="#" title="LinkedIn">in</a>
+      <span style="font-size: 0.85rem; color: var(--text-muted); margin-left: 8px; border-left: 1px solid rgba(255,255,255,0.2); padding-left: 12px;">EN v</span>
     </div>
   </div>
   <div style="margin-top: 20px; text-align: center; color: var(--text-muted); font-size: 0.85rem;">
