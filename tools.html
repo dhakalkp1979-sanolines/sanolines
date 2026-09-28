@@ -2,77 +2,113 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>All Utilities & Calculators – Sanolines</title>
   <link rel="icon" type="image/svg+xml" href="./logo.svg">
   <link rel="stylesheet" href="./style.css">
 </head>
 <body>
 
-<header>
+<header style="display: flex; justify-content: space-between; align-items: center; padding: 20px 5%; background: var(--bg-primary); border-bottom: 1px solid var(--border-color); position: sticky; top: 0; z-index: 1000;">
   <div class="logo">
     <a href="./index.html">
       <img src="./logo.svg" alt="Sanolines Logo" style="height: 32px; width: auto;">
     </a>
   </div>
-  <nav>
-    <a href="./index.html">Home</a>
-    <a href="./tools.html">Tools</a>
-    <a href="./categories.html">Categories</a>
-    <a href="./about.html">About</a>
+  <nav style="display: flex; align-items: center; gap: 24px;">
+    <a href="./index.html" style="text-decoration: none; color: var(--text-muted);">Home</a>
+    <a href="./tools.html" style="text-decoration: none; color: var(--text-primary); font-weight: 600;">Tools</a>
+    <a href="./categories.html" style="text-decoration: none; color: var(--text-muted);">Categories</a>
+    <a href="./about.html" style="text-decoration: none; color: var(--text-muted);">About</a>
     <button id="theme-toggle" style="background: none; border: none; cursor: pointer; font-size: 1.1rem; color: inherit;">🌙</button>
   </nav>
 </header>
 
 <main style="padding: 40px 5%; max-width: 1200px; margin: 0 auto;">
   <section>
-    <h1 style="font-size: 2.2rem; font-weight: 800; margin-bottom: 8px;">All Utilities & Calculators</h1>
+    <h1 style="font-size: 2.2rem; font-weight: 800; margin-bottom: 8px; color: var(--text-primary);">All Utilities & Calculators</h1>
     <p style="color: var(--text-muted); margin-bottom: 40px;">Explore our complete directory of free online tools, structured for speed and simplicity.</p>
 
     <!-- Finance Section -->
     <div id="finance" style="margin-bottom: 40px;">
-      <h2 style="font-size: 1.5rem; margin-bottom: 20px; font-weight: 700;">Finance</h2>
-      <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 280px)); gap: 16px;">
+      <h2 style="font-size: 1.5rem; margin-bottom: 20px; font-weight: 700; color: var(--text-primary);">Finance</h2>
+      <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 16px;">
         <a href="./loan-emi.html" class="card" style="padding: 18px 20px; border: 1px solid var(--border-color); border-radius: 8px; text-decoration: none; color: inherit; background: var(--bg-primary); font-weight: 500;">Loan EMI Calculator</a>
         <a href="./salary-converter.html" class="card" style="padding: 18px 20px; border: 1px solid var(--border-color); border-radius: 8px; text-decoration: none; color: inherit; background: var(--bg-primary); font-weight: 500;">Salary Converter</a>
         <a href="./crypto-profit.html" class="card" style="padding: 18px 20px; border: 1px solid var(--border-color); border-radius: 8px; text-decoration: none; color: inherit; background: var(--bg-primary); font-weight: 500;">Crypto Profit Calculator</a>
       </div>
     </div>
 
-    <!-- Health Section -->
+    <!-- Health & Fitness Section -->
     <div id="health" style="margin-bottom: 40px;">
-      <h2 style="font-size: 1.5rem; margin-bottom: 20px; font-weight: 700;">Health & Fitness</h2>
-      <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 280px)); gap: 16px;">
+      <h2 style="font-size: 1.5rem; margin-bottom: 20px; font-weight: 700; color: var(--text-primary);">Health & Fitness</h2>
+      <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 16px;">
         <a href="./bmi.html" class="card" style="padding: 18px 20px; border: 1px solid var(--border-color); border-radius: 8px; text-decoration: none; color: inherit; background: var(--bg-primary); font-weight: 500;">BMI Calculator</a>
+        <a href="./calorie-calculator.html" class="card" style="padding: 18px 20px; border: 1px solid var(--border-color); border-radius: 8px; text-decoration: none; color: inherit; background: var(--bg-primary); font-weight: 500;">Calorie Calculator</a>
+        <a href="./water-intake.html" class="card" style="padding: 18px 20px; border: 1px solid var(--border-color); border-radius: 8px; text-decoration: none; color: inherit; background: var(--bg-primary); font-weight: 500;">Water Intake Calculator</a>
+        <a href="./body-fat.html" class="card" style="padding: 18px 20px; border: 1px solid var(--border-color); border-radius: 8px; text-decoration: none; color: inherit; background: var(--bg-primary); font-weight: 500;">Body Fat Calculator</a>
       </div>
     </div>
 
-    <!-- Developer Section -->
+    <!-- Developer Tools Section -->
     <div id="developer" style="margin-bottom: 40px;">
-      <h2 style="font-size: 1.5rem; margin-bottom: 20px; font-weight: 700;">Developer Tools</h2>
-      <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 280px)); gap: 16px;">
-        <a href="./json-formatter.html" class="card" style="padding: 18px 20px; border: 1px solid var(--border-color); border-radius: 8px; text-decoration: none; color: inherit; background: var(--bg-primary); font-weight: 500;">JSON Formatter</a>
+      <h2 style="font-size: 1.5rem; margin-bottom: 20px; font-weight: 700; color: var(--text-primary);">Developer Tools</h2>
+      <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 16px;">
+        <a href="./json-formatter.html" class="card" style="padding: 18px 20px; border: 1px solid var(--border-color); border-radius: 8px; text-decoration: none; color: inherit; background: var(--bg-primary); font-weight: 500;">JSON Formatter & Validator</a>
+        <a href="./base64-encoder.html" class="card" style="padding: 18px 20px; border: 1px solid var(--border-color); border-radius: 8px; text-decoration: none; color: inherit; background: var(--bg-primary); font-weight: 500;">Base64 Encoder/Decoder</a>
+        <a href="./url-encoder.html" class="card" style="padding: 18px 20px; border: 1px solid var(--border-color); border-radius: 8px; text-decoration: none; color: inherit; background: var(--bg-primary); font-weight: 500;">URL Encoder/Decoder</a>
+        <a href="./hash-generator.html" class="card" style="padding: 18px 20px; border: 1px solid var(--border-color); border-radius: 8px; text-decoration: none; color: inherit; background: var(--bg-primary); font-weight: 500;">MD5 / SHA Hash Generator</a>
+        <a href="./jwt-debugger.html" class="card" style="padding: 18px 20px; border: 1px solid var(--border-color); border-radius: 8px; text-decoration: none; color: inherit; background: var(--bg-primary); font-weight: 500;">JWT Debugger</a>
       </div>
     </div>
 
-    <!-- Writing Section -->
+    <!-- Writing Tools Section -->
     <div id="writing" style="margin-bottom: 40px;">
-      <h2 style="font-size: 1.5rem; margin-bottom: 20px; font-weight: 700;">Writing Tools</h2>
-      <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 280px)); gap: 16px;">
-        <a href="./word-counter.html" class="card" style="padding: 18px 20px; border: 1px solid var(--border-color); border-radius: 8px; text-decoration: none; color: inherit; background: var(--bg-primary); font-weight: 500;">Word Counter</a>
+      <h2 style="font-size: 1.5rem; margin-bottom: 20px; font-weight: 700; color: var(--text-primary);">Writing Tools</h2>
+      <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 16px;">
+        <a href="./word-counter.html" class="card" style="padding: 18px 20px; border: 1px solid var(--border-color); border-radius: 8px; text-decoration: none; color: inherit; background: var(--bg-primary); font-weight: 500;">Word & Character Counter</a>
+        <a href="./case-converter.html" class="card" style="padding: 18px 20px; border: 1px solid var(--border-color); border-radius: 8px; text-decoration: none; color: inherit; background: var(--bg-primary); font-weight: 500;">Case Converter</a>
+        <a href="./text-reverser.html" class="card" style="padding: 18px 20px; border: 1px solid var(--border-color); border-radius: 8px; text-decoration: none; color: inherit; background: var(--bg-primary); font-weight: 500;">Text Reverser</a>
+        <a href="./remove-duplicates.html" class="card" style="padding: 18px 20px; border: 1px solid var(--border-color); border-radius: 8px; text-decoration: none; color: inherit; background: var(--bg-primary); font-weight: 500;">Remove Duplicate Lines</a>
+        <a href="./slug-generator.html" class="card" style="padding: 18px 20px; border: 1px solid var(--border-color); border-radius: 8px; text-decoration: none; color: inherit; background: var(--bg-primary); font-weight: 500;">URL Slug Generator</a>
+      </div>
+    </div>
+
+    <!-- Construction Tools Section -->
+    <div id="construction" style="margin-bottom: 40px;">
+      <h2 style="font-size: 1.5rem; margin-bottom: 20px; font-weight: 700; color: var(--text-primary);">Construction Tools</h2>
+      <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 16px;">
+        <a href="./concrete-calculator.html" class="card" style="padding: 18px 20px; border: 1px solid var(--border-color); border-radius: 8px; text-decoration: none; color: inherit; background: var(--bg-primary); font-weight: 500;">Concrete Calculator</a>
+        <a href="./brick-calculator.html" class="card" style="padding: 18px 20px; border: 1px solid var(--border-color); border-radius: 8px; text-decoration: none; color: inherit; background: var(--bg-primary); font-weight: 500;">Brick & Block Calculator</a>
+        <a href="./paint-calculator.html" class="card" style="padding: 18px 20px; border: 1px solid var(--border-color); border-radius: 8px; text-decoration: none; color: inherit; background: var(--bg-primary); font-weight: 500;">Paint Calculator</a>
+        <a href="./flooring-calculator.html" class="card" style="padding: 18px 20px; border: 1px solid var(--border-color); border-radius: 8px; text-decoration: none; color: inherit; background: var(--bg-primary); font-weight: 500;">Flooring & Tile Calculator</a>
+      </div>
+    </div>
+
+    <!-- Video & Media Tools Section -->
+    <div id="video" style="margin-bottom: 40px;">
+      <h2 style="font-size: 1.5rem; margin-bottom: 20px; font-weight: 700; color: var(--text-primary);">Video & Media Tools</h2>
+      <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 16px;">
+        <a href="./video-bitrate-calculator.html" class="card" style="padding: 18px 20px; border: 1px solid var(--border-color); border-radius: 8px; text-decoration: none; color: inherit; background: var(--bg-primary); font-weight: 500;">Video Bitrate Calculator</a>
+        <a href="./aspect-ratio-calculator.html" class="card" style="padding: 18px 20px; border: 1px solid var(--border-color); border-radius: 8px; text-decoration: none; color: inherit; background: var(--bg-primary); font-weight: 500;">Aspect Ratio Calculator</a>
+        <a href="./video-file-size.html" class="card" style="padding: 18px 20px; border: 1px solid var(--border-color); border-radius: 8px; text-decoration: none; color: inherit; background: var(--bg-primary); font-weight: 500;">Video File Size Estimator</a>
+        <a href="./youtube-monetization.html" class="card" style="padding: 18px 20px; border: 1px solid var(--border-color); border-radius: 8px; text-decoration: none; color: inherit; background: var(--bg-primary); font-weight: 500;">YouTube Money Calculator</a>
       </div>
     </div>
 
   </section>
 </main>
 
-<footer>
-  <div>
-    <a href="./about.html">About</a> | 
-    <a href="./privacy.html">Privacy Policy</a> | 
-    <a href="./terms.html">Terms</a> | 
-    <a href="./disclaimer.html">Disclaimer</a>
+<footer style="background: #0f172a; color: #94a3b8; padding: 30px 5%; margin-top: 60px;">
+  <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px;">
+    <div>
+      <a href="./about.html" style="color: #94a3b8; text-decoration: none;">About</a> | 
+      <a href="./privacy.html" style="color: #94a3b8; text-decoration: none;">Privacy Policy</a> | 
+      <a href="./terms.html" style="color: #94a3b8; text-decoration: none;">Terms</a> | 
+      <a href="./disclaimer.html" style="color: #94a3b8; text-decoration: none;">Disclaimer</a>
+    </div>
+    <div style="font-size: 0.85rem;">© 2026 Sanolines — All Rights Reserved</div>
   </div>
-  <div style="margin-top: 8px;">© 2026 Sanolines — All Rights Reserved</div>
 </footer>
 
 <script>
