@@ -2,112 +2,140 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Aspect Ratio Calculator – Sanolines</title>
-  <link rel="stylesheet" href="../style.css">
+  <link rel="icon" type="image/svg+xml" href="./logo.svg">
+  <link rel="stylesheet" href="./style.css">
 </head>
 <body>
 
-<header>
+<header style="display: flex; justify-content: space-between; align-items: center; padding: 20px 5%; background: var(--bg-primary); border-bottom: 1px solid var(--border-color); position: sticky; top: 0; z-index: 1000;">
   <div class="logo">
-    <a href="/">
-      <img src="../logo.svg" alt="Sanolines Logo">
+    <a href="./index.html">
+      <img src="./logo.svg" alt="Sanolines Logo" style="height: 32px; width: auto;">
     </a>
   </div>
-  <nav>
-    <a href="/">Home</a>
-    <a href="/tools.html">Tools</a>
-    <a href="/categories.html">Categories</a>
-    <a href="/about.html">About</a>
-    <a href="/disclaimer.html">Disclaimer</a>
+  <nav style="display: flex; align-items: center; gap: 24px;">
+    <a href="./index.html" style="text-decoration: none; color: var(--text-muted);">Home</a>
+    <a href="./tools.html" style="text-decoration: none; color: var(--text-primary); font-weight: 600;">Tools</a>
+    <a href="./categories.html" style="text-decoration: none; color: var(--text-muted);">Categories</a>
+    <a href="./about.html" style="text-decoration: none; color: var(--text-muted);">About</a>
     <button id="theme-toggle" style="background: none; border: none; cursor: pointer; font-size: 1.1rem; color: inherit;">🌙</button>
   </nav>
 </header>
 
-<main class="fade" style="max-width: 650px;">
-  <h1>Aspect Ratio Calculator</h1>
-  <p style="color: var(--text-muted); margin-bottom: 24px;">Calculate image or video dimensions and scale proportions accurately.</p>
+<main style="padding: 40px 5%; max-width: 800px; margin: 0 auto;">
+  <h1 style="font-size: 2.2rem; font-weight: 800; margin-bottom: 8px; color: var(--text-primary);">Aspect Ratio Calculator</h1>
+  <p style="color: var(--text-muted); margin-bottom: 30px;">Scale image or video dimensions proportionally while maintaining the correct aspect ratio.</p>
 
-  <div class="card" style="padding: 24px;">
-    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px;">
+  <div style="background: var(--bg-primary); border: 1px solid var(--border-color); padding: 30px; border-radius: 12px;">
+    
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 20px;">
       <div>
-        <label style="display: block; font-size: 0.9rem; margin-bottom: 6px;">Original Width (px)</label>
-        <input type="number" id="orig-width" placeholder="e.g. 1920" style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid var(--border-color); background: var(--bg-primary); color: var(--text-primary);">
+        <label style="display: block; margin-bottom: 8px; font-weight: 500; color: var(--text-primary);">Width (px)</label>
+        <input type="number" id="width" placeholder="e.g., 1920" oninput="calculateHeight()" style="width: 100%; padding: 12px; border: 1px solid var(--border-color); border-radius: 6px; background: var(--bg-secondary, #f8fafc); color: inherit;">
       </div>
       <div>
-        <label style="display: block; font-size: 0.9rem; margin-bottom: 6px;">Original Height (px)</label>
-        <input type="number" id="orig-height" placeholder="e.g. 1080" style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid var(--border-color); background: var(--bg-primary); color: var(--text-primary);">
+        <label style="display: block; margin-bottom: 8px; font-weight: 500; color: var(--text-primary);">Height (px)</label>
+        <input type="number" id="height" placeholder="e.g., 1080" oninput="calculateWidth()" style="width: 100%; padding: 12px; border: 1px solid var(--border-color); border-radius: 6px; background: var(--bg-secondary, #f8fafc); color: inherit;">
       </div>
     </div>
 
-    <div style="margin-bottom: 20px;">
-      <label style="display: block; font-size: 0.9rem; margin-bottom: 6px;">New Width (px) [Optional to scale height]</label>
-      <input type="number" id="new-width" placeholder="e.g. 1280" style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid var(--border-color); background: var(--bg-primary); color: var(--text-primary);">
-    </div>
-
-    <button onclick="calculateAspectRatio()" style="background: var(--accent-gradient); color: white; border: none; padding: 10px 20px; border-radius: 8px; cursor: pointer; width: 100%; font-size: 1rem;">Calculate Proportions</button>
-
-    <div id="ratio-results" style="margin-top: 24px; display: none;">
-      <div style="border-top: 1px solid var(--border-color); padding-top: 16px; display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 12px; text-align: center;">
-        <div style="background: var(--bg-primary); padding: 12px; border-radius: 8px; border: 1px solid var(--border-color);">
-          <div style="font-size: 0.85rem; color: var(--text-muted);">Aspect Ratio</div>
-          <div id="result-ratio" style="font-size: 1.2rem; font-weight: 700; margin-top: 4px; color: #2563eb;">16:9</div>
-        </div>
-        <div style="background: var(--bg-primary); padding: 12px; border-radius: 8px; border: 1px solid var(--border-color);">
-          <div style="font-size: 0.85rem; color: var(--text-muted);">Scaled Height</div>
-          <div id="result-height" style="font-size: 1.2rem; font-weight: 700; margin-top: 4px;">0 px</div>
-        </div>
+    <div style="margin-bottom: 24px;">
+      <label style="display: block; margin-bottom: 8px; font-weight: 500; color: var(--text-primary);">Common Ratios / Presets</label>
+      <div style="display: flex; flex-wrap: wrap; gap: 10px;">
+        <button onclick="applyRatio(16, 9)" style="background: var(--bg-secondary, #f1f5f9); color: var(--text-primary); border: 1px solid var(--border-color); padding: 8px 14px; border-radius: 6px; cursor: pointer; font-weight: 500;">16:9 (HD)</button>
+        <button onclick="applyRatio(4, 3)" style="background: var(--bg-secondary, #f1f5f9); color: var(--text-primary); border: 1px solid var(--border-color); padding: 8px 14px; border-radius: 6px; cursor: pointer; font-weight: 500;">4:3 (SD)</button>
+        <button onclick="applyRatio(1, 1)" style="background: var(--bg-secondary, #f1f5f9); color: var(--text-primary); border: 1px solid var(--border-color); padding: 8px 14px; border-radius: 6px; cursor: pointer; font-weight: 500;">1:1 (Square)</button>
+        <button onclick="applyRatio(9, 16)" style="background: var(--bg-secondary, #f1f5f9); color: var(--text-primary); border: 1px solid var(--border-color); padding: 8px 14px; border-radius: 6px; cursor: pointer; font-weight: 500;">9:16 (Story)</button>
+        <button onclick="applyRatio(21, 9)" style="background: var(--bg-secondary, #f1f5f9); color: var(--text-primary); border: 1px solid var(--border-color); padding: 8px 14px; border-radius: 6px; cursor: pointer; font-weight: 600;">21:9 (Ultrawide)</button>
       </div>
     </div>
+
+    <div id="result" style="padding: 20px; background: var(--bg-secondary, #f1f5f9); border-radius: 8px; text-align: center; display: none;">
+      <h3 style="margin: 0 0 6px 0; color: var(--text-primary);">Calculated Aspect Ratio:</h3>
+      <p id="ratioOutput" style="font-size: 1.8rem; font-weight: bold; color: #2563eb; margin: 0;"></p>
+    </div>
+
   </div>
 </main>
 
-<footer>
-  <div>
-    <a href="/about.html">About</a> | 
-    <a href="/privacy.html">Privacy Policy</a> | 
-    <a href="/terms.html">Terms</a> | 
-    <a href="/disclaimer.html">Disclaimer</a>
+<footer style="background: #0f172a; color: #94a3b8; padding: 30px 5%; margin-top: 60px;">
+  <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px;">
+    <div>
+      <a href="./about.html" style="color: #94a3b8; text-decoration: none;">About</a> | 
+      <a href="./privacy.html" style="color: #94a3b8; text-decoration: none;">Privacy Policy</a> | 
+      <a href="./terms.html" style="color: #94a3b8; text-decoration: none;">Terms</a> | 
+      <a href="./disclaimer.html" style="color: #94a3b8; text-decoration: none;">Disclaimer</a>
+    </div>
+    <div style="font-size: 0.85rem;">© 2026 Sanolines — All Rights Reserved</div>
   </div>
-  <div style="margin-top: 8px;">© 2026 Sanolines — All Rights Reserved</div>
 </footer>
 
 <script>
+  const widthInput = document.getElementById('width');
+  const heightInput = document.getElementById('height');
+  const resultDiv = document.getElementById('result');
+  const ratioOutput = document.getElementById('ratioOutput');
+
   function gcd(a, b) {
     return b === 0 ? a : gcd(b, a % b);
   }
 
-  function calculateAspectRatio() {
-    const w = parseInt(document.getElementById("orig-width").value);
-    const h = parseInt(document.getElementById("orig-height").value);
-    const newW = parseInt(document.getElementById("new-width").value);
-    const resultsContainer = document.getElementById("ratio-results");
-
-    if (!w || !h || w <= 0 || h <= 0) {
-      alert("Please enter valid original width and height dimensions.");
-      return;
-    }
-
-    const divisor = gcd(w, h);
-    const ratioW = w / divisor;
-    const ratioH = h / divisor;
-
-    document.getElementById("result-ratio").textContent = `${ratioW}:${ratioH}`;
-
-    if (newW && newW > 0) {
-      const calculatedNewH = Math.round((newW * h) / w);
-      document.getElementById("result-height").textContent = `${calculatedNewH} px`;
+  function updateRatio(w, h) {
+    if (w > 0 && h > 0) {
+      const divisor = gcd(w, h);
+      const rx = w / divisor;
+      const ry = h / divisor;
+      ratioOutput.textContent = `${rx}:${ry} (${(w/h).toFixed(2)}:1)`;
+      resultDiv.style.display = 'block';
     } else {
-      document.getElementById("result-height").textContent = `${h} px`;
+      resultDiv.style.display = 'none';
     }
+  }
 
-    resultsContainer.style.display = "block";
+  function calculateHeight() {
+    const w = parseFloat(widthInput.value);
+    // Default base ratio assumption if height is empty: 16:9
+    if (w > 0) {
+      if (!heightInput.value) {
+        heightInput.value = Math.round(w * (9 / 16));
+      }
+      const h = parseFloat(heightInput.value);
+      updateRatio(w, h);
+    } else {
+      resultDiv.style.display = 'none';
+    }
+  }
+
+  function calculateWidth() {
+    const h = parseFloat(heightInput.value);
+    if (h > 0) {
+      if (!widthInput.value) {
+        widthInput.value = Math.round(h * (16 / 9));
+      }
+      const w = parseFloat(widthInput.value);
+      updateRatio(w, h);
+    } else {
+      resultDiv.style.display = 'none';
+    }
+  }
+
+  function applyRatio(rWidth, rHeight) {
+    let w = parseFloat(widthInput.value);
+    if (!w || w <= 0) {
+      w = rWidth * 120; // default baseline scaling
+      widthInput.value = w;
+    }
+    heightInput.value = Math.round(w * (rHeight / rWidth));
+    updateRatio(parseFloat(widthInput.value), parseFloat(heightInput.value));
   }
 
   // Dark Mode Persistence Logic
   const toggleBtn = document.getElementById("theme-toggle");
   const applyTheme = (isDark) => {
     document.body.classList.toggle("dark", isDark);
-    toggleBtn.textContent = isDark ? "☀️" : "🌙";
+    if(toggleBtn) toggleBtn.textContent = isDark ? "☀️" : "🌙";
     localStorage.setItem("theme", isDark ? "dark" : "light");
   };
   if (toggleBtn) toggleBtn.addEventListener("click", () => applyTheme(!document.body.classList.contains("dark")));
