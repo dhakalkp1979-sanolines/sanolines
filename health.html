@@ -2,38 +2,188 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Health & Fitness Tools – Sanolines</title>
-  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
-<header>
-  <div class="logo">SANOLINES</div>
-  <nav>
-    <a href="/">Home</a>
-    <a href="/tools.html">Tools</a>
-    <a href="/categories.html">Categories</a>
-    <a href="/about.html">About</a>
-    <a href="/disclaimer.html">Disclaimer</a>
+<!-- Header -->
+<header style="display: flex; justify-content: space-between; align-items: center; padding: 20px 5%; background: var(--bg-primary); border-bottom: 1px solid var(--border-color); position: sticky; top: 0; z-index: 1000;">
+  <div class="logo">
+    <a href="./index.html" style="display: flex; align-items: center; text-decoration: none;">
+      <img src="./logo.svg" alt="Sanolines Logo" style="height: 36px;">
+    </a>
+  </div>
+  <nav style="display: flex; align-items: center; gap: 24px;">
+    <a href="./index.html" style="text-decoration: none; color: var(--text-muted);">Home</a>
+    <a href="./tools.html" style="text-decoration: none; color: var(--text-muted);">Tools</a>
+    <a href="./categories.html" style="text-decoration: none; color: var(--text-primary); font-weight: 600;">Categories</a>
+    <a href="./about.html" style="text-decoration: none; color: var(--text-muted);">About</a>
   </nav>
+  <button id="theme-toggle" style="background: none; border: none; cursor: pointer; font-size: 1.2rem; color: inherit;">🌙</button>
 </header>
 
-<main>
-  <h1>Health & Fitness Tools</h1>
-  <p>Track your health with simple calculators for BMI, calories, hydration, and more.</p>
+<!-- Main Directory Section -->
+<main style="padding: 40px 5%; max-width: 1200px; margin: 0 auto;">
+  <h1 style="font-size: 2.5rem; font-weight: 800; margin-bottom: 10px; color: var(--text-primary);">Health & Fitness Tools</h1>
+  <p style="color: var(--text-muted); margin-bottom: 40px; font-size: 1.1rem;">Explore our complete directory of 20+ free online health, nutrition, and fitness calculators.</p>
 
-  <div class="grid">
-    <a class="card" href="/tools/bmi.html">BMI Calculator</a>
-    <a class="card" href="/tools/water-intake.html">Water Intake Calculator</a>
-    <a class="card" href="/tools/calorie.html">Calorie Calculator</a>
-    <a class="card" href="/tools/pregnancy-due-date.html">Pregnancy Due Date</a>
-    <a class="card" href="/tools/body-fat.html">Body Fat Calculator</a>
+  <!-- Tools Grid -->
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
+    
+    <!-- 1 -->
+    <a href="./bmi.html" style="text-decoration: none; background: var(--bg-primary); border: 1px solid var(--border-color); padding: 24px; border-radius: 12px; display: block; transition: transform 0.2s;">
+      <h3 style="color: var(--text-primary); margin-bottom: 8px; font-size: 1.2rem;">BMI Calculator</h3>
+      <p style="color: var(--text-muted); font-size: 0.9rem; margin: 0;">Calculate your body mass index to check healthy weight ranges.</p>
+    </a>
+
+    <!-- 2 -->
+    <a href="./calorie-calculator.html" style="text-decoration: none; background: var(--bg-primary); border: 1px solid var(--border-color); padding: 24px; border-radius: 12px; display: block;">
+      <h3 style="color: var(--text-primary); margin-bottom: 8px; font-size: 1.2rem;">Daily Calorie Calculator</h3>
+      <p style="color: var(--text-muted); font-size: 0.9rem; margin: 0;">Estimate daily calories needed to maintain, lose, or gain weight.</p>
+    </a>
+
+    <!-- 3 -->
+    <a href="./body-fat.html" style="text-decoration: none; background: var(--bg-primary); border: 1px solid var(--border-color); padding: 24px; border-radius: 12px; display: block;">
+      <h3 style="color: var(--text-primary); margin-bottom: 8px; font-size: 1.2rem;">Body Fat Calculator</h3>
+      <p style="color: var(--text-muted); font-size: 0.9rem; margin: 0;">Estimate total body fat percentage using standard circumference measurements.</p>
+    </a>
+
+    <!-- 4 -->
+    <a href="./water-intake.html" style="text-decoration: none; background: var(--bg-primary); border: 1px solid var(--border-color); padding: 24px; border-radius: 12px; display: block;">
+      <h3 style="color: var(--text-primary); margin-bottom: 8px; font-size: 1.2rem;">Water Intake Calculator</h3>
+      <p style="color: var(--text-muted); font-size: 0.9rem; margin: 0;">Find out how much water you should drink daily based on activity and weight.</p>
+    </a>
+
+    <!-- 5 -->
+    <a href="./pregnancy-due-date.html" style="text-decoration: none; background: var(--bg-primary); border: 1px solid var(--border-color); padding: 24px; border-radius: 12px; display: block;">
+      <h3 style="color: var(--text-primary); margin-bottom: 8px; font-size: 1.2rem;">Pregnancy Due Date Calculator</h3>
+      <p style="color: var(--text-muted); font-size: 0.9rem; margin: 0;">Estimate your expected delivery date based on your last menstrual period.</p>
+    </a>
+
+    <!-- 6 -->
+    <a href="./macro-calculator.html" style="text-decoration: none; background: var(--bg-primary); border: 1px solid var(--border-color); padding: 24px; border-radius: 12px; display: block;">
+      <h3 style="color: var(--text-primary); margin-bottom: 8px; font-size: 1.2rem;">Macro Calculator</h3>
+      <p style="color: var(--text-muted); font-size: 0.9rem; margin: 0;">Determine optimal daily protein, carb, and fat grams for your fitness goals.</p>
+    </a>
+
+    <!-- 7 -->
+    <a href="./ideal-weight.html" style="text-decoration: none; background: var(--bg-primary); border: 1px solid var(--border-color); padding: 24px; border-radius: 12px; display: block;">
+      <h3 style="color: var(--text-primary); margin-bottom: 8px; font-size: 1.2rem;">Ideal Body Weight Calculator</h3>
+      <p style="color: var(--text-muted); font-size: 0.9rem; margin: 0;">Calculate healthy target body weight ranges based on height and frame.</p>
+    </a>
+
+    <!-- 8 -->
+    <a href="./pace-calculator.html" style="text-decoration: none; background: var(--bg-primary); border: 1px solid var(--border-color); padding: 24px; border-radius: 12px; display: block;">
+      <h3 style="color: var(--text-primary); margin-bottom: 8px; font-size: 1.2rem;">Running Pace Calculator</h3>
+      <p style="color: var(--text-muted); font-size: 0.9rem; margin: 0;">Compute your training pace, speed, or finish times for running tracks.</p>
+    </a>
+
+    <!-- 9 -->
+    <a href="./one-rep-max.html" style="text-decoration: none; background: var(--bg-primary); border: 1px solid var(--border-color); padding: 24px; border-radius: 12px; display: block;">
+      <h3 style="color: var(--text-primary); margin-bottom: 8px; font-size: 1.2rem;">One-Rep Max Calculator</h3>
+      <p style="color: var(--text-muted); font-size: 0.9rem; margin: 0;">Estimate your maximum lifting strength for weight training exercises.</p>
+    </a>
+
+    <!-- 10 -->
+    <a href="./target-heart-rate.html" style="text-decoration: none; background: var(--bg-primary); border: 1px solid var(--border-color); padding: 24px; border-radius: 12px; display: block;">
+      <h3 style="color: var(--text-primary); margin-bottom: 8px; font-size: 1.2rem;">Target Heart Rate Calculator</h3>
+      <p style="color: var(--text-muted); font-size: 0.9rem; margin: 0;">Find your fat-burning and cardio training heart rate zones.</p>
+    </a>
+
+    <!-- 11 -->
+    <a href="./tdee-calculator.html" style="text-decoration: none; background: var(--bg-primary); border: 1px solid var(--border-color); padding: 24px; border-radius: 12px; display: block;">
+      <h3 style="color: var(--text-primary); margin-bottom: 8px; font-size: 1.2rem;">TDEE Calculator</h3>
+      <p style="color: var(--text-muted); font-size: 0.9rem; margin: 0;">Calculate your Total Daily Energy Expenditure factoring in lifestyle.</p>
+    </a>
+
+    <!-- 12 -->
+    <a href="./ovulation-calculator.html" style="text-decoration: none; background: var(--bg-primary); border: 1px solid var(--border-color); padding: 24px; border-radius: 12px; display: block;">
+      <h3 style="color: var(--text-primary); margin-bottom: 8px; font-size: 1.2rem;">Ovulation & Fertility Calculator</h3>
+      <p style="color: var(--text-muted); font-size: 0.9rem; margin: 0;">Track your most fertile window and next expected ovulation dates.</p>
+    </a>
+
+    <!-- 13 -->
+    <a href="./blood-volume.html" style="text-decoration: none; background: var(--bg-primary); border: 1px solid var(--border-color); padding: 24px; border-radius: 12px; display: block;">
+      <h3 style="color: var(--text-primary); margin-bottom: 8px; font-size: 1.2rem;">Blood Volume Calculator</h3>
+      <p style="color: var(--text-muted); font-size: 0.9rem; margin: 0;">Estimate total human blood volume based on height and weight.</p>
+    </a>
+
+    <!-- 14 -->
+    <a href="./sleep-calculator.html" style="text-decoration: none; background: var(--bg-primary); border: 1px solid var(--border-color); padding: 24px; border-radius: 12px; display: block;">
+      <h3 style="color: var(--text-primary); margin-bottom: 8px; font-size: 1.2rem;">Sleep Cycle Calculator</h3>
+      <p style="color: var(--text-muted); font-size: 0.9rem; margin: 0;">Find the best time to wake up or sleep based on 90-minute sleep cycles.</p>
+    </a>
+
+    <!-- 15 -->
+    <a href="./lean-body-mass.html" style="text-decoration: none; background: var(--bg-primary); border: 1px solid var(--border-color); padding: 24px; border-radius: 12px; display: block;">
+      <h3 style="color: var(--text-primary); margin-bottom: 8px; font-size: 1.2rem;">Lean Body Mass Calculator</h3>
+      <p style="color: var(--text-muted); font-size: 0.9rem; margin: 0;">Calculate your body's total weight minus all fat mass components.</p>
+    </a>
+
+    <!-- 16 -->
+    <a href="./calorie-deficit.html" style="text-decoration: none; background: var(--bg-primary); border: 1px solid var(--border-color); padding: 24px; border-radius: 12px; display: block;">
+      <h3 style="color: var(--text-primary); margin-bottom: 8px; font-size: 1.2rem;">Calorie Deficit Calculator</h3>
+      <p style="color: var(--text-muted); font-size: 0.9rem; margin: 0;">Plan safe weekly weight loss targets by tracking daily energy deficits.</p>
+    </a>
+
+    <!-- 17 -->
+    <a href="./gfr-calculator.html" style="text-decoration: none; background: var(--bg-primary); border: 1px solid var(--border-color); padding: 24px; border-radius: 12px; display: block;">
+      <h3 style="color: var(--text-primary); margin-bottom: 8px; font-size: 1.2rem;">GFR Calculator</h3>
+      <p style="color: var(--text-muted); font-size: 0.9rem; margin: 0;">Estimate glomerular filtration rate for kidney health assessments.</p>
+    </a>
+
+    <!-- 18 -->
+    <a href="./waist-hip-ratio.html" style="text-decoration: none; background: var(--bg-primary); border: 1px solid var(--border-color); padding: 24px; border-radius: 12px; display: block;">
+      <h3 style="color: var(--text-primary); margin-bottom: 8px; font-size: 1.2rem;">Waist-to-Hip Ratio Calculator</h3>
+      <p style="color: var(--text-muted); font-size: 0.9rem; margin: 0;">Evaluate fat distribution patterns and health risk indicators.</p>
+    </a>
+
+    <!-- 19 -->
+    <a href="./protein-intake.html" style="text-decoration: none; background: var(--bg-primary); border: 1px solid var(--border-color); padding: 24px; border-radius: 12px; display: block;">
+      <h3 style="color: var(--text-primary); margin-bottom: 8px; font-size: 1.2rem;">Protein Intake Calculator</h3>
+      <p style="color: var(--text-muted); font-size: 0.9rem; margin: 0;">Determine daily protein goals for muscle building or endurance sports.</p>
+    </a>
+
+    <!-- 20 -->
+    <a href="./body-surface-area.html" style="text-decoration: none; background: var(--bg-primary); border: 1px solid var(--border-color); padding: 24px; border-radius: 12px; display: block;">
+      <h3 style="color: var(--text-primary); margin-bottom: 8px; font-size: 1.2rem;">Body Surface Area Calculator</h3>
+      <p style="color: var(--text-muted); font-size: 0.9rem; margin: 0;">Calculate total surface area of the human body for medical metrics.</p>
+    </a>
+
   </div>
 </main>
 
-<footer>
-  © 2026 Sanolines
+<!-- Footer -->
+<footer style="background: #0f172a; color: #94a3b8; padding: 40px 5%; margin-top: 60px;">
+  <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; padding-bottom: 30px; border-bottom: 1px solid #1e293b;">
+    <div>
+      <img src="./logo.svg" alt="Sanolines Logo" style="height: 32px; filter: brightness(0) invert(1); margin-bottom: 8px;">
+      <p style="margin: 0; font-size: 0.85rem;">Tools for a Smarter You</p>
+    </div>
+    <div style="display: flex; gap: 20px; font-size: 0.9rem;">
+      <a href="./about.html" style="color: #94a3b8; text-decoration: none;">About</a>
+      <a href="./privacy.html" style="color: #94a3b8; text-decoration: none;">Privacy Policy</a>
+      <a href="./terms.html" style="color: #94a3b8; text-decoration: none;">Terms & Conditions</a>
+      <a href="./disclaimer.html" style="color: #94a3b8; text-decoration: none;">Disclaimer</a>
+    </div>
+  </div>
+  <div style="padding-top: 20px; font-size: 0.85rem;">© 2026 Sanolines. All rights reserved.</div>
 </footer>
+
+<script>
+  // Dark Mode Persistence Logic
+  const toggleBtn = document.getElementById("theme-toggle");
+  const applyTheme = (isDark) => {
+    document.body.classList.toggle("dark", isDark);
+    if(toggleBtn) toggleBtn.textContent = isDark ? "☀️" : "🌙";
+    localStorage.setItem("theme", isDark ? "dark" : "light");
+  };
+  if (toggleBtn) toggleBtn.addEventListener("click", () => applyTheme(!document.body.classList.contains("dark")));
+  if (localStorage.getItem("theme") === "dark") applyTheme(true);
+</script>
 
 </body>
 </html>
