@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Video & Media Tools – Sanolines</title>
+  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+<!-- Header -->
+<header style="display: flex; justify-content: space-between; align-items: center; padding: 20px 5%; background: var(--bg-primary); border-bottom: 1px solid var(--border-color); position: sticky; top: 0; z-index: 1000;">
+  <div class="logo">
+    <a href="./index.html" style="display: flex; align-items: center; text-decoration: none;">
+      <img src="./logo.svg" alt="Sanolines Logo" style="height: 36px;">
+    </a>
+  </div>
+  <nav style="display: flex; align-items: center; gap: 24px;">
+    <a href="./index.html" style="text-decoration: none; color: var(--text-muted);">Home</a>
+    <a href="./tools.html" style="text-decoration: none; color: var(--text-muted);">Tools</a>
+    <a href="./categories.html" style="text-decoration: none; color: var(--text-primary); font-weight: 600;">Categories</a>
+    <a href="./about.html" style="text-decoration: none; color: var(--text-muted);">About</a>
+  </nav>
+  <button id="theme-toggle" style="background: none; border: none; cursor: pointer; font-size: 1.2rem; color: inherit;">🌙</button>
+</header>
+
+<!-- Main Directory Section -->
+<main style="padding: 40px 5%; max-width: 1200px; margin: 0 auto;">
+  <h1 style="font-size: 2.5rem; font-weight: 800; margin-bottom: 10px; color: var(--text-primary);">Video & Media Tools</h1>
+  <p style="color: var(--text-muted); margin-bottom: 40px; font-size: 1.1rem;">Explore our complete directory of 20+ free online video calculators, file size estimators, and media converters.</p>
+
+  <!-- Tools Grid -->
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
+    
+    <!-- 1 -->
+    <a href="./video-bitrate-calculator.html" style="text-decoration: none; background: var(--bg-primary); border: 1px solid var(--border-color); padding: 24px; border-radius: 12px; display: block; transition: transform 0.2s;">
+      <h3 style="color: var(--text-primary); margin-bottom: 8px; font-size: 1.2rem;">Video Bitrate Calculator</h3>
+      <p style="color: var(--text-muted); font-size: 0.9rem; margin: 0;">Calculate target video bitrates for specific file sizes and resolutions.</p>
+    </a>
+
+    <!-- 2 -->
+    <a href="./aspect-ratio-calculator.html" style="text-decoration: none; background: var(--bg-primary); border: 1px solid var(--border-color); padding: 24px; border-radius: 12px; display: block;">
+      <h3 style="color: var(--text-primary); margin-bottom: 8px; font-size: 1.2rem;">Aspect Ratio Calculator</h3>
+      <p style="color: var(--text-muted); font-size: 0.9rem; margin: 0;">Compute proportional width and height dimensions for images and videos.</p>
+    </a>
+
+    <!-- 3 -->
+    <a href="./video-file-size.html" style="text-decoration: none; background: var(--bg-primary); border: 1px solid var(--border-color); padding: 24px; border-radius: 12px; display: block;">
+      <h3 style="color: var(--text-primary); margin-bottom: 8px; font-size: 1.2rem;">Video File Size Estimator</h3>
+      <p style="color: var(--text-muted); font-size: 0.9rem; margin: 0;">Estimate total storage size based on duration, bitrate, and audio streams.</p>
+    </a>
+
+    <!-- 4 -->
+    <a href="./youtube-monetization.html" style="text-decoration: none; background: var(--bg-primary); border: 1px solid var(--border-color); padding: 24px; border-radius: 12px; display: block;">
+      <h3 style="color: var(--text-primary); margin-bottom: 8px; font-size: 1.2rem;">YouTube Money Calculator</h3>
+      <p style="color: var(--text-muted); font-size: 0.9rem; margin: 0;">Estimate estimated daily and monthly ad earnings based on video views and CPM.</p>
+    </a>
+
+    <!-- 5 -->
+    <a href="./audio-file-size.html" style="text-decoration: none; background: var(--bg-primary); border: 1px solid var(--border-color); padding: 24px; border-radius: 12px; display: block;">
+      <h3 style="color: var(--text-primary); margin-bottom: 8px; font-size: 1.2rem;">Audio File Size Calculator</h3>
+      <p style="color: var(--text-muted); font-size: 0.9rem; margin: 0;">Calculate raw or compressed audio file sizes for WAV, MP3, and FLAC formats.</p>
+    </a>
+
+    <!-- 6 -->
+    <a href="./timecode-calculator.html" style="text-decoration: none; background: var(--bg-primary); border: 1px solid var(--border-color); padding: 24px; border-radius: 12px; display: block;">
+      <h3 style="color: var(--text-primary); margin-bottom: 8px; font-size: 1.2rem;">Video Timecode Calculator</h3>
+      <p style="color: var(--text-muted); font-size: 0.9rem; margin: 0;">Add, subtract, or convert frames and SMPTE timecodes for editing projects.</p>
+    </a>
+
+    <!-- 7 -->
+    <a href="./fps-calculator.html" style="text-decoration: none; background: var(--bg-primary); border: 1px solid var(--border-color); padding: 24px; border-radius: 12px; display: block;">
+      <h3 style="color: var(--text-primary); margin-bottom: 8px; font-size: 1.2rem;">Frames to Time Converter</h3>
+      <p style="color: var(--text-muted); font-size: 0.9rem; margin: 0;">Convert exact frame counts to seconds, minutes, and hours at custom frame rates.</p>
+    </a>
+
+    <!-- 8 -->
+    <a href="./screen-resolution.html" style="text-decoration: none; background: var(--bg-primary); border: 1px solid var(--border-color); padding: 24px; border-radius: 12px; display: block;">
+      <h3 style="color: var(--text-primary); margin-bottom: 8px; font-size: 1.2rem;">Screen Resolution Guide</h3>
+      <p style="color: var(--text-muted); font-size: 0.9rem; margin: 0;">Compare standards like 4K, 1080p, 720p, and ultrawide aspect formats.</p>
+    </a>
+
+    <!-- 9 -->
+    <a href="./audio-bitrate.html" style="text-decoration: none; background: var(--bg-primary); border: 1px solid var(--border-color); padding: 24px; border-radius: 12px; display: block;">
+      <h3 style="color: var(--text-primary); margin-bottom: 8px; font-size: 1.2rem;">Audio Bitrate Converter</h3>
+      <p style="color: var(--text-muted); font-size: 0.9rem; margin: 0;">Compare streaming audio quality tiers from 128kbps to 320kbps and lossless.</p>
+    </a>
+
+    <!-- 10 -->
+    <a href="./megapixels-calculator.html" style="text-decoration: none; background: var(--bg-primary); border: 1px solid var(--border-color); padding: 24px; border-radius: 12px; display: block;">
+      <h3 style="color: var(--text-primary); margin-bottom: 8px; font-size: 1.2rem;">Megapixel to Resolution Calculator</h3>
+      <p style="color: var(--text-muted); font-size: 0.9rem; margin: 0;">Find camera sensor pixel dimensions and print size boundaries from megapixels.</p>
+    </a>
+
+    <!-- 11 -->
+    <a href="./streaming-data.html" style="text-decoration: none; background: var(--bg-primary); border: 1px solid var(--border-color); padding: 24px; border-radius: 12px; display: block;">
+      <h3 style="color: var(--text-primary); margin-bottom: 8px; font-size: 1.2rem;">Streaming Data Usage Calculator</h3>
+      <p style="color: var(--text-muted); font-size: 0.9rem; margin: 0;">Estimate internet bandwidth and gigabytes consumed watching Netflix or YouTube.</p>
+    </a>
+
+    <!-- 12 -->
+    <a href="./podcast-length.html" style="text-decoration: none; background: var(--bg-primary); border: 1px solid var(--border-color); padding: 24px; border-radius: 12px; display: block;">
+      <h3 style="color: var(--text-primary); margin-bottom: 8px; font-size: 1.2rem;">Podcast Download Size Calculator</h3>
+      <p style="color: var(--text-muted); font-size: 0.9rem; margin: 0;">Estimate RSS enclosure file sizes and bandwidth consumption for audio shows.</p>
+    </a>
+
+    <!-- 13 -->
+    <a href="./subtitles-delay.html" style="text-decoration: none; background: var(--bg-primary); border: 1px solid var(--border-color); padding: 24px; border-radius: 12px; display: block;">
+      <h3 style="color: var(--text-primary); margin-bottom: 8px; font-size: 1.2rem;">Subtitles Sync Calculator</h3>
+      <p style="color: var(--text-muted); font-size: 0.9rem; margin: 0;">Calculate time offsets to sync mismatched SRT caption files with video tracks.</p>
+    </a>
+
+    <!-- 14 -->
+    <a href="./thumbnail-maker-size.html" style="text-decoration: none; background: var(--bg-primary); border: 1px solid var(--border-color); padding: 24px; border-radius: 12px; display: block;">
+      <h3 style="color: var(--text-primary); margin-bottom: 8px; font-size: 1.2rem;">Social Media Video Sizes</h3>
+      <p style="color: var(--text-muted); font-size: 0.9rem; margin: 0;">Check dimensions and specs for TikTok, Reels, Shorts, and Twitter videos.</p>
+    </a>
+
+    <!-- 15 -->
+    <a href="./gif-size-estimator.html" style="text-decoration: none; background: var(--bg-primary); border: 1px solid var(--border-color); padding: 24px; border-radius: 12px; display: block;">
+      <h3 style="color: var(--text-primary); margin-bottom: 8px; font-size: 1.2rem;">Animated GIF Size Estimator</h3>
+      <p style="color: var(--text-muted); font-size: 0.9rem; margin: 0;">Estimate file weights based on color palettes, frame rates, and dimensions.</p>
+    </a>
+
+    <!-- 16 -->
+    <a href="./viewing-distance.html" style="text-decoration: none; background: var(--bg-primary); border: 1px solid var(--border-color); padding: 24px; border-radius: 12px; display: block;">
+      <h3 style="color: var(--text-primary); margin-bottom: 8px; font-size: 1.2rem;">Optimal TV Viewing Distance</h3>
+      <p style="color: var(--text-muted); font-size: 0.9rem; margin: 0;">Calculate ideal screen sizes and seating distances for home theater setups.</p>
+    </a>
+
+    <!-- 17 -->
+    <a href="./storage-time.html" style="text-decoration: none; background: var(--bg-primary); border: 1px solid var(--border-color); padding: 24px; border-radius: 12px; display: block;">
+      <h3 style="color: var(--text-primary); margin-bottom: 8px; font-size: 1.2rem;">CCTV Storage & Recording Calculator</h3>
+      <p style="color: var(--text-muted); font-size: 0.9rem; margin: 0;">Calculate hard drive capacity required for multi-camera security systems.</p>
+    </a>
+
+    <!-- 18 -->
+    <a href="./audio-delay.html" style="text-decoration: none; background: var(--bg-primary); border: 1px solid var(--border-color); padding: 24px; border-radius: 12px; display: block;">
+      <h3 style="color: var(--text-primary); margin-bottom: 8px; font-size: 1.2rem;">Audio Lip Sync Delay Calculator</h3>
+      <p style="color: var(--text-muted); font-size: 0.9rem; margin: 0;">Compute audio delay milliseconds based on distance for speaker alignment.</p>
+    </a>
+
+    <!-- 19 -->
+    <a href="./sample-rate.html" style="text-decoration: none; background: var(--bg-primary); border: 1px solid var(--border-color); padding: 24px; border-radius: 12px; display: block;">
+      <h3 style="color: var(--text-primary); margin-bottom: 8px; font-size: 1.2rem;">Audio Sample Rate Converter</h3>
+      <p style="color: var(--text-muted); font-size: 0.9rem; margin: 0;">Understand sample frequencies from 44.1kHz CD audio to 192kHz studio tiers.</p>
+    </a>
+
+    <!-- 20 -->
+    <a href="./pixel-density.html" style="text-decoration: none; background: var(--bg-primary); border: 1px solid var(--border-color); padding: 24px; border-radius: 12px; display: block;">
+      <h3 style="color: var(--text-primary); margin-bottom: 8px; font-size: 1.2rem;">PPI / Pixel Density Calculator</h3>
+      <p style="color: var(--text-muted); font-size: 0.9rem; margin: 0;">Calculate pixels per inch to test sharpness across monitors and displays.</p>
+    </a>
+
+  </div>
+</main>
+
+<!-- Footer -->
+<footer style="background: #0f172a; color: #94a3b8; padding: 40px 5%; margin-top: 60px;">
+  <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; padding-bottom: 30px; border-bottom: 1px solid #1e293b;">
+    <div>
+      <img src="./logo.svg" alt="Sanolines Logo" style="height: 32px; filter: brightness(0) invert(1); margin-bottom: 8px;">
+      <p style="margin: 0; font-size: 0.85rem;">Tools for a Smarter You</p>
+    </div>
+    <div style="display: flex; gap: 20px; font-size: 0.9rem;">
+      <a href="./about.html" style="color: #94a3b8; text-decoration: none;">About</a>
+      <a href="./privacy.html" style="color: #94a3b8; text-decoration: none;">Privacy Policy</a>
+      <a href="./terms.html" style="color: #94a3b8; text-decoration: none;">Terms & Conditions</a>
+      <a href="./disclaimer.html" style="color: #94a3b8; text-decoration: none;">Disclaimer</a>
+    </div>
+  </div>
+  <div style="padding-top: 20px; font-size: 0.85rem;">© 2026 Sanolines. All rights reserved.</div>
+</footer>
+
+<script>
+  // Dark Mode Persistence Logic
+  const toggleBtn = document.getElementById("theme-toggle");
+  const applyTheme = (isDark) => {
+    document.body.classList.toggle("dark", isDark);
+    if(toggleBtn) toggleBtn.textContent = isDark ? "☀️" : "🌙";
+    localStorage.setItem("theme", isDark ? "dark" : "light");
+  };
+  if (toggleBtn) toggleBtn.addEventListener("click", () => applyTheme(!document.body.classList.contains("dark")));
+  if (localStorage.getItem("theme") === "dark") applyTheme(true);
+</script>
+
+</body>
+</html>
