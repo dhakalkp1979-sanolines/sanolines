@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Construction Tools – Sanolines</title>
+  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+<!-- Header -->
+<header style="display: flex; justify-content: space-between; align-items: center; padding: 20px 5%; background: var(--bg-primary); border-bottom: 1px solid var(--border-color); position: sticky; top: 0; z-index: 1000;">
+  <div class="logo">
+    <a href="./index.html" style="display: flex; align-items: center; text-decoration: none;">
+      <img src="./logo.svg" alt="Sanolines Logo" style="height: 36px;">
+    </a>
+  </div>
+  <nav style="display: flex; align-items: center; gap: 24px;">
+    <a href="./index.html" style="text-decoration: none; color: var(--text-muted);">Home</a>
+    <a href="./tools.html" style="text-decoration: none; color: var(--text-muted);">Tools</a>
+    <a href="./categories.html" style="text-decoration: none; color: var(--text-primary); font-weight: 600;">Categories</a>
+    <a href="./about.html" style="text-decoration: none; color: var(--text-muted);">About</a>
+  </nav>
+  <button id="theme-toggle" style="background: none; border: none; cursor: pointer; font-size: 1.2rem; color: inherit;">🌙</button>
+</header>
+
+<!-- Main Directory Section -->
+<main style="padding: 40px 5%; max-width: 1200px; margin: 0 auto;">
+  <h1 style="font-size: 2.5rem; font-weight: 800; margin-bottom: 10px; color: var(--text-primary);">Construction Tools</h1>
+  <p style="color: var(--text-muted); margin-bottom: 40px; font-size: 1.1rem;">Explore our complete directory of 20+ free online construction estimators, material calculators, and conversion utilities.</p>
+
+  <!-- Tools Grid -->
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
+    
+    <!-- 1 -->
+    <a href="./concrete-calculator.html" style="text-decoration: none; background: var(--bg-primary); border: 1px solid var(--border-color); padding: 24px; border-radius: 12px; display: block; transition: transform 0.2s;">
+      <h3 style="color: var(--text-primary); margin-bottom: 8px; font-size: 1.2rem;">Concrete Calculator</h3>
+      <p style="color: var(--text-muted); font-size: 0.9rem; margin: 0;">Calculate cubic yards and bags of concrete needed for slabs, footings, and walls.</p>
+    </a>
+
+    <!-- 2 -->
+    <a href="./brick-calculator.html" style="text-decoration: none; background: var(--bg-primary); border: 1px solid var(--border-color); padding: 24px; border-radius: 12px; display: block;">
+      <h3 style="color: var(--text-primary); margin-bottom: 8px; font-size: 1.2rem;">Brick & Block Calculator</h3>
+      <p style="color: var(--text-muted); font-size: 0.9rem; margin: 0;">Estimate the number of bricks or concrete blocks required for walls.</p>
+    </a>
+
+    <!-- 3 -->
+    <a href="./paint-calculator.html" style="text-decoration: none; background: var(--bg-primary); border: 1px solid var(--border-color); padding: 24px; border-radius: 12px; display: block;">
+      <h3 style="color: var(--text-primary); margin-bottom: 8px; font-size: 1.2rem;">Paint Calculator</h3>
+      <p style="color: var(--text-muted); font-size: 0.9rem; margin: 0;">Determine gallons of interior or exterior paint needed based on wall surface area.</p>
+    </a>
+
+    <!-- 4 -->
+    <a href="./flooring-calculator.html" style="text-decoration: none; background: var(--bg-primary); border: 1px solid var(--border-color); padding: 24px; border-radius: 12px; display: block;">
+      <h3 style="color: var(--text-primary); margin-bottom: 8px; font-size: 1.2rem;">Flooring & Tile Calculator</h3>
+      <p style="color: var(--text-muted); font-size: 0.9rem; margin: 0;">Calculate tiles, hardwood planks, or laminate flooring boxes including waste allowance.</p>
+    </a>
+
+    <!-- 5 -->
+    <a href="./drywall-calculator.html" style="text-decoration: none; background: var(--bg-primary); border: 1px solid var(--border-color); padding: 24px; border-radius: 12px; display: block;">
+      <h3 style="color: var(--text-primary); margin-bottom: 8px; font-size: 1.2rem;">Drywall Sheet Calculator</h3>
+      <p style="color: var(--text-muted); font-size: 0.9rem; margin: 0;">Estimate gypsum wallboard panels required for rooms and ceilings.</p>
+    </a>
+
+    <!-- 6 -->
+    <a href="./roofing-calculator.html" style="text-decoration: none; background: var(--bg-primary); border: 1px solid var(--border-color); padding: 24px; border-radius: 12px; display: block;">
+      <h3 style="color: var(--text-primary); margin-bottom: 8px; font-size: 1.2rem;">Roofing & Shingle Calculator</h3>
+      <p style="color: var(--text-muted); font-size: 0.9rem; margin: 0;">Calculate roofing squares, bundles of shingles, and underlayment rolls.</p>
+    </a>
+
+    <!-- 7 -->
+    <a href="./gravel-calculator.html" style="text-decoration: none; background: var(--bg-primary); border: 1px solid var(--border-color); padding: 24px; border-radius: 12px; display: block;">
+      <h3 style="color: var(--text-primary); margin-bottom: 8px; font-size: 1.2rem;">Gravel & Mulch Calculator</h3>
+      <p style="color: var(--text-muted); font-size: 0.9rem; margin: 0;">Compute tons or cubic yards of aggregate, soil, or mulch for landscaping.</p>
+    </a>
+
+    <!-- 8 -->
+    <a href="./rebar-calculator.html" style="text-decoration: none; background: var(--bg-primary); border: 1px solid var(--border-color); padding: 24px; border-radius: 12px; display: block;">
+      <h3 style="color: var(--text-primary); margin-bottom: 8px; font-size: 1.2rem;">Rebar Weight Calculator</h3>
+      <p style="color: var(--text-muted); font-size: 0.9rem; margin: 0;">Estimate total weight and total length of reinforcement steel bars.</p>
+    </a>
+
+    <!-- 9 -->
+    <a href="./stair-calculator.html" style="text-decoration: none; background: var(--bg-primary); border: 1px solid var(--border-color); padding: 24px; border-radius: 12px; display: block;">
+      <h3 style="color: var(--text-primary); margin-bottom: 8px; font-size: 1.2rem;">Stair Stringer Calculator</h3>
+      <p style="color: var(--text-muted); font-size: 0.9rem; margin: 0;">Determine rise, run, and step dimensions for code-compliant staircases.</p>
+    </a>
+
+    <!-- 10 -->
+    <a href="./lumber-weight.html" style="text-decoration: none; background: var(--bg-primary); border: 1px solid var(--border-color); padding: 24px; border-radius: 12px; display: block;">
+      <h3 style="color: var(--text-primary); margin-bottom: 8px; font-size: 1.2rem;">Lumber & Board Foot Calculator</h3>
+      <p style="color: var(--text-muted); font-size: 0.9rem; margin: 0;">Calculate board feet and total lumber volume for framing projects.</p>
+    </a>
+
+    <!-- 11 -->
+    <a href="./fence-calculator.html" style="text-decoration: none; background: var(--bg-primary); border: 1px solid var(--border-color); padding: 24px; border-radius: 12px; display: block;">
+      <h3 style="color: var(--text-primary); margin-bottom: 8px; font-size: 1.2rem;">Fence Material Calculator</h3>
+      <p style="color: var(--text-muted); font-size: 0.9rem; margin: 0;">Estimate posts, rails, pickets, and concrete bags for fence installation.</p>
+    </a>
+
+    <!-- 12 -->
+    <a href="./asphalt-calculator.html" style="text-decoration: none; background: var(--bg-primary); border: 1px solid var(--border-color); padding: 24px; border-radius: 12px; display: block;">
+      <h3 style="color: var(--text-primary); margin-bottom: 8px; font-size: 1.2rem;">Asphalt Paving Calculator</h3>
+      <p style="color: var(--text-muted); font-size: 0.9rem; margin: 0;">Calculate tonnage and weight of hot mix asphalt for driveways and roads.</p>
+    </a>
+
+    <!-- 13 -->
+    <a href="./soil-calculator.html" style="text-decoration: none; background: var(--bg-primary); border: 1px solid var(--border-color); padding: 24px; border-radius: 12px; display: block;">
+      <h3 style="color: var(--text-primary); margin-bottom: 8px; font-size: 1.2rem;">Topsoil Calculator</h3>
+      <p style="color: var(--text-muted); font-size: 0.9rem; margin: 0;">Estimate topsoil volume required for lawns, gardens, and planting beds.</p>
+    </a>
+
+    <!-- 14 -->
+    <a href="./stud-calculator.html" style="text-decoration: none; background: var(--bg-primary); border: 1px solid var(--border-color); padding: 24px; border-radius: 12px; display: block;">
+      <h3 style="color: var(--text-primary); margin-bottom: 8px; font-size: 1.2rem;">Wall Stud Calculator</h3>
+      <p style="color: var(--text-muted); font-size: 0.9rem; margin: 0;">Count wall studs required for 16-inch or 24-inch center framing layouts.</p>
+    </a>
+
+    <!-- 15 -->
+    <a href="./insulation-calculator.html" style="text-decoration: none; background: var(--bg-primary); border: 1px solid var(--border-color); padding: 24px; border-radius: 12px; display: block;">
+      <h3 style="color: var(--text-primary); margin-bottom: 8px; font-size: 1.2rem;">Insulation R-Value Calculator</h3>
+      <p style="color: var(--text-muted); font-size: 0.9rem; margin: 0;">Evaluate thermal resistance values and batting requirements for walls and attics.</p>
+    </a>
+
+    <!-- 16 -->
+    <a href="./siding-calculator.html" style="text-decoration: none; background: var(--bg-primary); border: 1px solid var(--border-color); padding: 24px; border-radius: 12px; display: block;">
+      <h3 style="color: var(--text-primary); margin-bottom: 8px; font-size: 1.2rem;">House Siding Calculator</h3>
+      <p style="color: var(--text-muted); font-size: 0.9rem; margin: 0;">Calculate vinyl, wood, or fiber cement siding panels needed for exterior walls.</p>
+    </a>
+
+    <!-- 17 -->
+    <a href="./pitch-calculator.html" style="text-decoration: none; background: var(--bg-primary); border: 1px solid var(--border-color); padding: 24px; border-radius: 12px; display: block;">
+      <h3 style="color: var(--text-primary); margin-bottom: 8px; font-size: 1.2rem;">Roof Pitch & Angle Calculator</h3>
+      <p style="color: var(--text-muted); font-size: 0.9rem; margin: 0;">Compute roof slope angles, rise-to-run ratios, and multiplier factors.</p>
+    </a>
+
+    <!-- 18 -->
+    <a href="./excavation-calculator.html" style="text-decoration: none; background: var(--bg-primary); border: 1px solid var(--border-color); padding: 24px; border-radius: 12px; display: block;">
+      <h3 style="color: var(--text-primary); margin-bottom: 8px; font-size: 1.2rem;">Excavation & Earthwork Volume</h3>
+      <p style="color: var(--text-muted); font-size: 0.9rem; margin: 0;">Calculate cut and fill dirt volumes for site clearing and foundation trenching.</p>
+    </a>
+
+    <!-- 19 -->
+    <a href="./tile-grout-calculator.html" style="text-decoration: none; background: var(--bg-primary); border: 1px solid var(--border-color); padding: 24px; border-radius: 12px; display: block;">
+      <h3 style="color: var(--text-primary); margin-bottom: 8px; font-size: 1.2rem;">Tile Grout & Mortar Calculator</h3>
+      <p style="color: var(--text-muted); font-size: 0.9rem; margin: 0;">Estimate bags of thinset mortar and grout weight based on joint width and tile size.</p>
+    </a>
+
+    <!-- 20 -->
+    <a href="./unit-converter-length.html" style="text-decoration: none; background: var(--bg-primary); border: 1px solid var(--border-color); padding: 24px; border-radius: 12px; display: block;">
+      <h3 style="color: var(--text-primary); margin-bottom: 8px; font-size: 1.2rem;">Construction Unit Converter</h3>
+      <p style="color: var(--text-muted); font-size: 0.9rem; margin: 0;">Convert feet, inches, fractions, meters, and yards instantly for blueprints.</p>
+    </a>
+
+  </div>
+</main>
+
+<!-- Footer -->
+<footer style="background: #0f172a; color: #94a3b8; padding: 40px 5%; margin-top: 60px;">
+  <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; padding-bottom: 30px; border-bottom: 1px solid #1e293b;">
+    <div>
+      <img src="./logo.svg" alt="Sanolines Logo" style="height: 32px; filter: brightness(0) invert(1); margin-bottom: 8px;">
+      <p style="margin: 0; font-size: 0.85rem;">Tools for a Smarter You</p>
+    </div>
+    <div style="display: flex; gap: 20px; font-size: 0.9rem;">
+      <a href="./about.html" style="color: #94a3b8; text-decoration: none;">About</a>
+      <a href="./privacy.html" style="color: #94a3b8; text-decoration: none;">Privacy Policy</a>
+      <a href="./terms.html" style="color: #94a3b8; text-decoration: none;">Terms & Conditions</a>
+      <a href="./disclaimer.html" style="color: #94a3b8; text-decoration: none;">Disclaimer</a>
+    </div>
+  </div>
+  <div style="padding-top: 20px; font-size: 0.85rem;">© 2026 Sanolines. All rights reserved.</div>
+</footer>
+
+<script>
+  // Dark Mode Persistence Logic
+  const toggleBtn = document.getElementById("theme-toggle");
+  const applyTheme = (isDark) => {
+    document.body.classList.toggle("dark", isDark);
+    if(toggleBtn) toggleBtn.textContent = isDark ? "☀️" : "🌙";
+    localStorage.setItem("theme", isDark ? "dark" : "light");
+  };
+  if (toggleBtn) toggleBtn.addEventListener("click", () => applyTheme(!document.body.classList.contains("dark")));
+  if (localStorage.getItem("theme") === "dark") applyTheme(true);
+</script>
+
+</body>
+</html>
