@@ -2,38 +2,188 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Developer Tools – Sanolines</title>
-  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
-<header>
-  <div class="logo">SANOLINES</div>
-  <nav>
-    <a href="/">Home</a>
-    <a href="/tools.html">Tools</a>
-    <a href="/categories.html">Categories</a>
-    <a href="/about.html">About</a>
-    <a href="/disclaimer.html">Disclaimer</a>
+<!-- Header -->
+<header style="display: flex; justify-content: space-between; align-items: center; padding: 20px 5%; background: var(--bg-primary); border-bottom: 1px solid var(--border-color); position: sticky; top: 0; z-index: 1000;">
+  <div class="logo">
+    <a href="./index.html" style="display: flex; align-items: center; text-decoration: none;">
+      <img src="./logo.svg" alt="Sanolines Logo" style="height: 36px;">
+    </a>
+  </div>
+  <nav style="display: flex; align-items: center; gap: 24px;">
+    <a href="./index.html" style="text-decoration: none; color: var(--text-muted);">Home</a>
+    <a href="./tools.html" style="text-decoration: none; color: var(--text-muted);">Tools</a>
+    <a href="./categories.html" style="text-decoration: none; color: var(--text-primary); font-weight: 600;">Categories</a>
+    <a href="./about.html" style="text-decoration: none; color: var(--text-muted);">About</a>
   </nav>
+  <button id="theme-toggle" style="background: none; border: none; cursor: pointer; font-size: 1.2rem; color: inherit;">🌙</button>
 </header>
 
-<main>
-  <h1>Developer Tools</h1>
-  <p>Useful utilities for formatting, converting, generating, and debugging code.</p>
+<!-- Main Directory Section -->
+<main style="padding: 40px 5%; max-width: 1200px; margin: 0 auto;">
+  <h1 style="font-size: 2.5rem; font-weight: 800; margin-bottom: 10px; color: var(--text-primary);">Developer Tools</h1>
+  <p style="color: var(--text-muted); margin-bottom: 40px; font-size: 1.1rem;">Explore our complete directory of 20+ free online developer tools, formatters, and code generators.</p>
 
-  <div class="grid">
-    <a class="card" href="/tools/json-formatter.html">JSON Formatter</a>
-    <a class="card" href="/tools/password-generator.html">Password Generator</a>
-    <a class="card" href="/tools/text-case.html">Case Converter</a>
-    <a class="card" href="/tools/minifier.html">Code Minifier</a>
-    <a class="card" href="/tools/url-encoder.html">URL Encoder</a>
+  <!-- Tools Grid -->
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
+    
+    <!-- 1 -->
+    <a href="./json-formatter.html" style="text-decoration: none; background: var(--bg-primary); border: 1px solid var(--border-color); padding: 24px; border-radius: 12px; display: block; transition: transform 0.2s;">
+      <h3 style="color: var(--text-primary); margin-bottom: 8px; font-size: 1.2rem;">JSON Formatter & Validator</h3>
+      <p style="color: var(--text-muted); font-size: 0.9rem; margin: 0;">Beautify, validate, and inspect JSON payloads seamlessly.</p>
+    </a>
+
+    <!-- 2 -->
+    <a href="./base64-encoder.html" style="text-decoration: none; background: var(--bg-primary); border: 1px solid var(--border-color); padding: 24px; border-radius: 12px; display: block;">
+      <h3 style="color: var(--text-primary); margin-bottom: 8px; font-size: 1.2rem;">Base64 Encoder/Decoder</h3>
+      <p style="color: var(--text-muted); font-size: 0.9rem; margin: 0;">Encode plain text to Base64 format or decode it back instantly.</p>
+    </a>
+
+    <!-- 3 -->
+    <a href="./url-encoder.html" style="text-decoration: none; background: var(--bg-primary); border: 1px solid var(--border-color); padding: 24px; border-radius: 12px; display: block;">
+      <h3 style="color: var(--text-primary); margin-bottom: 8px; font-size: 1.2rem;">URL Encoder/Decoder</h3>
+      <p style="color: var(--text-muted); font-size: 0.9rem; margin: 0;">Safely encode special characters for URLs or decode encoded links.</p>
+    </a>
+
+    <!-- 4 -->
+    <a href="./hash-generator.html" style="text-decoration: none; background: var(--bg-primary); border: 1px solid var(--border-color); padding: 24px; border-radius: 12px; display: block;">
+      <h3 style="color: var(--text-primary); margin-bottom: 8px; font-size: 1.2rem;">MD5 / SHA Hash Generator</h3>
+      <p style="color: var(--text-muted); font-size: 0.9rem; margin: 0;">Generate cryptographic checksum hashes like MD5, SHA-256, and SHA-512.</p>
+    </a>
+
+    <!-- 5 -->
+    <a href="./jwt-debugger.html" style="text-decoration: none; background: var(--bg-primary); border: 1px solid var(--border-color); padding: 24px; border-radius: 12px; display: block;">
+      <h3 style="color: var(--text-primary); margin-bottom: 8px; font-size: 1.2rem;">JWT Debugger</h3>
+      <p style="color: var(--text-muted); font-size: 0.9rem; margin: 0;">Decode and inspect JSON Web Tokens headers and payload data.</p>
+    </a>
+
+    <!-- 6 -->
+    <a href="./html-formatter.html" style="text-decoration: none; background: var(--bg-primary); border: 1px solid var(--border-color); padding: 24px; border-radius: 12px; display: block;">
+      <h3 style="color: var(--text-primary); margin-bottom: 8px; font-size: 1.2rem;">HTML Minifier & Formatter</h3>
+      <p style="color: var(--text-muted); font-size: 0.9rem; margin: 0;">Clean up, indent, or minify messy HTML code strings.</p>
+    </a>
+
+    <!-- 7 -->
+    <a href="./css-minifier.html" style="text-decoration: none; background: var(--bg-primary); border: 1px solid var(--border-color); padding: 24px; border-radius: 12px; display: block;">
+      <h3 style="color: var(--text-primary); margin-bottom: 8px; font-size: 1.2rem;">CSS Minifier & Beautifier</h3>
+      <p style="color: var(--text-muted); font-size: 0.9rem; margin: 0;">Optimize stylesheets for production or format them for readability.</p>
+    </a>
+
+    <!-- 8 -->
+    <a href="./js-minifier.html" style="text-decoration: none; background: var(--bg-primary); border: 1px solid var(--border-color); padding: 24px; border-radius: 12px; display: block;">
+      <h3 style="color: var(--text-primary); margin-bottom: 8px; font-size: 1.2rem;">JavaScript Minifier</h3>
+      <p style="color: var(--text-muted); font-size: 0.9rem; margin: 0;">Compress scripts by stripping whitespace and comments safely.</p>
+    </a>
+
+    <!-- 9 -->
+    <a href="./color-converter.html" style="text-decoration: none; background: var(--bg-primary); border: 1px solid var(--border-color); padding: 24px; border-radius: 12px; display: block;">
+      <h3 style="color: var(--text-primary); margin-bottom: 8px; font-size: 1.2rem;">Color Code Converter</h3>
+      <p style="color: var(--text-muted); font-size: 0.9rem; margin: 0;">Convert colors seamlessly between HEX, RGB, HSL, and CMYK codes.</p>
+    </a>
+
+    <!-- 10 -->
+    <a href="./uuid-generator.html" style="text-decoration: none; background: var(--bg-primary); border: 1px solid var(--border-color); padding: 24px; border-radius: 12px; display: block;">
+      <h3 style="color: var(--text-primary); margin-bottom: 8px; font-size: 1.2rem;">UUID / GUID Generator</h3>
+      <p style="color: var(--text-muted); font-size: 0.9rem; margin: 0;">Generate random version-4 unique identifiers instantly.</p>
+    </a>
+
+    <!-- 11 -->
+    <a href="./regex-tester.html" style="text-decoration: none; background: var(--bg-primary); border: 1px solid var(--border-color); padding: 24px; border-radius: 12px; display: block;">
+      <h3 style="color: var(--text-primary); margin-bottom: 8px; font-size: 1.2rem;">Regex Tester</h3>
+      <p style="color: var(--text-muted); font-size: 0.9rem; margin: 0;">Test regular expressions against sample text strings in real-time.</p>
+    </a>
+
+    <!-- 12 -->
+    <a href="./markdown-previewer.html" style="text-decoration: none; background: var(--bg-primary); border: 1px solid var(--border-color); padding: 24px; border-radius: 12px; display: block;">
+      <h3 style="color: var(--text-primary); margin-bottom: 8px; font-size: 1.2rem;">Markdown Live Previewer</h3>
+      <p style="color: var(--text-muted); font-size: 0.9rem; margin: 0;">Write markdown syntax and view rendered HTML previews side-by-side.</p>
+    </a>
+
+    <!-- 13 -->
+    <a href="./sql-formatter.html" style="text-decoration: none; background: var(--bg-primary); border: 1px solid var(--border-color); padding: 24px; border-radius: 12px; display: block;">
+      <h3 style="color: var(--text-primary); margin-bottom: 8px; font-size: 1.2rem;">SQL Query Formatter</h3>
+      <p style="color: var(--text-muted); font-size: 0.9rem; margin: 0;">Format and indent complex SQL queries for better readability.</p>
+    </a>
+
+    <!-- 14 -->
+    <a href="./cron-generator.html" style="text-decoration: none; background: var(--bg-primary); border: 1px solid var(--border-color); padding: 24px; border-radius: 12px; display: block;">
+      <h3 style="color: var(--text-primary); margin-bottom: 8px; font-size: 1.2rem;">Cron Expression Generator</h3>
+      <p style="color: var(--text-muted); font-size: 0.9rem; margin: 0;">Build schedule expressions for system cron jobs and background tasks.</p>
+    </a>
+
+    <!-- 15 -->
+    <a href="./password-generator.html" style="text-decoration: none; background: var(--bg-primary); border: 1px solid var(--border-color); padding: 24px; border-radius: 12px; display: block;">
+      <h3 style="color: var(--text-primary); margin-bottom: 8px; font-size: 1.2rem;">Secure Password Generator</h3>
+      <p style="color: var(--text-muted); font-size: 0.9rem; margin: 0;">Generate cryptographically strong passwords with custom symbols.</p>
+    </a>
+
+    <!-- 16 -->
+    <a href="./dummy-text-generator.html" style="text-decoration: none; background: var(--bg-primary); border: 1px solid var(--border-color); padding: 24px; border-radius: 12px; display: block;">
+      <h3 style="color: var(--text-primary); margin-bottom: 8px; font-size: 1.2rem;">Lorem Ipsum Generator</h3>
+      <p style="color: var(--text-muted); font-size: 0.9rem; margin: 0;">Produce placeholder layout text paragraphs for web prototypes.</p>
+    </a>
+
+    <!-- 17 -->
+    <a href="./csv-to-json.html" style="text-decoration: none; background: var(--bg-primary); border: 1px solid var(--border-color); padding: 24px; border-radius: 12px; display: block;">
+      <h3 style="color: var(--text-primary); margin-bottom: 8px; font-size: 1.2rem;">CSV to JSON Converter</h3>
+      <p style="color: var(--text-muted); font-size: 0.9rem; margin: 0;">Transform comma-separated data tables into structured JSON objects.</p>
+    </a>
+
+    <!-- 18 -->
+    <a href="./unix-timestamp.html" style="text-decoration: none; background: var(--bg-primary); border: 1px solid var(--border-color); padding: 24px; border-radius: 12px; display: block;">
+      <h3 style="color: var(--text-primary); margin-bottom: 8px; font-size: 1.2rem;">Unix Epoch Timestamp Converter</h3>
+      <p style="color: var(--text-muted); font-size: 0.9rem; margin: 0;">Convert epoch time numbers to human-readable UTC/local date strings.</p>
+    </a>
+
+    <!-- 19 -->
+    <a href="./user-agent-parser.html" style="text-decoration: none; background: var(--bg-primary); border: 1px solid var(--border-color); padding: 24px; border-radius: 12px; display: block;">
+      <h3 style="color: var(--text-primary); margin-bottom: 8px; font-size: 1.2rem;">User Agent Parser</h3>
+      <p style="color: var(--text-muted); font-size: 0.9rem; margin: 0;">Detect browser types, operating systems, and device models.</p>
+    </a>
+
+    <!-- 20 -->
+    <a href="./netmask-calculator.html" style="text-decoration: none; background: var(--bg-primary); border: 1px solid var(--border-color); padding: 24px; border-radius: 12px; display: block;">
+      <h3 style="color: var(--text-primary); margin-bottom: 8px; font-size: 1.2rem;">IP Subnet & Netmask Calculator</h3>
+      <p style="color: var(--text-muted); font-size: 0.9rem; margin: 0;">Calculate IPv4 network ranges, broadcast addresses, and host limits.</p>
+    </a>
+
   </div>
 </main>
 
-<footer>
-  © 2026 Sanolines
+<!-- Footer -->
+<footer style="background: #0f172a; color: #94a3b8; padding: 40px 5%; margin-top: 60px;">
+  <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; padding-bottom: 30px; border-bottom: 1px solid #1e293b;">
+    <div>
+      <img src="./logo.svg" alt="Sanolines Logo" style="height: 32px; filter: brightness(0) invert(1); margin-bottom: 8px;">
+      <p style="margin: 0; font-size: 0.85rem;">Tools for a Smarter You</p>
+    </div>
+    <div style="display: flex; gap: 20px; font-size: 0.9rem;">
+      <a href="./about.html" style="color: #94a3b8; text-decoration: none;">About</a>
+      <a href="./privacy.html" style="color: #94a3b8; text-decoration: none;">Privacy Policy</a>
+      <a href="./terms.html" style="color: #94a3b8; text-decoration: none;">Terms & Conditions</a>
+      <a href="./disclaimer.html" style="color: #94a3b8; text-decoration: none;">Disclaimer</a>
+    </div>
+  </div>
+  <div style="padding-top: 20px; font-size: 0.85rem;">© 2026 Sanolines. All rights reserved.</div>
 </footer>
+
+<script>
+  // Dark Mode Persistence Logic
+  const toggleBtn = document.getElementById("theme-toggle");
+  const applyTheme = (isDark) => {
+    document.body.classList.toggle("dark", isDark);
+    if(toggleBtn) toggleBtn.textContent = isDark ? "☀️" : "🌙";
+    localStorage.setItem("theme", isDark ? "dark" : "light");
+  };
+  if (toggleBtn) toggleBtn.addEventListener("click", () => applyTheme(!document.body.classList.contains("dark")));
+  if (localStorage.getItem("theme") === "dark") applyTheme(true);
+</script>
 
 </body>
 </html>
