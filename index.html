@@ -22,7 +22,6 @@
     <a href="./tools.html" id="nav-tools" style="text-decoration: none; color: var(--text-muted);">Tools</a>
     <a href="./categories.html" id="nav-categories" style="text-decoration: none; color: var(--text-muted);">Categories</a>
     <a href="./about.html" id="nav-about" style="text-decoration: none; color: var(--text-muted);">About</a>
-    <a href="./disclaimer.html" id="nav-disclaimer" style="text-decoration: none; color: var(--text-muted);">Disclaimer</a>
   </nav>
   <div style="display: flex; align-items: center; gap: 16px;">
     <!-- Language Switcher -->
@@ -253,7 +252,7 @@
   // Working Language Switcher Dictionaries
   const translations = {
     en: {
-      home: "Home", tools: "Tools", categories: "Categories", about: "About", disclaimer: "Disclaimer",
+      home: "Home", tools: "Tools", categories: "Categories", about: "About",
       heroTitle: "Your Daily Tools", heroSubtitle: "Fast, Simple, Free",
       heroDesc: "150+ calculators, converters, and utilities for finance, health, developers, writers, builders, and creators.",
       searchPlaceholder: "Search any tool... (e.g. BMI, Loan EMI, JSON formatter)", searchBtn: "Search",
@@ -262,7 +261,7 @@
       popHeading: "Popular Tools", popViewAll: "View All Tools →"
     },
     pt: {
-      home: "Início", tools: "Ferramentas", categories: "Categorias", about: "Sobre", disclaimer: "Aviso Legal",
+      home: "Início", tools: "Ferramentas", categories: "Categorias", about: "Sobre",
       heroTitle: "Suas Ferramentas Diárias", heroSubtitle: "Rápido, Simples, Gratuito",
       heroDesc: "Mais de 150 calculadoras, conversores e utilitários para finanças, saúde, desenvolvedores, escritores e criadores.",
       searchPlaceholder: "Pesquisar ferramenta... (ex: IMC, Empréstimo, JSON)", searchBtn: "Pesquisar",
@@ -271,7 +270,7 @@
       popHeading: "Ferramentas Populares", popViewAll: "Ver Todas as Ferramentas →"
     },
     hi: {
-      home: "होम", tools: "टूल्स", categories: "श्रेणियाँ", about: "हमारे बारे में", disclaimer: "अस्वीकरण",
+      home: "होम", tools: "टूल्स", categories: "श्रेणियाँ", about: "हमारे बारे में",
       heroTitle: "आपके दैनिक उपकरण", heroSubtitle: "तेज़, सरल, निःशुल्क",
       heroDesc: "वित्त, स्वास्थ्य, डेवलपर्स, लेखकों और रचनाकारों के लिए 150+ कैलकुलेटर, कन्वर्टर और उपयोगिताएँ।",
       searchPlaceholder: "कोई भी टूल खोजें... (जैसे BMI, Loan EMI)", searchBtn: "खोजें",
@@ -303,7 +302,6 @@
     document.getElementById("nav-tools").textContent = t.tools;
     document.getElementById("nav-categories").textContent = t.categories;
     document.getElementById("nav-about").textContent = t.about;
-    document.getElementById("nav-disclaimer").textContent = t.disclaimer;
     
     document.getElementById("hero-title").innerHTML = `${t.heroTitle}<br><span style="color: #2563eb;" id="hero-subtitle">${t.heroSubtitle}</span>`;
     document.getElementById("hero-desc").textContent = t.heroDesc;
