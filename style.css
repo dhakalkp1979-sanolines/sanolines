@@ -64,3 +64,44 @@ header .logo a {
   gap: 10px !important;
   text-decoration: none !important;
 }
+/* Global Header & Logo Fixes for All Pages */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 5%;
+  background: var(--bg-primary);
+  border-bottom: 1px solid var(--border-color);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+header .logo a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+}
+
+header .logo img {
+  height: 32px !important;
+  width: auto !important;
+  max-width: none !important;
+}
+
+header nav {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+header nav a {
+  text-decoration: none;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+header nav a:hover {
+  color: var(--text-primary);
+}
