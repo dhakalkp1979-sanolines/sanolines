@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Salary Converter – Sanolines</title>
+  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+<!-- Header -->
+<header style="display: flex; justify-content: space-between; align-items: center; padding: 20px 5%; background: var(--bg-primary); border-bottom: 1px solid var(--border-color); position: sticky; top: 0; z-index: 1000;">
+  <div class="logo">
+    <a href="./index.html" style="display: flex; align-items: center; text-decoration: none;">
+      <img src="./logo.svg" alt="Sanolines Logo" style="height: 36px;">
+    </a>
+  </div>
+  <nav style="display: flex; align-items: center; gap: 24px;">
+    <a href="./index.html" style="text-decoration: none; color: var(--text-muted);">Home</a>
+    <a href="./tools.html" style="text-decoration: none; color: var(--text-muted);">Tools</a>
+    <a href="./categories.html" style="text-decoration: none; color: var(--text-muted);">Categories</a>
+    <a href="./about.html" style="text-decoration: none; color: var(--text-muted);">About</a>
+  </nav>
+  <button id="theme-toggle" style="background: none; border: none; cursor: pointer; font-size: 1.2rem; color: inherit;">🌙</button>
+</header>
+
+<!-- Main Tool Section -->
+<main style="padding: 40px 5%; max-width: 800px; margin: 0 auto;">
+  <h1 style="font-size: 2rem; font-weight: 800; margin-bottom: 10px; color: var(--text-primary);">Salary Converter</h1>
+  <p style="color: var(--text-muted); margin-bottom: 30px;">Convert your salary effortlessly between hourly, weekly, monthly, and annual rates.</p>
+
+  <div style="background: var(--bg-primary); border: 1px solid var(--border-color); padding: 30px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.05);">
+    <div style="margin-bottom: 20px;">
+      <label style="display: block; font-weight: 600; margin-bottom: 8px; color: var(--text-primary);">Amount ($)</label>
+      <input type="number" id="amount" value="50000" style="width: 100%; padding: 12px; border: 1px solid var(--border-color); border-radius: 8px; background: var(--bg-secondary); color: var(--text-primary); font-size: 1rem; outline: none;" oninput="convertSalary()">
+    </div>
+    
+    <div style="margin-bottom: 20px;">
+      <label style="display: block; font-weight: 600; margin-bottom: 8px; color: var(--text-primary);">Convert From</label>
+      <select id="period" style="width: 100%; padding: 12px; border: 1px solid var(--border-color); border-radius: 8px; background: var(--bg-secondary); color: var(--text-primary); font-size: 1rem; outline: none;" onchange="convertSalary()">
+        <option value="annual">Annual</option>
+        <option value="monthly">Monthly</option>
+        <option value="weekly">Weekly</option>
+        <option value="hourly">Hourly</option>
+      </select>
+    </div>
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 16px; margin-top: 30px;">
+      <div style="background: var(--bg-secondary); padding: 16px; border-radius: 8px; border: 1px solid var(--border-color); text-align: center;">
+        <div style="font-size: 0.85rem; color: var(--text-muted);">Hourly</div>
+        <div id="res-hourly" style="font-size: 1.2rem; font-weight: 700; color: #2563eb; margin-top: 6px;">$0.00</div>
+      </div>
+      <div style="background: var(--bg-secondary); padding: 16px; border-radius: 8px; border: 1px solid var(--border-color); text-align: center;">
+        <div style="font-size: 0.85rem; color: var(--text-muted);">Weekly</div>
+        <div id="res-weekly" style="font-size: 1.2rem; font-weight: 700; color: #2563eb; margin-top: 6px;">$0.00</div>
+      </div>
+      <div style="background: var(--bg-secondary); padding: 16px; border-radius: 8px; border: 1px solid var(--border-color); text-align: center;">
+        <div style="font-size: 0.85rem; color: var(--text-muted);">Monthly</div>
+        <div id="res-monthly" style="font-size: 1.2rem; font-weight: 700; color: #2563eb; margin-top: 6px;">$0.00</div>
+      </div>
+      <div style="background: var(--bg-secondary); padding: 16px; border-radius: 8px; border: 1px solid var(--border-color); text-align: center;">
+        <div style="font-size: 0.85rem; color: var(--text-muted);">Annual</div>
+        <div id="res-annual" style="font-size: 1.2rem; font-weight: 700; color: #2563eb; margin-top: 6px;">$0.00</div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<!-- Footer -->
+<footer style="background: #0f172a; color: #94a3b8; padding: 40px 5%; margin-top: 60px;">
+  <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; padding-bottom: 30px; border-bottom: 1px solid #1e293b;">
+    <div>
+      <img src="./logo.svg" alt="Sanolines Logo" style="height: 32px; filter: brightness(0) invert(1); margin-bottom: 8px;">
+      <p style="margin: 0; font-size: 0.85rem;">Tools for a Smarter You</p>
+    </div>
+    <div style="display: flex; gap: 20px; font-size: 0.9rem;">
+      <a href="./about.html" style="color: #94a3b8; text-decoration: none;">About</a>
+      <a href="./privacy.html" style="color: #94a3b8; text-decoration: none;">Privacy Policy</a>
+      <a href="./terms.html" style="color: #94a3b8; text-decoration: none;">Terms & Conditions</a>
+      <a href="./disclaimer.html" style="color: #94a3b8; text-decoration: none;">Disclaimer</a>
+    </div>
+  </div>
+  <div style="padding-top: 20px; font-size: 0.85rem;">© 2026 Sanolines. All rights reserved.</div>
+</footer>
+
+<script>
+  // Dark Mode Persistence Logic
+  const toggleBtn = document.getElementById("theme-toggle");
+  const applyTheme = (isDark) => {
+    document.body.classList.toggle("dark", isDark);
+    if(toggleBtn) toggleBtn.textContent = isDark ? "☀️" : "🌙";
+    localStorage.setItem("theme", isDark ? "dark" : "light");
+  };
+  if (toggleBtn) toggleBtn.addEventListener("click", () => applyTheme(!document.body.classList.contains("dark")));
+  if (localStorage.getItem("theme") === "dark") applyTheme(true);
+
+  // Salary Calculation Script
+  function convertSalary() {
+    const val = parseFloat(document.getElementById("amount").value) || 0;
+    const period = document.getElementById("period").value;
+
+    let annual = 0;
+    // Standard standard assumptions: 52 weeks/year, 40 hours/week = 2080 hours/year
+    if (period === 'annual') annual = val;
+    else if (period === 'monthly') annual = val * 12;
+    else if (period === 'weekly') annual = val * 52;
+    else if (period === 'hourly') annual = val * 2080;
+
+    const hourly = annual / 2080;
+    const weekly = annual / 52;
+    const monthly = annual / 12;
+
+    document.getElementById("res-hourly").textContent = "$" + hourly.toFixed(2);
+    document.getElementById("res-weekly").textContent = "$" + weekly.toFixed(2);
+    document.getElementById("res-monthly").textContent = "$" + monthly.toFixed(2);
+    document.getElementById("res-annual").textContent = "$" + annual.toFixed(2);
+  }
+
+  convertSalary();
+</script>
+
+</body>
+</html>
