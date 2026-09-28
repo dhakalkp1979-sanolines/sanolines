@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MD5 / SHA Hash Generator – Sanolines</title>
+  <link rel="icon" type="image/svg+xml" href="./logo.svg">
+  <link rel="stylesheet" href="./style.css">
+  <!-- Include CryptoJS library for hash calculations (MD5, SHA1, SHA256, SHA512) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+</head>
+<body>
+
+<header style="display: flex; justify-content: space-between; align-items: center; padding: 20px 5%; background: var(--bg-primary); border-bottom: 1px solid var(--border-color); position: sticky; top: 0; z-index: 1000;">
+  <div class="logo">
+    <a href="./index.html">
+      <img src="./logo.svg" alt="Sanolines Logo" style="height: 32px; width: auto;">
+    </a>
+  </div>
+  <nav style="display: flex; align-items: center; gap: 24px;">
+    <a href="./index.html" style="text-decoration: none; color: var(--text-muted);">Home</a>
+    <a href="./tools.html" style="text-decoration: none; color: var(--text-primary); font-weight: 600;">Tools</a>
+    <a href="./categories.html" style="text-decoration: none; color: var(--text-muted);">Categories</a>
+    <a href="./about.html" style="text-decoration: none; color: var(--text-muted);">About</a>
+    <button id="theme-toggle" style="background: none; border: none; cursor: pointer; font-size: 1.1rem; color: inherit;">🌙</button>
+  </nav>
+</header>
+
+<main style="padding: 40px 5%; max-width: 900px; margin: 0 auto;">
+  <h1 style="font-size: 2.2rem; font-weight: 800; margin-bottom: 8px; color: var(--text-primary);">MD5 / SHA Hash Generator</h1>
+  <p style="color: var(--text-muted); margin-bottom: 30px;">Generate MD5, SHA-1, SHA-256, and SHA-512 cryptographic hashes from any text string.</p>
+
+  <div style="background: var(--bg-primary); border: 1px solid var(--border-color); padding: 30px; border-radius: 12px;">
+    
+    <div style="margin-bottom: 20px;">
+      <label style="display: block; margin-bottom: 8px; font-weight: 500; color: var(--text-primary);">Input Text</label>
+      <textarea id="inputText" rows="4" placeholder="Enter text to hash..." oninput="generateHashes()" style="width: 100%; padding: 12px; border: 1px solid var(--border-color); border-radius: 6px; background: var(--bg-secondary, #f8fafc); color: inherit; font-family: monospace;"></textarea>
+    </div>
+
+    <div style="margin-bottom: 16px;">
+      <label style="display: block; margin-bottom: 6px; font-weight: 500; color: var(--text-primary);">MD5 Hash:</label>
+      <input type="text" id="md5Output" readonly style="width: 100%; padding: 10px; border: 1px solid var(--border-color); border-radius: 6px; background: var(--bg-secondary, #f1f5f9); color: inherit; font-family: monospace;" />
+    </div>
+
+    <div style="margin-bottom: 16px;">
+      <label style="display: block; margin-bottom: 6px; font-weight: 500; color: var(--text-primary);">SHA-1 Hash:</label>
+      <input type="text" id="sha1Output" readonly style="width: 100%; padding: 10px; border: 1px solid var(--border-color); border-radius: 6px; background: var(--bg-secondary, #f1f5f9); color: inherit; font-family: monospace;" />
+    </div>
+
+    <div style="margin-bottom: 16px;">
+      <label style="display: block; margin-bottom: 6px; font-weight: 500; color: var(--text-primary);">SHA-256 Hash:</label>
+      <input type="text" id="sha256Output" readonly style="width: 100%; padding: 10px; border: 1px solid var(--border-color); border-radius: 6px; background: var(--bg-secondary, #f1f5f9); color: inherit; font-family: monospace;" />
+    </div>
+
+    <div style="margin-bottom: 10px;">
+      <label style="display: block; margin-bottom: 6px; font-weight: 500; color: var(--text-primary);">SHA-512 Hash:</label>
+      <input type="text" id="sha512Output" readonly style="width: 100%; padding: 10px; border: 1px solid var(--border-color); border-radius: 6px; background: var(--bg-secondary, #f1f5f9); color: inherit; font-family: monospace;" />
+    </div>
+
+  </div>
+</main>
+
+<footer style="background: #0f172a; color: #94a3b8; padding: 30px 5%; margin-top: 60px;">
+  <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px;">
+    <div>
+      <a href="./about.html" style="color: #94a3b8; text-decoration: none;">About</a> | 
+      <a href="./privacy.html" style="color: #94a3b8; text-decoration: none;">Privacy Policy</a> | 
+      <a href="./terms.html" style="color: #94a3b8; text-decoration: none;">Terms</a> | 
+      <a href="./disclaimer.html" style="color: #94a3b8; text-decoration: none;">Disclaimer</a>
+    </div>
+    <div style="font-size: 0.85rem;">© 2026 Sanolines — All Rights Reserved</div>
+  </div>
+</footer>
+
+<script>
+  function generateHashes() {
+    const input = document.getElementById('inputText').value;
+    
+    if (!input) {
+      document.getElementById('md5Output').value = '';
+      document.getElementById('sha1Output').value = '';
+      document.getElementById('sha256Output').value = '';
+      document.getElementById('sha512Output').value = '';
+      return;
+    }
+
+    document.getElementById('md5Output').value = CryptoJS.MD5(input).toString();
+    document.getElementById('sha1Output').value = CryptoJS.SHA1(input).toString();
+    document.getElementById('sha256Output').value = CryptoJS.SHA256(input).toString();
+    document.getElementById('sha512Output').value = CryptoJS.SHA512(input).toString();
+  }
+
+  // Dark Mode Persistence Logic
+  const toggleBtn = document.getElementById("theme-toggle");
+  const applyTheme = (isDark) => {
+    document.body.classList.toggle("dark", isDark);
+    if(toggleBtn) toggleBtn.textContent = isDark ? "☀️" : "🌙";
+    localStorage.setItem("theme", isDark ? "dark" : "light");
+  };
+  if (toggleBtn) toggleBtn.addEventListener("click", () => applyTheme(!document.body.classList.contains("dark")));
+  if (localStorage.getItem("theme") === "dark") applyTheme(true);
+</script>
+
+</body>
+</html>
