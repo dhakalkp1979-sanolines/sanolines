@@ -51,3 +51,16 @@ body {
 input, textarea, select {
   font-family: inherit;
 }
+/* Fix header logo size globally across all subpages */
+header .logo img {
+  height: 32px !important;
+  width: auto !important;
+  max-width: none !important;
+}
+
+header .logo a {
+  display: flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+  text-decoration: none !important;
+}
