@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Video File Size Estimator – Sanolines</title>
+  <link rel="icon" type="image/svg+xml" href="./logo.svg">
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+<header style="display: flex; justify-content: space-between; align-items: center; padding: 20px 5%; background: var(--bg-primary); border-bottom: 1px solid var(--border-color); position: sticky; top: 0; z-index: 1000;">
+  <div class="logo">
+    <a href="./index.html">
+      <img src="./logo.svg" alt="Sanolines Logo" style="height: 32px; width: auto;">
+    </a>
+  </div>
+  <nav style="display: flex; align-items: center; gap: 24px;">
+    <a href="./index.html" style="text-decoration: none; color: var(--text-muted);">Home</a>
+    <a href="./tools.html" style="text-decoration: none; color: var(--text-primary); font-weight: 600;">Tools</a>
+    <a href="./categories.html" style="text-decoration: none; color: var(--text-muted);">Categories</a>
+    <a href="./about.html" style="text-decoration: none; color: var(--text-muted);">About</a>
+    <button id="theme-toggle" style="background: none; border: none; cursor: pointer; font-size: 1.1rem; color: inherit;">🌙</button>
+  </nav>
+</header>
+
+<main style="padding: 40px 5%; max-width: 800px; margin: 0 auto;">
+  <h1 style="font-size: 2.2rem; font-weight: 800; margin-bottom: 8px; color: var(--text-primary);">Video File Size Estimator</h1>
+  <p style="color: var(--text-muted); margin-bottom: 30px;">Estimate the final storage size of a video file based on duration, video bitrate, and audio bitrate.</p>
+
+  <div style="background: var(--bg-primary); border: 1px solid var(--border-color); padding: 30px; border-radius: 12px;">
+    
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-bottom: 20px;">
+      <div>
+        <label style="display: block; margin-bottom: 8px; font-weight: 500; color: var(--text-primary);">Duration (Minutes)</label>
+        <input type="number" id="durationMin" value="2" placeholder="2" style="width: 100%; padding: 12px; border: 1px solid var(--border-color); border-radius: 6px; background: var(--bg-secondary, #f8fafc); color: inherit; box-sizing: border-box;">
+      </div>
+      <div>
+        <label style="display: block; margin-bottom: 8px; font-weight: 500; color: var(--text-primary);">Duration (Seconds)</label>
+        <input type="number" id="durationSec" value="30" placeholder="30" style="width: 100%; padding: 12px; border: 1px solid var(--border-color); border-radius: 6px; background: var(--bg-secondary, #f8fafc); color: inherit; box-sizing: border-box;">
+      </div>
+    </div>
+
+    <div style="margin-bottom: 20px;">
+      <label style="display: block; margin-bottom: 8px; font-weight: 500; color: var(--text-primary);">Video Bitrate (kbps)</label>
+      <input type="number" id="videoBitrate" value="5000" placeholder="e.g., 5000" style="width: 100%; padding: 12px; border: 1px solid var(--border-color); border-radius: 6px; background: var(--bg-secondary, #f8fafc); color: inherit; box-sizing: border-box;">
+    </div>
+
+    <div style="margin-bottom: 20px;">
+      <label style="display: block; margin-bottom: 8px; font-weight: 500; color: var(--text-primary);">Audio Bitrate (kbps)</label>
+      <select id="audioBitrate" style="width: 100%; padding: 12px; border: 1px solid var(--border-color); border-radius: 6px; background: var(--bg-secondary, #f8fafc); color: inherit; box-sizing: border-box;">
+        <option value="128">128 kbps (Standard Audio)</option>
+        <option value="192">192 kbps (High Quality)</option>
+        <option value="256">256 kbps (Very High Quality)</option>
+        <option value="320">320 kbps (Maximum Quality)</option>
+        <option value="0">No Audio / Mute</option>
+      </select>
+    </div>
+
+    <button onclick="calculateSize()" style="background: #2563eb; color: white; border: none; padding: 12px 20px; border-radius: 6px; cursor: pointer; font-weight: 600; width: 100%;">Estimate File Size</button>
+
+    <div id="result" style="margin-top: 24px; padding: 20px; background: var(--bg-secondary, #f1f5f9); border-radius: 8px; display: none; text-align: center;">
+      <h3 style="margin: 0 0 10px 0; color: var(--text-primary);">Estimated File Size:</h3>
+      <p id="outputSize" style="font-size: 1.8rem; font-weight: bold; color: #2563eb; margin: 0;"></p>
+      <p id="outputDetails" style="color: var(--text-muted); margin-top: 8px; font-size: 0.95rem;"></p>
+    </div>
+
+  </div>
+
+  <!-- SEO Optimized Content Section -->
+  <div class="seo-content" style="margin-top: 40px; padding: 30px; background: var(--bg-primary); border: 1px solid var(--border-color); border-radius: 12px; line-height: 1.6; color: var(--text-primary);">
+    <h2 style="font-size: 1.3rem; font-weight: 700; margin-bottom: 12px;">What is a Video File Size Estimator?</h2>
+    <p style="color: var(--text-muted); margin-bottom: 16px;">A Video File Size Estimator is a handy tool that projects how much disk space or storage a recorded or rendered video will consume based on its total duration and combined data rates. It helps creators manage storage limits and meet hosting upload criteria.</p>
+    
+    <h2 style="font-size: 1.3rem; font-weight: 700; margin-bottom: 12px;">How to Use the Tool</h2>
+    <ul style="color: var(--text-muted); margin-bottom: 16px; padding-left: 20px;">
+      <li style="margin-bottom: 6px;"><strong>Duration:</strong> Enter the length of the video in minutes and seconds.</li>
+      <li style="margin-bottom: 6px;"><strong>Video Bitrate:</strong> Input your project's target video compression rate in kilobits per second (kbps).</li>
+      <li style="margin-bottom: 6px;"><strong>Audio Bitrate:</strong> Select the audio track quality setting to include its impact on the final size.</li>
+    </ul>
+
+    <h2 style="font-size: 1.3rem; font-weight: 700; margin-bottom: 12px;">Factors Affecting Video Storage</h2>
+    <p style="color: var(--text-muted); margin-bottom: 0;">Final file size is directly proportional to length and bitrate. Higher resolutions, faster frame rates, and multi-channel audio tracks require higher bitrates, resulting in larger files that demand efficient compression codecs like H.264, HEVC (H.265), or AV1.</p>
+  </div>
+</main>
+
+<footer style="background: #0f172a; color: #94a3b8; padding: 30px 5%; margin-top: 60px;">
+  <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px;">
+    <div>
+      <a href="./about.html" style="color: #94a3b8; text-decoration: none;">About</a> | 
+      <a href="./privacy.html" style="color: #94a3b8; text-decoration: none;">Privacy Policy</a> | 
+      <a href="./terms.html" style="color: #94a3b8; text-decoration: none;">Terms</a> | 
+      <a href="./disclaimer.html" style="color: #94a3b8; text-decoration: none;">Disclaimer</a>
+    </div>
+    <div style="font-size: 0.85rem;">© 2026 Sanolines — All Rights Reserved</div>
+  </div>
+</footer>
+
+<script>
+  function calculateSize() {
+    const minutes = parseFloat(document.getElementById('durationMin').value) || 0;
+    const seconds = parseFloat(document.getElementById('durationSec').value) || 0;
+    const videoKbps = parseFloat(document.getElementById('videoBitrate').value) || 0;
+    const audioKbps = parseFloat(document.getElementById('audioBitrate').value) || 0;
+
+    const totalSeconds = (minutes * 60) + seconds;
+
+    if (totalSeconds <= 0 || videoKbps <= 0) {
+      alert('Please enter a valid video duration and bitrate.');
+      return;
+    }
+
+    const totalBitrateKbps = videoKbps + audioKbps;
+    // Total bits = bitrate (kilobits per second) * 1000 * total seconds
+    const totalBits = totalBitrateKbps * 1000 * totalSeconds;
+    // Total bytes = bits / 8
+    const totalBytes = totalBits / 8;
+    // Total megabytes (MB) = bytes / (1024 * 1024)
+    const totalMB = totalBytes / (1024 * 1024);
+
+    const resultDiv = document.getElementById('result');
+    
+    if (totalMB >= 1024) {
+      const totalGB = totalMB / 1024;
+      document.getElementById('outputSize').textContent = `${totalGB.toFixed(2)} GB`;
+    } else {
+      document.getElementById('outputSize').textContent = `${totalMB.toFixed(1)} MB`;
+    }
+
+    document.getElementById('outputDetails').textContent = `Duration: ${minutes}m ${seconds}s | Combined Bitrate: ${totalBitrateKbps} kbps`;
+    resultDiv.style.display = 'block';
+  }
+
+  // Dark Mode Persistence Logic
+  const toggleBtn = document.getElementById("theme-toggle");
+  const applyTheme = (isDark) => {
+    document.body.classList.toggle("dark", isDark);
+    if(toggleBtn) toggleBtn.textContent = isDark ? "☀️️" : "🌙";
+    localStorage.setItem("theme", isDark ? "dark" : "light");
+  };
+  if (toggleBtn) toggleBtn.addEventListener("click", () => applyTheme(!document.body.classList.contains("dark")));
+  if (localStorage.getItem("theme") === "dark") applyTheme(true);
+</script>
+
+</body>
+</html>
