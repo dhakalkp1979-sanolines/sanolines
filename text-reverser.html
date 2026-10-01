@@ -32,7 +32,7 @@
     
     <div style="margin-bottom: 20px;">
       <label style="display: block; margin-bottom: 8px; font-weight: 500; color: var(--text-primary);">Input Text</label>
-      <textarea id="inputText" rows="5" placeholder="Type or paste text to reverse..." style="width: 100%; padding: 12px; border: 1px solid var(--border-color); border-radius: 6px; background: var(--bg-secondary, #f8fafc); color: inherit;"></textarea>
+      <textarea id="inputText" rows="5" placeholder="Type or paste text to reverse..." style="width: 100%; padding: 12px; border: 1px solid var(--border-color); border-radius: 6px; background: var(--bg-secondary, #f8fafc); color: inherit; box-sizing: border-box;"></textarea>
     </div>
 
     <div style="display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 24px;">
@@ -43,9 +43,25 @@
 
     <div style="margin-bottom: 10px;">
       <label style="display: block; margin-bottom: 8px; font-weight: 500; color: var(--text-primary);">Reversed Output</label>
-      <textarea id="outputText" rows="5" readonly placeholder="Reversed result will appear here..." style="width: 100%; padding: 12px; border: 1px solid var(--border-color); border-radius: 6px; background: var(--bg-secondary, #f1f5f9); color: inherit;"></textarea>
+      <textarea id="outputText" rows="5" readonly placeholder="Reversed result will appear here..." style="width: 100%; padding: 12px; border: 1px solid var(--border-color); border-radius: 6px; background: var(--bg-secondary, #f1f5f9); color: inherit; box-sizing: border-box;"></textarea>
     </div>
 
+  </div>
+
+  <!-- SEO Optimized Content Section -->
+  <div class="seo-content" style="margin-top: 40px; padding: 30px; background: var(--bg-primary); border: 1px solid var(--border-color); border-radius: 12px; line-height: 1.6; color: var(--text-primary);">
+    <h2 style="font-size: 1.3rem; font-weight: 700; margin-bottom: 12px;">What is a Text Reverser?</h2>
+    <p style="color: var(--text-muted); margin-bottom: 16px;">A Text Reverser is a handy utility designed to flip text strings backward. Whether you want to reverse every individual character, invert the order of words, or swap lines of a multi-line code block or poem, this tool handles transformations instantly.</p>
+    
+    <h2 style="font-size: 1.3rem; font-weight: 700; margin-bottom: 12px;">Modes of Text Reversal</h2>
+    <ul style="color: var(--text-muted); margin-bottom: 16px; padding-left: 20px;">
+      <li style="margin-bottom: 6px;"><strong>Reverse Characters:</strong> Flips every letter and symbol backward (using safe Unicode string splitting for emojis and special characters).</li>
+      <li style="margin-bottom: 6px;"><strong>Reverse Words:</strong> Keeps individual words intact while reversing their overall sequence in the sentence.</li>
+      <li style="margin-bottom: 6px;"><strong>Reverse Lines:</strong> Inverts the order of multi-line text entries, moving the last line to the top.</li>
+    </ul>
+
+    <h2 style="font-size: 1.3rem; font-weight: 700; margin-bottom: 12px;">Fast, Local, and Private Processing</h2>
+    <p style="color: var(--text-muted); margin-bottom: 0;">This tool runs entirely within your web browser using client-side JavaScript. Your notes, text snippets, and data remain entirely private on your device without ever being uploaded or stored externally.</p>
   </div>
 </main>
 
