@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Crypto Profit Calculator – Sanolines</title>
   <link rel="stylesheet" href="./style.css">
+  <link rel="icon" type="image/svg+xml" href="./logo.svg">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
@@ -18,7 +19,7 @@
   </div>
   <nav style="display: flex; align-items: center; gap: 24px;">
     <a href="./index.html" style="text-decoration: none; color: var(--text-muted);">Home</a>
-    <a href="./tools.html" style="text-decoration: none; color: var(--text-muted);">Tools</a>
+    <a href="./tools.html" style="text-decoration: none; color: var(--text-primary); font-weight: 600;">Tools</a>
     <a href="./categories.html" style="text-decoration: none; color: var(--text-muted);">Categories</a>
     <a href="./about.html" style="text-decoration: none; color: var(--text-muted);">About</a>
   </nav>
@@ -34,17 +35,17 @@
     
     <div style="margin-bottom: 20px;">
       <label style="display: block; font-weight: 600; margin-bottom: 8px; color: var(--text-primary);">Initial Investment ($)</label>
-      <input type="number" id="invested" value="1000" style="width: 100%; padding: 12px; border: 1px solid var(--border-color); border-radius: 8px; background: var(--bg-secondary); color: var(--text-primary); font-size: 1rem; outline: none;" oninput="calculateCrypto()">
+      <input type="number" id="invested" value="1000" style="width: 100%; padding: 12px; border: 1px solid var(--border-color); border-radius: 8px; background: var(--bg-secondary); color: var(--text-primary); font-size: 1rem; outline: none; box-sizing: border-box;" oninput="calculateCrypto()">
     </div>
 
-    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 20px;">
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; margin-bottom: 20px;">
       <div>
         <label style="display: block; font-weight: 600; margin-bottom: 8px; color: var(--text-primary);">Buying Price ($)</label>
-        <input type="number" id="buy-price" value="20000" style="width: 100%; padding: 12px; border: 1px solid var(--border-color); border-radius: 8px; background: var(--bg-secondary); color: var(--text-primary); font-size: 1rem; outline: none;" oninput="calculateCrypto()">
+        <input type="number" id="buy-price" value="20000" style="width: 100%; padding: 12px; border: 1px solid var(--border-color); border-radius: 8px; background: var(--bg-secondary); color: var(--text-primary); font-size: 1rem; outline: none; box-sizing: border-box;" oninput="calculateCrypto()">
       </div>
       <div>
         <label style="display: block; font-weight: 600; margin-bottom: 8px; color: var(--text-primary);">Selling Price ($)</label>
-        <input type="number" id="sell-price" value="30000" style="width: 100%; padding: 12px; border: 1px solid var(--border-color); border-radius: 8px; background: var(--bg-secondary); color: var(--text-primary); font-size: 1rem; outline: none;" oninput="calculateCrypto()">
+        <input type="number" id="sell-price" value="30000" style="width: 100%; padding: 12px; border: 1px solid var(--border-color); border-radius: 8px; background: var(--bg-secondary); color: var(--text-primary); font-size: 1rem; outline: none; box-sizing: border-box;" oninput="calculateCrypto()">
       </div>
     </div>
 
@@ -57,12 +58,28 @@
         <div style="font-size: 0.85rem; color: var(--text-muted);">ROI Percentage</div>
         <div id="res-roi" style="font-size: 1.2rem; font-weight: 700; color: #2563eb; margin-top: 6px;">0.00%</div>
       </div>
-      <div style="background: var(--bg-secondary); padding: 16px; border-radius: 8px; border: 1px solid var(--border-color); text-align: center;">
+      <div style="background: var(--bg-secondary); padding: 16px; border-radius: 8px; border: 1px solid var(--border-color); text-align: center; grid-column: 1 / -1;">
         <div style="font-size: 0.85rem; color: var(--text-muted);">Final Value</div>
-        <div id="res-final" style="font-size: 1.2rem; font-weight: 700; color: var(--text-primary); margin-top: 6px;">$0.00</div>
+        <div id="res-final" style="font-size: 1.3rem; font-weight: 700; color: var(--text-primary); margin-top: 6px;">$0.00</div>
       </div>
     </div>
 
+  </div>
+
+  <!-- SEO Optimized Content Section -->
+  <div class="seo-content" style="margin-top: 40px; padding: 30px; background: var(--bg-primary); border: 1px solid var(--border-color); border-radius: 12px; line-height: 1.6; color: var(--text-primary);">
+    <h2 style="font-size: 1.3rem; font-weight: 700; margin-bottom: 12px;">What is a Crypto Profit Calculator?</h2>
+    <p style="color: var(--text-muted); margin-bottom: 16px;">A crypto profit calculator is a fundamental utility for digital currency investors. It enables you to simulate potential trades, evaluate percentage returns, and track expected net gains or losses before locking in actual orders on an exchange.</p>
+    
+    <h2 style="font-size: 1.3rem; font-weight: 700; margin-bottom: 12px;">How Cryptocurrency Returns Are Computed</h2>
+    <ul style="color: var(--text-muted); margin-bottom: 16px; padding-left: 20px;">
+      <li style="margin-bottom: 6px;"><strong>Token Quantity:</strong> Calculated by dividing your total initial investment amount by the execution buying price.</li>
+      <li style="margin-bottom: 6px;"><strong>Portfolio Value:</strong> Derived by multiplying your total accumulated tokens by the target selling price.</li>
+      <li style="margin-bottom: 6px;">Input different scenarios to instantly visualize your return on investment (ROI) and net profit balance in real time.</li>
+    </ul>
+
+    <h2 style="font-size: 1.3rem; font-weight: 700; margin-bottom: 12px;">Navigating Market Volatility</h2>
+    <p style="color: var(--text-muted); margin-bottom: 0;">Because cryptocurrency markets shift rapidly around the clock, calculating profits and potential drawdowns beforehand helps you establish disciplined exit strategies and manage financial risk efficiently.</p>
   </div>
 </main>
 
@@ -73,7 +90,7 @@
       <img src="./logo.svg" alt="Sanolines Logo" style="height: 32px; filter: brightness(0) invert(1); margin-bottom: 8px;">
       <p style="margin: 0; font-size: 0.85rem;">Tools for a Smarter You</p>
     </div>
-    <div style="display: flex; gap: 20px; font-size: 0.9rem;">
+    <div style="display: flex; gap: 20px; font-size: 0.9rem; flex-wrap: wrap;">
       <a href="./about.html" style="color: #94a3b8; text-decoration: none;">About</a>
       <a href="./privacy.html" style="color: #94a3b8; text-decoration: none;">Privacy Policy</a>
       <a href="./terms.html" style="color: #94a3b8; text-decoration: none;">Terms & Conditions</a>
@@ -116,7 +133,7 @@
     profitEl.textContent = (profit >= 0 ? "+$" : "-$") + Math.abs(profit).toFixed(2);
     profitEl.style.color = profit >= 0 ? "#16a34a" : "#ef4444";
 
-    document.getElementById("res-roi.textContent" in window ? "res-roi" : "res-roi").textContent = roi.toFixed(2) + "%";
+    document.getElementById("res-roi").textContent = roi.toFixed(2) + "%";
     document.getElementById("res-final").textContent = "$" + finalValue.toFixed(2);
   }
 
