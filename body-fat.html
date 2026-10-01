@@ -32,7 +32,7 @@
     
     <div style="margin-bottom: 20px;">
       <label style="display: block; margin-bottom: 8px; font-weight: 500; color: var(--text-primary);">Gender</label>
-      <select id="gender" style="width: 100%; padding: 12px; border: 1px solid var(--border-color); border-radius: 6px; background: var(--bg-secondary, #f8fafc); color: inherit;">
+      <select id="gender" style="width: 100%; padding: 12px; border: 1px solid var(--border-color); border-radius: 6px; background: var(--bg-secondary, #f8fafc); color: inherit; box-sizing: border-box;">
         <option value="male">Male</option>
         <option value="female">Female</option>
       </select>
@@ -40,22 +40,22 @@
 
     <div style="margin-bottom: 20px;">
       <label style="display: block; margin-bottom: 8px; font-weight: 500; color: var(--text-primary);">Height (cm)</label>
-      <input type="number" id="height" placeholder="e.g., 175" style="width: 100%; padding: 12px; border: 1px solid var(--border-color); border-radius: 6px; background: var(--bg-secondary, #f8fafc); color: inherit;">
+      <input type="number" id="height" placeholder="e.g., 175" style="width: 100%; padding: 12px; border: 1px solid var(--border-color); border-radius: 6px; background: var(--bg-secondary, #f8fafc); color: inherit; box-sizing: border-box;">
     </div>
 
     <div style="margin-bottom: 20px;">
       <label style="display: block; margin-bottom: 8px; font-weight: 500; color: var(--text-primary);">Neck (cm)</label>
-      <input type="number" id="neck" placeholder="e.g., 38" style="width: 100%; padding: 12px; border: 1px solid var(--border-color); border-radius: 6px; background: var(--bg-secondary, #f8fafc); color: inherit;">
+      <input type="number" id="neck" placeholder="e.g., 38" style="width: 100%; padding: 12px; border: 1px solid var(--border-color); border-radius: 6px; background: var(--bg-secondary, #f8fafc); color: inherit; box-sizing: border-box;">
     </div>
 
     <div style="margin-bottom: 20px;">
       <label style="display: block; margin-bottom: 8px; font-weight: 500; color: var(--text-primary);">Waist (cm)</label>
-      <input type="number" id="waist" placeholder="e.g., 85" style="width: 100%; padding: 12px; border: 1px solid var(--border-color); border-radius: 6px; background: var(--bg-secondary, #f8fafc); color: inherit;">
+      <input type="number" id="waist" placeholder="e.g., 85" style="width: 100%; padding: 12px; border: 1px solid var(--border-color); border-radius: 6px; background: var(--bg-secondary, #f8fafc); color: inherit; box-sizing: border-box;">
     </div>
 
     <div id="hip-group" style="margin-bottom: 20px; display: none;">
       <label style="display: block; margin-bottom: 8px; font-weight: 500; color: var(--text-primary);">Hip (cm) — Females only</label>
-      <input type="number" id="hip" placeholder="e.g., 95" style="width: 100%; padding: 12px; border: 1px solid var(--border-color); border-radius: 6px; background: var(--bg-secondary, #f8fafc); color: inherit;">
+      <input type="number" id="hip" placeholder="e.g., 95" style="width: 100%; padding: 12px; border: 1px solid var(--border-color); border-radius: 6px; background: var(--bg-secondary, #f8fafc); color: inherit; box-sizing: border-box;">
     </div>
 
     <button onclick="calculateBodyFat()" style="background: #2563eb; color: white; border: none; padding: 12px 20px; border-radius: 6px; cursor: pointer; font-weight: 600; width: 100%;">Calculate Body Fat</button>
@@ -65,6 +65,24 @@
       <p id="fat-output" style="font-size: 1.5rem; font-weight: bold; color: #2563eb; margin: 0;"></p>
     </div>
 
+  </div>
+
+  <!-- SEO Optimized Content Section -->
+  <div class="seo-content" style="margin-top: 40px; padding: 30px; background: var(--bg-primary); border: 1px solid var(--border-color); border-radius: 12px; line-height: 1.6; color: var(--text-primary);">
+    <h2 style="font-size: 1.3rem; font-weight: 700; margin-bottom: 12px;">What is the U.S. Navy Body Fat Method?</h2>
+    <p style="color: var(--text-muted); margin-bottom: 16px;">The U.S. Navy body fat formula is a widely accepted standard that estimates body fat percentage using simple circumference measurements. Unlike standard bathroom scales or BMI tools which can misclassify muscular or tall individuals, this method provides a much closer estimation of your true body composition.</p>
+    
+    <h2 style="font-size: 1.3rem; font-weight: 700; margin-bottom: 12px;">How to Measure Correctly</h2>
+    <ul style="color: var(--text-muted); margin-bottom: 16px; padding-left: 20px;">
+      <li style="margin-bottom: 6px;"><strong>Height:</strong> Measure vertically without shoes while standing straight.</li>
+      <li style="margin-bottom: 6px;"><strong>Neck:</strong> Measure just below the larynx (Adam's apple) for men, or below the larynx with a slight downward slope for women.</li>
+      <li style="margin-bottom: 6px;"><strong>Waist:</strong> Measured horizontally at navel level for men, or at the narrowest point of the abdomen for women.</li>
+      <li style="margin-bottom: 6px;"><strong>Hip (Women):</strong> Measure horizontally at the widest part of the hips or buttocks.</li>
+      <li>Click <strong>Calculate Body Fat</strong> to view your percentage instantly.</li>
+    </ul>
+
+    <h2 style="font-size: 1.3rem; font-weight: 700; margin-bottom: 12px;">Why Body Composition Matters</h2>
+    <p style="color: var(--text-muted); margin-bottom: 0;">Tracking body fat percentage over time helps you evaluate the true effectiveness of your fitness routines, ensuring you are dropping unwanted fat while preserving valuable lean muscle mass.</p>
   </div>
 </main>
 
