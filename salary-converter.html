@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Salary Converter – Sanolines</title>
   <link rel="stylesheet" href="./style.css">
+  <link rel="icon" type="image/svg+xml" href="./logo.svg">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
@@ -18,7 +19,7 @@
   </div>
   <nav style="display: flex; align-items: center; gap: 24px;">
     <a href="./index.html" style="text-decoration: none; color: var(--text-muted);">Home</a>
-    <a href="./tools.html" style="text-decoration: none; color: var(--text-muted);">Tools</a>
+    <a href="./tools.html" style="text-decoration: none; color: var(--text-primary); font-weight: 600;">Tools</a>
     <a href="./categories.html" style="text-decoration: none; color: var(--text-muted);">Categories</a>
     <a href="./about.html" style="text-decoration: none; color: var(--text-muted);">About</a>
   </nav>
@@ -33,12 +34,12 @@
   <div style="background: var(--bg-primary); border: 1px solid var(--border-color); padding: 30px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.05);">
     <div style="margin-bottom: 20px;">
       <label style="display: block; font-weight: 600; margin-bottom: 8px; color: var(--text-primary);">Amount ($)</label>
-      <input type="number" id="amount" value="50000" style="width: 100%; padding: 12px; border: 1px solid var(--border-color); border-radius: 8px; background: var(--bg-secondary); color: var(--text-primary); font-size: 1rem; outline: none;" oninput="convertSalary()">
+      <input type="number" id="amount" value="50000" style="width: 100%; padding: 12px; border: 1px solid var(--border-color); border-radius: 8px; background: var(--bg-secondary); color: var(--text-primary); font-size: 1rem; outline: none; box-sizing: border-box;" oninput="convertSalary()">
     </div>
     
     <div style="margin-bottom: 20px;">
       <label style="display: block; font-weight: 600; margin-bottom: 8px; color: var(--text-primary);">Convert From</label>
-      <select id="period" style="width: 100%; padding: 12px; border: 1px solid var(--border-color); border-radius: 8px; background: var(--bg-secondary); color: var(--text-primary); font-size: 1rem; outline: none;" onchange="convertSalary()">
+      <select id="period" style="width: 100%; padding: 12px; border: 1px solid var(--border-color); border-radius: 8px; background: var(--bg-secondary); color: var(--text-primary); font-size: 1rem; outline: none; box-sizing: border-box;" onchange="convertSalary()">
         <option value="annual">Annual</option>
         <option value="monthly">Monthly</option>
         <option value="weekly">Weekly</option>
@@ -65,6 +66,22 @@
       </div>
     </div>
   </div>
+
+  <!-- SEO Optimized Content Section -->
+  <div class="seo-content" style="margin-top: 40px; padding: 30px; background: var(--bg-primary); border: 1px solid var(--border-color); border-radius: 12px; line-height: 1.6; color: var(--text-primary);">
+    <h2 style="font-size: 1.3rem; font-weight: 700; margin-bottom: 12px;">Why Use a Salary Converter?</h2>
+    <p style="color: var(--text-muted); margin-bottom: 16px;">Comparing job offers, evaluating freelance contracts, or planning your household budget can become complicated when different income streams are quoted in various time frames. A salary converter provides an instant standard baseline, translating earnings effortlessly across hourly, weekly, monthly, and annual amounts.</p>
+    
+    <h2 style="font-size: 1.3rem; font-weight: 700; margin-bottom: 12px;">Standard Calculation Assumptions</h2>
+    <ul style="color: var(--text-muted); margin-bottom: 16px; padding-left: 20px;">
+      <li style="margin-bottom: 6px;"><strong>Hourly Rate:</strong> Based on a standard work schedule of 40 hours per week across 52 weeks (totaling 2,080 hours per year).</li>
+      <li style="margin-bottom: 6px;"><strong>Monthly Income:</strong> Computed by dividing the annual salary evenly across 12 months.</li>
+      <li style="margin-bottom: 6px;">Input any figure and select your pay frequency to see all alternative breakdowns calculated instantly in real time.</li>
+    </ul>
+
+    <h2 style="font-size: 1.3rem; font-weight: 700; margin-bottom: 12px;">Maximizing Your Financial Planning</h2>
+    <p style="color: var(--text-muted); margin-bottom: 0;">Understanding your true hourly value and periodic breakdown empowers you during job negotiations, overtime reviews, and long-term career planning.</p>
+  </div>
 </main>
 
 <!-- Footer -->
@@ -74,7 +91,7 @@
       <img src="./logo.svg" alt="Sanolines Logo" style="height: 32px; filter: brightness(0) invert(1); margin-bottom: 8px;">
       <p style="margin: 0; font-size: 0.85rem;">Tools for a Smarter You</p>
     </div>
-    <div style="display: flex; gap: 20px; font-size: 0.9rem;">
+    <div style="display: flex; gap: 20px; font-size: 0.9rem; flex-wrap: wrap;">
       <a href="./about.html" style="color: #94a3b8; text-decoration: none;">About</a>
       <a href="./privacy.html" style="color: #94a3b8; text-decoration: none;">Privacy Policy</a>
       <a href="./terms.html" style="color: #94a3b8; text-decoration: none;">Terms & Conditions</a>
@@ -101,7 +118,7 @@
     const period = document.getElementById("period").value;
 
     let annual = 0;
-    // Standard standard assumptions: 52 weeks/year, 40 hours/week = 2080 hours/year
+    // Standard assumptions: 52 weeks/year, 40 hours/week = 2080 hours/year
     if (period === 'annual') annual = val;
     else if (period === 'monthly') annual = val * 12;
     else if (period === 'weekly') annual = val * 52;
