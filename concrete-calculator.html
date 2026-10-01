@@ -32,17 +32,17 @@
     
     <div style="margin-bottom: 20px;">
       <label style="display: block; margin-bottom: 8px; font-weight: 500; color: var(--text-primary);">Length (feet)</label>
-      <input type="number" id="length" placeholder="e.g., 10" style="width: 100%; padding: 12px; border: 1px solid var(--border-color); border-radius: 6px; background: var(--bg-secondary, #f8fafc); color: inherit;">
+      <input type="number" id="length" placeholder="e.g., 10" style="width: 100%; padding: 12px; border: 1px solid var(--border-color); border-radius: 6px; background: var(--bg-secondary, #f8fafc); color: inherit; box-sizing: border-box;">
     </div>
 
     <div style="margin-bottom: 20px;">
       <label style="display: block; margin-bottom: 8px; font-weight: 500; color: var(--text-primary);">Width (feet)</label>
-      <input type="number" id="width" placeholder="e.g., 10" style="width: 100%; padding: 12px; border: 1px solid var(--border-color); border-radius: 6px; background: var(--bg-secondary, #f8fafc); color: inherit;">
+      <input type="number" id="width" placeholder="e.g., 10" style="width: 100%; padding: 12px; border: 1px solid var(--border-color); border-radius: 6px; background: var(--bg-secondary, #f8fafc); color: inherit; box-sizing: border-box;">
     </div>
 
     <div style="margin-bottom: 20px;">
       <label style="display: block; margin-bottom: 8px; font-weight: 500; color: var(--text-primary);">Thickness / Depth (inches)</label>
-      <input type="number" id="thickness" placeholder="e.g., 4" style="width: 100%; padding: 12px; border: 1px solid var(--border-color); border-radius: 6px; background: var(--bg-secondary, #f8fafc); color: inherit;">
+      <input type="number" id="thickness" placeholder="e.g., 4" style="width: 100%; padding: 12px; border: 1px solid var(--border-color); border-radius: 6px; background: var(--bg-secondary, #f8fafc); color: inherit; box-sizing: border-box;">
     </div>
 
     <button onclick="calculateConcrete()" style="background: #2563eb; color: white; border: none; padding: 12px 20px; border-radius: 6px; cursor: pointer; font-weight: 600; width: 100%;">Calculate Concrete Needed</button>
@@ -55,6 +55,22 @@
       <p style="margin: 6px 0; font-size: 1.1rem;"><strong>60 lb Bags:</strong> <span id="bags60" style="color: #2563eb;"></span></p>
     </div>
 
+  </div>
+
+  <!-- SEO Optimized Content Section -->
+  <div class="seo-content" style="margin-top: 40px; padding: 30px; background: var(--bg-primary); border: 1px solid var(--border-color); border-radius: 12px; line-height: 1.6; color: var(--text-primary);">
+    <h2 style="font-size: 1.3rem; font-weight: 700; margin-bottom: 12px;">How to Estimate Concrete Volume</h2>
+    <p style="color: var(--text-muted); margin-bottom: 16px;">Calculating the right amount of concrete for slabs, patios, footings, or pathways helps prevent costly material shortages or wasteful over-ordering. By multiplying the length, width, and thickness of your project area, you can determine exact cubic measurements and bag counts.</p>
+    
+    <h2 style="font-size: 1.3rem; font-weight: 700; margin-bottom: 12px;">Understanding Bag Yields</h2>
+    <ul style="color: var(--text-muted); margin-bottom: 16px; padding-left: 20px;">
+      <li style="margin-bottom: 6px;"><strong>80 lb Bags:</strong> Typically yield approximately 0.60 cubic feet of mixed concrete.</li>
+      <li style="margin-bottom: 6px;"><strong>60 lb Bags:</strong> Typically yield approximately 0.45 cubic feet of mixed concrete.</li>
+      <li style="margin-bottom: 6px;"><strong>Cubic Yards:</strong> The standard unit used when ordering ready-mix truck deliveries (1 cubic yard equals 27 cubic feet).</li>
+    </ul>
+
+    <h2 style="font-size: 1.3rem; font-weight: 700; margin-bottom: 12px;">Tips for Pouring Concrete</h2>
+    <p style="color: var(--text-muted); margin-bottom: 0;">It is usually recommended to add a 5% to 10% waste factor to your final calculation to account for uneven sub-grades, spills, or form adjustments during your pour.</p>
   </div>
 </main>
 
