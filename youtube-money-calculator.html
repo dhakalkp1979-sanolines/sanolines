@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>YouTube Money Calculator – Sanolines</title>
+  <link rel="icon" type="image/svg+xml" href="./logo.svg">
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+<header style="display: flex; justify-content: space-between; align-items: center; padding: 20px 5%; background: var(--bg-primary); border-bottom: 1px solid var(--border-color); position: sticky; top: 0; z-index: 1000;">
+  <div class="logo">
+    <a href="./index.html">
+      <img src="./logo.svg" alt="Sanolines Logo" style="height: 32px; width: auto;">
+    </a>
+  </div>
+  <nav style="display: flex; align-items: center; gap: 24px;">
+    <a href="./index.html" style="text-decoration: none; color: var(--text-muted);">Home</a>
+    <a href="./tools.html" style="text-decoration: none; color: var(--text-primary); font-weight: 600;">Tools</a>
+    <a href="./categories.html" style="text-decoration: none; color: var(--text-muted);">Categories</a>
+    <a href="./about.html" style="text-decoration: none; color: var(--text-muted);">About</a>
+    <button id="theme-toggle" style="background: none; border: none; cursor: pointer; font-size: 1.1rem; color: inherit;">🌙</button>
+  </nav>
+</header>
+
+<main style="padding: 40px 5%; max-width: 800px; margin: 0 auto;">
+  <h1 style="font-size: 2.2rem; font-weight: 800; margin-bottom: 8px; color: var(--text-primary);">YouTube Money Calculator</h1>
+  <p style="color: var(--text-muted); margin-bottom: 30px;">Estimate your estimated earnings, revenue potential, and AdSense payouts based on daily views and CPM.</p>
+
+  <div style="background: var(--bg-primary); border: 1px solid var(--border-color); padding: 30px; border-radius: 12px;">
+    
+    <div style="margin-bottom: 20px;">
+      <label style="display: block; margin-bottom: 8px; font-weight: 500; color: var(--text-primary);">Daily Video Views</label>
+      <input type="number" id="dailyViews" value="10000" placeholder="e.g., 10000" style="width: 100%; padding: 12px; border: 1px solid var(--border-color); border-radius: 6px; background: var(--bg-secondary, #f8fafc); color: inherit; box-sizing: border-box;">
+    </div>
+
+    <div style="margin-bottom: 20px;">
+      <label style="display: block; margin-bottom: 8px; font-weight: 500; color: var(--text-primary);">Estimated CPM ($)</label>
+      <input type="number" id="cpm" value="4.00" step="0.25" placeholder="e.g., 4.00" style="width: 100%; padding: 12px; border: 1px solid var(--border-color); border-radius: 6px; background: var(--bg-secondary, #f8fafc); color: inherit; box-sizing: border-box;">
+    </div>
+
+    <button onclick="calculateEarnings()" style="background: #2563eb; color: white; border: none; padding: 12px 20px; border-radius: 6px; cursor: pointer; font-weight: 600; width: 100%;">Calculate Earnings</button>
+
+    <div id="result" style="margin-top: 24px; padding: 20px; background: var(--bg-secondary, #f1f5f9); border-radius: 8px; display: none; text-align: center;">
+      <h3 style="margin: 0 0 10px 0; color: var(--text-primary);">Estimated Earnings:</h3>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-top: 15px;">
+        <div style="background: var(--bg-primary); padding: 15px; border-radius: 8px; border: 1px solid var(--border-color);">
+          <p style="margin: 0; font-size: 0.9rem; color: var(--text-muted);">Estimated Daily</p>
+          <p id="dailyOutput" style="margin: 5px 0 0 0; font-size: 1.4rem; font-weight: bold; color: #2563eb;"></p>
+        </div>
+        <div style="background: var(--bg-primary); padding: 15px; border-radius: 8px; border: 1px solid var(--border-color);">
+          <p style="margin: 0; font-size: 0.9rem; color: var(--text-muted);">Estimated Monthly</p>
+          <p id="monthlyOutput" style="margin: 5px 0 0 0; font-size: 1.4rem; font-weight: bold; color: #2563eb;"></p>
+        </div>
+        <div style="background: var(--bg-primary); padding: 15px; border-radius: 8px; border: 1px solid var(--border-color);">
+          <p style="margin: 0; font-size: 0.9rem; color: var(--text-muted);">Estimated Yearly</p>
+          <p id="yearlyOutput" style="margin: 5px 0 0 0; font-size: 1.4rem; font-weight: bold; color: #2563eb;"></p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- SEO Optimized Content Section -->
+  <div class="seo-content" style="margin-top: 40px; padding: 30px; background: var(--bg-primary); border: 1px solid var(--border-color); border-radius: 12px; line-height: 1.6; color: var(--text-primary);">
+    <h2 style="font-size: 1.3rem; font-weight: 700; margin-bottom: 12px;">What is a YouTube Money Calculator?</h2>
+    <p style="color: var(--text-muted); margin-bottom: 16px;">A YouTube Money Calculator is an estimation utility used by creators to project potential advertising revenue based on viewership metrics and average CPM (Cost Per Mille / Cost Per Thousand Impressions). Because actual earnings fluctuate based on engagement and audience demographics, this tool offers a reliable performance baseline.</p>
+    
+    <h2 style="font-size: 1.3rem; font-weight: 700; margin-bottom: 12px;">How YouTube Ad Revenue Works</h2>
+    <ul style="color: var(--text-muted); margin-bottom: 16px; padding-left: 20px;">
+      <li style="margin-bottom: 6px;"><strong>CPM vs. RPM:</strong> CPM measures what advertisers pay per 1,000 ad impressions, whereas RPM reflects what creators actually earn after YouTube's revenue share split.</li>
+      <li style="margin-bottom: 6px;"><strong>Niche & Geography:</strong> Channels focusing on finance, technology, or business typically command higher CPMs than general entertainment or vlogs. Viewer location also heavily influences ad rates.</li>
+      <li style="margin-bottom: 6px;"><strong>Ad Formats:</strong> Preroll ads, midrolls, display units, and bumper ads all contribute differently to overall creator revenue pools.</li>
+    </ul>
+
+    <h2 style="font-size: 1.3rem; font-weight: 700; margin-bottom: 12px;">Maximizing Channel Earnings</h2>
+    <p style="color: var(--text-muted); margin-bottom: 0;">Beyond standard AdSense revenue, successful creators diversify income streams through channel memberships, Super Chats, merchandise shelves, brand sponsorships, and affiliate marketing strategies.</p>
+  </div>
+</main>
+
+<footer style="background: #0f172a; color: #94a3b8; padding: 30px 5%; margin-top: 60px;">
+  <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px;">
+    <div>
+      <a href="./about.html" style="color: #94a3b8; text-decoration: none;">About</a> | 
+      <a href="./privacy.html" style="color: #94a3b8; text-decoration: none;">Privacy Policy</a> | 
+      <a href="./terms.html" style="color: #94a3b8; text-decoration: none;">Terms</a> | 
+      <a href="./disclaimer.html" style="color: #94a3b8; text-decoration: none;">Disclaimer</a>
+    </div>
+    <div style="font-size: 0.85rem;">© 2026 Sanolines — All Rights Reserved</div>
+  </div>
+</footer>
+
+<script>
+  function calculateEarnings() {
+    const dailyViews = parseFloat(document.getElementById('dailyViews').value) || 0;
+    const cpm = parseFloat(document.getElementById('cpm').value) || 0;
+
+    if (dailyViews < 0 || cpm < 0) {
+      alert('Please enter valid positive numbers.');
+      return;
+    }
+
+    // Earnings formula = (Views / 1000) * CPM
+    // Note: Ad impressions are typically a fraction of total views, but this is a standard estimated projection model.
+    const dailyEarnings = (dailyViews / 1000) * cpm;
+    const monthlyEarnings = dailyEarnings * 30;
+    const yearlyEarnings = dailyEarnings * 365;
+
+    const resultDiv = document.getElementById('result');
+    document.getElementById('dailyOutput').textContent = `$${dailyEarnings.toFixed(2)}`;
+    document.getElementById('monthlyOutput').textContent = `$${monthlyEarnings.toFixed(2)}`;
+    document.getElementById('yearlyOutput').textContent = `$${yearlyEarnings.toFixed(2)}`;
+    resultDiv.style.display = 'block';
+  }
+
+  // Dark Mode Persistence Logic
+  const toggleBtn = document.getElementById("theme-toggle");
+  const applyTheme = (isDark) => {
+    document.body.classList.toggle("dark", isDark);
+    if(toggleBtn) toggleBtn.textContent = isDark ? "☀" : "🌙";
+    localStorage.setItem("theme", isDark ? "dark" : "light");
+  };
+  if (toggleBtn) toggleBtn.addEventListener("click", () => applyTheme(!document.body.classList.contains("dark")));
+  if (localStorage.getItem("theme") === "dark") applyTheme(true);
+</script>
+
+</body>
+</html>
