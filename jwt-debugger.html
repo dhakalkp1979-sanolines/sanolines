@@ -32,20 +32,36 @@
     
     <div style="margin-bottom: 24px;">
       <label style="display: block; margin-bottom: 8px; font-weight: 500; color: var(--text-primary);">Encoded Token</label>
-      <textarea id="jwtInput" rows="4" placeholder="Paste your JWT token here (e.g., eyJhbGciOi...)" oninput="decodeJWT()" style="width: 100%; padding: 12px; border: 1px solid var(--border-color); border-radius: 6px; background: var(--bg-secondary, #f8fafc); color: inherit; font-family: monospace;"></textarea>
+      <textarea id="jwtInput" rows="4" placeholder="Paste your JWT token here (e.g., eyJhbGciOi...)" oninput="decodeJWT()" style="width: 100%; padding: 12px; border: 1px solid var(--border-color); border-radius: 6px; background: var(--bg-secondary, #f8fafc); color: inherit; font-family: monospace; box-sizing: border-box;"></textarea>
     </div>
 
     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
       <div>
         <label style="display: block; margin-bottom: 8px; font-weight: 500; color: var(--text-primary);">Header (Decoded)</label>
-        <textarea id="jwtHeader" rows="6" readonly style="width: 100%; padding: 12px; border: 1px solid var(--border-color); border-radius: 6px; background: var(--bg-secondary, #f1f5f9); color: inherit; font-family: monospace;"></textarea>
+        <textarea id="jwtHeader" rows="6" readonly style="width: 100%; padding: 12px; border: 1px solid var(--border-color); border-radius: 6px; background: var(--bg-secondary, #f1f5f9); color: inherit; font-family: monospace; box-sizing: border-box;"></textarea>
       </div>
       <div>
         <label style="display: block; margin-bottom: 8px; font-weight: 500; color: var(--text-primary);">Payload (Decoded)</label>
-        <textarea id="jwtPayload" rows="6" readonly style="width: 100%; padding: 12px; border: 1px solid var(--border-color); border-radius: 6px; background: var(--bg-secondary, #f1f5f9); color: inherit; font-family: monospace;"></textarea>
+        <textarea id="jwtPayload" rows="6" readonly style="width: 100%; padding: 12px; border: 1px solid var(--border-color); border-radius: 6px; background: var(--bg-secondary, #f1f5f9); color: inherit; font-family: monospace; box-sizing: border-box;"></textarea>
       </div>
     </div>
 
+  </div>
+
+  <!-- SEO Optimized Content Section -->
+  <div class="seo-content" style="margin-top: 40px; padding: 30px; background: var(--bg-primary); border: 1px solid var(--border-color); border-radius: 12px; line-height: 1.6; color: var(--text-primary);">
+    <h2 style="font-size: 1.3rem; font-weight: 700; margin-bottom: 12px;">What is a JSON Web Token (JWT)?</h2>
+    <p style="color: var(--text-muted); margin-bottom: 16px;">JSON Web Token (JWT) is an open standard that defines a compact and self-contained way for securely transmitting information between parties as a JSON object. They are widely utilized in modern web apps for user authentication and information exchange.</p>
+    
+    <h2 style="font-size: 1.3rem; font-weight: 700; margin-bottom: 12px;">Anatomy of a JWT Structure</h2>
+    <ul style="color: var(--text-muted); margin-bottom: 16px; padding-left: 20px;">
+      <li style="margin-bottom: 6px;"><strong>Header:</strong> Consists of two parts: the token type (JWT) and the signing algorithm being used, such as HMAC SHA256 or RSA.</li>
+      <li style="margin-bottom: 6px;"><strong>Payload:</strong> Contains the claims or user data payload, including identity information, permissions, and expiration metadata.</li>
+      <li style="margin-bottom: 6px;"><strong>Signature:</strong> Used to verify that the sender of the JWT is who they say they are and to ensure the message wasn't tampered with along the way.</li>
+    </ul>
+
+    <h2 style="font-size: 1.3rem; font-weight: 700; margin-bottom: 12px;">Client-Side Security and Privacy</h2>
+    <p style="color: var(--text-muted); margin-bottom: 0;">This debugging utility runs entirely inside your browser using client-side scripts. Your sensitive tokens and custom claims are never sent, logged, or saved on any external servers.</p>
   </div>
 </main>
 
