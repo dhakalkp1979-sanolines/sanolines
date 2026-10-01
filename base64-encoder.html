@@ -32,19 +32,35 @@
     
     <div style="margin-bottom: 20px;">
       <label style="display: block; margin-bottom: 8px; font-weight: 500; color: var(--text-primary);">Input Text / Base64</label>
-      <textarea id="inputText" rows="5" placeholder="Type or paste your text here..." style="width: 100%; padding: 12px; border: 1px solid var(--border-color); border-radius: 6px; background: var(--bg-secondary, #f8fafc); color: inherit; font-family: monospace;"></textarea>
+      <textarea id="inputText" rows="5" placeholder="Type or paste your text here..." style="width: 100%; padding: 12px; border: 1px solid var(--border-color); border-radius: 6px; background: var(--bg-secondary, #f8fafc); color: inherit; font-family: monospace; box-sizing: border-box;"></textarea>
     </div>
 
-    <div style="display: flex; gap: 12px; margin-bottom: 20px;">
-      <button onclick="encodeBase64()" style="flex: 1; background: #2563eb; color: white; border: none; padding: 12px; border-radius: 6px; cursor: pointer; font-weight: 600;">Encode to Base64</button>
-      <button onclick="decodeBase64()" style="flex: 1; background: #0f172a; color: white; border: none; padding: 12px; border-radius: 6px; cursor: pointer; font-weight: 600;">Decode from Base64</button>
+    <div style="display: flex; gap: 12px; margin-bottom: 20px; flex-wrap: wrap;">
+      <button onclick="encodeBase64()" style="flex: 1; min-width: 200px; background: #2563eb; color: white; border: none; padding: 12px; border-radius: 6px; cursor: pointer; font-weight: 600;">Encode to Base64</button>
+      <button onclick="decodeBase64()" style="flex: 1; min-width: 200px; background: #0f172a; color: white; border: none; padding: 12px; border-radius: 6px; cursor: pointer; font-weight: 600;">Decode from Base64</button>
     </div>
 
     <div style="margin-bottom: 10px;">
       <label style="display: block; margin-bottom: 8px; font-weight: 500; color: var(--text-primary);">Result Output</label>
-      <textarea id="outputText" rows="5" readonly placeholder="Output will appear here..." style="width: 100%; padding: 12px; border: 1px solid var(--border-color); border-radius: 6px; background: var(--bg-secondary, #f8fafc); color: inherit; font-family: monospace;"></textarea>
+      <textarea id="outputText" rows="5" readonly placeholder="Output will appear here..." style="width: 100%; padding: 12px; border: 1px solid var(--border-color); border-radius: 6px; background: var(--bg-secondary, #f8fafc); color: inherit; font-family: monospace; box-sizing: border-box;"></textarea>
     </div>
 
+  </div>
+
+  <!-- SEO Optimized Content Section -->
+  <div class="seo-content" style="margin-top: 40px; padding: 30px; background: var(--bg-primary); border: 1px solid var(--border-color); border-radius: 12px; line-height: 1.6; color: var(--text-primary);">
+    <h2 style="font-size: 1.3rem; font-weight: 700; margin-bottom: 12px;">What is Base64 Encoding?</h2>
+    <p style="color: var(--text-muted); margin-bottom: 16px;">Base64 is a binary-to-text conversion scheme that transforms raw data strings into an ASCII format composed of 64 standard characters. It is widely utilized across web applications to safely transfer complex data packets through text-based protocols without risking data integrity loss.</p>
+    
+    <h2 style="font-size: 1.3rem; font-weight: 700; margin-bottom: 12px;">Common Applications of Base64</h2>
+    <ul style="color: var(--text-muted); margin-bottom: 16px; padding-left: 20px;">
+      <li style="margin-bottom: 6px;"><strong>Data URIs:</strong> Embedding small graphic assets, icons, or custom fonts directly inline within HTML or CSS stylesheets.</li>
+      <li style="margin-bottom: 6px;"><strong>API Authentication:</strong> Packaging client credentials or tokens safely for delivery via HTTP authorization headers.</li>
+      <li style="margin-bottom: 6px;">Safely transmitting binary data payloads or special characters across legacy email and messaging structures.</li>
+    </ul>
+
+    <h2 style="font-size: 1.3rem; font-weight: 700; margin-bottom: 12px;">Secure Browser-Side Execution</h2>
+    <p style="color: var(--text-muted); margin-bottom: 0;">This utility executes entirely within your browser environment using local client-side scripts. Your sensitive strings and encoded files are never routed or saved on external servers, guaranteeing complete confidentiality.</p>
   </div>
 </main>
 
