@@ -34,29 +34,45 @@
     
     <div style="margin-bottom: 20px;">
       <label style="display: block; margin-bottom: 8px; font-weight: 500; color: var(--text-primary);">Input Text</label>
-      <textarea id="inputText" rows="4" placeholder="Enter text to hash..." oninput="generateHashes()" style="width: 100%; padding: 12px; border: 1px solid var(--border-color); border-radius: 6px; background: var(--bg-secondary, #f8fafc); color: inherit; font-family: monospace;"></textarea>
+      <textarea id="inputText" rows="4" placeholder="Enter text to hash..." oninput="generateHashes()" style="width: 100%; padding: 12px; border: 1px solid var(--border-color); border-radius: 6px; background: var(--bg-secondary, #f8fafc); color: inherit; font-family: monospace; box-sizing: border-box;"></textarea>
     </div>
 
     <div style="margin-bottom: 16px;">
       <label style="display: block; margin-bottom: 6px; font-weight: 500; color: var(--text-primary);">MD5 Hash:</label>
-      <input type="text" id="md5Output" readonly style="width: 100%; padding: 10px; border: 1px solid var(--border-color); border-radius: 6px; background: var(--bg-secondary, #f1f5f9); color: inherit; font-family: monospace;" />
+      <input type="text" id="md5Output" readonly style="width: 100%; padding: 10px; border: 1px solid var(--border-color); border-radius: 6px; background: var(--bg-secondary, #f1f5f9); color: inherit; font-family: monospace; box-sizing: border-box;" />
     </div>
 
     <div style="margin-bottom: 16px;">
       <label style="display: block; margin-bottom: 6px; font-weight: 500; color: var(--text-primary);">SHA-1 Hash:</label>
-      <input type="text" id="sha1Output" readonly style="width: 100%; padding: 10px; border: 1px solid var(--border-color); border-radius: 6px; background: var(--bg-secondary, #f1f5f9); color: inherit; font-family: monospace;" />
+      <input type="text" id="sha1Output" readonly style="width: 100%; padding: 10px; border: 1px solid var(--border-color); border-radius: 6px; background: var(--bg-secondary, #f1f5f9); color: inherit; font-family: monospace; box-sizing: border-box;" />
     </div>
 
     <div style="margin-bottom: 16px;">
       <label style="display: block; margin-bottom: 6px; font-weight: 500; color: var(--text-primary);">SHA-256 Hash:</label>
-      <input type="text" id="sha256Output" readonly style="width: 100%; padding: 10px; border: 1px solid var(--border-color); border-radius: 6px; background: var(--bg-secondary, #f1f5f9); color: inherit; font-family: monospace;" />
+      <input type="text" id="sha256Output" readonly style="width: 100%; padding: 10px; border: 1px solid var(--border-color); border-radius: 6px; background: var(--bg-secondary, #f1f5f9); color: inherit; font-family: monospace; box-sizing: border-box;" />
     </div>
 
     <div style="margin-bottom: 10px;">
       <label style="display: block; margin-bottom: 6px; font-weight: 500; color: var(--text-primary);">SHA-512 Hash:</label>
-      <input type="text" id="sha512Output" readonly style="width: 100%; padding: 10px; border: 1px solid var(--border-color); border-radius: 6px; background: var(--bg-secondary, #f1f5f9); color: inherit; font-family: monospace;" />
+      <input type="text" id="sha512Output" readonly style="width: 100%; padding: 10px; border: 1px solid var(--border-color); border-radius: 6px; background: var(--bg-secondary, #f1f5f9); color: inherit; font-family: monospace; box-sizing: border-box;" />
     </div>
 
+  </div>
+
+  <!-- SEO Optimized Content Section -->
+  <div class="seo-content" style="margin-top: 40px; padding: 30px; background: var(--bg-primary); border: 1px solid var(--border-color); border-radius: 12px; line-height: 1.6; color: var(--text-primary);">
+    <h2 style="font-size: 1.3rem; font-weight: 700; margin-bottom: 12px;">What is a Cryptographic Hash Function?</h2>
+    <p style="color: var(--text-muted); margin-bottom: 16px;">A cryptographic hash function is an algorithmic process that transforms any input text string into a fixed-length string of characters, which typically appears as a random sequence of numbers and letters. Even a minor change in the input text results in a completely different hash output, ensuring high sensitivity and data integrity verification.</p>
+    
+    <h2 style="font-size: 1.3rem; font-weight: 700; margin-bottom: 12px;">Understanding Hash Algorithms</h2>
+    <ul style="color: var(--text-muted); margin-bottom: 16px; padding-left: 20px;">
+      <li style="margin-bottom: 6px;"><strong>MD5:</strong> Generates a 128-bit hash value. While fast, it is primarily used for checksum verifications or legacy system identifiers due to collision vulnerabilities.</li>
+      <li style="margin-bottom: 6px;"><strong>SHA-1:</strong> Produces a 160-bit hash. Historically common in version control systems and security certificates.</li>
+      <li style="margin-bottom: 6px;"><strong>SHA-256 & SHA-512:</strong> Part of the secure SHA-2 family, producing 256-bit and 512-bit hashes respectively. Highly robust and widely mandated for modern security protocols, blockchain technology, and digital signatures.</li>
+    </ul>
+
+    <h2 style="font-size: 1.3rem; font-weight: 700; margin-bottom: 12px;">Client-Side Security and Privacy</h2>
+    <p style="color: var(--text-muted); margin-bottom: 0;">All hash calculations take place instantly within your web browser using local execution scripts. Your text strings are never transmitted or saved on external servers, guaranteeing absolute confidentiality.</p>
   </div>
 </main>
 
