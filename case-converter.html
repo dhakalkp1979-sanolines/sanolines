@@ -32,10 +32,10 @@
     
     <div style="margin-bottom: 20px;">
       <label style="display: block; margin-bottom: 8px; font-weight: 500; color: var(--text-primary);">Your Text</label>
-      <textarea id="inputText" rows="6" placeholder="Type or paste your text here..." style="width: 100%; padding: 12px; border: 1px solid var(--border-color); border-radius: 6px; background: var(--bg-secondary, #f8fafc); color: inherit;"></textarea>
+      <textarea id="inputText" rows="6" placeholder="Type or paste your text here..." style="width: 100%; padding: 12px; border: 1px solid var(--border-color); border-radius: 6px; background: var(--bg-secondary, #f8fafc); color: inherit; box-sizing: border-box;"></textarea>
     </div>
 
-    <div style="display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 24px;">
+    <div style="display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 0;">
       <button onclick="toUpper()" style="background: #2563eb; color: white; border: none; padding: 10px 16px; border-radius: 6px; cursor: pointer; font-weight: 600;">UPPERCASE</button>
       <button onclick="toLower()" style="background: #2563eb; color: white; border: none; padding: 10px 16px; border-radius: 6px; cursor: pointer; font-weight: 600;">lowercase</button>
       <button onclick="toTitle()" style="background: #2563eb; color: white; border: none; padding: 10px 16px; border-radius: 6px; cursor: pointer; font-weight: 600;">Title Case</button>
@@ -43,6 +43,24 @@
       <button onclick="toAlternate()" style="background: #0f172a; color: white; border: none; padding: 10px 16px; border-radius: 6px; cursor: pointer; font-weight: 600;">aLtErNaTe cAsE</button>
     </div>
 
+  </div>
+
+  <!-- SEO Optimized Content Section -->
+  <div class="seo-content" style="margin-top: 40px; padding: 30px; background: var(--bg-primary); border: 1px solid var(--border-color); border-radius: 12px; line-height: 1.6; color: var(--text-primary);">
+    <h2 style="font-size: 1.3rem; font-weight: 700; margin-bottom: 12px;">What is a Case Converter?</h2>
+    <p style="color: var(--text-muted); margin-bottom: 16px;">A Case Converter is a quick text-formatting utility that allows you to transform paragraphs, strings, titles, or code snippets instantly between different letter-casing styles. Instead of manually retyping text, you can change cases with a single click.</p>
+    
+    <h2 style="font-size: 1.3rem; font-weight: 700; margin-bottom: 12px;">Available Casing Formats</h2>
+    <ul style="color: var(--text-muted); margin-bottom: 16px; padding-left: 20px;">
+      <li style="margin-bottom: 6px;"><strong>UPPERCASE:</strong> Capitalizes every single letter in your text block, ideal for headings or emphasis.</li>
+      <li style="margin-bottom: 6px;"><strong>lowercase:</strong> Converts all characters into lowercase letters.</li>
+      <li style="margin-bottom: 6px;"><strong>Title Case:</strong> Capitalizes the first letter of every major word, perfect for article titles and headers.</li>
+      <li style="margin-bottom: 6px;"><strong>Sentence case:</strong> Automatically capitalizes the first letter of each sentence following standard punctuation.</li>
+      <li style="margin-bottom: 6px;"><strong>aLtErNaTe cAsE:</strong> Alternates letter formatting between lowercase and uppercase for stylized or playful text.</li>
+    </ul>
+
+    <h2 style="font-size: 1.3rem; font-weight: 700; margin-bottom: 12px;">Private and Instant Browser Processing</h2>
+    <p style="color: var(--text-muted); margin-bottom: 0;">This tool runs entirely on the client side using built-in JavaScript. Your text inputs remain completely secure and private within your device, ensuring nothing is ever uploaded to external servers.</p>
   </div>
 </main>
 
