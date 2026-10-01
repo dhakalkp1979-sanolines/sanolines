@@ -32,17 +32,17 @@
     
     <div style="margin-bottom: 20px;">
       <label style="display: block; margin-bottom: 8px; font-weight: 500; color: var(--text-primary);">Wall Length (feet)</label>
-      <input type="number" id="length" placeholder="e.g., 20" style="width: 100%; padding: 12px; border: 1px solid var(--border-color); border-radius: 6px; background: var(--bg-secondary, #f8fafc); color: inherit;">
+      <input type="number" id="length" placeholder="e.g., 20" style="width: 100%; padding: 12px; border: 1px solid var(--border-color); border-radius: 6px; background: var(--bg-secondary, #f8fafc); color: inherit; box-sizing: border-box;">
     </div>
 
     <div style="margin-bottom: 20px;">
       <label style="display: block; margin-bottom: 8px; font-weight: 500; color: var(--text-primary);">Wall Height (feet)</label>
-      <input type="number" id="height" placeholder="e.g., 8" style="width: 100%; padding: 12px; border: 1px solid var(--border-color); border-radius: 6px; background: var(--bg-secondary, #f8fafc); color: inherit;">
+      <input type="number" id="height" placeholder="e.g., 8" style="width: 100%; padding: 12px; border: 1px solid var(--border-color); border-radius: 6px; background: var(--bg-secondary, #f8fafc); color: inherit; box-sizing: border-box;">
     </div>
 
     <div style="margin-bottom: 20px;">
       <label style="display: block; margin-bottom: 8px; font-weight: 500; color: var(--text-primary);">Brick Type</label>
-      <select id="brickType" style="width: 100%; padding: 12px; border: 1px solid var(--border-color); border-radius: 6px; background: var(--bg-secondary, #f8fafc); color: inherit;">
+      <select id="brickType" style="width: 100%; padding: 12px; border: 1px solid var(--border-color); border-radius: 6px; background: var(--bg-secondary, #f8fafc); color: inherit; box-sizing: border-box;">
         <option value="standard">Standard US Brick (~7 bricks per sq. ft.)</option>
         <option value="modular">Modular Brick (~6.5 bricks per sq. ft.)</option>
         <option value="cinder">Cinder Block / Concrete Block (~1.12 blocks per sq. ft.)</option>
@@ -51,7 +51,7 @@
 
     <div style="margin-bottom: 20px;">
       <label style="display: block; margin-bottom: 8px; font-weight: 500; color: var(--text-primary);">Waste Allowance (%)</label>
-      <input type="number" id="waste" value="5" placeholder="e.g., 5" style="width: 100%; padding: 12px; border: 1px solid var(--border-color); border-radius: 6px; background: var(--bg-secondary, #f8fafc); color: inherit;">
+      <input type="number" id="waste" value="5" placeholder="e.g., 5" style="width: 100%; padding: 12px; border: 1px solid var(--border-color); border-radius: 6px; background: var(--bg-secondary, #f8fafc); color: inherit; box-sizing: border-box;">
     </div>
 
     <button onclick="calculateBricks()" style="background: #2563eb; color: white; border: none; padding: 12px 20px; border-radius: 6px; cursor: pointer; font-weight: 600; width: 100%;">Calculate Materials</button>
@@ -62,6 +62,22 @@
       <p id="outputDetails" style="color: var(--text-muted); margin-top: 8px; font-size: 0.95rem;"></p>
     </div>
 
+  </div>
+
+  <!-- SEO Optimized Content Section -->
+  <div class="seo-content" style="margin-top: 40px; padding: 30px; background: var(--bg-primary); border: 1px solid var(--border-color); border-radius: 12px; line-height: 1.6; color: var(--text-primary);">
+    <h2 style="font-size: 1.3rem; font-weight: 700; margin-bottom: 12px;">How to Calculate Bricks and Blocks for a Wall</h2>
+    <p style="color: var(--text-muted); margin-bottom: 16px;">Estimating the right volume of masonry units required for a construction project prevents expensive material shortages or unnecessary surplus. By multiplying the total length and height of the wall surface area, you can easily determine square footage and convert it into specific brick or block counts.</p>
+    
+    <h2 style="font-size: 1.3rem; font-weight: 700; margin-bottom: 12px;">Standard Coverage Rates</h2>
+    <ul style="color: var(--text-muted); margin-bottom: 16px; padding-left: 20px;">
+      <li style="margin-bottom: 6px;"><strong>Standard US Bricks:</strong> Generally average about 7 bricks per square foot (including mortar joints).</li>
+      <li style="margin-bottom: 6px;"><strong>Modular Bricks:</strong> Slightly smaller profile, averaging roughly 6.5 bricks per square foot.</li>
+      <li style="margin-bottom: 6px;"><strong>Cinder / Concrete Blocks:</strong> Larger structural units that cover approximately 1.12 blocks per square foot.</li>
+    </ul>
+
+    <h2 style="font-size: 1.3rem; font-weight: 700; margin-bottom: 12px;">Why Include a Waste Allowance?</h2>
+    <p style="color: var(--text-muted); margin-bottom: 0;">It is standard industry practice to include a 5% to 10% waste buffer to account for accidental breakages, cuts around corners, or structural adjustments during installation.</p>
   </div>
 </main>
 
