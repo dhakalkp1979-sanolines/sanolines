@@ -23,27 +23,27 @@
   </nav>
 </header>
 
-<main class="fade" style="max-width: 650px;">
+<main class="fade" style="max-width: 650px; margin: 40px auto; padding: 0 20px;">
   <h1>Loan EMI Calculator</h1>
   <p style="color: var(--text-muted); margin-bottom: 24px;">Calculate your monthly loan payments, total interest, and total payment amounts easily.</p>
 
   <div class="card" style="padding: 24px;">
     <div style="margin-bottom: 16px;">
       <label style="display: block; font-size: 0.9rem; margin-bottom: 6px;">Loan Amount ($)</label>
-      <input type="number" id="loan-amount" placeholder="e.g. 100000" style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid var(--border-color); background: var(--bg-primary); color: var(--text-primary);">
+      <input type="number" id="loan-amount" placeholder="e.g. 100000" style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid var(--border-color); background: var(--bg-primary); color: var(--text-primary); box-sizing: border-box;">
     </div>
 
     <div style="margin-bottom: 16px;">
       <label style="display: block; font-size: 0.9rem; margin-bottom: 6px;">Interest Rate (% per annum)</label>
-      <input type="number" id="interest-rate" step="0.1" placeholder="e.g. 7.5" style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid var(--border-color); background: var(--bg-primary); color: var(--text-primary);">
+      <input type="number" id="interest-rate" step="0.1" placeholder="e.g. 7.5" style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid var(--border-color); background: var(--bg-primary); color: var(--text-primary); box-sizing: border-box;">
     </div>
 
     <div style="margin-bottom: 20px;">
       <label style="display: block; font-size: 0.9rem; margin-bottom: 6px;">Loan Tenure (Years)</label>
-      <input type="number" id="tenure-years" placeholder="e.g. 15" style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid var(--border-color); background: var(--bg-primary); color: var(--text-primary);">
+      <input type="number" id="tenure-years" placeholder="e.g. 15" style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid var(--border-color); background: var(--bg-primary); color: var(--text-primary); box-sizing: border-box;">
     </div>
 
-    <button onclick="calculateEMI()" style="background: var(--accent-gradient); color: white; border: none; padding: 10px 20px; border-radius: 8px; cursor: pointer; width: 100%; font-size: 1rem;">Calculate EMI</button>
+    <button onclick="calculateEMI()" style="background: var(--accent-gradient, #2563eb); color: white; border: none; padding: 10px 20px; border-radius: 8px; cursor: pointer; width: 100%; font-size: 1rem;">Calculate EMI</button>
 
     <div id="emi-results" style="margin-top: 24px; display: none;">
       <div style="border-top: 1px solid var(--border-color); padding-top: 16px; display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 12px; text-align: center;">
@@ -62,9 +62,25 @@
       </div>
     </div>
   </div>
+
+  <!-- SEO Optimized Content Section -->
+  <div class="seo-content" style="margin-top: 40px; padding: 24px; background: var(--bg-primary); border: 1px solid var(--border-color); border-radius: 12px; line-height: 1.6; color: var(--text-primary);">
+    <h2 style="font-size: 1.3rem; font-weight: 700; margin-bottom: 12px;">What is a Loan EMI Calculator?</h2>
+    <p style="color: var(--text-muted); margin-bottom: 16px;">EMI (Equated Monthly Installment) is the fixed monthly payment made by a borrower to a lender until the loan is completely repaid. Using an online EMI calculator helps you estimate your financial obligations, plan your household budget, and assess the total interest payable over time.</p>
+    
+    <h2 style="font-size: 1.3rem; font-weight: 700; margin-bottom: 12px;">Key Benefits of This Financial Tool</h2>
+    <ul style="color: var(--text-muted); margin-bottom: 16px; padding-left: 20px;">
+      <li style="margin-bottom: 6px;"><strong>Instant Computations:</strong> Instantly evaluates your monthly breakdown without manual math.</li>
+      <li style="margin-bottom: 6px;"><strong>Clear Cost Analysis:</strong> Separates principal repayment from overall interest to show the absolute true cost of borrowing.</li>
+      <li><strong>Tenure Comparison:</strong> Easily test different loan periods to find a monthly payment that comfortably fits your income.</li>
+    </ul>
+
+    <h2 style="font-size: 1.3rem; font-weight: 700; margin-bottom: 12px;">How to Calculate Loan EMI</h2>
+    <p style="color: var(--text-muted); margin-bottom: 10px;">Enter your requested loan amount, the annual percentage rate (APR), and the repayment period in years. Click <strong>Calculate EMI</strong> to view your exact monthly installment metrics instantly.</p>
+  </div>
 </main>
 
-<footer>
+<footer style="text-align: center; padding: 30px 0; color: var(--text-muted); font-size: 0.85rem; border-top: 1px solid var(--border-color); margin-top: 40px;">
   <div>
     <a href="/about.html">About</a> | 
     <a href="/privacy.html">Privacy Policy</a> | 
@@ -104,7 +120,7 @@
   const toggleBtn = document.getElementById("theme-toggle");
   const applyTheme = (isDark) => {
     document.body.classList.toggle("dark", isDark);
-    toggleBtn.textContent = isDark ? "☀️" : "🌙";
+    if(toggleBtn) toggleBtn.textContent = isDark ? "☀️" : "🌙";
     localStorage.setItem("theme", isDark ? "dark" : "light");
   };
   if (toggleBtn) toggleBtn.addEventListener("click", () => applyTheme(!document.body.classList.contains("dark")));
