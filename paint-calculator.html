@@ -32,17 +32,17 @@
     
     <div style="margin-bottom: 20px;">
       <label style="display: block; margin-bottom: 8px; font-weight: 500; color: var(--text-primary);">Total Wall Surface Area (sq. ft.)</label>
-      <input type="number" id="sqft" placeholder="e.g., 400" style="width: 100%; padding: 12px; border: 1px solid var(--border-color); border-radius: 6px; background: var(--bg-secondary, #f8fafc); color: inherit;">
+      <input type="number" id="sqft" placeholder="e.g., 400" style="width: 100%; padding: 12px; border: 1px solid var(--border-color); border-radius: 6px; background: var(--bg-secondary, #f8fafc); color: inherit; box-sizing: border-box;">
     </div>
 
     <div style="margin-bottom: 20px;">
       <label style="display: block; margin-bottom: 8px; font-weight: 500; color: var(--text-primary);">Number of Coats</label>
-      <input type="number" id="coats" value="2" placeholder="e.g., 2" style="width: 100%; padding: 12px; border: 1px solid var(--border-color); border-radius: 6px; background: var(--bg-secondary, #f8fafc); color: inherit;">
+      <input type="number" id="coats" value="2" placeholder="e.g., 2" style="width: 100%; padding: 12px; border: 1px solid var(--border-color); border-radius: 6px; background: var(--bg-secondary, #f8fafc); color: inherit; box-sizing: border-box;">
     </div>
 
     <div style="margin-bottom: 20px;">
       <label style="display: block; margin-bottom: 8px; font-weight: 500; color: var(--text-primary);">Paint Coverage per Gallon (sq. ft.)</label>
-      <input type="number" id="coverage" value="350" placeholder="e.g., 350" style="width: 100%; padding: 12px; border: 1px solid var(--border-color); border-radius: 6px; background: var(--bg-secondary, #f8fafc); color: inherit;">
+      <input type="number" id="coverage" value="350" placeholder="e.g., 350" style="width: 100%; padding: 12px; border: 1px solid var(--border-color); border-radius: 6px; background: var(--bg-secondary, #f8fafc); color: inherit; box-sizing: border-box;">
     </div>
 
     <button onclick="calculatePaint()" style="background: #2563eb; color: white; border: none; padding: 12px 20px; border-radius: 6px; cursor: pointer; font-weight: 600; width: 100%;">Calculate Paint Needed</button>
@@ -53,6 +53,22 @@
       <p id="outputDetails" style="color: var(--text-muted); margin-top: 8px; font-size: 0.95rem;"></p>
     </div>
 
+  </div>
+
+  <!-- SEO Optimized Content Section -->
+  <div class="seo-content" style="margin-top: 40px; padding: 30px; background: var(--bg-primary); border: 1px solid var(--border-color); border-radius: 12px; line-height: 1.6; color: var(--text-primary);">
+    <h2 style="font-size: 1.3rem; font-weight: 700; margin-bottom: 12px;">How to Estimate Paint for Your Room</h2>
+    <p style="color: var(--text-muted); margin-bottom: 16px;">Calculating the exact amount of paint needed for interior or exterior walls helps you avoid mid-project supply runs or wasteful surplus. By factoring in the total wall surface area, the number of coats required, and typical paint spread rates, you can determine precise gallon requirements.</p>
+    
+    <h2 style="font-size: 1.3rem; font-weight: 700; margin-bottom: 12px;">Standard Coverage Guidelines</h2>
+    <ul style="color: var(--text-muted); margin-bottom: 16px; padding-left: 20px;">
+      <li style="margin-bottom: 6px;"><strong>Coverage Rate:</strong> Most standard latex or acrylic wall paints cover roughly 350 to 400 square feet per gallon.</li>
+      <li style="margin-bottom: 6px;"><strong>Number of Coats:</strong> Two coats are generally recommended for full color coverage, durability, and an even finish.</li>
+      <li style="margin-bottom: 6px;"><strong>Surface Texture:</strong> Textured walls, brick, or unprimed drywall absorb more paint, reducing overall coverage per gallon.</li>
+    </ul>
+
+    <h2 style="font-size: 1.3rem; font-weight: 700; margin-bottom: 12px;">Tips for Buying Paint</h2>
+    <p style="color: var(--text-muted); margin-bottom: 0;">It is always wise to round up your final gallon estimate or purchase an extra quart for future touch-ups to ensure color consistency across matching batches.</p>
   </div>
 </main>
 
