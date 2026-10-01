@@ -32,19 +32,35 @@
     
     <div style="margin-bottom: 20px;">
       <label style="display: block; margin-bottom: 8px; font-weight: 500; color: var(--text-primary);">Input String / URL</label>
-      <textarea id="inputText" rows="5" placeholder="Enter URL or text to encode/decode..." style="width: 100%; padding: 12px; border: 1px solid var(--border-color); border-radius: 6px; background: var(--bg-secondary, #f8fafc); color: inherit; font-family: monospace;"></textarea>
+      <textarea id="inputText" rows="5" placeholder="Enter URL or text to encode/decode..." style="width: 100%; padding: 12px; border: 1px solid var(--border-color); border-radius: 6px; background: var(--bg-secondary, #f8fafc); color: inherit; font-family: monospace; box-sizing: border-box;"></textarea>
     </div>
 
-    <div style="display: flex; gap: 12px; margin-bottom: 20px;">
-      <button onclick="encodeURL()" style="flex: 1; background: #2563eb; color: white; border: none; padding: 12px; border-radius: 6px; cursor: pointer; font-weight: 600;">Encode URL</button>
-      <button onclick="decodeURL()" style="flex: 1; background: #0f172a; color: white; border: none; padding: 12px; border-radius: 6px; cursor: pointer; font-weight: 600;">Decode URL</button>
+    <div style="display: flex; gap: 12px; margin-bottom: 20px; flex-wrap: wrap;">
+      <button onclick="encodeURL()" style="flex: 1; min-width: 200px; background: #2563eb; color: white; border: none; padding: 12px; border-radius: 6px; cursor: pointer; font-weight: 600;">Encode URL</button>
+      <button onclick="decodeURL()" style="flex: 1; min-width: 200px; background: #0f172a; color: white; border: none; padding: 12px; border-radius: 6px; cursor: pointer; font-weight: 600;">Decode URL</button>
     </div>
 
     <div style="margin-bottom: 10px;">
       <label style="display: block; margin-bottom: 8px; font-weight: 500; color: var(--text-primary);">Result Output</label>
-      <textarea id="outputText" rows="5" readonly placeholder="Output will appear here..." style="width: 100%; padding: 12px; border: 1px solid var(--border-color); border-radius: 6px; background: var(--bg-secondary, #f8fafc); color: inherit; font-family: monospace;"></textarea>
+      <textarea id="outputText" rows="5" readonly placeholder="Output will appear here..." style="width: 100%; padding: 12px; border: 1px solid var(--border-color); border-radius: 6px; background: var(--bg-secondary, #f8fafc); color: inherit; font-family: monospace; box-sizing: border-box;"></textarea>
     </div>
 
+  </div>
+
+  <!-- SEO Optimized Content Section -->
+  <div class="seo-content" style="margin-top: 40px; padding: 30px; background: var(--bg-primary); border: 1px solid var(--border-color); border-radius: 12px; line-height: 1.6; color: var(--text-primary);">
+    <h2 style="font-size: 1.3rem; font-weight: 700; margin-bottom: 12px;">What is URL Encoding (Percent-Encoding)?</h2>
+    <p style="color: var(--text-muted); margin-bottom: 16px;">URL encoding is a process that translates unsafe or special characters within a web address into a universally compatible format. Because URLs can only be safely sent across the internet using the standard ASCII set, spaces and symbols must be safely converted into percent-encoded values.</p>
+    
+    <h2 style="font-size: 1.3rem; font-weight: 700; margin-bottom: 12px;">When to Use a URL Encoder</h2>
+    <ul style="color: var(--text-muted); margin-bottom: 16px; padding-left: 20px;">
+      <li style="margin-bottom: 6px;"><strong>Query Parameters:</strong> Formatting query strings and variables containing spaces or symbols for web applications and APIs.</li>
+      <li style="margin-bottom: 6px;"><strong>Debugging Links:</strong> Inspecting or translating encoded browser strings and tracking codes back into plain text.</li>
+      <li style="margin-bottom: 6px;">Preventing links from breaking when shared across different platforms, browsers, or messaging software.</li>
+    </ul>
+
+    <h2 style="font-size: 1.3rem; font-weight: 700; margin-bottom: 12px;">Fast and Secure Client-Side Utility</h2>
+    <p style="color: var(--text-muted); margin-bottom: 0;">This tool executes entirely inside your browser using lightweight native JavaScript. Your text and URLs remain completely private and are never saved or routed through any third-party servers.</p>
   </div>
 </main>
 
