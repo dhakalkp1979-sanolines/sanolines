@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Video Bitrate Calculator – Sanolines</title>
+  <link rel="icon" type="image/svg+xml" href="./logo.svg">
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+<header style="display: flex; justify-content: space-between; align-items: center; padding: 20px 5%; background: var(--bg-primary); border-bottom: 1px solid var(--border-color); position: sticky; top: 0; z-index: 1000;">
+  <div class="logo">
+    <a href="./index.html">
+      <img src="./logo.svg" alt="Sanolines Logo" style="height: 32px; width: auto;">
+    </a>
+  </div>
+  <nav style="display: flex; align-items: center; gap: 24px;">
+    <a href="./index.html" style="text-decoration: none; color: var(--text-muted);">Home</a>
+    <a href="./tools.html" style="text-decoration: none; color: var(--text-primary); font-weight: 600;">Tools</a>
+    <a href="./categories.html" style="text-decoration: none; color: var(--text-muted);">Categories</a>
+    <a href="./about.html" style="text-decoration: none; color: var(--text-muted);">About</a>
+    <button id="theme-toggle" style="background: none; border: none; cursor: pointer; font-size: 1.1rem; color: inherit;">🌙</button>
+  </nav>
+</header>
+
+<main style="padding: 40px 5%; max-width: 800px; margin: 0 auto;">
+  <h1 style="font-size: 2.2rem; font-weight: 800; margin-bottom: 8px; color: var(--text-primary);">Video Bitrate Calculator</h1>
+  <p style="color: var(--text-muted); margin-bottom: 30px;">Calculate the ideal video bitrate based on target file size, duration, resolution, and frame rate.</p>
+
+  <div style="background: var(--bg-primary); border: 1px solid var(--border-color); padding: 30px; border-radius: 12px;">
+    
+    <div style="margin-bottom: 20px;">
+      <label style="display: block; margin-bottom: 8px; font-weight: 500; color: var(--text-primary);">Target File Size (MB)</label>
+      <input type="number" id="targetSize" placeholder="e.g., 700" style="width: 100%; padding: 12px; border: 1px solid var(--border-color); border-radius: 6px; background: var(--bg-secondary, #f8fafc); color: inherit; box-sizing: border-box;">
+    </div>
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-bottom: 20px;">
+      <div>
+        <label style="display: block; margin-bottom: 8px; font-weight: 500; color: var(--text-primary);">Duration (Minutes)</label>
+        <input type="number" id="durationMin" value="0" placeholder="0" style="width: 100%; padding: 12px; border: 1px solid var(--border-color); border-radius: 6px; background: var(--bg-secondary, #f8fafc); color: inherit; box-sizing: border-box;">
+      </div>
+      <div>
+        <label style="display: block; margin-bottom: 8px; font-weight: 500; color: var(--text-primary);">Duration (Seconds)</label>
+        <input type="number" id="durationSec" value="60" placeholder="60" style="width: 100%; padding: 12px; border: 1px solid var(--border-color); border-radius: 6px; background: var(--bg-secondary, #f8fafc); color: inherit; box-sizing: border-box;">
+      </div>
+    </div>
+
+    <div style="margin-bottom: 20px;">
+      <label style="display: block; margin-bottom: 8px; font-weight: 500; color: var(--text-primary);">Audio Bitrate (kbps)</label>
+      <select id="audioBitrate" style="width: 100%; padding: 12px; border: 1px solid var(--border-color); border-radius: 6px; background: var(--bg-secondary, #f8fafc); color: inherit; box-sizing: border-box;">
+        <option value="128">128 kbps (Standard Audio)</option>
+        <option value="192">192 kbps (High Quality)</option>
+        <option value="256">256 kbps (Very High Quality)</option>
+        <option value="320">320 kbps (Maximum Quality)</option>
+        <option value="0">No Audio / Mute</option>
+      </select>
+    </div>
+
+    <button onclick="calculateBitrate()" style="background: #2563eb; color: white; border: none; padding: 12px 20px; border-radius: 6px; cursor: pointer; font-weight: 600; width: 100%;">Calculate Bitrate</button>
+
+    <div id="result" style="margin-top: 24px; padding: 20px; background: var(--bg-secondary, #f1f5f9); border-radius: 8px; display: none; text-align: center;">
+      <h3 style="margin: 0 0 10px 0; color: var(--text-primary);">Recommended Video Bitrate:</h3>
+      <p id="outputBitrate" style="font-size: 1.8rem; font-weight: bold; color: #2563eb; margin: 0;"></p>
+      <p id="outputDetails" style="color: var(--text-muted); margin-top: 8px; font-size: 0.95rem;"></p>
+    </div>
+
+  </div>
+
+  <!-- SEO Optimized Content Section -->
+  <div class="seo-content" style="margin-top: 40px; padding: 30px; background: var(--bg-primary); border: 1px solid var(--border-color); border-radius: 12px; line-height: 1.6; color: var(--text-primary);">
+    <h2 style="font-size: 1.3rem; font-weight: 700; margin-bottom: 12px;">What is a Video Bitrate Calculator?</h2>
+    <p style="color: var(--text-muted); margin-bottom: 16px;">A Video Bitrate Calculator is an essential tool for video editors, content creators, and live streamers. It determines the optimal data rate (measured in kilobits per second or kbps) required to compress a video file to a precise target size for storage, uploading platforms, or disc media.</p>
+    
+    <h2 style="font-size: 1.3rem; font-weight: 700; margin-bottom: 12px;">How to Use the Tool</h2>
+    <ul style="color: var(--text-muted); margin-bottom: 16px; padding-left: 20px;">
+      <li style="margin-bottom: 6px;"><strong>Target File Size:</strong> Enter your desired final file size in megabytes (MB).</li>
+      <li style="margin-bottom: 6px;"><strong>Duration:</strong> Specify the exact length of your video in minutes and seconds.</li>
+      <li style="margin-bottom: 6px;"><strong>Audio Bitrate:</strong> Choose your preferred audio stream compression quality to subtract its footprint from the total budget.</li>
+    </ul>
+
+    <h2 style="font-size: 1.3rem; font-weight: 700; margin-bottom: 12px;">Why Bitrate Matters for Video Quality</h2>
+    <p style="color: var(--text-muted); margin-bottom: 0;">Bitrate dictates how much information is stored per second of video. Balancing video and audio bitrates ensures smooth playback, prevents pixelation or compression artifacts, and guarantees your media fits platform constraints.</p>
+  </div>
+</main>
+
+<footer style="background: #0f172a; color: #94a3b8; padding: 30px 5%; margin-top: 60px;">
+  <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px;">
+    <div>
+      <a href="./about.html" style="color: #94a3b8; text-decoration: none;">About</a> | 
+      <a href="./privacy.html" style="color: #94a3b8; text-decoration: none;">Privacy Policy</a> | 
+      <a href="./terms.html" style="color: #94a3b8; text-decoration: none;">Terms</a> | 
+      <a href="./disclaimer.html" style="color: #94a3b8; text-decoration: none;">Disclaimer</a>
+    </div>
+    <div style="font-size: 0.85rem;">© 2026 Sanolines — All Rights Reserved</div>
+  </div>
+</footer>
+
+<script>
+  function calculateBitrate() {
+    const targetSizeMB = parseFloat(document.getElementById('targetSize').value);
+    const minutes = parseFloat(document.getElementById('durationMin').value) || 0;
+    const seconds = parseFloat(document.getElementById('durationSec').value) || 0;
+    const audioKbps = parseFloat(document.getElementById('audioBitrate').value) || 0;
+
+    const totalSeconds = (minutes * 60) + seconds;
+
+    if (!targetSizeMB || totalSeconds <= 0) {
+      alert('Please enter a valid target file size and duration.');
+      return;
+    }
+
+    // Total bits = Size in MB * 1024 * 1024 * 8
+    const totalBits = targetSizeMB * 1024 * 1024 * 8;
+    const totalBitrateKbps = (totalBits / totalSeconds) / 1000;
+    const videoBitrateKbps = totalBitrateKbps - audioKbps;
+
+    if (videoBitrateKbps <= 0) {
+      alert('Target file size is too small for the selected audio bitrate and duration.');
+      return;
+    }
+
+    const resultDiv = document.getElementById('result');
+    document.getElementById('outputBitrate').textContent = `${Math.round(videoBitrateKbps)} kbps`;
+    document.getElementById('outputDetails').textContent = `Total target bitrate: ${Math.round(totalBitrateKbps)} kbps (Video: ${Math.round(videoBitrateKbps)} kbps + Audio: ${audioKbps} kbps)`;
+    resultDiv.style.display = 'block';
+  }
+
+  // Dark Mode Persistence Logic
+  const toggleBtn = document.getElementById("theme-toggle");
+  const applyTheme = (isDark) => {
+    document.body.classList.toggle("dark", isDark);
+    if(toggleBtn) toggleBtn.textContent = isDark ? "☀️️" : "🌙";
+    localStorage.setItem("theme", isDark ? "dark" : "light");
+  };
+  if (toggleBtn) toggleBtn.addEventListener("click", () => applyTheme(!document.body.classList.contains("dark")));
+  if (localStorage.getItem("theme") === "dark") applyTheme(true);
+</script>
+
+</body>
+</html>
