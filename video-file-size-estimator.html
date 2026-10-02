@@ -111,11 +111,8 @@
     }
 
     const totalBitrateKbps = videoKbps + audioKbps;
-    // Total bits = bitrate (kilobits per second) * 1000 * total seconds
     const totalBits = totalBitrateKbps * 1000 * totalSeconds;
-    // Total bytes = bits / 8
     const totalBytes = totalBits / 8;
-    // Total megabytes (MB) = bytes / (1024 * 1024)
     const totalMB = totalBytes / (1024 * 1024);
 
     const resultDiv = document.getElementById('result');
@@ -135,7 +132,7 @@
   const toggleBtn = document.getElementById("theme-toggle");
   const applyTheme = (isDark) => {
     document.body.classList.toggle("dark", isDark);
-    if(toggleBtn) toggleBtn.textContent = isDark ? "☀️️" : "🌙";
+    if(toggleBtn) toggleBtn.textContent = isDark ? "☀️" : "🌙";
     localStorage.setItem("theme", isDark ? "dark" : "light");
   };
   if (toggleBtn) toggleBtn.addEventListener("click", () => applyTheme(!document.body.classList.contains("dark")));
