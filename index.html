@@ -4,7 +4,22 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title id="page-title">Sanolines – Your Daily Tools: Fast, Simple, Free</title>
-  <link rel="icon" type="image/svg+xml" href="./favicon.svg">
+  
+  <!-- Favicon Tags -->
+  <link rel="icon" type="image/svg+xml" href="./logo.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="./favicon.png">
+
+  <!-- Organization Schema for Google Logo & Brand Recognition -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Sanolines",
+    "url": "https://sanolines.com",
+    "logo": "https://sanolines.com/logo.svg"
+  }
+  </script>
+
   <link rel="stylesheet" href="./style.css">
   <!-- FontAwesome for Social Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -141,7 +156,7 @@
   </div>
 
   <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 16px;">
-    <a href="./bmi.html" class="card" style="background: var(--bg-primary); border: 1px solid var(--border-color); padding: 20px; border-radius: 10px; display: flex; align-items: center; gap: 16px; text-decoration: none; color: inherit;">
+    <a href="./bmi-calculator.html" class="card" style="background: var(--bg-primary); border: 1px solid var(--border-color); padding: 20px; border-radius: 10px; display: flex; align-items: center; gap: 16px; text-decoration: none; color: inherit;">
       <div style="background: #fee2e2; color: #ef4444; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; border-radius: 8px;">❤️</div>
       <div>
         <h4 style="margin: 0 0 4px 0; font-size: 1rem;">BMI Calculator</h4>
@@ -233,7 +248,7 @@
     if (!query) return;
 
     if (query.includes("bmi")) {
-      window.location.href = "./bmi.html";
+      window.location.href = "./bmi-calculator.html";
     } else if (query.includes("word") || query.includes("text")) {
       window.location.href = "./word-counter.html";
     } else if (query.includes("json")) {
@@ -293,7 +308,6 @@
     const t = translations[lang];
     if (!t) return;
 
-    // Update Text Content Dynamically
     document.getElementById("nav-home").textContent = t.home;
     document.getElementById("nav-tools").textContent = t.tools;
     document.getElementById("nav-categories").textContent = t.categories;
@@ -321,7 +335,6 @@
     setLanguage(lang);
   }
 
-  // Load Saved Language Preference on Startup
   const savedLang = localStorage.getItem("selectedLang");
   if (savedLang) {
     setLanguage(savedLang);
