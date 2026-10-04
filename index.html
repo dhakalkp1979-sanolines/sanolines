@@ -145,11 +145,18 @@
       <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 0;" id="cat-video-desc">Aspect ratio, resolution, bitrate.</p>
     </a>
 
-    <!-- Newly Added Education & Scholarships Category Card -->
+    <!-- Education & Scholarships Category Card -->
     <a href="./education-scholarships.html" class="card" style="background: var(--bg-primary); border: 1px solid var(--border-color); padding: 24px; border-radius: 12px; text-decoration: none; color: inherit; display: block;">
       <div style="background: rgba(37, 99, 235, 0.1); color: #2563eb; width: 48px; height: 48px; display: flex; align-items: center; justify-content: center; border-radius: 10px; font-size: 1.4rem; margin-bottom: 16px;">🎓</div>
       <h3 style="font-size: 1.2rem; margin-bottom: 6px;" id="cat-edu">Education & Scholarships</h3>
       <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 0;" id="cat-edu-desc">Free tuition, Master's, PhD guides for EU, UK, USA.</p>
+    </a>
+
+    <!-- Jobs & Career Portals Category Card Added -->
+    <a href="./jobs-careers.html" class="card" style="background: var(--bg-primary); border: 1px solid var(--border-color); padding: 24px; border-radius: 12px; text-decoration: none; color: inherit; display: block;">
+      <div style="background: rgba(147, 51, 234, 0.1); color: #9333ea; width: 48px; height: 48px; display: flex; align-items: center; justify-content: center; border-radius: 10px; font-size: 1.4rem; margin-bottom: 16px;">💼</div>
+      <h3 style="font-size: 1.2rem; margin-bottom: 6px;" id="cat-jobs">Jobs & Career Portals</h3>
+      <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 0;" id="cat-jobs-desc">Global remote boards, graduate visa links, and internships.</p>
     </a>
 
   </div>
@@ -264,12 +271,14 @@
       window.location.href = "./loan-emi.html";
     } else if (query.includes("education") || query.includes("scholarship")) {
       window.location.href = "./education-scholarships.html";
+    } else if (query.includes("job") || query.includes("career") || query.includes("internship")) {
+      window.location.href = "./jobs-careers.html";
     } else {
       window.location.href = `./tools.html`;
     }
   }
 
-  // Working Language Switcher Dictionaries (Updated with Education Card translations)
+  // Working Language Switcher Dictionaries (Updated with Education & Jobs Card translations)
   const translations = {
     en: {
       home: "Home", tools: "Tools", categories: "Categories", about: "About",
@@ -279,7 +288,8 @@
       tag1: "Free Forever", tag2: "No Sign Up", tag3: "Mobile Friendly", tag4: "Global Access",
       catHeading: "Explore by Category", catViewAll: "View All Categories →",
       popHeading: "Popular Tools", popViewAll: "View All Tools →",
-      catEdu: "Education & Scholarships", catEduDesc: "Free tuition, Master's, PhD guides for EU, UK, USA."
+      catEdu: "Education & Scholarships", catEduDesc: "Free tuition, Master's, PhD guides for EU, UK, USA.",
+      catJobs: "Jobs & Career Portals", catJobsDesc: "Global remote boards, graduate visa links, and internships."
     },
     pt: {
       home: "Início", tools: "Ferramentas", categories: "Categorias", about: "Sobre",
@@ -289,7 +299,8 @@
       tag1: "Grátis Para Sempre", tag2: "Sem Cadastro", tag3: "Compatível com Celular", tag4: "Acesso Global",
       catHeading: "Explorar por Categoria", catViewAll: "Ver Todas as Categorias →",
       popHeading: "Ferramentas Populares", popViewAll: "Ver Todas as Ferramentas →",
-      catEdu: "Educação e Bolsas", catEduDesc: "Propinas grátis, Mestrado, Doutorado UE, Reino Unido, EUA."
+      catEdu: "Educação e Bolsas", catEduDesc: "Propinas grátis, Mestrado, Doutorado UE, Reino Unido, EUA.",
+      catJobs: "Empregos e Carreiras", catJobsDesc: "Painéis remotos globais, vistos de graduação e estágios."
     },
     hi: {
       home: "होम", tools: "टूल्स", categories: "श्रेणियाँ", about: "हमारे बारे में",
@@ -299,7 +310,8 @@
       tag1: "सदा के लिए मुफ़्त", tag2: "कोई साइन अप नहीं", tag3: "मोबाइल अनुकूल", tag4: "वैश्विक पहुंच",
       catHeading: "श्रेणी के अनुसार देखें", catViewAll: "सभी श्रेणियाँ देखें →",
       popHeading: "लोकप्रिय टूल्स", popViewAll: "सभी टूल्स देखें →",
-      catEdu: "शिक्षा और छात्रवृत्ति", catEduDesc: "EU, UK, USA के लिए मुफ्त ट्यूशन, मास्टर, पीएचडी गाइड।"
+      catEdu: "शिक्षा और छात्रवृत्ति", catEduDesc: "EU, UK, USA के लिए मुफ्त ट्यूशन, मास्टर, पीएचडी गाइड।",
+      catJobs: "नौकरियां और करियर", catJobsDesc: "वैश्विक रिमोट जॉब बोर्ड, ग्रेजुएट वीजा लिंक और इंटर्नशिप।"
     }
   };
 
@@ -342,6 +354,8 @@
 
     document.getElementById("cat-edu").textContent = t.catEdu;
     document.getElementById("cat-edu-desc").textContent = t.catEduDesc;
+    document.getElementById("cat-jobs").textContent = t.catJobs;
+    document.getElementById("cat-jobs-desc").textContent = t.catJobsDesc;
 
     localStorage.setItem("selectedLang", lang);
   }
