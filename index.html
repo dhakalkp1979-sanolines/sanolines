@@ -36,7 +36,6 @@
   <nav style="display: flex; align-items: center; gap: 24px;">
     <a href="./index.html" id="nav-home" style="text-decoration: none; font-weight: 600; color: #2563eb;">Home</a>
     <a href="./tools.html" id="nav-tools" style="text-decoration: none; color: var(--text-muted);">Tools</a>
-    <a href="./categories.html" id="nav-categories" style="text-decoration: none; color: var(--text-muted);">Categories</a>
     <a href="./about.html" id="nav-about" style="text-decoration: none; color: var(--text-muted);">About</a>
   </nav>
   <div style="display: flex; align-items: center; gap: 16px;">
@@ -299,7 +298,7 @@
   // Working Language Switcher Dictionaries
   const translations = {
     en: {
-      home: "Home", tools: "Tools", categories: "Categories", about: "About",
+      home: "Home", tools: "Tools", about: "About",
       heroTitle: "Your Daily Tools", heroSubtitle: "Fast, Simple, Free",
       heroDesc: "150+ calculators, converters, and utilities for finance, health, developers, writers, builders, and creators.",
       searchPlaceholder: "Search any tool... (e.g. BMI, Loan EMI, JSON formatter)", searchBtn: "Search",
@@ -312,7 +311,7 @@
       catInsurance: "Insurance & Financial Planning", catInsuranceDesc: "Life, health, and travel insurance, retirement and wealth building."
     },
     pt: {
-      home: "Início", tools: "Ferramentas", categories: "Categorias", about: "Sobre",
+      home: "Início", tools: "Ferramentas", about: "Sobre",
       heroTitle: "Suas Ferramentas Diárias", heroSubtitle: "Rápido, Simples, Gratuito",
       heroDesc: "Mais de 150 calculadoras, conversores e utilitários para finanças, saúde, desenvolvedores, escritores e criadores.",
       searchPlaceholder: "Pesquisar ferramenta... (ex: IMC, Empréstimo, JSON)", searchBtn: "Pesquisar",
@@ -325,7 +324,7 @@
       catInsurance: "Seguros e Planejamento Financeiro", catInsuranceDesc: "Seguro saúde, vida, viagens, previdência e construção de patrimônio."
     },
     hi: {
-      home: "होम", tools: "टूल्स", categories: "श्रेणियाँ", about: "हमारे बारे में",
+      home: "होम", tools: "टूल्स", about: "हमारे बारे में",
       heroTitle: "आपके दैनिक उपकरण", heroSubtitle: "तेज़, सरल, निःशुल्क",
       heroDesc: "वित्त, स्वास्थ्य, डेवलपर्स, लेखकों और रचनाकारों के लिए 150+ कैलकुलेटर, कन्वर्टर और उपयोगिताएँ।",
       searchPlaceholder: "कोई भी टूल खोजें... (जैसे BMI, Loan EMI)", searchBtn: "खोजें",
@@ -358,7 +357,6 @@
 
     document.getElementById("nav-home").textContent = t.home;
     document.getElementById("nav-tools").textContent = t.tools;
-    document.getElementById("nav-categories").textContent = t.categories;
     document.getElementById("nav-about").textContent = t.about;
     
     document.getElementById("hero-title").innerHTML = `${t.heroTitle}<br><span style="color: #2563eb;" id="hero-subtitle">${t.heroSubtitle}</span>`;
@@ -369,34 +367,4 @@
     document.getElementById("tag-1").innerHTML = `<i class="fa-solid fa-circle-check" style="color: #2563eb;"></i> ${t.tag1}`;
     document.getElementById("tag-2").innerHTML = `<i class="fa-solid fa-circle-check" style="color: #2563eb;"></i> ${t.tag2}`;
     document.getElementById("tag-3").innerHTML = `<i class="fa-solid fa-circle-check" style="color: #2563eb;"></i> ${t.tag3}`;
-    document.getElementById("tag-4").innerHTML = `<i class="fa-solid fa-circle-check" style="color: #2563eb;"></i> ${t.tag4}`;
-
-    document.getElementById("cat-heading").textContent = t.catHeading;
-    document.getElementById("cat-viewall").textContent = t.catViewAll;
-    document.getElementById("pop-heading").textContent = t.popHeading;
-    document.getElementById("pop-viewall").textContent = t.popViewAll;
-
-    document.getElementById("cat-edu").textContent = t.catEdu;
-    document.getElementById("cat-edu-desc").textContent = t.catEduDesc;
-    document.getElementById("cat-jobs").textContent = t.catJobs;
-    document.getElementById("cat-jobs-desc").textContent = t.catJobsDesc;
-    document.getElementById("cat-visa").textContent = t.catVisa;
-    document.getElementById("cat-visa-desc").textContent = t.catVisaDesc;
-    document.getElementById("cat-insurance").textContent = t.catInsurance;
-    document.getElementById("cat-insurance-desc").textContent = t.catInsuranceDesc;
-
-    localStorage.setItem("selectedLang", lang);
-  }
-
-  function changeFooterLang(lang) {
-    setLanguage(lang);
-  }
-
-  const savedLang = localStorage.getItem("selectedLang");
-  if (savedLang) {
-    setLanguage(savedLang);
-  }
-</script>
-
-</body>
-</html>
+    document.getElementById("tag-4").innerHTML = `<i class="fa-solid fa-circle-check" style="color:
